@@ -1,0 +1,12 @@
+C:\Users\pol4e\OneDrive\Documents\GitHub\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\Colchoneria_CUESTA.exe.config
+C:\Users\pol4e\OneDrive\Documents\GitHub\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\Colchoneria_CUESTA.exe
+C:\Users\pol4e\OneDrive\Documents\GitHub\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\Colchoneria_CUESTA.pdb
+C:\Users\pol4e\OneDrive\Documents\GitHub\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\Colchoneria_CUESTA.xml
+C:\Users\pol4e\OneDrive\Documents\GitHub\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\obj\Debug\Colchoneria_CUESTA.vbprojAssemblyReference.cache
+C:\Users\pol4e\OneDrive\Documents\GitHub\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\obj\Debug\Colchoneria_CUESTA.Resources.resources
+C:\Users\pol4e\OneDrive\Documents\GitHub\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\obj\Debug\Colchoneria_CUESTA.vbproj.GenerateResource.cache
+C:\Users\pol4e\OneDrive\Documents\GitHub\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\obj\Debug\Colchoneria_CUESTA.vbproj.CoreCompileInputs.cache
+C:\Users\pol4e\OneDrive\Documents\GitHub\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\obj\Debug\Colchoneria_CUESTA.exe
+C:\Users\pol4e\OneDrive\Documents\GitHub\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\obj\Debug\Colchoneria_CUESTA.xml
+C:\Users\pol4e\OneDrive\Documents\GitHub\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\obj\Debug\Colchoneria_CUESTA.pdb
+C:\Users\pol4e\OneDrive\Documents\GitHub\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\obj\Debug\Colchoneria_CUESTA.Pantalla_principal.resources
