@@ -1,4 +1,5 @@
-﻿
+﻿Imports System.Text.RegularExpressions
+
 Public Class Validacion
 
     'El proposito de esta clase es validar diferentes cadena
@@ -14,71 +15,24 @@ Public Class Validacion
 
     End Sub
 
-    'Metodo para validar cadenas comprobando si tienen solo letras y espacios en blanco
-    Public Function contieneLetrasYEspaciosEnBlanco(cadena As String) As Boolean
+    'Metodo para validar cadenas con uno o mas nombres
+    'comprobando si tienen solo letras, espacios en blanco y guion
+    'En definitiva indica si el nombre o los nombres son validos
+    Public Function validarNombres(cadena As String) As Boolean
 
-        'Las variables contadoras que van a utilizar los dos for
-        Dim i As Integer
-        Dim j As Integer
-
-        'La cadena se pasa a letras minusculas
-        'De esta manera no hace falta tener guardadas 
-        'las letras en mayuscula para la comprobacion
-        cadena = cadena.ToLower()
-
-
-        'Mediante este for se pasa por todos los caracteres de la cadena uno por uno
-        For i = 0 To (cadena.Length - 1)
-
-            'Si el caracter es espacio en blanco se le asigna a la 
-            'variable contieneLetrasYEspaciosEnBlanco el valor true
-            If cadena.Chars(i).Equals(" ") Then
-                contieneLetrasYEspaciosEnBlanco = True
-
-            Else
-
-                'De lo contrario se le asigna false y se comprueba 
-                'si coincide con alguna de las letras permitidas.
-
-                'Si coincide el valor de la variable contieneLetrasYEspaciosEnBlanco
-                'se cambia a true.
-
-                'Sino el valor se quedara false
-                contieneLetrasYEspaciosEnBlanco = False
-
-                'Se pasa por todas las letras de la constante LETRAS
-                For j = 0 To (LETRAS.Length - 1)
-
-                    If cadena.Chars(i).Equals(LETRAS.Chars(j)) Then
-
-                        contieneLetrasYEspaciosEnBlanco = True
-
-                    End If
-
-                Next j
-
-                'Si el valor de contieneLetrasYEspaciosEnBlanco es false 
-                'despues de comparar el caracter con la cadena LETRAS
-                'Se sale del bucle for
-                If contieneLetrasYEspaciosEnBlanco = False Then
-
-                    i = cadena.Length
-
-                End If
-
-            End If
-
-        Next i
+        validarNombres = Regex.IsMatch(cadena, "[a-zA-ZñÑíÍóÓéÉáÁúÚüÜ]+([ -][a-zA-ZñÑíÍóÓéÉáÁúÚüÜ]+)*")
 
         'Se devuelve el valor de la variable que indicará 
         'si la cadena contiene solo letras y espacios en blanco
         'en caso de devolver true y sino false
-        Return contieneLetrasYEspaciosEnBlanco
+        Return validarNombres
 
     End Function
 
     'Funcion que valida numeros de telefono
     Public Function validarNumeroTelefono(numero As String) As Boolean
+
+        validarNumeroTelefono = Regex.IsMatch(numero, "([(]?[+]?[0-9]+[)]?)?([ ]?[1-9]+)+") And numero.Length > 8
 
         'Variable contador para el for
         Dim i As Integer
