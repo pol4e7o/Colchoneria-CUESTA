@@ -3,6 +3,7 @@ Public Class Validacion
 
     'El proposito de esta clase es validar diferentes cadena
     'por lo tanto contiene solo constantes
+
     'La clase maneja varias funciones con valor de retorno de tipo booleano
 
     'Esta constante indica las letras permitidas o no en una cadena
@@ -209,6 +210,5 @@ Public Class Validacion
         Return esNumero
 
     End Function
-
 
 End Class
