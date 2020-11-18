@@ -8,9 +8,6 @@ Public Class Validacion
     'Esta constante indica las letras permitidas o no en una cadena
     Public Const LETRAS As String = "qwertyuioplkjhgfdsazxcvbnméúíóáñ"
 
-    'Esta constante se utiliza para validar un numero de telefono
-    Public Const CARACTERES_TELEFONO As String = "(+)"
-
     'Constructor vacio
     Public Sub New()
 
