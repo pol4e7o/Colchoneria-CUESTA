@@ -1,36 +1,97 @@
 ﻿Public Class Empleado
+
+    'Nombre del empleado
     Private nombreEmpleado As String
-    Private contraseniaEmpleado As Single
-    Private administradorEmpleado As Boolean
+
+    'Apellidos del empleado
+    Private apellidos As String
+
+    'La direccion del empleado
+    Private direccionEmpleado As String
+
+    'El codigo postal de esta direccion
+    Private codigoPostalDireccion As String
+
+    'El numero de telefono del empleado
+    Private telefono As String
+
+    'El nombre de usuario del empleado para inciar secion en la TPV
+    Private nombreUsuario As String
+
+    'La contraseña que este empleado va a utilizar para manejar la TPV
+    Private contraseniaEmpleado As Integer
+
+    'Esta variable indica si el empleado tiene permisos de administrador
+    Private esAdministrador As Boolean
 
 
     'Funciones getters para obtener los valores del objeto
-    Function getnombreEmpleado() As String
+    Function getNombreEmpleado() As String
         Return nombreEmpleado
     End Function
 
-    Function getcontraseniaEmpleado() As String
+    Function getApellidos() As String
+        Return apellidos
+    End Function
+
+    Function getDireccion() As String
+        Return direccionEmpleado
+    End Function
+
+    Function getCodigoPostal() As Integer
+        Return codigoPostalDireccion
+    End Function
+
+    Function getTelefono() As String
+        Return telefono
+    End Function
+
+    Function getNombreUsuario() As String
+        Return nombreUsuario
+    End Function
+
+    Function getContraseniaEmpleado() As Integer
         Return contraseniaEmpleado
     End Function
 
-    Function getadministradorEmpleado() As String
-        Return administradorEmpleado
+    Function getEsAdministrador() As Boolean
+        Return esAdministrador
     End Function
 
-
-
-    'Funciones setter para modificar el valor de las variables del objeto
-    Function setnombreEmpleadoo(nombre As String) As String
+    'Procedimientos setter para modificar el valor de las variables del objeto
+    'Se utiliza Me en casos donde el parametro y el atributo 
+    'tienen el mismo nombre. La varible con Me. adelante es atributo de la clase
+    Sub setNombreEmpleado(nombre As String)
         nombreEmpleado = nombre
-    End Function
+    End Sub
 
-    Function setcontraseniaEmpleado(contrasenia As Single) As String
+    Sub setApellidos(apellidos As String)
+        Me.apellidos = apellidos
+    End Sub
+
+    Sub setDireccion(direccion As String)
+        direccionEmpleado = direccion
+    End Sub
+
+    Sub setCodigoPostal(codigoPostal As Integer)
+        codigoPostalDireccion = codigoPostal
+    End Sub
+
+    Sub setTelefono(numeroTelefono As String)
+        telefono = numeroTelefono
+    End Sub
+
+    Sub setNombreUsuario(nombreUsuario As String)
+        Me.nombreUsuario = nombreUsuario
+    End Sub
+
+    Sub setContraseniaEmpleado(contrasenia As Integer)
         contraseniaEmpleado = contrasenia
-    End Function
+    End Sub
 
-    Function setadministradorEmpleado(admin As Boolean) As Boolean
-        administradorEmpleado = admin
-    End Function
+    Sub setEsAdministrador(admin As Boolean)
+        esAdministrador = admin
+    End Sub
 
 
     'Una posibilidad de optimizar el codigo
