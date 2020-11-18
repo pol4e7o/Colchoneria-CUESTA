@@ -72,6 +72,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ElementosComunes.vb" />
     <Compile Include="Formulario_Basico.Designer.vb">
       <DependentUpon>Formulario_Basico.vb</DependentUpon>
     </Compile>

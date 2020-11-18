@@ -40,6 +40,9 @@ Partial Class Pantalla_principal
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.label_saludo = New System.Windows.Forms.Label()
         Me.label_pulsarTecla = New System.Windows.Forms.Label()
+        Me.VisualizarVentaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ColchoneriaCUESTAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ManualDeUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -78,16 +81,19 @@ Partial Class Pantalla_principal
         '
         'VentaToolStripMenuItem
         '
+        Me.VentaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VisualizarVentaToolStripMenuItem})
         Me.VentaToolStripMenuItem.Name = "VentaToolStripMenuItem"
         resources.ApplyResources(Me.VentaToolStripMenuItem, "VentaToolStripMenuItem")
         '
         'AcercaDeToolStripMenuItem
         '
+        Me.AcercaDeToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ColchoneriaCUESTAToolStripMenuItem})
         Me.AcercaDeToolStripMenuItem.Name = "AcercaDeToolStripMenuItem"
         resources.ApplyResources(Me.AcercaDeToolStripMenuItem, "AcercaDeToolStripMenuItem")
         '
         'AyudaToolStripMenuItem
         '
+        Me.AyudaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ManualDeUsuarioToolStripMenuItem})
         Me.AyudaToolStripMenuItem.Name = "AyudaToolStripMenuItem"
         resources.ApplyResources(Me.AyudaToolStripMenuItem, "AyudaToolStripMenuItem")
         '
@@ -116,11 +122,11 @@ Partial Class Pantalla_principal
         '
         'Panel1
         '
-        resources.ApplyResources(Me.Panel1, "Panel1")
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel1.Controls.Add(Me.label_ayuda)
         Me.Panel1.Controls.Add(Me.label_fecha)
         Me.Panel1.Controls.Add(Me.label_hora)
+        resources.ApplyResources(Me.Panel1, "Panel1")
         Me.Panel1.Name = "Panel1"
         '
         'label_saludo
@@ -135,6 +141,21 @@ Partial Class Pantalla_principal
         Me.label_pulsarTecla.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.label_pulsarTecla.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.label_pulsarTecla.Name = "label_pulsarTecla"
+        '
+        'VisualizarVentaToolStripMenuItem
+        '
+        Me.VisualizarVentaToolStripMenuItem.Name = "VisualizarVentaToolStripMenuItem"
+        resources.ApplyResources(Me.VisualizarVentaToolStripMenuItem, "VisualizarVentaToolStripMenuItem")
+        '
+        'ColchoneriaCUESTAToolStripMenuItem
+        '
+        Me.ColchoneriaCUESTAToolStripMenuItem.Name = "ColchoneriaCUESTAToolStripMenuItem"
+        resources.ApplyResources(Me.ColchoneriaCUESTAToolStripMenuItem, "ColchoneriaCUESTAToolStripMenuItem")
+        '
+        'ManualDeUsuarioToolStripMenuItem
+        '
+        Me.ManualDeUsuarioToolStripMenuItem.Name = "ManualDeUsuarioToolStripMenuItem"
+        resources.ApplyResources(Me.ManualDeUsuarioToolStripMenuItem, "ManualDeUsuarioToolStripMenuItem")
         '
         'Pantalla_principal
         '
@@ -172,4 +193,7 @@ Partial Class Pantalla_principal
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
     Friend WithEvents label_saludo As Label
     Friend WithEvents label_pulsarTecla As Label
+    Friend WithEvents VisualizarVentaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ColchoneriaCUESTAToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ManualDeUsuarioToolStripMenuItem As ToolStripMenuItem
 End Class
