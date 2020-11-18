@@ -31,8 +31,11 @@ Partial Class Pantalla_principal
         Me.VolverToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VentaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VisualizarVentaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ColchoneriaCUESTAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ManualDeUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TimerHoraReal = New System.Windows.Forms.Timer(Me.components)
         Me.label_ayuda = New System.Windows.Forms.Label()
         Me.label_fecha = New System.Windows.Forms.Label()
@@ -40,9 +43,6 @@ Partial Class Pantalla_principal
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.label_saludo = New System.Windows.Forms.Label()
         Me.label_pulsarTecla = New System.Windows.Forms.Label()
-        Me.VisualizarVentaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ColchoneriaCUESTAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ManualDeUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -85,11 +85,21 @@ Partial Class Pantalla_principal
         Me.VentaToolStripMenuItem.Name = "VentaToolStripMenuItem"
         resources.ApplyResources(Me.VentaToolStripMenuItem, "VentaToolStripMenuItem")
         '
+        'VisualizarVentaToolStripMenuItem
+        '
+        Me.VisualizarVentaToolStripMenuItem.Name = "VisualizarVentaToolStripMenuItem"
+        resources.ApplyResources(Me.VisualizarVentaToolStripMenuItem, "VisualizarVentaToolStripMenuItem")
+        '
         'AcercaDeToolStripMenuItem
         '
         Me.AcercaDeToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ColchoneriaCUESTAToolStripMenuItem})
         Me.AcercaDeToolStripMenuItem.Name = "AcercaDeToolStripMenuItem"
         resources.ApplyResources(Me.AcercaDeToolStripMenuItem, "AcercaDeToolStripMenuItem")
+        '
+        'ColchoneriaCUESTAToolStripMenuItem
+        '
+        Me.ColchoneriaCUESTAToolStripMenuItem.Name = "ColchoneriaCUESTAToolStripMenuItem"
+        resources.ApplyResources(Me.ColchoneriaCUESTAToolStripMenuItem, "ColchoneriaCUESTAToolStripMenuItem")
         '
         'AyudaToolStripMenuItem
         '
@@ -97,8 +107,14 @@ Partial Class Pantalla_principal
         Me.AyudaToolStripMenuItem.Name = "AyudaToolStripMenuItem"
         resources.ApplyResources(Me.AyudaToolStripMenuItem, "AyudaToolStripMenuItem")
         '
+        'ManualDeUsuarioToolStripMenuItem
+        '
+        Me.ManualDeUsuarioToolStripMenuItem.Name = "ManualDeUsuarioToolStripMenuItem"
+        resources.ApplyResources(Me.ManualDeUsuarioToolStripMenuItem, "ManualDeUsuarioToolStripMenuItem")
+        '
         'TimerHoraReal
         '
+        Me.TimerHoraReal.Enabled = True
         Me.TimerHoraReal.Interval = 1000
         '
         'label_ayuda
@@ -141,21 +157,6 @@ Partial Class Pantalla_principal
         Me.label_pulsarTecla.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.label_pulsarTecla.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.label_pulsarTecla.Name = "label_pulsarTecla"
-        '
-        'VisualizarVentaToolStripMenuItem
-        '
-        Me.VisualizarVentaToolStripMenuItem.Name = "VisualizarVentaToolStripMenuItem"
-        resources.ApplyResources(Me.VisualizarVentaToolStripMenuItem, "VisualizarVentaToolStripMenuItem")
-        '
-        'ColchoneriaCUESTAToolStripMenuItem
-        '
-        Me.ColchoneriaCUESTAToolStripMenuItem.Name = "ColchoneriaCUESTAToolStripMenuItem"
-        resources.ApplyResources(Me.ColchoneriaCUESTAToolStripMenuItem, "ColchoneriaCUESTAToolStripMenuItem")
-        '
-        'ManualDeUsuarioToolStripMenuItem
-        '
-        Me.ManualDeUsuarioToolStripMenuItem.Name = "ManualDeUsuarioToolStripMenuItem"
-        resources.ApplyResources(Me.ManualDeUsuarioToolStripMenuItem, "ManualDeUsuarioToolStripMenuItem")
         '
         'Pantalla_principal
         '

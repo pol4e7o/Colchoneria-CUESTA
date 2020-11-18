@@ -19,7 +19,7 @@
         'Cuando se carga la aplicacion cajaCerrada será true
         'Cuando se haga una venta este valor pasará a false
         ' y esta que no se haga el cierre de caja no se podra salir de la aplicacion
-        ElementosComunes.cajaCerrada = False
+        ElementosComunes.cajaCerrada = True
 
     End Sub
 
@@ -40,6 +40,9 @@
 
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
 
+        'La variable que va a almacenar la opcion elegida del message box
+        Dim opcion As Integer
+
         If ElementosComunes.cajaCerrada = False Then
 
             'Si la caja no esta cerrada no se podra salir del programa
@@ -49,13 +52,55 @@
         Else
 
             'Se le pregunta al usuario si desea salir
-            MsgBox("Desea salir de la aplicacion?", 4 + MsgBoxStyle.Question + MsgBoxStyle.DefaultButton2, "Salir")
+            opcion = MsgBox("Desea salir de la aplicacion?", 4 + MsgBoxStyle.Question + MsgBoxStyle.DefaultButton2, "Salir")
 
-            If MsgBoxResult.Yes Then
+            If MsgBoxResult.Yes = opcion Then
                 End
             End If
 
         End If
+
+    End Sub
+
+    Private Sub VisualizarVentaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VisualizarVentaToolStripMenuItem.Click
+
+        'Se visualiza la venta actual del dia mediante un message box
+        MsgBox("La venta actual del dia " & DateString & " a la hora " & TimeString & " es: 
+
+                    " & ElementosComunes.venta & "€", 0 + MsgBoxStyle.Information, "Visualizar venta")
+
+    End Sub
+
+    Private Sub ColchoneriaCUESTAToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ColchoneriaCUESTAToolStripMenuItem.Click
+
+        'Se visualiza toda la informacion sobre la empresa
+        MsgBox(ElementosComunes.informacionEmpresa, 0 + MsgBoxStyle.Information, "Informacion sobre Colchoneria CUESTA")
+
+    End Sub
+
+    Private Sub CerrarCajaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarCajaToolStripMenuItem.Click
+
+        'La variable que va a almacenar la opcion elegida del message box
+        Dim opcion As Integer
+
+        'Para hacer el cuerre de caja el usuario se tiene que identificar primero.
+        'Por lo tanto si el usuario desea cerrar caja se debe llamar a la pantalla de inicio 
+        'para poder identificarse 
+        opcion = MsgBox("Para poder realizar el cierre de caja primero tiene que indentificarse. Desea ser dirigido a la pantalla de inicio de secion?", 4 + MsgBoxStyle.DefaultButton1 + MsgBoxStyle.Information, "Cierre de caja")
+
+        If MsgBoxResult.Yes = opcion Then
+
+            'Se abre la pantalla de inicio y se oculta la principal
+            Pantalla_de_inicio.Show()
+            Me.Hide()
+
+        End If
+
+    End Sub
+
+    Private Sub ManualDeUsuarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ManualDeUsuarioToolStripMenuItem.Click
+
+        'Se llama al fichero que contiene el manual de usuario
 
     End Sub
 End Class
