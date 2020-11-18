@@ -72,6 +72,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formulario_Basico.Designer.vb">
+      <DependentUpon>Formulario_Basico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario_Basico.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantalla_de_inicio.Designer.vb">
+      <DependentUpon>Pantalla_de_inicio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pantalla_de_inicio.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Pantalla_principal.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +108,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Formulario_Basico.resx">
+      <DependentUpon>Formulario_Basico.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantalla_de_inicio.resx">
+      <DependentUpon>Pantalla_de_inicio.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pantalla_principal.resx">
       <DependentUpon>Pantalla_principal.vb</DependentUpon>
     </EmbeddedResource>
