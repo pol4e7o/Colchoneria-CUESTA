@@ -62,9 +62,17 @@ Public Class Validacion
     'esta compuesta de solo numeros
     Public Function esNumero(cadena As String) As Boolean
 
-        'Se comprueba si la cadena es un numero que puede ser negativo 
-        'o positivo y tener decimales separados de la parte entera con "."
-        esNumero = Regex.IsMatch(cadena, "^[-+]?[0-9]+([.][0-9]+)*$")
+        'Se guarda en la variable numero el valor de la cadena
+        'Si se encuentra un caracter que no es digito
+        'la funcion devuelve 0
+        Dim numero As Double = Val(cadena)
+
+        'Si el numero es 0 se comprueba que el numero que contiene la cadena
+        'tambien es 0 o sino tiene que ser diferente a 0 para que sea un numero
+        'correcto porque el metodo Val devuelve 0 si encuentra un caracter
+        'que no es un digito
+        esNumero = (numero = 0 And Regex.IsMatch(cadena, "[0]+")) Or numero <> 0
+
 
         Return esNumero
 
