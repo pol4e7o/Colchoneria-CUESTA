@@ -47,6 +47,14 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Articulo, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Articulo.dll</HintPath>
+    </Reference>
+    <Reference Include="Empleado, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Empleado.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -77,6 +85,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ElementosComunes.vb" />
+    <Compile Include="Gestión_de_empleados.Designer.vb">
+      <DependentUpon>Gestión_de_empleados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestión_de_empleados.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Pantalla_admin.Designer.vb">
       <DependentUpon>Pantalla_admin.vb</DependentUpon>
     </Compile>
@@ -119,6 +133,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Gestión_de_empleados.resx">
+      <DependentUpon>Gestión_de_empleados.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pantalla_admin.resx">
       <DependentUpon>Pantalla_admin.vb</DependentUpon>
     </EmbeddedResource>

@@ -10,7 +10,7 @@
 
         'Este boton no es disponible porque no hay mas pantallas
         'antes de esta
-        VolverToolStripMenuItem.Enabled = False
+        VolverToolStripMenuItem.Visible = False
 
         'Cuando se carga por primera vez el formulario se asigna a la variable venta 0
         'Teniendo en cuenta que no se puede salir de la aplicacion sin cerrar caja antes
@@ -86,7 +86,7 @@
         'Para hacer el cuerre de caja el usuario se tiene que identificar primero.
         'Por lo tanto si el usuario desea cerrar caja se debe llamar a la pantalla de inicio 
         'para poder identificarse 
-        opcion = MsgBox("Para poder realizar el cierre de caja primero tiene que indentificarse. Desea ser dirigido a la pantalla de inicio de secion?", 4 + MsgBoxStyle.DefaultButton1 + MsgBoxStyle.Information, "Cierre de caja")
+        opcion = MsgBox("Para poder realizar el cierre de caja primero tiene que identificarse. Desea ser dirigido a la pantalla de inicio de secion?", 4 + MsgBoxStyle.DefaultButton1 + MsgBoxStyle.Information, "Cierre de caja")
 
         If MsgBoxResult.Yes = opcion Then
 
