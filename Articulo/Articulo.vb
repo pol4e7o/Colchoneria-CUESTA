@@ -23,19 +23,41 @@
         Me.categoriaArticulo = cat
         Me.tamanioArticulo = tamanios
         Me.precioArticulo = precios
+
         'Llenado del ArrayList categoriasArticulo
         Me.categoriasArticulo.Add("Base")
         Me.categoriasArticulo.Add("Somier")
         Me.categoriasArticulo.Add("Canape")
         Me.categoriasArticulo.Add("Colchon")
+
+        'Llenamos el ArrayList de tamaniosArticulo
+        Me.tamanioArticulo.Add(80)
+        Me.tamanioArticulo.Add(90)
+        Me.tamanioArticulo.Add(105)
+        Me.tamanioArticulo.Add(135)
+        Me.tamanioArticulo.Add(150)
+        Me.tamanioArticulo.Add(160)
+        Me.tamanioArticulo.Add(180)
+
     End Sub
 
     'Creamos otro constructor pero vacio, solo con la lista de posibles categorias llena
     Public Sub New()
+        'Llenado del ArrayList categoriasArticulo
         Me.categoriasArticulo.Add("Base")
         Me.categoriasArticulo.Add("Somier")
         Me.categoriasArticulo.Add("Canape")
         Me.categoriasArticulo.Add("Colchon")
+        Me.categoriasArticulo.Add("Otros")
+
+        'Llenamos el ArrayList de tamaniosArticulo
+        Me.tamanioArticulo.Add(80)
+        Me.tamanioArticulo.Add(90)
+        Me.tamanioArticulo.Add(105)
+        Me.tamanioArticulo.Add(135)
+        Me.tamanioArticulo.Add(150)
+        Me.tamanioArticulo.Add(160)
+        Me.tamanioArticulo.Add(180)
     End Sub
 
     'Funciones getters para obtener los valores del objeto
