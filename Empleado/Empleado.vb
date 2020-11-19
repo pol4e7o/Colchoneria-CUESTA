@@ -24,8 +24,6 @@
     'Esta variable indica si el empleado tiene permisos de administrador
     Private esAdministrador As Boolean
 
-    'He pensado que podemos meter email, que me parece importante para poder contactar con un usuario, pero habría que hacer mas validaciones
-    'Private email As String
 
     'Creamos un constructor para poder instanciar la clase Empleado con los datos deseados
     Public Sub New()

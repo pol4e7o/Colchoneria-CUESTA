@@ -37,21 +37,22 @@ Partial Class Pantalla_admin
         Me.label_fecha = New System.Windows.Forms.Label()
         Me.label_hora = New System.Windows.Forms.Label()
         Me.TimerHoraReal = New System.Windows.Forms.Timer(Me.components)
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.OpcionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GestiónDeEmpleadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GestiónDeArtículosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GestiónDeVentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Menu
         '
-        Me.Menu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InicioToolStripMenuItem, Me.VentaToolStripMenuItem, Me.AcercaDeToolStripMenuItem, Me.AyudaToolStripMenuItem})
+        Me.Menu.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.Menu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InicioToolStripMenuItem, Me.VentaToolStripMenuItem, Me.AcercaDeToolStripMenuItem, Me.AyudaToolStripMenuItem, Me.OpcionesToolStripMenuItem})
         Me.Menu.Location = New System.Drawing.Point(0, 0)
         Me.Menu.Name = "Menu"
-        Me.Menu.Size = New System.Drawing.Size(800, 24)
+        Me.Menu.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
+        Me.Menu.Size = New System.Drawing.Size(1067, 28)
         Me.Menu.TabIndex = 1
         Me.Menu.Text = "MenuStrip1"
         '
@@ -59,48 +60,48 @@ Partial Class Pantalla_admin
         '
         Me.InicioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CerrarCajaToolStripMenuItem, Me.ToolStripSeparator2, Me.VolverToolStripMenuItem, Me.SalirToolStripMenuItem})
         Me.InicioToolStripMenuItem.Name = "InicioToolStripMenuItem"
-        Me.InicioToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
+        Me.InicioToolStripMenuItem.Size = New System.Drawing.Size(57, 24)
         Me.InicioToolStripMenuItem.Text = "Inicio"
         '
         'CerrarCajaToolStripMenuItem
         '
         Me.CerrarCajaToolStripMenuItem.Name = "CerrarCajaToolStripMenuItem"
-        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(155, 26)
         Me.CerrarCajaToolStripMenuItem.Text = "Cerrar caja"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(152, 6)
         '
         'VolverToolStripMenuItem
         '
         Me.VolverToolStripMenuItem.Name = "VolverToolStripMenuItem"
-        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(155, 26)
         Me.VolverToolStripMenuItem.Text = "Volver"
         '
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(155, 26)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'VentaToolStripMenuItem
         '
         Me.VentaToolStripMenuItem.Name = "VentaToolStripMenuItem"
-        Me.VentaToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
-        Me.VentaToolStripMenuItem.Text = "Ventana"
+        Me.VentaToolStripMenuItem.Size = New System.Drawing.Size(58, 24)
+        Me.VentaToolStripMenuItem.Text = "Venta"
         '
         'AcercaDeToolStripMenuItem
         '
         Me.AcercaDeToolStripMenuItem.Name = "AcercaDeToolStripMenuItem"
-        Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(80, 20)
+        Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(96, 24)
         Me.AcercaDeToolStripMenuItem.Text = "Acerca de..."
         '
         'AyudaToolStripMenuItem
         '
         Me.AyudaToolStripMenuItem.Name = "AyudaToolStripMenuItem"
-        Me.AyudaToolStripMenuItem.Size = New System.Drawing.Size(53, 20)
+        Me.AyudaToolStripMenuItem.Size = New System.Drawing.Size(63, 24)
         Me.AyudaToolStripMenuItem.Text = "Ayuda"
         '
         'Panel1
@@ -111,9 +112,10 @@ Partial Class Pantalla_admin
         Me.Panel1.Controls.Add(Me.label_ayuda)
         Me.Panel1.Controls.Add(Me.label_fecha)
         Me.Panel1.Controls.Add(Me.label_hora)
-        Me.Panel1.Location = New System.Drawing.Point(0, 408)
+        Me.Panel1.Location = New System.Drawing.Point(0, 502)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(800, 42)
+        Me.Panel1.Size = New System.Drawing.Size(1065, 51)
         Me.Panel1.TabIndex = 5
         '
         'label_ayuda
@@ -124,9 +126,10 @@ Partial Class Pantalla_admin
         Me.label_ayuda.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.label_ayuda.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.label_ayuda.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.label_ayuda.Location = New System.Drawing.Point(10, 9)
+        Me.label_ayuda.Location = New System.Drawing.Point(13, 11)
+        Me.label_ayuda.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label_ayuda.Name = "label_ayuda"
-        Me.label_ayuda.Size = New System.Drawing.Size(88, 22)
+        Me.label_ayuda.Size = New System.Drawing.Size(111, 27)
         Me.label_ayuda.TabIndex = 1
         Me.label_ayuda.Text = "F1 - Ayuda"
         Me.label_ayuda.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -138,9 +141,10 @@ Partial Class Pantalla_admin
         Me.label_fecha.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.label_fecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.label_fecha.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.label_fecha.Location = New System.Drawing.Point(455, 9)
+        Me.label_fecha.Location = New System.Drawing.Point(607, 11)
+        Me.label_fecha.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label_fecha.Name = "label_fecha"
-        Me.label_fecha.Size = New System.Drawing.Size(64, 22)
+        Me.label_fecha.Size = New System.Drawing.Size(80, 27)
         Me.label_fecha.TabIndex = 2
         Me.label_fecha.Text = "Fecha: "
         '
@@ -151,9 +155,10 @@ Partial Class Pantalla_admin
         Me.label_hora.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.label_hora.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.label_hora.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.label_hora.Location = New System.Drawing.Point(646, 9)
+        Me.label_hora.Location = New System.Drawing.Point(861, 11)
+        Me.label_hora.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label_hora.Name = "label_hora"
-        Me.label_hora.Size = New System.Drawing.Size(54, 22)
+        Me.label_hora.Size = New System.Drawing.Size(67, 27)
         Me.label_hora.TabIndex = 3
         Me.label_hora.Text = "Hora: "
         '
@@ -161,64 +166,40 @@ Partial Class Pantalla_admin
         '
         Me.TimerHoraReal.Interval = 1000
         '
-        'Button1
+        'OpcionesToolStripMenuItem
         '
-        Me.Button1.Location = New System.Drawing.Point(57, 73)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(200, 23)
-        Me.Button1.TabIndex = 6
-        Me.Button1.Text = "Gestión de empleados"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.OpcionesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GestiónDeEmpleadosToolStripMenuItem, Me.GestiónDeArtículosToolStripMenuItem, Me.GestiónDeVentasToolStripMenuItem})
+        Me.OpcionesToolStripMenuItem.Name = "OpcionesToolStripMenuItem"
+        Me.OpcionesToolStripMenuItem.Size = New System.Drawing.Size(83, 24)
+        Me.OpcionesToolStripMenuItem.Text = "Opciones"
         '
-        'Button2
+        'GestiónDeEmpleadosToolStripMenuItem
         '
-        Me.Button2.Location = New System.Drawing.Point(57, 103)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(200, 23)
-        Me.Button2.TabIndex = 7
-        Me.Button2.Text = "Gestión de artículos"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.GestiónDeEmpleadosToolStripMenuItem.Name = "GestiónDeEmpleadosToolStripMenuItem"
+        Me.GestiónDeEmpleadosToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
+        Me.GestiónDeEmpleadosToolStripMenuItem.Text = "Gestión de empleados"
         '
-        'Button3
+        'GestiónDeArtículosToolStripMenuItem
         '
-        Me.Button3.Location = New System.Drawing.Point(57, 133)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(200, 23)
-        Me.Button3.TabIndex = 8
-        Me.Button3.Text = "Gestión de ventas"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.GestiónDeArtículosToolStripMenuItem.Name = "GestiónDeArtículosToolStripMenuItem"
+        Me.GestiónDeArtículosToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
+        Me.GestiónDeArtículosToolStripMenuItem.Text = "Gestión de artículos"
         '
-        'Button4
+        'GestiónDeVentasToolStripMenuItem
         '
-        Me.Button4.Location = New System.Drawing.Point(57, 347)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 23)
-        Me.Button4.TabIndex = 9
-        Me.Button4.Text = "Venta"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.GestiónDeVentasToolStripMenuItem.Name = "GestiónDeVentasToolStripMenuItem"
+        Me.GestiónDeVentasToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
+        Me.GestiónDeVentasToolStripMenuItem.Text = "Gestión de ventas"
         '
-        'Label1
+        'Pantalla_admin
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(57, 42)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(120, 13)
-        Me.Label1.TabIndex = 10
-        Me.Label1.Text = "Opciones administrador:"
-        '
-        'Formulario_Basico
-        '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.ClientSize = New System.Drawing.Size(1067, 554)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Menu)
-        Me.Name = "Formulario_Basico"
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Name = "Pantalla_admin"
         Me.Text = "Formulario administrador"
         Me.Menu.ResumeLayout(False)
         Me.Menu.PerformLayout()
@@ -243,9 +224,8 @@ Partial Class Pantalla_admin
     Friend WithEvents label_fecha As Label
     Friend WithEvents label_hora As Label
     Friend WithEvents TimerHoraReal As Timer
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Label1 As Label
+    Friend WithEvents OpcionesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GestiónDeEmpleadosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GestiónDeArtículosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GestiónDeVentasToolStripMenuItem As ToolStripMenuItem
 End Class
