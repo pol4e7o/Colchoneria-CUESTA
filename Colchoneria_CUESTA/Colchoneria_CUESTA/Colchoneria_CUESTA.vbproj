@@ -79,6 +79,12 @@
     <Compile Include="Formulario_Basico.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Gestion_Empleados.Designer.vb">
+      <DependentUpon>Gestion_Empleados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion_Empleados.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Pantalla_de_inicio.Designer.vb">
       <DependentUpon>Pantalla_de_inicio.vb</DependentUpon>
     </Compile>
