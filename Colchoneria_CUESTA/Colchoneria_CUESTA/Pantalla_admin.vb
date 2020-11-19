@@ -15,4 +15,14 @@
         label_hora.Text = "Hora: " & TimeString
 
     End Sub
+
+    Private Sub GestiónDeEmpleadosToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
+
+
+    End Sub
+
+    Private Sub GestionDeEmpleadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionDeEmpleadosToolStripMenuItem.Click
+
+    End Sub
 End Class

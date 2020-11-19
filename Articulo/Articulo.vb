@@ -8,8 +8,6 @@ Public Class Articulo
     Private descripcionArticulo As String
     'Categoria de cada artículo
     Private categoriaArticulo As String
-    'Precio del articulo en cado de no tener ningun tamaño espesificado
-    Private precioArticulo As Double
     'Tamaño del artículo
     Private tamaniosArticulo As ArrayList
     'Precio del artículo
@@ -48,6 +46,7 @@ Public Class Articulo
         Me.posiblesTamaniosArticulo.Add(150)
         Me.posiblesTamaniosArticulo.Add(160)
         Me.posiblesTamaniosArticulo.Add(180)
+
     End Sub
 
     'Creamos otro constructor pero vacio, solo con la lista de posibles categorias llena
@@ -68,6 +67,7 @@ Public Class Articulo
         Me.posiblesTamaniosArticulo.Add(150)
         Me.posiblesTamaniosArticulo.Add(160)
         Me.posiblesTamaniosArticulo.Add(180)
+
     End Sub
 
     'Funciones getters para obtener los valores del objeto
@@ -83,51 +83,40 @@ Public Class Articulo
         Return categoriaArticulo
     End Function
 
-    Function getTamanioArticulo() As ArrayList
-        Return tamaniosArticulo
-    End Function
-
     Function getPrecioArticulo() As ArrayList
         Return preciosTamaniosArticulo
     End Function
 
     'Funciones setter para modificar el valor de las variables del objeto
     'Si se ha relizado la modificacion se devuelve true sino false
-    Function setNombreArticulo(nombre As String) As Boolean
+    Sub setNombreArticulo(nombre As String)
         nombreArticulo = nombre
+    End Sub
 
-        Return setNombreArticulo
-    End Function
-
-    Function setDescripcionArticulo(descripcion As String) As Boolean
+    Sub setDescripcionArticulo(descripcion As String)
         descripcionArticulo = descripcion
+    End Sub
 
-        Return setDescripcionArticulo
-    End Function
-
-    Function setCategoriaArticulo(categoria As String) As Boolean
+    Sub setCategoriaArticulo(categoria As String)
         categoriaArticulo = categoria
-
-        Return setCategoriaArticulo
-    End Function
+    End Sub
 
     'El tamaño y su precio se asignan utilizando solo un metodo
-    Function setTamanioPrecio(tamanio As Integer, precio As Double) As Boolean
+    Sub setTamanioPrecio(tamanio As Integer, precio As Double)
         tamaniosArticulo.Add(tamanio)
         preciosTamaniosArticulo.Add(precio)
 
-        Return setTamanioPrecio
-    End Function
+    End Sub
 
     'El tamaño y su precio se eliminan utilizando solo un metodo
-    Function eliminarTamanioPrecio(posicion As Integer) As Boolean
+    Sub eliminarTamanioPrecio(posicion As Integer)
+        tamaniosArticulo.RemoveAt(posicion)
+        preciosTamaniosArticulo.RemoveAt(posicion)
 
-        Return eliminarTamanioPrecio
-    End Function
+    End Sub
 
     'Este metodo se utiliza para crear los dos arraylist paralelos con los tamanios y precios reales
-    'del articulo. Si los arraylist no tienen el mismo tamaño o alguno de los tamaños
-    'no existe en la lista de tamanios predifinidos
+    'del articulo. Si los arraylist no tienen el mismo tamaño no se asignan
     Function setTamaniosPrecios(tamanios As ArrayList, precios As ArrayList) As Boolean
 
         setTamaniosPrecios = False
@@ -135,43 +124,8 @@ Public Class Articulo
         'Los dos arraylist tienen que tener el mismo numero de elementos
         If tamanios.Count = precios.Count Then
 
-            For i = 0 To tamanios.Count
-
-                'Cada tamanio del arraylist pasado por parametro tiene que existir dentro de los posibles tamaños
-                If posiblesTamaniosArticulo.Contains(tamanios.Item(i)) Then
-                    setTamaniosPrecios = True
-
-                Else
-                    setTamaniosPrecios = False
-                    i = tamanios.Count
-                End If
-
-            Next i
-
-            'Todos los precios tienen que ser mayores a 0
-            If setTamaniosPrecios = True Then
-
-                For i = 0 To precios.Count
-
-                    If validacion.numeroMayorACero(precios.Item(i)) = False Then
-
-                        setTamaniosPrecios = False
-                        i = precios.Count
-
-                    End If
-
-                Next
-
-            End If
-
-            'Solo si los datos son correctos se pueden asignar los valores a los atributos de la clase
-            If setTamaniosPrecios Then
-
-                preciosTamaniosArticulo = precios
-                tamaniosArticulo = tamanios
-
-            End If
-
+            preciosTamaniosArticulo = precios
+            tamaniosArticulo = tamanios
 
         End If
 
