@@ -1,4 +1,4 @@
-﻿Public Class Gestión_de_empleados
+﻿Public Class Pantalla_admin_empleados
 
     'Estas variables van a controlar el modo en que esta la pantalla
     Public alta As Boolean = False

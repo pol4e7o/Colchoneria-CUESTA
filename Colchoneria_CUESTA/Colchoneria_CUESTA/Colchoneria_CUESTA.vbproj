@@ -85,10 +85,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ElementosComunes.vb" />
-    <Compile Include="Gestión_de_empleados.Designer.vb">
-      <DependentUpon>Gestión_de_empleados.vb</DependentUpon>
+    <Compile Include="Pantalla_admin_empleados.Designer.vb">
+      <DependentUpon>Pantalla_admin_empleados.vb</DependentUpon>
     </Compile>
-    <Compile Include="Gestión_de_empleados.vb">
+    <Compile Include="Pantalla_admin_empleados.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Pantalla_admin.Designer.vb">
@@ -115,6 +115,12 @@
     <Compile Include="Pantalla_aniadir_articulo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Pantalla_aniadir_empleado.Designer.vb">
+      <DependentUpon>Pantalla_aniadir_empleado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pantalla_aniadir_empleado.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Pantalla_de_inicio.Designer.vb">
       <DependentUpon>Pantalla_de_inicio.vb</DependentUpon>
     </Compile>
@@ -127,10 +133,22 @@
     <Compile Include="Pantalla_eliminar_articulo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Pantalla_eliminar_empleado.Designer.vb">
+      <DependentUpon>Pantalla_eliminar_empleado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pantalla_eliminar_empleado.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Pantalla_modificar_articulos.Designer.vb">
       <DependentUpon>Pantalla_modificar_articulos.vb</DependentUpon>
     </Compile>
     <Compile Include="Pantalla_modificar_articulos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantalla_modificar_empleado.Designer.vb">
+      <DependentUpon>Pantalla_modificar_empleado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pantalla_modificar_empleado.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Pantalla_principal.vb">
@@ -163,8 +181,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Gestión_de_empleados.resx">
-      <DependentUpon>Gestión_de_empleados.vb</DependentUpon>
+    <EmbeddedResource Include="Pantalla_admin_empleados.resx">
+      <DependentUpon>Pantalla_admin_empleados.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantalla_admin.resx">
       <DependentUpon>Pantalla_admin.vb</DependentUpon>
@@ -178,14 +196,23 @@
     <EmbeddedResource Include="Pantalla_aniadir_articulo.resx">
       <DependentUpon>Pantalla_aniadir_articulo.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pantalla_aniadir_empleado.resx">
+      <DependentUpon>Pantalla_aniadir_empleado.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pantalla_de_inicio.resx">
       <DependentUpon>Pantalla_de_inicio.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantalla_eliminar_articulo.resx">
       <DependentUpon>Pantalla_eliminar_articulo.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pantalla_eliminar_empleado.resx">
+      <DependentUpon>Pantalla_eliminar_empleado.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pantalla_modificar_articulos.resx">
       <DependentUpon>Pantalla_modificar_articulos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantalla_modificar_empleado.resx">
+      <DependentUpon>Pantalla_modificar_empleado.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantalla_principal.resx">
       <DependentUpon>Pantalla_principal.vb</DependentUpon>

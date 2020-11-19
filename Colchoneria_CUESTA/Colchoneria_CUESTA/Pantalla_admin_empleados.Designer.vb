@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Gestión_de_empleados
+Partial Class Pantalla_admin_empleados
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -525,7 +525,7 @@ Partial Class Gestión_de_empleados
         Me.TimerHoraReal.Enabled = True
         Me.TimerHoraReal.Interval = 1000
         '
-        'Gestión_de_empleados
+        'Pantalla_admin_empleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -538,7 +538,7 @@ Partial Class Gestión_de_empleados
         Me.Controls.Add(Me.boton_alta)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Menu)
-        Me.Name = "Gestión_de_empleados"
+        Me.Name = "Pantalla_admin_empleados"
         Me.Text = "Colchoneria CUESTA - Gesion de empleados"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Menu.ResumeLayout(False)
