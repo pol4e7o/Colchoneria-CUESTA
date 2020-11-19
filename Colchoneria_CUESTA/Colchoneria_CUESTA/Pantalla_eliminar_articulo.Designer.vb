@@ -22,10 +22,12 @@ Partial Class Pantalla_eliminar_articulo
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ComboBox_eliminar = New System.Windows.Forms.ComboBox()
         Me.Button_eliminar = New System.Windows.Forms.Button()
         Me.Button_cancelar = New System.Windows.Forms.Button()
+        Me.TimerHoraReal = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
         'Label1
@@ -63,6 +65,11 @@ Partial Class Pantalla_eliminar_articulo
         Me.Button_cancelar.Text = "Cancelar"
         Me.Button_cancelar.UseVisualStyleBackColor = True
         '
+        'TimerHoraReal
+        '
+        Me.TimerHoraReal.Enabled = True
+        Me.TimerHoraReal.Interval = 1000
+        '
         'Pantalla_eliminar_articulo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -83,4 +90,5 @@ Partial Class Pantalla_eliminar_articulo
     Friend WithEvents ComboBox_eliminar As ComboBox
     Friend WithEvents Button_eliminar As Button
     Friend WithEvents Button_cancelar As Button
+    Friend WithEvents TimerHoraReal As Timer
 End Class

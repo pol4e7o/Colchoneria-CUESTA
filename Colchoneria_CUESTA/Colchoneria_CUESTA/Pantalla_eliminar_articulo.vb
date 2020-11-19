@@ -16,4 +16,9 @@
         Pantalla_admin_articulos.Show()
         Me.Hide()
     End Sub
+
+    'Programamos el botón eliminar
+    Private Sub Button_eliminar_Click(sender As Object, e As EventArgs) Handles Button_eliminar.Click
+        'Elimina articulo del fichero
+    End Sub
 End Class
