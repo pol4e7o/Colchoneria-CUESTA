@@ -28,7 +28,7 @@
     Private Sub CerrarCajaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarCajaToolStripMenuItem.Click
 
         'Se le indica al usuario que tiene que identificarse primero
-        MsgBox("Para poder realizar el cierre de caja primero tiene que indentificarse.", 0 + MsgBoxStyle.Information, "Cierre de caja")
+        MsgBox("Para poder realizar el cierre de caja primero tiene que identificarse.", 0 + MsgBoxStyle.Information, "Cierre de caja")
 
 
     End Sub
