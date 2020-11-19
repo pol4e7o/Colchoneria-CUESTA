@@ -103,10 +103,34 @@
     <Compile Include="Form_basico.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Pantalla_admin_articulos.Designer.vb">
+      <DependentUpon>Pantalla_admin_articulos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pantalla_admin_articulos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantalla_aniadir_articulo.Designer.vb">
+      <DependentUpon>Pantalla_aniadir_articulo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pantalla_aniadir_articulo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Pantalla_de_inicio.Designer.vb">
       <DependentUpon>Pantalla_de_inicio.vb</DependentUpon>
     </Compile>
     <Compile Include="Pantalla_de_inicio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantalla_eliminar_articulo.Designer.vb">
+      <DependentUpon>Pantalla_eliminar_articulo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pantalla_eliminar_articulo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantalla_modificar_articulos.Designer.vb">
+      <DependentUpon>Pantalla_modificar_articulos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pantalla_modificar_articulos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Pantalla_principal.vb">
@@ -131,6 +155,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Subpantalla_modificar_articulo.Designer.vb">
+      <DependentUpon>Subpantalla_modificar_articulo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Subpantalla_modificar_articulo.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Gestión_de_empleados.resx">
@@ -142,8 +172,20 @@
     <EmbeddedResource Include="Form_basico.resx">
       <DependentUpon>Form_basico.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pantalla_admin_articulos.resx">
+      <DependentUpon>Pantalla_admin_articulos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantalla_aniadir_articulo.resx">
+      <DependentUpon>Pantalla_aniadir_articulo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pantalla_de_inicio.resx">
       <DependentUpon>Pantalla_de_inicio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantalla_eliminar_articulo.resx">
+      <DependentUpon>Pantalla_eliminar_articulo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantalla_modificar_articulos.resx">
+      <DependentUpon>Pantalla_modificar_articulos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantalla_principal.resx">
       <DependentUpon>Pantalla_principal.vb</DependentUpon>
