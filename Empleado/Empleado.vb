@@ -24,9 +24,22 @@
     'Esta variable indica si el empleado tiene permisos de administrador
     Private esAdministrador As Boolean
 
+    'Creamos un constructor vacio
+    Public Sub New()
+
+    End Sub
 
     'Creamos un constructor para poder instanciar la clase Empleado con los datos deseados
-    Public Sub New()
+    Public Sub New(nombre As String, apellidos As String, direccion As String, codigoPostal As String,
+                                telefono As String, nombreUsuario As String, contrasenia As Integer, esAdmin As Boolean)
+        Me.nombreEmpleado = nombre
+        Me.apellidos = apellidos
+        Me.direccionEmpleado = direccion
+        Me.codigoPostalDireccion = codigoPostal
+        Me.telefono = telefono
+        Me.nombreUsuario = nombreUsuario
+        Me.contraseniaEmpleado = contrasenia
+        Me.esAdministrador = esAdmin
 
     End Sub
 
@@ -99,32 +112,4 @@
         esAdministrador = admin
     End Sub
 
-
-    'Una posibilidad de optimizar el codigo
-    'Public Property nombreEmpleado As String
-    '    Get
-    '        Return nombreEmpleado
-    '    End Get
-    '    Set(ByVal value As String)
-    '        nombreEmpleado = value
-    '    End Set
-    'End Property
-
-    'Public Property contraseniaEmpleado As Integer
-    '    Get
-    '        Return contraseniaEmpleado
-    '    End Get
-    '    Set(ByVal value As Integer)
-    '        contraseniaEmpleado = value
-    '    End Set
-    'End Property
-
-    'Public Property administradorEmpleado As Integer
-    '    Get
-    '        Return administradorEmpleado
-    '    End Get
-    '    Set(ByVal value As Integer)
-    '        administradorEmpleado = value
-    '    End Set
-    'End Property
 End Class
