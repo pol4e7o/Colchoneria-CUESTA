@@ -47,9 +47,10 @@ Partial Class Form_basico
         Me.Panel1.Controls.Add(Me.label_ayuda)
         Me.Panel1.Controls.Add(Me.label_fecha)
         Me.Panel1.Controls.Add(Me.label_hora)
-        Me.Panel1.Location = New System.Drawing.Point(0, 408)
+        Me.Panel1.Location = New System.Drawing.Point(0, 502)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(800, 42)
+        Me.Panel1.Size = New System.Drawing.Size(1065, 51)
         Me.Panel1.TabIndex = 6
         '
         'label_ayuda
@@ -60,9 +61,10 @@ Partial Class Form_basico
         Me.label_ayuda.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.label_ayuda.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.label_ayuda.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.label_ayuda.Location = New System.Drawing.Point(10, 9)
+        Me.label_ayuda.Location = New System.Drawing.Point(13, 11)
+        Me.label_ayuda.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label_ayuda.Name = "label_ayuda"
-        Me.label_ayuda.Size = New System.Drawing.Size(88, 22)
+        Me.label_ayuda.Size = New System.Drawing.Size(111, 27)
         Me.label_ayuda.TabIndex = 1
         Me.label_ayuda.Text = "F1 - Ayuda"
         Me.label_ayuda.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -74,9 +76,10 @@ Partial Class Form_basico
         Me.label_fecha.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.label_fecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.label_fecha.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.label_fecha.Location = New System.Drawing.Point(455, 9)
+        Me.label_fecha.Location = New System.Drawing.Point(607, 11)
+        Me.label_fecha.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label_fecha.Name = "label_fecha"
-        Me.label_fecha.Size = New System.Drawing.Size(64, 22)
+        Me.label_fecha.Size = New System.Drawing.Size(80, 27)
         Me.label_fecha.TabIndex = 2
         Me.label_fecha.Text = "Fecha: "
         '
@@ -87,18 +90,21 @@ Partial Class Form_basico
         Me.label_hora.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.label_hora.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.label_hora.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.label_hora.Location = New System.Drawing.Point(646, 9)
+        Me.label_hora.Location = New System.Drawing.Point(861, 11)
+        Me.label_hora.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label_hora.Name = "label_hora"
-        Me.label_hora.Size = New System.Drawing.Size(54, 22)
+        Me.label_hora.Size = New System.Drawing.Size(67, 27)
         Me.label_hora.TabIndex = 3
         Me.label_hora.Text = "Hora: "
         '
         'MenuStrip1
         '
+        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InicioToolStripMenuItem, Me.VentanaToolStripMenuItem, Me.AcercaDeToolStripMenuItem, Me.AyudaToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(800, 24)
+        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1067, 28)
         Me.MenuStrip1.TabIndex = 7
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -106,58 +112,59 @@ Partial Class Form_basico
         '
         Me.InicioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CerrarCajaToolStripMenuItem, Me.ToolStripSeparator1, Me.VolverToolStripMenuItem, Me.SalirToolStripMenuItem})
         Me.InicioToolStripMenuItem.Name = "InicioToolStripMenuItem"
-        Me.InicioToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
+        Me.InicioToolStripMenuItem.Size = New System.Drawing.Size(57, 24)
         Me.InicioToolStripMenuItem.Text = "Inicio"
         '
         'CerrarCajaToolStripMenuItem
         '
         Me.CerrarCajaToolStripMenuItem.Name = "CerrarCajaToolStripMenuItem"
-        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(130, 22)
+        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(155, 26)
         Me.CerrarCajaToolStripMenuItem.Text = "Cerrar caja"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(127, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(152, 6)
         '
         'VolverToolStripMenuItem
         '
         Me.VolverToolStripMenuItem.Name = "VolverToolStripMenuItem"
-        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(130, 22)
+        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(155, 26)
         Me.VolverToolStripMenuItem.Text = "Volver"
         '
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(130, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(155, 26)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'VentanaToolStripMenuItem
         '
         Me.VentanaToolStripMenuItem.Name = "VentanaToolStripMenuItem"
-        Me.VentanaToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
-        Me.VentanaToolStripMenuItem.Text = "Ventana"
+        Me.VentanaToolStripMenuItem.Size = New System.Drawing.Size(58, 24)
+        Me.VentanaToolStripMenuItem.Text = "Venta"
         '
         'AcercaDeToolStripMenuItem
         '
         Me.AcercaDeToolStripMenuItem.Name = "AcercaDeToolStripMenuItem"
-        Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(80, 20)
+        Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(96, 24)
         Me.AcercaDeToolStripMenuItem.Text = "Acerca de..."
         '
         'AyudaToolStripMenuItem
         '
         Me.AyudaToolStripMenuItem.Name = "AyudaToolStripMenuItem"
-        Me.AyudaToolStripMenuItem.Size = New System.Drawing.Size(53, 20)
+        Me.AyudaToolStripMenuItem.Size = New System.Drawing.Size(63, 24)
         Me.AyudaToolStripMenuItem.Text = "Ayuda"
         '
         'Form_basico
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(1067, 554)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "Form_basico"
         Me.Text = "Form"
         Me.Panel1.ResumeLayout(False)
