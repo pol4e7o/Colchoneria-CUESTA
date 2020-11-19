@@ -1,59 +1,90 @@
 ﻿Public Class Articulo
-    'Variables de cada atributo
+    'Nombre de cada artículo
     Private nombreArticulo As String
+    'Descripción de cada artículo
     Private descripcionArticulo As String
+    'Categoria de cada artículo
     Private categoriaArticulo As String
+    'Tamaño del artículo
     Private tamanioArticulo As ArrayList
+    'Precio del artículo
     Private precioArticulo As ArrayList
-    Private categoriasArticulo As ArrayList
+    'Posibles categorias del artículo
+    Public categoriasArticulo As ArrayList
+
+    'Creamos un constructor para la clase artículo.
+    'Este constructor crea los objetos de artículo con el ArrayList de categorias lleno de las
+    'posibles categorias que todo artículo va a poder tener, ya que van a ser un listado que no va a variar.
+    'Para crear un Articulo debemos introducir el nombre, la descripción, la categoria, un arraylist con todos los posibles precios,
+    'otro ArrayList con todos los posibles tamaños y por último el ArrayList de categorías lleno de las posibles categorías.
+    Public Sub New(nombre As String, desc As String, cat As String, tamanios As ArrayList, precios As ArrayList)
+        Me.nombreArticulo = nombre
+        Me.descripcionArticulo = desc
+        Me.categoriaArticulo = cat
+        Me.tamanioArticulo = tamanios
+        Me.precioArticulo = precios
+        'Llenado del ArrayList categoriasArticulo
+        Me.categoriasArticulo.Add("Base")
+        Me.categoriasArticulo.Add("Somier")
+        Me.categoriasArticulo.Add("Canape")
+        Me.categoriasArticulo.Add("Colchon")
+    End Sub
+
+    'Creamos otro constructor pero vacio, solo con la lista de posibles categorias llena
+    Public Sub New()
+        Me.categoriasArticulo.Add("Base")
+        Me.categoriasArticulo.Add("Somier")
+        Me.categoriasArticulo.Add("Canape")
+        Me.categoriasArticulo.Add("Colchon")
+    End Sub
 
     'Funciones getters para obtener los valores del objeto
-    Function getnombreArticulo() As String
+    Function getNombreArticulo() As String
         Return nombreArticulo
     End Function
 
-    Function getdescripcionArticulo() As String
+    Function getDescripcionArticulo() As String
         Return descripcionArticulo
     End Function
 
-    Function getcategoriaArticulo() As String
+    Function getCategoriaArticulo() As String
         Return categoriaArticulo
     End Function
 
-    Function gettamanioArticulo() As ArrayList
+    Function getTamanioArticulo() As ArrayList
         Return tamanioArticulo
     End Function
 
-    Function getprecioArticulo() As ArrayList
+    Function getPrecioArticulo() As ArrayList
         Return precioArticulo
     End Function
 
-    Function getcategoriasArticulo() As ArrayList
+    Function getCategoriasArticulo() As ArrayList
         Return categoriasArticulo
     End Function
 
     'Funciones setter para modificar el valor de las variables del objeto
-    Function setnombreArticulo(nombre As String) As String
+    Function setNombreArticulo(nombre As String) As String
         nombreArticulo = nombre
     End Function
 
-    Function setdescripcionArticulo(descripcion As String) As String
+    Function setDescripcionArticulo(descripcion As String) As String
         descripcionArticulo = descripcion
     End Function
 
-    Function setcategoriaArticulo(categoria As String) As String
+    Function setCategoriaArticulo(categoria As String) As String
         categoriaArticulo = categoria
     End Function
 
-    Function settamanioArticulo(tamanio As ArrayList) As ArrayList
+    Function setTamanioArticulo(tamanio As ArrayList) As ArrayList
         tamanioArticulo = tamanio
     End Function
 
-    Function getprecioArticulo(precio As ArrayList) As ArrayList
+    Function getPrecioArticulo(precio As ArrayList) As ArrayList
         precioArticulo = precio
     End Function
 
-    Function setcategoriasArticulo(categorias As ArrayList) As ArrayList
+    Function setCategoriasArticulo(categorias As ArrayList) As ArrayList
         categoriasArticulo = categorias
     End Function
 
