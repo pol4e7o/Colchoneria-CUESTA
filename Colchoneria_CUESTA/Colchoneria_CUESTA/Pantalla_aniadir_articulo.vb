@@ -3,6 +3,12 @@
         'Colocamos el foco sobre el primer comboBox
         TextBox_nombre.Focus()
 
+        'Se indica la fecha actual
+        label_fecha.Text = "Fecha: " & DateString
+
+        'Se indica la hora actual
+        label_hora.Text = "Hora: " & TimeString
+
         'Si no hay nada seleccionado en precio y tamaño no puede pulsarse
         If (ListBox_precios.SelectedItem = 0 & TextBox_precio.Text.CompareTo("")) Then
             Button_aniadir.Enabled = False
@@ -45,7 +51,7 @@
 
     'NOMBRE VALIDADO
     Private Sub TextBox_nombre_TextChanged(sender As Object, e As EventArgs) Handles TextBox_nombre.TextChanged
-        If (validarNombres(TextBox_nombre.Text) = False) Then
+        If (validacion.validarNombres(TextBox_nombre.Text) = False) Then
             MsgBox("El nombre solo puede contener caracteres.")
         End If
     End Sub
@@ -60,8 +66,15 @@
         Dim num1, num2 As Integer
         num1 = Integer.Parse(TextBox_precio.Text)
         num2 = Integer.Parse(TextBox_precio.Text)
-        If (esNumero(num1) = False Or numeroMayorACero(num2) = False) Then
+        If (validacion.esNumero(num1) = False Or validacion.numeroMayorACero(num2) = False) Then
             MsgBox("En el precio solo pueden introducirse números")
         End If
+    End Sub
+
+    Private Sub TimerHoraReal_Tick(sender As Object, e As EventArgs) Handles TimerHoraReal.Tick
+
+        'Se indica la hora actual
+        label_hora.Text = "Hora: " & TimeString
+
     End Sub
 End Class

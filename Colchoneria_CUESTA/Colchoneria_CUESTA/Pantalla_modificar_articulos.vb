@@ -4,6 +4,12 @@
         'Colocamos el foco sobre el comboBox que nos interesa
         ComboBox_modificar.Focus()
 
+        'Se indica la fecha actual
+        label_fecha.Text = "Fecha: " & DateString
+
+        'Se indica la hora actual
+        label_hora.Text = "Hora: " & TimeString
+
         'Comprobar si se puede pulsar el botón modificar
         If (ComboBox_modificar.SelectedItem = 0) Then
             Button_modificar.Enabled = False
@@ -22,5 +28,12 @@
     Private Sub Button_cancelar_Click(sender As Object, e As EventArgs) Handles Button_cancelar.Click
         Pantalla_admin_articulos.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub TimerHoraReal_Tick(sender As Object, e As EventArgs) Handles TimerHoraReal.Tick
+
+        'Se indica la hora actual
+        label_hora.Text = "Hora: " & TimeString
+
     End Sub
 End Class
