@@ -60,7 +60,7 @@ Partial Class Pantalla_de_inicio
         Me.Panel1.Controls.Add(Me.label_hora)
         Me.Panel1.Location = New System.Drawing.Point(0, 410)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(800, 42)
+        Me.Panel1.Size = New System.Drawing.Size(744, 42)
         Me.Panel1.TabIndex = 5
         '
         'label_ayuda
@@ -85,7 +85,7 @@ Partial Class Pantalla_de_inicio
         Me.label_fecha.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.label_fecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.label_fecha.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.label_fecha.Location = New System.Drawing.Point(455, 9)
+        Me.label_fecha.Location = New System.Drawing.Point(399, 9)
         Me.label_fecha.Name = "label_fecha"
         Me.label_fecha.Size = New System.Drawing.Size(64, 22)
         Me.label_fecha.TabIndex = 2
@@ -98,7 +98,7 @@ Partial Class Pantalla_de_inicio
         Me.label_hora.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.label_hora.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.label_hora.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.label_hora.Location = New System.Drawing.Point(646, 9)
+        Me.label_hora.Location = New System.Drawing.Point(590, 9)
         Me.label_hora.Name = "label_hora"
         Me.label_hora.Size = New System.Drawing.Size(54, 22)
         Me.label_hora.TabIndex = 3
@@ -114,7 +114,7 @@ Partial Class Pantalla_de_inicio
         Me.Menu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InicioToolStripMenuItem, Me.VentaToolStripMenuItem, Me.AcercaDeToolStripMenuItem, Me.AyudaToolStripMenuItem})
         Me.Menu.Location = New System.Drawing.Point(0, 0)
         Me.Menu.Name = "Menu"
-        Me.Menu.Size = New System.Drawing.Size(800, 24)
+        Me.Menu.Size = New System.Drawing.Size(744, 24)
         Me.Menu.TabIndex = 6
         Me.Menu.Text = "MenuStrip1"
         '
@@ -129,26 +129,26 @@ Partial Class Pantalla_de_inicio
         '
         Me.CerrarCajaToolStripMenuItem.Name = "CerrarCajaToolStripMenuItem"
         Me.CerrarCajaToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
-        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.CerrarCajaToolStripMenuItem.Text = "Cerrar caja"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(165, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(177, 6)
         '
         'VolverToolStripMenuItem
         '
         Me.VolverToolStripMenuItem.Name = "VolverToolStripMenuItem"
         Me.VolverToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.VolverToolStripMenuItem.Text = "Volver"
         '
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
         Me.SalirToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'VentaToolStripMenuItem
@@ -201,7 +201,7 @@ Partial Class Pantalla_de_inicio
         '
         Me.textBox_usuario.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.textBox_usuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.textBox_usuario.Location = New System.Drawing.Point(364, 99)
+        Me.textBox_usuario.Location = New System.Drawing.Point(394, 96)
         Me.textBox_usuario.MaxLength = 10
         Me.textBox_usuario.Name = "textBox_usuario"
         Me.textBox_usuario.Size = New System.Drawing.Size(143, 35)
@@ -212,7 +212,7 @@ Partial Class Pantalla_de_inicio
         Me.label_usuario.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_usuario.AutoSize = True
         Me.label_usuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_usuario.Location = New System.Drawing.Point(176, 102)
+        Me.label_usuario.Location = New System.Drawing.Point(206, 99)
         Me.label_usuario.Name = "label_usuario"
         Me.label_usuario.Size = New System.Drawing.Size(108, 29)
         Me.label_usuario.TabIndex = 8
@@ -223,7 +223,7 @@ Partial Class Pantalla_de_inicio
         Me.label_contrasenia.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_contrasenia.AutoSize = True
         Me.label_contrasenia.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_contrasenia.Location = New System.Drawing.Point(176, 171)
+        Me.label_contrasenia.Location = New System.Drawing.Point(206, 168)
         Me.label_contrasenia.Name = "label_contrasenia"
         Me.label_contrasenia.Size = New System.Drawing.Size(148, 29)
         Me.label_contrasenia.TabIndex = 10
@@ -233,7 +233,7 @@ Partial Class Pantalla_de_inicio
         '
         Me.textBox_contrasenia.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.textBox_contrasenia.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.textBox_contrasenia.Location = New System.Drawing.Point(364, 168)
+        Me.textBox_contrasenia.Location = New System.Drawing.Point(394, 165)
         Me.textBox_contrasenia.Margin = New System.Windows.Forms.Padding(12, 3, 3, 3)
         Me.textBox_contrasenia.MaxLength = 4
         Me.textBox_contrasenia.Name = "textBox_contrasenia"
@@ -245,7 +245,7 @@ Partial Class Pantalla_de_inicio
         '
         Me.boton_entrar.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.boton_entrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.boton_entrar.Location = New System.Drawing.Point(249, 254)
+        Me.boton_entrar.Location = New System.Drawing.Point(279, 251)
         Me.boton_entrar.Name = "boton_entrar"
         Me.boton_entrar.Size = New System.Drawing.Size(186, 46)
         Me.boton_entrar.TabIndex = 11
@@ -256,7 +256,7 @@ Partial Class Pantalla_de_inicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(744, 450)
         Me.Controls.Add(Me.boton_entrar)
         Me.Controls.Add(Me.label_contrasenia)
         Me.Controls.Add(Me.textBox_contrasenia)
