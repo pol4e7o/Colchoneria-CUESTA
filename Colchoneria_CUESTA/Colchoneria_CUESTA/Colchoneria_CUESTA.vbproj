@@ -73,10 +73,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ElementosComunes.vb" />
-    <Compile Include="Formulario_Basico.Designer.vb">
-      <DependentUpon>Formulario_Basico.vb</DependentUpon>
+    <Compile Include="Pantalla_admin.Designer.vb">
+      <DependentUpon>Pantalla_admin.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formulario_Basico.vb">
+    <Compile Include="Pantalla_admin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_basico.Designer.vb">
+      <DependentUpon>Form_basico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_basico.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Pantalla_de_inicio.Designer.vb">
@@ -109,8 +115,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Formulario_Basico.resx">
-      <DependentUpon>Formulario_Basico.vb</DependentUpon>
+    <EmbeddedResource Include="Pantalla_admin.resx">
+      <DependentUpon>Pantalla_admin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_basico.resx">
+      <DependentUpon>Form_basico.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantalla_de_inicio.resx">
       <DependentUpon>Pantalla_de_inicio.vb</DependentUpon>

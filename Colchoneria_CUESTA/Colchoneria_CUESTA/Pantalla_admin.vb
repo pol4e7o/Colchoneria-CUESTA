@@ -1,4 +1,4 @@
-﻿Public Class Formulario_Basico
+﻿Public Class Pantalla_admin
     Private Sub Formulario_Basico_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         'Se indica la fecha actual
