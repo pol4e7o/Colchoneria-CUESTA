@@ -3,4 +3,9 @@
         'Colocamos el foco sobre el primer comboBox
         TextBox_nombre.Focus()
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button_cancelar.Click
+        Pantalla_admin.Show()
+        Me.Hide()
+    End Sub
 End Class
