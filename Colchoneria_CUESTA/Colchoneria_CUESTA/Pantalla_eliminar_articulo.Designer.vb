@@ -48,14 +48,16 @@ Partial Class Pantalla_eliminar_articulo
         Me.ColchoneriaCUESTAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManualDeUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         Me.MenuStrip.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(73, 131)
+        Me.Label1.Location = New System.Drawing.Point(13, 13)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(85, 13)
         Me.Label1.TabIndex = 0
@@ -64,14 +66,14 @@ Partial Class Pantalla_eliminar_articulo
         'ComboBox_eliminar
         '
         Me.ComboBox_eliminar.FormattingEnabled = True
-        Me.ComboBox_eliminar.Location = New System.Drawing.Point(76, 162)
+        Me.ComboBox_eliminar.Location = New System.Drawing.Point(16, 45)
         Me.ComboBox_eliminar.Name = "ComboBox_eliminar"
         Me.ComboBox_eliminar.Size = New System.Drawing.Size(121, 21)
         Me.ComboBox_eliminar.TabIndex = 1
         '
         'Button_eliminar
         '
-        Me.Button_eliminar.Location = New System.Drawing.Point(228, 162)
+        Me.Button_eliminar.Location = New System.Drawing.Point(176, 45)
         Me.Button_eliminar.Name = "Button_eliminar"
         Me.Button_eliminar.Size = New System.Drawing.Size(75, 23)
         Me.Button_eliminar.TabIndex = 2
@@ -80,7 +82,7 @@ Partial Class Pantalla_eliminar_articulo
         '
         'Button_cancelar
         '
-        Me.Button_cancelar.Location = New System.Drawing.Point(702, 288)
+        Me.Button_cancelar.Location = New System.Drawing.Point(270, 269)
         Me.Button_cancelar.Name = "Button_cancelar"
         Me.Button_cancelar.Size = New System.Drawing.Size(75, 23)
         Me.Button_cancelar.TabIndex = 3
@@ -214,7 +216,7 @@ Partial Class Pantalla_eliminar_articulo
         Me.GestionDeEmpleadosToolStripMenuItem.Name = "GestionDeEmpleadosToolStripMenuItem"
         Me.GestionDeEmpleadosToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.E), System.Windows.Forms.Keys)
-        Me.GestionDeEmpleadosToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
+        Me.GestionDeEmpleadosToolStripMenuItem.Size = New System.Drawing.Size(277, 22)
         Me.GestionDeEmpleadosToolStripMenuItem.Text = "Gestion de empleados"
         '
         'GestionDeArticulosToolStripMenuItem
@@ -222,7 +224,7 @@ Partial Class Pantalla_eliminar_articulo
         Me.GestionDeArticulosToolStripMenuItem.Name = "GestionDeArticulosToolStripMenuItem"
         Me.GestionDeArticulosToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.A), System.Windows.Forms.Keys)
-        Me.GestionDeArticulosToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
+        Me.GestionDeArticulosToolStripMenuItem.Size = New System.Drawing.Size(277, 22)
         Me.GestionDeArticulosToolStripMenuItem.Text = "Gestion de articulos"
         '
         'GestionDeVentasToolStripMenuItem
@@ -230,7 +232,7 @@ Partial Class Pantalla_eliminar_articulo
         Me.GestionDeVentasToolStripMenuItem.Name = "GestionDeVentasToolStripMenuItem"
         Me.GestionDeVentasToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.GestionDeVentasToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
+        Me.GestionDeVentasToolStripMenuItem.Size = New System.Drawing.Size(277, 22)
         Me.GestionDeVentasToolStripMenuItem.Text = "Gestion de ventas"
         '
         'AcercaDeToolStripMenuItem
@@ -261,23 +263,33 @@ Partial Class Pantalla_eliminar_articulo
         Me.ManualDeUsuarioToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
         Me.ManualDeUsuarioToolStripMenuItem.Text = "Manual de usuario"
         '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.Label1)
+        Me.Panel2.Controls.Add(Me.ComboBox_eliminar)
+        Me.Panel2.Controls.Add(Me.Button_eliminar)
+        Me.Panel2.Controls.Add(Me.Button_cancelar)
+        Me.Panel2.Location = New System.Drawing.Point(234, 63)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(358, 306)
+        Me.Panel2.TabIndex = 30
+        '
         'Pantalla_eliminar_articulo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(883, 450)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.MenuStrip)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Button_cancelar)
-        Me.Controls.Add(Me.Button_eliminar)
-        Me.Controls.Add(Me.ComboBox_eliminar)
-        Me.Controls.Add(Me.Label1)
         Me.Name = "Pantalla_eliminar_articulo"
         Me.Text = "Pantalla_eliminar_articulo"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.MenuStrip.ResumeLayout(False)
         Me.MenuStrip.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -308,4 +320,5 @@ Partial Class Pantalla_eliminar_articulo
     Friend WithEvents ColchoneriaCUESTAToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AyudaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ManualDeUsuarioToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Panel2 As Panel
 End Class

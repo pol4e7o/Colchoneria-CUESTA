@@ -74,16 +74,16 @@
 
     'GESTIÓN ARTÍCULOS
     Private Sub GestiónDeArtículosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestiónDeArtículosToolStripMenuItem.Click
-        'Al encontrarnos en la ventana mencionada, saltará un mensaje de error
-        MsgBox("Ya estas en esa ventana.")
+
     End Sub
 
     'GESTIÓN VENTAS
     Private Sub GestiónDeVentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestiónDeVentasToolStripMenuItem.Click
         Pantalla_admin.Show()
-        Me.Hide()
+        Me.Close()
     End Sub
 
+    'LOAD
     Private Sub Pantalla_admin_articulos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Se indica la fecha actual
         label_fecha.Text = "Fecha: " & DateString
@@ -91,18 +91,13 @@
         'Se indica la hora actual
         label_hora.Text = "Hora: " & TimeString
 
-        'Este boton no es disponible porque no hay mas pantallas
-        'antes de esta
-        VolverToolStripMenuItem.Enabled = False
-
-        'Cuando se carga por primera vez el formulario se asigna a la variable venta 0
-        'Teniendo en cuenta que no se puede salir de la aplicacion sin cerrar caja antes
-        ElementosComunes.venta = 0
-
         'Cuando se carga la aplicacion cajaCerrada será true
         'Cuando se haga una venta este valor pasará a false
         ' y esta que no se haga el cierre de caja no se podra salir de la aplicacion
         ElementosComunes.cajaCerrada = True
+
+        'Se deabilita la opcion gestion de artículos porque es este mismo formulario
+        GestiónDeArtículosToolStripMenuItem.Enabled = False
 
     End Sub
 
@@ -113,10 +108,26 @@
 
     End Sub
 
+    'BOTONES------------------------------------------------------------------------------------------------------------
     Private Sub Button_aniadir_Click(sender As Object, e As EventArgs) Handles Button_aniadir.Click
-
+        'Se llama al formulario de añadir articulo
+        Pantalla_aniadir_articulo.Show()
+        Me.Hide()
     End Sub
 
+    Private Sub Button_modificar_Click(sender As Object, e As EventArgs) Handles Button_modificar.Click
+        'Se llama al formulario de modificar articulo
+        Pantalla_modificar_articulos.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub Button_eliminar_Click(sender As Object, e As EventArgs) Handles Button_eliminar.Click
+        'Se llama al formulario de eliminar articulo
+        Pantalla_eliminar_articulo.Show()
+        Me.Hide()
+    End Sub
+
+    'HORA
     Private Sub TimerHoraReal_Tick_1(sender As Object, e As EventArgs) Handles TimerHoraReal.Tick
 
         'Por cada segundo que pasa se cambia el reloj
@@ -124,14 +135,5 @@
 
     End Sub
 
-    Private Sub VisualizarVentaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VisualizarVentaToolStripMenuItem.Click
 
-        'Se visualiza la venta actual del dia mediante un message box
-        MsgBox("La venta actual del dia " & DateString & " a la hora " & TimeString & " es: 
-
-                    " & Math.Round(ElementosComunes.venta, 2) & "€", 0 + MsgBoxStyle.Information, "Visualizar venta")
-
-
-
-    End Sub
 End Class
