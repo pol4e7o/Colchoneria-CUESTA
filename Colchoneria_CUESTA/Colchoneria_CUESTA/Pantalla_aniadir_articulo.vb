@@ -20,14 +20,20 @@
 
     'VOLVER
     Private Sub VolverToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VolverToolStripMenuItem.Click
-        Select Case MsgBox("¿Está seguro de que desea salir?", MsgBoxStyle.YesNo, "caption")
-            Case MsgBoxResult.Yes
-                Pantalla_admin.Show()
-                Me.Close()
-            Case MsgBoxResult.No
-                MessageBox.Show("Volverá a la pantalla")
-        End Select
 
+        'La repsuesta a la pregunta si desea volver a la gestion de articulos
+        Dim opcion As Integer
+
+        opcion = MsgBox("Esta seguro que desea volver a gestion de articulos sin terminar la operacion?", 0 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Volver")
+
+        If opcion = MsgBoxResult.Yes Then
+
+            'Se abre la pantalla de venta y se cierra la de gestion de empleados
+            Pantalla_admin_articulos.Show()
+
+            Me.Close()
+
+        End If
 
     End Sub
 
@@ -184,13 +190,6 @@
         'Cuando se haga una venta este valor pasará a false
         ' y esta que no se haga el cierre de caja no se podra salir de la aplicacion
         ElementosComunes.cajaCerrada = True
-
-    End Sub
-
-    Private Sub TimerHoraReal_Tick(sender As Object, e As EventArgs) Handles TimerHoraReal.Tick
-
-        'Por cada segundo que pasa se cambia el reloj
-        label_hora.Text = "Hora: " & TimeString
 
     End Sub
 
