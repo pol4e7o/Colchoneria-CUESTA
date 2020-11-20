@@ -376,4 +376,8 @@
     Private Sub ListBox_tamanioprecios_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox_tamaniosprecios.SelectedIndexChanged
         activarBotonEliminar()
     End Sub
+
+    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+
+    End Sub
 End Class

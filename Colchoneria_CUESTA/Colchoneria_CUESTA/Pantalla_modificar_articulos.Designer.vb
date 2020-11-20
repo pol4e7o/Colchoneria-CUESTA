@@ -48,6 +48,7 @@ Partial Class Pantalla_modificar_articulos
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.TextBox_tamanio = New System.Windows.Forms.TextBox()
         Me.TextBox_precio = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Button_aniadir = New System.Windows.Forms.Button()
@@ -67,7 +68,6 @@ Partial Class Pantalla_modificar_articulos
         Me.Button_modificar = New System.Windows.Forms.Button()
         Me.ComboBox_modificar = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox_tamanio = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.MenuStrip.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -302,6 +302,13 @@ Partial Class Pantalla_modificar_articulos
         Me.Label8.TabIndex = 26
         Me.Label8.Text = "Introducir tamaño y precio "
         '
+        'TextBox_tamanio
+        '
+        Me.TextBox_tamanio.Location = New System.Drawing.Point(129, 83)
+        Me.TextBox_tamanio.Name = "TextBox_tamanio"
+        Me.TextBox_tamanio.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox_tamanio.TabIndex = 25
+        '
         'TextBox_precio
         '
         Me.TextBox_precio.Location = New System.Drawing.Point(126, 48)
@@ -470,13 +477,6 @@ Partial Class Pantalla_modificar_articulos
         Me.Label1.Size = New System.Drawing.Size(52, 13)
         Me.Label1.TabIndex = 32
         Me.Label1.Text = "Artículos:"
-        '
-        'TextBox_tamanio
-        '
-        Me.TextBox_tamanio.Location = New System.Drawing.Point(129, 83)
-        Me.TextBox_tamanio.Name = "TextBox_tamanio"
-        Me.TextBox_tamanio.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox_tamanio.TabIndex = 25
         '
         'Pantalla_modificar_articulos
         '
