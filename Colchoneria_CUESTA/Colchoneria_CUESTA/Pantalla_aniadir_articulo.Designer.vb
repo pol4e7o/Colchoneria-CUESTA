@@ -34,7 +34,7 @@ Partial Class Pantalla_aniadir_articulo
         Me.Button_aniadir = New System.Windows.Forms.Button()
         Me.TextBox_precio = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.ListBox_precios = New System.Windows.Forms.ListBox()
+        Me.ListBox_tamanios = New System.Windows.Forms.ListBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TextBox_descripcion = New System.Windows.Forms.TextBox()
@@ -87,7 +87,7 @@ Partial Class Pantalla_aniadir_articulo
         Me.Panel1.Controls.Add(Me.Button_aniadir)
         Me.Panel1.Controls.Add(Me.TextBox_precio)
         Me.Panel1.Controls.Add(Me.Label7)
-        Me.Panel1.Controls.Add(Me.ListBox_precios)
+        Me.Panel1.Controls.Add(Me.ListBox_tamanios)
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.TextBox_descripcion)
@@ -124,9 +124,9 @@ Partial Class Pantalla_aniadir_articulo
         Me.Label8.Location = New System.Drawing.Point(370, 164)
         Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(170, 13)
+        Me.Label8.Size = New System.Drawing.Size(174, 13)
         Me.Label8.TabIndex = 17
-        Me.Label8.Text = "Tamaños y precios seleccionados:"
+        Me.Label8.Text = "Tamaños y precios seleccionados*:"
         '
         'Button_eliminar
         '
@@ -180,27 +180,27 @@ Partial Class Pantalla_aniadir_articulo
         Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(29, 303)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(74, 13)
+        Me.Label7.Size = New System.Drawing.Size(70, 13)
         Me.Label7.TabIndex = 10
-        Me.Label7.Text = "Precio (en €)*:"
+        Me.Label7.Text = "Precio (en €):"
         '
-        'ListBox_precios
+        'ListBox_tamanios
         '
-        Me.ListBox_precios.FormattingEnabled = True
-        Me.ListBox_precios.Items.AddRange(New Object() {"80", "90", "105", "135", "150", "160", "180"})
-        Me.ListBox_precios.Location = New System.Drawing.Point(150, 180)
-        Me.ListBox_precios.Name = "ListBox_precios"
-        Me.ListBox_precios.Size = New System.Drawing.Size(120, 95)
-        Me.ListBox_precios.TabIndex = 8
+        Me.ListBox_tamanios.FormattingEnabled = True
+        Me.ListBox_tamanios.Items.AddRange(New Object() {"80", "90", "105", "135", "150", "160", "180"})
+        Me.ListBox_tamanios.Location = New System.Drawing.Point(150, 180)
+        Me.ListBox_tamanios.Name = "ListBox_tamanios"
+        Me.ListBox_tamanios.Size = New System.Drawing.Size(120, 95)
+        Me.ListBox_tamanios.TabIndex = 8
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(29, 180)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(93, 13)
+        Me.Label6.Size = New System.Drawing.Size(89, 13)
         Me.Label6.TabIndex = 7
-        Me.Label6.Text = "Tamaño (en CM)*:"
+        Me.Label6.Text = "Tamaño (en CM):"
         '
         'Label5
         '
@@ -449,7 +449,7 @@ Partial Class Pantalla_aniadir_articulo
     Friend WithEvents TextBox_nombre As TextBox
     Friend WithEvents TextBox_precio As TextBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents ListBox_precios As ListBox
+    Friend WithEvents ListBox_tamanios As ListBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Button_cancelar As Button
