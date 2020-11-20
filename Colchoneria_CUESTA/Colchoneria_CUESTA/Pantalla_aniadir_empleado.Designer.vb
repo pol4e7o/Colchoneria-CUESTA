@@ -37,7 +37,7 @@ Partial Class Pantalla_aniadir_empleado
         Me.textBox_codigoPostal = New System.Windows.Forms.TextBox()
         Me.textBox_direccion = New System.Windows.Forms.TextBox()
         Me.textBox_nombre = New System.Windows.Forms.TextBox()
-        Me.boton_volver = New System.Windows.Forms.Button()
+        Me.boton_cancelar = New System.Windows.Forms.Button()
         Me.boton_guardar = New System.Windows.Forms.Button()
         Me.label_contrasenia2 = New System.Windows.Forms.Label()
         Me.label_rol = New System.Windows.Forms.Label()
@@ -48,7 +48,7 @@ Partial Class Pantalla_aniadir_empleado
         Me.label_nombre = New System.Windows.Forms.Label()
         Me.label_direccion = New System.Windows.Forms.Label()
         Me.label_apellidos = New System.Windows.Forms.Label()
-        Me.Menu = New System.Windows.Forms.MenuStrip()
+        Me.MenuStrip = New System.Windows.Forms.MenuStrip()
         Me.InicioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarCajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
@@ -70,12 +70,13 @@ Partial Class Pantalla_aniadir_empleado
         Me.label_hora = New System.Windows.Forms.Label()
         Me.TimerHoraReal = New System.Windows.Forms.Timer(Me.components)
         Me.panel_elementosEmpleado.SuspendLayout()
-        Me.Menu.SuspendLayout()
+        Me.MenuStrip.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'label_elijaOpcion
         '
+        Me.label_elijaOpcion.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_elijaOpcion.AutoSize = True
         Me.label_elijaOpcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label_elijaOpcion.Location = New System.Drawing.Point(364, 94)
@@ -86,6 +87,7 @@ Partial Class Pantalla_aniadir_empleado
         '
         'label_Gestion_empleados
         '
+        Me.label_Gestion_empleados.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_Gestion_empleados.AutoSize = True
         Me.label_Gestion_empleados.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label_Gestion_empleados.Location = New System.Drawing.Point(328, 58)
@@ -96,6 +98,7 @@ Partial Class Pantalla_aniadir_empleado
         '
         'panel_elementosEmpleado
         '
+        Me.panel_elementosEmpleado.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.panel_elementosEmpleado.Controls.Add(Me.comboBox_roles)
         Me.panel_elementosEmpleado.Controls.Add(Me.label_contraseniaInformacion)
         Me.panel_elementosEmpleado.Controls.Add(Me.label_camposObligatorios)
@@ -107,7 +110,7 @@ Partial Class Pantalla_aniadir_empleado
         Me.panel_elementosEmpleado.Controls.Add(Me.textBox_codigoPostal)
         Me.panel_elementosEmpleado.Controls.Add(Me.textBox_direccion)
         Me.panel_elementosEmpleado.Controls.Add(Me.textBox_nombre)
-        Me.panel_elementosEmpleado.Controls.Add(Me.boton_volver)
+        Me.panel_elementosEmpleado.Controls.Add(Me.boton_cancelar)
         Me.panel_elementosEmpleado.Controls.Add(Me.boton_guardar)
         Me.panel_elementosEmpleado.Controls.Add(Me.label_contrasenia2)
         Me.panel_elementosEmpleado.Controls.Add(Me.label_rol)
@@ -173,7 +176,7 @@ Partial Class Pantalla_aniadir_empleado
         Me.textBox_apellidos.Location = New System.Drawing.Point(453, 43)
         Me.textBox_apellidos.MaxLength = 30
         Me.textBox_apellidos.Name = "textBox_apellidos"
-        Me.textBox_apellidos.Size = New System.Drawing.Size(100, 20)
+        Me.textBox_apellidos.Size = New System.Drawing.Size(159, 20)
         Me.textBox_apellidos.TabIndex = 29
         '
         'textBox_contrasenia
@@ -206,7 +209,7 @@ Partial Class Pantalla_aniadir_empleado
         Me.textBox_direccion.Location = New System.Drawing.Point(130, 79)
         Me.textBox_direccion.MaxLength = 30
         Me.textBox_direccion.Name = "textBox_direccion"
-        Me.textBox_direccion.Size = New System.Drawing.Size(220, 20)
+        Me.textBox_direccion.Size = New System.Drawing.Size(278, 20)
         Me.textBox_direccion.TabIndex = 25
         '
         'textBox_nombre
@@ -214,18 +217,18 @@ Partial Class Pantalla_aniadir_empleado
         Me.textBox_nombre.Location = New System.Drawing.Point(130, 43)
         Me.textBox_nombre.MaxLength = 25
         Me.textBox_nombre.Name = "textBox_nombre"
-        Me.textBox_nombre.Size = New System.Drawing.Size(100, 20)
+        Me.textBox_nombre.Size = New System.Drawing.Size(162, 20)
         Me.textBox_nombre.TabIndex = 24
         '
-        'boton_volver
+        'boton_cancelar
         '
-        Me.boton_volver.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.boton_volver.Location = New System.Drawing.Point(218, 255)
-        Me.boton_volver.Name = "boton_volver"
-        Me.boton_volver.Size = New System.Drawing.Size(134, 31)
-        Me.boton_volver.TabIndex = 20
-        Me.boton_volver.Text = "Volver"
-        Me.boton_volver.UseVisualStyleBackColor = True
+        Me.boton_cancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.boton_cancelar.Location = New System.Drawing.Point(218, 255)
+        Me.boton_cancelar.Name = "boton_cancelar"
+        Me.boton_cancelar.Size = New System.Drawing.Size(134, 31)
+        Me.boton_cancelar.TabIndex = 20
+        Me.boton_cancelar.Text = "Cancelar"
+        Me.boton_cancelar.UseVisualStyleBackColor = True
         '
         'boton_guardar
         '
@@ -318,14 +321,14 @@ Partial Class Pantalla_aniadir_empleado
         Me.label_apellidos.TabIndex = 16
         Me.label_apellidos.Text = "Apellido/s*: "
         '
-        'Menu
+        'MenuStrip
         '
-        Me.Menu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InicioToolStripMenuItem, Me.VentaToolStripMenuItem, Me.OpcionesToolStripMenuItem, Me.AcercaDeToolStripMenuItem, Me.AyudaToolStripMenuItem})
-        Me.Menu.Location = New System.Drawing.Point(0, 0)
-        Me.Menu.Name = "Menu"
-        Me.Menu.Size = New System.Drawing.Size(882, 24)
-        Me.Menu.TabIndex = 26
-        Me.Menu.Text = "MenuStrip1"
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InicioToolStripMenuItem, Me.VentaToolStripMenuItem, Me.OpcionesToolStripMenuItem, Me.AcercaDeToolStripMenuItem, Me.AyudaToolStripMenuItem})
+        Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip.Name = "MenuStrip"
+        Me.MenuStrip.Size = New System.Drawing.Size(882, 24)
+        Me.MenuStrip.TabIndex = 26
+        Me.MenuStrip.Text = "MenuStrip1"
         '
         'InicioToolStripMenuItem
         '
@@ -498,16 +501,17 @@ Partial Class Pantalla_aniadir_empleado
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(882, 505)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Menu)
+        Me.Controls.Add(Me.MenuStrip)
         Me.Controls.Add(Me.label_elijaOpcion)
         Me.Controls.Add(Me.label_Gestion_empleados)
         Me.Controls.Add(Me.panel_elementosEmpleado)
         Me.Name = "Pantalla_aniadir_empleado"
-        Me.Text = "Pantalla_aniadir_empleado"
+        Me.Text = "Colchoneria CUESTA - Gesion de empleados - Alta de empleado"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.panel_elementosEmpleado.ResumeLayout(False)
         Me.panel_elementosEmpleado.PerformLayout()
-        Me.Menu.ResumeLayout(False)
-        Me.Menu.PerformLayout()
+        Me.MenuStrip.ResumeLayout(False)
+        Me.MenuStrip.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
@@ -529,7 +533,7 @@ Partial Class Pantalla_aniadir_empleado
     Friend WithEvents textBox_codigoPostal As TextBox
     Friend WithEvents textBox_direccion As TextBox
     Friend WithEvents textBox_nombre As TextBox
-    Friend WithEvents boton_volver As Button
+    Friend WithEvents boton_cancelar As Button
     Friend WithEvents boton_guardar As Button
     Friend WithEvents label_contrasenia2 As Label
     Friend WithEvents label_rol As Label
@@ -540,7 +544,7 @@ Partial Class Pantalla_aniadir_empleado
     Friend WithEvents label_nombre As Label
     Friend WithEvents label_direccion As Label
     Friend WithEvents label_apellidos As Label
-    Friend WithEvents Menu As MenuStrip
+    Friend WithEvents MenuStrip As MenuStrip
     Friend WithEvents InicioToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CerrarCajaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
