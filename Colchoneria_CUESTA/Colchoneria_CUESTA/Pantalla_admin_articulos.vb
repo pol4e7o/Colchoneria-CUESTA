@@ -113,10 +113,6 @@
 
     End Sub
 
-    Private Sub Button_aniadir_Click(sender As Object, e As EventArgs) Handles Button_aniadir.Click
-
-    End Sub
-
     Private Sub TimerHoraReal_Tick_1(sender As Object, e As EventArgs) Handles TimerHoraReal.Tick
 
         'Por cada segundo que pasa se cambia el reloj
