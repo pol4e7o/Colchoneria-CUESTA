@@ -219,7 +219,7 @@ Partial Class Pantalla_admin_articulos
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(61, 49)
+        Me.Label1.Location = New System.Drawing.Point(302, 88)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(137, 13)
         Me.Label1.TabIndex = 9
@@ -228,7 +228,7 @@ Partial Class Pantalla_admin_articulos
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(64, 84)
+        Me.Label2.Location = New System.Drawing.Point(192, 120)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(361, 13)
         Me.Label2.TabIndex = 10
@@ -236,7 +236,7 @@ Partial Class Pantalla_admin_articulos
         '
         'Button_aniadir
         '
-        Me.Button_aniadir.Location = New System.Drawing.Point(67, 123)
+        Me.Button_aniadir.Location = New System.Drawing.Point(336, 156)
         Me.Button_aniadir.Name = "Button_aniadir"
         Me.Button_aniadir.Size = New System.Drawing.Size(75, 23)
         Me.Button_aniadir.TabIndex = 11
@@ -245,7 +245,7 @@ Partial Class Pantalla_admin_articulos
         '
         'Button_modificar
         '
-        Me.Button_modificar.Location = New System.Drawing.Point(67, 171)
+        Me.Button_modificar.Location = New System.Drawing.Point(336, 208)
         Me.Button_modificar.Name = "Button_modificar"
         Me.Button_modificar.Size = New System.Drawing.Size(75, 23)
         Me.Button_modificar.TabIndex = 12
@@ -254,7 +254,7 @@ Partial Class Pantalla_admin_articulos
         '
         'Button_eliminar
         '
-        Me.Button_eliminar.Location = New System.Drawing.Point(67, 223)
+        Me.Button_eliminar.Location = New System.Drawing.Point(336, 262)
         Me.Button_eliminar.Name = "Button_eliminar"
         Me.Button_eliminar.Size = New System.Drawing.Size(75, 23)
         Me.Button_eliminar.TabIndex = 13
