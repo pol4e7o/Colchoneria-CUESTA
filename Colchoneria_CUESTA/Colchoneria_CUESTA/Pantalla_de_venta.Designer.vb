@@ -857,6 +857,7 @@ Partial Class Pantalla_de_venta
         'comboBox_base
         '
         Me.comboBox_base.FormattingEnabled = True
+        Me.comboBox_base.Items.AddRange(New Object() {"1", "2"})
         Me.comboBox_base.Location = New System.Drawing.Point(33, 98)
         Me.comboBox_base.Name = "comboBox_base"
         Me.comboBox_base.Size = New System.Drawing.Size(180, 21)

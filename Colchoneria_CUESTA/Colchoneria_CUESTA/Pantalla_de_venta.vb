@@ -216,7 +216,21 @@
 
     End Sub
 
-    Private Sub ComboBox5_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboBox_canape.SelectedIndexChanged
+    Private Sub comboBox_canape_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboBox_canape.SelectedIndexChanged
+
+        'Si no hay ningun articulo elegido el panel esta desactivado
+        If comboBox_canape.SelectedIndex < 0 Then
+
+            panel_canape.Enabled = False
+
+        Else
+
+            'De lo contrario se activa
+            panel_canape.Enabled = True
+
+            'Se asignan los tamaños del articulo seleccionado 
+
+        End If
 
     End Sub
 
@@ -225,14 +239,86 @@
     Private Sub comboBox_base_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboBox_base.SelectedIndexChanged
 
         'Si no hay ningun articulo elegido el panel esta desactivado
-        If comboBox_base.SelectedIndex = -1 Then
+        If comboBox_base.SelectedIndex < 0 Then
 
-            panel_base.Visible = False
+            panel_base.Enabled = False
 
         Else
 
             'De lo contrario se activa
-            panel_base.Visible = True
+            panel_base.Enabled = True
+
+            'Se asignan los tamaños del articulo seleccionado 
+
+        End If
+
+    End Sub
+
+    Private Sub comboBox_somier_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboBox_somier.SelectedIndexChanged
+
+        'Si no hay ningun articulo elegido el panel esta desactivado
+        If comboBox_somier.SelectedIndex < 0 Then
+
+            panel_somier.Enabled = False
+
+        Else
+
+            'De lo contrario se activa
+            panel_somier.Enabled = True
+
+            'Se asignan los tamaños del articulo seleccionado 
+
+        End If
+
+    End Sub
+
+    Private Sub comboBox_colchon_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboBox_colchon.SelectedIndexChanged
+
+        'Si no hay ningun articulo elegido el panel esta desactivado
+        If comboBox_colchon.SelectedIndex < 0 Then
+
+            panel_colchon.Enabled = False
+
+        Else
+
+            'De lo contrario se activa
+            panel_colchon.Enabled = True
+
+            'Se asignan los tamaños del articulo seleccionado 
+
+        End If
+
+    End Sub
+
+    Private Sub comboBox_ofertas_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboBox_ofertas.SelectedIndexChanged
+
+        'Si no hay ningun articulo elegido el panel esta desactivado
+        If comboBox_base.SelectedIndex < 0 Then
+
+            panel_ofertas.Enabled = False
+
+        Else
+
+            'De lo contrario se activa
+            panel_ofertas.Enabled = True
+
+            'Se asignan los tamaños del articulo seleccionado 
+
+        End If
+
+    End Sub
+
+    Private Sub comboBox_otros_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboBox_otros.SelectedIndexChanged
+
+        'Si no hay ningun articulo elegido el panel esta desactivado
+        If comboBox_otros.SelectedIndex < 0 Then
+
+            panel_otros.Enabled = False
+
+        Else
+
+            'De lo contrario se activa
+            panel_otros.Enabled = True
 
             'Se asignan los tamaños del articulo seleccionado 
 
