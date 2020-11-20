@@ -411,4 +411,10 @@
 
     End Sub
 
+    Private Sub TimerHoraReal_Tick(sender As Object, e As EventArgs) Handles TimerHoraReal.Tick
+
+        'Por cada segundo que pasa se cambia el reloj
+        label_hora.Text = "Hora: " & TimeString
+
+    End Sub
 End Class
