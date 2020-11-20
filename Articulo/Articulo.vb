@@ -13,9 +13,6 @@ Public Class Articulo
     'Precio del artículo
     Private preciosTamaniosArticulo As ArrayList
 
-    'Este objeto se utiliza para validar los datos
-    Private validacion As New Validacion.Validacion()
-
     'Posibles precios del articulo
     Public posiblesTamaniosArticulo As ArrayList
     'Posibles categorias del artículo

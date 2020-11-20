@@ -24,7 +24,7 @@ Partial Class Pantalla_principal
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Pantalla_principal))
-        Me.Menu = New System.Windows.Forms.MenuStrip()
+        Me.MenuStrip = New System.Windows.Forms.MenuStrip()
         Me.InicioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarCajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
@@ -43,15 +43,15 @@ Partial Class Pantalla_principal
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.label_saludo = New System.Windows.Forms.Label()
         Me.label_pulsarTecla = New System.Windows.Forms.Label()
-        Me.Menu.SuspendLayout()
+        Me.MenuStrip.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Menu
+        'MenuStrip
         '
-        Me.Menu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InicioToolStripMenuItem, Me.VentaToolStripMenuItem, Me.AcercaDeToolStripMenuItem, Me.AyudaToolStripMenuItem})
-        resources.ApplyResources(Me.Menu, "Menu")
-        Me.Menu.Name = "Menu"
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InicioToolStripMenuItem, Me.VentaToolStripMenuItem, Me.AcercaDeToolStripMenuItem, Me.AyudaToolStripMenuItem})
+        resources.ApplyResources(Me.MenuStrip, "MenuStrip")
+        Me.MenuStrip.Name = "MenuStrip"
         '
         'InicioToolStripMenuItem
         '
@@ -165,12 +165,12 @@ Partial Class Pantalla_principal
         Me.Controls.Add(Me.label_pulsarTecla)
         Me.Controls.Add(Me.label_saludo)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Menu)
-        Me.MainMenuStrip = Me.Menu
+        Me.Controls.Add(Me.MenuStrip)
+        Me.MainMenuStrip = Me.MenuStrip
         Me.Name = "Pantalla_principal"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        Me.Menu.ResumeLayout(False)
-        Me.Menu.PerformLayout()
+        Me.MenuStrip.ResumeLayout(False)
+        Me.MenuStrip.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
@@ -178,7 +178,7 @@ Partial Class Pantalla_principal
 
     End Sub
 
-    Friend WithEvents Menu As MenuStrip
+    Friend WithEvents MenuStrip As MenuStrip
     Friend WithEvents InicioToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents VolverToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem

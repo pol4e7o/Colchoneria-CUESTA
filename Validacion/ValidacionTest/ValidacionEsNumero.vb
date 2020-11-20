@@ -82,4 +82,22 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
 
     End Sub
 
+    <TestMethod()> Public Sub TestValidarNumeroNV3()
+
+        'La variable que alamacenaré el resultado real 
+        Dim resultadoReal As Boolean
+
+        'Se utiliza la clase validacion para comprobar 
+        'si el string pasado como parametro al metodo es numero
+        Dim validacion As New Validacion.Validacion()
+
+        'Se comprueba pasandole al metodo una cadena que no es solo numeros
+        resultadoReal = validacion.esNumero("1231r")
+
+        'Se comprueban el resultado esperado (false) con el resultado real
+        'Si el metodo funciona correctamente el test se ejecutará sin errores
+        Assert.AreEqual(resultadoFalse, resultadoReal)
+
+    End Sub
+
 End Class

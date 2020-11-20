@@ -22,11 +22,17 @@ Partial Class Pantalla_eliminar_articulo
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ComboBox_eliminar = New System.Windows.Forms.ComboBox()
         Me.Button_eliminar = New System.Windows.Forms.Button()
         Me.Button_cancelar = New System.Windows.Forms.Button()
-        Me.Menu = New System.Windows.Forms.MenuStrip()
+        Me.TimerHoraReal = New System.Windows.Forms.Timer(Me.components)
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.label_ayuda = New System.Windows.Forms.Label()
+        Me.label_fecha = New System.Windows.Forms.Label()
+        Me.label_hora = New System.Windows.Forms.Label()
+        Me.MenuStrip = New System.Windows.Forms.MenuStrip()
         Me.InicioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarCajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
@@ -34,28 +40,22 @@ Partial Class Pantalla_eliminar_articulo
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VentaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VisualizarVentaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OpcionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GestionDeEmpleadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GestionDeArticulosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GestionDeVentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ColchoneriaCUESTAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManualDeUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.OpcionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GestionDeEmpleadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GestiónDeArtículosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GestiónDeVentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.label_ayuda = New System.Windows.Forms.Label()
-        Me.label_fecha = New System.Windows.Forms.Label()
-        Me.label_hora = New System.Windows.Forms.Label()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Menu.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
+        Me.MenuStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(21, 12)
+        Me.Label1.Location = New System.Drawing.Point(73, 131)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(85, 13)
         Me.Label1.TabIndex = 0
@@ -64,14 +64,14 @@ Partial Class Pantalla_eliminar_articulo
         'ComboBox_eliminar
         '
         Me.ComboBox_eliminar.FormattingEnabled = True
-        Me.ComboBox_eliminar.Location = New System.Drawing.Point(24, 51)
+        Me.ComboBox_eliminar.Location = New System.Drawing.Point(76, 162)
         Me.ComboBox_eliminar.Name = "ComboBox_eliminar"
         Me.ComboBox_eliminar.Size = New System.Drawing.Size(121, 21)
         Me.ComboBox_eliminar.TabIndex = 1
         '
         'Button_eliminar
         '
-        Me.Button_eliminar.Location = New System.Drawing.Point(177, 51)
+        Me.Button_eliminar.Location = New System.Drawing.Point(228, 162)
         Me.Button_eliminar.Name = "Button_eliminar"
         Me.Button_eliminar.Size = New System.Drawing.Size(75, 23)
         Me.Button_eliminar.TabIndex = 2
@@ -80,21 +80,80 @@ Partial Class Pantalla_eliminar_articulo
         '
         'Button_cancelar
         '
-        Me.Button_cancelar.Location = New System.Drawing.Point(382, 250)
+        Me.Button_cancelar.Location = New System.Drawing.Point(702, 288)
         Me.Button_cancelar.Name = "Button_cancelar"
         Me.Button_cancelar.Size = New System.Drawing.Size(75, 23)
         Me.Button_cancelar.TabIndex = 3
         Me.Button_cancelar.Text = "Cancelar"
         Me.Button_cancelar.UseVisualStyleBackColor = True
         '
-        'Menu
+        'TimerHoraReal
         '
-        Me.Menu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InicioToolStripMenuItem, Me.VentaToolStripMenuItem, Me.AcercaDeToolStripMenuItem, Me.AyudaToolStripMenuItem, Me.OpcionesToolStripMenuItem})
-        Me.Menu.Location = New System.Drawing.Point(0, 0)
-        Me.Menu.Name = "Menu"
-        Me.Menu.Size = New System.Drawing.Size(800, 24)
-        Me.Menu.TabIndex = 8
-        Me.Menu.Text = "MenuStrip1"
+        Me.TimerHoraReal.Enabled = True
+        Me.TimerHoraReal.Interval = 1000
+        '
+        'Panel1
+        '
+        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel1.Controls.Add(Me.label_ayuda)
+        Me.Panel1.Controls.Add(Me.label_fecha)
+        Me.Panel1.Controls.Add(Me.label_hora)
+        Me.Panel1.Location = New System.Drawing.Point(1, 406)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(882, 42)
+        Me.Panel1.TabIndex = 28
+        '
+        'label_ayuda
+        '
+        Me.label_ayuda.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.label_ayuda.AutoSize = True
+        Me.label_ayuda.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.label_ayuda.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.label_ayuda.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.label_ayuda.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.label_ayuda.Location = New System.Drawing.Point(10, 9)
+        Me.label_ayuda.Name = "label_ayuda"
+        Me.label_ayuda.Size = New System.Drawing.Size(88, 22)
+        Me.label_ayuda.TabIndex = 1
+        Me.label_ayuda.Text = "F1 - Ayuda"
+        Me.label_ayuda.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'label_fecha
+        '
+        Me.label_fecha.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.label_fecha.AutoSize = True
+        Me.label_fecha.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.label_fecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.label_fecha.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.label_fecha.Location = New System.Drawing.Point(537, 9)
+        Me.label_fecha.Name = "label_fecha"
+        Me.label_fecha.Size = New System.Drawing.Size(64, 22)
+        Me.label_fecha.TabIndex = 2
+        Me.label_fecha.Text = "Fecha: "
+        '
+        'label_hora
+        '
+        Me.label_hora.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.label_hora.AutoSize = True
+        Me.label_hora.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.label_hora.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.label_hora.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.label_hora.Location = New System.Drawing.Point(728, 9)
+        Me.label_hora.Name = "label_hora"
+        Me.label_hora.Size = New System.Drawing.Size(54, 22)
+        Me.label_hora.TabIndex = 3
+        Me.label_hora.Text = "Hora: "
+        '
+        'MenuStrip
+        '
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InicioToolStripMenuItem, Me.VentaToolStripMenuItem, Me.OpcionesToolStripMenuItem, Me.AcercaDeToolStripMenuItem, Me.AyudaToolStripMenuItem})
+        Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip.Name = "MenuStrip"
+        Me.MenuStrip.Size = New System.Drawing.Size(883, 24)
+        Me.MenuStrip.TabIndex = 29
+        Me.MenuStrip.Text = "MenuStrip1"
         '
         'InicioToolStripMenuItem
         '
@@ -143,6 +202,37 @@ Partial Class Pantalla_eliminar_articulo
         Me.VisualizarVentaToolStripMenuItem.Size = New System.Drawing.Size(195, 22)
         Me.VisualizarVentaToolStripMenuItem.Text = "Visualizar venta"
         '
+        'OpcionesToolStripMenuItem
+        '
+        Me.OpcionesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GestionDeEmpleadosToolStripMenuItem, Me.GestionDeArticulosToolStripMenuItem, Me.GestionDeVentasToolStripMenuItem})
+        Me.OpcionesToolStripMenuItem.Name = "OpcionesToolStripMenuItem"
+        Me.OpcionesToolStripMenuItem.Size = New System.Drawing.Size(69, 20)
+        Me.OpcionesToolStripMenuItem.Text = "Opciones"
+        '
+        'GestionDeEmpleadosToolStripMenuItem
+        '
+        Me.GestionDeEmpleadosToolStripMenuItem.Name = "GestionDeEmpleadosToolStripMenuItem"
+        Me.GestionDeEmpleadosToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
+            Or System.Windows.Forms.Keys.E), System.Windows.Forms.Keys)
+        Me.GestionDeEmpleadosToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
+        Me.GestionDeEmpleadosToolStripMenuItem.Text = "Gestion de empleados"
+        '
+        'GestionDeArticulosToolStripMenuItem
+        '
+        Me.GestionDeArticulosToolStripMenuItem.Name = "GestionDeArticulosToolStripMenuItem"
+        Me.GestionDeArticulosToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
+            Or System.Windows.Forms.Keys.A), System.Windows.Forms.Keys)
+        Me.GestionDeArticulosToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
+        Me.GestionDeArticulosToolStripMenuItem.Text = "Gestion de articulos"
+        '
+        'GestionDeVentasToolStripMenuItem
+        '
+        Me.GestionDeVentasToolStripMenuItem.Name = "GestionDeVentasToolStripMenuItem"
+        Me.GestionDeVentasToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
+            Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
+        Me.GestionDeVentasToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
+        Me.GestionDeVentasToolStripMenuItem.Text = "Gestion de ventas"
+        '
         'AcercaDeToolStripMenuItem
         '
         Me.AcercaDeToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ColchoneriaCUESTAToolStripMenuItem})
@@ -171,112 +261,23 @@ Partial Class Pantalla_eliminar_articulo
         Me.ManualDeUsuarioToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
         Me.ManualDeUsuarioToolStripMenuItem.Text = "Manual de usuario"
         '
-        'OpcionesToolStripMenuItem
-        '
-        Me.OpcionesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GestionDeEmpleadosToolStripMenuItem, Me.GestiónDeArtículosToolStripMenuItem, Me.GestiónDeVentasToolStripMenuItem})
-        Me.OpcionesToolStripMenuItem.Name = "OpcionesToolStripMenuItem"
-        Me.OpcionesToolStripMenuItem.Size = New System.Drawing.Size(69, 20)
-        Me.OpcionesToolStripMenuItem.Text = "Opciones"
-        '
-        'GestionDeEmpleadosToolStripMenuItem
-        '
-        Me.GestionDeEmpleadosToolStripMenuItem.Name = "GestionDeEmpleadosToolStripMenuItem"
-        Me.GestionDeEmpleadosToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
-        Me.GestionDeEmpleadosToolStripMenuItem.Text = "Gestión de empleados"
-        '
-        'GestiónDeArtículosToolStripMenuItem
-        '
-        Me.GestiónDeArtículosToolStripMenuItem.Name = "GestiónDeArtículosToolStripMenuItem"
-        Me.GestiónDeArtículosToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
-        Me.GestiónDeArtículosToolStripMenuItem.Text = "Gestión de artículos"
-        '
-        'GestiónDeVentasToolStripMenuItem
-        '
-        Me.GestiónDeVentasToolStripMenuItem.Name = "GestiónDeVentasToolStripMenuItem"
-        Me.GestiónDeVentasToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
-        Me.GestiónDeVentasToolStripMenuItem.Text = "Gestión de ventas"
-        '
-        'Panel1
-        '
-        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel1.Controls.Add(Me.label_ayuda)
-        Me.Panel1.Controls.Add(Me.label_fecha)
-        Me.Panel1.Controls.Add(Me.label_hora)
-        Me.Panel1.Location = New System.Drawing.Point(0, 412)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(800, 42)
-        Me.Panel1.TabIndex = 9
-        '
-        'label_ayuda
-        '
-        Me.label_ayuda.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.label_ayuda.AutoSize = True
-        Me.label_ayuda.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.label_ayuda.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.label_ayuda.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.label_ayuda.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.label_ayuda.Location = New System.Drawing.Point(10, 9)
-        Me.label_ayuda.Name = "label_ayuda"
-        Me.label_ayuda.Size = New System.Drawing.Size(88, 22)
-        Me.label_ayuda.TabIndex = 1
-        Me.label_ayuda.Text = "F1 - Ayuda"
-        Me.label_ayuda.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'label_fecha
-        '
-        Me.label_fecha.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.label_fecha.AutoSize = True
-        Me.label_fecha.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.label_fecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.label_fecha.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.label_fecha.Location = New System.Drawing.Point(455, 9)
-        Me.label_fecha.Name = "label_fecha"
-        Me.label_fecha.Size = New System.Drawing.Size(64, 22)
-        Me.label_fecha.TabIndex = 2
-        Me.label_fecha.Text = "Fecha: "
-        '
-        'label_hora
-        '
-        Me.label_hora.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.label_hora.AutoSize = True
-        Me.label_hora.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.label_hora.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.label_hora.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.label_hora.Location = New System.Drawing.Point(646, 9)
-        Me.label_hora.Name = "label_hora"
-        Me.label_hora.Size = New System.Drawing.Size(54, 22)
-        Me.label_hora.TabIndex = 3
-        Me.label_hora.Text = "Hora: "
-        '
-        'Panel2
-        '
-        Me.Panel2.Controls.Add(Me.Button_cancelar)
-        Me.Panel2.Controls.Add(Me.Button_eliminar)
-        Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Controls.Add(Me.ComboBox_eliminar)
-        Me.Panel2.Location = New System.Drawing.Point(141, 52)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(481, 293)
-        Me.Panel2.TabIndex = 4
-        '
         'Pantalla_eliminar_articulo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.Panel2)
+        Me.ClientSize = New System.Drawing.Size(883, 450)
+        Me.Controls.Add(Me.MenuStrip)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Menu)
+        Me.Controls.Add(Me.Button_cancelar)
+        Me.Controls.Add(Me.Button_eliminar)
+        Me.Controls.Add(Me.ComboBox_eliminar)
+        Me.Controls.Add(Me.Label1)
         Me.Name = "Pantalla_eliminar_articulo"
         Me.Text = "Pantalla_eliminar_articulo"
-        Me.Menu.ResumeLayout(False)
-        Me.Menu.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
+        Me.MenuStrip.ResumeLayout(False)
+        Me.MenuStrip.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -286,7 +287,12 @@ Partial Class Pantalla_eliminar_articulo
     Friend WithEvents ComboBox_eliminar As ComboBox
     Friend WithEvents Button_eliminar As Button
     Friend WithEvents Button_cancelar As Button
-    Friend WithEvents Menu As MenuStrip
+    Friend WithEvents TimerHoraReal As Timer
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents label_ayuda As Label
+    Friend WithEvents label_fecha As Label
+    Friend WithEvents label_hora As Label
+    Friend WithEvents MenuStrip As MenuStrip
     Friend WithEvents InicioToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CerrarCajaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
@@ -294,17 +300,12 @@ Partial Class Pantalla_eliminar_articulo
     Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents VentaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents VisualizarVentaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents OpcionesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GestionDeEmpleadosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GestionDeArticulosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GestionDeVentasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AcercaDeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ColchoneriaCUESTAToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AyudaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ManualDeUsuarioToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents OpcionesToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents GestionDeEmpleadosToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents GestiónDeArtículosToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents GestiónDeVentasToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents label_ayuda As Label
-    Friend WithEvents label_fecha As Label
-    Friend WithEvents label_hora As Label
-    Friend WithEvents Panel2 As Panel
 End Class
