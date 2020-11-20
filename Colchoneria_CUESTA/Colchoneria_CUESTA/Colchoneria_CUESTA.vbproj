@@ -84,6 +84,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreacionEmpleadosArticulos.vb" />
     <Compile Include="ElementosComunes.vb" />
     <Compile Include="Pantalla_admin_empleados.Designer.vb">
       <DependentUpon>Pantalla_admin_empleados.vb</DependentUpon>
