@@ -70,7 +70,7 @@ Partial Class Pantalla_aniadir_articulo
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(14, 39)
+        Me.Label1.Location = New System.Drawing.Point(42, 55)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(94, 13)
         Me.Label1.TabIndex = 0
@@ -324,26 +324,26 @@ Partial Class Pantalla_aniadir_articulo
         '
         Me.CerrarCajaToolStripMenuItem.Name = "CerrarCajaToolStripMenuItem"
         Me.CerrarCajaToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
-        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
         Me.CerrarCajaToolStripMenuItem.Text = "Cerrar caja"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(165, 6)
         '
         'VolverToolStripMenuItem
         '
         Me.VolverToolStripMenuItem.Name = "VolverToolStripMenuItem"
         Me.VolverToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
         Me.VolverToolStripMenuItem.Text = "Volver"
         '
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
         Me.SalirToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'VentaToolStripMenuItem
@@ -372,7 +372,7 @@ Partial Class Pantalla_aniadir_articulo
         Me.GestionDeEmpleadosToolStripMenuItem.Name = "GestionDeEmpleadosToolStripMenuItem"
         Me.GestionDeEmpleadosToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.E), System.Windows.Forms.Keys)
-        Me.GestionDeEmpleadosToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
+        Me.GestionDeEmpleadosToolStripMenuItem.Size = New System.Drawing.Size(277, 22)
         Me.GestionDeEmpleadosToolStripMenuItem.Text = "Gestion de empleados"
         '
         'GestionDeArticulosToolStripMenuItem
@@ -380,7 +380,7 @@ Partial Class Pantalla_aniadir_articulo
         Me.GestionDeArticulosToolStripMenuItem.Name = "GestionDeArticulosToolStripMenuItem"
         Me.GestionDeArticulosToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.A), System.Windows.Forms.Keys)
-        Me.GestionDeArticulosToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
+        Me.GestionDeArticulosToolStripMenuItem.Size = New System.Drawing.Size(277, 22)
         Me.GestionDeArticulosToolStripMenuItem.Text = "Gestion de articulos"
         '
         'GestionDeVentasToolStripMenuItem
@@ -388,7 +388,7 @@ Partial Class Pantalla_aniadir_articulo
         Me.GestionDeVentasToolStripMenuItem.Name = "GestionDeVentasToolStripMenuItem"
         Me.GestionDeVentasToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.GestionDeVentasToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
+        Me.GestionDeVentasToolStripMenuItem.Size = New System.Drawing.Size(277, 22)
         Me.GestionDeVentasToolStripMenuItem.Text = "Gestion de ventas"
         '
         'AcercaDeToolStripMenuItem
