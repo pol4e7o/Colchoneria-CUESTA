@@ -77,4 +77,15 @@
         label_hora.Text = "Hora: " & TimeString
 
     End Sub
+
+    Private Sub VisualizarVentaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VisualizarVentaToolStripMenuItem.Click
+
+        'Se visualiza la venta actual del dia mediante un message box
+        MsgBox("La venta actual del dia " & DateString & " a la hora " & TimeString & " es: 
+
+                    " & Math.Round(ElementosComunes.venta, 2) & "€", 0 + MsgBoxStyle.Information, "Visualizar venta")
+
+
+
+    End Sub
 End Class

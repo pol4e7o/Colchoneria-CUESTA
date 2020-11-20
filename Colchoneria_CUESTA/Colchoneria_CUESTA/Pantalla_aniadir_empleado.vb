@@ -29,8 +29,7 @@
         Dim opcion As Integer
 
         'Esta variable va a almacenar el informe del cierre de caja 
-        'que se va a guardar en el fichero de ventas y se va a 
-        'visualizar en un message box
+        'que se va a visualizar en un message box
         Dim informe As String
 
 
@@ -39,10 +38,10 @@
 
         If opcion = MsgBoxResult.Yes Then
 
-            informe = "Informe de venta de: " & vbNewLine &
-            Now & vbNewLine &
-            "Total: " & venta & "€" & vbNewLine &
-            "Cierre de caja hecha por: " & vbNewLine &
+            informe = "Informe de venta de: " & vbCrLf &
+            Now & vbCrLf &
+            "Total: " & venta & "€" & vbCrLf &
+            "Cierre de caja hecha por: " & vbCrLf &
             "Usuario"
 
             'Se guarda en el fichero de ventas el dia, la hora, la venta y el usuario
@@ -106,7 +105,7 @@
         'Se visualiza la venta actual del dia mediante un message box
         MsgBox("La venta actual del dia " & DateString & " a la hora " & TimeString & " es: 
 
-                    " & ElementosComunes.venta & "€", 0 + MsgBoxStyle.Information, "Visualizar venta")
+                    " & Math.Round(ElementosComunes.venta, 2) & "€", 0 + MsgBoxStyle.Information, "Visualizar venta")
 
 
     End Sub
