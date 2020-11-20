@@ -80,7 +80,7 @@
         label_hora.Text = "Hora: " & TimeString
 
         'Comprobamos si el comoBox tiene algo seleccionado
-        If (ComboBox_eliminar.SelectedItem = -1) Then
+        If (ComboBox_eliminar.SelectedItem < 0) Then
             Button_eliminar.Enabled = False
         Else
             Button_eliminar.Enabled = True
