@@ -92,7 +92,7 @@
         End If
 
         'Si no hay nada seleccionado en tamaños y precios añadidos, no puede eliminarse nada
-        If (ListBox_tamanioprecios.SelectedItem = 0) Then
+        If (ListBox_tamanioprecios.SelectedItem = -1) Then
             Button_aniadir.Enabled = False
         Else
             Button_aniadir.Enabled = True
