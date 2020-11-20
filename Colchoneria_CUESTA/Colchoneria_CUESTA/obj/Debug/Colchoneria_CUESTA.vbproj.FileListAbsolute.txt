@@ -43,3 +43,4 @@ D:\Github\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\obj\Debug\Col
 D:\Github\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\obj\Debug\Colchoneria_CUESTA.exe
 D:\Github\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\obj\Debug\Colchoneria_CUESTA.xml
 D:\Github\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\obj\Debug\Colchoneria_CUESTA.pdb
+D:\Github\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\obj\Debug\Colchoneria_CUESTA.Gestion_de_ventas.resources
