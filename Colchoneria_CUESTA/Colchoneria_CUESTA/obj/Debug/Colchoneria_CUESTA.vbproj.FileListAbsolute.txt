@@ -22,3 +22,4 @@ C:\Users\pol4e\OneDrive\Documents\GitHub\Colchoneria-CUESTA\Colchoneria_CUESTA\C
 C:\Users\pol4e\OneDrive\Documents\GitHub\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\obj\Debug\Colchoneria_CUESTA.Pantalla_eliminar_empleado.resources
 C:\Users\pol4e\OneDrive\Documents\GitHub\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\obj\Debug\Colchoneria_CUESTA.Pantalla_modificar_articulos.resources
 C:\Users\pol4e\OneDrive\Documents\GitHub\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\obj\Debug\Colchoneria_CUESTA.Pantalla_modificar_empleado.resources
+C:\Users\pol4e\OneDrive\Documents\GitHub\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\obj\Debug\Colchoneria_CUESTA.Pantalla_de_venta.resources

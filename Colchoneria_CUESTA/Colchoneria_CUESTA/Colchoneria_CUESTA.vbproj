@@ -127,6 +127,12 @@
     <Compile Include="Pantalla_de_inicio.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Pantalla_de_venta.Designer.vb">
+      <DependentUpon>Pantalla_de_venta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pantalla_de_venta.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Pantalla_eliminar_articulo.Designer.vb">
       <DependentUpon>Pantalla_eliminar_articulo.vb</DependentUpon>
     </Compile>
@@ -201,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pantalla_de_inicio.resx">
       <DependentUpon>Pantalla_de_inicio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantalla_de_venta.resx">
+      <DependentUpon>Pantalla_de_venta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantalla_eliminar_articulo.resx">
       <DependentUpon>Pantalla_eliminar_articulo.vb</DependentUpon>

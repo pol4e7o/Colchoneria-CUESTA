@@ -1,16 +1,14 @@
-﻿Public Class Pantalla_admin_empleados
+﻿Public Class Pantalla_de_venta
 
-    Private Sub Gestión_de_empleados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public ventaArticulos As Double
+
+    Private Sub Pantalla_de_venta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         'Se indica la fecha actual
         label_fecha.Text = "Fecha: " & DateString
 
         'Se indica la hora actual
         label_hora.Text = "Hora: " & TimeString
-
-        'Se deabilita la opcion gestion de empleados porque es este mismo formulario
-        GestionDeEmpleadosToolStripMenuItem.Enabled = False
-
 
     End Sub
 
@@ -53,15 +51,15 @@
 
     Private Sub VolverToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VolverToolStripMenuItem.Click
 
-        'La repsuesta a la pregunta si desea volver a la pantalla de venta
+        'La repsuesta a la pregunta si desea volver a la pantalla de inicio
         Dim opcion As Integer
 
         opcion = MsgBox("Esta seguro que desea volver a la pantalla de venta sin terminar la operacion?", 0 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Volver")
 
         If opcion = MsgBoxResult.Yes Then
 
-            'Se abre la pantalla de venta y se cierra la de gestion de empleados
-            Pantalla_de_venta.Show()
+            'Se abre la pantalla de inicio y se cierra la pantalla de venta
+            Pantalla_de_inicio.Show()
 
             Me.Close()
 
@@ -101,67 +99,42 @@
                     " & Math.Round(ElementosComunes.venta, 2) & "€", 0 + MsgBoxStyle.Information, "Visualizar venta")
 
 
+    End Sub
+
+    Private Sub GestionDeEmpleadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionDeEmpleadosToolStripMenuItem.Click
+
+        'La opcion elegida por el usuario a la hora de decidir si desea ir a gestion de empleados
+        Dim opcion As Integer
+
+        If 
+
+        opcion = MsgBox("Esta seguro que desea ir a la pantalla de gestion de empleados sin terminar la operacion?", 4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Volver")
+
+            If opcion = MsgBoxResult.Yes Then
+
+                'Se abre la pantalla de gestion de empleados y se cierra la de alta de empleado
+                Pantalla_admin_empleados.Show()
+                Me.Close()
+
+            End If
 
     End Sub
 
     Private Sub GestionDeArticulosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionDeArticulosToolStripMenuItem.Click
 
-        'Se abre la pantalla de gestion de articulos y se cierra la de gestion de empleados
-        Pantalla_admin_articulos.Show()
-        Me.Close()
-
     End Sub
 
     Private Sub GestionDeVentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionDeVentasToolStripMenuItem.Click
-
-        'Se abre la pantalla de gestion de ventas y se cierra la de gestion de empleados
-
-        Me.Close()
 
     End Sub
 
     Private Sub ColchoneriaCUESTAToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ColchoneriaCUESTAToolStripMenuItem.Click
 
-        'Se visualiza toda la informacion sobre la empresa
-        MsgBox(ElementosComunes.informacionEmpresa, 0 + MsgBoxStyle.Information, "Informacion sobre Colchoneria CUESTA")
-
-
     End Sub
 
     Private Sub ManualDeUsuarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ManualDeUsuarioToolStripMenuItem.Click
 
-        'Se abre el manual de usuario
-
     End Sub
 
-    Private Sub boton_alta_Click(sender As Object, e As EventArgs) Handles boton_alta.Click
 
-        'Se llama al formulario de añadir empleado
-        Pantalla_aniadir_empleado.Show()
-        Me.Hide()
-
-    End Sub
-
-    Private Sub TimerHoraReal_Tick(sender As Object, e As EventArgs) Handles TimerHoraReal.Tick
-
-        'Por cada segundo que pasa se cambia el reloj
-        label_hora.Text = "Hora: " & TimeString
-
-    End Sub
-
-    Private Sub boton_modificacion_Click(sender As Object, e As EventArgs) Handles boton_modificacion.Click
-
-        'Se llama al formulario de modificar empleado
-        Pantalla_modificar_empleado.Show()
-        Me.Hide()
-
-    End Sub
-
-    Private Sub boton_baja_Click(sender As Object, e As EventArgs) Handles boton_baja.Click
-
-        'Se llama al formulario de eliminar empleado
-        Pantalla_eliminar_empleado.Show()
-        Me.Hide()
-
-    End Sub
 End Class
