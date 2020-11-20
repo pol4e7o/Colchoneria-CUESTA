@@ -2,13 +2,50 @@
 
     Public ventaArticulos As Double
 
+    'Va a contener todos los articulos de la tienda
+    Public articulos As ArrayList
+
+    'Se almacenan el nombre y el tamaño en una cadena de los articulos elegidos
+    Public nombresArticulos As ArrayList
+
+    'Se almacenan las cantidades por cada producto elegido
+    Public cantidades As ArrayList
+
+    'Se almacenan los precios por cada articulo elegido
+    Public precios As ArrayList
+
     Private Sub Pantalla_de_venta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        'El foco lo tiene el combobox de base
+        comboBox_base.Focus()
 
         'Se indica la fecha actual
         label_fecha.Text = "Fecha: " & DateString
 
         'Se indica la hora actual
         label_hora.Text = "Hora: " & TimeString
+
+        'Si el usuario no es administrador se desactivan las opciones del menu
+        'de gestion y se hacen invisibles
+        If administrador = False Then
+
+            OpcionesToolStripMenuItem.Enabled = False
+            OpcionesToolStripMenuItem.Visible = False
+
+        End If
+
+        'Por defecto todos los panels de los articulos vienen desactivados
+        'Para activarlos se tiene que elegir un articulo
+        panel_base.Enabled = False
+        panel_somier.Enabled = False
+        panel_colchon.Enabled = False
+        panel_canape.Enabled = False
+        panel_ofertas.Enabled = False
+        panel_otros.Enabled = False
+
+        'Se cargan todos los articulos del fichero de articulos
+
+        'Se pasan los articulos a los comboboxs por categorias
 
     End Sub
 
@@ -51,12 +88,12 @@
 
     Private Sub VolverToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VolverToolStripMenuItem.Click
 
-        'La repsuesta a la pregunta si desea volver a la pantalla de inicio
-        Dim opcion As Integer
+        If ventaArticulos <> 0 Then
 
-        opcion = MsgBox("Esta seguro que desea volver a la pantalla de venta sin terminar la operacion?", 0 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Volver")
+            'No se puede salir de la pantalla de venta sin terminar o anular la compra
+            MsgBox("No puede abandonar la pantalla de venta sin terminar o anular la compra primero.", 0 + MsgBoxStyle.Information, "Abandonar pantalla de venta")
 
-        If opcion = MsgBoxResult.Yes Then
+        Else
 
             'Se abre la pantalla de inicio y se cierra la pantalla de venta
             Pantalla_de_inicio.Show()
@@ -77,6 +114,12 @@
             'Si la caja no esta cerrada no se podra salir del programa
             'Se le indica al usuario que tiene que cerrarla antes de salir
             MsgBox("    Para poder salir de la aplicacion se necesita realizar primero el cierre de caja. De lo contrario no se va a guardar la venta el dia", MsgBoxStyle.Information, "Salir")
+
+
+        ElseIf ventaArticulos <> 0 Then
+
+            'No se puede salir de la pantalla de venta sin terminar o anular la compra
+            MsgBox("No puede abandonar la pantalla de venta sin terminar o anular la compra primero.", 0 + MsgBoxStyle.Information, "Abandonar pantalla de venta")
 
         Else
 
@@ -103,38 +146,97 @@
 
     Private Sub GestionDeEmpleadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionDeEmpleadosToolStripMenuItem.Click
 
-        'La opcion elegida por el usuario a la hora de decidir si desea ir a gestion de empleados
-        Dim opcion As Integer
+        'No se puede salir de la pantalla de venta sin terminar o anular la compra
+        If ventaArticulos <> 0 Then
 
-        If 
+            MsgBox("No puede abandonar la pantalla de venta sin terminar o anular la compra primero.", 0 + MsgBoxStyle.Information, "Abandonar pantalla de venta")
 
-        opcion = MsgBox("Esta seguro que desea ir a la pantalla de gestion de empleados sin terminar la operacion?", 4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Volver")
+        Else
 
-            If opcion = MsgBoxResult.Yes Then
+            'Se abre la pantalla de gestion de empleados y se cierra la pantalla de venta
+            Pantalla_admin_empleados.Show()
+            Me.Close()
 
-                'Se abre la pantalla de gestion de empleados y se cierra la de alta de empleado
-                Pantalla_admin_empleados.Show()
-                Me.Close()
-
-            End If
+        End If
 
     End Sub
 
     Private Sub GestionDeArticulosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionDeArticulosToolStripMenuItem.Click
 
+        'No se puede salir de la pantalla de venta sin terminar o anular la compra
+        If ventaArticulos <> 0 Then
+
+            MsgBox("No puede abandonar la pantalla de venta sin terminar o anular la compra primero.", 0 + MsgBoxStyle.Information, "Abandonar pantalla de venta")
+
+        Else
+
+            'Se abre la pantalla de gestion de articulos y se cierra la pantalla de venta
+            Pantalla_admin_articulos.Show()
+            Me.Close()
+
+        End If
+
     End Sub
 
     Private Sub GestionDeVentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionDeVentasToolStripMenuItem.Click
+
+        'No se puede salir de la pantalla de venta sin terminar o anular la compra
+        If ventaArticulos <> 0 Then
+
+            MsgBox("No puede abandonar la pantalla de venta sin terminar o anular la compra primero.", 0 + MsgBoxStyle.Information, "Abandonar pantalla de venta")
+
+        Else
+
+            'Se abre la pantalla de gestion de ventas y se cierra la pantalla de venta
+
+            Me.Close()
+
+        End If
 
     End Sub
 
     Private Sub ColchoneriaCUESTAToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ColchoneriaCUESTAToolStripMenuItem.Click
 
+        'Se visualiza toda la informacion sobre la empresa
+        MsgBox(ElementosComunes.informacionEmpresa, 0 + MsgBoxStyle.Information, "Informacion sobre Colchoneria CUESTA")
+
+
     End Sub
 
     Private Sub ManualDeUsuarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ManualDeUsuarioToolStripMenuItem.Click
 
+        'Se abre el manual de usuario
+
+    End Sub
+
+    Private Sub TimerHoraReal_Tick(sender As Object, e As EventArgs) Handles TimerHoraReal.Tick
+
+        'Por cada segundo que pasa se cambia el reloj
+        label_hora.Text = "Hora: " & TimeString
+
+    End Sub
+
+    Private Sub ComboBox5_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboBox_canape.SelectedIndexChanged
+
     End Sub
 
 
+
+    Private Sub comboBox_base_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboBox_base.SelectedIndexChanged
+
+        'Si no hay ningun articulo elegido el panel esta desactivado
+        If comboBox_base.SelectedIndex = -1 Then
+
+            panel_base.Visible = False
+
+        Else
+
+            'De lo contrario se activa
+            panel_base.Visible = True
+
+            'Se asignan los tamaños del articulo seleccionado 
+
+        End If
+
+    End Sub
 End Class
