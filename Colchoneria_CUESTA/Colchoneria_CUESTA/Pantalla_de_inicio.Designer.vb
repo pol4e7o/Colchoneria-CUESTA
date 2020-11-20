@@ -28,7 +28,7 @@ Partial Class Pantalla_de_inicio
         Me.label_fecha = New System.Windows.Forms.Label()
         Me.label_hora = New System.Windows.Forms.Label()
         Me.TimerHoraReal = New System.Windows.Forms.Timer(Me.components)
-        Me.Menu = New System.Windows.Forms.MenuStrip()
+        Me.MenuStrip = New System.Windows.Forms.MenuStrip()
         Me.InicioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarCajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
@@ -47,7 +47,7 @@ Partial Class Pantalla_de_inicio
         Me.textBox_contrasenia = New System.Windows.Forms.TextBox()
         Me.boton_entrar = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
-        Me.Menu.SuspendLayout()
+        Me.MenuStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -109,14 +109,14 @@ Partial Class Pantalla_de_inicio
         Me.TimerHoraReal.Enabled = True
         Me.TimerHoraReal.Interval = 1000
         '
-        'Menu
+        'MenuStrip
         '
-        Me.Menu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InicioToolStripMenuItem, Me.VentaToolStripMenuItem, Me.AcercaDeToolStripMenuItem, Me.AyudaToolStripMenuItem})
-        Me.Menu.Location = New System.Drawing.Point(0, 0)
-        Me.Menu.Name = "Menu"
-        Me.Menu.Size = New System.Drawing.Size(744, 24)
-        Me.Menu.TabIndex = 6
-        Me.Menu.Text = "MenuStrip1"
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InicioToolStripMenuItem, Me.VentaToolStripMenuItem, Me.AcercaDeToolStripMenuItem, Me.AyudaToolStripMenuItem})
+        Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip.Name = "MenuStrip"
+        Me.MenuStrip.Size = New System.Drawing.Size(744, 24)
+        Me.MenuStrip.TabIndex = 6
+        Me.MenuStrip.Text = "MenuStrip1"
         '
         'InicioToolStripMenuItem
         '
@@ -129,26 +129,26 @@ Partial Class Pantalla_de_inicio
         '
         Me.CerrarCajaToolStripMenuItem.Name = "CerrarCajaToolStripMenuItem"
         Me.CerrarCajaToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
-        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
         Me.CerrarCajaToolStripMenuItem.Text = "Cerrar caja"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(165, 6)
         '
         'VolverToolStripMenuItem
         '
         Me.VolverToolStripMenuItem.Name = "VolverToolStripMenuItem"
         Me.VolverToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
         Me.VolverToolStripMenuItem.Text = "Volver"
         '
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
         Me.SalirToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'VentaToolStripMenuItem
@@ -262,15 +262,15 @@ Partial Class Pantalla_de_inicio
         Me.Controls.Add(Me.textBox_contrasenia)
         Me.Controls.Add(Me.label_usuario)
         Me.Controls.Add(Me.textBox_usuario)
-        Me.Controls.Add(Me.Menu)
+        Me.Controls.Add(Me.MenuStrip)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "Pantalla_de_inicio"
         Me.Text = "Colchoneria CUESTA - Iniciar secion"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.Menu.ResumeLayout(False)
-        Me.Menu.PerformLayout()
+        Me.MenuStrip.ResumeLayout(False)
+        Me.MenuStrip.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -280,7 +280,7 @@ Partial Class Pantalla_de_inicio
     Friend WithEvents label_fecha As Label
     Friend WithEvents label_hora As Label
     Friend WithEvents TimerHoraReal As Timer
-    Friend WithEvents Menu As MenuStrip
+    Friend WithEvents MenuStrip As MenuStrip
     Friend WithEvents InicioToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CerrarCajaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator

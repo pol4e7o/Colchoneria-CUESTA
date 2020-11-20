@@ -22,7 +22,8 @@ Partial Class Pantalla_admin_articulos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Menu = New System.Windows.Forms.MenuStrip()
+        Me.components = New System.ComponentModel.Container()
+        Me.MenuStrip = New System.Windows.Forms.MenuStrip()
         Me.InicioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarCajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
@@ -47,18 +48,19 @@ Partial Class Pantalla_admin_articulos
         Me.Button_aniadir = New System.Windows.Forms.Button()
         Me.Button_modificar = New System.Windows.Forms.Button()
         Me.Button_eliminar = New System.Windows.Forms.Button()
-        Me.Menu.SuspendLayout()
+        Me.TimerHoraReal = New System.Windows.Forms.Timer(Me.components)
+        Me.MenuStrip.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Menu
+        'MenuStrip
         '
-        Me.Menu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InicioToolStripMenuItem, Me.VentaToolStripMenuItem, Me.AcercaDeToolStripMenuItem, Me.AyudaToolStripMenuItem, Me.OpcionesToolStripMenuItem})
-        Me.Menu.Location = New System.Drawing.Point(0, 0)
-        Me.Menu.Name = "Menu"
-        Me.Menu.Size = New System.Drawing.Size(800, 24)
-        Me.Menu.TabIndex = 7
-        Me.Menu.Text = "MenuStrip1"
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InicioToolStripMenuItem, Me.VentaToolStripMenuItem, Me.AcercaDeToolStripMenuItem, Me.AyudaToolStripMenuItem, Me.OpcionesToolStripMenuItem})
+        Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip.Name = "MenuStrip"
+        Me.MenuStrip.Size = New System.Drawing.Size(800, 24)
+        Me.MenuStrip.TabIndex = 7
+        Me.MenuStrip.Text = "MenuStrip1"
         '
         'InicioToolStripMenuItem
         '
@@ -259,6 +261,11 @@ Partial Class Pantalla_admin_articulos
         Me.Button_eliminar.Text = "Eliminar"
         Me.Button_eliminar.UseVisualStyleBackColor = True
         '
+        'TimerHoraReal
+        '
+        Me.TimerHoraReal.Enabled = True
+        Me.TimerHoraReal.Interval = 1000
+        '
         'Pantalla_admin_articulos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -270,12 +277,12 @@ Partial Class Pantalla_admin_articulos
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Menu)
+        Me.Controls.Add(Me.MenuStrip)
         Me.Name = "Pantalla_admin_articulos"
         Me.Text = "Pantalla_admin_articulos"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        Me.Menu.ResumeLayout(False)
-        Me.Menu.PerformLayout()
+        Me.MenuStrip.ResumeLayout(False)
+        Me.MenuStrip.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
@@ -283,7 +290,7 @@ Partial Class Pantalla_admin_articulos
 
     End Sub
 
-    Friend WithEvents Menu As MenuStrip
+    Friend WithEvents MenuStrip As MenuStrip
     Friend WithEvents InicioToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CerrarCajaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
@@ -308,4 +315,5 @@ Partial Class Pantalla_admin_articulos
     Friend WithEvents Button_aniadir As Button
     Friend WithEvents Button_modificar As Button
     Friend WithEvents Button_eliminar As Button
+    Friend WithEvents TimerHoraReal As Timer
 End Class
