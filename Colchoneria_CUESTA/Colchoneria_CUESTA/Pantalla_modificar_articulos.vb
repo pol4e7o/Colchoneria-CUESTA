@@ -10,12 +10,16 @@
         'Se indica la hora actual
         label_hora.Text = "Hora: " & TimeString
 
+        'Se desactiva el panel con los datos de articulo hasta que no se elija el articulo que se va a modificar
+        Panel_datosArticulo.Enabled = False
+
         'Comprobar si se puede pulsar el botón modificar
-        If (ComboBox_modificar.SelectedItem < 0) Then
+        If (ComboBox_modificar.SelectedIndex < 0) Then
             Button_modificar.Enabled = False
         Else
             Button_modificar.Enabled = True
         End If
+
         'Comprobar si se puede pulsar el botón aniadir
         Button_aniadir.Enabled = False
         'Comprobar si se puede pulsar el botón aniadir
@@ -164,13 +168,16 @@
     End Sub
 
     Private Sub ComboBox_modificar_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox_modificar.SelectedIndexChanged
-        activarBotonModificar()
-        'Si se ha elegido un empleado de los de la lista se activa el boton guardar
-        If ComboBox_modificar.SelectedIndex <> -1 Then
+
+        'Si se ha elegido un articulo de los de la lista se activa el boton guardar
+        If ComboBox_modificar.SelectedIndex >= 0 Then
+
+            'Se activa el panel con los datos del articulo
+            Panel_datosArticulo.Enabled = True
 
             'Se coge el objeto elegido y sus datos se introducen en los campos de texto
 
-            'Introducir los datos del empleado
+            'Introducir los datos del articulo
             TextBox_nombre.Text = ""
             TextBox_descripcion.Text = ""
             ComboBox_categorias.SelectedItem = -1
@@ -183,6 +190,9 @@
 
         Else
 
+            'Se sesactiva el panel con los datos de articulo
+            Panel_datosArticulo.Enabled = False
+
             'Se vacian los campos de texto
             TextBox_nombre.Text = ""
             TextBox_descripcion.Text = ""
@@ -190,6 +200,9 @@
             TextBox_precio.Text = ""
             TextBox_tamanio.Text = ""
             ListBox_tamaniosprecios.Items.Clear()
+
+            'Se habilita el boton guardar
+            Button_modificar.Enabled = False
 
         End If
     End Sub
@@ -203,21 +216,27 @@
         Dim a As String = "precio: " + precio + " tamaño: " + tamanio
         ListBox_tamaniosprecios.Items.Add(a)
     End Sub
+
     'BOTON ELIMINAR
     Private Sub Button_eliminar_Click(sender As Object, e As EventArgs) Handles Button_eliminar.Click
+
         'Eliminamos el item seleccionado
-        ListBox_tamanioprecios.ClearSelected()
+        ListBox_tamaniosprecios.Items.RemoveAt(ListBox_tamaniosprecios.SelectedIndex)
+
+        'Se elemina del objeto articulos
+
     End Sub
+
     'BOTON MODIFICAR
     Private Sub Button_modificar_Click_1(sender As Object, e As EventArgs) Handles Button_modificar.Click
-        'La opcion elegida por el usuario a la hora de decidir si desea guardar el cliente modificado
+        'La opcion elegida por el usuario a la hora de decidir si desea guardar el articulo modificado
         Dim opcion As Integer
 
         opcion = MsgBox("Esta seguro que desea modificar el artículo?", 4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Alta de empleado")
 
         If opcion = MsgBoxResult.Yes Then
 
-            'Se modifica dentro del arraylist y despues se sobrescribe el fichero de empleados
+            'Se modifica dentro del arraylist y despues se sobrescribe el fichero de articulos
 
 
             'Se vuelve a la pantalla de gestion de empleados
@@ -249,9 +268,9 @@
         'Si son correctos se activa el boton
         If TextBox_nombre.Text.Length <> 0 Then
 
-            If ComboBox_categorias.SelectedItem < 0 Then
+            If ComboBox_categorias.SelectedIndex >= 0 Then
 
-                If ListBox_tamaniosprecios.Items.Count <> 0 And TextBox_precio.Text.Length <> 0 Then
+                If ListBox_tamaniosprecios.Items.Count <> 0 Then
 
                     Button_guardar.Enabled = True
 
@@ -261,6 +280,7 @@
 
         End If
     End Sub
+
     'ACTIVAR BOTON ANIADIR
     Private Sub activarBotonAniadir()
         Button_aniadir.Enabled = False
@@ -269,12 +289,14 @@
             Button_aniadir.Enabled = True
         End If
     End Sub
+
     'ACTIVAR BOTON ELIMINAR
     Private Sub activarBotonEliminar()
         Button_eliminar.Enabled = False
+
         'Se comprueba que todos los campos necesarios están rellenos
-        If ListBox_tamaniosprecios.SelectedItem Then
-            Button_aniadir.Enabled = True
+        If ListBox_tamaniosprecios.SelectedIndex >= 0 Then
+            Button_eliminar.Enabled = True
         End If
 
     End Sub
@@ -297,22 +319,6 @@
 
             'Se le indica al usuario que el dato es incorreto y el foco vuelve al campo de nombre
             MsgBox("Los nombres y apellidos pueden contener solo letras, espacios en blanco y guiones. Por favor intente introducir el valor del campo nombre de nuevo.", 0 + MsgBoxStyle.Information, "Valor de apellidos incorrecto")
-            TextBox_nombre.Focus()
-
-        End If
-    End Sub
-    'DESCRIPCION
-    Private Sub TextBox_descripcion_TextChanged(sender As Object, e As EventArgs) Handles TextBox_descripcion.Leave
-        'Si los datos introducidos en el campo son correctos se comprueba si se puede activar el boton guardar
-        If validacion.validarNombres(TextBox_descripcion.Text) Then
-
-            'Si todos los campos tienen los caracteres minimos el boton guardar se activa
-            'activarBotonGuardarAlta()
-
-        Else
-
-            'Se le indica al usuario que el dato es incorreto y el foco vuelve al campo de nombre
-            MsgBox("Las descripciones pueden contener solo letras, espacios en blanco y guiones. Por favor intente introducir el valor del campo nombre de nuevo.", 0 + MsgBoxStyle.Information, "Valor de apellidos incorrecto")
             TextBox_nombre.Focus()
 
         End If
@@ -373,11 +379,17 @@
     End Sub
 
     'LISTBOX PRECIOTAMAÑO
-    Private Sub ListBox_tamanioprecios_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox_tamaniosprecios.SelectedIndexChanged
+    Private Sub ListBox_tamaniosprecios_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox_tamaniosprecios.SelectedIndexChanged
         activarBotonEliminar()
+        activarBotonModificar()
     End Sub
 
     Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
 
     End Sub
+
+    Private Sub TextBox_nombre_TextChanged_1(sender As Object, e As EventArgs) Handles TextBox_nombre.TextChanged
+        activarBotonModificar()
+    End Sub
+
 End Class

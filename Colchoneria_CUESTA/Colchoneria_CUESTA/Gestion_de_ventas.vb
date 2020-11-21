@@ -1,5 +1,9 @@
 ﻿
 Public Class Gestion_de_ventas
+
+    'Este arraylist va a alamcenar todas las ventas 
+    Public ventas As ArrayList
+
     'LOAD
     Private Sub Gestion_de_ventas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Se indica la fecha actual
@@ -10,6 +14,7 @@ Public Class Gestion_de_ventas
 
         'El primer elemento que tendra el foco es el textBox del usuario
         ComboBox_dia.Focus()
+
     End Sub
     'MENU
     'CERRAR CAJA
@@ -34,8 +39,10 @@ Public Class Gestion_de_ventas
 
     'VOLVER
     Private Sub VolverToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VolverToolStripMenuItem.Click
-        Pantalla_admin_articulos.Show()
+
+        Pantalla_de_venta.Show()
         Me.Close()
+
     End Sub
 
     'SALIR
@@ -102,22 +109,21 @@ Public Class Gestion_de_ventas
         End If
     End Sub
 
-    Private Sub Button_volver_Click(sender As Object, e As EventArgs) Handles Button_volver.Click
-        'La opcion elegida por el usuario a la hora de decidir si desea cancelar la operacion
-        Dim opcion As Integer
+    Private Sub Button_volver_Click(sender As Object, e As EventArgs) Handles Button_cancelar.Click
 
-        opcion = MsgBox("Esta seguro que desea cancelar la operacion?", 4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Cancelar")
+        'Se vuelve a la pantalla de venta
+        Pantalla_de_venta.Show()
+        Me.Close()
 
-        If opcion = MsgBoxResult.Yes Then
-
-            'Se abre la pantalla de gestion de empleados y se cierra la de baja de empleado
-            Pantalla_admin_articulos.Show()
-            Me.Close()
-
-        End If
     End Sub
+
     'VISUALIZAR
     Private Sub Button_visualizar_Click(sender As Object, e As EventArgs) Handles Button_visualizar.Click
-        'Coloca en el label la fecha la hora y el total de venta
+
+        'Coloca en el label Label_ventaElegida toda la informacion sobre venta seleccionada
+
+
+
     End Sub
+
 End Class

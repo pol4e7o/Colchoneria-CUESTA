@@ -45,8 +45,8 @@ Partial Class Pantalla_modificar_articulos
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManualDeUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Panel_datosArticulo = New System.Windows.Forms.Panel()
+        Me.Panel_precioYTamanio = New System.Windows.Forms.Panel()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.TextBox_tamanio = New System.Windows.Forms.TextBox()
         Me.TextBox_precio = New System.Windows.Forms.TextBox()
@@ -71,8 +71,8 @@ Partial Class Pantalla_modificar_articulos
         Me.Panel1.SuspendLayout()
         Me.MenuStrip.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        Me.Panel3.SuspendLayout()
-        Me.Panel4.SuspendLayout()
+        Me.Panel_datosArticulo.SuspendLayout()
+        Me.Panel_precioYTamanio.SuspendLayout()
         Me.SuspendLayout()
         '
         'TimerHoraReal
@@ -88,7 +88,7 @@ Partial Class Pantalla_modificar_articulos
         Me.Panel1.Controls.Add(Me.label_ayuda)
         Me.Panel1.Controls.Add(Me.label_fecha)
         Me.Panel1.Controls.Add(Me.label_hora)
-        Me.Panel1.Location = New System.Drawing.Point(0, 408)
+        Me.Panel1.Location = New System.Drawing.Point(0, 475)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(801, 42)
         Me.Panel1.TabIndex = 29
@@ -202,7 +202,7 @@ Partial Class Pantalla_modificar_articulos
         Me.GestionDeEmpleadosToolStripMenuItem.Name = "GestionDeEmpleadosToolStripMenuItem"
         Me.GestionDeEmpleadosToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.E), System.Windows.Forms.Keys)
-        Me.GestionDeEmpleadosToolStripMenuItem.Size = New System.Drawing.Size(277, 22)
+        Me.GestionDeEmpleadosToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
         Me.GestionDeEmpleadosToolStripMenuItem.Text = "Gestion de empleados"
         '
         'GestionDeArticulosToolStripMenuItem
@@ -210,7 +210,7 @@ Partial Class Pantalla_modificar_articulos
         Me.GestionDeArticulosToolStripMenuItem.Name = "GestionDeArticulosToolStripMenuItem"
         Me.GestionDeArticulosToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.A), System.Windows.Forms.Keys)
-        Me.GestionDeArticulosToolStripMenuItem.Size = New System.Drawing.Size(277, 22)
+        Me.GestionDeArticulosToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
         Me.GestionDeArticulosToolStripMenuItem.Text = "Gestion de articulos"
         '
         'GestionDeVentasToolStripMenuItem
@@ -218,7 +218,7 @@ Partial Class Pantalla_modificar_articulos
         Me.GestionDeVentasToolStripMenuItem.Name = "GestionDeVentasToolStripMenuItem"
         Me.GestionDeVentasToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.GestionDeVentasToolStripMenuItem.Size = New System.Drawing.Size(277, 22)
+        Me.GestionDeVentasToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
         Me.GestionDeVentasToolStripMenuItem.Text = "Gestion de ventas"
         '
         'AcercaDeToolStripMenuItem
@@ -251,47 +251,47 @@ Partial Class Pantalla_modificar_articulos
         '
         'Panel2
         '
-        Me.Panel2.Controls.Add(Me.Panel3)
+        Me.Panel2.Controls.Add(Me.Panel_datosArticulo)
         Me.Panel2.Controls.Add(Me.Button_cancelar)
         Me.Panel2.Controls.Add(Me.Button_modificar)
         Me.Panel2.Controls.Add(Me.ComboBox_modificar)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Location = New System.Drawing.Point(12, 27)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(766, 375)
+        Me.Panel2.Size = New System.Drawing.Size(766, 442)
         Me.Panel2.TabIndex = 31
         '
-        'Panel3
+        'Panel_datosArticulo
         '
-        Me.Panel3.Controls.Add(Me.Panel4)
-        Me.Panel3.Controls.Add(Me.Button_eliminar)
-        Me.Panel3.Controls.Add(Me.ComboBox_categorias)
-        Me.Panel3.Controls.Add(Me.Button1)
-        Me.Panel3.Controls.Add(Me.Button_guardar)
-        Me.Panel3.Controls.Add(Me.ListBox_tamaniosprecios)
-        Me.Panel3.Controls.Add(Me.Label6)
-        Me.Panel3.Controls.Add(Me.Label5)
-        Me.Panel3.Controls.Add(Me.TextBox_descripcion)
-        Me.Panel3.Controls.Add(Me.Label4)
-        Me.Panel3.Controls.Add(Me.Label2)
-        Me.Panel3.Controls.Add(Me.TextBox_nombre)
-        Me.Panel3.Location = New System.Drawing.Point(36, 74)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(626, 284)
-        Me.Panel3.TabIndex = 36
+        Me.Panel_datosArticulo.Controls.Add(Me.Panel_precioYTamanio)
+        Me.Panel_datosArticulo.Controls.Add(Me.Button_eliminar)
+        Me.Panel_datosArticulo.Controls.Add(Me.ComboBox_categorias)
+        Me.Panel_datosArticulo.Controls.Add(Me.Button1)
+        Me.Panel_datosArticulo.Controls.Add(Me.Button_guardar)
+        Me.Panel_datosArticulo.Controls.Add(Me.ListBox_tamaniosprecios)
+        Me.Panel_datosArticulo.Controls.Add(Me.Label6)
+        Me.Panel_datosArticulo.Controls.Add(Me.Label5)
+        Me.Panel_datosArticulo.Controls.Add(Me.TextBox_descripcion)
+        Me.Panel_datosArticulo.Controls.Add(Me.Label4)
+        Me.Panel_datosArticulo.Controls.Add(Me.Label2)
+        Me.Panel_datosArticulo.Controls.Add(Me.TextBox_nombre)
+        Me.Panel_datosArticulo.Location = New System.Drawing.Point(36, 74)
+        Me.Panel_datosArticulo.Name = "Panel_datosArticulo"
+        Me.Panel_datosArticulo.Size = New System.Drawing.Size(626, 284)
+        Me.Panel_datosArticulo.TabIndex = 36
         '
-        'Panel4
+        'Panel_precioYTamanio
         '
-        Me.Panel4.Controls.Add(Me.Label8)
-        Me.Panel4.Controls.Add(Me.TextBox_tamanio)
-        Me.Panel4.Controls.Add(Me.TextBox_precio)
-        Me.Panel4.Controls.Add(Me.Label7)
-        Me.Panel4.Controls.Add(Me.Button_aniadir)
-        Me.Panel4.Controls.Add(Me.Label3)
-        Me.Panel4.Location = New System.Drawing.Point(24, 153)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(350, 131)
-        Me.Panel4.TabIndex = 24
+        Me.Panel_precioYTamanio.Controls.Add(Me.Label8)
+        Me.Panel_precioYTamanio.Controls.Add(Me.TextBox_tamanio)
+        Me.Panel_precioYTamanio.Controls.Add(Me.TextBox_precio)
+        Me.Panel_precioYTamanio.Controls.Add(Me.Label7)
+        Me.Panel_precioYTamanio.Controls.Add(Me.Button_aniadir)
+        Me.Panel_precioYTamanio.Controls.Add(Me.Label3)
+        Me.Panel_precioYTamanio.Location = New System.Drawing.Point(24, 153)
+        Me.Panel_precioYTamanio.Name = "Panel_precioYTamanio"
+        Me.Panel_precioYTamanio.Size = New System.Drawing.Size(350, 131)
+        Me.Panel_precioYTamanio.TabIndex = 24
         '
         'Label8
         '
@@ -445,7 +445,7 @@ Partial Class Pantalla_modificar_articulos
         '
         'Button_cancelar
         '
-        Me.Button_cancelar.Location = New System.Drawing.Point(677, 335)
+        Me.Button_cancelar.Location = New System.Drawing.Point(238, 398)
         Me.Button_cancelar.Name = "Button_cancelar"
         Me.Button_cancelar.Size = New System.Drawing.Size(75, 23)
         Me.Button_cancelar.TabIndex = 35
@@ -454,7 +454,7 @@ Partial Class Pantalla_modificar_articulos
         '
         'Button_modificar
         '
-        Me.Button_modificar.Location = New System.Drawing.Point(176, 45)
+        Me.Button_modificar.Location = New System.Drawing.Point(108, 398)
         Me.Button_modificar.Name = "Button_modificar"
         Me.Button_modificar.Size = New System.Drawing.Size(75, 23)
         Me.Button_modificar.TabIndex = 34
@@ -464,6 +464,7 @@ Partial Class Pantalla_modificar_articulos
         'ComboBox_modificar
         '
         Me.ComboBox_modificar.FormattingEnabled = True
+        Me.ComboBox_modificar.Items.AddRange(New Object() {"1", "2"})
         Me.ComboBox_modificar.Location = New System.Drawing.Point(36, 45)
         Me.ComboBox_modificar.Name = "ComboBox_modificar"
         Me.ComboBox_modificar.Size = New System.Drawing.Size(121, 21)
@@ -482,7 +483,7 @@ Partial Class Pantalla_modificar_articulos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(800, 517)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.MenuStrip)
         Me.Controls.Add(Me.Panel1)
@@ -494,10 +495,10 @@ Partial Class Pantalla_modificar_articulos
         Me.MenuStrip.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
-        Me.Panel4.ResumeLayout(False)
-        Me.Panel4.PerformLayout()
+        Me.Panel_datosArticulo.ResumeLayout(False)
+        Me.Panel_datosArticulo.PerformLayout()
+        Me.Panel_precioYTamanio.ResumeLayout(False)
+        Me.Panel_precioYTamanio.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -524,7 +525,7 @@ Partial Class Pantalla_modificar_articulos
     Friend WithEvents AyudaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ManualDeUsuarioToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Panel_datosArticulo As Panel
     Friend WithEvents ComboBox_categorias As ComboBox
     Friend WithEvents Button1 As Button
     Friend WithEvents Button_guardar As Button
@@ -543,7 +544,7 @@ Partial Class Pantalla_modificar_articulos
     Friend WithEvents Label3 As Label
     Friend WithEvents Button_eliminar As Button
     Friend WithEvents Button_aniadir As Button
-    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Panel_precioYTamanio As Panel
     Friend WithEvents Label8 As Label
     Friend WithEvents TextBox_precio As TextBox
     Friend WithEvents TextBox_tamanio As TextBox

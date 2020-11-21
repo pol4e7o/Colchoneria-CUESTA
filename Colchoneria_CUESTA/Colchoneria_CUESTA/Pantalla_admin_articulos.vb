@@ -21,8 +21,10 @@
 
     'VOLVER
     Private Sub VolverToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VolverToolStripMenuItem.Click
-        Pantalla_admin.Show()
-        Me.Hide()
+
+        Pantalla_de_venta.Show()
+        Me.Close()
+
     End Sub
 
     'SALIR
@@ -70,17 +72,17 @@
     'GESTIÓN EMPLEADOS
     Private Sub GestionDeEmpleadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionDeEmpleadosToolStripMenuItem.Click
 
-    End Sub
-
-    'GESTIÓN ARTÍCULOS
-    Private Sub GestiónDeArtículosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestiónDeArtículosToolStripMenuItem.Click
+        Pantalla_admin_empleados.Show()
+        Me.Close()
 
     End Sub
 
     'GESTIÓN VENTAS
     Private Sub GestiónDeVentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestiónDeVentasToolStripMenuItem.Click
-        Pantalla_admin.Show()
+
+        Gestion_de_ventas.Show()
         Me.Close()
+
     End Sub
 
     'LOAD
@@ -90,11 +92,6 @@
 
         'Se indica la hora actual
         label_hora.Text = "Hora: " & TimeString
-
-        'Cuando se carga la aplicacion cajaCerrada será true
-        'Cuando se haga una venta este valor pasará a false
-        ' y esta que no se haga el cierre de caja no se podra salir de la aplicacion
-        ElementosComunes.cajaCerrada = True
 
         'Se deabilita la opcion gestion de artículos porque es este mismo formulario
         GestiónDeArtículosToolStripMenuItem.Enabled = False
