@@ -1,4 +1,16 @@
-﻿Public Class Pantalla_eliminar_articulo
+﻿
+Public Class Gestion_de_ventas
+    'LOAD
+    Private Sub Gestion_de_ventas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Se indica la fecha actual
+        label_fecha.Text = "Fecha: " & DateString
+
+        'Se indica la hora actual
+        label_hora.Text = "Hora: " & TimeString
+
+        'El primer elemento que tendra el foco es el textBox del usuario
+        ComboBox_dia.Focus()
+    End Sub
     'MENU
     'CERRAR CAJA
     Private Sub CerrarCajaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarCajaToolStripMenuItem.Click
@@ -23,7 +35,7 @@
     'VOLVER
     Private Sub VolverToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VolverToolStripMenuItem.Click
         Pantalla_admin_articulos.Show()
-        Me.Hide()
+        Me.Close()
     End Sub
 
     'SALIR
@@ -67,49 +79,45 @@
     Private Sub ManualDeUsuarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ManualDeUsuarioToolStripMenuItem.Click
         'Te reenviará a un fichero: Manual de usuario
     End Sub
-    'LOAD---------------------------------------------------------------------------------------------------------------------------------------
-    'Este es el formulario creado para eliminar artículos
-    Private Sub Pantalla_eliminar_articulo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'El foco lo colocamos sobre el comboBox
-        ComboBox_eliminar.Focus()
-
-        'Se indica la fecha actual
-        label_fecha.Text = "Fecha: " & DateString
-
-        'Se indica la hora actual
-        label_hora.Text = "Hora: " & TimeString
-
-        'Comprobamos si el comoBox tiene algo seleccionado
-        If (ComboBox_eliminar.SelectedItem < 0) Then
-            Button_eliminar.Enabled = False
-        Else
-            Button_eliminar.Enabled = True
-        End If
-    End Sub
-
-    'Programamos el botón cancelar
-    Private Sub Button_cancelar_Click(sender As Object, e As EventArgs) Handles Button_cancelar.Click
-
-        Select Case MsgBox("Está seguro de que desea salir?", MsgBoxStyle.YesNo + MsgBoxStyle.Information, "Salir")
-            Case MsgBoxResult.Yes
-                Pantalla_admin_articulos.Show()
-                Me.Close()
-            Case MsgBoxResult.No
-        End Select
-
-    End Sub
-
-    'Programamos el botón eliminar
-    Private Sub Button_eliminar_Click(sender As Object, e As EventArgs) Handles Button_eliminar.Click
-        'Elimina articulo del fichero
-    End Sub
 
     'HORA
     Private Sub TimerHoraReal_Tick(sender As Object, e As EventArgs) Handles TimerHoraReal.Tick
 
-        'Se indica la hora actual
+        'Por cada segundo que pasa se cambia el reloj
         label_hora.Text = "Hora: " & TimeString
 
     End Sub
 
+    'COMBOBOX
+    Private Sub ComboBox_dia_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox_dia.SelectedIndexChanged
+        activarBotonVisualizar()
+    End Sub
+
+    'ACTIVAR BOTON VISUALIZAR
+    Private Sub activarBotonVisualizar()
+        If (ComboBox_dia.SelectedItem < 0) Then
+            Button_visualizar.Enabled = False
+        Else
+            Button_visualizar.Enabled = True
+        End If
+    End Sub
+
+    Private Sub Button_volver_Click(sender As Object, e As EventArgs) Handles Button_volver.Click
+        'La opcion elegida por el usuario a la hora de decidir si desea cancelar la operacion
+        Dim opcion As Integer
+
+        opcion = MsgBox("Esta seguro que desea cancelar la operacion?", 4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Cancelar")
+
+        If opcion = MsgBoxResult.Yes Then
+
+            'Se abre la pantalla de gestion de empleados y se cierra la de baja de empleado
+            Pantalla_admin_articulos.Show()
+            Me.Close()
+
+        End If
+    End Sub
+    'VISUALIZAR
+    Private Sub Button_visualizar_Click(sender As Object, e As EventArgs) Handles Button_visualizar.Click
+        'Coloca en el label la fecha la hora y el total de venta
+    End Sub
 End Class
