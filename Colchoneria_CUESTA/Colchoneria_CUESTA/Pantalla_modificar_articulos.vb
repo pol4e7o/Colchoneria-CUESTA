@@ -182,7 +182,7 @@
             TextBox_descripcion.Text = ""
             ComboBox_categorias.SelectedItem = -1
             TextBox_precio.Text = ""
-            TextBox_tamanio.Text = ""
+            ComboBox_tamanio.Text = ""
             ListBox_tamaniosprecios.Items.Clear()
 
             'Se habilita el boton guardar
@@ -198,7 +198,7 @@
             TextBox_descripcion.Text = ""
             ComboBox_categorias.SelectedItem = -1
             TextBox_precio.Text = ""
-            TextBox_tamanio.Text = ""
+            ComboBox_tamanio.Text = ""
             ListBox_tamaniosprecios.Items.Clear()
 
             'Se habilita el boton guardar
@@ -212,7 +212,7 @@
     'BOTON AÑADIR
     Private Sub Button_aniadir_Click(sender As Object, e As EventArgs) Handles Button_aniadir.Click
         Dim precio As String = TextBox_precio.Text.ToString
-        Dim tamanio As String = TextBox_tamanio.Text.ToString
+        Dim tamanio As String = ComboBox_tamanio.SelectedItem.ToString
         Dim a As String = "precio: " + precio + " tamaño: " + tamanio
         ListBox_tamaniosprecios.Items.Add(a)
     End Sub
@@ -285,7 +285,7 @@
     Private Sub activarBotonAniadir()
         Button_aniadir.Enabled = False
         'Se comprueba que todos los campos necesarios están rellenos
-        If TextBox_tamanio.Text.Length <> 0 And TextBox_precio.Text.Length <> 0 Then
+        If ComboBox_tamanio.SelectedItem < 0 And TextBox_precio.Text.Length <> 0 Then
             Button_aniadir.Enabled = True
         End If
     End Sub
@@ -313,7 +313,7 @@
         If validacion.validarNombres(TextBox_nombre.Text) Then
 
             'Si todos los campos tienen los caracteres minimos el boton guardar se activa
-            'activarBotonGuardarAlta()
+            activarBotonModificar()
 
         Else
 
@@ -354,29 +354,7 @@
         End If
     End Sub
 
-    Private Sub TextBox_tamanio_TextChanged(sender As Object, e As EventArgs) Handles TextBox_tamanio.TextChanged
-        'Si los datos introducidos en el campo son correctos se comprueba si se puede activar el boton añadir
-        If validacion.esNumero(TextBox_tamanio.Text) Then
 
-            'Para activar el boton las dos contraseñas tienen que coincidir
-            If validacion.numeroMayorACero(TextBox_tamanio.Text) Then
-
-                'Si todos los campos tienen los caracteres minimos el boton guardar se activa
-                activarBotonAniadir()
-            Else
-                MsgBox("Por favor introduzca de precio, que sea superior a 0€.", 0 + MsgBoxStyle.Information, "Precio incorrecto")
-                TextBox_tamanio.Focus()
-
-            End If
-
-        Else
-
-            'Se le indica al usuario que el dato es incorreto y el foco vuelve al campo de contraseña
-            MsgBox("Por favor introduzca de precio, que solo sean números.", 0 + MsgBoxStyle.Information, "Precio incorrecto")
-            TextBox_tamanio.Focus()
-
-        End If
-    End Sub
 
     'LISTBOX PRECIOTAMAÑO
     Private Sub ListBox_tamaniosprecios_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox_tamaniosprecios.SelectedIndexChanged
@@ -388,8 +366,11 @@
 
     End Sub
 
-    Private Sub TextBox_nombre_TextChanged_1(sender As Object, e As EventArgs) Handles TextBox_nombre.TextChanged
+    'COMBOBOX TAMAÑOS
+    Private Sub ComboBox_tamanio_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox_tamanio.SelectedIndexChanged
         activarBotonModificar()
+        activarBotonAniadir()
     End Sub
+
 
 End Class
