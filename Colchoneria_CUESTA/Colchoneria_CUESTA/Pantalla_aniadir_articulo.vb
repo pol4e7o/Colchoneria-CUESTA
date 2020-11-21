@@ -251,23 +251,6 @@
     End Sub
 
 
-    'DESCRIPCIÓN VALIDA
-    Private Sub TextBox_descripcion_TextChanged(sender As Object, e As EventArgs) Handles TextBox_descripcion.Leave
-        'Si los datos introducidos en el campo son correctos se comprueba si se puede activar el boton guardar
-        If validacion.validarNombres(TextBox_descripcion.Text) Then
-
-            'Si todos los campos tienen los caracteres minimos el boton guardar se activa
-            'activarBotonGuardarAlta()
-
-        Else
-
-            'Se le indica al usuario que el dato es incorreto y el foco vuelve al campo de nombre
-            MsgBox("Las descripciones pueden contener solo letras, espacios en blanco y guiones. Por favor intente introducir el valor del campo nombre de nuevo.", 0 + MsgBoxStyle.Information, "Valor de apellidos incorrecto")
-            TextBox_nombre.Focus()
-
-        End If
-
-    End Sub
     'LISTBOX TAMAÑOS
     Private Sub ListBox_precios_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox_tamanios.SelectedIndexChanged
         activarBotonAniadir()

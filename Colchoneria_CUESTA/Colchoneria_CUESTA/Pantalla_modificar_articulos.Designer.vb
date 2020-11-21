@@ -47,6 +47,7 @@ Partial Class Pantalla_modificar_articulos
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel_datosArticulo = New System.Windows.Forms.Panel()
         Me.Panel_precioYTamanio = New System.Windows.Forms.Panel()
+        Me.ComboBox_tamanio = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.TextBox_precio = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -67,7 +68,6 @@ Partial Class Pantalla_modificar_articulos
         Me.Button_modificar = New System.Windows.Forms.Button()
         Me.ComboBox_modificar = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.ComboBox_tamanio = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         Me.MenuStrip.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -270,6 +270,7 @@ Partial Class Pantalla_modificar_articulos
         '
         'Panel_datosArticulo
         '
+        Me.Panel_datosArticulo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel_datosArticulo.Controls.Add(Me.Panel_precioYTamanio)
         Me.Panel_datosArticulo.Controls.Add(Me.Button_eliminar)
         Me.Panel_datosArticulo.Controls.Add(Me.ComboBox_categorias)
@@ -290,6 +291,7 @@ Partial Class Pantalla_modificar_articulos
         '
         'Panel_precioYTamanio
         '
+        Me.Panel_precioYTamanio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel_precioYTamanio.Controls.Add(Me.ComboBox_tamanio)
         Me.Panel_precioYTamanio.Controls.Add(Me.Label8)
         Me.Panel_precioYTamanio.Controls.Add(Me.TextBox_precio)
@@ -299,8 +301,16 @@ Partial Class Pantalla_modificar_articulos
         Me.Panel_precioYTamanio.Location = New System.Drawing.Point(32, 188)
         Me.Panel_precioYTamanio.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel_precioYTamanio.Name = "Panel_precioYTamanio"
-        Me.Panel_precioYTamanio.Size = New System.Drawing.Size(467, 161)
+        Me.Panel_precioYTamanio.Size = New System.Drawing.Size(467, 154)
         Me.Panel_precioYTamanio.TabIndex = 24
+        '
+        'ComboBox_tamanio
+        '
+        Me.ComboBox_tamanio.FormattingEnabled = True
+        Me.ComboBox_tamanio.Location = New System.Drawing.Point(168, 103)
+        Me.ComboBox_tamanio.Name = "ComboBox_tamanio"
+        Me.ComboBox_tamanio.Size = New System.Drawing.Size(121, 24)
+        Me.ComboBox_tamanio.TabIndex = 27
         '
         'Label8
         '
@@ -499,14 +509,6 @@ Partial Class Pantalla_modificar_articulos
         Me.Label1.TabIndex = 32
         Me.Label1.Text = "Artículos:"
         '
-        'ComboBox_tamanio
-        '
-        Me.ComboBox_tamanio.FormattingEnabled = True
-        Me.ComboBox_tamanio.Location = New System.Drawing.Point(168, 103)
-        Me.ComboBox_tamanio.Name = "ComboBox_tamanio"
-        Me.ComboBox_tamanio.Size = New System.Drawing.Size(121, 24)
-        Me.ComboBox_tamanio.TabIndex = 27
-        '
         'Pantalla_modificar_articulos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -517,7 +519,8 @@ Partial Class Pantalla_modificar_articulos
         Me.Controls.Add(Me.Panel1)
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Pantalla_modificar_articulos"
-        Me.Text = "Pantalla_modificar_articulos"
+        Me.Text = "Modificar artículos"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.MenuStrip.ResumeLayout(False)
