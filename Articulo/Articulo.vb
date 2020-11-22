@@ -9,14 +9,14 @@ Public Class Articulo
     'Categoria de cada artículo
     Private categoriaArticulo As String
     'Tamaño del artículo
-    Private tamaniosArticulo As ArrayList
+    Private tamaniosArticulo As New ArrayList()
     'Precio del artículo
-    Private preciosTamaniosArticulo As ArrayList
+    Private preciosTamaniosArticulo As New ArrayList()
 
     'Posibles precios del articulo
-    Public posiblesTamaniosArticulo As ArrayList
+    Public posiblesTamaniosArticulo As New ArrayList()
     'Posibles categorias del artículo
-    Public posiblesCategoriasArticulo As ArrayList
+    Public posiblesCategoriasArticulo As New ArrayList()
 
     'Creamos un constructor para la clase artículo.
     'Este constructor crea los objetos de artículo con el ArrayList de categorias lleno de las
@@ -29,21 +29,21 @@ Public Class Articulo
         Me.categoriaArticulo = cat
 
         'Llenado del ArrayList posiblesCategoriasArticulo
-        Me.posiblesCategoriasArticulo.Add("Base")
-        Me.posiblesCategoriasArticulo.Add("Somier")
-        Me.posiblesCategoriasArticulo.Add("Canape")
-        Me.posiblesCategoriasArticulo.Add("Colchon")
-        Me.posiblesCategoriasArticulo.Add("Ofertas")
-        Me.posiblesCategoriasArticulo.Add("Otros")
+        Me.posiblesCategoriasArticulo.Add = "Base"
+        Me.posiblesCategoriasArticulo.Add = "Somier"
+        Me.posiblesCategoriasArticulo.Add = "Canape"
+        Me.posiblesCategoriasArticulo.Add = "Colchon"
+        Me.posiblesCategoriasArticulo.Add = "Ofertas"
+        Me.posiblesCategoriasArticulo.Add = "Otros"
 
         'Llenamos el ArrayList de posiblesTamaniosArticulo
-        Me.posiblesTamaniosArticulo.Add(80)
-        Me.posiblesTamaniosArticulo.Add(90)
-        Me.posiblesTamaniosArticulo.Add(105)
-        Me.posiblesTamaniosArticulo.Add(135)
-        Me.posiblesTamaniosArticulo.Add(150)
-        Me.posiblesTamaniosArticulo.Add(160)
-        Me.posiblesTamaniosArticulo.Add(180)
+        Me.posiblesTamaniosArticulo.Add = 80
+        Me.posiblesTamaniosArticulo.Add = 90
+        Me.posiblesTamaniosArticulo.Add = 105
+        Me.posiblesTamaniosArticulo.Add = 135
+        Me.posiblesTamaniosArticulo.Add = 150
+        Me.posiblesTamaniosArticulo.Add = 160
+        Me.posiblesTamaniosArticulo.Add = 180
 
     End Sub
 
@@ -51,21 +51,22 @@ Public Class Articulo
     Public Sub New()
 
         'Llenado del ArrayList posiblesCategoriasArticulo
-        Me.posiblesCategoriasArticulo.Add("Base")
-        Me.posiblesCategoriasArticulo.Add("Somier")
-        Me.posiblesCategoriasArticulo.Add("Canape")
-        Me.posiblesCategoriasArticulo.Add("Colchon")
-        Me.posiblesCategoriasArticulo.Add("Ofertas")
-        Me.posiblesCategoriasArticulo.Add("Otros")
+        Me.posiblesCategoriasArticulo.Add = "Base"
+        Me.posiblesCategoriasArticulo.Add = "Somier"
+        Me.posiblesCategoriasArticulo.Add = "Canape"
+        Me.posiblesCategoriasArticulo.Add = "Colchon"
+        Me.posiblesCategoriasArticulo.Add = "Ofertas"
+        Me.posiblesCategoriasArticulo.Add = "Otros"
 
         'Llenamos el ArrayList de posiblesTamaniosArticulo
-        Me.posiblesTamaniosArticulo.Add(80)
-        Me.posiblesTamaniosArticulo.Add(90)
-        Me.posiblesTamaniosArticulo.Add(105)
-        Me.posiblesTamaniosArticulo.Add(135)
-        Me.posiblesTamaniosArticulo.Add(150)
-        Me.posiblesTamaniosArticulo.Add(160)
-        Me.posiblesTamaniosArticulo.Add(180)
+        Me.posiblesTamaniosArticulo.Add = 80
+        Me.posiblesTamaniosArticulo.Add = 90
+        Me.posiblesTamaniosArticulo.Add = 105
+        Me.posiblesTamaniosArticulo.Add = 135
+        Me.posiblesTamaniosArticulo.Add = 150
+        Me.posiblesTamaniosArticulo.Add = 160
+        Me.posiblesTamaniosArticulo.Add = 180
+
 
     End Sub
 
@@ -82,8 +83,12 @@ Public Class Articulo
         Return categoriaArticulo
     End Function
 
-    Function getPrecioArticulo() As ArrayList
+    Function getPreciosTamaniosArticulo() As ArrayList
         Return preciosTamaniosArticulo
+    End Function
+
+    Function getTamaniosArticulo() As ArrayList
+        Return tamaniosArticulo
     End Function
 
     'Funciones setter para modificar el valor de las variables del objeto
@@ -102,8 +107,8 @@ Public Class Articulo
 
     'El tamaño y su precio se asignan utilizando solo un metodo
     Sub setTamanioPrecio(tamanio As Integer, precio As Double)
-        tamaniosArticulo.Add(tamanio)
-        preciosTamaniosArticulo.Add(precio)
+        tamaniosArticulo.Add = tamanio
+        preciosTamaniosArticulo.Add = precio
 
     End Sub
 

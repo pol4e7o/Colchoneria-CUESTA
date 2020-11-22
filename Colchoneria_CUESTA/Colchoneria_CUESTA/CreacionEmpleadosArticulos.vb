@@ -18,7 +18,7 @@ Module CreacionEmpleadosArticulos
         Dim articulos As New List(Of Articulo.Articulo)
 
         Dim arti1 As New Articulo.Articulo("Colchon1", "Colchon viscoelástico celula abierta, adaptable, termosensible, nucleo HR", "Colchon")
-        Dim arti2 As New Articulo.Articulo("Colchon2""Colchon latex 100%, Certificado OKOTEX", "Colchon")
+        Dim arti2 As New Articulo.Articulo("Colchon 100% Latex", "Colchon latex 100%, Certificado OKOTEX", "Colchon")
         Dim arti3 As New Articulo.Articulo("Viscoelástico HR", "Celula abierta, adaptable, termosensible, nucleo HR", "Colchon")
         Dim arti4 As New Articulo.Articulo("VISCO", "Celula abierta, adaptable, termosensible, nucleo HR", "Colchon")
         Dim arti5 As New Articulo.Articulo("Colchon visco grafeno", "Colchon firmeza media alta, gran confort", "Colchon")
