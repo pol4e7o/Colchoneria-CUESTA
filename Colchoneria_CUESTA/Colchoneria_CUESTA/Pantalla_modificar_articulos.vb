@@ -1,8 +1,11 @@
 ﻿Public Class Pantalla_modificar_articulos
+
     'ARRANCAMOS EL FORMULARIO
     Private Sub Pantalla_modificar_articulos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Colocamos el foco sobre el comboBox que nos interesa
         ComboBox_modificar.Focus()
+
+        ComboBox_tamanio.Text = ""
 
         'Se indica la fecha actual
         label_fecha.Text = "Fecha: " & DateString
@@ -211,10 +214,24 @@
     'BOTONES--------------------------------------------------------------------------------------------------------------------------------------------
     'BOTON AÑADIR
     Private Sub Button_aniadir_Click(sender As Object, e As EventArgs) Handles Button_aniadir.Click
+
         Dim precio As String = TextBox_precio.Text.ToString
-        Dim tamanio As String = ComboBox_tamanio.SelectedItem.ToString
-        Dim a As String = "precio: " + precio + " tamaño: " + tamanio
+        Dim tamanio As String
+        Dim a As String
+
+        If ComboBox_tamanio.Text <> "" Then
+
+            tamanio = ComboBox_tamanio.Text
+
+        Else
+
+            tamanio = ComboBox_tamanio.SelectedItem.ToString
+
+        End If
+
+        a = "precio: " + precio + " tamaño: " + tamanio
         ListBox_tamaniosprecios.Items.Add(a)
+
     End Sub
 
     'BOTON ELIMINAR
@@ -285,7 +302,7 @@
     Private Sub activarBotonAniadir()
         Button_aniadir.Enabled = False
         'Se comprueba que todos los campos necesarios están rellenos
-        If ComboBox_tamanio.SelectedItem < 0 And TextBox_precio.Text.Length <> 0 Then
+        If (ComboBox_tamanio.SelectedItem > 0 Or ComboBox_tamanio.Text <> "") And TextBox_precio.Text.Length <> 0 Then
             Button_aniadir.Enabled = True
         End If
     End Sub
@@ -373,4 +390,25 @@
     End Sub
 
 
+
+    Private Sub TextBox_precio_TextChanged_1(sender As Object, e As EventArgs) Handles TextBox_precio.TextChanged
+        activarBotonModificar()
+        activarBotonAniadir()
+    End Sub
+
+    Private Sub ComboBox_tamanio_TextChanged(sender As Object, e As EventArgs) Handles ComboBox_tamanio.TextChanged
+
+        'Si se introduce un tamaño nuevo para el articulo este tiene que ser mayor a 0
+        'Si no lo es se le indica al usuario mediante un message box y se limpia la caja de texto del combobox
+        'Tambien se dactiva el boton añadir
+        If validacion.numeroMayorACero(ComboBox_tamanio.Text) = False Then
+
+            MsgBox("El tamaño del articulo no puede ser mneor o igual a 0. Por favor indique un tamaño correcto o elija uno de los ya definidos de la lista", 0 + MsgBoxStyle.Information, "Tamaño incorrecto")
+
+            ComboBox_tamanio.Text = ""
+
+            Button_aniadir.Enabled = False
+
+        End If
+    End Sub
 End Class

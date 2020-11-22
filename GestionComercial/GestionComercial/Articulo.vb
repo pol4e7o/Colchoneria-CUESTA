@@ -1,6 +1,4 @@
-﻿Imports Validacion.Validacion
-
-
+﻿
 Public Class Articulo
     'Nombre de cada artículo
     Private nombreArticulo As String
@@ -9,14 +7,14 @@ Public Class Articulo
     'Categoria de cada artículo
     Private categoriaArticulo As String
     'Tamaño del artículo
-    Private tamaniosArticulo As ArrayList
+    Private tamaniosArticulo As New ArrayList()
     'Precio del artículo
-    Private preciosTamaniosArticulo As ArrayList
+    Private preciosTamaniosArticulo As New ArrayList()
 
     'Posibles precios del articulo
-    Public posiblesTamaniosArticulo As ArrayList
+    Public posiblesTamaniosArticulo As New ArrayList()
     'Posibles categorias del artículo
-    Public posiblesCategoriasArticulo As ArrayList
+    Public posiblesCategoriasArticulo As New ArrayList()
 
     'Creamos un constructor para la clase artículo.
     'Este constructor crea los objetos de artículo con el ArrayList de categorias lleno de las
@@ -67,6 +65,7 @@ Public Class Articulo
         Me.posiblesTamaniosArticulo.Add(160)
         Me.posiblesTamaniosArticulo.Add(180)
 
+
     End Sub
 
     'Funciones getters para obtener los valores del objeto
@@ -82,8 +81,12 @@ Public Class Articulo
         Return categoriaArticulo
     End Function
 
-    Function getPrecioArticulo() As ArrayList
+    Function getPreciosTamaniosArticulo() As ArrayList
         Return preciosTamaniosArticulo
+    End Function
+
+    Function getTamaniosArticulo() As ArrayList
+        Return tamaniosArticulo
     End Function
 
     'Funciones setter para modificar el valor de las variables del objeto
@@ -103,7 +106,7 @@ Public Class Articulo
     'El tamaño y su precio se asignan utilizando solo un metodo
     Sub setTamanioPrecio(tamanio As Integer, precio As Double)
         tamaniosArticulo.Add(tamanio)
-        preciosTamaniosArticulo.Add(precio)
+        preciosTamaniosArticulo.Add(Math.Round(precio, 2))
 
     End Sub
 
@@ -118,13 +121,26 @@ Public Class Articulo
     'del articulo. Si los arraylist no tienen el mismo tamaño no se asignan
     Function setTamaniosPrecios(tamanios As ArrayList, precios As ArrayList) As Boolean
 
+        'El contador que utiliza el for
+        Dim i As Integer
+
         setTamaniosPrecios = False
 
         'Los dos arraylist tienen que tener el mismo numero de elementos
         If tamanios.Count = precios.Count Then
 
+            'Se pasa por todos los elementos del parametro arraylist de precios
+            'convertiendole en un numero de tipo double con dos decimales
+            For i = 0 To precios.Count - 1
+                precios.Item(i) = Math.Round(precios.Item(i), 2)
+            Next i
+
             preciosTamaniosArticulo = precios
             tamaniosArticulo = tamanios
+
+            'Se le pasa a la variable setTamaniosPrecios el valor true
+            'indicando que se ha realizado la asignacion con exito
+            setTamaniosPrecios = True
 
         End If
 

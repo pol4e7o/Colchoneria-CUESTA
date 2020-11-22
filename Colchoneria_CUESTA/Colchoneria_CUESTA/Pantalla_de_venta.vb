@@ -5,14 +5,10 @@
     'Va a contener todos los articulos de la tienda
     Public articulos As ArrayList
 
-    'Se almacenan el nombre y el tamaño en una cadena de los articulos elegidos
-    Public nombresArticulos As ArrayList
-
-    'Se almacenan las cantidades por cada producto elegido
-    Public cantidades As ArrayList
-
-    'Se almacenan los precios por cada articulo elegido
-    Public precios As ArrayList
+    'Este arraylist representa todos los articulos seleccionados para ser comprados por el cliente
+    'Dentro de cada objeto se almacenaran el nombre del articulo (dentro del nombre se añade el tamaño),
+    'la cantidad que se desea comprar de este articulo y el precio por unidad
+    Public articulosVendidos As ArrayList
 
     Private Sub Pantalla_de_venta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -34,14 +30,8 @@
 
         End If
 
-        'Por defecto todos los panels de los articulos vienen desactivados
-        'Para activarlos se tiene que elegir un articulo
-        panel_base.Enabled = False
-        panel_somier.Enabled = False
-        panel_colchon.Enabled = False
-        panel_canape.Enabled = False
-        panel_ofertas.Enabled = False
-        panel_otros.Enabled = False
+        'Se desactivan todos los elementos que no se deben utilizar a la hora de iniciar el formulario
+        desactivarElementos()
 
         'Se cargan todos los articulos del fichero de articulos
 
@@ -59,30 +49,39 @@
         'visualizar en un message box
         Dim informe As String
 
+        'Si no se ha añadido ningun articulo al pedido se puede realizar el cierre de caja
+        If ventaArticulos = 0 Then
 
-        'Se pregunta al usuario si esta seguro que desea cerrar caja
-        opcion = MsgBox("Esta seguro que desea cerrar caja?", 4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Cerrar caja")
+            'Se pregunta al usuario si esta seguro que desea cerrar caja
+            opcion = MsgBox("Esta seguro que desea cerrar caja?", 4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Cerrar caja")
 
-        If opcion = MsgBoxResult.Yes Then
+            If opcion = MsgBoxResult.Yes Then
 
-            informe = "Informe de venta de: " & vbCrLf &
-            Now & vbCrLf &
-            "Total: " & venta & "€" & vbCrLf &
-            "Cierre de caja hecha por: " & vbCrLf &
-            "Usuario"
+                informe = "Informe de venta de: " & vbCrLf & Now & vbCrLf & "Total: " & venta & "€" &
+                    vbCrLf & "Cierre de caja hecha por: " & vbCrLf & "Usuario"
 
-            'Se guarda en el fichero de ventas el dia, la hora, la venta y el usuario
+                'Se guarda en el fichero de ventas el dia, la hora, la venta y el usuario
 
-            'Se visualiza la informacon del cierre de caja en un Message box
-            MsgBox(informe, 0 + MsgBoxStyle.Information, "Informe de cierre de caja")
+                'Se visualiza la informacon del cierre de caja en un Message box
+                MsgBox(informe, 0 + MsgBoxStyle.Information, "Informe de cierre de caja")
 
-            'Se cambia el valor de la variable venta a 0
-            venta = 0
+                'Se cambia el valor de la variable venta a 0
+                venta = 0
 
-            'Se le pasa el valor true a la variable cajaCerrada 
-            cajaCerrada = True
+                'Se le pasa el valor true a la variable cajaCerrada 
+                cajaCerrada = True
+
+            End If
+
+
+        Else
+
+            'Se pregunta al usuario si esta seguro que desea cerrar caja
+            opcion = MsgBox("Para poder realizar el cierre de caja el pedido actual se tiene que anular o cobrar.", 0 + MsgBoxStyle.Information, "Cerrar caja")
 
         End If
+
+
 
     End Sub
 
@@ -325,4 +324,167 @@
         End If
 
     End Sub
+
+    Private Sub button_anular_Click(sender As Object, e As EventArgs) Handles button_anular.Click
+
+        'Representa la opcion elegido por el usuario
+        Dim opcion As Integer
+
+        'Se pregunta al usuario si esta seguro que desea cerrar caja
+        opcion = MsgBox("Esta seguro que desea anular el pedido?", 4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Anular venta")
+
+        If opcion = MsgBoxResult.Yes Then
+
+            'Se le asigna a la variable ventaArticulos 0 
+            ventaArticulos = 0
+
+            desactivarElementos()
+
+        End If
+
+
+    End Sub
+
+    Private Sub desactivarElementos()
+        'Todos los panels de los articulos se desactivan
+        'Para activarlos se tiene que elegir un articulo
+        panel_base.Enabled = False
+        panel_somier.Enabled = False
+        panel_colchon.Enabled = False
+        panel_canape.Enabled = False
+        panel_ofertas.Enabled = False
+        panel_otros.Enabled = False
+
+        'Los botones de anular compra y cobrar se desactivan
+        'Se activan si existen productos seleccionados visualizados en el listbox
+        button_anular.Enabled = False
+        button_cobrar.Enabled = False
+
+        'Por ultimo se eliminan todos los articulos elegidos
+        articulosVendidos.Clear()
+        listBox_articulosElegidos.Items.Clear()
+
+
+    End Sub
+
+    Private Sub listBox_articulosElegidos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles listBox_articulosElegidos.SelectedIndexChanged
+
+        'si no hay ningun elemento elegido se desactivan los botones de añadir una cantidad, 
+        'restar una cantidad (eliminar_1) y eliminar el articulo de la lista(eliminar_articulo)
+        If listBox_articulosElegidos.SelectedIndex = -1 Then
+
+            button_aniadir_1.Enabled = False
+            button_eliminar_1.Enabled = False
+            button_eliminar_articulo.Enabled = False
+
+        Else
+
+            button_aniadir_1.Enabled = True
+            button_eliminar_1.Enabled = True
+            button_eliminar_articulo.Enabled = True
+
+        End If
+
+    End Sub
+
+    Private Sub listBox_articulosElegidos_SizeChanged(sender As Object, e As EventArgs) Handles listBox_articulosElegidos.SizeChanged
+
+        If listBox_articulosElegidos.Items.Count = 0 Then
+
+            'Si el listbox no contiene ningun elemento los botones anular y cobrar se desabilitan
+            button_anular.Enabled = False
+            button_cobrar.Enabled = False
+
+        Else
+
+            'Si el listbox contiene elementos se activan los botones cobrar y anular
+            button_anular.Enabled = True
+            button_cobrar.Enabled = True
+
+        End If
+
+    End Sub
+
+    Private Sub button_aniadir_1_Click(sender As Object, e As EventArgs) Handles button_aniadir_1.Click
+
+        'Se le suma 1 a la cantidad del objeto elegido teniendo en cuenta que cuando se elije un articulo que añade al arraylist
+        'de articulosVendidos y al listbox por lo tanto tienen que tener el mismo numero de elementos
+        CType(articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex), GestionComercial.Venta).setCantidad(CType(articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex), GestionComercial.Venta).getCantidad + 1)
+
+        'Se le pasa el nuevo valor al elemento elegido del listbox
+        listBox_articulosElegidos.SelectedItem = LSet(CType(articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex), GestionComercial.Venta).getCantidad, 4) &
+        LSet(CType(articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex), GestionComercial.Venta).getNombreArticulo, 12) &
+        LSet(CType(articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex), GestionComercial.Venta).getPrecioCantidad & "€", 9) &
+        LSet(CType(articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex), GestionComercial.Venta).getCantidad & "€", 10)
+
+
+    End Sub
+
+    Private Sub button_eliminar_1_Click(sender As Object, e As EventArgs) Handles button_eliminar_1.Click
+
+        'Se le resta 1 a la cantidad del objeto elegido teniendo en cuenta que cuando se elije un articulo que añade al arraylist
+        'de articulosVendidos y al listbox por lo tanto tienen que tener el mismo numero de elementos
+        CType(articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex), GestionComercial.Venta).setCantidad(CType(articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex), GestionComercial.Venta).getCantidad - 1)
+
+        'Se le pasa el nuevo valor al elemento elegido del listbox
+        listBox_articulosElegidos.SelectedItem = LSet(CType(articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex), GestionComercial.Venta).getCantidad, 4) &
+        LSet(CType(articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex), GestionComercial.Venta).getNombreArticulo, 12) &
+        LSet(CType(articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex), GestionComercial.Venta).getPrecioCantidad & "€", 9) &
+        LSet(CType(articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex), GestionComercial.Venta).getCantidad & "€", 10)
+
+    End Sub
+
+    Private Sub button_eliminar_articulo_Click(sender As Object, e As EventArgs) Handles button_eliminar_articulo.Click
+
+        'Se elimina el articulo elegido del arraylist articulosVendidos
+        articulosVendidos.RemoveAt(listBox_articulosElegidos.SelectedIndex)
+
+        'Se elimina el articulo elegido del listbox
+        listBox_articulosElegidos.Items.RemoveAt(listBox_articulosElegidos.SelectedIndex)
+
+    End Sub
+
+    Private Sub button_cobrar_Click(sender As Object, e As EventArgs) Handles button_cobrar.Click
+
+        'Representa la opcion elegido por el usuario
+        Dim opcion As Integer
+
+        'Se pregunta al usuario si esta seguro que desea cerrar caja
+        opcion = MsgBox("Confimar pago", 4 + MsgBoxStyle.DefaultButton1 + MsgBoxStyle.Information, "Pago")
+
+        If opcion = MsgBoxResult.Yes Then
+
+            'Se imprime el ticket
+
+            'Se le suma a la variable global venta el valor de ventaArticulos
+            'que es el total de venta de este pedido
+            venta = venta + ventaArticulos
+
+            'Despues se le asigna a la variable ventaArticulos 0
+            ventaArticulos = 0
+
+            desactivarElementos()
+
+
+
+
+
+        Else
+
+
+
+        End If
+
+        '
+
+    End Sub
+
+    Private Sub button_desconectar_Click(sender As Object, e As EventArgs) Handles button_desconectar.Click
+
+    End Sub
+
+    Private Sub calcularTotalSubtotalIVA()
+
+    End Sub
+
 End Class

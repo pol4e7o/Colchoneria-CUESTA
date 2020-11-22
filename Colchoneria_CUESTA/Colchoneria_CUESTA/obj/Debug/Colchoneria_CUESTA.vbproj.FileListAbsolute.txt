@@ -45,12 +45,9 @@ D:\Github\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\obj\Debug\Col
 D:\Github\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\obj\Debug\Colchoneria_CUESTA.pdb
 D:\Github\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\obj\Debug\Colchoneria_CUESTA.Gestion_de_ventas.resources
 C:\Users\pol4e\OneDrive\Documents\GitHub\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\obj\Debug\Colchoneria_CUESTA.Gestion_de_ventas.resources
-C:\Users\pol4e\OneDrive\Documents\GitHub\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\Articulo.dll
-C:\Users\pol4e\OneDrive\Documents\GitHub\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\Empleado.dll
 C:\Users\pol4e\OneDrive\Documents\GitHub\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\Validacion.dll
-C:\Users\pol4e\OneDrive\Documents\GitHub\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\Articulo.pdb
-C:\Users\pol4e\OneDrive\Documents\GitHub\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\Articulo.xml
-C:\Users\pol4e\OneDrive\Documents\GitHub\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\Empleado.pdb
-C:\Users\pol4e\OneDrive\Documents\GitHub\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\Empleado.xml
 C:\Users\pol4e\OneDrive\Documents\GitHub\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\Validacion.pdb
 C:\Users\pol4e\OneDrive\Documents\GitHub\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\Validacion.xml
+C:\Users\pol4e\OneDrive\Documents\GitHub\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\GestionComercial.dll
+C:\Users\pol4e\OneDrive\Documents\GitHub\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\GestionComercial.pdb
+C:\Users\pol4e\OneDrive\Documents\GitHub\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\GestionComercial.xml
