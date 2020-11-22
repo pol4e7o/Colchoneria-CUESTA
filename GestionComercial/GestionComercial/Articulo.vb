@@ -1,6 +1,4 @@
-﻿Imports Validacion.Validacion
-
-
+﻿
 Public Class Articulo
     'Nombre de cada artículo
     Private nombreArticulo As String
@@ -29,21 +27,21 @@ Public Class Articulo
         Me.categoriaArticulo = cat
 
         'Llenado del ArrayList posiblesCategoriasArticulo
-        Me.posiblesCategoriasArticulo.Add = "Base"
-        Me.posiblesCategoriasArticulo.Add = "Somier"
-        Me.posiblesCategoriasArticulo.Add = "Canape"
-        Me.posiblesCategoriasArticulo.Add = "Colchon"
-        Me.posiblesCategoriasArticulo.Add = "Ofertas"
-        Me.posiblesCategoriasArticulo.Add = "Otros"
+        Me.posiblesCategoriasArticulo.Add("Base")
+        Me.posiblesCategoriasArticulo.Add("Somier")
+        Me.posiblesCategoriasArticulo.Add("Canape")
+        Me.posiblesCategoriasArticulo.Add("Colchon")
+        Me.posiblesCategoriasArticulo.Add("Ofertas")
+        Me.posiblesCategoriasArticulo.Add("Otros")
 
         'Llenamos el ArrayList de posiblesTamaniosArticulo
-        Me.posiblesTamaniosArticulo.Add = 80
-        Me.posiblesTamaniosArticulo.Add = 90
-        Me.posiblesTamaniosArticulo.Add = 105
-        Me.posiblesTamaniosArticulo.Add = 135
-        Me.posiblesTamaniosArticulo.Add = 150
-        Me.posiblesTamaniosArticulo.Add = 160
-        Me.posiblesTamaniosArticulo.Add = 180
+        Me.posiblesTamaniosArticulo.Add(80)
+        Me.posiblesTamaniosArticulo.Add(90)
+        Me.posiblesTamaniosArticulo.Add(105)
+        Me.posiblesTamaniosArticulo.Add(135)
+        Me.posiblesTamaniosArticulo.Add(150)
+        Me.posiblesTamaniosArticulo.Add(160)
+        Me.posiblesTamaniosArticulo.Add(180)
 
     End Sub
 
@@ -51,21 +49,21 @@ Public Class Articulo
     Public Sub New()
 
         'Llenado del ArrayList posiblesCategoriasArticulo
-        Me.posiblesCategoriasArticulo.Add = "Base"
-        Me.posiblesCategoriasArticulo.Add = "Somier"
-        Me.posiblesCategoriasArticulo.Add = "Canape"
-        Me.posiblesCategoriasArticulo.Add = "Colchon"
-        Me.posiblesCategoriasArticulo.Add = "Ofertas"
-        Me.posiblesCategoriasArticulo.Add = "Otros"
+        Me.posiblesCategoriasArticulo.Add("Base")
+        Me.posiblesCategoriasArticulo.Add("Somier")
+        Me.posiblesCategoriasArticulo.Add("Canape")
+        Me.posiblesCategoriasArticulo.Add("Colchon")
+        Me.posiblesCategoriasArticulo.Add("Ofertas")
+        Me.posiblesCategoriasArticulo.Add("Otros")
 
         'Llenamos el ArrayList de posiblesTamaniosArticulo
-        Me.posiblesTamaniosArticulo.Add = 80
-        Me.posiblesTamaniosArticulo.Add = 90
-        Me.posiblesTamaniosArticulo.Add = 105
-        Me.posiblesTamaniosArticulo.Add = 135
-        Me.posiblesTamaniosArticulo.Add = 150
-        Me.posiblesTamaniosArticulo.Add = 160
-        Me.posiblesTamaniosArticulo.Add = 180
+        Me.posiblesTamaniosArticulo.Add(80)
+        Me.posiblesTamaniosArticulo.Add(90)
+        Me.posiblesTamaniosArticulo.Add(105)
+        Me.posiblesTamaniosArticulo.Add(135)
+        Me.posiblesTamaniosArticulo.Add(150)
+        Me.posiblesTamaniosArticulo.Add(160)
+        Me.posiblesTamaniosArticulo.Add(180)
 
 
     End Sub
@@ -107,8 +105,8 @@ Public Class Articulo
 
     'El tamaño y su precio se asignan utilizando solo un metodo
     Sub setTamanioPrecio(tamanio As Integer, precio As Double)
-        tamaniosArticulo.Add = tamanio
-        preciosTamaniosArticulo.Add = precio
+        tamaniosArticulo.Add(tamanio)
+        preciosTamaniosArticulo.Add(Math.Round(precio, 2))
 
     End Sub
 
@@ -123,13 +121,26 @@ Public Class Articulo
     'del articulo. Si los arraylist no tienen el mismo tamaño no se asignan
     Function setTamaniosPrecios(tamanios As ArrayList, precios As ArrayList) As Boolean
 
+        'El contador que utiliza el for
+        Dim i As Integer
+
         setTamaniosPrecios = False
 
         'Los dos arraylist tienen que tener el mismo numero de elementos
         If tamanios.Count = precios.Count Then
 
+            'Se pasa por todos los elementos del parametro arraylist de precios
+            'convertiendole en un numero de tipo double con dos decimales
+            For i = 0 To precios.Count - 1
+                precios.Item(i) = Math.Round(precios.Item(i), 2)
+            Next i
+
             preciosTamaniosArticulo = precios
             tamaniosArticulo = tamanios
+
+            'Se le pasa a la variable setTamaniosPrecios el valor true
+            'indicando que se ha realizado la asignacion con exito
+            setTamaniosPrecios = True
 
         End If
 

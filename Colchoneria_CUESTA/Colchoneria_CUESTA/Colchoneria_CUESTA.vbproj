@@ -50,11 +50,8 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Articulo">
-      <HintPath>..\..\Articulo\bin\Debug\Articulo.dll</HintPath>
-    </Reference>
-    <Reference Include="Empleado">
-      <HintPath>..\..\Empleado\bin\Debug\Empleado.dll</HintPath>
+    <Reference Include="GestionComercial">
+      <HintPath>..\..\GestionComercial\GestionComercial\bin\Debug\GestionComercial.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -66,7 +63,8 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
-    <Reference Include="Validacion">
+    <Reference Include="Validacion, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Validacion\Validacion\bin\Debug\Validacion.dll</HintPath>
     </Reference>
   </ItemGroup>
