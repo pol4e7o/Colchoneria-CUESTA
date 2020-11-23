@@ -21,8 +21,8 @@
 
  http://colchoneriacuestavallehermoso.com"
 
-    'Indica si el usuario que se ha entrado en la TPV tiene derechos de administrador
-    Public administrador As Boolean = False
+    'El usuario que ha iniciado secion si hay uno
+    Public usuario As GestionComercial.Empleado
 
     'Objeto que se va a utilizar para validar campos 
     Public validacion As New Validacion.Validacion()
