@@ -5,7 +5,7 @@ Module CreacionEmpleadosArticulos
 
     Sub Main()
 
-        'Crear y añadir empleados
+        'Crear un ArrayList de tipo Empleado, creamos los emlpeados y por último añadimos los empleados.
         Dim empleados As New List(Of Empleado)
 
         Dim empleado1 As New Empleado("Rafael", "Cuesta", "C/Moscu 1ºA", "28022", "603239217", "AdminCusta", 1234, True)
@@ -16,31 +16,33 @@ Module CreacionEmpleadosArticulos
         empleados.Add(empleado2)
         empleados.Add(empleado3)
 
-        'Crear y añadir artículos
+        'Crear un ArrayList de tipo Articulo, creamos los artículos y por último añadimos los artículos al listado
         Dim articulos As New List(Of Articulo)
 
         Dim arti1 As New Articulo("Colchon1", "Colchon viscoelástico celula abierta, adaptable, termosensible, nucleo HR", "Colchon")
-        Dim arti2 As New Articulo("Colchon 100% Latex", "Colchon latex 100%, Certificado OKOTEX", "Colchon")
-        Dim arti3 As New Articulo("Viscoelástico HR", "Celula abierta, adaptable, termosensible, nucleo HR", "Colchon")
-        Dim arti4 As New Articulo("VISCO", "Celula abierta, adaptable, termosensible, nucleo HR", "Colchon")
-        Dim arti5 As New Articulo("Colchon visco grafeno", "Colchon firmeza media alta, gran confort", "Colchon")
-        Dim arti6 As New Articulo("Colchon active air", "Nucleo active air, memory foam 6cm, viscoelástica en cada cara", "Colchon")
-        Dim arti7 As New Articulo("Colchon visco-soja", "Linea super confort(termosoja)", "Colchon")
-        Dim arti8 As New Articulo("Colchon viscoelástica ecologico", "Con aceites naturales de soja y cítricos", "Colchon")
-        Dim arti9 As New Articulo("Vico serie plus", "Grafeno-viscolatex", "Colchon")
-        Dim arti10 As New Articulo("Colchon", "Muelles + viscoelástica", "Colchon")
-        Dim arti11 As New Articulo("Linea super-visco", "Conjunto linea de gran firmeza o linea gran confort + base tapizada reforzada", "Colchon")
-        Dim arti12 As New Articulo("Colchon muelle acolchado refuerzo lateral", "colchon + somier laminas anchas con patas a rosca", "Colchon")
-        Dim arti13 As New Articulo("Base tapizada", "Marco de hierro", "Base")
-        Dim arti14 As New Articulo("Cama-nido", "Con lámina ancha y refuerzo central", "Somier")
-        Dim arti15 As New Articulo("Somier lamina super ancha", "Somier con refuerzo central y soportes silenciosos", "Somier")
-        Dim arti16 As New Articulo("Cama electrica", "Somier electrico con colchon de viscoelástica o látex", "Somier")
-        Dim arti17 As New Articulo("Canapé abatible", "Madera vista", "Canape")
-        Dim arti18 As New Articulo("Canapé abatible curve", "Arcon madera vista, tapa transpirable, esquinas redondas", "Canape")
-        Dim arti19 As New Articulo("Canapé abatible máxima capacidad", "Arcon madera vista, tapa transpirable, esquinas de madera", "Canape")
-        Dim arti20 As New Articulo("Cama articula con arcon", "Cama eléctrica articulable con arcon para almacenamiento", "Canape")
-        Dim arti21 As New Articulo("Canapé abatible madera vista", "Canapé más colchon muelles ensacado", "Canape")
-        Dim arti22 As New Articulo("Canapé abatible esquinas reforzadas", "Canape más colchon visco grafeno de 2 caras", "Canape")
+        Dim arti2 As New Articulo("Colchon2", "Colchon latex 100%, Certificado OKOTEX", "Colchon")
+        Dim arti3 As New Articulo("Colchon3", "Viscoelástico HR, celula abierta, adaptable, termosensible, nucleo HR", "Colchon")
+        Dim arti4 As New Articulo("Colchon4", "VISCO, celula abierta, adaptable, termosensible, nucleo HR", "Colchon")
+        Dim arti5 As New Articulo("Colchon5", "Colchon visco grafeno, colchon firmeza media alta, gran confort", "Colchon")
+        Dim arti6 As New Articulo("Colchon6", "Colchon active air, núcleo active air, memory foam 6cm, viscoelástica en cada cara", "Colchon")
+        Dim arti7 As New Articulo("Colchon7", "Colchon visco-soja, línea super confort(termosoja)", "Colchon")
+        Dim arti8 As New Articulo("Colchon8", "Colchon viscoelástica ecologico, con aceites naturales de soja y cítricos", "Colchon")
+        Dim arti9 As New Articulo("Colchon9", "Vico serie plus, grafeno-viscolatex", "Colchon")
+        Dim arti10 As New Articulo("Colchon10", "Muelles + viscoelástica", "Colchon")
+        Dim arti23 As New Articulo("Colchon11", "Micro muelle ensacado, visco, gel, graffeno", "Colchon")
+        Dim arti24 As New Articulo("Colchon12", "Micro muelle ensacado, lechos diferenciados, doble cara de viscoelástica y doble cara latex", "Colchon")
+        Dim arti11 As New Articulo("Oferta1", "Linea super-visco, conjunto linea de gran firmeza o linea gran confort + base tapizada reforzada", "Oferta")
+        Dim arti12 As New Articulo("Oferta2", "Colchon muelle acolchado refuerzo lateral, colchon + somier laminas anchas con patas a rosca", "Oferta")
+        Dim arti13 As New Articulo("Base1", "Base tapizada, marco de hierro", "Base")
+        Dim arti14 As New Articulo("Somier1", "Cama-nido con lámina ancha y refuerzo central", "Somier")
+        Dim arti15 As New Articulo("Somier2", "Somier lamina super ancha con refuerzo central y soportes silenciosos", "Somier")
+        Dim arti16 As New Articulo("Somier3", "Somier electrico con colchon de viscoelástica o látex", "Somier")
+        Dim arti17 As New Articulo("Canape1", "Canapé abatible, madera vista", "Canape")
+        Dim arti18 As New Articulo("Canape2", "Canapé abatible curve, arcon madera vista, tapa transpirable, esquinas redondas", "Canape")
+        Dim arti19 As New Articulo("Canape3", "Canapé abatible máxima capacidad, arcon madera vista, tapa transpirable, esquinas de madera", "Canape")
+        Dim arti20 As New Articulo("Canape4", "Cama articula con arcon, cama eléctrica articulable con arcon para almacenamiento", "Canape")
+        Dim arti21 As New Articulo("Canape5", "Canapé abatible madera vista, canapé más colchon muelles ensacado", "Canape")
+        Dim arti22 As New Articulo("Canape6", "Canapé abatible esquinas reforzadas, canape más colchon visco grafeno de 2 caras", "Canape")
 
         articulos.Add(arti1)
         articulos.Add(arti2)
@@ -63,6 +65,8 @@ Module CreacionEmpleadosArticulos
         articulos.Add(arti20)
         articulos.Add(arti21)
         articulos.Add(arti22)
+        articulos.Add(arti23)
+        articulos.Add(arti24)
 
 
         'Public Sub New(nombre As String, desc As String, cat As String)
