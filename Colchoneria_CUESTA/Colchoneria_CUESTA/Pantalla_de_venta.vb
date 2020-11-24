@@ -274,10 +274,16 @@ Public Class Pantalla_de_venta
             Catch ex As System.NullReferenceException
 
                 'Si el articulo no ha sido encontrado en el arraylist se informa al usuario del problema
-                MsgBox("No se ha podido encontrar el articulo seleccionado", 0 + MsgBoxStyle.Information, "Articulo seleccionado")
+                MsgBox("No se ha podido encontrar el articulo seleccionado. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Articulo seleccionado")
 
                 'Se almacena el error en el fichero de errores
 
+            Catch ex As Exception
+
+                'Si se produce un error general
+                MsgBox("Se ha producido un error a la hora de seleccionar un articulo. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Articulo seleccionado")
+
+                'Se almacena el error en el fichero de errores
 
             End Try
 
@@ -334,7 +340,14 @@ Public Class Pantalla_de_venta
             Catch ex As System.NullReferenceException
 
                 'Si el articulo no ha sido encontrado en el arraylist se informa al usuario del problema
-                MsgBox("No se ha podido encontrar el articulo seleccionado", 0 + MsgBoxStyle.Information, "Articulo seleccionado")
+                MsgBox("No se ha podido encontrar el articulo seleccionado. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Articulo seleccionado")
+
+                'Se almacena el error en el fichero de errores
+
+            Catch ex As Exception
+
+                'Si se produce un error general
+                MsgBox("Se ha producido un error a la hora de seleccionar un articulo. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Articulo seleccionado")
 
                 'Se almacena el error en el fichero de errores
 
@@ -392,7 +405,14 @@ Public Class Pantalla_de_venta
             Catch ex As System.NullReferenceException
 
                 'Si el articulo no ha sido encontrado en el arraylist se informa al usuario del problema
-                MsgBox("No se ha podido encontrar el articulo seleccionado", 0 + MsgBoxStyle.Information, "Articulo seleccionado")
+                MsgBox("No se ha podido encontrar el articulo seleccionado. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Articulo seleccionado")
+
+                'Se almacena el error en el fichero de errores
+
+            Catch ex As Exception
+
+                'Si se produce un error general
+                MsgBox("Se ha producido un error a la hora de seleccionar un articulo. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Articulo seleccionado")
 
                 'Se almacena el error en el fichero de errores
 
@@ -451,7 +471,14 @@ Public Class Pantalla_de_venta
             Catch ex As System.NullReferenceException
 
                 'Si el articulo no ha sido encontrado en el arraylist se informa al usuario del problema
-                MsgBox("No se ha podido encontrar el articulo seleccionado", 0 + MsgBoxStyle.Information, "Articulo seleccionado")
+                MsgBox("No se ha podido encontrar el articulo seleccionado. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Articulo seleccionado")
+
+                'Se almacena el error en el fichero de errores
+
+            Catch ex As Exception
+
+                'Si se produce un error general
+                MsgBox("Se ha producido un error a la hora de seleccionar un articulo. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Articulo seleccionado")
 
                 'Se almacena el error en el fichero de errores
 
@@ -509,7 +536,14 @@ Public Class Pantalla_de_venta
             Catch ex As System.NullReferenceException
 
                 'Si el articulo no ha sido encontrado en el arraylist se informa al usuario del problema
-                MsgBox("No se ha podido encontrar el articulo seleccionado", 0 + MsgBoxStyle.Information, "Articulo seleccionado")
+                MsgBox("No se ha podido encontrar el articulo seleccionado. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Articulo seleccionado")
+
+                'Se almacena el error en el fichero de errores
+
+            Catch ex As Exception
+
+                'Si se produce un error general
+                MsgBox("Se ha producido un error a la hora de seleccionar un articulo. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Articulo seleccionado")
 
                 'Se almacena el error en el fichero de errores
 
@@ -568,7 +602,14 @@ Public Class Pantalla_de_venta
             Catch ex As System.NullReferenceException
 
                 'Si el articulo no ha sido encontrado en el arraylist se informa al usuario del problema
-                MsgBox("No se ha podido encontrar el articulo seleccionado", 0 + MsgBoxStyle.Information, "Articulo seleccionado")
+                MsgBox("No se ha podido encontrar el articulo seleccionado. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Articulo seleccionado")
+
+                'Se almacena el error en el fichero de errores
+
+            Catch ex As Exception
+
+                'Si se produce un error general
+                MsgBox("Se ha producido un error a la hora de seleccionar un articulo. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Articulo seleccionado")
 
                 'Se almacena el error en el fichero de errores
 
@@ -597,9 +638,17 @@ Public Class Pantalla_de_venta
             Catch ex As System.IndexOutOfRangeException
 
                 'Si no hay precio indicado por este articulo se le indica al usuario
-                MsgBox("El tamaño seleccionado no tiene precio asignado por lo tanto no se puede vender", 0 + MsgBoxStyle.Information, "Tamaño seleccionado")
+                MsgBox("El tamaño seleccionado no tiene precio asignado por lo tanto no se puede vender. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Tamaño seleccionado")
 
                 'Se almacena la informacion sobre el error ocurrido en el fichero de errores
+
+            Catch ex As Exception
+
+                'Si se produce un error general
+                MsgBox("Se ha producido un error a la hora de seleccionar un tamaño. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Tamaño seleccionado")
+
+                'Se almacena el error en el fichero de errores
+
 
             End Try
 
@@ -628,9 +677,17 @@ Public Class Pantalla_de_venta
             Catch ex As System.IndexOutOfRangeException
 
                 'Si no hay precio indicado por este articulo se le indica al usuario
-                MsgBox("El tamaño seleccionado no tiene precio asignado por lo tanto no se puede vender", 0 + MsgBoxStyle.Information, "Tamaño seleccionado")
+                MsgBox("El tamaño seleccionado no tiene precio asignado por lo tanto no se puede vender. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Tamaño seleccionado")
 
                 'Se almacena la informacion sobre el error ocurrido en el fichero de errores
+
+            Catch ex As Exception
+
+                'Si se produce un error general
+                MsgBox("Se ha producido un error a la hora de seleccionar un tamaño. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Tamaño seleccionado")
+
+                'Se almacena el error en el fichero de errores
+
 
             End Try
 
@@ -659,9 +716,17 @@ Public Class Pantalla_de_venta
             Catch ex As System.IndexOutOfRangeException
 
                 'Si no hay precio indicado por este articulo se le indica al usuario
-                MsgBox("El tamaño seleccionado no tiene precio asignado por lo tanto no se puede vender", 0 + MsgBoxStyle.Information, "Tamaño seleccionado")
+                MsgBox("El tamaño seleccionado no tiene precio asignado por lo tanto no se puede vender. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Tamaño seleccionado")
 
                 'Se almacena la informacion sobre el error ocurrido en el fichero de errores
+
+            Catch ex As Exception
+
+                'Si se produce un error general
+                MsgBox("Se ha producido un error a la hora de seleccionar un tamaño. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Tamaño seleccionado")
+
+                'Se almacena el error en el fichero de errores
+
 
             End Try
 
@@ -690,9 +755,17 @@ Public Class Pantalla_de_venta
             Catch ex As System.IndexOutOfRangeException
 
                 'Si no hay precio indicado por este articulo se le indica al usuario
-                MsgBox("El tamaño seleccionado no tiene precio asignado por lo tanto no se puede vender", 0 + MsgBoxStyle.Information, "Tamaño seleccionado")
+                MsgBox("El tamaño seleccionado no tiene precio asignado por lo tanto no se puede vender. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Tamaño seleccionado")
 
                 'Se almacena la informacion sobre el error ocurrido en el fichero de errores
+
+            Catch ex As Exception
+
+                'Si se produce un error general
+                MsgBox("Se ha producido un error a la hora de seleccionar un tamaño. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Tamaño seleccionado")
+
+                'Se almacena el error en el fichero de errores
+
 
             End Try
 
@@ -721,9 +794,17 @@ Public Class Pantalla_de_venta
             Catch ex As System.IndexOutOfRangeException
 
                 'Si no hay precio indicado por este articulo se le indica al usuario
-                MsgBox("El tamaño seleccionado no tiene precio asignado por lo tanto no se puede vender", 0 + MsgBoxStyle.Information, "Tamaño seleccionado")
+                MsgBox("El tamaño seleccionado no tiene precio asignado por lo tanto no se puede vender. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Tamaño seleccionado")
 
                 'Se almacena la informacion sobre el error ocurrido en el fichero de errores
+
+            Catch ex As Exception
+
+                'Si se produce un error general
+                MsgBox("Se ha producido un error a la hora de seleccionar un tamaño. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Tamaño seleccionado")
+
+                'Se almacena el error en el fichero de errores
+
 
             End Try
 
@@ -752,9 +833,17 @@ Public Class Pantalla_de_venta
             Catch ex As System.IndexOutOfRangeException
 
                 'Si no hay precio indicado por este articulo se le indica al usuario
-                MsgBox("El tamaño seleccionado no tiene precio asignado por lo tanto no se puede vender", 0 + MsgBoxStyle.Information, "Tamaño seleccionado")
+                MsgBox("El tamaño seleccionado no tiene precio asignado por lo tanto no se puede vender. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Tamaño seleccionado")
 
                 'Se almacena la informacion sobre el error ocurrido en el fichero de errores
+
+            Catch ex As Exception
+
+                'Si se produce un error general
+                MsgBox("Se ha producido un error a la hora de seleccionar un tamaño. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Tamaño seleccionado")
+
+                'Se almacena el error en el fichero de errores
+
 
             End Try
 
@@ -893,6 +982,13 @@ Public Class Pantalla_de_venta
             MsgBox("No se ha podido agregar el articulo seleccionado a la lista. Por favor intentelo de nuevo", 0 + MsgBoxStyle.Information, "Añadir articulo")
 
             'Se almacena el error dentro del fichero de errores
+
+        Catch ex As Exception
+
+            'Si se produce un error general
+            MsgBox("Se ha producido un error a la hora de agregar el articulo a la lista. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Añadir articulo")
+
+            'Se almacena el error en el fichero de errores
 
 
         End Try

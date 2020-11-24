@@ -1,5 +1,67 @@
 ﻿Module ElementosComunes
 
+    'Se define el registro que se va a utilizar para el fichero de articulos 
+    Public Structure articuloRegistroTipo
+
+        <VBFixedString(20)> Dim nombre As String
+        <VBFixedString(40)> Dim descripcion As String
+        <VBFixedString(10)> Dim categoria As String
+        Dim tamanios As ArrayList
+        Dim precios As ArrayList
+
+    End Structure
+
+    'La variable de tipo articuloRegistroTipo que se va a utilizar para manejar el fichero de articulos
+    Public articuloRegistro As articuloRegistroTipo
+
+    'Se define el registro que se va a utilizar para el fichero de empleados
+    Public Structure empleadoRegistroTipo
+
+        <VBFixedString(25)> Dim nombre As String
+        <VBFixedString(30)> Dim apellidos As String
+        <VBFixedString(40)> Dim direccion As String
+        <VBFixedString(5)> Dim codigoPostal As String
+        <VBFixedString(15)> Dim telefono As String
+        <VBFixedString(10)> Dim nombreUsuario As String
+        Dim contrasenia As Integer
+        Dim esAdministrador As Boolean
+
+    End Structure
+
+    'La variable de tipo empleadoRegistroTipo que se va a utilizar para manejar el fichero de empleados
+    Public empleadoRegistro As empleadoRegistroTipo
+
+    'Se define el registro que se va a utilizar para el fichero de ventas
+    Public Structure ventasRegistroTipo
+
+        'Primero se almacena solo la fecha para utilizarla para las busquedas
+        Dim fecha As String
+
+        'Despues va a toda la informacion sobre el cierre de caja
+        Dim informacionVenta As String
+
+    End Structure
+
+    'La variable de tipo ventasRegistroTipo que se va a utilizar para manejar el fichero de ventas
+    Public ventaRegistro As ventasRegistroTipo
+
+    'Se define el registro que se va a utilizar para el fichero de errores
+    Public Structure errorRegistroTipo
+
+        'Primero se almacena solo la fecha para utilizarla para las busquedas
+        Dim fecha As String
+
+        'Despues va a toda la informacion sobre el error ocurrido
+        Dim informacionError As String
+
+    End Structure
+
+    'La variable de tipo errorRegistroTipo que se va a utilizar para manejar el fichero de errores
+    Public errorRegistro As errorRegistroTipo
+
+
+
+
     'Esta variable guarda la venta diaria
     'sumandose cada vez que se vende producto
     Public venta As Double
