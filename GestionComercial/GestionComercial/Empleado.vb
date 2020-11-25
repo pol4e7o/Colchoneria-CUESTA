@@ -1,5 +1,8 @@
 ﻿Public Class Empleado
 
+    'Codigo del empleado
+    Private codigoEmpleado As Integer
+
     'Nombre del empleado
     Private nombreEmpleado As String
 
@@ -30,8 +33,9 @@
     End Sub
 
     'Creamos un constructor para poder instanciar la clase Empleado con los datos deseados
-    Public Sub New(nombre As String, apellidos As String, direccion As String, codigoPostal As String,
+    Public Sub New(codigo As Integer, nombre As String, apellidos As String, direccion As String, codigoPostal As String,
                                 telefono As String, nombreUsuario As String, contrasenia As Integer, esAdmin As Boolean)
+        Me.codigoEmpleado = codigo
         Me.nombreEmpleado = nombre
         Me.apellidos = apellidos
         Me.direccionEmpleado = direccion
@@ -45,6 +49,10 @@
 
 
     'Funciones getters para obtener los valores del objeto
+    Function getCodigoEmpleado() As String
+        Return codigoEmpleado
+    End Function
+
     Function getNombreEmpleado() As String
         Return nombreEmpleado
     End Function
@@ -80,6 +88,10 @@
     'Procedimientos setter para modificar el valor de las variables del objeto
     'Se utiliza Me en casos donde el parametro y el atributo 
     'tienen el mismo nombre. La varible con Me. adelante es atributo de la clase
+    Sub setCodigoEmpleado(codigoEmpleado As Integer)
+        Me.codigoEmpleado = codigoEmpleado
+    End Sub
+
     Sub setNombreEmpleado(nombre As String)
         nombreEmpleado = nombre
     End Sub

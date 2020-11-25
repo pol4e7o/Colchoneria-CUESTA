@@ -43,8 +43,10 @@ Partial Class Pantalla_principal
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.label_saludo = New System.Windows.Forms.Label()
         Me.label_pulsarTecla = New System.Windows.Forms.Label()
+        Me.PictureBox_logo = New System.Windows.Forms.PictureBox()
         Me.MenuStrip.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip
@@ -158,10 +160,17 @@ Partial Class Pantalla_principal
         Me.label_pulsarTecla.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.label_pulsarTecla.Name = "label_pulsarTecla"
         '
+        'PictureBox_logo
+        '
+        resources.ApplyResources(Me.PictureBox_logo, "PictureBox_logo")
+        Me.PictureBox_logo.Name = "PictureBox_logo"
+        Me.PictureBox_logo.TabStop = False
+        '
         'Pantalla_principal
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.PictureBox_logo)
         Me.Controls.Add(Me.label_pulsarTecla)
         Me.Controls.Add(Me.label_saludo)
         Me.Controls.Add(Me.Panel1)
@@ -173,6 +182,7 @@ Partial Class Pantalla_principal
         Me.MenuStrip.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.PictureBox_logo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -197,4 +207,5 @@ Partial Class Pantalla_principal
     Friend WithEvents VisualizarVentaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ColchoneriaCUESTAToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ManualDeUsuarioToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PictureBox_logo As PictureBox
 End Class

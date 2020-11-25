@@ -23,6 +23,7 @@ Partial Class Pantalla_de_inicio
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Pantalla_de_inicio))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.label_ayuda = New System.Windows.Forms.Label()
         Me.label_fecha = New System.Windows.Forms.Label()
@@ -46,8 +47,10 @@ Partial Class Pantalla_de_inicio
         Me.label_contrasenia = New System.Windows.Forms.Label()
         Me.textBox_contrasenia = New System.Windows.Forms.TextBox()
         Me.boton_entrar = New System.Windows.Forms.Button()
+        Me.PictureBox_logo = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.MenuStrip.SuspendLayout()
+        CType(Me.PictureBox_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -201,7 +204,7 @@ Partial Class Pantalla_de_inicio
         '
         Me.textBox_usuario.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.textBox_usuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.textBox_usuario.Location = New System.Drawing.Point(394, 96)
+        Me.textBox_usuario.Location = New System.Drawing.Point(408, 175)
         Me.textBox_usuario.MaxLength = 10
         Me.textBox_usuario.Name = "textBox_usuario"
         Me.textBox_usuario.Size = New System.Drawing.Size(143, 35)
@@ -212,7 +215,7 @@ Partial Class Pantalla_de_inicio
         Me.label_usuario.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_usuario.AutoSize = True
         Me.label_usuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_usuario.Location = New System.Drawing.Point(206, 99)
+        Me.label_usuario.Location = New System.Drawing.Point(220, 178)
         Me.label_usuario.Name = "label_usuario"
         Me.label_usuario.Size = New System.Drawing.Size(108, 29)
         Me.label_usuario.TabIndex = 8
@@ -223,7 +226,7 @@ Partial Class Pantalla_de_inicio
         Me.label_contrasenia.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_contrasenia.AutoSize = True
         Me.label_contrasenia.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_contrasenia.Location = New System.Drawing.Point(206, 168)
+        Me.label_contrasenia.Location = New System.Drawing.Point(220, 247)
         Me.label_contrasenia.Name = "label_contrasenia"
         Me.label_contrasenia.Size = New System.Drawing.Size(148, 29)
         Me.label_contrasenia.TabIndex = 10
@@ -233,7 +236,7 @@ Partial Class Pantalla_de_inicio
         '
         Me.textBox_contrasenia.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.textBox_contrasenia.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.textBox_contrasenia.Location = New System.Drawing.Point(394, 165)
+        Me.textBox_contrasenia.Location = New System.Drawing.Point(408, 244)
         Me.textBox_contrasenia.Margin = New System.Windows.Forms.Padding(12, 3, 3, 3)
         Me.textBox_contrasenia.MaxLength = 4
         Me.textBox_contrasenia.Name = "textBox_contrasenia"
@@ -245,12 +248,23 @@ Partial Class Pantalla_de_inicio
         '
         Me.boton_entrar.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.boton_entrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.boton_entrar.Location = New System.Drawing.Point(279, 251)
+        Me.boton_entrar.Location = New System.Drawing.Point(279, 312)
         Me.boton_entrar.Name = "boton_entrar"
         Me.boton_entrar.Size = New System.Drawing.Size(186, 46)
         Me.boton_entrar.TabIndex = 11
         Me.boton_entrar.Text = "&Entrar"
         Me.boton_entrar.UseVisualStyleBackColor = True
+        '
+        'PictureBox_logo
+        '
+        Me.PictureBox_logo.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PictureBox_logo.Image = CType(resources.GetObject("PictureBox_logo.Image"), System.Drawing.Image)
+        Me.PictureBox_logo.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.PictureBox_logo.Location = New System.Drawing.Point(116, 46)
+        Me.PictureBox_logo.Name = "PictureBox_logo"
+        Me.PictureBox_logo.Size = New System.Drawing.Size(530, 336)
+        Me.PictureBox_logo.TabIndex = 12
+        Me.PictureBox_logo.TabStop = False
         '
         'Pantalla_de_inicio
         '
@@ -264,6 +278,7 @@ Partial Class Pantalla_de_inicio
         Me.Controls.Add(Me.textBox_usuario)
         Me.Controls.Add(Me.MenuStrip)
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.PictureBox_logo)
         Me.Name = "Pantalla_de_inicio"
         Me.Text = "Colchoneria CUESTA - Iniciar secion"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
@@ -271,6 +286,7 @@ Partial Class Pantalla_de_inicio
         Me.Panel1.PerformLayout()
         Me.MenuStrip.ResumeLayout(False)
         Me.MenuStrip.PerformLayout()
+        CType(Me.PictureBox_logo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -298,4 +314,5 @@ Partial Class Pantalla_de_inicio
     Friend WithEvents label_contrasenia As Label
     Friend WithEvents textBox_contrasenia As TextBox
     Friend WithEvents boton_entrar As Button
+    Friend WithEvents PictureBox_logo As PictureBox
 End Class

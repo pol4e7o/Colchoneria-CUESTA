@@ -1,5 +1,8 @@
 ﻿
 Public Class Articulo
+
+    'Codigo del articulo
+    Private codigoArticulo As Integer
     'Nombre de cada artículo
     Private nombreArticulo As String
     'Descripción de cada artículo
@@ -21,7 +24,9 @@ Public Class Articulo
     'posibles categorias que todo artículo va a poder tener, ya que van a ser un listado que no va a variar.
     'Tambien se indican todos los tamaños posibles para articulo.
     'Para crear un Articulo debemos introducir el nombre y la descripción.
-    Public Sub New(nombre As String, desc As String, cat As String)
+    Public Sub New(codigo As Integer, nombre As String, desc As String, cat As String)
+
+        Me.codigoArticulo = codigo
         Me.nombreArticulo = nombre
         Me.descripcionArticulo = desc
         Me.categoriaArticulo = cat
@@ -69,6 +74,10 @@ Public Class Articulo
     End Sub
 
     'Funciones getters para obtener los valores del objeto
+    Function getCodigoArticulo() As String
+        Return codigoArticulo
+    End Function
+
     Function getNombreArticulo() As String
         Return nombreArticulo
     End Function
@@ -91,6 +100,10 @@ Public Class Articulo
 
     'Funciones setter para modificar el valor de las variables del objeto
     'Si se ha relizado la modificacion se devuelve true sino false
+    Sub setCodigoArticulo(codigo As Integer)
+        Me.codigoArticulo = codigo
+    End Sub
+
     Sub setNombreArticulo(nombre As String)
         nombreArticulo = nombre
     End Sub

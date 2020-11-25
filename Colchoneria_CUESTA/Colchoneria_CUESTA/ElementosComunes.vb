@@ -3,6 +3,7 @@
     'Se define el registro que se va a utilizar para el fichero de articulos 
     Public Structure articuloRegistroTipo
 
+        Dim codigoArticulo As Integer
         <VBFixedString(20)> Dim nombre As String
         <VBFixedString(40)> Dim descripcion As String
         <VBFixedString(10)> Dim categoria As String
@@ -17,6 +18,7 @@
     'Se define el registro que se va a utilizar para el fichero de empleados
     Public Structure empleadoRegistroTipo
 
+        Dim codigoEmpleado As Integer
         <VBFixedString(25)> Dim nombre As String
         <VBFixedString(30)> Dim apellidos As String
         <VBFixedString(40)> Dim direccion As String
