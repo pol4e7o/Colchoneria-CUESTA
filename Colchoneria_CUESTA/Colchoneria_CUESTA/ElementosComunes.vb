@@ -7,8 +7,8 @@
         <VBFixedString(20)> Dim nombre As String
         <VBFixedString(40)> Dim descripcion As String
         <VBFixedString(10)> Dim categoria As String
-        Dim tamanios As ArrayList
-        Dim precios As ArrayList
+        <VBFixedArray(14)> Dim tamanios() As Integer
+        <VBFixedArray(14)> Dim precios() As Double
 
     End Structure
 
@@ -90,5 +90,11 @@
 
     'Objeto que se va a utilizar para validar campos 
     Public validacion As New Validacion.Validacion()
+
+    'La variable global que va a almacenar todos los empleados recogidos del fichero de empleados
+    Public empleados As New List(Of GestionComercial.Empleado)
+
+    'La variable global que va a almacenar todos los articulos recogidos del fichero de articulos
+    Public articulos As New List(Of GestionComercial.Articulo)
 
 End Module

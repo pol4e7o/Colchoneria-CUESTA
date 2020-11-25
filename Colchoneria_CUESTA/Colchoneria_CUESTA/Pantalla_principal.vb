@@ -1,6 +1,10 @@
-﻿Public Class Pantalla_principal
+﻿Imports System.IO
+
+Public Class Pantalla_principal
 
     Private Sub Pantalla_principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
 
         'Se indica la fecha actual
         label_fecha.Text = "Fecha: " & DateString
@@ -12,14 +16,71 @@
         'antes de esta
         VolverToolStripMenuItem.Visible = False
 
-        'Cuando se carga por primera vez el formulario se asigna a la variable venta 0
-        'Teniendo en cuenta que no se puede salir de la aplicacion sin cerrar caja antes
-        ElementosComunes.venta = 0
 
-        'Cuando se carga la aplicacion cajaCerrada será true
-        'Cuando se haga una venta este valor pasará a false
-        ' y esta que no se haga el cierre de caja no se podra salir de la aplicacion
-        ElementosComunes.cajaCerrada = True
+
+        'Se lee del fichero VentaActual la venta 
+        FileOpen(5, "VentaActual.txt", OpenMode.Input)
+
+        'Se guarda el valor del fichero en la varibale venta
+        Input(5, ElementosComunes.venta)
+
+        'Se cierra el fichero
+        FileClose(5)
+
+
+        'Cuando se carga la aplicacion se comprueba si el valor de la variable leida del fichero
+        'VentaActual es diferente a 0. Si lo es se le pasa a la variable cajaCerrada false, sino true
+        If venta = 0 Then
+            ElementosComunes.cajaCerrada = True
+
+        Else
+            ElementosComunes.cajaCerrada = False
+
+        End If
+
+
+
+
+
+        'Se cargan todos los empleados del fichero de empleados
+        FileOpen(1, "Empleados.txt", OpenMode.Random, OpenAccess.Read, , Len(empleadoRegistro))
+
+        'Se lee todo su contenido hasta que no se llegue al final del fichero
+        While Not EOF(1)
+
+            'Se recoge el siguente empleado
+            FileGet(1, empleadoRegistro, )
+
+            'Utilizando el registro recogido se crea un objeto de tipo Empleado y se añade al arraylist
+            empleados.Add(New GestionComercial.Empleado(empleadoRegistro.codigoEmpleado, empleadoRegistro.nombre, empleadoRegistro.apellidos, empleadoRegistro.direccion, empleadoRegistro.codigoPostal,
+                            empleadoRegistro.telefono, empleadoRegistro.nombreUsuario, empleadoRegistro.contrasenia, empleadoRegistro.esAdministrador))
+
+        End While
+
+        'Se cierra el fichero de empleados
+        FileClose(1)
+
+
+
+        'Se cargan todos los articulos del fichero de articulos
+        FileOpen(2, "Articulos.txt", OpenMode.Random, OpenAccess.Read, , Len(articuloRegistro))
+
+        'Se lee todo su contenido hasta que no se llegue al final del fichero
+        While Not EOF(2)
+
+            'Se recoge el siguente articulo
+            FileGet(2, articuloRegistro, )
+
+            'Utilizando el registro recogido se crea un objeto de tipo Articulo y se añade al arraylist
+            articulos.Add(New GestionComercial.Articulo(articuloRegistro.codigoArticulo, articuloRegistro.nombre, articuloRegistro.descripcion,
+                            articuloRegistro.categoria))
+
+            articulos.Item(articulos.Count - 1).setTamaniosPrecios(articuloRegistro.tamanios.ToList, articuloRegistro.precios.ToList)
+
+        End While
+
+        'Se cierra el acceso al fichero de articulos
+        FileClose(2)
 
     End Sub
 
