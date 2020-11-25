@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Gestion_de_ventas
+Partial Class Pantalla_errores
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,16 +22,6 @@ Partial Class Gestion_de_ventas
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label_ventaElegida = New System.Windows.Forms.Label()
-        Me.Label_venta = New System.Windows.Forms.Label()
-        Me.Button_cancelar = New System.Windows.Forms.Button()
-        Me.Button_visualizar = New System.Windows.Forms.Button()
-        Me.ComboBox_dia = New System.Windows.Forms.ComboBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label_gestionVenta = New System.Windows.Forms.Label()
         Me.MenuStrip = New System.Windows.Forms.MenuStrip()
         Me.InicioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarCajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -48,102 +38,19 @@ Partial Class Gestion_de_ventas
         Me.label_ayuda = New System.Windows.Forms.Label()
         Me.label_fecha = New System.Windows.Forms.Label()
         Me.label_hora = New System.Windows.Forms.Label()
-        Me.TimerHoraReal = New System.Windows.Forms.Timer(Me.components)
-        Me.Panel1.SuspendLayout()
+        Me.Label_gestionVenta = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label_ventaElegida = New System.Windows.Forms.Label()
+        Me.Label_venta = New System.Windows.Forms.Label()
+        Me.Button_cancelar = New System.Windows.Forms.Button()
+        Me.Button_visualizar = New System.Windows.Forms.Button()
+        Me.ComboBox_dia = New System.Windows.Forms.ComboBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.ListBox_errores = New System.Windows.Forms.ListBox()
         Me.MenuStrip.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'Panel1
-        '
-        Me.Panel1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Panel1.Controls.Add(Me.Label_ventaElegida)
-        Me.Panel1.Controls.Add(Me.Label_venta)
-        Me.Panel1.Controls.Add(Me.Button_cancelar)
-        Me.Panel1.Controls.Add(Me.Button_visualizar)
-        Me.Panel1.Controls.Add(Me.ComboBox_dia)
-        Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Location = New System.Drawing.Point(39, 123)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(923, 247)
-        Me.Panel1.TabIndex = 0
-        '
-        'Label_ventaElegida
-        '
-        Me.Label_ventaElegida.AutoSize = True
-        Me.Label_ventaElegida.Location = New System.Drawing.Point(495, 54)
-        Me.Label_ventaElegida.Name = "Label_ventaElegida"
-        Me.Label_ventaElegida.Size = New System.Drawing.Size(0, 17)
-        Me.Label_ventaElegida.TabIndex = 7
-        '
-        'Label_venta
-        '
-        Me.Label_venta.AutoSize = True
-        Me.Label_venta.Location = New System.Drawing.Point(495, 17)
-        Me.Label_venta.Name = "Label_venta"
-        Me.Label_venta.Size = New System.Drawing.Size(140, 17)
-        Me.Label_venta.TabIndex = 6
-        Me.Label_venta.Text = "Venta seleccionada: "
-        '
-        'Button_cancelar
-        '
-        Me.Button_cancelar.Location = New System.Drawing.Point(804, 294)
-        Me.Button_cancelar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Button_cancelar.Name = "Button_cancelar"
-        Me.Button_cancelar.Size = New System.Drawing.Size(101, 23)
-        Me.Button_cancelar.TabIndex = 5
-        Me.Button_cancelar.Text = "Cancelar"
-        Me.Button_cancelar.UseVisualStyleBackColor = True
-        '
-        'Button_visualizar
-        '
-        Me.Button_visualizar.Location = New System.Drawing.Point(39, 158)
-        Me.Button_visualizar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Button_visualizar.Name = "Button_visualizar"
-        Me.Button_visualizar.Size = New System.Drawing.Size(93, 23)
-        Me.Button_visualizar.TabIndex = 4
-        Me.Button_visualizar.Text = "Visualizar"
-        Me.Button_visualizar.UseVisualStyleBackColor = True
-        '
-        'ComboBox_dia
-        '
-        Me.ComboBox_dia.FormattingEnabled = True
-        Me.ComboBox_dia.Location = New System.Drawing.Point(39, 112)
-        Me.ComboBox_dia.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.ComboBox_dia.Name = "ComboBox_dia"
-        Me.ComboBox_dia.Size = New System.Drawing.Size(121, 24)
-        Me.ComboBox_dia.TabIndex = 3
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(35, 78)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(312, 17)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Seleccione el día de venta que desea visualizar:"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(35, 17)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(207, 17)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Venta en el día... a la hora...:0€"
-        '
-        'Label_gestionVenta
-        '
-        Me.Label_gestionVenta.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label_gestionVenta.AutoSize = True
-        Me.Label_gestionVenta.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_gestionVenta.Location = New System.Drawing.Point(385, 66)
-        Me.Label_gestionVenta.Name = "Label_gestionVenta"
-        Me.Label_gestionVenta.Size = New System.Drawing.Size(211, 29)
-        Me.Label_gestionVenta.TabIndex = 0
-        Me.Label_gestionVenta.Text = "Gestión de ventas:"
         '
         'MenuStrip
         '
@@ -152,8 +59,8 @@ Partial Class Gestion_de_ventas
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
         Me.MenuStrip.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
-        Me.MenuStrip.Size = New System.Drawing.Size(1013, 28)
-        Me.MenuStrip.TabIndex = 7
+        Me.MenuStrip.Size = New System.Drawing.Size(1004, 28)
+        Me.MenuStrip.TabIndex = 8
         Me.MenuStrip.Text = "MenuStrip1"
         '
         'InicioToolStripMenuItem
@@ -239,11 +146,11 @@ Partial Class Gestion_de_ventas
         Me.Panel2.Controls.Add(Me.label_ayuda)
         Me.Panel2.Controls.Add(Me.label_fecha)
         Me.Panel2.Controls.Add(Me.label_hora)
-        Me.Panel2.Location = New System.Drawing.Point(0, 420)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Location = New System.Drawing.Point(0, 505)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1013, 51)
-        Me.Panel2.TabIndex = 8
+        Me.Panel2.Size = New System.Drawing.Size(1004, 51)
+        Me.Panel2.TabIndex = 9
         '
         'label_ayuda
         '
@@ -268,7 +175,7 @@ Partial Class Gestion_de_ventas
         Me.label_fecha.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.label_fecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.label_fecha.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.label_fecha.Location = New System.Drawing.Point(555, 11)
+        Me.label_fecha.Location = New System.Drawing.Point(621, 11)
         Me.label_fecha.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label_fecha.Name = "label_fecha"
         Me.label_fecha.Size = New System.Drawing.Size(80, 27)
@@ -282,42 +189,126 @@ Partial Class Gestion_de_ventas
         Me.label_hora.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.label_hora.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.label_hora.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.label_hora.Location = New System.Drawing.Point(809, 11)
+        Me.label_hora.Location = New System.Drawing.Point(833, 11)
         Me.label_hora.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label_hora.Name = "label_hora"
         Me.label_hora.Size = New System.Drawing.Size(67, 27)
         Me.label_hora.TabIndex = 3
         Me.label_hora.Text = "Hora: "
         '
-        'TimerHoraReal
+        'Label_gestionVenta
         '
-        Me.TimerHoraReal.Enabled = True
-        Me.TimerHoraReal.Interval = 1000
+        Me.Label_gestionVenta.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_gestionVenta.AutoSize = True
+        Me.Label_gestionVenta.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_gestionVenta.Location = New System.Drawing.Point(347, 109)
+        Me.Label_gestionVenta.Name = "Label_gestionVenta"
+        Me.Label_gestionVenta.Size = New System.Drawing.Size(220, 29)
+        Me.Label_gestionVenta.TabIndex = 10
+        Me.Label_gestionVenta.Text = "Gestión de errores:"
         '
-        'Gestion_de_ventas
+        'Panel1
+        '
+        Me.Panel1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Panel1.Controls.Add(Me.ListBox_errores)
+        Me.Panel1.Controls.Add(Me.Label_ventaElegida)
+        Me.Panel1.Controls.Add(Me.Label_venta)
+        Me.Panel1.Controls.Add(Me.Button_cancelar)
+        Me.Panel1.Controls.Add(Me.Button_visualizar)
+        Me.Panel1.Controls.Add(Me.ComboBox_dia)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Location = New System.Drawing.Point(31, 208)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(923, 247)
+        Me.Panel1.TabIndex = 11
+        '
+        'Label_ventaElegida
+        '
+        Me.Label_ventaElegida.AutoSize = True
+        Me.Label_ventaElegida.Location = New System.Drawing.Point(495, 54)
+        Me.Label_ventaElegida.Name = "Label_ventaElegida"
+        Me.Label_ventaElegida.Size = New System.Drawing.Size(0, 17)
+        Me.Label_ventaElegida.TabIndex = 7
+        '
+        'Label_venta
+        '
+        Me.Label_venta.AutoSize = True
+        Me.Label_venta.Location = New System.Drawing.Point(495, 17)
+        Me.Label_venta.Name = "Label_venta"
+        Me.Label_venta.Size = New System.Drawing.Size(124, 17)
+        Me.Label_venta.TabIndex = 6
+        Me.Label_venta.Text = "Día seleccionado: "
+        '
+        'Button_cancelar
+        '
+        Me.Button_cancelar.Location = New System.Drawing.Point(804, 294)
+        Me.Button_cancelar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button_cancelar.Name = "Button_cancelar"
+        Me.Button_cancelar.Size = New System.Drawing.Size(101, 23)
+        Me.Button_cancelar.TabIndex = 5
+        Me.Button_cancelar.Text = "Cancelar"
+        Me.Button_cancelar.UseVisualStyleBackColor = True
+        '
+        'Button_visualizar
+        '
+        Me.Button_visualizar.Location = New System.Drawing.Point(39, 121)
+        Me.Button_visualizar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button_visualizar.Name = "Button_visualizar"
+        Me.Button_visualizar.Size = New System.Drawing.Size(93, 23)
+        Me.Button_visualizar.TabIndex = 4
+        Me.Button_visualizar.Text = "Visualizar"
+        Me.Button_visualizar.UseVisualStyleBackColor = True
+        '
+        'ComboBox_dia
+        '
+        Me.ComboBox_dia.FormattingEnabled = True
+        Me.ComboBox_dia.Location = New System.Drawing.Point(39, 63)
+        Me.ComboBox_dia.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.ComboBox_dia.Name = "ComboBox_dia"
+        Me.ComboBox_dia.Size = New System.Drawing.Size(121, 24)
+        Me.ComboBox_dia.TabIndex = 3
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(36, 17)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(348, 17)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "Seleccione el día del que desea visualizar los errores:"
+        '
+        'ListBox_errores
+        '
+        Me.ListBox_errores.FormattingEnabled = True
+        Me.ListBox_errores.ItemHeight = 16
+        Me.ListBox_errores.Location = New System.Drawing.Point(498, 54)
+        Me.ListBox_errores.Name = "ListBox_errores"
+        Me.ListBox_errores.Size = New System.Drawing.Size(390, 164)
+        Me.ListBox_errores.TabIndex = 8
+        '
+        'Pantalla_errores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1013, 471)
-        Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.MenuStrip)
+        Me.ClientSize = New System.Drawing.Size(1004, 555)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label_gestionVenta)
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Name = "Gestion_de_ventas"
-        Me.Text = "Gestion de ventas - Colchonería CUESTA"
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
+        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.MenuStrip)
+        Me.Name = "Pantalla_errores"
+        Me.Text = "Gestión de errores - Colchonería CUESTA"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuStrip.ResumeLayout(False)
         Me.MenuStrip.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents MenuStrip As MenuStrip
     Friend WithEvents InicioToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CerrarCajaToolStripMenuItem As ToolStripMenuItem
@@ -334,13 +325,13 @@ Partial Class Gestion_de_ventas
     Friend WithEvents label_ayuda As Label
     Friend WithEvents label_fecha As Label
     Friend WithEvents label_hora As Label
+    Friend WithEvents Label_gestionVenta As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents ListBox_errores As ListBox
+    Friend WithEvents Label_ventaElegida As Label
+    Friend WithEvents Label_venta As Label
     Friend WithEvents Button_cancelar As Button
     Friend WithEvents Button_visualizar As Button
     Friend WithEvents ComboBox_dia As ComboBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label_gestionVenta As Label
-    Friend WithEvents TimerHoraReal As Timer
-    Friend WithEvents Label_ventaElegida As Label
-    Friend WithEvents Label_venta As Label
 End Class

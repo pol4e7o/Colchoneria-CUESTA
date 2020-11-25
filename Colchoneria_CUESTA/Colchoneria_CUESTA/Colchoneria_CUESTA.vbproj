@@ -150,6 +150,12 @@
     <Compile Include="Pantalla_eliminar_empleado.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Pantalla_errores.Designer.vb">
+      <DependentUpon>Pantalla_errores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pantalla_errores.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Pantalla_modificar_articulos.Designer.vb">
       <DependentUpon>Pantalla_modificar_articulos.vb</DependentUpon>
     </Compile>
@@ -219,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pantalla_eliminar_empleado.resx">
       <DependentUpon>Pantalla_eliminar_empleado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantalla_errores.resx">
+      <DependentUpon>Pantalla_errores.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantalla_modificar_articulos.resx">
       <DependentUpon>Pantalla_modificar_articulos.vb</DependentUpon>
