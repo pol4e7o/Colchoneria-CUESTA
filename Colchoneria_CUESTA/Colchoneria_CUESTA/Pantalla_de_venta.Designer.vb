@@ -23,6 +23,7 @@ Partial Class Pantalla_de_venta
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Pantalla_de_venta))
         Me.MenuStrip = New System.Windows.Forms.MenuStrip()
         Me.InicioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarCajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -333,6 +334,7 @@ Partial Class Pantalla_de_venta
         'panel_acticulos
         '
         Me.panel_acticulos.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.panel_acticulos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.panel_acticulos.Controls.Add(Me.panel_otros)
         Me.panel_acticulos.Controls.Add(Me.panel_ofertas)
         Me.panel_acticulos.Controls.Add(Me.panel_canape)
@@ -357,7 +359,7 @@ Partial Class Pantalla_de_venta
         Me.panel_acticulos.Controls.Add(Me.pictureBox_colchon)
         Me.panel_acticulos.Controls.Add(Me.pictureBox_somier)
         Me.panel_acticulos.Controls.Add(Me.pictureBox_base)
-        Me.panel_acticulos.Location = New System.Drawing.Point(13, 125)
+        Me.panel_acticulos.Location = New System.Drawing.Point(13, 132)
         Me.panel_acticulos.Name = "panel_acticulos"
         Me.panel_acticulos.Size = New System.Drawing.Size(754, 472)
         Me.panel_acticulos.TabIndex = 30
@@ -761,7 +763,7 @@ Partial Class Pantalla_de_venta
         'label_ofertas
         '
         Me.label_ofertas.AutoSize = True
-        Me.label_ofertas.Location = New System.Drawing.Point(352, 235)
+        Me.label_ofertas.Location = New System.Drawing.Point(352, 233)
         Me.label_ofertas.Name = "label_ofertas"
         Me.label_ofertas.Size = New System.Drawing.Size(41, 13)
         Me.label_ofertas.TabIndex = 18
@@ -777,16 +779,18 @@ Partial Class Pantalla_de_venta
         '
         'pictureBox_ofertas
         '
-        Me.pictureBox_ofertas.Location = New System.Drawing.Point(327, 265)
+        Me.pictureBox_ofertas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.pictureBox_ofertas.Image = CType(resources.GetObject("pictureBox_ofertas.Image"), System.Drawing.Image)
+        Me.pictureBox_ofertas.Location = New System.Drawing.Point(316, 251)
         Me.pictureBox_ofertas.Name = "pictureBox_ofertas"
-        Me.pictureBox_ofertas.Size = New System.Drawing.Size(100, 50)
+        Me.pictureBox_ofertas.Size = New System.Drawing.Size(121, 64)
         Me.pictureBox_ofertas.TabIndex = 15
         Me.pictureBox_ofertas.TabStop = False
         '
         'label_somier
         '
         Me.label_somier.AutoSize = True
-        Me.label_somier.Location = New System.Drawing.Point(352, 15)
+        Me.label_somier.Location = New System.Drawing.Point(352, 9)
         Me.label_somier.Name = "label_somier"
         Me.label_somier.Size = New System.Drawing.Size(44, 13)
         Me.label_somier.TabIndex = 14
@@ -795,7 +799,7 @@ Partial Class Pantalla_de_venta
         'label_colchon
         '
         Me.label_colchon.AutoSize = True
-        Me.label_colchon.Location = New System.Drawing.Point(589, 15)
+        Me.label_colchon.Location = New System.Drawing.Point(591, 9)
         Me.label_colchon.Name = "label_colchon"
         Me.label_colchon.Size = New System.Drawing.Size(57, 13)
         Me.label_colchon.TabIndex = 13
@@ -804,7 +808,7 @@ Partial Class Pantalla_de_venta
         'label_canape
         '
         Me.label_canape.AutoSize = True
-        Me.label_canape.Location = New System.Drawing.Point(94, 235)
+        Me.label_canape.Location = New System.Drawing.Point(104, 233)
         Me.label_canape.Name = "label_canape"
         Me.label_canape.Size = New System.Drawing.Size(49, 13)
         Me.label_canape.TabIndex = 12
@@ -813,7 +817,7 @@ Partial Class Pantalla_de_venta
         'label_otros
         '
         Me.label_otros.AutoSize = True
-        Me.label_otros.Location = New System.Drawing.Point(600, 235)
+        Me.label_otros.Location = New System.Drawing.Point(603, 233)
         Me.label_otros.Name = "label_otros"
         Me.label_otros.Size = New System.Drawing.Size(32, 13)
         Me.label_otros.TabIndex = 11
@@ -822,7 +826,7 @@ Partial Class Pantalla_de_venta
         'label_base
         '
         Me.label_base.AutoSize = True
-        Me.label_base.Location = New System.Drawing.Point(94, 15)
+        Me.label_base.Location = New System.Drawing.Point(104, 9)
         Me.label_base.Name = "label_base"
         Me.label_base.Size = New System.Drawing.Size(36, 13)
         Me.label_base.TabIndex = 10
@@ -871,6 +875,7 @@ Partial Class Pantalla_de_venta
         '
         'pictureBox_otros
         '
+        Me.pictureBox_otros.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.pictureBox_otros.Location = New System.Drawing.Point(572, 265)
         Me.pictureBox_otros.Name = "pictureBox_otros"
         Me.pictureBox_otros.Size = New System.Drawing.Size(100, 50)
@@ -879,33 +884,45 @@ Partial Class Pantalla_de_venta
         '
         'pictureBox_canape
         '
-        Me.pictureBox_canape.Location = New System.Drawing.Point(70, 265)
+        Me.pictureBox_canape.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.pictureBox_canape.Image = CType(resources.GetObject("pictureBox_canape.Image"), System.Drawing.Image)
+        Me.pictureBox_canape.Location = New System.Drawing.Point(59, 251)
         Me.pictureBox_canape.Name = "pictureBox_canape"
-        Me.pictureBox_canape.Size = New System.Drawing.Size(100, 50)
+        Me.pictureBox_canape.Size = New System.Drawing.Size(123, 64)
         Me.pictureBox_canape.TabIndex = 3
         Me.pictureBox_canape.TabStop = False
         '
         'pictureBox_colchon
         '
-        Me.pictureBox_colchon.Location = New System.Drawing.Point(573, 42)
+        Me.pictureBox_colchon.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.pictureBox_colchon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.pictureBox_colchon.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.pictureBox_colchon.Image = CType(resources.GetObject("pictureBox_colchon.Image"), System.Drawing.Image)
+        Me.pictureBox_colchon.Location = New System.Drawing.Point(559, 30)
         Me.pictureBox_colchon.Name = "pictureBox_colchon"
-        Me.pictureBox_colchon.Size = New System.Drawing.Size(100, 50)
+        Me.pictureBox_colchon.Size = New System.Drawing.Size(121, 61)
         Me.pictureBox_colchon.TabIndex = 2
         Me.pictureBox_colchon.TabStop = False
         '
         'pictureBox_somier
         '
-        Me.pictureBox_somier.Location = New System.Drawing.Point(327, 42)
+        Me.pictureBox_somier.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.pictureBox_somier.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.pictureBox_somier.Image = CType(resources.GetObject("pictureBox_somier.Image"), System.Drawing.Image)
+        Me.pictureBox_somier.Location = New System.Drawing.Point(315, 30)
         Me.pictureBox_somier.Name = "pictureBox_somier"
-        Me.pictureBox_somier.Size = New System.Drawing.Size(100, 50)
+        Me.pictureBox_somier.Size = New System.Drawing.Size(122, 61)
         Me.pictureBox_somier.TabIndex = 1
         Me.pictureBox_somier.TabStop = False
         '
         'pictureBox_base
         '
-        Me.pictureBox_base.Location = New System.Drawing.Point(70, 42)
+        Me.pictureBox_base.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.pictureBox_base.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.pictureBox_base.Image = CType(resources.GetObject("pictureBox_base.Image"), System.Drawing.Image)
+        Me.pictureBox_base.Location = New System.Drawing.Point(59, 30)
         Me.pictureBox_base.Name = "pictureBox_base"
-        Me.pictureBox_base.Size = New System.Drawing.Size(100, 50)
+        Me.pictureBox_base.Size = New System.Drawing.Size(121, 61)
         Me.pictureBox_base.TabIndex = 0
         Me.pictureBox_base.TabStop = False
         '
@@ -1167,6 +1184,7 @@ Partial Class Pantalla_de_venta
         Me.Controls.Add(Me.label_venta)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.MenuStrip)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Pantalla_de_venta"
         Me.Text = "Colchoneria CUESTA - Venta de articulos"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
