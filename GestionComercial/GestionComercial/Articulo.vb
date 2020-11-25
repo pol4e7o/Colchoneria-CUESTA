@@ -10,9 +10,9 @@ Public Class Articulo
     'Categoria de cada artículo
     Private categoriaArticulo As String
     'Tamaño del artículo
-    Private tamaniosArticulo As New ArrayList()
+    Private tamaniosArticulo As New List(Of Integer)
     'Precio del artículo
-    Private preciosTamaniosArticulo As New ArrayList()
+    Private preciosTamaniosArticulo As New List(Of Double)
 
     'Posibles precios del articulo
     Public posiblesTamaniosArticulo As New ArrayList()
@@ -90,11 +90,11 @@ Public Class Articulo
         Return categoriaArticulo
     End Function
 
-    Function getPreciosTamaniosArticulo() As ArrayList
+    Function getPreciosTamaniosArticulo() As List(Of Double)
         Return preciosTamaniosArticulo
     End Function
 
-    Function getTamaniosArticulo() As ArrayList
+    Function getTamaniosArticulo() As List(Of Integer)
         Return tamaniosArticulo
     End Function
 
@@ -132,7 +132,7 @@ Public Class Articulo
 
     'Este metodo se utiliza para crear los dos arraylist paralelos con los tamanios y precios reales
     'del articulo. Si los arraylist no tienen el mismo tamaño no se asignan
-    Function setTamaniosPrecios(tamanios As ArrayList, precios As ArrayList) As Boolean
+    Function setTamaniosPrecios(tamanios As List(Of Integer), precios As List(Of Double)) As Boolean
 
         'El contador que utiliza el for
         Dim i As Integer
