@@ -286,9 +286,9 @@ Partial Class Pantalla_eliminar_articulo
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(229, 35)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(277, 25)
+        Me.Label2.Size = New System.Drawing.Size(284, 25)
         Me.Label2.TabIndex = 31
-        Me.Label2.Text = "Eliminaciín de un artículo"
+        Me.Label2.Text = "Eliminación de un artículo"
         '
         'Pantalla_eliminar_articulo
         '

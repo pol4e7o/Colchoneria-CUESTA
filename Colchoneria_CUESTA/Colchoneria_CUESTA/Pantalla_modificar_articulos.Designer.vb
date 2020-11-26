@@ -48,7 +48,6 @@ Partial Class Pantalla_modificar_articulos
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel_datosArticulo = New System.Windows.Forms.Panel()
         Me.Button_eliminar = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.Panel_precioYTamanio = New System.Windows.Forms.Panel()
         Me.ComboBox_tamanio = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -70,6 +69,7 @@ Partial Class Pantalla_modificar_articulos
         Me.Button_modificar = New System.Windows.Forms.Button()
         Me.ComboBox_modificar = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.MenuStrip.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -254,21 +254,21 @@ Partial Class Pantalla_modificar_articulos
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.Label9)
         Me.Panel2.Controls.Add(Me.Panel_datosArticulo)
         Me.Panel2.Controls.Add(Me.Button_cancelar)
         Me.Panel2.Controls.Add(Me.Button_modificar)
         Me.Panel2.Controls.Add(Me.ComboBox_modificar)
         Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Location = New System.Drawing.Point(12, 27)
+        Me.Panel2.Location = New System.Drawing.Point(12, 37)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(766, 442)
+        Me.Panel2.Size = New System.Drawing.Size(766, 432)
         Me.Panel2.TabIndex = 31
         '
         'Panel_datosArticulo
         '
         Me.Panel_datosArticulo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel_datosArticulo.Controls.Add(Me.Button_eliminar)
-        Me.Panel_datosArticulo.Controls.Add(Me.Button3)
         Me.Panel_datosArticulo.Controls.Add(Me.Panel_precioYTamanio)
         Me.Panel_datosArticulo.Controls.Add(Me.ComboBox_categorias)
         Me.Panel_datosArticulo.Controls.Add(Me.Button1)
@@ -294,16 +294,6 @@ Partial Class Pantalla_modificar_articulos
         Me.Button_eliminar.TabIndex = 26
         Me.Button_eliminar.Text = "Eliminar"
         Me.Button_eliminar.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(373, 69)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(56, 19)
-        Me.Button3.TabIndex = 25
-        Me.Button3.Text = "Añadir"
-        Me.Button3.UseVisualStyleBackColor = True
         '
         'Panel_precioYTamanio
         '
@@ -498,6 +488,17 @@ Partial Class Pantalla_modificar_articulos
         Me.Label1.TabIndex = 32
         Me.Label1.Text = "Artículos:"
         '
+        'Label9
+        '
+        Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(226, 8)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(284, 25)
+        Me.Label9.TabIndex = 37
+        Me.Label9.Text = "Eliminación de un artículo"
+        '
         'Pantalla_modificar_articulos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -569,5 +570,5 @@ Partial Class Pantalla_modificar_articulos
     Friend WithEvents TextBox_precio As TextBox
     Friend WithEvents ComboBox_tamanio As ComboBox
     Friend WithEvents Button_eliminar As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents Label9 As Label
 End Class
