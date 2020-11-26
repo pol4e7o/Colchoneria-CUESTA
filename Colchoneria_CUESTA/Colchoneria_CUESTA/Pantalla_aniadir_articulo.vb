@@ -5,6 +5,7 @@
 
     'LOAD
     Private Sub Pantalla_aniadir_articulo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         'Colocamos el foco sobre el primer comboBox
         TextBox_nombre.Focus()
 
@@ -37,7 +38,8 @@
         Dim informe As String
 
         'Se pregunta al usuario si esta seguro que desea cerrar caja
-        opcion = MsgBox("Esta seguro que desea cerrar caja?", 4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Cerrar caja")
+        opcion = MsgBox("Esta seguro que desea cerrar caja?", 4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question,
+                        "Cerrar caja")
 
         If opcion = MsgBoxResult.Yes Then
 
@@ -486,7 +488,4 @@
 
     End Sub
 
-
-
-    End Sub
 End Class

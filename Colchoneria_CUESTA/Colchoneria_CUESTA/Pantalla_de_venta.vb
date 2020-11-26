@@ -2,6 +2,7 @@
 
 Public Class Pantalla_de_venta
 
+    'El precio total del pedido actual
     Public ventaArticulos As Double
 
     'Es el articulo elegido para vender
@@ -13,6 +14,9 @@ Public Class Pantalla_de_venta
     Public articulosVendidos As New List(Of GestionComercial.Venta)
 
     Private Sub Pantalla_de_venta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        'Se abre el fichero para guardar la informacion sobre los errores ocurridos en el fichero de errores
+        FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
         'El foco lo tiene el combobox de base
         comboBox_base.Focus()
@@ -65,7 +69,7 @@ Public Class Pantalla_de_venta
                     'Se añade el nombre del articulo al combobox de ofertas
                     comboBox_ofertas.Items.Add(articulos.Item(i).getNombreArticulo)
 
-                Case "Otros"
+                Case Else
 
                     'Otros
                     'Se añade el nombre del articulo al combobox de otros
@@ -92,7 +96,8 @@ Public Class Pantalla_de_venta
         If ventaArticulos = 0 Then
 
             'Se pregunta al usuario si esta seguro que desea cerrar caja
-            opcion = MsgBox("Esta seguro que desea cerrar caja?", 4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Cerrar caja")
+            opcion = MsgBox("Esta seguro que desea cerrar caja?",
+                            4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Cerrar caja")
 
             If opcion = MsgBoxResult.Yes Then
 
@@ -125,36 +130,38 @@ Public Class Pantalla_de_venta
                 Catch ex As System.IO.FileNotFoundException
 
                     MsgBox("El fichero ""VentaActual.txt"" no se encuentra por lo tanto no se ha podido guadrar el valor de la venta hasta este momento" &
-                   vbCrLf & "Por favor compruebe que el fichero esta en la carpeta de la aplicacion Colchoneria CUESTA. " & vbCrLf &
+                            vbCrLf & "Por favor compruebe que el fichero esta en la carpeta de la aplicacion Colchoneria CUESTA. " & vbCrLf &
                             "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\VentaActual.txt",
-                            0 + MsgBoxStyle.Exclamation)
+                            0 + MsgBoxStyle.Exclamation, "Guardar venta actual")
 
                     'Se guarda la informacion sobre el error ocurrido en el fichero de errores
                     FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
                     errorRegistro.fecha = DateString
-                    errorRegistro.informacionError = Now & " - El fichero ""VentaActual.txt"" no se ha encontrado"
+                    errorRegistro.informacionError = Now & " - El fichero ""VentaActual.txt"" no se ha encontrado" &
+                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
 
                     Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
                 Catch
 
-                    MsgBox("Se ha producido un error a la hora de guadrar la venta hasta este momento.", 0 + MsgBoxStyle.Information)
+                    MsgBox("Se ha producido un error a la hora de guadrar la venta hasta este momento.",
+                           0 + MsgBoxStyle.Information, "Guardar venta actual")
 
 
                     'Se guarda la informacion sobre el error ocurrido en el fichero de errores
                     FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
                     errorRegistro.fecha = DateString
-                    errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de escribir en el fichero ""VentaActual.txt"""
+                    errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de escribir en el fichero ""VentaActual.txt""" &
+                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
 
                     Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
-                Finally
-
-                    FileClose()
-
                 End Try
+
+                'Se cierran todos los ficheros abiertos
+                FileClose()
 
 
 
@@ -173,35 +180,37 @@ Public Class Pantalla_de_venta
                     MsgBox("El fichero ""VentasDiarias.txt"" no se encuentra por lo tanto no se ha podido guadrar el informe de cierre de caja" &
                    vbCrLf & "Por favor compruebe que el fichero esta en la carpeta de la aplicacion Colchoneria CUESTA. " & vbCrLf &
                             "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\VentasDiarias.txt",
-                            0 + MsgBoxStyle.Exclamation)
+                            0 + MsgBoxStyle.Exclamation, "Guardar informe de cierre de caja")
 
 
                     'Se guarda la informacion sobre el error ocurrido en el fichero de errores
                     FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
                     errorRegistro.fecha = DateString
-                    errorRegistro.informacionError = Now & " - El fichero ""VentasDiarias.txt"" no se ha encontrado"
+                    errorRegistro.informacionError = Now & " - El fichero ""VentasDiarias.txt"" no se ha encontrado" &
+                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
 
                     Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
                 Catch
 
-                    MsgBox("Se ha producido un error a la hora de guadrar el informe de cierre de caja.", 0 + MsgBoxStyle.Information)
+                    MsgBox("Se ha producido un error a la hora de guadrar el informe de cierre de caja.",
+                           0 + MsgBoxStyle.Information, "Guardar informe de cierre de caja")
 
 
                     'Se guarda la informacion sobre el error ocurrido en el fichero de errores
                     FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
                     errorRegistro.fecha = DateString
-                    errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de escribir en el fichero ""VentasDiarias.txt"""
+                    errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de escribir en el fichero ""VentasDiarias.txt""" &
+                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
 
                     Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
-                Finally
+                End Try
 
-                    FileClose()
-
-                End Try 
+                'Se cierran todos los ficheros abiertos
+                FileClose()
 
             End If
 
@@ -266,13 +275,14 @@ Public Class Pantalla_de_venta
                     MsgBox("El fichero ""VentaActual.txt"" no se encuentra por lo tanto no se ha podido guadrar el valor de la venta hasta este momento" &
                        vbCrLf & "Por favor compruebe que el fichero esta en la carpeta de la aplicacion Colchoneria CUESTA. " & vbCrLf &
                                 "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\VentaActual.txt",
-                                0 + MsgBoxStyle.Exclamation)
+                                0 + MsgBoxStyle.Exclamation, "Guardar venta actual")
 
                     'Se guarda la informacion sobre el error ocurrido en el fichero de errores
                     FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
                     errorRegistro.fecha = DateString
-                    errorRegistro.informacionError = Now & " - El fichero ""VentaActual.txt"" no se ha encontrado"
+                    errorRegistro.informacionError = Now & " - El fichero ""VentaActual.txt"" no se ha encontrado" &
+                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
 
                     Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
@@ -285,14 +295,16 @@ Public Class Pantalla_de_venta
 
                 Catch
 
-                    MsgBox("Se ha producido un error a la hora de guadrar la venta hasta este momento.", 0 + MsgBoxStyle.Information)
+                    MsgBox("Se ha producido un error a la hora de guadrar la venta hasta este momento.",
+                           0 + MsgBoxStyle.Information, "Guardar venta actual")
 
 
                     'Se guarda la informacion sobre el error ocurrido en el fichero de errores
                     FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
                     errorRegistro.fecha = DateString
-                    errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de escribir en el fichero ""VentaActual.txt"""
+                    errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de escribir en el fichero ""VentaActual.txt""" &
+                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
 
                     Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
@@ -303,18 +315,19 @@ Public Class Pantalla_de_venta
                         End
                     End If
 
-                Finally
-
-                    FileClose()
-
                 End Try
+
+
+                'Se cierran todos los ficheros abiertos
+                FileClose()
 
             End If
 
         Else
 
             'No se puede salir de la pantalla de venta sin terminar o anular la compra
-            MsgBox("No puede abandonar la pantalla de venta sin terminar o anular la compra primero.", 0 + MsgBoxStyle.Information, "Abandonar pantalla de venta")
+            MsgBox("No puede abandonar la pantalla de venta sin terminar o anular la compra primero.",
+                   0 + MsgBoxStyle.Information, "Abandonar pantalla de venta")
 
 
         End If
@@ -327,9 +340,8 @@ Public Class Pantalla_de_venta
     Private Sub VisualizarVentaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VisualizarVentaToolStripMenuItem.Click
 
         'Se visualiza la venta actual del dia mediante un message box
-        MsgBox("La venta actual del dia " & DateString & " a la hora " & TimeString & " es: 
-
-                    " & Math.Round(ElementosComunes.venta, 2) & "€", 0 + MsgBoxStyle.Information, "Visualizar venta")
+        MsgBox("La venta actual del dia " & DateString & " a la hora " & TimeString & " es:" &
+               Math.Round(ElementosComunes.venta, 2) & "€", 0 + MsgBoxStyle.Information, "Visualizar venta")
 
 
     End Sub
@@ -340,7 +352,8 @@ Public Class Pantalla_de_venta
         'No se puede salir de la pantalla de venta sin terminar o anular la compra
         If ventaArticulos <> 0 Then
 
-            MsgBox("No puede abandonar la pantalla de venta sin terminar o anular la compra primero.", 0 + MsgBoxStyle.Information, "Abandonar pantalla de venta")
+            MsgBox("No puede abandonar la pantalla de venta sin terminar o anular la compra primero.",
+                   0 + MsgBoxStyle.Information, "Abandonar pantalla de venta")
 
         Else
 
@@ -358,7 +371,8 @@ Public Class Pantalla_de_venta
         'No se puede salir de la pantalla de venta sin terminar o anular la compra
         If ventaArticulos <> 0 Then
 
-            MsgBox("No puede abandonar la pantalla de venta sin terminar o anular la compra primero.", 0 + MsgBoxStyle.Information, "Abandonar pantalla de venta")
+            MsgBox("No puede abandonar la pantalla de venta sin terminar o anular la compra primero.",
+                   0 + MsgBoxStyle.Information, "Abandonar pantalla de venta")
 
         Else
 
@@ -376,7 +390,8 @@ Public Class Pantalla_de_venta
         'No se puede salir de la pantalla de venta sin terminar o anular la compra
         If ventaArticulos <> 0 Then
 
-            MsgBox("No puede abandonar la pantalla de venta sin terminar o anular la compra primero.", 0 + MsgBoxStyle.Information, "Abandonar pantalla de venta")
+            MsgBox("No puede abandonar la pantalla de venta sin terminar o anular la compra primero.",
+                   0 + MsgBoxStyle.Information, "Abandonar pantalla de venta")
 
         Else
 
@@ -392,7 +407,8 @@ Public Class Pantalla_de_venta
     Private Sub ColchoneriaCUESTAToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ColchoneriaCUESTAToolStripMenuItem.Click
 
         'Se visualiza toda la informacion sobre la empresa
-        MsgBox(ElementosComunes.informacionEmpresa, 0 + MsgBoxStyle.Information, "Informacion sobre Colchoneria CUESTA")
+        MsgBox(ElementosComunes.informacionEmpresa, 0 + MsgBoxStyle.Information,
+               "Informacion sobre Colchoneria CUESTA")
 
 
     End Sub
@@ -463,19 +479,38 @@ Public Class Pantalla_de_venta
             Catch ex As System.NullReferenceException
 
                 'Si el articulo no ha sido encontrado en el arraylist se informa al usuario del problema
-                MsgBox("No se ha podido encontrar el articulo seleccionado. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Articulo seleccionado")
+                MsgBox("No se ha podido encontrar el articulo seleccionado. Por favor revise los datos del articulo en gestion de articulos",
+                       0 + MsgBoxStyle.Information, "Articulo seleccionado")
 
-                'Se almacena el error en el fichero de errores
+                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - El ariculo seleccionado no se ha encontrado" &
+            vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
             Catch ex As Exception
 
                 'Si se produce un error general
-                MsgBox("Se ha producido un error a la hora de seleccionar un articulo. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Articulo seleccionado")
+                MsgBox("Se ha producido un error a la hora de seleccionar un articulo. Por favor revise los datos del articulo en gestion de articulos",
+                       0 + MsgBoxStyle.Information, "Articulo seleccionado")
 
                 'Se almacena el error en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de seleccionar articulo" &
+                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
             End Try
+
+
+            'Se cierran todos los ficheros abiertos
+            FileClose()
 
         End If
 
@@ -528,19 +563,37 @@ Public Class Pantalla_de_venta
             Catch ex As System.NullReferenceException
 
                 'Si el articulo no ha sido encontrado en el arraylist se informa al usuario del problema
-                MsgBox("No se ha podido encontrar el articulo seleccionado. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Articulo seleccionado")
+                MsgBox("No se ha podido encontrar el articulo seleccionado. Por favor revise los datos del articulo en gestion de articulos",
+                       0 + MsgBoxStyle.Information, "Articulo seleccionado")
 
-                'Se almacena el error en el fichero de errores
+                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - El ariculo seleccionado no se ha encontrado" &
+            vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
             Catch ex As Exception
 
                 'Si se produce un error general
-                MsgBox("Se ha producido un error a la hora de seleccionar un articulo. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Articulo seleccionado")
+                MsgBox("Se ha producido un error a la hora de seleccionar un articulo. Por favor revise los datos del articulo en gestion de articulos",
+                       0 + MsgBoxStyle.Information, "Articulo seleccionado")
 
                 'Se almacena el error en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de seleccionar articulo" &
+                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
 
             End Try
+
+            FileClose()
 
         End If
 
@@ -594,19 +647,37 @@ Public Class Pantalla_de_venta
             Catch ex As System.NullReferenceException
 
                 'Si el articulo no ha sido encontrado en el arraylist se informa al usuario del problema
-                MsgBox("No se ha podido encontrar el articulo seleccionado. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Articulo seleccionado")
+                MsgBox("No se ha podido encontrar el articulo seleccionado. Por favor revise los datos del articulo en gestion de articulos",
+                       0 + MsgBoxStyle.Information, "Articulo seleccionado")
 
-                'Se almacena el error en el fichero de errores
+                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - El ariculo seleccionado no se ha encontrado" &
+            vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
             Catch ex As Exception
 
                 'Si se produce un error general
-                MsgBox("Se ha producido un error a la hora de seleccionar un articulo. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Articulo seleccionado")
+                MsgBox("Se ha producido un error a la hora de seleccionar un articulo. Por favor revise los datos del articulo en gestion de articulos",
+                       0 + MsgBoxStyle.Information, "Articulo seleccionado")
 
                 'Se almacena el error en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de seleccionar articulo" &
+                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
 
             End Try
+
+            FileClose()
 
         End If
 
@@ -660,18 +731,36 @@ Public Class Pantalla_de_venta
             Catch ex As System.NullReferenceException
 
                 'Si el articulo no ha sido encontrado en el arraylist se informa al usuario del problema
-                MsgBox("No se ha podido encontrar el articulo seleccionado. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Articulo seleccionado")
+                MsgBox("No se ha podido encontrar el articulo seleccionado. Por favor revise los datos del articulo en gestion de articulos",
+                       0 + MsgBoxStyle.Information, "Articulo seleccionado")
 
-                'Se almacena el error en el fichero de errores
+                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - El ariculo seleccionado no se ha encontrado" &
+            vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
             Catch ex As Exception
 
                 'Si se produce un error general
-                MsgBox("Se ha producido un error a la hora de seleccionar un articulo. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Articulo seleccionado")
+                MsgBox("Se ha producido un error a la hora de seleccionar un articulo. Por favor revise los datos del articulo en gestion de articulos",
+                       0 + MsgBoxStyle.Information, "Articulo seleccionado")
 
                 'Se almacena el error en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de seleccionar articulo" &
+                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
             End Try
+
+            FileClose()
 
         End If
 
@@ -725,19 +814,37 @@ Public Class Pantalla_de_venta
             Catch ex As System.NullReferenceException
 
                 'Si el articulo no ha sido encontrado en el arraylist se informa al usuario del problema
-                MsgBox("No se ha podido encontrar el articulo seleccionado. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Articulo seleccionado")
+                MsgBox("No se ha podido encontrar el articulo seleccionado. Por favor revise los datos del articulo en gestion de articulos",
+                       0 + MsgBoxStyle.Information, "Articulo seleccionado")
 
-                'Se almacena el error en el fichero de errores
+                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - El ariculo seleccionado no se ha encontrado" &
+            vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
             Catch ex As Exception
 
                 'Si se produce un error general
-                MsgBox("Se ha producido un error a la hora de seleccionar un articulo. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Articulo seleccionado")
+                MsgBox("Se ha producido un error a la hora de seleccionar un articulo. Por favor revise los datos del articulo en gestion de articulos",
+                       0 + MsgBoxStyle.Information, "Articulo seleccionado")
 
                 'Se almacena el error en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de seleccionar articulo" &
+                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
 
             End Try
+
+            FileClose()
 
         End If
 
@@ -791,19 +898,37 @@ Public Class Pantalla_de_venta
             Catch ex As System.NullReferenceException
 
                 'Si el articulo no ha sido encontrado en el arraylist se informa al usuario del problema
-                MsgBox("No se ha podido encontrar el articulo seleccionado. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Articulo seleccionado")
+                MsgBox("No se ha podido encontrar el articulo seleccionado. Por favor revise los datos del articulo en gestion de articulos",
+                       0 + MsgBoxStyle.Information, "Articulo seleccionado")
 
-                'Se almacena el error en el fichero de errores
+                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - El ariculo seleccionado no se ha encontrado" &
+            vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
             Catch ex As Exception
 
                 'Si se produce un error general
-                MsgBox("Se ha producido un error a la hora de seleccionar un articulo. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Articulo seleccionado")
+                MsgBox("Se ha producido un error a la hora de seleccionar un articulo. Por favor revise los datos del articulo en gestion de articulos",
+                       0 + MsgBoxStyle.Information, "Articulo seleccionado")
 
                 'Se almacena el error en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de seleccionar articulo" &
+                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
 
             End Try
+
+            FileClose()
 
         End If
 
@@ -827,19 +952,37 @@ Public Class Pantalla_de_venta
             Catch ex As System.IndexOutOfRangeException
 
                 'Si no hay precio indicado por este articulo se le indica al usuario
-                MsgBox("El tamaño seleccionado no tiene precio asignado por lo tanto no se puede vender. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Tamaño seleccionado")
+                MsgBox("El tamaño seleccionado no tiene precio asignado por lo tanto no se puede vender. Por favor revise los datos del articulo en gestion de articulos",
+                       0 + MsgBoxStyle.Information, "Tamaño seleccionado")
 
-                'Se almacena la informacion sobre el error ocurrido en el fichero de errores
+                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - El ariculo seleccionado no se ha encontrado" &
+            vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
             Catch ex As Exception
 
                 'Si se produce un error general
-                MsgBox("Se ha producido un error a la hora de seleccionar un tamaño. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Tamaño seleccionado")
+                MsgBox("Se ha producido un error a la hora de seleccionar un tamaño. Por favor revise los datos del articulo en gestion de articulos",
+                       0 + MsgBoxStyle.Information, "Tamaño seleccionado")
 
                 'Se almacena el error en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de seleccionar articulo" &
+                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
 
             End Try
+
+            FileClose()
 
         Else
 
@@ -866,19 +1009,36 @@ Public Class Pantalla_de_venta
             Catch ex As System.IndexOutOfRangeException
 
                 'Si no hay precio indicado por este articulo se le indica al usuario
-                MsgBox("El tamaño seleccionado no tiene precio asignado por lo tanto no se puede vender. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Tamaño seleccionado")
+                MsgBox("El tamaño seleccionado no tiene precio asignado por lo tanto no se puede vender. Por favor revise los datos del articulo en gestion de articulos",
+                       0 + MsgBoxStyle.Information, "Tamaño seleccionado")
 
-                'Se almacena la informacion sobre el error ocurrido en el fichero de errores
+                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - Indice fuera de rango para el precio correspondiente a un tamaño" &
+            vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
             Catch ex As Exception
 
                 'Si se produce un error general
-                MsgBox("Se ha producido un error a la hora de seleccionar un tamaño. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Tamaño seleccionado")
+                MsgBox("Se ha producido un error a la hora de seleccionar un tamaño. Por favor revise los datos del articulo en gestion de articulos",
+                       0 + MsgBoxStyle.Information, "Tamaño seleccionado")
 
                 'Se almacena el error en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de seleccionar un tamaño" &
+                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
             End Try
+
+            FileClose()
 
         Else
 
@@ -905,19 +1065,36 @@ Public Class Pantalla_de_venta
             Catch ex As System.IndexOutOfRangeException
 
                 'Si no hay precio indicado por este articulo se le indica al usuario
-                MsgBox("El tamaño seleccionado no tiene precio asignado por lo tanto no se puede vender. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Tamaño seleccionado")
+                MsgBox("El tamaño seleccionado no tiene precio asignado por lo tanto no se puede vender. Por favor revise los datos del articulo en gestion de articulos",
+                       0 + MsgBoxStyle.Information, "Tamaño seleccionado")
 
-                'Se almacena la informacion sobre el error ocurrido en el fichero de errores
+                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - Indice fuera de rango para el precio correspondiente a un tamaño" &
+            vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
             Catch ex As Exception
 
                 'Si se produce un error general
-                MsgBox("Se ha producido un error a la hora de seleccionar un tamaño. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Tamaño seleccionado")
+                MsgBox("Se ha producido un error a la hora de seleccionar un tamaño. Por favor revise los datos del articulo en gestion de articulos",
+                       0 + MsgBoxStyle.Information, "Tamaño seleccionado")
 
                 'Se almacena el error en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de seleccionar un tamaño" &
+                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
             End Try
+
+            FileClose()
 
         Else
 
@@ -944,19 +1121,36 @@ Public Class Pantalla_de_venta
             Catch ex As System.IndexOutOfRangeException
 
                 'Si no hay precio indicado por este articulo se le indica al usuario
-                MsgBox("El tamaño seleccionado no tiene precio asignado por lo tanto no se puede vender. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Tamaño seleccionado")
+                MsgBox("El tamaño seleccionado no tiene precio asignado por lo tanto no se puede vender. Por favor revise los datos del articulo en gestion de articulos",
+                       0 + MsgBoxStyle.Information, "Tamaño seleccionado")
 
-                'Se almacena la informacion sobre el error ocurrido en el fichero de errores
+                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - Indice fuera de rango para el precio correspondiente a un tamaño" &
+            vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
             Catch ex As Exception
 
                 'Si se produce un error general
-                MsgBox("Se ha producido un error a la hora de seleccionar un tamaño. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Tamaño seleccionado")
+                MsgBox("Se ha producido un error a la hora de seleccionar un tamaño. Por favor revise los datos del articulo en gestion de articulos",
+                       0 + MsgBoxStyle.Information, "Tamaño seleccionado")
 
                 'Se almacena el error en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de seleccionar un tamaño" &
+                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
             End Try
+
+            FileClose()
 
         Else
 
@@ -983,19 +1177,36 @@ Public Class Pantalla_de_venta
             Catch ex As System.IndexOutOfRangeException
 
                 'Si no hay precio indicado por este articulo se le indica al usuario
-                MsgBox("El tamaño seleccionado no tiene precio asignado por lo tanto no se puede vender. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Tamaño seleccionado")
+                MsgBox("El tamaño seleccionado no tiene precio asignado por lo tanto no se puede vender. Por favor revise los datos del articulo en gestion de articulos",
+                       0 + MsgBoxStyle.Information, "Tamaño seleccionado")
 
-                'Se almacena la informacion sobre el error ocurrido en el fichero de errores
+                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - Indice fuera de rango para el precio correspondiente a un tamaño" &
+            vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
             Catch ex As Exception
 
                 'Si se produce un error general
-                MsgBox("Se ha producido un error a la hora de seleccionar un tamaño. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Tamaño seleccionado")
+                MsgBox("Se ha producido un error a la hora de seleccionar un tamaño. Por favor revise los datos del articulo en gestion de articulos",
+                       0 + MsgBoxStyle.Information, "Tamaño seleccionado")
 
                 'Se almacena el error en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de seleccionar un tamaño" &
+                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
             End Try
+
+            FileClose()
 
         Else
 
@@ -1022,19 +1233,36 @@ Public Class Pantalla_de_venta
             Catch ex As System.IndexOutOfRangeException
 
                 'Si no hay precio indicado por este articulo se le indica al usuario
-                MsgBox("El tamaño seleccionado no tiene precio asignado por lo tanto no se puede vender. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Tamaño seleccionado")
+                MsgBox("El tamaño seleccionado no tiene precio asignado por lo tanto no se puede vender. Por favor revise los datos del articulo en gestion de articulos",
+                       0 + MsgBoxStyle.Information, "Tamaño seleccionado")
 
-                'Se almacena la informacion sobre el error ocurrido en el fichero de errores
+                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - Indice fuera de rango para el precio correspondiente a un tamaño" &
+            vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
             Catch ex As Exception
 
                 'Si se produce un error general
-                MsgBox("Se ha producido un error a la hora de seleccionar un tamaño. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Tamaño seleccionado")
+                MsgBox("Se ha producido un error a la hora de seleccionar un tamaño. Por favor revise los datos del articulo en gestion de articulos",
+                       0 + MsgBoxStyle.Information, "Tamaño seleccionado")
 
                 'Se almacena el error en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de seleccionar un tamaño" &
+                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
             End Try
+
+            FileClose()
 
         Else
 
@@ -1165,22 +1393,25 @@ Public Class Pantalla_de_venta
                                                 articulosVendidos.Item(articulosVendidos.Count - 1).getPrecioCantidad & "€" &
                                                 articulosVendidos.Item(articulosVendidos.Count - 1).precioTotal & "€")
 
-        Catch ex As System.IndexOutOfRangeException
-
-            'Salta una exception si se intenta acceder a un elemento del arraylist y este esta vacio
-            MsgBox("No se ha podido agregar el articulo seleccionado a la lista. Por favor intentelo de nuevo", 0 + MsgBoxStyle.Information, "Añadir articulo")
-
-            'Se almacena el error dentro del fichero de errores
 
         Catch ex As Exception
 
             'Si se produce un error general
-            MsgBox("Se ha producido un error a la hora de agregar el articulo a la lista. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Añadir articulo")
+            MsgBox("Se ha producido un error a la hora de agregar el articulo a la lista. Por favor revise los datos del articulo en gestion de articulos",
+                   0 + MsgBoxStyle.Information, "Añadir articulo")
 
             'Se almacena el error en el fichero de errores
+            FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
+            errorRegistro.fecha = DateString
+            errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de agregar el articulo a la lista" &
+                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
+
+            Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
         End Try
+
+        FileClose()
 
 
         'Se desactivan todos los elementos de la categoria menos el combobox para seleccionar articulo
@@ -1209,15 +1440,25 @@ Public Class Pantalla_de_venta
                                                 articulosVendidos.Item(articulosVendidos.Count - 1).getPrecioCantidad & "€" &
                                                 articulosVendidos.Item(articulosVendidos.Count - 1).precioTotal & "€")
 
-        Catch ex As System.IndexOutOfRangeException
+        Catch ex As Exception
 
-            'Salta una exception si se intenta acceder a un elemento del arraylist y este esta vacio
-            MsgBox("No se ha podido agregar el articulo seleccionado a la lista. Por favor intentelo de nuevo", 0 + MsgBoxStyle.Information, "Añadir articulo")
+            'Si se produce un error general
+            MsgBox("Se ha producido un error a la hora de agregar el articulo a la lista. Por favor revise los datos del articulo en gestion de articulos",
+                   0 + MsgBoxStyle.Information, "Añadir articulo")
 
-            'Se almacena el error dentro del fichero de errores
+            'Se almacena el error en el fichero de errores
+            FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
+            errorRegistro.fecha = DateString
+            errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de agregar el articulo a la lista" &
+                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
+
+            Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
         End Try
+
+        FileClose()
+
 
 
         'Se desactivan todos los elementos de la categoria menos el combobox para seleccionar articulo
@@ -1246,15 +1487,25 @@ Public Class Pantalla_de_venta
                                                 articulosVendidos.Item(articulosVendidos.Count - 1).getPrecioCantidad & "€" &
                                                 articulosVendidos.Item(articulosVendidos.Count - 1).precioTotal & "€")
 
-        Catch ex As System.IndexOutOfRangeException
+        Catch ex As Exception
 
-            'Salta una exception si se intenta acceder a un elemento del arraylist y este esta vacio
-            MsgBox("No se ha podido agregar el articulo seleccionado a la lista. Por favor intentelo de nuevo", 0 + MsgBoxStyle.Information, "Añadir articulo")
+            'Si se produce un error general
+            MsgBox("Se ha producido un error a la hora de agregar el articulo a la lista. Por favor revise los datos del articulo en gestion de articulos",
+                   0 + MsgBoxStyle.Information, "Añadir articulo")
 
-            'Se almacena el error dentro del fichero de errores
+            'Se almacena el error en el fichero de errores
+            FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
+            errorRegistro.fecha = DateString
+            errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de agregar el articulo a la lista" &
+                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
+
+            Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
         End Try
+
+        FileClose()
+
 
 
         'Se desactivan todos los elementos de la categoria menos el combobox para seleccionar articulo
@@ -1283,18 +1534,28 @@ Public Class Pantalla_de_venta
                                                 articulosVendidos.Item(articulosVendidos.Count - 1).getPrecioCantidad & "€" &
                                                 articulosVendidos.Item(articulosVendidos.Count - 1).precioTotal & "€")
 
-        Catch ex As System.IndexOutOfRangeException
+        Catch ex As Exception
 
-            'Salta una exception si se intenta acceder a un elemento del arraylist y este esta vacio
-            MsgBox("No se ha podido agregar el articulo seleccionado a la lista. Por favor intentelo de nuevo", 0 + MsgBoxStyle.Information, "Añadir articulo")
+            'Si se produce un error general
+            MsgBox("Se ha producido un error a la hora de agregar el articulo a la lista. Por favor revise los datos del articulo en gestion de articulos",
+                   0 + MsgBoxStyle.Information, "Añadir articulo")
 
-            'Se almacena el error dentro del fichero de errores
+            'Se almacena el error en el fichero de errores
+            FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
+            errorRegistro.fecha = DateString
+            errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de agregar el articulo a la lista" &
+                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
+
+            Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
         End Try
 
-            'Se desactivan todos los elementos de la categoria menos el combobox para seleccionar articulo
-            button_aniadir_canape.Enabled = False
+        FileClose()
+
+
+        'Se desactivan todos los elementos de la categoria menos el combobox para seleccionar articulo
+        button_aniadir_canape.Enabled = False
             comboBox_cantidad_canape.Enabled = False
             label_precio_canape.Text = ""
             comboBox_tamanio_canape.Enabled = False
@@ -1319,15 +1580,25 @@ Public Class Pantalla_de_venta
                                                 articulosVendidos.Item(articulosVendidos.Count - 1).getPrecioCantidad & "€" &
                                                 articulosVendidos.Item(articulosVendidos.Count - 1).precioTotal & "€")
 
-        Catch ex As System.IndexOutOfRangeException
+        Catch ex As Exception
 
-            'Salta una exception si se intenta acceder a un elemento del arraylist y este esta vacio
-            MsgBox("No se ha podido agregar el articulo seleccionado a la lista. Por favor intentelo de nuevo", 0 + MsgBoxStyle.Information, "Añadir articulo")
+            'Si se produce un error general
+            MsgBox("Se ha producido un error a la hora de agregar el articulo a la lista. Por favor revise los datos del articulo en gestion de articulos",
+                   0 + MsgBoxStyle.Information, "Añadir articulo")
 
-            'Se almacena el error dentro del fichero de errores
+            'Se almacena el error en el fichero de errores
+            FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
+            errorRegistro.fecha = DateString
+            errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de agregar el articulo a la lista" &
+                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
+
+            Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
         End Try
+
+        FileClose()
+
 
         'Se desactivan todos los elementos de la categoria menos el combobox para seleccionar articulo
         button_aniadir_ofertas.Enabled = False
@@ -1355,15 +1626,25 @@ Public Class Pantalla_de_venta
                                                 articulosVendidos.Item(articulosVendidos.Count - 1).getPrecioCantidad & "€" &
                                                 articulosVendidos.Item(articulosVendidos.Count - 1).precioTotal & "€")
 
-        Catch ex As System.IndexOutOfRangeException
+        Catch ex As Exception
 
-            'Salta una exception si se intenta acceder a un elemento del arraylist y este esta vacio
-            MsgBox("No se ha podido agregar el articulo seleccionado a la lista. Por favor intentelo de nuevo", 0 + MsgBoxStyle.Information, "Añadir articulo")
+            'Si se produce un error general
+            MsgBox("Se ha producido un error a la hora de agregar el articulo a la lista. Por favor revise los datos del articulo en gestion de articulos",
+                   0 + MsgBoxStyle.Information, "Añadir articulo")
 
-            'Se almacena el error dentro del fichero de errores
+            'Se almacena el error en el fichero de errores
+            FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
+            errorRegistro.fecha = DateString
+            errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de agregar el articulo a la lista" &
+                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
+
+            Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
         End Try
+
+        FileClose()
+
 
         'Se desactivan todos los elementos de la categoria menos el combobox para seleccionar articulo
         button_aniadir_otros.Enabled = False
@@ -1384,7 +1665,8 @@ Public Class Pantalla_de_venta
     Private Sub button_informacion_base_Click(sender As Object, e As EventArgs) Handles button_informacion_base.Click
 
         'Se indica toda la descripcion disponible de este articulo en un message box
-        MsgBox(articulo.getDescripcionArticulo, 0 + MsgBoxStyle.Information, "Informacion sobre el articulo seleccionado")
+        MsgBox(articulo.getDescripcionArticulo,
+               0 + MsgBoxStyle.Information, "Informacion sobre el articulo seleccionado")
 
     End Sub
 
@@ -1392,7 +1674,8 @@ Public Class Pantalla_de_venta
     Private Sub button_informacion_somier_Click(sender As Object, e As EventArgs) Handles button_informacion_somier.Click
 
         'Se indica toda la descripcion disponible de este articulo en un message box
-        MsgBox(articulo.getDescripcionArticulo, 0 + MsgBoxStyle.Information, "Informacion sobre el articulo seleccionado")
+        MsgBox(articulo.getDescripcionArticulo,
+               0 + MsgBoxStyle.Information, "Informacion sobre el articulo seleccionado")
 
     End Sub
 
@@ -1400,7 +1683,8 @@ Public Class Pantalla_de_venta
     Private Sub button_informacion_colchon_Click(sender As Object, e As EventArgs) Handles button_informacion_colchon.Click
 
         'Se indica toda la descripcion disponible de este articulo en un message box
-        MsgBox(articulo.getDescripcionArticulo, 0 + MsgBoxStyle.Information, "Informacion sobre el articulo seleccionado")
+        MsgBox(articulo.getDescripcionArticulo,
+               0 + MsgBoxStyle.Information, "Informacion sobre el articulo seleccionado")
 
     End Sub
 
@@ -1408,7 +1692,8 @@ Public Class Pantalla_de_venta
     Private Sub button_informacion_canape_Click(sender As Object, e As EventArgs) Handles button_informacion_canape.Click
 
         'Se indica toda la descripcion disponible de este articulo en un message box
-        MsgBox(articulo.getDescripcionArticulo, 0 + MsgBoxStyle.Information, "Informacion sobre el articulo seleccionado")
+        MsgBox(articulo.getDescripcionArticulo,
+               0 + MsgBoxStyle.Information, "Informacion sobre el articulo seleccionado")
 
     End Sub
 
@@ -1416,7 +1701,8 @@ Public Class Pantalla_de_venta
     Private Sub button_informacion_ofertas_Click(sender As Object, e As EventArgs) Handles button_informacion_ofertas.Click
 
         'Se indica toda la descripcion disponible de este articulo en un message box
-        MsgBox(articulo.getDescripcionArticulo, 0 + MsgBoxStyle.Information, "Informacion sobre el articulo seleccionado")
+        MsgBox(articulo.getDescripcionArticulo,
+               0 + MsgBoxStyle.Information, "Informacion sobre el articulo seleccionado")
 
     End Sub
 
@@ -1424,7 +1710,8 @@ Public Class Pantalla_de_venta
     Private Sub button_informacion_otros_Click(sender As Object, e As EventArgs) Handles button_informacion_otros.Click
 
         'Se indica toda la descripcion disponible de este articulo en un message box
-        MsgBox(articulo.getDescripcionArticulo, 0 + MsgBoxStyle.Information, "Informacion sobre el articulo seleccionado")
+        MsgBox(articulo.getDescripcionArticulo,
+               0 + MsgBoxStyle.Information, "Informacion sobre el articulo seleccionado")
 
     End Sub
 
@@ -1538,7 +1825,8 @@ Public Class Pantalla_de_venta
         Dim opcion As Integer
 
         'Se pregunta al usuario si esta seguro que desea cerrar caja
-        opcion = MsgBox("Esta seguro que desea anular el pedido?", 4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Anular venta")
+        opcion = MsgBox("Esta seguro que desea anular el pedido?",
+                        4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Anular venta")
 
         If opcion = MsgBoxResult.Yes Then
 
@@ -1584,8 +1872,6 @@ Public Class Pantalla_de_venta
 
                 Write(5, ElementosComunes.venta)
 
-                'Se cierra el fichero
-                FileClose(5)
 
                 End
 
@@ -1594,36 +1880,36 @@ Public Class Pantalla_de_venta
                 MsgBox("El fichero ""VentaActual.txt"" no se encuentra por lo tanto no se ha podido guadrar el valor de la venta en este momento" &
                    vbCrLf & "Por favor compruebe que el fichero esta en la carpeta de la aplicacion Colchoneria CUESTA. " & vbCrLf &
                             "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\VentaActual.txt",
-                            0 + MsgBoxStyle.Exclamation)
+                            0 + MsgBoxStyle.Exclamation, "Guardar venta actual")
 
                 'Se guarda la informacion sobre el error ocurrido en el fichero de errores
                 FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
                 errorRegistro.fecha = DateString
-                errorRegistro.informacionError = Now & " - El fichero ""VentaActual.txt"" no se ha encontrado"
+                errorRegistro.informacionError = Now & " - El fichero ""VentaActual.txt"" no se ha encontrado" &
+                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
 
                 Write(3, errorRegistro.fecha, errorRegistro.informacionError)
-
-                FileClose(3)
 
             Catch
 
-                MsgBox("Se ha producido un error a la hora de guadrar la venta hasta este momento.", 0 + MsgBoxStyle.Information)
+                MsgBox("Se ha producido un error a la hora de guadrar la venta hasta este momento.",
+                       0 + MsgBoxStyle.Information, "Guardar venta actual")
 
 
                 'Se guarda la informacion sobre el error ocurrido en el fichero de errores
                 FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
                 errorRegistro.fecha = DateString
-                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de escribir en el fichero ""VentaActual.txt"""
+                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de escribir en el fichero ""VentaActual.txt""" &
+                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
 
                 Write(3, errorRegistro.fecha, errorRegistro.informacionError)
-
-                FileClose(3)
 
 
             End Try
 
+            FileClose()
 
         End If
 
@@ -1637,13 +1923,15 @@ Public Class Pantalla_de_venta
         If venta > 0 Then
 
             'No se puede salir de la pantalla de venta sin terminar o anular la compra
-            MsgBox("No puede abandonar la pantalla de venta sin terminar o anular la compra primero.", 0 + MsgBoxStyle.Information, "Abandonar pantalla de venta")
+            MsgBox("No puede abandonar la pantalla de venta sin terminar o anular la compra primero.",
+                   0 + MsgBoxStyle.Information, "Abandonar pantalla de venta")
 
 
         Else
 
             'Se pregunta al usuario si desea desconectar y volver a la pantalla de inicio
-            opcion = MsgBox("Esta seguro que desea desconectar? Será dirigido a la pantalla de inicio.", 4 + MsgBoxStyle.Question + MsgBoxStyle.DefaultButton2, "Descontectar")
+            opcion = MsgBox("Esta seguro que desea desconectar? Será dirigido a la pantalla de inicio.",
+                            4 + MsgBoxStyle.Question + MsgBoxStyle.DefaultButton2, "Descontectar")
 
             If opcion = MsgBoxResult.Yes Then
 
@@ -1680,6 +1968,7 @@ Public Class Pantalla_de_venta
 
         Catch ex As System.NullReferenceException
 
+            'si salta la excepcion significa que no se ha añadido ningun articulo
 
         End Try
 
@@ -1748,7 +2037,8 @@ Public Class Pantalla_de_venta
 
             Else
                 'Se le indica al usuario que el importe tiene que ser mayor o igual al total de venta
-                MsgBox("El importe introducido tiene que ser mayor o igual al total de la venta", 0 + MsgBoxStyle.Information, "Importe incorrecto")
+                MsgBox("El importe introducido tiene que ser mayor o igual al total de la venta",
+                       0 + MsgBoxStyle.Information, "Importe incorrecto")
 
                 'Se desactiva el boton cobrar
                 button_cobrar.Enabled = False
@@ -1763,7 +2053,8 @@ Public Class Pantalla_de_venta
         Else
 
             'Se le indica al usuario que el importe tiene que ser un numero mayor a 0
-            MsgBox("Por favor introduzca un numero mayor a 0 para el importe de la venta", 0 + MsgBoxStyle.Information, "Importe incorrecto")
+            MsgBox("Por favor introduzca un numero mayor a 0 para el importe de la venta",
+                   0 + MsgBoxStyle.Information, "Importe incorrecto")
 
             'Se desactiva el boton cobrar
             button_cobrar.Enabled = False
@@ -1777,4 +2068,10 @@ Public Class Pantalla_de_venta
 
     End Sub
 
+    Private Sub Pantalla_de_venta_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+
+        'Se cierran todos los ficheros abiertos
+        FileClose()
+
+    End Sub
 End Class
