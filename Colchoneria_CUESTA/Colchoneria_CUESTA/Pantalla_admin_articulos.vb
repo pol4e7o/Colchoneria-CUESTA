@@ -140,7 +140,7 @@
     Private Sub VolverToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VolverToolStripMenuItem.Click
 
         Pantalla_de_venta.Show()
-        Me.Close()
+        Me.Hide()
 
     End Sub
 

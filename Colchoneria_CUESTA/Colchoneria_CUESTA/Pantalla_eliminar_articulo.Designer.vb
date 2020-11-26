@@ -50,6 +50,7 @@ Partial Class Pantalla_eliminar_articulo
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManualDeUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.MenuStrip.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -278,17 +279,29 @@ Partial Class Pantalla_eliminar_articulo
         Me.Panel2.Size = New System.Drawing.Size(359, 307)
         Me.Panel2.TabIndex = 30
         '
+        'Label2
+        '
+        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(229, 35)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(277, 25)
+        Me.Label2.TabIndex = 31
+        Me.Label2.Text = "Eliminaciín de un artículo"
+        '
         'Pantalla_eliminar_articulo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(883, 450)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.MenuStrip)
         Me.Controls.Add(Me.Panel1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Pantalla_eliminar_articulo"
-        Me.Text = "Eliminación artículos - Colchonería CUESTA"
+        Me.Text = "Eliminar artículos - Colchonería CUESTA"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
@@ -327,4 +340,5 @@ Partial Class Pantalla_eliminar_articulo
     Friend WithEvents AyudaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ManualDeUsuarioToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents Label2 As Label
 End Class
