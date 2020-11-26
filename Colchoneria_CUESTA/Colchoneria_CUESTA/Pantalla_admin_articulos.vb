@@ -42,45 +42,43 @@
 
                 Write(5, ElementosComunes.venta)
 
-                'Se cierra el fichero
-                FileClose(5)
-
                 End
 
             Catch ex As System.IO.FileNotFoundException
 
                 MsgBox("El fichero ""VentaActual.txt"" no se encuentra por lo tanto no se ha podido guadrar el valor de la venta hasta este momento" &
-                   vbCrLf & "Por favor compruebe que el fichero esta en la carpeta de la aplicacion Colchoneria CUESTA. " & vbCrLf &
+                            vbCrLf & "Por favor compruebe que el fichero esta en la carpeta de la aplicacion Colchoneria CUESTA. " & vbCrLf &
                             "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\VentaActual.txt",
-                            0 + MsgBoxStyle.Exclamation)
+                            0 + MsgBoxStyle.Exclamation, "Guardar venta actual")
 
                 'Se guarda la informacion sobre el error ocurrido en el fichero de errores
                 FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
                 errorRegistro.fecha = DateString
-                errorRegistro.informacionError = Now & " - El fichero ""VentaActual.txt"" no se ha encontrado"
+                errorRegistro.informacionError = Now & " - El fichero ""VentaActual.txt"" no se ha encontrado" &
+                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
 
                 Write(3, errorRegistro.fecha, errorRegistro.informacionError)
-
 
             Catch
 
-                MsgBox("Se ha producido un error a la hora de guadrar la venta hasta este momento.", 0 + MsgBoxStyle.Information)
+                MsgBox("Se ha producido un error a la hora de guadrar la venta hasta este momento.",
+                           0 + MsgBoxStyle.Information, "Guardar venta actual")
 
 
                 'Se guarda la informacion sobre el error ocurrido en el fichero de errores
                 FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
                 errorRegistro.fecha = DateString
-                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de escribir en el fichero ""VentaActual.txt"""
+                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de escribir en el fichero ""VentaActual.txt""" &
+                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
 
                 Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
-            Finally
-
-                FileClose()
-
             End Try
+
+            'Se cierran todos los ficheros abiertos
+            FileClose()
 
 
 
@@ -94,45 +92,44 @@
                 ventaRegistro.fecha = DateString
                 ventaRegistro.informacionVenta = informe
 
-
             Catch ex As System.IO.FileNotFoundException
 
                 MsgBox("El fichero ""VentasDiarias.txt"" no se encuentra por lo tanto no se ha podido guadrar el informe de cierre de caja" &
                    vbCrLf & "Por favor compruebe que el fichero esta en la carpeta de la aplicacion Colchoneria CUESTA. " & vbCrLf &
                             "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\VentasDiarias.txt",
-                            0 + MsgBoxStyle.Exclamation)
+                            0 + MsgBoxStyle.Exclamation, "Guardar informe de cierre de caja")
 
 
                 'Se guarda la informacion sobre el error ocurrido en el fichero de errores
                 FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
                 errorRegistro.fecha = DateString
-                errorRegistro.informacionError = Now & " - El fichero ""VentasDiarias.txt"" no se ha encontrado"
+                errorRegistro.informacionError = Now & " - El fichero ""VentasDiarias.txt"" no se ha encontrado" &
+                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
 
                 Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
             Catch
 
-                MsgBox("Se ha producido un error a la hora de guadrar el informe de cierre de caja.", 0 + MsgBoxStyle.Information)
+                MsgBox("Se ha producido un error a la hora de guadrar el informe de cierre de caja.",
+                           0 + MsgBoxStyle.Information, "Guardar informe de cierre de caja")
 
 
                 'Se guarda la informacion sobre el error ocurrido en el fichero de errores
                 FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
                 errorRegistro.fecha = DateString
-                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de escribir en el fichero ""VentasDiarias.txt"""
+                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de escribir en el fichero ""VentasDiarias.txt""" &
+                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
 
                 Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
-            Finally
-
-                FileClose()
-
             End Try
 
+            'Se cierran todos los ficheros abiertos
+            FileClose()
+
         End If
-
-
 
     End Sub
 
@@ -162,23 +159,21 @@
 
                 Write(5, ElementosComunes.venta)
 
-                'Se cierra el fichero
-                FileClose(5)
-
                 End
 
             Catch ex As System.IO.FileNotFoundException
 
                 MsgBox("El fichero ""VentaActual.txt"" no se encuentra por lo tanto no se ha podido guadrar el valor de la venta hasta este momento" &
                    vbCrLf & "Por favor compruebe que el fichero esta en la carpeta de la aplicacion Colchoneria CUESTA. " & vbCrLf &
-                            "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\VentaActual.txt",
-                            0 + MsgBoxStyle.Exclamation)
+                   "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\VentaActual.txt",
+                   0 + MsgBoxStyle.Exclamation, "Guardar venta actual")
 
                 'Se guarda la informacion sobre el error ocurrido en el fichero de errores
                 FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
                 errorRegistro.fecha = DateString
-                errorRegistro.informacionError = Now & " - El fichero ""VentaActual.txt"" no se ha encontrado"
+                errorRegistro.informacionError = Now & " - El fichero ""VentaActual.txt"" no se ha encontrado" &
+                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
 
                 Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
@@ -191,14 +186,16 @@
 
             Catch
 
-                MsgBox("Se ha producido un error a la hora de guadrar la venta hasta este momento.", 0 + MsgBoxStyle.Information)
+                MsgBox("Se ha producido un error a la hora de guadrar la venta hasta este momento.",
+                       0 + MsgBoxStyle.Information, "Guadrar venta actual")
 
 
                 'Se guarda la informacion sobre el error ocurrido en el fichero de errores
                 FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
                 errorRegistro.fecha = DateString
-                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de escribir en el fichero ""VentaActual.txt"""
+                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de escribir en el fichero ""VentaActual.txt""" &
+                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
 
                 Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
@@ -209,11 +206,10 @@
                     End
                 End If
 
-            Finally
-
-                FileClose()
-
             End Try
+
+            'Se cierran todos los ficheros abiertos
+            FileClose()
 
         End If
 
@@ -222,9 +218,8 @@
     'VENTA
     Private Sub VisualizarVentaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VisualizarVentaToolStripMenuItem.Click
         'Se visualiza la venta actual del dia mediante un message box
-        MsgBox("La venta actual del dia " & DateString & " a la hora " & TimeString & " es: 
-
-                    " & ElementosComunes.venta & "€", 0 + MsgBoxStyle.Information, "Visualizar venta")
+        MsgBox("La venta actual del dia " & DateString & " a la hora " & TimeString & " es: " &
+               ElementosComunes.venta & "€", 0 + MsgBoxStyle.Information, "Visualizar venta")
     End Sub
 
     'ACERCA DE...
@@ -235,7 +230,9 @@
 
     'AYUDA
     Private Sub ManualDeUsuarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ManualDeUsuarioToolStripMenuItem.Click
+
         'Te reenviará a un fichero: Manual de usuario
+
     End Sub
 
     'GESTIÓN EMPLEADOS
@@ -256,6 +253,7 @@
 
     'LOAD
     Private Sub Pantalla_admin_articulos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         'Se indica la fecha actual
         label_fecha.Text = "Fecha: " & DateString
 

@@ -70,7 +70,7 @@
 
                 errorRegistro.fecha = DateString
                 errorRegistro.informacionError = Now & " - El fichero ""VentaActual.txt"" no se ha encontrado" &
-                vbCrLf & "Descripcion: " & Err.Description
+                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
 
                 Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
@@ -92,7 +92,7 @@
 
                 errorRegistro.fecha = DateString
                 errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de escribir en el fichero ""VentaActual.txt""" &
-                vbCrLf & "Descripcion: " & Err.Description
+                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
 
                 Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
