@@ -12,7 +12,7 @@ Public Class Validacion
     'En definitiva indica si el nombre o los nombres son validos
     Public Function validarNombres(cadena As String) As Boolean
 
-        validarNombres = Regex.IsMatch(cadena, "^[a-zA-ZñÑíÍóÓéÉáÁúÚüÜ]+([ -][a-zA-ZñÑíÍóÓéÉáÁúÚüÜ]+)*$")
+        validarNombres = Regex.IsMatch(cadena, "^[a-zA-ZñÑíÍóÓéÉáÁúÚüÜ]+([ -][a-zA-ZñÑíÍóÓéÉáÁúÚüÜ]+)*[ ]*$")
 
         'Se devuelve el valor de la variable que indicará 
         'si la cadena contiene solo letras y espacios en blanco
@@ -26,8 +26,8 @@ Public Class Validacion
 
         'El numero es valido si empieza por parentesis, "+" o numeros, si conteniene espacios en blanco
         ' entre los numeros y su numero de caracteres es mayor a 8
-        validarNumeroTelefono = (Regex.IsMatch(numero, "^([(][+][0-9]+[)])([ ]?[0-9]+)+$") Or
-            Regex.IsMatch(numero, "^([+]?[0-9]+)([ ]?[0-9]+)+$")) And numero.Length > 8
+        validarNumeroTelefono = (Regex.IsMatch(numero, "^([(][+][0-9]+[)])([ ]?[0-9]+)+[ ]*$") Or
+            Regex.IsMatch(numero, "^([+]?[0-9]+)([ ]?[0-9]+)+[ ]*$")) And numero.Length > 8
 
         Return validarNumeroTelefono
 
@@ -64,7 +64,7 @@ Public Class Validacion
 
         'Se utilizan expresiones regulares para indicar si es numero o no
         'Se aceptan "," y "." como separador entre enteros y decimales
-        esNumero = Regex.IsMatch(cadena, "^[+-]?[0-9]+([,.][0-9]+)?$")
+        esNumero = Regex.IsMatch(cadena, "^[+-]?[0-9]+([,.][0-9]+)?[ ]*$")
 
         Return esNumero
 

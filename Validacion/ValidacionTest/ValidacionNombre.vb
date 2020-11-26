@@ -44,6 +44,23 @@ Imports Validacion.Validacion
 
     End Sub
 
+    <TestMethod()> Public Sub TestValidarNombreV3()
+
+        'La variable que alamacenaré el resultado real 
+        Dim resultadoReal As Boolean
+
+        'Se utiliza la clase validacion para comprobar si el nombre es correcto o no
+        Dim validacion As New Validacion.Validacion()
+
+        'Se comprueba pasandole al metodo un nombre correcto
+        resultadoReal = validacion.validarNombres("Anna Muñoz   ")
+
+        'Se comprueban el resultado esperado (true) con el resultado real
+        'Si el metodo funciona correctamente el test se ejecutará sin errores
+        Assert.AreEqual(resultadoTrue, resultadoReal)
+
+    End Sub
+
     <TestMethod()> Public Sub TestValidarNombreNV1()
 
         'La variable que alamacenaré el resultado real 
@@ -53,7 +70,7 @@ Imports Validacion.Validacion
         Dim validacion As New Validacion.Validacion()
 
         'Se comprueba pasandole al metodo un nombre incorrecto
-        resultadoReal = validacion.validarNombres("Anna Martinez ")
+        resultadoReal = validacion.validarNombres("Anna Martinez?")
 
         'Se comprueban el resultado esperado (false) con el resultado real
         'Si el metodo funciona correctamente el test se ejecutará sin errores
