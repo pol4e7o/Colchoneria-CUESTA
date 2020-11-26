@@ -44,22 +44,70 @@
         'La variable que va a almacenar la opcion elegida del message box
         Dim opcion As Integer
 
-        If ElementosComunes.cajaCerrada = False Then
+        'Se le pregunta al usuario si desea salir
+        opcion = MsgBox("Desea salir de la aplicacion?", 4 + MsgBoxStyle.Question + MsgBoxStyle.DefaultButton2, "Salir")
 
-            'Si la caja no esta cerrada no se podra salir del programa
-            'Se le indica al usuario que tiene que cerrarla antes de salir
-            MsgBox("    Para poder salir de la aplicacion se necesita realizar primero el cierre de caja. De lo contrario no se va a guardar la venta el dia", MsgBoxStyle.Information, "Salir")
+        If MsgBoxResult.Yes = opcion Then
 
-        Else
+            Try
 
-            'Se le pregunta al usuario si desea salir
-            opcion = MsgBox("Desea salir de la aplicacion?", 4 + MsgBoxStyle.Question + MsgBoxStyle.DefaultButton2, "Salir")
+                'Se guarda el valor de venta en el fichero de ventas
+                FileOpen(5, "VentaActual.txt", OpenMode.Output)
 
-            If MsgBoxResult.Yes = opcion Then
+                Write(5, ElementosComunes.venta)
+
                 End
-            End If
+
+            Catch ex As System.IO.FileNotFoundException
+
+                MsgBox("El fichero ""VentaActual.txt"" no se encuentra por lo tanto no se ha podido guadrar el valor de la venta hasta este momento" &
+                   vbCrLf & "Por favor compruebe que el fichero esta en la carpeta de la aplicacion Colchoneria CUESTA. " & vbCrLf &
+                            "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\VentaActual.txt",
+                            0 + MsgBoxStyle.Exclamation)
+
+                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - El fichero ""VentaActual.txt"" no se ha encontrado"
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+
+                'Se le pregunta al usuario si desea salir igualmente
+                opcion = MsgBox("Desea salir de la aplicacion?", 4 + MsgBoxStyle.Question + MsgBoxStyle.DefaultButton2, "Salir")
+
+                If MsgBoxResult.Yes = opcion Then
+                    End
+                End If
+
+            Catch
+
+                MsgBox("Se ha producido un error a la hora de guadrar la venta hasta este momento.", 0 + MsgBoxStyle.Information)
+
+
+                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de escribir en el fichero ""VentaActual.txt"""
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+
+                'Se le pregunta al usuario si desea salir igualmente
+                opcion = MsgBox("Desea salir de la aplicacion?", 4 + MsgBoxStyle.Question + MsgBoxStyle.DefaultButton2, "Salir")
+
+                If MsgBoxResult.Yes = opcion Then
+                    End
+                End If
+
+            Finally
+
+                FileClose()
+
+            End Try
 
         End If
+
 
     End Sub
 
@@ -100,16 +148,63 @@
     Private Sub Pantalla_de_inicio_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Me.KeyPress
 
         'Si se pulsa una tecla se apaga el timer y se inciende de nuevo
-        TimerVuelta.Enabled = False
-        TimerVuelta.Enabled = True
+        TimerVuelta.Stop()
+        TimerVuelta.Start()
+
 
     End Sub
 
     Private Sub boton_entrar_Click(sender As Object, e As EventArgs) Handles boton_entrar.Click
 
+        'Contador de for
+        Dim i As Integer
+
         'Se comprueba que el usuario existe
+        For i = 0 To empleados.Count - 1
 
+            'Se comprueba si el nombre de usuario pertenece a alguno de los empleados registrados
+            If textBox_usuario.Text.Equals(empleados.Item(i).getNombreUsuario) Then
 
+                'Si tambien coincide la contraseña se asigna a la variable usuario el que ha iniciado la secion
+                If textBox_contrasenia.Text.Equals(CStr(empleados.Item(i).getContraseniaEmpleado)) Then
+
+                    usuario = empleados.Item(i)
+
+                    i = empleados.Count
+
+                    'Se limpian las cajas de texto 
+                    textBox_usuario.Text = ""
+                    textBox_contrasenia.Text = ""
+
+                    'Se le dirige al usuario a la pantalla de ventas
+                    Pantalla_de_venta.Show()
+                    Me.Hide()
+
+                Else
+
+                    'Se le indica al usuario que el nombre o la contraseña no son correctas sin espesificar cual es el erroneo
+                    MsgBox("El usuario o la contraseña no son correctos. Por favor intentelo de nuevo", 0 + MsgBoxStyle.Information)
+
+                    'Se limpian las cajas de texto y se pasa el foco al nombre de usuario
+                    textBox_usuario.Text = ""
+                    textBox_contrasenia.Text = ""
+                    textBox_usuario.Focus()
+
+                End If
+
+            Else
+
+                'Se le indica al usuario que el nombre o la contraseña no son correctas sin espesificar cual es el erroneo
+                MsgBox("El usuario o la contraseña no son correctos. Por favor intentelo de nuevo", 0 + MsgBoxStyle.Information)
+
+                'Se limpian las cajas de texto y se pasa el foco al nombre de usuario
+                textBox_usuario.Text = ""
+                textBox_contrasenia.Text = ""
+                textBox_usuario.Focus()
+
+            End If
+
+        Next i
 
     End Sub
 
@@ -120,6 +215,7 @@
         If textBox_contrasenia.Text.Length = 4 And textBox_usuario.Text.Length >= 3 Then
 
             boton_entrar.Enabled = True
+            boton_entrar.Focus()
 
         End If
 

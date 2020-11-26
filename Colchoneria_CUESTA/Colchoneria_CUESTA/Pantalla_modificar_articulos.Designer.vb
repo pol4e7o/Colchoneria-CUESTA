@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Pantalla_modificar_articulos
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Pantalla_modificar_articulos
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.TimerHoraReal = New System.Windows.Forms.Timer(Me.components)
@@ -46,6 +46,7 @@ Partial Class Pantalla_modificar_articulos
         Me.ManualDeUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel_datosArticulo = New System.Windows.Forms.Panel()
+        Me.Button_eliminar = New System.Windows.Forms.Button()
         Me.Panel_precioYTamanio = New System.Windows.Forms.Panel()
         Me.ComboBox_tamanio = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -53,7 +54,6 @@ Partial Class Pantalla_modificar_articulos
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Button_aniadir = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Button_eliminar = New System.Windows.Forms.Button()
         Me.ComboBox_categorias = New System.Windows.Forms.ComboBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button_guardar = New System.Windows.Forms.Button()
@@ -68,6 +68,7 @@ Partial Class Pantalla_modificar_articulos
         Me.Button_modificar = New System.Windows.Forms.Button()
         Me.ComboBox_modificar = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.MenuStrip.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -155,26 +156,26 @@ Partial Class Pantalla_modificar_articulos
         '
         Me.CerrarCajaToolStripMenuItem.Name = "CerrarCajaToolStripMenuItem"
         Me.CerrarCajaToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
-        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.CerrarCajaToolStripMenuItem.Text = "Cerrar caja"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(165, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(177, 6)
         '
         'VolverToolStripMenuItem
         '
         Me.VolverToolStripMenuItem.Name = "VolverToolStripMenuItem"
         Me.VolverToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.VolverToolStripMenuItem.Text = "Volver"
         '
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
         Me.SalirToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'VentaToolStripMenuItem
@@ -265,8 +266,9 @@ Partial Class Pantalla_modificar_articulos
         'Panel_datosArticulo
         '
         Me.Panel_datosArticulo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel_datosArticulo.Controls.Add(Me.Panel_precioYTamanio)
         Me.Panel_datosArticulo.Controls.Add(Me.Button_eliminar)
+        Me.Panel_datosArticulo.Controls.Add(Me.Button3)
+        Me.Panel_datosArticulo.Controls.Add(Me.Panel_precioYTamanio)
         Me.Panel_datosArticulo.Controls.Add(Me.ComboBox_categorias)
         Me.Panel_datosArticulo.Controls.Add(Me.Button1)
         Me.Panel_datosArticulo.Controls.Add(Me.Button_guardar)
@@ -282,6 +284,16 @@ Partial Class Pantalla_modificar_articulos
         Me.Panel_datosArticulo.Size = New System.Drawing.Size(627, 285)
         Me.Panel_datosArticulo.TabIndex = 36
         '
+        'Button_eliminar
+        '
+        Me.Button_eliminar.Location = New System.Drawing.Point(373, 93)
+        Me.Button_eliminar.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button_eliminar.Name = "Button_eliminar"
+        Me.Button_eliminar.Size = New System.Drawing.Size(56, 19)
+        Me.Button_eliminar.TabIndex = 26
+        Me.Button_eliminar.Text = "Eliminar"
+        Me.Button_eliminar.UseVisualStyleBackColor = True
+        '
         'Panel_precioYTamanio
         '
         Me.Panel_precioYTamanio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -291,7 +303,7 @@ Partial Class Pantalla_modificar_articulos
         Me.Panel_precioYTamanio.Controls.Add(Me.Label7)
         Me.Panel_precioYTamanio.Controls.Add(Me.Button_aniadir)
         Me.Panel_precioYTamanio.Controls.Add(Me.Label3)
-        Me.Panel_precioYTamanio.Location = New System.Drawing.Point(24, 153)
+        Me.Panel_precioYTamanio.Location = New System.Drawing.Point(24, 152)
         Me.Panel_precioYTamanio.Name = "Panel_precioYTamanio"
         Me.Panel_precioYTamanio.Size = New System.Drawing.Size(351, 126)
         Me.Panel_precioYTamanio.TabIndex = 24
@@ -348,15 +360,6 @@ Partial Class Pantalla_modificar_articulos
         Me.Label3.Size = New System.Drawing.Size(89, 13)
         Me.Label3.TabIndex = 23
         Me.Label3.Text = "Tamaño (en CM):"
-        '
-        'Button_eliminar
-        '
-        Me.Button_eliminar.Location = New System.Drawing.Point(539, 248)
-        Me.Button_eliminar.Name = "Button_eliminar"
-        Me.Button_eliminar.Size = New System.Drawing.Size(75, 23)
-        Me.Button_eliminar.TabIndex = 22
-        Me.Button_eliminar.Text = "Eliminar"
-        Me.Button_eliminar.UseVisualStyleBackColor = True
         '
         'ComboBox_categorias
         '
@@ -484,6 +487,16 @@ Partial Class Pantalla_modificar_articulos
         Me.Label1.TabIndex = 32
         Me.Label1.Text = "Artículos:"
         '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(373, 69)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(56, 19)
+        Me.Button3.TabIndex = 25
+        Me.Button3.Text = "Añadir"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
         'Pantalla_modificar_articulos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -548,10 +561,11 @@ Partial Class Pantalla_modificar_articulos
     Friend WithEvents ComboBox_modificar As ComboBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Button_eliminar As Button
     Friend WithEvents Button_aniadir As Button
     Friend WithEvents Panel_precioYTamanio As Panel
     Friend WithEvents Label8 As Label
     Friend WithEvents TextBox_precio As TextBox
     Friend WithEvents ComboBox_tamanio As ComboBox
+    Friend WithEvents Button_eliminar As Button
+    Friend WithEvents Button3 As Button
 End Class

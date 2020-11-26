@@ -37,10 +37,10 @@
     Public Structure ventasRegistroTipo
 
         'Primero se almacena solo la fecha para utilizarla para las busquedas
-        Dim fecha As String
+        <VBFixedString(10)> Dim fecha As String
 
         'Despues va a toda la informacion sobre el cierre de caja
-        Dim informacionVenta As String
+        <VBFixedString(110)> Dim informacionVenta As String
 
     End Structure
 
@@ -51,10 +51,10 @@
     Public Structure errorRegistroTipo
 
         'Primero se almacena solo la fecha para utilizarla para las busquedas
-        Dim fecha As String
+        <VBFixedString(10)> Dim fecha As String
 
         'Despues va a toda la informacion sobre el error ocurrido
-        Dim informacionError As String
+        <VBFixedString(110)> Dim informacionError As String
 
     End Structure
 

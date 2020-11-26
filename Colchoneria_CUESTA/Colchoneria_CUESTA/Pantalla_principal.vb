@@ -17,15 +17,52 @@ Public Class Pantalla_principal
         VolverToolStripMenuItem.Visible = False
 
 
+        'LEER VENTA ACTUAL
+        Try
 
-        'Se lee del fichero VentaActual la venta 
-        FileOpen(5, "VentaActual.txt", OpenMode.Input)
+            'Se lee del fichero VentaActual la venta 
+            FileOpen(5, "VentaActual.txt", OpenMode.Input)
 
-        'Se guarda el valor del fichero en la varibale venta
-        Input(5, ElementosComunes.venta)
+            'Se guarda el valor del fichero en la varibale venta
+            Input(5, ElementosComunes.venta)
 
-        'Se cierra el fichero
-        FileClose(5)
+        Catch ex As System.IO.FileNotFoundException
+
+            MsgBox("El fichero ""VentaActual.txt"" no se encuentra por lo tanto el valor de la venta actual es 0" &
+                   vbCrLf & "Por favor compruebe que el fichero esta en la carpeta de la aplicacion Colchoneria CUESTA. " & vbCrLf &
+                            "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\VentaActual.txt",
+                            0 + MsgBoxStyle.Exclamation)
+
+            ElementosComunes.venta = 0
+
+            'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+            FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+            errorRegistro.fecha = DateString
+            errorRegistro.informacionError = Now & " - El fichero ""VentaActual.txt"" no se ha encontrado"
+
+            Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+
+        Catch
+
+            MsgBox("Se ha producido un error a la hora de obtener la venta hasta este momento. Su valor se establece a 0", 0 + MsgBoxStyle.Information)
+
+            ElementosComunes.venta = 0
+
+            'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+            FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+            errorRegistro.fecha = DateString
+            errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de leer el fichero ""VentaActual.txt"""
+
+            Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+
+        Finally
+
+            FileClose()
+
+        End Try
+
 
 
         'Cuando se carga la aplicacion se comprueba si el valor de la variable leida del fichero
@@ -40,47 +77,119 @@ Public Class Pantalla_principal
 
 
 
+        'LEER EMPLEADOS
+        Try
+
+            'Se cargan todos los empleados del fichero de empleados
+            FileOpen(1, "Empleados.txt", OpenMode.Random, OpenAccess.Read, , Len(empleadoRegistro))
+
+            'Se lee todo su contenido hasta que no se llegue al final del fichero
+            While Not EOF(1)
+
+                'Se recoge el siguente empleado
+                FileGet(1, empleadoRegistro, )
+
+                'Utilizando el registro recogido se crea un objeto de tipo Empleado y se añade al arraylist
+                empleados.Add(New GestionComercial.Empleado(empleadoRegistro.codigoEmpleado, empleadoRegistro.nombre, empleadoRegistro.apellidos, empleadoRegistro.direccion, empleadoRegistro.codigoPostal,
+                                empleadoRegistro.telefono, empleadoRegistro.nombreUsuario, empleadoRegistro.contrasenia, empleadoRegistro.esAdministrador))
+
+            End While
+
+        Catch ex As FileNotFoundException
+
+            MsgBox("El fichero ""Empleados.txt"" que contiene los empleados no se encuentra. " & vbCrLf &
+                            "Por favor compruebe que el fichero esta en la carpeta de la aplicacion Colchoneria CUESTA. " & vbCrLf &
+                            "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\Empleados.txt", 0 + MsgBoxStyle.Exclamation)
 
 
-        'Se cargan todos los empleados del fichero de empleados
-        FileOpen(1, "Empleados.txt", OpenMode.Random, OpenAccess.Read, , Len(empleadoRegistro))
+            'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+            FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
-        'Se lee todo su contenido hasta que no se llegue al final del fichero
-        While Not EOF(1)
+            errorRegistro.fecha = DateString
+            errorRegistro.informacionError = Now & " - El fichero ""Empleados.txt"" no se ha encontrado"
 
-            'Se recoge el siguente empleado
-            FileGet(1, empleadoRegistro, )
+            Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
-            'Utilizando el registro recogido se crea un objeto de tipo Empleado y se añade al arraylist
-            empleados.Add(New GestionComercial.Empleado(empleadoRegistro.codigoEmpleado, empleadoRegistro.nombre, empleadoRegistro.apellidos, empleadoRegistro.direccion, empleadoRegistro.codigoPostal,
-                            empleadoRegistro.telefono, empleadoRegistro.nombreUsuario, empleadoRegistro.contrasenia, empleadoRegistro.esAdministrador))
+            End
 
-        End While
+        Catch
 
-        'Se cierra el fichero de empleados
-        FileClose(1)
+            MsgBox("Se ha producido un error a la hora de leer los empleados de la empresa. Por favor intente ejecutar el programa de nuevo", 0 + MsgBoxStyle.Information)
+
+            'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+            FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+            errorRegistro.fecha = DateString
+            errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de leer el fichero ""Empleados.txt"""
+
+            Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+
+            End
+
+        Finally
+
+            FileClose()
+
+        End Try
 
 
 
-        'Se cargan todos los articulos del fichero de articulos
-        FileOpen(2, "Articulos.txt", OpenMode.Random, OpenAccess.Read, , Len(articuloRegistro))
+        'LEER ARTICULOS
+        Try
 
-        'Se lee todo su contenido hasta que no se llegue al final del fichero
-        While Not EOF(2)
+            'Se cargan todos los articulos del fichero de articulos
+            FileOpen(2, "Articulos.txt", OpenMode.Random, OpenAccess.Read, , Len(articuloRegistro))
 
-            'Se recoge el siguente articulo
-            FileGet(2, articuloRegistro, )
+            'Se lee todo su contenido hasta que no se llegue al final del fichero
+            While Not EOF(2)
 
-            'Utilizando el registro recogido se crea un objeto de tipo Articulo y se añade al arraylist
-            articulos.Add(New GestionComercial.Articulo(articuloRegistro.codigoArticulo, articuloRegistro.nombre, articuloRegistro.descripcion,
-                            articuloRegistro.categoria))
+                'Se recoge el siguente articulo
+                FileGet(2, articuloRegistro, )
 
-            articulos.Item(articulos.Count - 1).setTamaniosPrecios(articuloRegistro.tamanios.ToList, articuloRegistro.precios.ToList)
+                'Utilizando el registro recogido se crea un objeto de tipo Articulo y se añade al arraylist
+                articulos.Add(New GestionComercial.Articulo(articuloRegistro.codigoArticulo, articuloRegistro.nombre, articuloRegistro.descripcion,
+                                articuloRegistro.categoria))
 
-        End While
+                articulos.Item(articulos.Count - 1).setTamaniosPrecios(articuloRegistro.tamanios.ToList, articuloRegistro.precios.ToList)
 
-        'Se cierra el acceso al fichero de articulos
-        FileClose(2)
+            End While
+
+        Catch ex As FileNotFoundException
+
+            MsgBox("El fichero ""Articulos.txt"" que contiene los articulos que ofrece la empresa no se encuentra. " & vbCrLf &
+                            "Por favor compruebe que el fichero esta en la carpeta de la aplicacion Colchoneria CUESTA. " & vbCrLf &
+                            "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\Articulos.txt", 0 + MsgBoxStyle.Exclamation)
+
+            'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+            FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+            errorRegistro.fecha = DateString
+            errorRegistro.informacionError = Now & " - El fichero ""Articulos.txt"" no se ha encontrado"
+
+            Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+
+            End
+
+        Catch
+
+            MsgBox("Se ha producido un error a la hora de leer los articulos de la empresa. Por favor intente ejecutar el programa de nuevo", 0 + MsgBoxStyle.Exclamation)
+
+            'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+            FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+            errorRegistro.fecha = DateString
+            errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de leer el fichero ""Articulos.txt"""
+
+            Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+
+            End
+
+        Finally
+
+            FileClose()
+
+        End Try
+
 
     End Sub
 
@@ -104,20 +213,67 @@ Public Class Pantalla_principal
         'La variable que va a almacenar la opcion elegida del message box
         Dim opcion As Integer
 
-        If ElementosComunes.cajaCerrada = False Then
+        'Se le pregunta al usuario si desea salir
+        opcion = MsgBox("Desea salir de la aplicacion?", 4 + MsgBoxStyle.Question + MsgBoxStyle.DefaultButton2, "Salir")
 
-            'Si la caja no esta cerrada no se podra salir del programa
-            'Se le indica al usuario que tiene que cerrarla antes de salir
-            MsgBox("    Para poder salir de la aplicacion se necesita realizar primero el cierre de caja. De lo contrario no se va a guardar la venta el dia", MsgBoxStyle.Information, "Salir")
+        If MsgBoxResult.Yes = opcion Then
 
-        Else
+            Try
 
-            'Se le pregunta al usuario si desea salir
-            opcion = MsgBox("Desea salir de la aplicacion?", 4 + MsgBoxStyle.Question + MsgBoxStyle.DefaultButton2, "Salir")
+                'Se guarda el valor de venta en el fichero de ventas
+                FileOpen(5, "VentaActual.txt", OpenMode.Output)
 
-            If MsgBoxResult.Yes = opcion Then
+                Write(5, ElementosComunes.venta)
+
                 End
-            End If
+
+            Catch ex As System.IO.FileNotFoundException
+
+                MsgBox("El fichero ""VentaActual.txt"" no se encuentra por lo tanto no se ha podido guadrar el valor de la venta hasta este momento" &
+                   vbCrLf & "Por favor compruebe que el fichero esta en la carpeta de la aplicacion Colchoneria CUESTA. " & vbCrLf &
+                            "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\VentaActual.txt",
+                            0 + MsgBoxStyle.Exclamation)
+
+                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - El fichero ""VentaActual.txt"" no se ha encontrado"
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+
+                'Se le pregunta al usuario si desea salir igualmente
+                opcion = MsgBox("Desea salir de la aplicacion?", 4 + MsgBoxStyle.Question + MsgBoxStyle.DefaultButton2, "Salir")
+
+                If MsgBoxResult.Yes = opcion Then
+                    End
+                End If
+
+            Catch
+
+                MsgBox("Se ha producido un error a la hora de guadrar la venta hasta este momento.", 0 + MsgBoxStyle.Information)
+
+
+                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de escribir en el fichero ""VentaActual.txt"""
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+
+                'Se le pregunta al usuario si desea salir igualmente
+                opcion = MsgBox("Desea salir de la aplicacion?", 4 + MsgBoxStyle.Question + MsgBoxStyle.DefaultButton2, "Salir")
+
+                If MsgBoxResult.Yes = opcion Then
+                    End
+                End If
+
+            Finally
+
+                FileClose()
+
+            End Try
 
         End If
 
