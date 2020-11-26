@@ -1,7 +1,7 @@
 ﻿Public Class Pantalla_aniadir_empleado
 
-    'El arraylist donde se van a guardar temporalmente los empleados
-    Public empleados As ArrayList
+    'El empleado que se va a manejar
+    Public empleado As GestionComercial.Empleado
 
     Private Sub Pantalla_aniadir_empleado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -18,8 +18,6 @@
         'Para activarlo todos los campos tienen que tener valores correctos
         boton_guardar.Enabled = False
 
-        'Se carga el arraylist de empleados del fichero
-
 
     End Sub
 
@@ -29,22 +27,18 @@
         Dim opcion As Integer
 
         'Esta variable va a almacenar el informe del cierre de caja 
-        'que se va a visualizar en un message box
+        'que se va a guardar en el fichero de ventas y se va a 
+        'visualizar en un message box
         Dim informe As String
-
 
         'Se pregunta al usuario si esta seguro que desea cerrar caja
         opcion = MsgBox("Esta seguro que desea cerrar caja?", 4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Cerrar caja")
 
         If opcion = MsgBoxResult.Yes Then
 
-            informe = "Informe de venta de: " & vbCrLf &
-            Now & vbCrLf &
-            "Total: " & venta & "€" & vbCrLf &
-            "Cierre de caja hecha por: " & vbCrLf &
-            "Usuario"
+            informe = "Informe de venta de: " & vbCrLf & Now & vbCrLf & "Total: " & venta & "€" &
+                    vbCrLf & "Cierre de caja hecha por: " & vbCrLf & usuario.getNombreUsuario
 
-            'Se guarda en el fichero de ventas el dia, la hora, la venta y el usuario
 
             'Se visualiza la informacon del cierre de caja en un Message box
             MsgBox(informe, 0 + MsgBoxStyle.Information, "Informe de cierre de caja")
@@ -54,6 +48,103 @@
 
             'Se le pasa el valor true a la variable cajaCerrada 
             cajaCerrada = True
+
+
+
+
+            'Se guarda el valor de venta en el fichero
+            Try
+
+                'Se guarda el valor de venta en el fichero de ventas
+                FileOpen(5, "VentaActual.txt", OpenMode.Output)
+
+                Write(5, ElementosComunes.venta)
+
+                End
+
+            Catch ex As System.IO.FileNotFoundException
+
+                MsgBox("El fichero ""VentaActual.txt"" no se encuentra por lo tanto no se ha podido guadrar el valor de la venta hasta este momento" &
+                   vbCrLf & "Por favor compruebe que el fichero esta en la carpeta de la aplicacion Colchoneria CUESTA. " & vbCrLf &
+                            "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\VentaActual.txt",
+                            0 + MsgBoxStyle.Exclamation)
+
+                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - El fichero ""VentaActual.txt"" no se ha encontrado"
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+
+            Catch
+
+                MsgBox("Se ha producido un error a la hora de guadrar la venta hasta este momento.", 0 + MsgBoxStyle.Information)
+
+
+                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de escribir en el fichero ""VentaActual.txt"""
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+
+
+            Finally
+
+                FileClose()
+
+            End Try
+
+
+
+
+
+            Try
+
+                'Se guarda en el fichero de ventas el dia, la hora, la venta y el usuario
+                FileOpen(4, "VentasDiarias.txt", OpenMode.Append)
+
+                ventaRegistro.fecha = DateString
+                ventaRegistro.informacionVenta = informe
+
+
+            Catch ex As System.IO.FileNotFoundException
+
+                MsgBox("El fichero ""VentasDiarias.txt"" no se encuentra por lo tanto no se ha podido guadrar el informe de cierre de caja" &
+                   vbCrLf & "Por favor compruebe que el fichero esta en la carpeta de la aplicacion Colchoneria CUESTA. " & vbCrLf &
+                            "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\VentasDiarias.txt",
+                            0 + MsgBoxStyle.Exclamation)
+
+
+                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - El fichero ""VentasDiarias.txt"" no se ha encontrado"
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+
+            Catch
+
+                MsgBox("Se ha producido un error a la hora de guadrar el informe de cierre de caja.", 0 + MsgBoxStyle.Information)
+
+
+                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de escribir en el fichero ""VentasDiarias.txt"""
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+
+            Finally
+
+                FileClose()
+
+            End Try
+
 
         End If
 
@@ -81,20 +172,67 @@
         'La variable que va a almacenar la opcion elegida del message box
         Dim opcion As Integer
 
-        If ElementosComunes.cajaCerrada = False Then
+        'Se le pregunta al usuario si desea salir
+        opcion = MsgBox("Desea salir de la aplicacion?", 4 + MsgBoxStyle.Question + MsgBoxStyle.DefaultButton2, "Salir")
 
-            'Si la caja no esta cerrada no se podra salir del programa
-            'Se le indica al usuario que tiene que cerrarla antes de salir
-            MsgBox("    Para poder salir de la aplicacion se necesita realizar primero el cierre de caja. De lo contrario no se va a guardar la venta el dia", MsgBoxStyle.Information, "Salir")
+        If MsgBoxResult.Yes = opcion Then
 
-        Else
+            Try
 
-            'Se le pregunta al usuario si desea salir
-            opcion = MsgBox("Desea salir de la aplicacion?", 4 + MsgBoxStyle.Question + MsgBoxStyle.DefaultButton2, "Salir")
+                'Se guarda el valor de venta en el fichero de ventas
+                FileOpen(5, "VentaActual.txt", OpenMode.Output)
 
-            If MsgBoxResult.Yes = opcion Then
+                Write(5, ElementosComunes.venta)
+
                 End
-            End If
+
+            Catch ex As System.IO.FileNotFoundException
+
+                MsgBox("El fichero ""VentaActual.txt"" no se encuentra por lo tanto no se ha podido guadrar el valor de la venta hasta este momento" &
+                   vbCrLf & "Por favor compruebe que el fichero esta en la carpeta de la aplicacion Colchoneria CUESTA. " & vbCrLf &
+                            "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\VentaActual.txt",
+                            0 + MsgBoxStyle.Exclamation)
+
+                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - El fichero ""VentaActual.txt"" no se ha encontrado"
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+
+                'Se le pregunta al usuario si desea salir igualmente
+                opcion = MsgBox("Desea salir de la aplicacion?", 4 + MsgBoxStyle.Question + MsgBoxStyle.DefaultButton2, "Salir")
+
+                If MsgBoxResult.Yes = opcion Then
+                    End
+                End If
+
+            Catch
+
+                MsgBox("Se ha producido un error a la hora de guadrar la venta hasta este momento.", 0 + MsgBoxStyle.Information)
+
+
+                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de escribir en el fichero ""VentaActual.txt"""
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+
+                'Se le pregunta al usuario si desea salir igualmente
+                opcion = MsgBox("Desea salir de la aplicacion?", 4 + MsgBoxStyle.Question + MsgBoxStyle.DefaultButton2, "Salir")
+
+                If MsgBoxResult.Yes = opcion Then
+                    End
+                End If
+
+            Finally
+
+                FileClose()
+
+            End Try
 
         End If
 
@@ -154,7 +292,7 @@
         If opcion = MsgBoxResult.Yes Then
 
             'Se abre la pantalla de gestion de ventas y se cierra la de alta de empleado
-
+            Gestion_de_ventas.Show()
             Me.Close()
 
         End If
@@ -180,16 +318,120 @@
         'La opcion elegida por el usuario a la hora de decidir si desea guardar el nuevo cliente 
         Dim opcion As Integer
 
+        'Indica si el nombre de usuario se ha repetido
+        Dim nombreUsuarioRepetido As Boolean = False
+
         opcion = MsgBox("Esta seguro que desea crear el nuevo empleado?", 4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Alta de empleado")
 
         If opcion = MsgBoxResult.Yes Then
 
-            'Se guarda el empleado dentro del fichero de empleados
+            'Si no se ha podido crear el objeto se le indica al usuario que no se ha podido crear el empleado
+            If IsNothing(empleado) Then
+
+                MsgBox("El empleado no se ha podido crear correctamente", 0 + MsgBoxStyle.Information, "Alta de empleado")
+
+            Else
+
+                'Se comprueba si existe otro empleado con el mismo nombre de usuario
+                For i = 0 To empleados.Count - 1
+
+                    If empleados.Item(i).getNombreUsuario.Equals(empleado.getNombreUsuario) Then
+
+                        nombreUsuarioRepetido = True
+
+                    End If
+
+                Next i
+
+                'Si se ha repetido se le avisa al usuario y se borra el campo del nombre del usuario
+                If nombreUsuarioRepetido Then
+
+                    MsgBox("Ya existe otro empleado con el mismo nombre de usuario. Por favor indique de nuevo el nombre de usuario", 0 + MsgBoxStyle.Information, "Nombre de usuario repetido")
+
+                    textBox_nombreUsuario.Text = ""
+                    textBox_nombreUsuario.Focus()
+
+                Else
+
+                    'Se le asigna el codigo del ultimo empleado mas 1 que es lo que devuelve la funcion count
+                    empleado.setCodigoEmpleado(empleados.Count)
+
+                    'Se guarda el empleado dentro del fichero de empleados
+                    empleados.Add(empleado)
+
+                    Try
+
+                        'Se abre el fichero Empleados.txt para añadir el nuevo empleado
+                        FileOpen(1, "Empleados.txt", OpenMode.Random, OpenAccess.Write, , Len(empleadoRegistro))
+
+                        'se pasan todos los datos del empleado al registro
+                        empleadoRegistro.codigoEmpleado = empleado.getCodigoEmpleado
+                        empleadoRegistro.nombre = empleado.getNombreEmpleado
+                        empleadoRegistro.apellidos = empleado.getApellidos
+                        empleadoRegistro.direccion = empleado.getDireccion
+                        empleadoRegistro.codigoPostal = empleado.getCodigoPostal
+                        empleadoRegistro.telefono = empleado.getTelefono
+                        empleadoRegistro.nombreUsuario = empleado.getNombreUsuario
+                        empleadoRegistro.contrasenia = empleado.getContraseniaEmpleado
+                        empleadoRegistro.esAdministrador = empleado.getEsAdministrador
+
+                        'Se almacena el nuevo empleado en la posicion igual que el codigo de empleado
+                        FilePut(1, empleadoRegistro, empleadoRegistro.codigoEmpleado)
 
 
-            'Se vuelve a la pantalla de gestion de empleados
-            Pantalla_admin_empleados.Show()
-            Me.Close()
+
+                    Catch ex As System.IO.FileNotFoundException
+
+                        MsgBox("El fichero ""Empleados.txt"" no se ha posido encontrar por lo tanto no se ha podido agregar el empleado nuevo. " & vbCrLf &
+                                "Por favor compruebe que el fichero esta en la carpeta de la aplicacion Colchoneria CUESTA. " & vbCrLf &
+                                "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\Empleados.txt", 0 + MsgBoxStyle.Exclamation)
+
+                        'Se elimina el objeto añadido de la lista
+                        empleados.RemoveAt(empleados.Count - 1)
+
+                        'Se le asigna nothing(null) a la variable empleado
+                        empleado = Nothing
+
+                        'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                        FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                        errorRegistro.fecha = DateString
+                        errorRegistro.informacionError = Now & " - El fichero ""Empleados.txt"" no se ha encontrado"
+
+                        Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+
+                    Catch
+
+                        MsgBox("Se ha producido un error a la hora de dar de alta al empleado. Por favor intentelo de nuevo", 0 + MsgBoxStyle.Information, "Añadir empleado")
+
+                        'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                        FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                        errorRegistro.fecha = DateString
+                        errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de almacenar un empleado nuevo en el fichero ""Empleados.txt"""
+
+                        Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+
+                        'Se elimina el objeto añadido de la lista
+                        empleados.RemoveAt(empleados.Count - 1)
+
+                        'Se le asigna nothing(null) a la variable empleado
+                        empleado = Nothing
+
+                    Finally
+
+                        'Se cierra los ficheros
+                        FileClose()
+
+                    End Try
+
+                    'Se vuelve a la pantalla de gestion de empleados
+                    Pantalla_admin_empleados.Show()
+                    Me.Close()
+
+                End If
+
+            End If
 
         End If
 
@@ -376,6 +618,9 @@
 
             'Si todos los campos tienen los caracteres minimos el boton guardar se activa
             activarBotonGuardarAlta()
+
+            'Se seleccionado de nuevo Administrador
+            comboBox_roles.SelectedIndex = 0
 
         End If
 

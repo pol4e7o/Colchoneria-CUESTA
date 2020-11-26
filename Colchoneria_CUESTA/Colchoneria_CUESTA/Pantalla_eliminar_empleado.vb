@@ -14,6 +14,8 @@
         'Para activarlo se tiene que elegir un empleado
         boton_guardar.Enabled = False
 
+        panel_elementosEmpleado.Enabled = False
+
     End Sub
 
     Private Sub VolverToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VolverToolStripMenuItem.Click

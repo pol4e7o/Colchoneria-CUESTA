@@ -24,6 +24,8 @@ Partial Class Gestion_de_ventas
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label_ventaElegida = New System.Windows.Forms.Label()
+        Me.Label_venta = New System.Windows.Forms.Label()
         Me.Button_cancelar = New System.Windows.Forms.Button()
         Me.Button_visualizar = New System.Windows.Forms.Button()
         Me.ComboBox_dia = New System.Windows.Forms.ComboBox()
@@ -47,8 +49,6 @@ Partial Class Gestion_de_ventas
         Me.label_fecha = New System.Windows.Forms.Label()
         Me.label_hora = New System.Windows.Forms.Label()
         Me.TimerHoraReal = New System.Windows.Forms.Timer(Me.components)
-        Me.Label_venta = New System.Windows.Forms.Label()
-        Me.Label_ventaElegida = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.MenuStrip.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -69,6 +69,25 @@ Partial Class Gestion_de_ventas
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(692, 201)
         Me.Panel1.TabIndex = 0
+        '
+        'Label_ventaElegida
+        '
+        Me.Label_ventaElegida.AutoSize = True
+        Me.Label_ventaElegida.Location = New System.Drawing.Point(371, 44)
+        Me.Label_ventaElegida.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label_ventaElegida.Name = "Label_ventaElegida"
+        Me.Label_ventaElegida.Size = New System.Drawing.Size(0, 13)
+        Me.Label_ventaElegida.TabIndex = 7
+        '
+        'Label_venta
+        '
+        Me.Label_venta.AutoSize = True
+        Me.Label_venta.Location = New System.Drawing.Point(371, 14)
+        Me.Label_venta.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label_venta.Name = "Label_venta"
+        Me.Label_venta.Size = New System.Drawing.Size(107, 13)
+        Me.Label_venta.TabIndex = 6
+        Me.Label_venta.Text = "Venta seleccionada: "
         '
         'Button_cancelar
         '
@@ -152,26 +171,28 @@ Partial Class Gestion_de_ventas
         '
         Me.CerrarCajaToolStripMenuItem.Name = "CerrarCajaToolStripMenuItem"
         Me.CerrarCajaToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
-        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.CerrarCajaToolStripMenuItem.Text = "Cerrar caja"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(165, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(177, 6)
         '
         'VolverToolStripMenuItem
         '
         Me.VolverToolStripMenuItem.Name = "VolverToolStripMenuItem"
-        Me.VolverToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.VolverToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
+            Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
+        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.VolverToolStripMenuItem.Text = "Volver"
         '
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.SalirToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
+            Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'VentaToolStripMenuItem
@@ -274,25 +295,6 @@ Partial Class Gestion_de_ventas
         '
         Me.TimerHoraReal.Enabled = True
         Me.TimerHoraReal.Interval = 1000
-        '
-        'Label_venta
-        '
-        Me.Label_venta.AutoSize = True
-        Me.Label_venta.Location = New System.Drawing.Point(371, 14)
-        Me.Label_venta.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label_venta.Name = "Label_venta"
-        Me.Label_venta.Size = New System.Drawing.Size(107, 13)
-        Me.Label_venta.TabIndex = 6
-        Me.Label_venta.Text = "Venta seleccionada: "
-        '
-        'Label_ventaElegida
-        '
-        Me.Label_ventaElegida.AutoSize = True
-        Me.Label_ventaElegida.Location = New System.Drawing.Point(371, 44)
-        Me.Label_ventaElegida.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label_ventaElegida.Name = "Label_ventaElegida"
-        Me.Label_ventaElegida.Size = New System.Drawing.Size(0, 13)
-        Me.Label_ventaElegida.TabIndex = 7
         '
         'Gestion_de_ventas
         '

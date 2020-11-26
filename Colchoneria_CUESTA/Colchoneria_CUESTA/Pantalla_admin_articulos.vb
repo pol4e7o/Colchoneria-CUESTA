@@ -1,17 +1,134 @@
 ﻿Public Class Pantalla_admin_articulos
+
+
+
     'CERRAR CAJA
     Private Sub CerrarCajaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarCajaToolStripMenuItem.Click
+
+        'La opcion elegida por el usuario a cerca de si desea cerrar caja
         Dim opcion As Integer
 
+        'Esta variable va a almacenar el informe del cierre de caja 
+        'que se va a guardar en el fichero de ventas y se va a 
+        'visualizar en un message box
+        Dim informe As String
+
+        'Se pregunta al usuario si esta seguro que desea cerrar caja
         opcion = MsgBox("Esta seguro que desea cerrar caja?", 4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Cerrar caja")
 
         If opcion = MsgBoxResult.Yes Then
 
-            'Se guarda en el fichero de ventas el dia, la hora, la venta y el usuario
+            informe = "Informe de venta de: " & vbCrLf & Now & vbCrLf & "Total: " & venta & "€" &
+                    vbCrLf & "Cierre de caja hecha por: " & vbCrLf & usuario.getNombreUsuario
 
+
+            'Se visualiza la informacon del cierre de caja en un Message box
+            MsgBox(informe, 0 + MsgBoxStyle.Information, "Informe de cierre de caja")
 
             'Se cambia el valor de la variable venta a 0
             venta = 0
+
+            'Se le pasa el valor true a la variable cajaCerrada 
+            cajaCerrada = True
+
+
+
+
+            'Se guarda el valor de venta en el fichero
+            Try
+
+                'Se guarda el valor de venta en el fichero de ventas
+                FileOpen(5, "VentaActual.txt", OpenMode.Output)
+
+                Write(5, ElementosComunes.venta)
+
+                'Se cierra el fichero
+                FileClose(5)
+
+                End
+
+            Catch ex As System.IO.FileNotFoundException
+
+                MsgBox("El fichero ""VentaActual.txt"" no se encuentra por lo tanto no se ha podido guadrar el valor de la venta hasta este momento" &
+                   vbCrLf & "Por favor compruebe que el fichero esta en la carpeta de la aplicacion Colchoneria CUESTA. " & vbCrLf &
+                            "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\VentaActual.txt",
+                            0 + MsgBoxStyle.Exclamation)
+
+                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - El fichero ""VentaActual.txt"" no se ha encontrado"
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+
+
+            Catch
+
+                MsgBox("Se ha producido un error a la hora de guadrar la venta hasta este momento.", 0 + MsgBoxStyle.Information)
+
+
+                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de escribir en el fichero ""VentaActual.txt"""
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+
+            Finally
+
+                FileClose()
+
+            End Try
+
+
+
+
+
+            Try
+
+                'Se guarda en el fichero de ventas el dia, la hora, la venta y el usuario
+                FileOpen(4, "VentasDiarias.txt", OpenMode.Append)
+
+                ventaRegistro.fecha = DateString
+                ventaRegistro.informacionVenta = informe
+
+
+            Catch ex As System.IO.FileNotFoundException
+
+                MsgBox("El fichero ""VentasDiarias.txt"" no se encuentra por lo tanto no se ha podido guadrar el informe de cierre de caja" &
+                   vbCrLf & "Por favor compruebe que el fichero esta en la carpeta de la aplicacion Colchoneria CUESTA. " & vbCrLf &
+                            "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\VentasDiarias.txt",
+                            0 + MsgBoxStyle.Exclamation)
+
+
+                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - El fichero ""VentasDiarias.txt"" no se ha encontrado"
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+
+            Catch
+
+                MsgBox("Se ha producido un error a la hora de guadrar el informe de cierre de caja.", 0 + MsgBoxStyle.Information)
+
+
+                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de escribir en el fichero ""VentasDiarias.txt"""
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+
+            Finally
+
+                FileClose()
+
+            End Try
 
         End If
 
@@ -29,25 +146,77 @@
 
     'SALIR
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
+
         'La variable que va a almacenar la opcion elegida del message box
         Dim opcion As Integer
 
-        If ElementosComunes.cajaCerrada = False Then
+        'Se le pregunta al usuario si desea salir
+        opcion = MsgBox("Desea salir de la aplicacion?", 4 + MsgBoxStyle.Question + MsgBoxStyle.DefaultButton2, "Salir")
 
-            'Si la caja no esta cerrada no se podra salir del programa
-            'Se le indica al usuario que tiene que cerrarla antes de salir
-            MsgBox("    Para poder salir de la aplicacion se necesita realizar primero el cierre de caja. De lo contrario no se va a guardar la venta el dia", MsgBoxStyle.Information, "Salir")
+        If MsgBoxResult.Yes = opcion Then
 
-        Else
+            Try
 
-            'Se le pregunta al usuario si desea salir
-            opcion = MsgBox("Desea salir de la aplicacion?", 4 + MsgBoxStyle.Question + MsgBoxStyle.DefaultButton2, "Salir")
+                'Se guarda el valor de venta en el fichero de ventas
+                FileOpen(5, "VentaActual.txt", OpenMode.Output)
 
-            If MsgBoxResult.Yes = opcion Then
+                Write(5, ElementosComunes.venta)
+
+                'Se cierra el fichero
+                FileClose(5)
+
                 End
-            End If
+
+            Catch ex As System.IO.FileNotFoundException
+
+                MsgBox("El fichero ""VentaActual.txt"" no se encuentra por lo tanto no se ha podido guadrar el valor de la venta hasta este momento" &
+                   vbCrLf & "Por favor compruebe que el fichero esta en la carpeta de la aplicacion Colchoneria CUESTA. " & vbCrLf &
+                            "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\VentaActual.txt",
+                            0 + MsgBoxStyle.Exclamation)
+
+                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - El fichero ""VentaActual.txt"" no se ha encontrado"
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+
+                'Se le pregunta al usuario si desea salir igualmente
+                opcion = MsgBox("Desea salir de la aplicacion?", 4 + MsgBoxStyle.Question + MsgBoxStyle.DefaultButton2, "Salir")
+
+                If MsgBoxResult.Yes = opcion Then
+                    End
+                End If
+
+            Catch
+
+                MsgBox("Se ha producido un error a la hora de guadrar la venta hasta este momento.", 0 + MsgBoxStyle.Information)
+
+
+                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de escribir en el fichero ""VentaActual.txt"""
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+
+                'Se le pregunta al usuario si desea salir igualmente
+                opcion = MsgBox("Desea salir de la aplicacion?", 4 + MsgBoxStyle.Question + MsgBoxStyle.DefaultButton2, "Salir")
+
+                If MsgBoxResult.Yes = opcion Then
+                    End
+                End If
+
+            Finally
+
+                FileClose()
+
+            End Try
 
         End If
+
     End Sub
 
     'VENTA
@@ -93,15 +262,10 @@
         'Se indica la hora actual
         label_hora.Text = "Hora: " & TimeString
 
+        Button_aniadir.Focus()
+
         'Se deabilita la opcion gestion de artículos porque es este mismo formulario
         GestiónDeArtículosToolStripMenuItem.Enabled = False
-
-    End Sub
-
-    Private Sub TimerHoraReal_Tick(sender As Object, e As EventArgs) Handles TimerHoraReal.Tick
-
-        'Por cada segundo que pasa se cambia el reloj
-        label_hora.Text = "Hora: " & TimeString
 
     End Sub
 

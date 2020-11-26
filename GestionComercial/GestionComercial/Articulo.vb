@@ -58,7 +58,7 @@ Public Class Articulo
         Me.posiblesCategoriasArticulo.Add("Somier")
         Me.posiblesCategoriasArticulo.Add("Canape")
         Me.posiblesCategoriasArticulo.Add("Colchon")
-        Me.posiblesCategoriasArticulo.Add("Ofertas")
+        Me.posiblesCategoriasArticulo.Add("Oferta")
         Me.posiblesCategoriasArticulo.Add("Otros")
 
         'Llenamos el ArrayList de posiblesTamaniosArticulo

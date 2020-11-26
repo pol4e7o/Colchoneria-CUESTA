@@ -4,15 +4,13 @@ Public Class Pantalla_de_venta
 
     Public ventaArticulos As Double
 
-    'Va a contener todos los articulos de la tienda
-    Public articulos As New ArrayList()
-
+    'Es el articulo elegido para vender
     Public articulo As GestionComercial.Articulo
 
     'Este arraylist representa todos los articulos seleccionados para ser comprados por el cliente
     'Dentro de cada objeto se almacenaran el nombre del articulo (dentro del nombre se añade el tamaño),
     'la cantidad que se desea comprar de este articulo y el precio por unidad
-    Public articulosVendidos As New ArrayList
+    Public articulosVendidos As New List(Of GestionComercial.Venta)
 
     Private Sub Pantalla_de_venta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -32,9 +30,50 @@ Public Class Pantalla_de_venta
         'Se desactivan todos los elementos que no se deben utilizar a la hora de iniciar el formulario
         desactivarElementos()
 
-        'Se cargan todos los articulos del fichero de articulos
-
         'Se pasan los articulos a los comboboxs por categorias
+        For i = 0 To articulos.Count - 1
+
+            Select Case articulos.Item(i).getCategoriaArticulo.Replace(" ", "")
+
+                Case "Base"
+
+                    'Base
+                    'Se añade el nombre del articulo al combobox de base
+                    comboBox_base.Items.Add(articulos.Item(i).getNombreArticulo)
+
+                Case "Somier"
+
+                    'Somier
+                    'Se añade el nombre del articulo al combobox de somier
+                    comboBox_somier.Items.Add(articulos.Item(i).getNombreArticulo)
+
+                Case "Canape"
+
+                    'Canape
+                    'Se añade el nombre del articulo al combobox de canape
+                    comboBox_canape.Items.Add(articulos.Item(i).getNombreArticulo)
+
+                Case "Colchon"
+
+                    'Colchon
+                    'Se añade el nombre del articulo al combobox de colchon
+                    comboBox_colchon.Items.Add(articulos.Item(i).getNombreArticulo)
+
+                Case "Oferta"
+
+                    'Ofertas
+                    'Se añade el nombre del articulo al combobox de ofertas
+                    comboBox_ofertas.Items.Add(articulos.Item(i).getNombreArticulo)
+
+                Case "Otros"
+
+                    'Otros
+                    'Se añade el nombre del articulo al combobox de otros
+                    comboBox_otros.Items.Add(articulos.Item(i).getCategoriaArticulo)
+
+            End Select
+
+        Next i
 
     End Sub
 
@@ -58,9 +97,8 @@ Public Class Pantalla_de_venta
             If opcion = MsgBoxResult.Yes Then
 
                 informe = "Informe de venta de: " & vbCrLf & Now & vbCrLf & "Total: " & venta & "€" &
-                    vbCrLf & "Cierre de caja hecha por: " & vbCrLf & "Usuario"
+                    vbCrLf & "Cierre de caja hecha por: " & vbCrLf & usuario.getNombreUsuario
 
-                'Se guarda en el fichero de ventas el dia, la hora, la venta y el usuario
 
                 'Se visualiza la informacon del cierre de caja en un Message box
                 MsgBox(informe, 0 + MsgBoxStyle.Information, "Informe de cierre de caja")
@@ -70,6 +108,100 @@ Public Class Pantalla_de_venta
 
                 'Se le pasa el valor true a la variable cajaCerrada 
                 cajaCerrada = True
+
+
+
+
+                'Se guarda el valor de venta en el fichero
+                Try
+
+                    'Se guarda el valor de venta en el fichero de ventas
+                    FileOpen(5, "VentaActual.txt", OpenMode.Output)
+
+                    Write(5, ElementosComunes.venta)
+
+                    End
+
+                Catch ex As System.IO.FileNotFoundException
+
+                    MsgBox("El fichero ""VentaActual.txt"" no se encuentra por lo tanto no se ha podido guadrar el valor de la venta hasta este momento" &
+                   vbCrLf & "Por favor compruebe que el fichero esta en la carpeta de la aplicacion Colchoneria CUESTA. " & vbCrLf &
+                            "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\VentaActual.txt",
+                            0 + MsgBoxStyle.Exclamation)
+
+                    'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                    FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                    errorRegistro.fecha = DateString
+                    errorRegistro.informacionError = Now & " - El fichero ""VentaActual.txt"" no se ha encontrado"
+
+                    Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+
+                Catch
+
+                    MsgBox("Se ha producido un error a la hora de guadrar la venta hasta este momento.", 0 + MsgBoxStyle.Information)
+
+
+                    'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                    FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                    errorRegistro.fecha = DateString
+                    errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de escribir en el fichero ""VentaActual.txt"""
+
+                    Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+
+                Finally
+
+                    FileClose()
+
+                End Try
+
+
+
+
+
+                Try
+
+                    'Se guarda en el fichero de ventas el dia, la hora, la venta y el usuario
+                    FileOpen(4, "VentasDiarias.txt", OpenMode.Append)
+
+                    ventaRegistro.fecha = DateString
+                    ventaRegistro.informacionVenta = informe
+
+                Catch ex As System.IO.FileNotFoundException
+
+                    MsgBox("El fichero ""VentasDiarias.txt"" no se encuentra por lo tanto no se ha podido guadrar el informe de cierre de caja" &
+                   vbCrLf & "Por favor compruebe que el fichero esta en la carpeta de la aplicacion Colchoneria CUESTA. " & vbCrLf &
+                            "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\VentasDiarias.txt",
+                            0 + MsgBoxStyle.Exclamation)
+
+
+                    'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                    FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                    errorRegistro.fecha = DateString
+                    errorRegistro.informacionError = Now & " - El fichero ""VentasDiarias.txt"" no se ha encontrado"
+
+                    Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+
+                Catch
+
+                    MsgBox("Se ha producido un error a la hora de guadrar el informe de cierre de caja.", 0 + MsgBoxStyle.Information)
+
+
+                    'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                    FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                    errorRegistro.fecha = DateString
+                    errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de escribir en el fichero ""VentasDiarias.txt"""
+
+                    Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+
+                Finally
+
+                    FileClose()
+
+                End Try 
 
             End If
 
@@ -113,28 +245,81 @@ Public Class Pantalla_de_venta
         'La variable que va a almacenar la opcion elegida del message box
         Dim opcion As Integer
 
-        If ventaArticulos <> 0 Then
-
-            'No se puede salir de la pantalla de venta sin terminar o anular la compra
-            MsgBox("No puede abandonar la pantalla de venta sin terminar o anular la compra primero.", 0 + MsgBoxStyle.Information, "Abandonar pantalla de venta")
-
-
-        ElseIf ElementosComunes.cajaCerrada = False Then
-
-            'Si la caja no esta cerrada no se podra salir del programa
-            'Se le indica al usuario que tiene que cerrarla antes de salir
-            MsgBox("    Para poder salir de la aplicacion se necesita realizar primero el cierre de caja. De lo contrario no se va a guardar la venta el dia", MsgBoxStyle.Information, "Salir")
-
-        Else
+        If ventaArticulos = 0 Then
 
             'Se le pregunta al usuario si desea salir
             opcion = MsgBox("Desea salir de la aplicacion?", 4 + MsgBoxStyle.Question + MsgBoxStyle.DefaultButton2, "Salir")
 
             If MsgBoxResult.Yes = opcion Then
-                End
+
+                Try
+
+                    'Se guarda el valor de venta en el fichero de ventas
+                    FileOpen(5, "VentaActual.txt", OpenMode.Output)
+
+                    Write(5, ElementosComunes.venta)
+
+                    End
+
+                Catch ex As System.IO.FileNotFoundException
+
+                    MsgBox("El fichero ""VentaActual.txt"" no se encuentra por lo tanto no se ha podido guadrar el valor de la venta hasta este momento" &
+                       vbCrLf & "Por favor compruebe que el fichero esta en la carpeta de la aplicacion Colchoneria CUESTA. " & vbCrLf &
+                                "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\VentaActual.txt",
+                                0 + MsgBoxStyle.Exclamation)
+
+                    'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                    FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                    errorRegistro.fecha = DateString
+                    errorRegistro.informacionError = Now & " - El fichero ""VentaActual.txt"" no se ha encontrado"
+
+                    Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+
+                    'Se le pregunta al usuario si desea salir igualmente
+                    opcion = MsgBox("Desea salir de la aplicacion?", 4 + MsgBoxStyle.Question + MsgBoxStyle.DefaultButton2, "Salir")
+
+                    If MsgBoxResult.Yes = opcion Then
+                        End
+                    End If
+
+                Catch
+
+                    MsgBox("Se ha producido un error a la hora de guadrar la venta hasta este momento.", 0 + MsgBoxStyle.Information)
+
+
+                    'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                    FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                    errorRegistro.fecha = DateString
+                    errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de escribir en el fichero ""VentaActual.txt"""
+
+                    Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+
+                    'Se le pregunta al usuario si desea salir igualmente
+                    opcion = MsgBox("Desea salir de la aplicacion?", 4 + MsgBoxStyle.Question + MsgBoxStyle.DefaultButton2, "Salir")
+
+                    If MsgBoxResult.Yes = opcion Then
+                        End
+                    End If
+
+                Finally
+
+                    FileClose()
+
+                End Try
+
             End If
 
+        Else
+
+            'No se puede salir de la pantalla de venta sin terminar o anular la compra
+            MsgBox("No puede abandonar la pantalla de venta sin terminar o anular la compra primero.", 0 + MsgBoxStyle.Information, "Abandonar pantalla de venta")
+
+
         End If
+
+
 
     End Sub
 
@@ -227,69 +412,7 @@ Public Class Pantalla_de_venta
 
     End Sub
 
-    'COMBO BOX CANAPE 
-    Private Sub comboBox_canape_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboBox_canape.SelectedIndexChanged
 
-        'Contador de for
-        Dim i As Integer
-
-        'Si no hay ningun articulo elegido el panel esta desactivado
-        If comboBox_canape.SelectedIndex < 0 Then
-
-            panel_canape.Enabled = False
-
-        Else
-
-            'Se hace una busqueda dentro del arraylist de articulos
-            'para encontrar el seleccionado y se le asigna a la
-            'variable articulo el seleccionado
-            For i = 0 To articulos.Count - 1
-
-                If CType(articulos.Item(i), GestionComercial.Articulo).getNombreArticulo.Equals(comboBox_canape.SelectedText) Then
-
-                    articulo = articulos.Item(i)
-
-                End If
-
-            Next i
-
-            Try
-
-                'Se asignan los tamaños del articulo seleccionado 
-                For i = 0 To articulo.getTamaniosArticulo.Count - 1
-
-                    comboBox_tamanio_canape.Items.Add(articulo.getTamaniosArticulo.Item(i))
-
-                Next i
-
-                'De lo contrario se activa
-                panel_canape.Enabled = True
-
-                'Se desactiva el combobox de cantidad hasta que no se elija un tamaño
-                comboBox_cantidad_canape.Enabled = False
-
-                'Se desactiva el boton de añadir hasta que no se seleccione una cantidad
-                button_aniadir_canape.Enabled = False
-
-            Catch ex As System.NullReferenceException
-
-                'Si el articulo no ha sido encontrado en el arraylist se informa al usuario del problema
-                MsgBox("No se ha podido encontrar el articulo seleccionado. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Articulo seleccionado")
-
-                'Se almacena el error en el fichero de errores
-
-            Catch ex As Exception
-
-                'Si se produce un error general
-                MsgBox("Se ha producido un error a la hora de seleccionar un articulo. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Articulo seleccionado")
-
-                'Se almacena el error en el fichero de errores
-
-            End Try
-
-        End If
-
-    End Sub
 
 
     'COMBOBOX BASE
@@ -303,7 +426,7 @@ Public Class Pantalla_de_venta
         Else
 
 
-            'Se elimina el objeto almacenado en este referencia
+            'Se elimina el objeto almacenado en esta referencia
             articulo = Nothing
 
             'Se hace una busqueda dentro del arraylist de articulos
@@ -311,7 +434,7 @@ Public Class Pantalla_de_venta
             'variable articulo el seleccionado
             For i = 0 To articulos.Count - 1
 
-                If CType(articulos.Item(i), GestionComercial.Articulo).getNombreArticulo.Equals(comboBox_base.SelectedText) Then
+                If articulos.Item(i).getNombreArticulo.Equals(comboBox_base.SelectedText) Then
 
                     articulo = articulos.Item(i)
 
@@ -376,7 +499,7 @@ Public Class Pantalla_de_venta
             'variable articulo el seleccionado
             For i = 0 To articulos.Count - 1
 
-                If CType(articulos.Item(i), GestionComercial.Articulo).getNombreArticulo.Equals(comboBox_somier.SelectedText) Then
+                If articulos.Item(i).getNombreArticulo.Equals(comboBox_somier.SelectedText) Then
 
                     articulo = articulos.Item(i)
 
@@ -442,7 +565,7 @@ Public Class Pantalla_de_venta
             'variable articulo el seleccionado
             For i = 0 To articulos.Count - 1
 
-                If CType(articulos.Item(i), GestionComercial.Articulo).getNombreArticulo.Equals(comboBox_colchon.SelectedText) Then
+                If articulos.Item(i).getNombreArticulo.Equals(comboBox_colchon.SelectedText) Then
 
                     articulo = articulos.Item(i)
 
@@ -489,6 +612,72 @@ Public Class Pantalla_de_venta
 
     End Sub
 
+
+    'COMBO BOX CANAPE 
+    Private Sub comboBox_canape_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboBox_canape.SelectedIndexChanged
+
+        'Contador de for
+        Dim i As Integer
+
+        'Si no hay ningun articulo elegido el panel esta desactivado
+        If comboBox_canape.SelectedIndex < 0 Then
+
+            panel_canape.Enabled = False
+
+        Else
+
+            'Se hace una busqueda dentro del arraylist de articulos
+            'para encontrar el seleccionado y se le asigna a la
+            'variable articulo el seleccionado
+            For i = 0 To articulos.Count - 1
+
+                If articulos.Item(i).getNombreArticulo.Equals(comboBox_canape.SelectedText) Then
+
+                    articulo = articulos.Item(i)
+
+                End If
+
+            Next i
+
+            Try
+
+                'Se asignan los tamaños del articulo seleccionado 
+                For i = 0 To articulo.getTamaniosArticulo.Count - 1
+
+                    comboBox_tamanio_canape.Items.Add(articulo.getTamaniosArticulo.Item(i))
+
+                Next i
+
+                'De lo contrario se activa
+                panel_canape.Enabled = True
+
+                'Se desactiva el combobox de cantidad hasta que no se elija un tamaño
+                comboBox_cantidad_canape.Enabled = False
+
+                'Se desactiva el boton de añadir hasta que no se seleccione una cantidad
+                button_aniadir_canape.Enabled = False
+
+            Catch ex As System.NullReferenceException
+
+                'Si el articulo no ha sido encontrado en el arraylist se informa al usuario del problema
+                MsgBox("No se ha podido encontrar el articulo seleccionado. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Articulo seleccionado")
+
+                'Se almacena el error en el fichero de errores
+
+            Catch ex As Exception
+
+                'Si se produce un error general
+                MsgBox("Se ha producido un error a la hora de seleccionar un articulo. Por favor revise los datos del articulo en gestion de articulos", 0 + MsgBoxStyle.Information, "Articulo seleccionado")
+
+                'Se almacena el error en el fichero de errores
+
+            End Try
+
+        End If
+
+    End Sub
+
+
     'COMBOBOX OFERTAS
     Private Sub comboBox_ofertas_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboBox_ofertas.SelectedIndexChanged
 
@@ -507,7 +696,7 @@ Public Class Pantalla_de_venta
             'variable articulo el seleccionado
             For i = 0 To articulos.Count - 1
 
-                If CType(articulos.Item(i), GestionComercial.Articulo).getNombreArticulo.Equals(comboBox_ofertas.SelectedText) Then
+                If articulos.Item(i).getNombreArticulo.Equals(comboBox_ofertas.SelectedText) Then
 
                     articulo = articulos.Item(i)
 
@@ -573,7 +762,7 @@ Public Class Pantalla_de_venta
             'variable articulo el seleccionado
             For i = 0 To articulos.Count - 1
 
-                If CType(articulos.Item(i), GestionComercial.Articulo).getNombreArticulo.Equals(comboBox_otros.SelectedText) Then
+                If articulos.Item(i).getNombreArticulo.Equals(comboBox_otros.SelectedText) Then
 
                     articulo = articulos.Item(i)
 
@@ -971,10 +1160,10 @@ Public Class Pantalla_de_venta
         Try
 
             'Se añade el producto seleccionado a la lista de articulos elegidos
-            listBox_articulosElegidos.Items.Add(LSet(CType(articulosVendidos.Item(articulosVendidos.Count - 1), GestionComercial.Venta).getCantidad, 4) &
-                                                LSet(CType(articulosVendidos.Item(articulosVendidos.Count - 1), GestionComercial.Venta).getNombreArticulo, 12) &
-                                                LSet(CType(articulosVendidos.Item(articulosVendidos.Count - 1), GestionComercial.Venta).getPrecioCantidad & "€", 9) &
-                                                LSet(CType(articulosVendidos.Item(articulosVendidos.Count - 1), GestionComercial.Venta).precioTotal & "€", 10))
+            listBox_articulosElegidos.Items.Add(articulosVendidos.Item(articulosVendidos.Count - 1).getCantidad &
+                                                articulosVendidos.Item(articulosVendidos.Count - 1).getNombreArticulo &
+                                                articulosVendidos.Item(articulosVendidos.Count - 1).getPrecioCantidad & "€" &
+                                                articulosVendidos.Item(articulosVendidos.Count - 1).precioTotal & "€")
 
         Catch ex As System.IndexOutOfRangeException
 
@@ -1015,10 +1204,10 @@ Public Class Pantalla_de_venta
         Try
 
             'Se añade el producto seleccionado a la lista de articulos elegidos
-            listBox_articulosElegidos.Items.Add(LSet(CType(articulosVendidos.Item(articulosVendidos.Count - 1), GestionComercial.Venta).getCantidad, 4) &
-                                                LSet(CType(articulosVendidos.Item(articulosVendidos.Count - 1), GestionComercial.Venta).getNombreArticulo, 12) &
-                                                LSet(CType(articulosVendidos.Item(articulosVendidos.Count - 1), GestionComercial.Venta).getPrecioCantidad & "€", 9) &
-                                                LSet(CType(articulosVendidos.Item(articulosVendidos.Count - 1), GestionComercial.Venta).precioTotal & "€", 10))
+            listBox_articulosElegidos.Items.Add(articulosVendidos.Item(articulosVendidos.Count - 1).getCantidad &
+                                                articulosVendidos.Item(articulosVendidos.Count - 1).getNombreArticulo &
+                                                articulosVendidos.Item(articulosVendidos.Count - 1).getPrecioCantidad & "€" &
+                                                articulosVendidos.Item(articulosVendidos.Count - 1).precioTotal & "€")
 
         Catch ex As System.IndexOutOfRangeException
 
@@ -1052,10 +1241,10 @@ Public Class Pantalla_de_venta
         Try
 
             'Se añade el producto seleccionado a la lista de articulos elegidos
-            listBox_articulosElegidos.Items.Add(LSet(CType(articulosVendidos.Item(articulosVendidos.Count - 1), GestionComercial.Venta).getCantidad, 4) &
-                                                LSet(CType(articulosVendidos.Item(articulosVendidos.Count - 1), GestionComercial.Venta).getNombreArticulo, 12) &
-                                                LSet(CType(articulosVendidos.Item(articulosVendidos.Count - 1), GestionComercial.Venta).getPrecioCantidad & "€", 9) &
-                                                LSet(CType(articulosVendidos.Item(articulosVendidos.Count - 1), GestionComercial.Venta).precioTotal & "€", 10))
+            listBox_articulosElegidos.Items.Add(articulosVendidos.Item(articulosVendidos.Count - 1).getCantidad &
+                                                articulosVendidos.Item(articulosVendidos.Count - 1).getNombreArticulo &
+                                                articulosVendidos.Item(articulosVendidos.Count - 1).getPrecioCantidad & "€" &
+                                                articulosVendidos.Item(articulosVendidos.Count - 1).precioTotal & "€")
 
         Catch ex As System.IndexOutOfRangeException
 
@@ -1089,10 +1278,10 @@ Public Class Pantalla_de_venta
         Try
 
             'Se añade el producto seleccionado a la lista de articulos elegidos
-            listBox_articulosElegidos.Items.Add(LSet(CType(articulosVendidos.Item(articulosVendidos.Count - 1), GestionComercial.Venta).getCantidad, 4) &
-                                                LSet(CType(articulosVendidos.Item(articulosVendidos.Count - 1), GestionComercial.Venta).getNombreArticulo, 12) &
-                                                LSet(CType(articulosVendidos.Item(articulosVendidos.Count - 1), GestionComercial.Venta).getPrecioCantidad & "€", 9) &
-                                                LSet(CType(articulosVendidos.Item(articulosVendidos.Count - 1), GestionComercial.Venta).precioTotal & "€", 10))
+            listBox_articulosElegidos.Items.Add(articulosVendidos.Item(articulosVendidos.Count - 1).getCantidad &
+                                                articulosVendidos.Item(articulosVendidos.Count - 1).getNombreArticulo &
+                                                articulosVendidos.Item(articulosVendidos.Count - 1).getPrecioCantidad & "€" &
+                                                articulosVendidos.Item(articulosVendidos.Count - 1).precioTotal & "€")
 
         Catch ex As System.IndexOutOfRangeException
 
@@ -1125,10 +1314,10 @@ Public Class Pantalla_de_venta
         Try
 
             'Se añade el producto seleccionado a la lista de articulos elegidos
-            listBox_articulosElegidos.Items.Add(LSet(CType(articulosVendidos.Item(articulosVendidos.Count - 1), GestionComercial.Venta).getCantidad, 4) &
-                                                LSet(CType(articulosVendidos.Item(articulosVendidos.Count - 1), GestionComercial.Venta).getNombreArticulo, 12) &
-                                                LSet(CType(articulosVendidos.Item(articulosVendidos.Count - 1), GestionComercial.Venta).getPrecioCantidad & "€", 9) &
-                                                LSet(CType(articulosVendidos.Item(articulosVendidos.Count - 1), GestionComercial.Venta).precioTotal & "€", 10))
+            listBox_articulosElegidos.Items.Add(articulosVendidos.Item(articulosVendidos.Count - 1).getCantidad &
+                                                articulosVendidos.Item(articulosVendidos.Count - 1).getNombreArticulo &
+                                                articulosVendidos.Item(articulosVendidos.Count - 1).getPrecioCantidad & "€" &
+                                                articulosVendidos.Item(articulosVendidos.Count - 1).precioTotal & "€")
 
         Catch ex As System.IndexOutOfRangeException
 
@@ -1161,10 +1350,10 @@ Public Class Pantalla_de_venta
         Try
 
             'Se añade el producto seleccionado a la lista de articulos elegidos
-            listBox_articulosElegidos.Items.Add(LSet(CType(articulosVendidos.Item(articulosVendidos.Count - 1), GestionComercial.Venta).getCantidad, 4) &
-                                                LSet(CType(articulosVendidos.Item(articulosVendidos.Count - 1), GestionComercial.Venta).getNombreArticulo, 12) &
-                                                LSet(CType(articulosVendidos.Item(articulosVendidos.Count - 1), GestionComercial.Venta).getPrecioCantidad & "€", 9) &
-                                                LSet(CType(articulosVendidos.Item(articulosVendidos.Count - 1), GestionComercial.Venta).precioTotal & "€", 10))
+            listBox_articulosElegidos.Items.Add(articulosVendidos.Item(articulosVendidos.Count - 1).getCantidad &
+                                                articulosVendidos.Item(articulosVendidos.Count - 1).getNombreArticulo &
+                                                articulosVendidos.Item(articulosVendidos.Count - 1).getPrecioCantidad & "€" &
+                                                articulosVendidos.Item(articulosVendidos.Count - 1).precioTotal & "€")
 
         Catch ex As System.IndexOutOfRangeException
 
@@ -1295,13 +1484,13 @@ Public Class Pantalla_de_venta
 
         'Se le suma 1 a la cantidad del objeto elegido teniendo en cuenta que cuando se elije un articulo que añade al arraylist
         'de articulosVendidos y al listbox por lo tanto tienen que tener el mismo numero de elementos
-        CType(articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex), GestionComercial.Venta).setCantidad(CType(articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex), GestionComercial.Venta).getCantidad + 1)
+        articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex).setCantidad(articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex).getCantidad + 1)
 
         'Se le pasa el nuevo valor al elemento elegido del listbox
-        listBox_articulosElegidos.SelectedItem = LSet(CType(articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex), GestionComercial.Venta).getCantidad, 4) &
-        LSet(CType(articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex), GestionComercial.Venta).getNombreArticulo, 12) &
-        LSet(CType(articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex), GestionComercial.Venta).getPrecioCantidad & "€", 9) &
-        LSet(CType(articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex), GestionComercial.Venta).precioTotal & "€", 10)
+        listBox_articulosElegidos.SelectedItem = articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex).getCantidad &
+                        articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex).getNombreArticulo &
+                        articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex).getPrecioCantidad & "€" &
+                        articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex).precioTotal & "€"
 
         'Se calcula de nuevo el subtotal, total y iva
         calcularTotalSubtotalIVA()
@@ -1313,13 +1502,13 @@ Public Class Pantalla_de_venta
 
         'Se le resta 1 a la cantidad del objeto elegido teniendo en cuenta que cuando se elije un articulo que añade al arraylist
         'de articulosVendidos y al listbox por lo tanto tienen que tener el mismo numero de elementos
-        CType(articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex), GestionComercial.Venta).setCantidad(CType(articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex), GestionComercial.Venta).getCantidad - 1)
+        articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex).setCantidad(articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex).getCantidad - 1)
 
         'Se le pasa el nuevo valor al elemento elegido del listbox
-        listBox_articulosElegidos.SelectedItem = LSet(CType(articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex), GestionComercial.Venta).getCantidad, 4) &
-        LSet(CType(articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex), GestionComercial.Venta).getNombreArticulo, 12) &
-        LSet(CType(articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex), GestionComercial.Venta).getPrecioCantidad & "€", 9) &
-        LSet(CType(articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex), GestionComercial.Venta).precioTotal & "€", 10)
+        listBox_articulosElegidos.SelectedItem = articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex).getCantidad &
+                        articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex).getNombreArticulo &
+                        articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex).getPrecioCantidad & "€" &
+                        articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex).precioTotal & "€"
 
         'Se calcula de nuevo el subtotal, total y iva
         calcularTotalSubtotalIVA()
@@ -1386,6 +1575,54 @@ Public Class Pantalla_de_venta
 
             'Se desactivan los elementos graficos
             desactivarElementos()
+
+
+            Try
+
+                'Se guadra el nuevo valor de venta en el vichero VentaActual
+                FileOpen(5, "VentaActual.txt", OpenMode.Output)
+
+                Write(5, ElementosComunes.venta)
+
+                'Se cierra el fichero
+                FileClose(5)
+
+                End
+
+            Catch ex As System.IO.FileNotFoundException
+
+                MsgBox("El fichero ""VentaActual.txt"" no se encuentra por lo tanto no se ha podido guadrar el valor de la venta en este momento" &
+                   vbCrLf & "Por favor compruebe que el fichero esta en la carpeta de la aplicacion Colchoneria CUESTA. " & vbCrLf &
+                            "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\VentaActual.txt",
+                            0 + MsgBoxStyle.Exclamation)
+
+                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - El fichero ""VentaActual.txt"" no se ha encontrado"
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+
+                FileClose(3)
+
+            Catch
+
+                MsgBox("Se ha producido un error a la hora de guadrar la venta hasta este momento.", 0 + MsgBoxStyle.Information)
+
+
+                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de escribir en el fichero ""VentaActual.txt"""
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+
+                FileClose(3)
+
+
+            End Try
 
 
         End If
