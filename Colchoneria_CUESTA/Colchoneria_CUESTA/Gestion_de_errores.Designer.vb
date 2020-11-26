@@ -22,6 +22,7 @@ Partial Class Gestion_de_errores
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Gestion_de_errores))
         Me.MenuStrip = New System.Windows.Forms.MenuStrip()
         Me.InicioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarCajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -40,13 +41,13 @@ Partial Class Gestion_de_errores
         Me.label_hora = New System.Windows.Forms.Label()
         Me.Label_gestionVenta = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.ListBox_errores = New System.Windows.Forms.ListBox()
         Me.Label_ventaElegida = New System.Windows.Forms.Label()
         Me.Label_venta = New System.Windows.Forms.Label()
         Me.Button_cancelar = New System.Windows.Forms.Button()
         Me.Button_visualizar = New System.Windows.Forms.Button()
         Me.ComboBox_dia = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.ListBox_errores = New System.Windows.Forms.ListBox()
         Me.MenuStrip.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -221,6 +222,14 @@ Partial Class Gestion_de_errores
         Me.Panel1.Size = New System.Drawing.Size(692, 201)
         Me.Panel1.TabIndex = 11
         '
+        'ListBox_errores
+        '
+        Me.ListBox_errores.FormattingEnabled = True
+        Me.ListBox_errores.Location = New System.Drawing.Point(374, 31)
+        Me.ListBox_errores.Name = "ListBox_errores"
+        Me.ListBox_errores.Size = New System.Drawing.Size(289, 147)
+        Me.ListBox_errores.TabIndex = 8
+        '
         'Label_ventaElegida
         '
         Me.Label_ventaElegida.AutoSize = True
@@ -279,14 +288,6 @@ Partial Class Gestion_de_errores
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Seleccione el día del que desea ver los errores producidos:"
         '
-        'ListBox_errores
-        '
-        Me.ListBox_errores.FormattingEnabled = True
-        Me.ListBox_errores.Location = New System.Drawing.Point(374, 31)
-        Me.ListBox_errores.Name = "ListBox_errores"
-        Me.ListBox_errores.Size = New System.Drawing.Size(289, 147)
-        Me.ListBox_errores.TabIndex = 8
-        '
         'Gestion_de_errores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -296,8 +297,9 @@ Partial Class Gestion_de_errores
         Me.Controls.Add(Me.Label_gestionVenta)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.MenuStrip)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Gestion_de_errores"
-        Me.Text = "Gestion_de_errores"
+        Me.Text = "Gestión de errores - Colchonería CUESTA"
         Me.MenuStrip.ResumeLayout(False)
         Me.MenuStrip.PerformLayout()
         Me.Panel2.ResumeLayout(False)
