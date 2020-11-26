@@ -86,6 +86,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ElementosComunes.vb" />
+    <Compile Include="Gestion_de_errores.Designer.vb">
+      <DependentUpon>Gestion_de_errores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion_de_errores.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Gestion_de_ventas.Designer.vb">
       <DependentUpon>Gestion_de_ventas.vb</DependentUpon>
     </Compile>
@@ -189,6 +195,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Gestion_de_errores.resx">
+      <DependentUpon>Gestion_de_errores.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gestion_de_ventas.resx">
       <DependentUpon>Gestion_de_ventas.vb</DependentUpon>
     </EmbeddedResource>
