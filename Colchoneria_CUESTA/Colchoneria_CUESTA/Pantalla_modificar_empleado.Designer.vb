@@ -93,8 +93,6 @@ Partial Class Pantalla_modificar_empleado
         Me.panel_elementosEmpleado.Controls.Add(Me.textBox_contrasenia)
         Me.panel_elementosEmpleado.Controls.Add(Me.textBox_nombreUsuario)
         Me.panel_elementosEmpleado.Controls.Add(Me.textBox_codigoPostal)
-        Me.panel_elementosEmpleado.Controls.Add(Me.boton_cancelar)
-        Me.panel_elementosEmpleado.Controls.Add(Me.boton_guardar)
         Me.panel_elementosEmpleado.Controls.Add(Me.label_contrasenia2)
         Me.panel_elementosEmpleado.Controls.Add(Me.label_rol)
         Me.panel_elementosEmpleado.Controls.Add(Me.label_contrasenia)
@@ -104,9 +102,9 @@ Partial Class Pantalla_modificar_empleado
         Me.panel_elementosEmpleado.Controls.Add(Me.label_nombre)
         Me.panel_elementosEmpleado.Controls.Add(Me.label_direccion)
         Me.panel_elementosEmpleado.Controls.Add(Me.label_apellidos)
-        Me.panel_elementosEmpleado.Location = New System.Drawing.Point(134, 188)
+        Me.panel_elementosEmpleado.Location = New System.Drawing.Point(91, 187)
         Me.panel_elementosEmpleado.Name = "panel_elementosEmpleado"
-        Me.panel_elementosEmpleado.Size = New System.Drawing.Size(629, 336)
+        Me.panel_elementosEmpleado.Size = New System.Drawing.Size(700, 278)
         Me.panel_elementosEmpleado.TabIndex = 20
         '
         'textBox_apellidos
@@ -114,15 +112,15 @@ Partial Class Pantalla_modificar_empleado
         Me.textBox_apellidos.Location = New System.Drawing.Point(456, 54)
         Me.textBox_apellidos.MaxLength = 30
         Me.textBox_apellidos.Name = "textBox_apellidos"
-        Me.textBox_apellidos.Size = New System.Drawing.Size(159, 20)
+        Me.textBox_apellidos.Size = New System.Drawing.Size(136, 20)
         Me.textBox_apellidos.TabIndex = 38
         '
         'textBox_direccion
         '
         Me.textBox_direccion.Location = New System.Drawing.Point(133, 90)
-        Me.textBox_direccion.MaxLength = 30
+        Me.textBox_direccion.MaxLength = 40
         Me.textBox_direccion.Name = "textBox_direccion"
-        Me.textBox_direccion.Size = New System.Drawing.Size(278, 20)
+        Me.textBox_direccion.Size = New System.Drawing.Size(162, 20)
         Me.textBox_direccion.TabIndex = 37
         '
         'textBox_nombre
@@ -135,7 +133,6 @@ Partial Class Pantalla_modificar_empleado
         '
         'comboBox_roles
         '
-        Me.comboBox_roles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.comboBox_roles.FormattingEnabled = True
         Me.comboBox_roles.Items.AddRange(New Object() {"Administrador", "Empleado"})
         Me.comboBox_roles.Location = New System.Drawing.Point(456, 173)
@@ -173,7 +170,7 @@ Partial Class Pantalla_modificar_empleado
         'textBox_telefono
         '
         Me.textBox_telefono.Location = New System.Drawing.Point(456, 130)
-        Me.textBox_telefono.MaxLength = 15
+        Me.textBox_telefono.MaxLength = 20
         Me.textBox_telefono.Name = "textBox_telefono"
         Me.textBox_telefono.Size = New System.Drawing.Size(100, 20)
         Me.textBox_telefono.TabIndex = 30
@@ -205,8 +202,9 @@ Partial Class Pantalla_modificar_empleado
         '
         'boton_cancelar
         '
+        Me.boton_cancelar.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.boton_cancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.boton_cancelar.Location = New System.Drawing.Point(219, 278)
+        Me.boton_cancelar.Location = New System.Drawing.Point(285, 487)
         Me.boton_cancelar.Name = "boton_cancelar"
         Me.boton_cancelar.Size = New System.Drawing.Size(134, 31)
         Me.boton_cancelar.TabIndex = 20
@@ -215,8 +213,9 @@ Partial Class Pantalla_modificar_empleado
         '
         'boton_guardar
         '
+        Me.boton_guardar.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.boton_guardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.boton_guardar.Location = New System.Drawing.Point(25, 278)
+        Me.boton_guardar.Location = New System.Drawing.Point(91, 487)
         Me.boton_guardar.Name = "boton_guardar"
         Me.boton_guardar.Size = New System.Drawing.Size(134, 31)
         Me.boton_guardar.TabIndex = 21
@@ -400,26 +399,28 @@ Partial Class Pantalla_modificar_empleado
         '
         Me.CerrarCajaToolStripMenuItem.Name = "CerrarCajaToolStripMenuItem"
         Me.CerrarCajaToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
-        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
         Me.CerrarCajaToolStripMenuItem.Text = "Cerrar caja"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(167, 6)
         '
         'VolverToolStripMenuItem
         '
         Me.VolverToolStripMenuItem.Name = "VolverToolStripMenuItem"
-        Me.VolverToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.VolverToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
+            Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
+        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
         Me.VolverToolStripMenuItem.Text = "Volver"
         '
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SalirToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
+            Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'VentaToolStripMenuItem
@@ -517,9 +518,9 @@ Partial Class Pantalla_modificar_empleado
         Me.Panel2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel2.Controls.Add(Me.label_empleado)
         Me.Panel2.Controls.Add(Me.comboBox_elegirEmpleado)
-        Me.Panel2.Location = New System.Drawing.Point(134, 148)
+        Me.Panel2.Location = New System.Drawing.Point(91, 147)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(629, 43)
+        Me.Panel2.Size = New System.Drawing.Size(700, 43)
         Me.Panel2.TabIndex = 40
         '
         'TimerHoraReal
@@ -538,6 +539,8 @@ Partial Class Pantalla_modificar_empleado
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.label_elijaOpcion)
         Me.Controls.Add(Me.label_Gestion_empleados)
+        Me.Controls.Add(Me.boton_cancelar)
+        Me.Controls.Add(Me.boton_guardar)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Pantalla_modificar_empleado"
         Me.Text = "Colchoneria CUESTA - Gesion de empleados - Modificar empleado"

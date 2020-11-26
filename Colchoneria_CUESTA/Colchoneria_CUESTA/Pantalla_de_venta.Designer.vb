@@ -111,24 +111,24 @@ Partial Class Pantalla_de_venta
         Me.button_eliminar_1 = New System.Windows.Forms.Button()
         Me.button_aniadir_1 = New System.Windows.Forms.Button()
         Me.button_eliminar_articulo = New System.Windows.Forms.Button()
-        Me.label_total = New System.Windows.Forms.Label()
-        Me.label_totalPrecio = New System.Windows.Forms.Label()
-        Me.textBox_importe = New System.Windows.Forms.TextBox()
-        Me.label_importe = New System.Windows.Forms.Label()
         Me.button_cobrar = New System.Windows.Forms.Button()
         Me.button_anular = New System.Windows.Forms.Button()
-        Me.label_resto = New System.Windows.Forms.Label()
-        Me.label_totalDevolver = New System.Windows.Forms.Label()
-        Me.label_euro = New System.Windows.Forms.Label()
-        Me.label_euro8 = New System.Windows.Forms.Label()
-        Me.label_euro7 = New System.Windows.Forms.Label()
         Me.button_desconectar = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.label_subtotalPrecio = New System.Windows.Forms.Label()
-        Me.Label_subtotal = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.label_ivaPrecio = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.label_subtotalPrecio = New System.Windows.Forms.Label()
+        Me.Label_subtotal = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.label_euro8 = New System.Windows.Forms.Label()
+        Me.label_euro = New System.Windows.Forms.Label()
+        Me.label_totalDevolver = New System.Windows.Forms.Label()
+        Me.label_resto = New System.Windows.Forms.Label()
+        Me.label_importe = New System.Windows.Forms.Label()
+        Me.textBox_importe = New System.Windows.Forms.TextBox()
+        Me.label_totalPrecio = New System.Windows.Forms.Label()
+        Me.label_total = New System.Windows.Forms.Label()
         Me.MenuStrip.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.panel_acticulos.SuspendLayout()
@@ -166,20 +166,20 @@ Partial Class Pantalla_de_venta
         '
         Me.CerrarCajaToolStripMenuItem.Name = "CerrarCajaToolStripMenuItem"
         Me.CerrarCajaToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
-        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
         Me.CerrarCajaToolStripMenuItem.Text = "Cerrar caja"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(167, 6)
         '
         'VolverToolStripMenuItem
         '
         Me.VolverToolStripMenuItem.Name = "VolverToolStripMenuItem"
         Me.VolverToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
             Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
         Me.VolverToolStripMenuItem.Text = "Volver"
         '
         'SalirToolStripMenuItem
@@ -187,7 +187,7 @@ Partial Class Pantalla_de_venta
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
         Me.SalirToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
             Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'VentaToolStripMenuItem
@@ -966,46 +966,6 @@ Partial Class Pantalla_de_venta
         Me.button_eliminar_articulo.Text = "x"
         Me.button_eliminar_articulo.UseVisualStyleBackColor = True
         '
-        'label_total
-        '
-        Me.label_total.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.label_total.AutoSize = True
-        Me.label_total.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_total.Location = New System.Drawing.Point(797, 471)
-        Me.label_total.Name = "label_total"
-        Me.label_total.Size = New System.Drawing.Size(52, 20)
-        Me.label_total.TabIndex = 34
-        Me.label_total.Text = "Total: "
-        '
-        'label_totalPrecio
-        '
-        Me.label_totalPrecio.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.label_totalPrecio.AutoSize = True
-        Me.label_totalPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_totalPrecio.Location = New System.Drawing.Point(911, 471)
-        Me.label_totalPrecio.Name = "label_totalPrecio"
-        Me.label_totalPrecio.Size = New System.Drawing.Size(0, 20)
-        Me.label_totalPrecio.TabIndex = 35
-        '
-        'textBox_importe
-        '
-        Me.textBox_importe.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.textBox_importe.Location = New System.Drawing.Point(881, 511)
-        Me.textBox_importe.Name = "textBox_importe"
-        Me.textBox_importe.Size = New System.Drawing.Size(100, 20)
-        Me.textBox_importe.TabIndex = 36
-        '
-        'label_importe
-        '
-        Me.label_importe.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.label_importe.AutoSize = True
-        Me.label_importe.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_importe.Location = New System.Drawing.Point(797, 511)
-        Me.label_importe.Name = "label_importe"
-        Me.label_importe.Size = New System.Drawing.Size(72, 20)
-        Me.label_importe.TabIndex = 37
-        Me.label_importe.Text = "Importe: "
-        '
         'button_cobrar
         '
         Me.button_cobrar.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -1026,60 +986,6 @@ Partial Class Pantalla_de_venta
         Me.button_anular.Text = "Anular compra"
         Me.button_anular.UseVisualStyleBackColor = True
         '
-        'label_resto
-        '
-        Me.label_resto.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.label_resto.AutoSize = True
-        Me.label_resto.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_resto.Location = New System.Drawing.Point(797, 547)
-        Me.label_resto.Name = "label_resto"
-        Me.label_resto.Size = New System.Drawing.Size(60, 20)
-        Me.label_resto.TabIndex = 42
-        Me.label_resto.Text = "Resto: "
-        '
-        'label_totalDevolver
-        '
-        Me.label_totalDevolver.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.label_totalDevolver.AutoSize = True
-        Me.label_totalDevolver.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_totalDevolver.Location = New System.Drawing.Point(911, 547)
-        Me.label_totalDevolver.Name = "label_totalDevolver"
-        Me.label_totalDevolver.Size = New System.Drawing.Size(0, 20)
-        Me.label_totalDevolver.TabIndex = 43
-        '
-        'label_euro
-        '
-        Me.label_euro.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.label_euro.AutoSize = True
-        Me.label_euro.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_euro.Location = New System.Drawing.Point(917, 471)
-        Me.label_euro.Name = "label_euro"
-        Me.label_euro.Size = New System.Drawing.Size(18, 20)
-        Me.label_euro.TabIndex = 44
-        Me.label_euro.Text = "€"
-        '
-        'label_euro8
-        '
-        Me.label_euro8.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.label_euro8.AutoSize = True
-        Me.label_euro8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_euro8.Location = New System.Drawing.Point(917, 547)
-        Me.label_euro8.Name = "label_euro8"
-        Me.label_euro8.Size = New System.Drawing.Size(18, 20)
-        Me.label_euro8.TabIndex = 45
-        Me.label_euro8.Text = "€"
-        '
-        'label_euro7
-        '
-        Me.label_euro7.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.label_euro7.AutoSize = True
-        Me.label_euro7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_euro7.Location = New System.Drawing.Point(987, 511)
-        Me.label_euro7.Name = "label_euro7"
-        Me.label_euro7.Size = New System.Drawing.Size(18, 20)
-        Me.label_euro7.TabIndex = 46
-        Me.label_euro7.Text = "€"
-        '
         'button_desconectar
         '
         Me.button_desconectar.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -1090,47 +996,15 @@ Partial Class Pantalla_de_venta
         Me.button_desconectar.Text = "Desconectar"
         Me.button_desconectar.UseVisualStyleBackColor = True
         '
-        'Label1
-        '
-        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(917, 390)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(18, 20)
-        Me.Label1.TabIndex = 50
-        Me.Label1.Text = "€"
-        '
-        'label_subtotalPrecio
-        '
-        Me.label_subtotalPrecio.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.label_subtotalPrecio.AutoSize = True
-        Me.label_subtotalPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_subtotalPrecio.Location = New System.Drawing.Point(911, 390)
-        Me.label_subtotalPrecio.Name = "label_subtotalPrecio"
-        Me.label_subtotalPrecio.Size = New System.Drawing.Size(0, 20)
-        Me.label_subtotalPrecio.TabIndex = 49
-        '
-        'Label_subtotal
-        '
-        Me.Label_subtotal.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label_subtotal.AutoSize = True
-        Me.Label_subtotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_subtotal.Location = New System.Drawing.Point(797, 390)
-        Me.Label_subtotal.Name = "Label_subtotal"
-        Me.Label_subtotal.Size = New System.Drawing.Size(77, 20)
-        Me.Label_subtotal.TabIndex = 48
-        Me.Label_subtotal.Text = "Subtotal: "
-        '
         'Label5
         '
         Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(917, 431)
+        Me.Label5.Location = New System.Drawing.Point(939, 439)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(18, 20)
-        Me.Label5.TabIndex = 53
+        Me.Label5.TabIndex = 68
         Me.Label5.Text = "€"
         '
         'label_ivaPrecio
@@ -1138,21 +1012,147 @@ Partial Class Pantalla_de_venta
         Me.label_ivaPrecio.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_ivaPrecio.AutoSize = True
         Me.label_ivaPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_ivaPrecio.Location = New System.Drawing.Point(911, 431)
+        Me.label_ivaPrecio.Location = New System.Drawing.Point(923, 439)
         Me.label_ivaPrecio.Name = "label_ivaPrecio"
         Me.label_ivaPrecio.Size = New System.Drawing.Size(0, 20)
-        Me.label_ivaPrecio.TabIndex = 52
+        Me.label_ivaPrecio.TabIndex = 67
         '
         'Label7
         '
         Me.Label7.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(797, 431)
+        Me.Label7.Location = New System.Drawing.Point(809, 439)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(80, 20)
-        Me.Label7.TabIndex = 51
+        Me.Label7.TabIndex = 66
         Me.Label7.Text = "IVA 15%: "
+        '
+        'Label1
+        '
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(939, 398)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(18, 20)
+        Me.Label1.TabIndex = 65
+        Me.Label1.Text = "€"
+        '
+        'label_subtotalPrecio
+        '
+        Me.label_subtotalPrecio.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.label_subtotalPrecio.AutoSize = True
+        Me.label_subtotalPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label_subtotalPrecio.Location = New System.Drawing.Point(923, 398)
+        Me.label_subtotalPrecio.Name = "label_subtotalPrecio"
+        Me.label_subtotalPrecio.Size = New System.Drawing.Size(0, 20)
+        Me.label_subtotalPrecio.TabIndex = 64
+        '
+        'Label_subtotal
+        '
+        Me.Label_subtotal.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label_subtotal.AutoSize = True
+        Me.Label_subtotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_subtotal.Location = New System.Drawing.Point(809, 398)
+        Me.Label_subtotal.Name = "Label_subtotal"
+        Me.Label_subtotal.Size = New System.Drawing.Size(77, 20)
+        Me.Label_subtotal.TabIndex = 63
+        Me.Label_subtotal.Text = "Subtotal: "
+        '
+        'Label2
+        '
+        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(999, 519)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(18, 20)
+        Me.Label2.TabIndex = 62
+        Me.Label2.Text = "€"
+        '
+        'label_euro8
+        '
+        Me.label_euro8.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.label_euro8.AutoSize = True
+        Me.label_euro8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label_euro8.Location = New System.Drawing.Point(939, 555)
+        Me.label_euro8.Name = "label_euro8"
+        Me.label_euro8.Size = New System.Drawing.Size(18, 20)
+        Me.label_euro8.TabIndex = 61
+        Me.label_euro8.Text = "€"
+        '
+        'label_euro
+        '
+        Me.label_euro.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.label_euro.AutoSize = True
+        Me.label_euro.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label_euro.Location = New System.Drawing.Point(939, 479)
+        Me.label_euro.Name = "label_euro"
+        Me.label_euro.Size = New System.Drawing.Size(18, 20)
+        Me.label_euro.TabIndex = 60
+        Me.label_euro.Text = "€"
+        '
+        'label_totalDevolver
+        '
+        Me.label_totalDevolver.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.label_totalDevolver.AutoSize = True
+        Me.label_totalDevolver.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label_totalDevolver.Location = New System.Drawing.Point(923, 555)
+        Me.label_totalDevolver.Name = "label_totalDevolver"
+        Me.label_totalDevolver.Size = New System.Drawing.Size(0, 20)
+        Me.label_totalDevolver.TabIndex = 59
+        '
+        'label_resto
+        '
+        Me.label_resto.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.label_resto.AutoSize = True
+        Me.label_resto.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label_resto.Location = New System.Drawing.Point(809, 555)
+        Me.label_resto.Name = "label_resto"
+        Me.label_resto.Size = New System.Drawing.Size(60, 20)
+        Me.label_resto.TabIndex = 58
+        Me.label_resto.Text = "Resto: "
+        '
+        'label_importe
+        '
+        Me.label_importe.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.label_importe.AutoSize = True
+        Me.label_importe.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label_importe.Location = New System.Drawing.Point(809, 519)
+        Me.label_importe.Name = "label_importe"
+        Me.label_importe.Size = New System.Drawing.Size(72, 20)
+        Me.label_importe.TabIndex = 57
+        Me.label_importe.Text = "Importe: "
+        '
+        'textBox_importe
+        '
+        Me.textBox_importe.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.textBox_importe.Location = New System.Drawing.Point(893, 519)
+        Me.textBox_importe.Name = "textBox_importe"
+        Me.textBox_importe.Size = New System.Drawing.Size(100, 20)
+        Me.textBox_importe.TabIndex = 56
+        '
+        'label_totalPrecio
+        '
+        Me.label_totalPrecio.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.label_totalPrecio.AutoSize = True
+        Me.label_totalPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label_totalPrecio.Location = New System.Drawing.Point(923, 479)
+        Me.label_totalPrecio.Name = "label_totalPrecio"
+        Me.label_totalPrecio.Size = New System.Drawing.Size(0, 20)
+        Me.label_totalPrecio.TabIndex = 55
+        '
+        'label_total
+        '
+        Me.label_total.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.label_total.AutoSize = True
+        Me.label_total.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label_total.Location = New System.Drawing.Point(809, 479)
+        Me.label_total.Name = "label_total"
+        Me.label_total.Size = New System.Drawing.Size(52, 20)
+        Me.label_total.TabIndex = 54
+        Me.label_total.Text = "Total: "
         '
         'Pantalla_de_venta
         '
@@ -1165,18 +1165,18 @@ Partial Class Pantalla_de_venta
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.label_subtotalPrecio)
         Me.Controls.Add(Me.Label_subtotal)
-        Me.Controls.Add(Me.button_desconectar)
-        Me.Controls.Add(Me.label_euro7)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.label_euro8)
         Me.Controls.Add(Me.label_euro)
         Me.Controls.Add(Me.label_totalDevolver)
         Me.Controls.Add(Me.label_resto)
-        Me.Controls.Add(Me.button_anular)
-        Me.Controls.Add(Me.button_cobrar)
         Me.Controls.Add(Me.label_importe)
         Me.Controls.Add(Me.textBox_importe)
         Me.Controls.Add(Me.label_totalPrecio)
         Me.Controls.Add(Me.label_total)
+        Me.Controls.Add(Me.button_desconectar)
+        Me.Controls.Add(Me.button_anular)
+        Me.Controls.Add(Me.button_cobrar)
         Me.Controls.Add(Me.button_eliminar_articulo)
         Me.Controls.Add(Me.button_aniadir_1)
         Me.Controls.Add(Me.button_eliminar_1)
@@ -1299,29 +1299,29 @@ Partial Class Pantalla_de_venta
     Friend WithEvents comboBox_cantidad_somier As ComboBox
     Friend WithEvents label_precio_somier As Label
     Friend WithEvents button_eliminar_articulo As Button
-    Friend WithEvents label_total As Label
-    Friend WithEvents label_totalPrecio As Label
-    Friend WithEvents textBox_importe As TextBox
-    Friend WithEvents label_importe As Label
     Friend WithEvents button_cobrar As Button
     Friend WithEvents button_tarjeta As Button
     Friend WithEvents button_anular As Button
-    Friend WithEvents label_resto As Label
-    Friend WithEvents label_totalDevolver As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents label_euro3 As Label
     Friend WithEvents label_euro6 As Label
     Friend WithEvents label_euro1 As Label
     Friend WithEvents label_euro4 As Label
     Friend WithEvents label_euro5 As Label
-    Friend WithEvents label_euro As Label
-    Friend WithEvents label_euro8 As Label
-    Friend WithEvents label_euro7 As Label
     Friend WithEvents button_desconectar As Button
-    Friend WithEvents Label1 As Label
-    Friend WithEvents label_subtotalPrecio As Label
-    Friend WithEvents Label_subtotal As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents label_ivaPrecio As Label
     Friend WithEvents Label7 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents label_subtotalPrecio As Label
+    Friend WithEvents Label_subtotal As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents label_euro8 As Label
+    Friend WithEvents label_euro As Label
+    Friend WithEvents label_totalDevolver As Label
+    Friend WithEvents label_resto As Label
+    Friend WithEvents label_importe As Label
+    Friend WithEvents textBox_importe As TextBox
+    Friend WithEvents label_totalPrecio As Label
+    Friend WithEvents label_total As Label
 End Class

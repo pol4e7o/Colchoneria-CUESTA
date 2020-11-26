@@ -23,6 +23,7 @@ Partial Class Pantalla_eliminar_empleado
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Pantalla_eliminar_empleado))
         Me.TimerHoraReal = New System.Windows.Forms.Timer(Me.components)
         Me.MenuStrip = New System.Windows.Forms.MenuStrip()
         Me.InicioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -47,8 +48,6 @@ Partial Class Pantalla_eliminar_empleado
         Me.label_elijaOpcion = New System.Windows.Forms.Label()
         Me.label_Gestion_empleados = New System.Windows.Forms.Label()
         Me.panel_elementosEmpleado = New System.Windows.Forms.Panel()
-        Me.comboBox_elegirEmpleado = New System.Windows.Forms.ComboBox()
-        Me.label_empleado = New System.Windows.Forms.Label()
         Me.comboBox_roles = New System.Windows.Forms.ComboBox()
         Me.textBox_telefono = New System.Windows.Forms.TextBox()
         Me.textBox_apellidos = New System.Windows.Forms.TextBox()
@@ -65,9 +64,13 @@ Partial Class Pantalla_eliminar_empleado
         Me.label_nombre = New System.Windows.Forms.Label()
         Me.label_direccion = New System.Windows.Forms.Label()
         Me.label_apellidos = New System.Windows.Forms.Label()
+        Me.comboBox_elegirEmpleado = New System.Windows.Forms.ComboBox()
+        Me.label_empleado = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.MenuStrip.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.panel_elementosEmpleado.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'TimerHoraReal
@@ -95,26 +98,28 @@ Partial Class Pantalla_eliminar_empleado
         '
         Me.CerrarCajaToolStripMenuItem.Name = "CerrarCajaToolStripMenuItem"
         Me.CerrarCajaToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
-        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
         Me.CerrarCajaToolStripMenuItem.Text = "Cerrar caja"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(165, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(167, 6)
         '
         'VolverToolStripMenuItem
         '
         Me.VolverToolStripMenuItem.Name = "VolverToolStripMenuItem"
-        Me.VolverToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.VolverToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
+            Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
+        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
         Me.VolverToolStripMenuItem.Text = "Volver"
         '
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.SalirToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
+            Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'VentaToolStripMenuItem
@@ -249,7 +254,7 @@ Partial Class Pantalla_eliminar_empleado
         Me.label_elijaOpcion.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_elijaOpcion.AutoSize = True
         Me.label_elijaOpcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_elijaOpcion.Location = New System.Drawing.Point(396, 103)
+        Me.label_elijaOpcion.Location = New System.Drawing.Point(369, 104)
         Me.label_elijaOpcion.Name = "label_elijaOpcion"
         Me.label_elijaOpcion.Size = New System.Drawing.Size(159, 20)
         Me.label_elijaOpcion.TabIndex = 30
@@ -260,7 +265,7 @@ Partial Class Pantalla_eliminar_empleado
         Me.label_Gestion_empleados.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_Gestion_empleados.AutoSize = True
         Me.label_Gestion_empleados.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_Gestion_empleados.Location = New System.Drawing.Point(365, 65)
+        Me.label_Gestion_empleados.Location = New System.Drawing.Point(338, 66)
         Me.label_Gestion_empleados.Name = "label_Gestion_empleados"
         Me.label_Gestion_empleados.Size = New System.Drawing.Size(227, 25)
         Me.label_Gestion_empleados.TabIndex = 29
@@ -269,8 +274,6 @@ Partial Class Pantalla_eliminar_empleado
         'panel_elementosEmpleado
         '
         Me.panel_elementosEmpleado.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.panel_elementosEmpleado.Controls.Add(Me.comboBox_elegirEmpleado)
-        Me.panel_elementosEmpleado.Controls.Add(Me.label_empleado)
         Me.panel_elementosEmpleado.Controls.Add(Me.comboBox_roles)
         Me.panel_elementosEmpleado.Controls.Add(Me.textBox_telefono)
         Me.panel_elementosEmpleado.Controls.Add(Me.textBox_apellidos)
@@ -278,8 +281,6 @@ Partial Class Pantalla_eliminar_empleado
         Me.panel_elementosEmpleado.Controls.Add(Me.textBox_codigoPostal)
         Me.panel_elementosEmpleado.Controls.Add(Me.textBox_direccion)
         Me.panel_elementosEmpleado.Controls.Add(Me.textBox_nombre)
-        Me.panel_elementosEmpleado.Controls.Add(Me.boton_cancelar)
-        Me.panel_elementosEmpleado.Controls.Add(Me.boton_guardar)
         Me.panel_elementosEmpleado.Controls.Add(Me.label_rol)
         Me.panel_elementosEmpleado.Controls.Add(Me.label_nombreUsuario)
         Me.panel_elementosEmpleado.Controls.Add(Me.label_telefono)
@@ -287,41 +288,24 @@ Partial Class Pantalla_eliminar_empleado
         Me.panel_elementosEmpleado.Controls.Add(Me.label_nombre)
         Me.panel_elementosEmpleado.Controls.Add(Me.label_direccion)
         Me.panel_elementosEmpleado.Controls.Add(Me.label_apellidos)
-        Me.panel_elementosEmpleado.Location = New System.Drawing.Point(149, 140)
+        Me.panel_elementosEmpleado.Location = New System.Drawing.Point(140, 197)
         Me.panel_elementosEmpleado.Name = "panel_elementosEmpleado"
-        Me.panel_elementosEmpleado.Size = New System.Drawing.Size(635, 298)
+        Me.panel_elementosEmpleado.Size = New System.Drawing.Size(635, 198)
         Me.panel_elementosEmpleado.TabIndex = 31
-        '
-        'comboBox_elegirEmpleado
-        '
-        Me.comboBox_elegirEmpleado.FormattingEnabled = True
-        Me.comboBox_elegirEmpleado.Location = New System.Drawing.Point(132, 18)
-        Me.comboBox_elegirEmpleado.Name = "comboBox_elegirEmpleado"
-        Me.comboBox_elegirEmpleado.Size = New System.Drawing.Size(155, 21)
-        Me.comboBox_elegirEmpleado.TabIndex = 37
-        '
-        'label_empleado
-        '
-        Me.label_empleado.AutoSize = True
-        Me.label_empleado.Location = New System.Drawing.Point(19, 21)
-        Me.label_empleado.Name = "label_empleado"
-        Me.label_empleado.Size = New System.Drawing.Size(60, 13)
-        Me.label_empleado.TabIndex = 36
-        Me.label_empleado.Text = "Empleado: "
         '
         'comboBox_roles
         '
         Me.comboBox_roles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.comboBox_roles.FormattingEnabled = True
         Me.comboBox_roles.Items.AddRange(New Object() {"Administrador", "Empleado"})
-        Me.comboBox_roles.Location = New System.Drawing.Point(455, 192)
+        Me.comboBox_roles.Location = New System.Drawing.Point(458, 148)
         Me.comboBox_roles.Name = "comboBox_roles"
         Me.comboBox_roles.Size = New System.Drawing.Size(136, 21)
         Me.comboBox_roles.TabIndex = 35
         '
         'textBox_telefono
         '
-        Me.textBox_telefono.Location = New System.Drawing.Point(455, 149)
+        Me.textBox_telefono.Location = New System.Drawing.Point(458, 105)
         Me.textBox_telefono.MaxLength = 15
         Me.textBox_telefono.Name = "textBox_telefono"
         Me.textBox_telefono.ReadOnly = True
@@ -330,16 +314,16 @@ Partial Class Pantalla_eliminar_empleado
         '
         'textBox_apellidos
         '
-        Me.textBox_apellidos.Location = New System.Drawing.Point(455, 73)
+        Me.textBox_apellidos.Location = New System.Drawing.Point(458, 29)
         Me.textBox_apellidos.MaxLength = 30
         Me.textBox_apellidos.Name = "textBox_apellidos"
         Me.textBox_apellidos.ReadOnly = True
-        Me.textBox_apellidos.Size = New System.Drawing.Size(100, 20)
+        Me.textBox_apellidos.Size = New System.Drawing.Size(136, 20)
         Me.textBox_apellidos.TabIndex = 29
         '
         'textBox_nombreUsuario
         '
-        Me.textBox_nombreUsuario.Location = New System.Drawing.Point(132, 192)
+        Me.textBox_nombreUsuario.Location = New System.Drawing.Point(135, 148)
         Me.textBox_nombreUsuario.MaxLength = 10
         Me.textBox_nombreUsuario.Name = "textBox_nombreUsuario"
         Me.textBox_nombreUsuario.ReadOnly = True
@@ -348,7 +332,7 @@ Partial Class Pantalla_eliminar_empleado
         '
         'textBox_codigoPostal
         '
-        Me.textBox_codigoPostal.Location = New System.Drawing.Point(132, 149)
+        Me.textBox_codigoPostal.Location = New System.Drawing.Point(135, 105)
         Me.textBox_codigoPostal.MaxLength = 5
         Me.textBox_codigoPostal.Name = "textBox_codigoPostal"
         Me.textBox_codigoPostal.ReadOnly = True
@@ -357,26 +341,27 @@ Partial Class Pantalla_eliminar_empleado
         '
         'textBox_direccion
         '
-        Me.textBox_direccion.Location = New System.Drawing.Point(132, 109)
+        Me.textBox_direccion.Location = New System.Drawing.Point(135, 65)
         Me.textBox_direccion.MaxLength = 30
         Me.textBox_direccion.Name = "textBox_direccion"
         Me.textBox_direccion.ReadOnly = True
-        Me.textBox_direccion.Size = New System.Drawing.Size(220, 20)
+        Me.textBox_direccion.Size = New System.Drawing.Size(155, 20)
         Me.textBox_direccion.TabIndex = 25
         '
         'textBox_nombre
         '
-        Me.textBox_nombre.Location = New System.Drawing.Point(132, 73)
+        Me.textBox_nombre.Location = New System.Drawing.Point(135, 29)
         Me.textBox_nombre.MaxLength = 25
         Me.textBox_nombre.Name = "textBox_nombre"
         Me.textBox_nombre.ReadOnly = True
-        Me.textBox_nombre.Size = New System.Drawing.Size(100, 20)
+        Me.textBox_nombre.Size = New System.Drawing.Size(155, 20)
         Me.textBox_nombre.TabIndex = 24
         '
         'boton_cancelar
         '
+        Me.boton_cancelar.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.boton_cancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.boton_cancelar.Location = New System.Drawing.Point(220, 250)
+        Me.boton_cancelar.Location = New System.Drawing.Point(325, 418)
         Me.boton_cancelar.Name = "boton_cancelar"
         Me.boton_cancelar.Size = New System.Drawing.Size(134, 31)
         Me.boton_cancelar.TabIndex = 20
@@ -385,8 +370,9 @@ Partial Class Pantalla_eliminar_empleado
         '
         'boton_guardar
         '
+        Me.boton_guardar.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.boton_guardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.boton_guardar.Location = New System.Drawing.Point(35, 250)
+        Me.boton_guardar.Location = New System.Drawing.Point(140, 418)
         Me.boton_guardar.Name = "boton_guardar"
         Me.boton_guardar.Size = New System.Drawing.Size(134, 31)
         Me.boton_guardar.TabIndex = 21
@@ -396,7 +382,7 @@ Partial Class Pantalla_eliminar_empleado
         'label_rol
         '
         Me.label_rol.AutoSize = True
-        Me.label_rol.Location = New System.Drawing.Point(346, 195)
+        Me.label_rol.Location = New System.Drawing.Point(349, 151)
         Me.label_rol.Name = "label_rol"
         Me.label_rol.Size = New System.Drawing.Size(29, 13)
         Me.label_rol.TabIndex = 22
@@ -405,7 +391,7 @@ Partial Class Pantalla_eliminar_empleado
         'label_nombreUsuario
         '
         Me.label_nombreUsuario.AutoSize = True
-        Me.label_nombreUsuario.Location = New System.Drawing.Point(21, 195)
+        Me.label_nombreUsuario.Location = New System.Drawing.Point(24, 151)
         Me.label_nombreUsuario.Name = "label_nombreUsuario"
         Me.label_nombreUsuario.Size = New System.Drawing.Size(99, 13)
         Me.label_nombreUsuario.TabIndex = 20
@@ -414,7 +400,7 @@ Partial Class Pantalla_eliminar_empleado
         'label_telefono
         '
         Me.label_telefono.AutoSize = True
-        Me.label_telefono.Location = New System.Drawing.Point(346, 152)
+        Me.label_telefono.Location = New System.Drawing.Point(349, 108)
         Me.label_telefono.Name = "label_telefono"
         Me.label_telefono.Size = New System.Drawing.Size(55, 13)
         Me.label_telefono.TabIndex = 19
@@ -423,7 +409,7 @@ Partial Class Pantalla_eliminar_empleado
         'label_codigoPostal
         '
         Me.label_codigoPostal.AutoSize = True
-        Me.label_codigoPostal.Location = New System.Drawing.Point(21, 152)
+        Me.label_codigoPostal.Location = New System.Drawing.Point(24, 108)
         Me.label_codigoPostal.Name = "label_codigoPostal"
         Me.label_codigoPostal.Size = New System.Drawing.Size(74, 13)
         Me.label_codigoPostal.TabIndex = 18
@@ -432,7 +418,7 @@ Partial Class Pantalla_eliminar_empleado
         'label_nombre
         '
         Me.label_nombre.AutoSize = True
-        Me.label_nombre.Location = New System.Drawing.Point(21, 76)
+        Me.label_nombre.Location = New System.Drawing.Point(24, 32)
         Me.label_nombre.Name = "label_nombre"
         Me.label_nombre.Size = New System.Drawing.Size(50, 13)
         Me.label_nombre.TabIndex = 15
@@ -441,7 +427,7 @@ Partial Class Pantalla_eliminar_empleado
         'label_direccion
         '
         Me.label_direccion.AutoSize = True
-        Me.label_direccion.Location = New System.Drawing.Point(21, 112)
+        Me.label_direccion.Location = New System.Drawing.Point(24, 68)
         Me.label_direccion.Name = "label_direccion"
         Me.label_direccion.Size = New System.Drawing.Size(58, 13)
         Me.label_direccion.TabIndex = 17
@@ -450,22 +436,53 @@ Partial Class Pantalla_eliminar_empleado
         'label_apellidos
         '
         Me.label_apellidos.AutoSize = True
-        Me.label_apellidos.Location = New System.Drawing.Point(346, 76)
+        Me.label_apellidos.Location = New System.Drawing.Point(349, 32)
         Me.label_apellidos.Name = "label_apellidos"
         Me.label_apellidos.Size = New System.Drawing.Size(60, 13)
         Me.label_apellidos.TabIndex = 16
         Me.label_apellidos.Text = "Apellido/s: "
+        '
+        'comboBox_elegirEmpleado
+        '
+        Me.comboBox_elegirEmpleado.FormattingEnabled = True
+        Me.comboBox_elegirEmpleado.Location = New System.Drawing.Point(135, 12)
+        Me.comboBox_elegirEmpleado.Name = "comboBox_elegirEmpleado"
+        Me.comboBox_elegirEmpleado.Size = New System.Drawing.Size(155, 21)
+        Me.comboBox_elegirEmpleado.TabIndex = 37
+        '
+        'label_empleado
+        '
+        Me.label_empleado.AutoSize = True
+        Me.label_empleado.Location = New System.Drawing.Point(24, 15)
+        Me.label_empleado.Name = "label_empleado"
+        Me.label_empleado.Size = New System.Drawing.Size(60, 13)
+        Me.label_empleado.TabIndex = 36
+        Me.label_empleado.Text = "Empleado: "
+        '
+        'Panel2
+        '
+        Me.Panel2.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Panel2.Controls.Add(Me.comboBox_elegirEmpleado)
+        Me.Panel2.Controls.Add(Me.label_empleado)
+        Me.Panel2.Location = New System.Drawing.Point(140, 157)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(635, 46)
+        Me.Panel2.TabIndex = 41
         '
         'Pantalla_eliminar_empleado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(881, 579)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.panel_elementosEmpleado)
         Me.Controls.Add(Me.label_elijaOpcion)
         Me.Controls.Add(Me.label_Gestion_empleados)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.MenuStrip)
+        Me.Controls.Add(Me.boton_guardar)
+        Me.Controls.Add(Me.boton_cancelar)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Pantalla_eliminar_empleado"
         Me.Text = "Colchoneria CUESTA - Gesion de empleados - Baja de empleado"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
@@ -475,6 +492,8 @@ Partial Class Pantalla_eliminar_empleado
         Me.Panel1.PerformLayout()
         Me.panel_elementosEmpleado.ResumeLayout(False)
         Me.panel_elementosEmpleado.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -522,4 +541,5 @@ Partial Class Pantalla_eliminar_empleado
     Friend WithEvents label_nombre As Label
     Friend WithEvents label_direccion As Label
     Friend WithEvents label_apellidos As Label
+    Friend WithEvents Panel2 As Panel
 End Class

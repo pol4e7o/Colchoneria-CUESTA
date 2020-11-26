@@ -56,6 +56,8 @@
 
                 Write(5, ElementosComunes.venta)
 
+                FileClose()
+
                 End
 
             Catch ex As System.IO.FileNotFoundException
@@ -160,6 +162,9 @@
         'Contador de for
         Dim i As Integer
 
+        'Se utiliza para indicar si el usuario es correcto o no
+        Dim empleadoCorrecto = False
+
         'Se comprueba que el usuario existe
         For i = 0 To empleados.Count - 1
 
@@ -173,6 +178,8 @@
 
                     i = empleados.Count
 
+                    empleadoCorrecto = True
+
                     'Se limpian las cajas de texto 
                     textBox_usuario.Text = ""
                     textBox_contrasenia.Text = ""
@@ -181,33 +188,25 @@
                     Pantalla_de_venta.Show()
                     Me.Hide()
 
-                Else
-
-                    'Se le indica al usuario que el nombre o la contraseña no son correctas sin espesificar cual es el erroneo
-                    MsgBox("El usuario o la contraseña no son correctos. Por favor intentelo de nuevo",
-                           0 + MsgBoxStyle.Information, "Usuario o contraseña incorrecta")
-
-                    'Se limpian las cajas de texto y se pasa el foco al nombre de usuario
-                    textBox_usuario.Text = ""
-                    textBox_contrasenia.Text = ""
-                    textBox_usuario.Focus()
-
                 End If
-
-            Else
-
-                'Se le indica al usuario que el nombre o la contraseña no son correctas sin espesificar cual es el erroneo
-                MsgBox("El usuario o la contraseña no son correctos. Por favor intentelo de nuevo",
-                           0 + MsgBoxStyle.Information, "Usuario o contraseña incorrecta")
-
-                'Se limpian las cajas de texto y se pasa el foco al nombre de usuario
-                textBox_usuario.Text = ""
-                textBox_contrasenia.Text = ""
-                textBox_usuario.Focus()
 
             End If
 
         Next i
+
+        'Si es usuario no es correcto sale un mensaje
+        If empleadoCorrecto = False Then
+
+            'Se le indica al usuario que el nombre o la contraseña no son correctas sin espesificar cual es el erroneo
+            MsgBox("El usuario o la contraseña no son correctos. Por favor intentelo de nuevo",
+                       0 + MsgBoxStyle.Information, "Usuario o contraseña incorrecta")
+
+            'Se limpian las cajas de texto y se pasa el foco al nombre de usuario
+            textBox_usuario.Text = ""
+            textBox_contrasenia.Text = ""
+            textBox_usuario.Focus()
+
+        End If
 
     End Sub
 
