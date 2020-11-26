@@ -62,3 +62,4 @@ D:\Github\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\Ges
 D:\Github\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\Validacion.pdb
 D:\Github\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\Validacion.xml
 D:\Github\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\obj\Debug\Colchoneria_CUESTA.vbproj.CopyComplete
+D:\Github\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\obj\Debug\Colchoneria_CUESTA.Gestion_de_errores.resources
