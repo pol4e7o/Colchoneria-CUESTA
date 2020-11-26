@@ -23,6 +23,7 @@ Partial Class Pantalla_aniadir_articulo
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Pantalla_aniadir_articulo))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.ComboBox_categorias = New System.Windows.Forms.ComboBox()
@@ -71,9 +72,10 @@ Partial Class Pantalla_aniadir_articulo
         '
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(42, 55)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(42, 43)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(94, 13)
+        Me.Label1.Size = New System.Drawing.Size(204, 25)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Alta de un artículo"
         '
@@ -99,15 +101,15 @@ Partial Class Pantalla_aniadir_articulo
         Me.Panel1.Controls.Add(Me.TextBox_nombre)
         Me.Panel1.Location = New System.Drawing.Point(16, 71)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(761, 398)
+        Me.Panel1.Size = New System.Drawing.Size(749, 363)
         Me.Panel1.TabIndex = 1
         '
         'ComboBox_categorias
         '
         Me.ComboBox_categorias.FormattingEnabled = True
         Me.ComboBox_categorias.Items.AddRange(New Object() {"Somier", "Colchón", "Canapé", "Base", "Ofertas", "Otros"})
-        Me.ComboBox_categorias.Location = New System.Drawing.Point(150, 110)
-        Me.ComboBox_categorias.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ComboBox_categorias.Location = New System.Drawing.Point(150, 74)
+        Me.ComboBox_categorias.Margin = New System.Windows.Forms.Padding(2)
         Me.ComboBox_categorias.Name = "ComboBox_categorias"
         Me.ComboBox_categorias.Size = New System.Drawing.Size(100, 21)
         Me.ComboBox_categorias.TabIndex = 19
@@ -115,16 +117,16 @@ Partial Class Pantalla_aniadir_articulo
         'ListBox_tamanioprecios
         '
         Me.ListBox_tamanioprecios.FormattingEnabled = True
-        Me.ListBox_tamanioprecios.Location = New System.Drawing.Point(372, 180)
-        Me.ListBox_tamanioprecios.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ListBox_tamanioprecios.Location = New System.Drawing.Point(386, 107)
+        Me.ListBox_tamanioprecios.Margin = New System.Windows.Forms.Padding(2)
         Me.ListBox_tamanioprecios.Name = "ListBox_tamanioprecios"
-        Me.ListBox_tamanioprecios.Size = New System.Drawing.Size(168, 134)
+        Me.ListBox_tamanioprecios.Size = New System.Drawing.Size(192, 186)
         Me.ListBox_tamanioprecios.TabIndex = 18
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(370, 164)
+        Me.Label8.Location = New System.Drawing.Point(383, 77)
         Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(174, 13)
@@ -134,7 +136,7 @@ Partial Class Pantalla_aniadir_articulo
         'Button_eliminar
         '
         Me.Button_eliminar.Location = New System.Drawing.Point(295, 261)
-        Me.Button_eliminar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button_eliminar.Margin = New System.Windows.Forms.Padding(2)
         Me.Button_eliminar.Name = "Button_eliminar"
         Me.Button_eliminar.Size = New System.Drawing.Size(56, 19)
         Me.Button_eliminar.TabIndex = 16
@@ -143,8 +145,8 @@ Partial Class Pantalla_aniadir_articulo
         '
         'Button_cancelar
         '
-        Me.Button_cancelar.Location = New System.Drawing.Point(688, 366)
-        Me.Button_cancelar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button_cancelar.Location = New System.Drawing.Point(655, 324)
+        Me.Button_cancelar.Margin = New System.Windows.Forms.Padding(2)
         Me.Button_cancelar.Name = "Button_cancelar"
         Me.Button_cancelar.Size = New System.Drawing.Size(56, 19)
         Me.Button_cancelar.TabIndex = 15
@@ -153,8 +155,8 @@ Partial Class Pantalla_aniadir_articulo
         '
         'Button_guardar
         '
-        Me.Button_guardar.Location = New System.Drawing.Point(620, 366)
-        Me.Button_guardar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button_guardar.Location = New System.Drawing.Point(575, 324)
+        Me.Button_guardar.Margin = New System.Windows.Forms.Padding(2)
         Me.Button_guardar.Name = "Button_guardar"
         Me.Button_guardar.Size = New System.Drawing.Size(56, 19)
         Me.Button_guardar.TabIndex = 14
@@ -164,7 +166,7 @@ Partial Class Pantalla_aniadir_articulo
         'Button_aniadir
         '
         Me.Button_aniadir.Location = New System.Drawing.Point(295, 237)
-        Me.Button_aniadir.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button_aniadir.Margin = New System.Windows.Forms.Padding(2)
         Me.Button_aniadir.Name = "Button_aniadir"
         Me.Button_aniadir.Size = New System.Drawing.Size(56, 19)
         Me.Button_aniadir.TabIndex = 12
@@ -173,7 +175,7 @@ Partial Class Pantalla_aniadir_articulo
         '
         'TextBox_precio
         '
-        Me.TextBox_precio.Location = New System.Drawing.Point(150, 299)
+        Me.TextBox_precio.Location = New System.Drawing.Point(150, 279)
         Me.TextBox_precio.Name = "TextBox_precio"
         Me.TextBox_precio.Size = New System.Drawing.Size(100, 20)
         Me.TextBox_precio.TabIndex = 11
@@ -181,7 +183,7 @@ Partial Class Pantalla_aniadir_articulo
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(29, 303)
+        Me.Label7.Location = New System.Drawing.Point(36, 279)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(70, 13)
         Me.Label7.TabIndex = 10
@@ -191,7 +193,7 @@ Partial Class Pantalla_aniadir_articulo
         '
         Me.ListBox_tamanios.FormattingEnabled = True
         Me.ListBox_tamanios.Items.AddRange(New Object() {"80", "90", "105", "135", "150", "160", "180"})
-        Me.ListBox_tamanios.Location = New System.Drawing.Point(150, 180)
+        Me.ListBox_tamanios.Location = New System.Drawing.Point(140, 133)
         Me.ListBox_tamanios.Name = "ListBox_tamanios"
         Me.ListBox_tamanios.Size = New System.Drawing.Size(120, 95)
         Me.ListBox_tamanios.TabIndex = 8
@@ -199,7 +201,7 @@ Partial Class Pantalla_aniadir_articulo
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(29, 180)
+        Me.Label6.Location = New System.Drawing.Point(36, 133)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(89, 13)
         Me.Label6.TabIndex = 7
@@ -208,7 +210,7 @@ Partial Class Pantalla_aniadir_articulo
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(26, 110)
+        Me.Label5.Location = New System.Drawing.Point(36, 77)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(61, 13)
         Me.Label5.TabIndex = 6
@@ -216,7 +218,7 @@ Partial Class Pantalla_aniadir_articulo
         '
         'TextBox_descripcion
         '
-        Me.TextBox_descripcion.Location = New System.Drawing.Point(150, 62)
+        Me.TextBox_descripcion.Location = New System.Drawing.Point(478, 18)
         Me.TextBox_descripcion.MaxLength = 40
         Me.TextBox_descripcion.Name = "TextBox_descripcion"
         Me.TextBox_descripcion.Size = New System.Drawing.Size(100, 20)
@@ -225,7 +227,7 @@ Partial Class Pantalla_aniadir_articulo
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(26, 62)
+        Me.Label4.Location = New System.Drawing.Point(383, 21)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(66, 13)
         Me.Label4.TabIndex = 4
@@ -234,7 +236,7 @@ Partial Class Pantalla_aniadir_articulo
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(26, 18)
+        Me.Label2.Location = New System.Drawing.Point(36, 21)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(51, 13)
         Me.Label2.TabIndex = 1
@@ -376,7 +378,7 @@ Partial Class Pantalla_aniadir_articulo
         Me.GestionDeEmpleadosToolStripMenuItem.Name = "GestionDeEmpleadosToolStripMenuItem"
         Me.GestionDeEmpleadosToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.E), System.Windows.Forms.Keys)
-        Me.GestionDeEmpleadosToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
+        Me.GestionDeEmpleadosToolStripMenuItem.Size = New System.Drawing.Size(277, 22)
         Me.GestionDeEmpleadosToolStripMenuItem.Text = "Gestion de empleados"
         '
         'GestionDeArticulosToolStripMenuItem
@@ -384,7 +386,7 @@ Partial Class Pantalla_aniadir_articulo
         Me.GestionDeArticulosToolStripMenuItem.Name = "GestionDeArticulosToolStripMenuItem"
         Me.GestionDeArticulosToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.A), System.Windows.Forms.Keys)
-        Me.GestionDeArticulosToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
+        Me.GestionDeArticulosToolStripMenuItem.Size = New System.Drawing.Size(277, 22)
         Me.GestionDeArticulosToolStripMenuItem.Text = "Gestion de articulos"
         '
         'GestionDeVentasToolStripMenuItem
@@ -392,7 +394,7 @@ Partial Class Pantalla_aniadir_articulo
         Me.GestionDeVentasToolStripMenuItem.Name = "GestionDeVentasToolStripMenuItem"
         Me.GestionDeVentasToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.GestionDeVentasToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
+        Me.GestionDeVentasToolStripMenuItem.Size = New System.Drawing.Size(277, 22)
         Me.GestionDeVentasToolStripMenuItem.Text = "Gestion de ventas"
         '
         'AcercaDeToolStripMenuItem
@@ -432,8 +434,9 @@ Partial Class Pantalla_aniadir_articulo
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Pantalla_aniadir_articulo"
-        Me.Text = "Añadir artículo"
+        Me.Text = "Añadir artículo - Colchonería CUESTA"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

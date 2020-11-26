@@ -14,19 +14,14 @@
         'Se indica la hora actual
         label_hora.Text = "Hora: " & TimeString
 
-        'Si no hay nada seleccionado en precio y tamaño no puede pulsarse
-        If (ListBox_tamanios.SelectedItem < 0 & TextBox_precio.Text.CompareTo("")) Then
-            Button_aniadir.Enabled = False
-        Else
-            Button_aniadir.Enabled = True
-        End If
+        'Todos los botones empiezas desactivados, menos cancelar que se puede pulsar en cualquier momento
+        Button_aniadir.Enabled = False
+        Button_eliminar.Enabled = False
+        Button_guardar.Enabled = False
 
-        'Si no hay nada seleccionado en tamaños y precios añadidos, no puede eliminarse nada
-        If (ListBox_tamanioprecios.SelectedItem < 0) Then
-            Button_aniadir.Enabled = False
-        Else
-            Button_aniadir.Enabled = True
-        End If
+
+
+
     End Sub
     '---------------------------------------------------------------------------------------------------------------------------------------------
     'MENU
@@ -260,7 +255,7 @@
     End Sub
 
     'VENTA
-    Private Sub VentaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VentaToolStripMenuItem.Click
+    Private Sub VisualizarVentaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VisualizarVentaToolStripMenuItem.Click
         'Se visualiza la venta actual del dia mediante un message box
         MsgBox("La venta actual del dia " & DateString & " a la hora " & TimeString & " es: 
 
@@ -351,10 +346,10 @@
 
         If opcion = MsgBoxResult.Yes Then
 
-            'Se guarda el artículo dentro del fichero de empleados
+            'Se guarda el artículo dentro del fichero de artículos
 
 
-            'Se vuelve a la pantalla de gestion de empleados
+            'Se vuelve a la pantalla de gestion de artículos
             Pantalla_admin_articulos.Show()
             Me.Close()
 
@@ -369,7 +364,7 @@
 
         If opcion = MsgBoxResult.Yes Then
 
-            'Se abre la pantalla de gestion de empleados y se cierra la de baja de empleado
+            'Se abre la pantalla de gestion de empleados y se cierra la de baja de artículos
             Pantalla_admin_articulos.Show()
             Me.Close()
 
@@ -492,4 +487,6 @@
     End Sub
 
 
+
+    End Sub
 End Class
