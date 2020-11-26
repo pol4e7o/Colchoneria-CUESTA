@@ -65,7 +65,7 @@
         Return direccionEmpleado
     End Function
 
-    Function getCodigoPostal() As Integer
+    Function getCodigoPostal() As String
         Return codigoPostalDireccion
     End Function
 
@@ -104,7 +104,7 @@
         direccionEmpleado = direccion
     End Sub
 
-    Sub setCodigoPostal(codigoPostal As Integer)
+    Sub setCodigoPostal(codigoPostal As String)
         codigoPostalDireccion = codigoPostal
     End Sub
 

@@ -67,7 +67,7 @@
                 MsgBox("El fichero ""VentaActual.txt"" no se encuentra por lo tanto no se ha podido guadrar el valor de la venta hasta este momento" &
                    vbCrLf & "Por favor compruebe que el fichero esta en la carpeta de la aplicacion Colchoneria CUESTA. " & vbCrLf &
                             "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\VentaActual.txt",
-                            0 + MsgBoxStyle.Exclamation)
+                            0 + MsgBoxStyle.Exclamation, "Guardar venta")
 
                 'Se guarda la informacion sobre el error ocurrido en el fichero de errores
                 FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
@@ -79,7 +79,7 @@
 
             Catch
 
-                MsgBox("Se ha producido un error a la hora de guadrar la venta hasta este momento.", 0 + MsgBoxStyle.Information)
+                MsgBox("Se ha producido un error a la hora de guadrar la venta hasta este momento.", 0 + MsgBoxStyle.Information, "Guardar venta")
 
 
                 'Se guarda la informacion sobre el error ocurrido en el fichero de errores
@@ -115,7 +115,7 @@
                 MsgBox("El fichero ""VentasDiarias.txt"" no se encuentra por lo tanto no se ha podido guadrar el informe de cierre de caja" &
                    vbCrLf & "Por favor compruebe que el fichero esta en la carpeta de la aplicacion Colchoneria CUESTA. " & vbCrLf &
                             "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\VentasDiarias.txt",
-                            0 + MsgBoxStyle.Exclamation)
+                            0 + MsgBoxStyle.Exclamation, "Guardar informa de cierre de caja")
 
 
                 'Se guarda la informacion sobre el error ocurrido en el fichero de errores
@@ -128,7 +128,7 @@
 
             Catch
 
-                MsgBox("Se ha producido un error a la hora de guadrar el informe de cierre de caja.", 0 + MsgBoxStyle.Information)
+                MsgBox("Se ha producido un error a la hora de guadrar el informe de cierre de caja.", 0 + MsgBoxStyle.Information, "Guardar informa de cierre de caja")
 
 
                 'Se guarda la informacion sobre el error ocurrido en el fichero de errores
@@ -191,7 +191,7 @@
                 MsgBox("El fichero ""VentaActual.txt"" no se encuentra por lo tanto no se ha podido guadrar el valor de la venta hasta este momento" &
                    vbCrLf & "Por favor compruebe que el fichero esta en la carpeta de la aplicacion Colchoneria CUESTA. " & vbCrLf &
                             "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\VentaActual.txt",
-                            0 + MsgBoxStyle.Exclamation)
+                            0 + MsgBoxStyle.Exclamation, "Guardar venta")
 
                 'Se guarda la informacion sobre el error ocurrido en el fichero de errores
                 FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
@@ -210,7 +210,7 @@
 
             Catch
 
-                MsgBox("Se ha producido un error a la hora de guadrar la venta hasta este momento.", 0 + MsgBoxStyle.Information)
+                MsgBox("Se ha producido un error a la hora de guadrar la venta hasta este momento.", 0 + MsgBoxStyle.Information, "Guardar venta")
 
 
                 'Se guarda la informacion sobre el error ocurrido en el fichero de errores

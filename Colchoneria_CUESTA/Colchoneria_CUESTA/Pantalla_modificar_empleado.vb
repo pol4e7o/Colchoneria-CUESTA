@@ -18,6 +18,9 @@
         'Para activarlo todos los campos tienen que tener valores correctos
         boton_guardar.Enabled = False
 
+        'Por defecto el panel estara desactivado
+        panel_elementosEmpleado.Enabled = False
+
         'Se cargan todos los nombres de usuarios de los empleados en el comboBox_elegirEmpleado
         For i = 0 To empleados.Count - 1
 
@@ -332,6 +335,26 @@
 
         If opcion = MsgBoxResult.Yes Then
 
+            'Se le asignan los nuevos datos personales al empleado seleccionado
+            empleado.setNombreEmpleado(textBox_nombre.Text)
+            empleado.setApellidos(textBox_apellidos.Text)
+            empleado.setDireccion(textBox_direccion.Text)
+            empleado.setCodigoPostal(textBox_codigoPostal.Text)
+            empleado.setTelefono(textBox_telefono.Text)
+            empleado.setNombreUsuario(textBox_nombreUsuario.Text)
+            empleado.setContraseniaEmpleado(textBox_contrasenia.Text)
+
+            If comboBox_roles.SelectedIndex = 0 Then
+
+                empleado.setEsAdministrador(True)
+
+            Else
+
+                empleado.setEsAdministrador(False)
+
+            End If
+
+
             'Se comprueba si existe otro empleado con el mismo nombre de usuario pero diferente codigo
             For i = 0 To empleados.Count - 1
 
@@ -620,15 +643,16 @@
     Private Sub comboBox_roles_Leave(sender As Object, e As EventArgs) Handles comboBox_roles.Leave
 
         'Si se ha elegido un elemento se intenta activar el boton guardar
-        If comboBox_roles.SelectedIndex <> -1 Then
+        If comboBox_roles.SelectedIndex >= 0 Then
 
             'Si el que se esta modificando es el administrador principal (AdminCuesta)
             'no se permite que se le pase rol de administrador
-            If empleado.getCodigoEmpleado = 1 And comboBox_roles.SelectedText.Equals("Empleado") Then
+            If empleado.getCodigoEmpleado = 1 And comboBox_roles.SelectedItem.Equals("Empleado") Then
 
                 MsgBox("El administrador general no puede tener rol de empleado", 0 + MsgBoxStyle.Information, "Administrador")
 
-                comboBox_roles.Text = ""
+                'Se elecciona de nuevo el rol de  administrador
+                comboBox_roles.SelectedIndex = 0
 
             End If
 
@@ -669,7 +693,7 @@
 
     End Sub
 
-    Private Sub comboBox_elegirEmpleado_Leave(sender As Object, e As EventArgs) Handles comboBox_elegirEmpleado.Leave
+    Private Sub comboBox_elegirEmpleado_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboBox_elegirEmpleado.SelectedIndexChanged
 
         'Si se ha elegido un empleado de los de la lista se activa el boton guardar
         If comboBox_elegirEmpleado.SelectedIndex >= 0 Then
@@ -680,14 +704,14 @@
             For i = 0 To empleados.Count - 1
 
                 'Si los nombres de usuario son iguales se pasan todos los datos de este empleado al las cajas de texto
-                If comboBox_elegirEmpleado.SelectedText.Equals(empleados.Item(i).getNombreUsuario) Then
+                If comboBox_elegirEmpleado.SelectedItem.Equals(empleados.Item(i).getNombreUsuario) Then
 
                     empleado = empleados.Item(i)
 
                     textBox_nombre.Text = empleado.getNombreEmpleado
                     textBox_apellidos.Text = empleado.getApellidos
                     textBox_direccion.Text = empleado.getDireccion
-                    textBox_codigoPostal.Text = empleado.getTelefono
+                    textBox_codigoPostal.Text = empleado.getCodigoPostal
                     textBox_telefono.Text = empleado.getTelefono
                     textBox_nombreUsuario.Text = empleado.getTelefono
                     textBox_nombreUsuario.Text = empleado.getNombreUsuario
@@ -729,4 +753,7 @@
 
     End Sub
 
+    Private Sub comboBox_roles_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboBox_roles.SelectedIndexChanged
+
+    End Sub
 End Class

@@ -31,7 +31,7 @@ Public Class Pantalla_principal
             MsgBox("El fichero ""VentaActual.txt"" no se encuentra por lo tanto el valor de la venta actual es 0" &
                    vbCrLf & "Por favor compruebe que el fichero esta en la carpeta de la aplicacion Colchoneria CUESTA. " & vbCrLf &
                             "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\VentaActual.txt",
-                            0 + MsgBoxStyle.Exclamation)
+                            0 + MsgBoxStyle.Exclamation, "Fichero ")
 
             ElementosComunes.venta = 0
 
@@ -208,6 +208,14 @@ Public Class Pantalla_principal
 
     End Sub
 
+    Private Sub Pantalla_principal_MouseClick(sender As Object, e As MouseEventArgs) Handles Me.MouseClick
+
+        'Si se pulsa el boton izquierdo del raton se carga el siguente formulario
+        Pantalla_de_inicio.Show()
+        Me.Hide()
+
+    End Sub
+
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
 
         'La variable que va a almacenar la opcion elegida del message box
@@ -321,4 +329,6 @@ Public Class Pantalla_principal
         'Se llama al fichero que contiene el manual de usuario
 
     End Sub
+
+
 End Class

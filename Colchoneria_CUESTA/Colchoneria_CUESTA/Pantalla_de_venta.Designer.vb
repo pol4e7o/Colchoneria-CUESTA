@@ -166,20 +166,20 @@ Partial Class Pantalla_de_venta
         '
         Me.CerrarCajaToolStripMenuItem.Name = "CerrarCajaToolStripMenuItem"
         Me.CerrarCajaToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
-        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
         Me.CerrarCajaToolStripMenuItem.Text = "Cerrar caja"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(176, 6)
         '
         'VolverToolStripMenuItem
         '
         Me.VolverToolStripMenuItem.Name = "VolverToolStripMenuItem"
         Me.VolverToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
         Me.VolverToolStripMenuItem.Text = "Volver"
         '
         'SalirToolStripMenuItem
@@ -187,7 +187,7 @@ Partial Class Pantalla_de_venta
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
         Me.SalirToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'VentaToolStripMenuItem
@@ -1052,7 +1052,7 @@ Partial Class Pantalla_de_venta
         Me.label_euro.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_euro.AutoSize = True
         Me.label_euro.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_euro.Location = New System.Drawing.Point(917, 471)
+        Me.label_euro.Location = New System.Drawing.Point(927, 471)
         Me.label_euro.Name = "label_euro"
         Me.label_euro.Size = New System.Drawing.Size(18, 20)
         Me.label_euro.TabIndex = 44
@@ -1063,7 +1063,7 @@ Partial Class Pantalla_de_venta
         Me.label_euro8.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_euro8.AutoSize = True
         Me.label_euro8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_euro8.Location = New System.Drawing.Point(917, 547)
+        Me.label_euro8.Location = New System.Drawing.Point(927, 547)
         Me.label_euro8.Name = "label_euro8"
         Me.label_euro8.Size = New System.Drawing.Size(18, 20)
         Me.label_euro8.TabIndex = 45
@@ -1095,7 +1095,7 @@ Partial Class Pantalla_de_venta
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(917, 390)
+        Me.Label1.Location = New System.Drawing.Point(927, 390)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(18, 20)
         Me.Label1.TabIndex = 50
@@ -1127,7 +1127,7 @@ Partial Class Pantalla_de_venta
         Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(917, 431)
+        Me.Label5.Location = New System.Drawing.Point(927, 431)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(18, 20)
         Me.Label5.TabIndex = 53

@@ -242,7 +242,7 @@
     Private Sub GestionDeEmpleadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionDeEmpleadosToolStripMenuItem.Click
 
         Pantalla_admin_empleados.Show()
-        Me.Close()
+        Me.Hide()
 
     End Sub
 
@@ -250,7 +250,7 @@
     Private Sub GestiónDeVentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestiónDeVentasToolStripMenuItem.Click
 
         Gestion_de_ventas.Show()
-        Me.Close()
+        Me.Hide()
 
     End Sub
 

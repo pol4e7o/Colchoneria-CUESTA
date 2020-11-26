@@ -73,6 +73,8 @@ Public Class Pantalla_de_venta
 
             End Select
 
+            calcularTotalSubtotalIVA()
+
         Next i
 
     End Sub
