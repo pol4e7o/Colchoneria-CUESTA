@@ -4,8 +4,6 @@ Public Class Pantalla_principal
 
     Private Sub Pantalla_principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-
-
         'Se indica la fecha actual
         label_fecha.Text = "Fecha: " & DateString
 
@@ -30,8 +28,8 @@ Public Class Pantalla_principal
 
             MsgBox("El fichero ""VentaActual.txt"" no se encuentra por lo tanto el valor de la venta actual es 0" &
                    vbCrLf & "Por favor compruebe que el fichero esta en la carpeta de la aplicacion Colchoneria CUESTA. " & vbCrLf &
-                            "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\VentaActual.txt",
-                            0 + MsgBoxStyle.Exclamation)
+                    "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\VentaActual.txt",
+                    0 + MsgBoxStyle.Exclamation, "Obtener venta")
 
             ElementosComunes.venta = 0
 
@@ -39,13 +37,15 @@ Public Class Pantalla_principal
             FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
             errorRegistro.fecha = DateString
-            errorRegistro.informacionError = Now & " - El fichero ""VentaActual.txt"" no se ha encontrado"
+            errorRegistro.informacionError = Now & " - El fichero ""VentaActual.txt"" no se ha encontrado" &
+                vbCrLf & "Descripcion: " & Err.Description
 
             Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
         Catch
 
-            MsgBox("Se ha producido un error a la hora de obtener la venta hasta este momento. Su valor se establece a 0", 0 + MsgBoxStyle.Information)
+            MsgBox("Se ha producido un error a la hora de obtener la venta hasta este momento. Su valor se establece a 0",
+                   0 + MsgBoxStyle.Information, "Obtener venta")
 
             ElementosComunes.venta = 0
 
@@ -53,17 +53,15 @@ Public Class Pantalla_principal
             FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
             errorRegistro.fecha = DateString
-            errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de leer el fichero ""VentaActual.txt"""
+            errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de leer el fichero ""VentaActual.txt""" &
+                vbCrLf & "Descripcion: " & Err.Description
 
             Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
-        Finally
-
-            FileClose()
-
         End Try
 
-
+        'Se cierran todos los ficheros abiertos
+        FileClose()
 
         'Cuando se carga la aplicacion se comprueba si el valor de la variable leida del fichero
         'VentaActual es diferente a 0. Si lo es se le pasa a la variable cajaCerrada false, sino true
@@ -99,14 +97,16 @@ Public Class Pantalla_principal
 
             MsgBox("El fichero ""Empleados.txt"" que contiene los empleados no se encuentra. " & vbCrLf &
                             "Por favor compruebe que el fichero esta en la carpeta de la aplicacion Colchoneria CUESTA. " & vbCrLf &
-                            "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\Empleados.txt", 0 + MsgBoxStyle.Exclamation)
+                            "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\Empleados.txt",
+                             0 + MsgBoxStyle.Exclamation, "Leer empleados")
 
 
             'Se guarda la informacion sobre el error ocurrido en el fichero de errores
             FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
             errorRegistro.fecha = DateString
-            errorRegistro.informacionError = Now & " - El fichero ""Empleados.txt"" no se ha encontrado"
+            errorRegistro.informacionError = Now & " - El fichero ""Empleados.txt"" no se ha encontrado" &
+                vbCrLf & "Descripcion: " & Err.Description
 
             Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
@@ -114,23 +114,24 @@ Public Class Pantalla_principal
 
         Catch
 
-            MsgBox("Se ha producido un error a la hora de leer los empleados de la empresa. Por favor intente ejecutar el programa de nuevo", 0 + MsgBoxStyle.Information)
+            MsgBox("Se ha producido un error a la hora de leer los empleados de la empresa. Por favor intente ejecutar el programa de nuevo",
+                   0 + MsgBoxStyle.Information, "Leer empleados")
 
             'Se guarda la informacion sobre el error ocurrido en el fichero de errores
             FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
             errorRegistro.fecha = DateString
-            errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de leer el fichero ""Empleados.txt"""
+            errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de leer el fichero ""Empleados.txt""" &
+                vbCrLf & "Descripcion: " & Err.Description
 
             Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
             End
 
-        Finally
-
-            FileClose()
-
         End Try
+
+        'Se cierran todos los ficheros abiertos
+        FileClose()
 
 
 
@@ -157,14 +158,16 @@ Public Class Pantalla_principal
         Catch ex As FileNotFoundException
 
             MsgBox("El fichero ""Articulos.txt"" que contiene los articulos que ofrece la empresa no se encuentra. " & vbCrLf &
-                            "Por favor compruebe que el fichero esta en la carpeta de la aplicacion Colchoneria CUESTA. " & vbCrLf &
-                            "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\Articulos.txt", 0 + MsgBoxStyle.Exclamation)
+                   "Por favor compruebe que el fichero esta en la carpeta de la aplicacion Colchoneria CUESTA. " & vbCrLf &
+                   "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\Articulos.txt",
+                   0 + MsgBoxStyle.Exclamation, "Leer articulos")
 
             'Se guarda la informacion sobre el error ocurrido en el fichero de errores
             FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
             errorRegistro.fecha = DateString
-            errorRegistro.informacionError = Now & " - El fichero ""Articulos.txt"" no se ha encontrado"
+            errorRegistro.informacionError = Now & " - El fichero ""Articulos.txt"" no se ha encontrado" &
+                vbCrLf & "Descripcion: " & Err.Description
 
             Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
@@ -172,24 +175,24 @@ Public Class Pantalla_principal
 
         Catch
 
-            MsgBox("Se ha producido un error a la hora de leer los articulos de la empresa. Por favor intente ejecutar el programa de nuevo", 0 + MsgBoxStyle.Exclamation)
+            MsgBox("Se ha producido un error a la hora de leer los articulos de la empresa. Por favor intente ejecutar el programa de nuevo",
+                   0 + MsgBoxStyle.Exclamation, "Leer articulos")
 
             'Se guarda la informacion sobre el error ocurrido en el fichero de errores
             FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
             errorRegistro.fecha = DateString
-            errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de leer el fichero ""Articulos.txt"""
+            errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de leer el fichero ""Articulos.txt""" &
+                vbCrLf & "Descripcion: " & Err.Description
 
             Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
             End
 
-        Finally
-
-            FileClose()
-
         End Try
 
+        'Se cierran todos los ficheros abiertos
+        FileClose()
 
     End Sub
 
@@ -203,6 +206,14 @@ Public Class Pantalla_principal
     Private Sub Pantalla_principal_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Me.KeyPress
 
         'Si se pulsa un boton del teclado se carga el siguente formulario
+        Pantalla_de_inicio.Show()
+        Me.Hide()
+
+    End Sub
+
+    Private Sub Pantalla_principal_MouseClick(sender As Object, e As MouseEventArgs) Handles Me.MouseClick
+
+        'Si se hace un click con el raton se carga el siguente formulario
         Pantalla_de_inicio.Show()
         Me.Hide()
 
@@ -231,14 +242,15 @@ Public Class Pantalla_principal
 
                 MsgBox("El fichero ""VentaActual.txt"" no se encuentra por lo tanto no se ha podido guadrar el valor de la venta hasta este momento" &
                    vbCrLf & "Por favor compruebe que el fichero esta en la carpeta de la aplicacion Colchoneria CUESTA. " & vbCrLf &
-                            "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\VentaActual.txt",
-                            0 + MsgBoxStyle.Exclamation)
+                   "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\VentaActual.txt",
+                   0 + MsgBoxStyle.Exclamation, "Guardar venta actual")
 
                 'Se guarda la informacion sobre el error ocurrido en el fichero de errores
                 FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
                 errorRegistro.fecha = DateString
-                errorRegistro.informacionError = Now & " - El fichero ""VentaActual.txt"" no se ha encontrado"
+                errorRegistro.informacionError = Now & " - El fichero ""VentaActual.txt"" no se ha encontrado" &
+                vbCrLf & "Descripcion: " & Err.Description
 
                 Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
@@ -251,14 +263,16 @@ Public Class Pantalla_principal
 
             Catch
 
-                MsgBox("Se ha producido un error a la hora de guadrar la venta hasta este momento.", 0 + MsgBoxStyle.Information)
+                MsgBox("Se ha producido un error a la hora de guadrar la venta hasta este momento.",
+                       0 + MsgBoxStyle.Information, "Guadrar venta actual")
 
 
                 'Se guarda la informacion sobre el error ocurrido en el fichero de errores
                 FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
                 errorRegistro.fecha = DateString
-                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de escribir en el fichero ""VentaActual.txt"""
+                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de escribir en el fichero ""VentaActual.txt""" &
+                vbCrLf & "Descripcion: " & Err.Description
 
                 Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
@@ -269,11 +283,10 @@ Public Class Pantalla_principal
                     End
                 End If
 
-            Finally
-
-                FileClose()
-
             End Try
+
+            'Se cierran todos los ficheros abiertos
+            FileClose()
 
         End If
 
@@ -304,7 +317,8 @@ Public Class Pantalla_principal
         'Para hacer el cuerre de caja el usuario se tiene que identificar primero.
         'Por lo tanto si el usuario desea cerrar caja se debe llamar a la pantalla de inicio 
         'para poder identificarse 
-        opcion = MsgBox("Para poder realizar el cierre de caja primero tiene que identificarse. Desea ser dirigido a la pantalla de inicio de secion?", 4 + MsgBoxStyle.DefaultButton1 + MsgBoxStyle.Information, "Cierre de caja")
+        opcion = MsgBox("Para poder realizar el cierre de caja primero tiene que identificarse. Desea ser dirigido a la pantalla de inicio de secion?",
+                        4 + MsgBoxStyle.DefaultButton1 + MsgBoxStyle.Information, "Cierre de caja")
 
         If MsgBoxResult.Yes = opcion Then
 
@@ -321,4 +335,5 @@ Public Class Pantalla_principal
         'Se llama al fichero que contiene el manual de usuario
 
     End Sub
+
 End Class

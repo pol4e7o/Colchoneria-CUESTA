@@ -62,14 +62,15 @@
 
                 MsgBox("El fichero ""VentaActual.txt"" no se encuentra por lo tanto no se ha podido guadrar el valor de la venta hasta este momento" &
                    vbCrLf & "Por favor compruebe que el fichero esta en la carpeta de la aplicacion Colchoneria CUESTA. " & vbCrLf &
-                            "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\VentaActual.txt",
-                            0 + MsgBoxStyle.Exclamation)
+                   "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\VentaActual.txt",
+                   0 + MsgBoxStyle.Exclamation, "Guardar venta actual")
 
                 'Se guarda la informacion sobre el error ocurrido en el fichero de errores
                 FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
                 errorRegistro.fecha = DateString
-                errorRegistro.informacionError = Now & " - El fichero ""VentaActual.txt"" no se ha encontrado"
+                errorRegistro.informacionError = Now & " - El fichero ""VentaActual.txt"" no se ha encontrado" &
+                vbCrLf & "Descripcion: " & Err.Description
 
                 Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
@@ -82,14 +83,16 @@
 
             Catch
 
-                MsgBox("Se ha producido un error a la hora de guadrar la venta hasta este momento.", 0 + MsgBoxStyle.Information)
+                MsgBox("Se ha producido un error a la hora de guadrar la venta hasta este momento.",
+                       0 + MsgBoxStyle.Information, "Guadrar venta actual")
 
 
                 'Se guarda la informacion sobre el error ocurrido en el fichero de errores
                 FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
                 errorRegistro.fecha = DateString
-                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de escribir en el fichero ""VentaActual.txt"""
+                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de escribir en el fichero ""VentaActual.txt""" &
+                vbCrLf & "Descripcion: " & Err.Description
 
                 Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
@@ -100,11 +103,10 @@
                     End
                 End If
 
-            Finally
-
-                FileClose()
-
             End Try
+
+            'Se cierran todos los ficheros abiertos
+            FileClose()
 
         End If
 
@@ -122,9 +124,8 @@
     Private Sub VisualizarVentaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VisualizarVentaToolStripMenuItem.Click
 
         'Se visualiza la venta actual del dia mediante un message box
-        MsgBox("La venta actual del dia " & DateString & " a la hora " & TimeString & " es: 
-
-                    " & Math.Round(ElementosComunes.venta, 2) & "€", 0 + MsgBoxStyle.Information, "Visualizar venta")
+        MsgBox("La venta actual del dia " & DateString & " a la hora " & TimeString & " es: " &
+               Math.Round(ElementosComunes.venta, 2) & "€", 0 + MsgBoxStyle.Information, "Visualizar venta")
 
 
     End Sub
@@ -183,7 +184,8 @@
                 Else
 
                     'Se le indica al usuario que el nombre o la contraseña no son correctas sin espesificar cual es el erroneo
-                    MsgBox("El usuario o la contraseña no son correctos. Por favor intentelo de nuevo", 0 + MsgBoxStyle.Information)
+                    MsgBox("El usuario o la contraseña no son correctos. Por favor intentelo de nuevo",
+                           0 + MsgBoxStyle.Information, "Usuario o contraseña incorrecta")
 
                     'Se limpian las cajas de texto y se pasa el foco al nombre de usuario
                     textBox_usuario.Text = ""
@@ -195,7 +197,8 @@
             Else
 
                 'Se le indica al usuario que el nombre o la contraseña no son correctas sin espesificar cual es el erroneo
-                MsgBox("El usuario o la contraseña no son correctos. Por favor intentelo de nuevo", 0 + MsgBoxStyle.Information)
+                MsgBox("El usuario o la contraseña no son correctos. Por favor intentelo de nuevo",
+                           0 + MsgBoxStyle.Information, "Usuario o contraseña incorrecta")
 
                 'Se limpian las cajas de texto y se pasa el foco al nombre de usuario
                 textBox_usuario.Text = ""
@@ -232,4 +235,5 @@
         End If
 
     End Sub
+
 End Class
