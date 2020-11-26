@@ -181,6 +181,8 @@
 
                 Write(5, ElementosComunes.venta)
 
+                FileClose()
+
                 End
 
             Catch ex As System.IO.FileNotFoundException

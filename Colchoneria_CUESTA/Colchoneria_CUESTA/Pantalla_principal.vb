@@ -87,9 +87,15 @@ Public Class Pantalla_principal
                 'Se recoge el siguente empleado
                 FileGet(1, empleadoRegistro, )
 
-                'Utilizando el registro recogido se crea un objeto de tipo Empleado y se añade al arraylist
-                empleados.Add(New GestionComercial.Empleado(empleadoRegistro.codigoEmpleado, empleadoRegistro.nombre, empleadoRegistro.apellidos, empleadoRegistro.direccion, empleadoRegistro.codigoPostal,
+                'Solo se añaden los que tienen nombre asignado (si se ha eliminado no tendra)
+                If validacion.validarNombres(empleadoRegistro.nombreUsuario) Then
+
+                    'Utilizando el registro recogido se crea un objeto de tipo Empleado y se añade al arraylist
+                    empleados.Add(New GestionComercial.Empleado(empleadoRegistro.codigoEmpleado, empleadoRegistro.nombre, empleadoRegistro.apellidos, empleadoRegistro.direccion, empleadoRegistro.codigoPostal,
                                 empleadoRegistro.telefono, empleadoRegistro.nombreUsuario, empleadoRegistro.contrasenia, empleadoRegistro.esAdministrador))
+
+
+                End If
 
             End While
 
@@ -110,6 +116,8 @@ Public Class Pantalla_principal
 
             Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
+            FileClose()
+
             End
 
         Catch
@@ -125,6 +133,8 @@ Public Class Pantalla_principal
                 vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
 
             Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+
+            FileClose()
 
             End
 
@@ -147,11 +157,16 @@ Public Class Pantalla_principal
                 'Se recoge el siguente articulo
                 FileGet(2, articuloRegistro, )
 
-                'Utilizando el registro recogido se crea un objeto de tipo Articulo y se añade al arraylist
-                articulos.Add(New GestionComercial.Articulo(articuloRegistro.codigoArticulo, articuloRegistro.nombre, articuloRegistro.descripcion,
+                'Solo se añaden los que tienen nombre asignado (si se ha eliminado no tendra)
+                If New GestionComercial.Articulo().posiblesCategoriasArticulo.Contains(articuloRegistro.categoria.Replace(" ", "")) Then
+
+                    'Utilizando el registro recogido se crea un objeto de tipo Articulo y se añade al arraylist
+                    articulos.Add(New GestionComercial.Articulo(articuloRegistro.codigoArticulo, articuloRegistro.nombre, articuloRegistro.descripcion,
                                 articuloRegistro.categoria))
 
-                articulos.Item(articulos.Count - 1).setTamaniosPrecios(articuloRegistro.tamanios.ToList, articuloRegistro.precios.ToList)
+                    articulos.Item(articulos.Count - 1).setTamaniosPrecios(articuloRegistro.tamanios.ToList, articuloRegistro.precios.ToList)
+
+                End If
 
             End While
 
@@ -171,6 +186,8 @@ Public Class Pantalla_principal
 
             Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
+            FileClose()
+
             End
 
         Catch
@@ -186,6 +203,8 @@ Public Class Pantalla_principal
                 vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
 
             Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+
+            FileClose()
 
             End
 
@@ -236,6 +255,8 @@ Public Class Pantalla_principal
 
                 Write(5, ElementosComunes.venta)
 
+                FileClose()
+
                 End
 
             Catch ex As System.IO.FileNotFoundException
@@ -258,6 +279,9 @@ Public Class Pantalla_principal
                 opcion = MsgBox("Desea salir de la aplicacion?", 4 + MsgBoxStyle.Question + MsgBoxStyle.DefaultButton2, "Salir")
 
                 If MsgBoxResult.Yes = opcion Then
+
+                    FileClose()
+
                     End
                 End If
 
@@ -280,6 +304,9 @@ Public Class Pantalla_principal
                 opcion = MsgBox("Desea salir de la aplicacion?", 4 + MsgBoxStyle.Question + MsgBoxStyle.DefaultButton2, "Salir")
 
                 If MsgBoxResult.Yes = opcion Then
+
+                    FileClose()
+
                     End
                 End If
 

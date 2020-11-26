@@ -23,7 +23,7 @@
         <VBFixedString(30)> Dim apellidos As String
         <VBFixedString(40)> Dim direccion As String
         <VBFixedString(5)> Dim codigoPostal As String
-        <VBFixedString(15)> Dim telefono As String
+        <VBFixedString(20)> Dim telefono As String
         <VBFixedString(10)> Dim nombreUsuario As String
         Dim contrasenia As Integer
         Dim esAdministrador As Boolean

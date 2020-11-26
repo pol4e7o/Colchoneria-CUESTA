@@ -77,6 +77,8 @@ Public Class Pantalla_de_venta
 
             End Select
 
+            calcularTotalSubtotalIVA()
+
         Next i
 
     End Sub
@@ -267,6 +269,8 @@ Public Class Pantalla_de_venta
                     FileOpen(5, "VentaActual.txt", OpenMode.Output)
 
                     Write(5, ElementosComunes.venta)
+
+                    FileClose()
 
                     End
 
@@ -2021,7 +2025,7 @@ Public Class Pantalla_de_venta
     End Sub
 
     'TEXTBOX IMPORTE
-    Private Sub textBox_importe_Leave(sender As Object, e As EventArgs) Handles textBox_importe.Leave
+    Private Sub textBox_importe_Leave(sender As Object, e As EventArgs) 
 
         'Si el texto introducido en la caja de texto es un numero mayor a 0
         If validacion.numeroMayorACero(textBox_importe.Text) Then

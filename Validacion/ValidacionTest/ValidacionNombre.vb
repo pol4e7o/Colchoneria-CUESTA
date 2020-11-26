@@ -121,7 +121,7 @@ Imports Validacion.Validacion
         Dim validacion As New Validacion.Validacion()
 
         'Se comprueba pasandole al metodo un nombre incorrecto
-        resultadoReal = validacion.validarNombres("Anna4 Martinez")
+        resultadoReal = validacion.validarNombres("Anna Martinez  444")
 
         'Se comprueban el resultado esperado (false) con el resultado real
         'Si el metodo funciona correctamente el test se ejecutará sin errores

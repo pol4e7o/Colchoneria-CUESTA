@@ -159,6 +159,8 @@
 
                 Write(5, ElementosComunes.venta)
 
+                FileClose()
+
                 End
 
             Catch ex As System.IO.FileNotFoundException
@@ -181,7 +183,10 @@
                 opcion = MsgBox("Desea salir de la aplicacion?", 4 + MsgBoxStyle.Question + MsgBoxStyle.DefaultButton2, "Salir")
 
                 If MsgBoxResult.Yes = opcion Then
+
+                    FileClose()
                     End
+
                 End If
 
             Catch
@@ -203,7 +208,10 @@
                 opcion = MsgBox("Desea salir de la aplicacion?", 4 + MsgBoxStyle.Question + MsgBoxStyle.DefaultButton2, "Salir")
 
                 If MsgBoxResult.Yes = opcion Then
+
+                    FileClose()
                     End
+
                 End If
 
             End Try
