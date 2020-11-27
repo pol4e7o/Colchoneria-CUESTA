@@ -392,6 +392,7 @@
                 'Se vacia la caja de texto dentro del combobox y se deja sin elemento seleccionado
                 ComboBox_tamanio.Text = ""
                 ComboBox_tamanio.SelectedIndex = -1
+                ComboBox_tamanio.Focus()
 
             Else
 
@@ -403,6 +404,11 @@
 
                         MsgBox("El tamaño introducido no es correcto. El tamaño tiene que ser un numero mayor a 0",
                                 0 + MsgBoxStyle.Information, "Tamaño incorrecto")
+
+                        'Se vacia la caja de texto dentro del combobox y se deja sin elemento seleccionado
+                        ComboBox_tamanio.Text = ""
+                        ComboBox_tamanio.SelectedIndex = -1
+                        ComboBox_tamanio.Focus()
 
                     Else
 
@@ -432,9 +438,10 @@
 
                     ListBox_tamanioprecios.Items.Add(precioTamanio)
 
-                    'Se vacian los elementos
+                    'Se vacian los elementos y se pasa el foco al precio
                     TextBox_precio.Text = ""
                     ComboBox_tamanio.SelectedIndex = -1
+                    TextBox_precio.Focus()
 
                     'Se desactiva el boton añadir
                     Button_aniadir.Enabled = False
@@ -632,17 +639,14 @@
     End Sub
 
     'PRECIO VÁLIDO
-    Private Sub TextBox_precio_TextChanged(sender As Object, e As EventArgs) Handles TextBox_precio.TextChanged
+    Private Sub TextBox_precio_Leave(sender As Object, e As EventArgs) Handles TextBox_precio.Leave
 
         'Si los datos introducidos en el campo son correctos se comprueba si se puede activar el boton guardar
         If validacion.esNumero(TextBox_precio.Text) Then
 
             'Para activar el boton las dos contraseñas tienen que coincidir
-            If validacion.numeroMayorACero(TextBox_precio.Text) Then
+            If validacion.numeroMayorACero(TextBox_precio.Text) = False Then
 
-                'Si todos los campos tienen los caracteres minimos el boton guardar se activa
-                activarBotonAniadir()
-            Else
                 MsgBox("Por favor introduzca de precio, que sea superior a 0€.", 0 + MsgBoxStyle.Information, "Precio incorrecto")
                 TextBox_precio.Focus()
 
@@ -715,4 +719,7 @@
 
     End Sub
 
+    Private Sub TextBox_precio_TextChanged(sender As Object, e As EventArgs) Handles TextBox_precio.TextChanged
+        activarBotonAniadir()
+    End Sub
 End Class

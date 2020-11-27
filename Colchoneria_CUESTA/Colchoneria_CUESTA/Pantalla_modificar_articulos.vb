@@ -245,6 +245,7 @@
 
     'SALIR
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
+
         'La variable que va a almacenar la opcion elegida del message box
         Dim opcion As Integer
 
@@ -556,6 +557,7 @@
                 'Se vacia la caja de texto dentro del combobox y se deja sin elemento seleccionado
                 ComboBox_tamanio.Text = ""
                 ComboBox_tamanio.SelectedIndex = -1
+                ComboBox_tamanio.Focus()
 
             Else
 
@@ -567,6 +569,11 @@
 
                         MsgBox("El tamaño introducido no es correcto. El tamaño tiene que ser un numero mayor a 0",
                                 0 + MsgBoxStyle.Information, "Tamaño incorrecto")
+
+                        'Se vacia la caja de texto dentro del combobox y se deja sin elemento seleccionado
+                        ComboBox_tamanio.Text = ""
+                        ComboBox_tamanio.SelectedIndex = -1
+                        ComboBox_tamanio.Focus()
 
                     Else
 
@@ -596,8 +603,10 @@
 
                     ListBox_tamaniosprecios.Items.Add(precioTamanio)
 
-                    'Se vacian los elementos
-                    ComboBox_tamanio.Text = ""
+                    'Se vacian los elementos y se pasa el foco al precio
+                    TextBox_precio.Text = ""
+                    ComboBox_tamanio.SelectedIndex = -1
+                    TextBox_precio.Focus()
 
                     'Se desactiva el boton añadir
                     Button_aniadir.Enabled = False
@@ -627,6 +636,7 @@
 
     'BOTON MODIFICAR
     Private Sub Button_modificar_Click_1(sender As Object, e As EventArgs) Handles Button_modificar.Click
+
         'La opcion elegida por el usuario a la hora de decidir si desea guardar el articulo modificado
         Dim opcion As Integer
 
@@ -640,7 +650,7 @@
             'se combrueba si hay otro articulo con el mismo nombre
             For i = 0 To articulos.Count - 1
 
-                If articulos.Item(i).getNombreArticulo.Equals(TextBox_nombre.Text) Then
+                If articulos.Item(i).getNombreArticulo.Equals(TextBox_nombre.Text) And articulo.getCodigoArticulo <> articulos.Item(i).getCodigoArticulo Then
 
                     nombreRepetido = True
 
@@ -805,7 +815,7 @@
         Button_aniadir.Enabled = False
 
         'Se comprueba que todos los campos necesarios están rellenos
-        If (ComboBox_tamanio.SelectedItem >= 0 Or ComboBox_tamanio.Text.Equals("")) And TextBox_precio.Text.Length <> 0 Then
+        If (ComboBox_tamanio.SelectedItem >= 0 Or ComboBox_tamanio.Text.Equals("") = False) And TextBox_precio.Text.Length <> 0 Then
             Button_aniadir.Enabled = True
         End If
     End Sub
@@ -833,7 +843,7 @@
     End Sub
 
 
-    Private Sub TextBox_precio_TextChanged(sender As Object, e As EventArgs) Handles TextBox_precio.Leave
+    Private Sub TextBox_precio_Leave(sender As Object, e As EventArgs) Handles TextBox_precio.Leave
         'Si los datos introducidos en el campo son correctos se comprueba si se puede activar el boton añadir
         If validacion.esNumero(TextBox_precio.Text) Then
 
@@ -886,7 +896,7 @@
 
 
 
-    Private Sub TextBox_precio_TextChanged_1(sender As Object, e As EventArgs) Handles TextBox_precio.TextChanged
+    Private Sub TextBox_precio_TextChanged(sender As Object, e As EventArgs) Handles TextBox_precio.TextChanged
 
         activarBotonAniadir()
 
