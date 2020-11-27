@@ -49,17 +49,25 @@ Partial Class Pantalla_eliminar_articulo
         Me.ColchoneriaCUESTAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManualDeUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.TextBox_descripcion = New System.Windows.Forms.TextBox()
+        Me.TextBox_nombre = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.ListBox_tamaniosprecios = New System.Windows.Forms.ListBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TextBox_categoria = New System.Windows.Forms.TextBox()
+        Me.Panel_datosArticulo = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         Me.MenuStrip.SuspendLayout()
-        Me.Panel2.SuspendLayout()
+        Me.Panel_datosArticulo.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(13, 13)
+        Me.Label1.Location = New System.Drawing.Point(114, 124)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(85, 13)
         Me.Label1.TabIndex = 0
@@ -68,14 +76,14 @@ Partial Class Pantalla_eliminar_articulo
         'ComboBox_eliminar
         '
         Me.ComboBox_eliminar.FormattingEnabled = True
-        Me.ComboBox_eliminar.Location = New System.Drawing.Point(16, 45)
+        Me.ComboBox_eliminar.Location = New System.Drawing.Point(232, 121)
         Me.ComboBox_eliminar.Name = "ComboBox_eliminar"
         Me.ComboBox_eliminar.Size = New System.Drawing.Size(121, 21)
         Me.ComboBox_eliminar.TabIndex = 1
         '
         'Button_eliminar
         '
-        Me.Button_eliminar.Location = New System.Drawing.Point(176, 45)
+        Me.Button_eliminar.Location = New System.Drawing.Point(76, 424)
         Me.Button_eliminar.Name = "Button_eliminar"
         Me.Button_eliminar.Size = New System.Drawing.Size(75, 23)
         Me.Button_eliminar.TabIndex = 2
@@ -84,7 +92,7 @@ Partial Class Pantalla_eliminar_articulo
         '
         'Button_cancelar
         '
-        Me.Button_cancelar.Location = New System.Drawing.Point(270, 269)
+        Me.Button_cancelar.Location = New System.Drawing.Point(192, 424)
         Me.Button_cancelar.Name = "Button_cancelar"
         Me.Button_cancelar.Size = New System.Drawing.Size(75, 23)
         Me.Button_cancelar.TabIndex = 3
@@ -104,7 +112,7 @@ Partial Class Pantalla_eliminar_articulo
         Me.Panel1.Controls.Add(Me.label_ayuda)
         Me.Panel1.Controls.Add(Me.label_fecha)
         Me.Panel1.Controls.Add(Me.label_hora)
-        Me.Panel1.Location = New System.Drawing.Point(1, 406)
+        Me.Panel1.Location = New System.Drawing.Point(1, 464)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(882, 42)
         Me.Panel1.TabIndex = 28
@@ -219,7 +227,7 @@ Partial Class Pantalla_eliminar_articulo
         Me.GestionDeEmpleadosToolStripMenuItem.Name = "GestionDeEmpleadosToolStripMenuItem"
         Me.GestionDeEmpleadosToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.E), System.Windows.Forms.Keys)
-        Me.GestionDeEmpleadosToolStripMenuItem.Size = New System.Drawing.Size(277, 22)
+        Me.GestionDeEmpleadosToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
         Me.GestionDeEmpleadosToolStripMenuItem.Text = "Gestion de empleados"
         '
         'GestionDeArticulosToolStripMenuItem
@@ -227,7 +235,7 @@ Partial Class Pantalla_eliminar_articulo
         Me.GestionDeArticulosToolStripMenuItem.Name = "GestionDeArticulosToolStripMenuItem"
         Me.GestionDeArticulosToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.A), System.Windows.Forms.Keys)
-        Me.GestionDeArticulosToolStripMenuItem.Size = New System.Drawing.Size(277, 22)
+        Me.GestionDeArticulosToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
         Me.GestionDeArticulosToolStripMenuItem.Text = "Gestion de articulos"
         '
         'GestionDeVentasToolStripMenuItem
@@ -235,7 +243,7 @@ Partial Class Pantalla_eliminar_articulo
         Me.GestionDeVentasToolStripMenuItem.Name = "GestionDeVentasToolStripMenuItem"
         Me.GestionDeVentasToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.GestionDeVentasToolStripMenuItem.Size = New System.Drawing.Size(277, 22)
+        Me.GestionDeVentasToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
         Me.GestionDeVentasToolStripMenuItem.Text = "Gestion de ventas"
         '
         'AcercaDeToolStripMenuItem
@@ -266,49 +274,128 @@ Partial Class Pantalla_eliminar_articulo
         Me.ManualDeUsuarioToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
         Me.ManualDeUsuarioToolStripMenuItem.Text = "Manual de usuario"
         '
-        'Panel2
-        '
-        Me.Panel2.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Controls.Add(Me.ComboBox_eliminar)
-        Me.Panel2.Controls.Add(Me.Button_eliminar)
-        Me.Panel2.Controls.Add(Me.Button_cancelar)
-        Me.Panel2.Location = New System.Drawing.Point(234, 63)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(359, 307)
-        Me.Panel2.TabIndex = 30
-        '
         'Label2
         '
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(229, 35)
+        Me.Label2.Location = New System.Drawing.Point(273, 64)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(284, 25)
         Me.Label2.TabIndex = 31
         Me.Label2.Text = "Eliminación de un artículo"
         '
+        'TextBox_descripcion
+        '
+        Me.TextBox_descripcion.Location = New System.Drawing.Point(154, 80)
+        Me.TextBox_descripcion.MaxLength = 40
+        Me.TextBox_descripcion.Name = "TextBox_descripcion"
+        Me.TextBox_descripcion.ReadOnly = True
+        Me.TextBox_descripcion.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox_descripcion.TabIndex = 30
+        '
+        'TextBox_nombre
+        '
+        Me.TextBox_nombre.Location = New System.Drawing.Point(154, 36)
+        Me.TextBox_nombre.MaxLength = 20
+        Me.TextBox_nombre.Name = "TextBox_nombre"
+        Me.TextBox_nombre.ReadOnly = True
+        Me.TextBox_nombre.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox_nombre.TabIndex = 27
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(289, 43)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(103, 13)
+        Me.Label6.TabIndex = 32
+        Me.Label6.Text = "Tamaños y precios*:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(36, 43)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(97, 13)
+        Me.Label3.TabIndex = 28
+        Me.Label3.Text = "Nombre completo*:"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(36, 87)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(66, 13)
+        Me.Label4.TabIndex = 29
+        Me.Label4.Text = "Descripción:"
+        '
+        'ListBox_tamaniosprecios
+        '
+        Me.ListBox_tamaniosprecios.FormattingEnabled = True
+        Me.ListBox_tamaniosprecios.Location = New System.Drawing.Point(436, 36)
+        Me.ListBox_tamaniosprecios.Name = "ListBox_tamaniosprecios"
+        Me.ListBox_tamaniosprecios.Size = New System.Drawing.Size(200, 186)
+        Me.ListBox_tamaniosprecios.TabIndex = 33
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(36, 128)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(61, 13)
+        Me.Label5.TabIndex = 31
+        Me.Label5.Text = "Categoría*:"
+        '
+        'TextBox_categoria
+        '
+        Me.TextBox_categoria.Location = New System.Drawing.Point(154, 125)
+        Me.TextBox_categoria.MaxLength = 40
+        Me.TextBox_categoria.Name = "TextBox_categoria"
+        Me.TextBox_categoria.ReadOnly = True
+        Me.TextBox_categoria.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox_categoria.TabIndex = 34
+        '
+        'Panel_datosArticulo
+        '
+        Me.Panel_datosArticulo.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Panel_datosArticulo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel_datosArticulo.Controls.Add(Me.TextBox_categoria)
+        Me.Panel_datosArticulo.Controls.Add(Me.Label5)
+        Me.Panel_datosArticulo.Controls.Add(Me.ListBox_tamaniosprecios)
+        Me.Panel_datosArticulo.Controls.Add(Me.Label4)
+        Me.Panel_datosArticulo.Controls.Add(Me.Label3)
+        Me.Panel_datosArticulo.Controls.Add(Me.Label6)
+        Me.Panel_datosArticulo.Controls.Add(Me.TextBox_nombre)
+        Me.Panel_datosArticulo.Controls.Add(Me.TextBox_descripcion)
+        Me.Panel_datosArticulo.Location = New System.Drawing.Point(76, 152)
+        Me.Panel_datosArticulo.Name = "Panel_datosArticulo"
+        Me.Panel_datosArticulo.Size = New System.Drawing.Size(694, 249)
+        Me.Panel_datosArticulo.TabIndex = 30
+        '
         'Pantalla_eliminar_articulo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(883, 450)
+        Me.ClientSize = New System.Drawing.Size(883, 508)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.Panel_datosArticulo)
+        Me.Controls.Add(Me.ComboBox_eliminar)
         Me.Controls.Add(Me.MenuStrip)
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.Button_eliminar)
+        Me.Controls.Add(Me.Button_cancelar)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Pantalla_eliminar_articulo"
-        Me.Text = "Eliminar artículos - Colchonería CUESTA"
+        Me.Text = "Colchoneria CUESTA - Gesion de articulos - Eliminar artículos"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.MenuStrip.ResumeLayout(False)
         Me.MenuStrip.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
+        Me.Panel_datosArticulo.ResumeLayout(False)
+        Me.Panel_datosArticulo.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -339,6 +426,14 @@ Partial Class Pantalla_eliminar_articulo
     Friend WithEvents ColchoneriaCUESTAToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AyudaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ManualDeUsuarioToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents Panel2 As Panel
     Friend WithEvents Label2 As Label
+    Friend WithEvents TextBox_descripcion As TextBox
+    Friend WithEvents TextBox_nombre As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents ListBox_tamaniosprecios As ListBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents TextBox_categoria As TextBox
+    Friend WithEvents Panel_datosArticulo As Panel
 End Class
