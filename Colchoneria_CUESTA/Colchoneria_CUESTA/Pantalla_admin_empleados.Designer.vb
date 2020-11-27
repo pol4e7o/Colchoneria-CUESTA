@@ -233,7 +233,7 @@ Partial Class Pantalla_admin_empleados
         Me.boton_alta.Name = "boton_alta"
         Me.boton_alta.Size = New System.Drawing.Size(134, 31)
         Me.boton_alta.TabIndex = 9
-        Me.boton_alta.Text = "Alta"
+        Me.boton_alta.Text = "Añadir"
         Me.boton_alta.UseVisualStyleBackColor = True
         '
         'boton_modificacion
@@ -244,7 +244,7 @@ Partial Class Pantalla_admin_empleados
         Me.boton_modificacion.Name = "boton_modificacion"
         Me.boton_modificacion.Size = New System.Drawing.Size(134, 31)
         Me.boton_modificacion.TabIndex = 10
-        Me.boton_modificacion.Text = "Modificacion"
+        Me.boton_modificacion.Text = "Modificar"
         Me.boton_modificacion.UseVisualStyleBackColor = True
         '
         'boton_baja
@@ -255,7 +255,7 @@ Partial Class Pantalla_admin_empleados
         Me.boton_baja.Name = "boton_baja"
         Me.boton_baja.Size = New System.Drawing.Size(134, 31)
         Me.boton_baja.TabIndex = 11
-        Me.boton_baja.Text = "Baja"
+        Me.boton_baja.Text = "Eliminar"
         Me.boton_baja.UseVisualStyleBackColor = True
         '
         'label_Gestion_empleados
