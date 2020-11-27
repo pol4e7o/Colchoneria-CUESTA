@@ -447,7 +447,7 @@
         Button_eliminar.Enabled = False
 
         'Se comprueba que todos los campos necesarios están rellenos
-        If (ComboBox_eliminar.SelectedItem > 0) Then
+        If (ComboBox_eliminar.SelectedIndex >= 0) Then
             Button_eliminar.Enabled = True
         End If
     End Sub

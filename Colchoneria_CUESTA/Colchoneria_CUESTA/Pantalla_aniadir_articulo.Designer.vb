@@ -35,7 +35,7 @@ Partial Class Pantalla_aniadir_articulo
         Me.Button_aniadir = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.ComboBox_categorias = New System.Windows.Forms.ComboBox()
-        Me.ListBox_tamanioprecios = New System.Windows.Forms.ListBox()
+        Me.ListBox_tamanios = New System.Windows.Forms.ListBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Button_eliminar = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -66,6 +66,7 @@ Partial Class Pantalla_aniadir_articulo
         Me.ColchoneriaCUESTAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManualDeUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListBox_precios = New System.Windows.Forms.ListBox()
         Me.Panel1.SuspendLayout()
         Me.Panel_precioYTamanio.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -87,10 +88,11 @@ Partial Class Pantalla_aniadir_articulo
         '
         Me.Panel1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel1.Controls.Add(Me.ListBox_precios)
         Me.Panel1.Controls.Add(Me.Label_camposObligatorios)
         Me.Panel1.Controls.Add(Me.Panel_precioYTamanio)
         Me.Panel1.Controls.Add(Me.ComboBox_categorias)
-        Me.Panel1.Controls.Add(Me.ListBox_tamanioprecios)
+        Me.Panel1.Controls.Add(Me.ListBox_tamanios)
         Me.Panel1.Controls.Add(Me.Label8)
         Me.Panel1.Controls.Add(Me.Button_eliminar)
         Me.Panel1.Controls.Add(Me.Label5)
@@ -189,15 +191,15 @@ Partial Class Pantalla_aniadir_articulo
         Me.ComboBox_categorias.Size = New System.Drawing.Size(100, 21)
         Me.ComboBox_categorias.TabIndex = 19
         '
-        'ListBox_tamanioprecios
+        'ListBox_tamanios
         '
-        Me.ListBox_tamanioprecios.FormattingEnabled = True
-        Me.ListBox_tamanioprecios.Location = New System.Drawing.Point(415, 61)
-        Me.ListBox_tamanioprecios.Margin = New System.Windows.Forms.Padding(2)
-        Me.ListBox_tamanioprecios.Name = "ListBox_tamanioprecios"
-        Me.ListBox_tamanioprecios.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
-        Me.ListBox_tamanioprecios.Size = New System.Drawing.Size(192, 238)
-        Me.ListBox_tamanioprecios.TabIndex = 18
+        Me.ListBox_tamanios.FormattingEnabled = True
+        Me.ListBox_tamanios.Location = New System.Drawing.Point(415, 61)
+        Me.ListBox_tamanios.Margin = New System.Windows.Forms.Padding(2)
+        Me.ListBox_tamanios.Name = "ListBox_tamanios"
+        Me.ListBox_tamanios.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
+        Me.ListBox_tamanios.Size = New System.Drawing.Size(93, 238)
+        Me.ListBox_tamanios.TabIndex = 18
         '
         'Label8
         '
@@ -364,20 +366,20 @@ Partial Class Pantalla_aniadir_articulo
         '
         Me.CerrarCajaToolStripMenuItem.Name = "CerrarCajaToolStripMenuItem"
         Me.CerrarCajaToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
-        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
         Me.CerrarCajaToolStripMenuItem.Text = "Cerrar caja"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(167, 6)
         '
         'VolverToolStripMenuItem
         '
         Me.VolverToolStripMenuItem.Name = "VolverToolStripMenuItem"
         Me.VolverToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
             Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
         Me.VolverToolStripMenuItem.Text = "Volver"
         '
         'SalirToolStripMenuItem
@@ -385,7 +387,7 @@ Partial Class Pantalla_aniadir_articulo
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
         Me.SalirToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
             Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'VentaToolStripMenuItem
@@ -461,6 +463,16 @@ Partial Class Pantalla_aniadir_articulo
         Me.ManualDeUsuarioToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
         Me.ManualDeUsuarioToolStripMenuItem.Text = "Manual de usuario"
         '
+        'ListBox_precios
+        '
+        Me.ListBox_precios.FormattingEnabled = True
+        Me.ListBox_precios.Location = New System.Drawing.Point(505, 61)
+        Me.ListBox_precios.Margin = New System.Windows.Forms.Padding(2)
+        Me.ListBox_precios.Name = "ListBox_precios"
+        Me.ListBox_precios.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
+        Me.ListBox_precios.Size = New System.Drawing.Size(86, 238)
+        Me.ListBox_precios.TabIndex = 27
+        '
         'Pantalla_aniadir_articulo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -500,7 +512,7 @@ Partial Class Pantalla_aniadir_articulo
     Friend WithEvents Button_guardar As Button
     Friend WithEvents Label8 As Label
     Friend WithEvents Button_eliminar As Button
-    Friend WithEvents ListBox_tamanioprecios As ListBox
+    Friend WithEvents ListBox_tamanios As ListBox
     Friend WithEvents ComboBox_categorias As ComboBox
     Friend WithEvents TimerHoraReal As Timer
     Friend WithEvents Panel2 As Panel
@@ -531,4 +543,5 @@ Partial Class Pantalla_aniadir_articulo
     Friend WithEvents Label7 As Label
     Friend WithEvents Button_aniadir As Button
     Friend WithEvents Label6 As Label
+    Friend WithEvents ListBox_precios As ListBox
 End Class
