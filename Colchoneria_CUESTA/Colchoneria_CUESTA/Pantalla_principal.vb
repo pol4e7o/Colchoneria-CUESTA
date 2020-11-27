@@ -14,6 +14,11 @@ Public Class Pantalla_principal
         'antes de esta
         VolverToolStripMenuItem.Visible = False
 
+        'Se utiliza para leer los tamaños de los articulos
+        Dim tamanios As New List(Of Integer)
+
+        'Se utiliza para leer los precios de los articulos
+        Dim precios As New List(Of Double)
 
         'LEER VENTA ACTUAL
         Try
@@ -33,14 +38,25 @@ Public Class Pantalla_principal
 
             ElementosComunes.venta = 0
 
-            'Se guarda la informacion sobre el error ocurrido en el fichero de errores
-            FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+            Try
 
-            errorRegistro.fecha = DateString
-            errorRegistro.informacionError = Now & " - El fichero ""VentaActual.txt"" no se ha encontrado" &
+                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - El fichero ""VentaActual.txt"" no se ha encontrado" &
                 vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
 
-            Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+
+
+            Catch ex1 As Exception
+
+                MsgBox("El error ocurrido no se ha podido grabar en el fichero de errores",
+                            0 + MsgBoxStyle.Information, "Error no grabado")
+
+            End Try
+
 
         Catch
 
@@ -49,14 +65,23 @@ Public Class Pantalla_principal
 
             ElementosComunes.venta = 0
 
-            'Se guarda la informacion sobre el error ocurrido en el fichero de errores
-            FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+            Try
 
-            errorRegistro.fecha = DateString
-            errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de leer el fichero ""VentaActual.txt""" &
-                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
+                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
-            Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de leer el fichero ""VentaActual.txt""" &
+                    vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
+
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+
+            Catch ex1 As Exception
+
+                MsgBox("El error ocurrido no se ha podido grabar en el fichero de errores",
+                            0 + MsgBoxStyle.Information, "Error no grabado")
+
+            End Try
 
         End Try
 
@@ -78,26 +103,36 @@ Public Class Pantalla_principal
         'LEER EMPLEADOS
         Try
 
-            'Se cargan todos los empleados del fichero de empleados
-            FileOpen(1, "Empleados.txt", OpenMode.Random, OpenAccess.Read, , Len(empleadoRegistro))
+            If File.Exists("Empleados.txt") Then
 
-            'Se lee todo su contenido hasta que no se llegue al final del fichero
-            While Not EOF(1)
+                'Se cargan todos los empleados del fichero de empleados
+                FileOpen(1, "Empleados.txt", OpenMode.Random, OpenAccess.Read, , Len(empleadoRegistro))
 
-                'Se recoge el siguente empleado
-                FileGet(1, empleadoRegistro, )
+                'Se lee todo su contenido hasta que no se llegue al final del fichero
+                While Not EOF(1)
 
-                'Solo se añaden los que tienen nombre asignado (si se ha eliminado no tendra)
-                If validacion.validarNombres(empleadoRegistro.nombreUsuario) Then
+                    'Se recoge el siguente empleado
+                    FileGet(1, empleadoRegistro, )
 
-                    'Utilizando el registro recogido se crea un objeto de tipo Empleado y se añade al arraylist
-                    empleados.Add(New GestionComercial.Empleado(empleadoRegistro.codigoEmpleado, empleadoRegistro.nombre, empleadoRegistro.apellidos, empleadoRegistro.direccion, empleadoRegistro.codigoPostal,
-                                empleadoRegistro.telefono, empleadoRegistro.nombreUsuario, empleadoRegistro.contrasenia, empleadoRegistro.esAdministrador))
+                    'Solo se añaden los que tienen nombre asignado (si se ha eliminado no tendra)
+                    If validacion.validarNombres(empleadoRegistro.nombreUsuario) Then
+
+                        'Utilizando el registro recogido se crea un objeto de tipo Empleado y se añade al arraylist
+                        empleados.Add(New GestionComercial.Empleado(empleadoRegistro.codigoEmpleado, empleadoRegistro.nombre, empleadoRegistro.apellidos, empleadoRegistro.direccion, empleadoRegistro.codigoPostal,
+                                    empleadoRegistro.telefono, empleadoRegistro.nombreUsuario, empleadoRegistro.contrasenia, empleadoRegistro.esAdministrador))
 
 
-                End If
+                    End If
 
-            End While
+                End While
+
+            Else
+
+                'Salta la excepcion de FileNotFoundException si no se ha encontrado el fichero Empleados.txt
+                Err.Raise(53)
+
+            End If
+
 
         Catch ex As FileNotFoundException
 
@@ -106,37 +141,54 @@ Public Class Pantalla_principal
                             "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\Empleados.txt",
                              0 + MsgBoxStyle.Exclamation, "Leer empleados")
 
+            Try
 
-            'Se guarda la informacion sobre el error ocurrido en el fichero de errores
-            FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
-            errorRegistro.fecha = DateString
-            errorRegistro.informacionError = Now & " - El fichero ""Empleados.txt"" no se ha encontrado" &
-                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - El fichero ""Empleados.txt"" no se ha encontrado" &
+                    vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
 
-            Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
-            FileClose()
+                FileClose()
 
-            End
+                End
+
+            Catch ex1 As Exception
+
+                MsgBox("El error ocurrido no se ha podido grabar en el fichero de errores",
+                            0 + MsgBoxStyle.Information, "Error no grabado")
+
+            End Try
 
         Catch
 
             MsgBox("Se ha producido un error a la hora de leer los empleados de la empresa. Por favor intente ejecutar el programa de nuevo",
                    0 + MsgBoxStyle.Information, "Leer empleados")
 
-            'Se guarda la informacion sobre el error ocurrido en el fichero de errores
-            FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+            Try
 
-            errorRegistro.fecha = DateString
-            errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de leer el fichero ""Empleados.txt""" &
-                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
+                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
-            Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de leer el fichero ""Empleados.txt""" &
+                    vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
 
-            FileClose()
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
-            End
+                FileClose()
+
+                End
+
+            Catch ex1 As Exception
+
+                MsgBox("El error ocurrido no se ha podido grabar en el fichero de errores",
+                            0 + MsgBoxStyle.Information, "Error no grabado")
+
+            End Try
 
         End Try
 
@@ -164,7 +216,38 @@ Public Class Pantalla_principal
                     articulos.Add(New GestionComercial.Articulo(articuloRegistro.codigoArticulo, articuloRegistro.nombre, articuloRegistro.descripcion,
                                 articuloRegistro.categoria))
 
-                    articulos.Item(articulos.Count - 1).setTamaniosPrecios(articuloRegistro.tamanios.ToList, articuloRegistro.precios.ToList)
+                    tamanios = articuloRegistro.tamanios.ToList
+                    precios = articuloRegistro.precios.ToList
+
+                    If tamanios.Count > precios.Count Then
+
+                        'Se quitan todos los campos que tienen el valor 0 que se le pasa a un campo vacio cuando se guarda en un fichero
+                        For i = tamanios.Count - 1 To 0 Step -1
+
+                            If tamanios.Item(i) > 0 Then
+
+                                articulos.Item(articulos.Count - 1).setTamanioPrecio(tamanios.Item(i), precios.Item(i))
+
+                            End If
+
+                        Next i
+
+                    Else
+
+                        'Se quitan todos los campos que tienen el valor 0 que se le pasa a un campo vacio cuando se guarda en un fichero
+                        For i = precios.Count - 1 To 0 Step -1
+
+                            If tamanios.Item(i) > 0 Then
+
+                                articulos.Item(articulos.Count - 1).setTamanioPrecio(tamanios.Item(i), precios.Item(i))
+
+                            End If
+
+                        Next i
+
+                    End If
+
+
 
                 End If
 
@@ -177,36 +260,55 @@ Public Class Pantalla_principal
                    "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\Articulos.txt",
                    0 + MsgBoxStyle.Exclamation, "Leer articulos")
 
-            'Se guarda la informacion sobre el error ocurrido en el fichero de errores
-            FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+            Try
 
-            errorRegistro.fecha = DateString
-            errorRegistro.informacionError = Now & " - El fichero ""Articulos.txt"" no se ha encontrado" &
-                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
+                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
-            Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - El fichero ""Articulos.txt"" no se ha encontrado" &
+                    vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
 
-            FileClose()
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
-            End
+                FileClose()
+
+                End
+
+            Catch ex1 As Exception
+
+                MsgBox("El error ocurrido no se ha podido grabar en el fichero de errores",
+                            0 + MsgBoxStyle.Information, "Error no grabado")
+
+            End Try
 
         Catch
 
             MsgBox("Se ha producido un error a la hora de leer los articulos de la empresa. Por favor intente ejecutar el programa de nuevo",
                    0 + MsgBoxStyle.Exclamation, "Leer articulos")
 
-            'Se guarda la informacion sobre el error ocurrido en el fichero de errores
-            FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+            Try
 
-            errorRegistro.fecha = DateString
-            errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de leer el fichero ""Articulos.txt""" &
-                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
+                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
-            Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+                errorRegistro.fecha = DateString
+                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de leer el fichero ""Articulos.txt""" &
+                    vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
 
-            FileClose()
+                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
-            End
+                FileClose()
+
+                End
+
+            Catch ex1 As Exception
+
+                MsgBox("El error ocurrido no se ha podido grabar en el fichero de errores",
+                        0 + MsgBoxStyle.Information, "Error no grabado")
+
+
+            End Try
 
         End Try
 
@@ -266,49 +368,66 @@ Public Class Pantalla_principal
                    "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\VentaActual.txt",
                    0 + MsgBoxStyle.Exclamation, "Guardar venta actual")
 
-                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
-                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+                Try
 
-                errorRegistro.fecha = DateString
-                errorRegistro.informacionError = Now & " - El fichero ""VentaActual.txt"" no se ha encontrado" &
-                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
+                    'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                    FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
-                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+                    errorRegistro.fecha = DateString
+                    errorRegistro.informacionError = Now & " - El fichero ""VentaActual.txt"" no se ha encontrado" &
+                    vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
 
-                'Se le pregunta al usuario si desea salir igualmente
-                opcion = MsgBox("Desea salir de la aplicacion?", 4 + MsgBoxStyle.Question + MsgBoxStyle.DefaultButton2, "Salir")
+                    Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
-                If MsgBoxResult.Yes = opcion Then
+                    'Se le pregunta al usuario si desea salir igualmente
+                    opcion = MsgBox("Desea salir de la aplicacion?", 4 + MsgBoxStyle.Question + MsgBoxStyle.DefaultButton2, "Salir")
 
-                    FileClose()
+                    If MsgBoxResult.Yes = opcion Then
 
-                    End
-                End If
+                        FileClose()
+
+                        End
+                    End If
+
+                Catch ex1 As Exception
+
+                    MsgBox("El error ocurrido no se ha podido grabar en el fichero de errores",
+                                0 + MsgBoxStyle.Information, "Error no grabado")
+
+                End Try
 
             Catch
 
                 MsgBox("Se ha producido un error a la hora de guadrar la venta hasta este momento.",
                        0 + MsgBoxStyle.Information, "Guadrar venta actual")
 
+                Try
 
-                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
-                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+                    'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                    FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
-                errorRegistro.fecha = DateString
-                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de escribir en el fichero ""VentaActual.txt""" &
-                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
+                    errorRegistro.fecha = DateString
+                    errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de escribir en el fichero ""VentaActual.txt""" &
+                    vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
 
-                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+                    Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
-                'Se le pregunta al usuario si desea salir igualmente
-                opcion = MsgBox("Desea salir de la aplicacion?", 4 + MsgBoxStyle.Question + MsgBoxStyle.DefaultButton2, "Salir")
+                    'Se le pregunta al usuario si desea salir igualmente
+                    opcion = MsgBox("Desea salir de la aplicacion?", 4 + MsgBoxStyle.Question + MsgBoxStyle.DefaultButton2, "Salir")
 
-                If MsgBoxResult.Yes = opcion Then
+                    If MsgBoxResult.Yes = opcion Then
 
-                    FileClose()
+                        FileClose()
 
-                    End
-                End If
+                        End
+                    End If
+
+                Catch ex1 As Exception
+
+                    MsgBox("El error ocurrido no se ha podido grabar en el fichero de errores",
+                                0 + MsgBoxStyle.Information, "Error no grabado")
+
+                End Try
 
             End Try
 

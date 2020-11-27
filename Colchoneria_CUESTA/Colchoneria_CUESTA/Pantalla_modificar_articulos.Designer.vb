@@ -46,6 +46,7 @@ Partial Class Pantalla_modificar_articulos
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManualDeUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel_datosArticulo = New System.Windows.Forms.Panel()
         Me.Button_eliminar = New System.Windows.Forms.Button()
         Me.Panel_precioYTamanio = New System.Windows.Forms.Panel()
@@ -69,7 +70,6 @@ Partial Class Pantalla_modificar_articulos
         Me.Button_modificar = New System.Windows.Forms.Button()
         Me.ComboBox_modificar = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.MenuStrip.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -90,7 +90,7 @@ Partial Class Pantalla_modificar_articulos
         Me.Panel1.Controls.Add(Me.label_ayuda)
         Me.Panel1.Controls.Add(Me.label_fecha)
         Me.Panel1.Controls.Add(Me.label_hora)
-        Me.Panel1.Location = New System.Drawing.Point(0, 475)
+        Me.Panel1.Location = New System.Drawing.Point(0, 485)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(801, 42)
         Me.Panel1.TabIndex = 29
@@ -157,26 +157,28 @@ Partial Class Pantalla_modificar_articulos
         '
         Me.CerrarCajaToolStripMenuItem.Name = "CerrarCajaToolStripMenuItem"
         Me.CerrarCajaToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
-        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.CerrarCajaToolStripMenuItem.Text = "Cerrar caja"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(165, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(177, 6)
         '
         'VolverToolStripMenuItem
         '
         Me.VolverToolStripMenuItem.Name = "VolverToolStripMenuItem"
-        Me.VolverToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.VolverToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
+            Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
+        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.VolverToolStripMenuItem.Text = "Volver"
         '
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.SalirToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
+            Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'VentaToolStripMenuItem
@@ -205,7 +207,7 @@ Partial Class Pantalla_modificar_articulos
         Me.GestionDeEmpleadosToolStripMenuItem.Name = "GestionDeEmpleadosToolStripMenuItem"
         Me.GestionDeEmpleadosToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.E), System.Windows.Forms.Keys)
-        Me.GestionDeEmpleadosToolStripMenuItem.Size = New System.Drawing.Size(277, 22)
+        Me.GestionDeEmpleadosToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
         Me.GestionDeEmpleadosToolStripMenuItem.Text = "Gestion de empleados"
         '
         'GestionDeArticulosToolStripMenuItem
@@ -213,7 +215,7 @@ Partial Class Pantalla_modificar_articulos
         Me.GestionDeArticulosToolStripMenuItem.Name = "GestionDeArticulosToolStripMenuItem"
         Me.GestionDeArticulosToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.A), System.Windows.Forms.Keys)
-        Me.GestionDeArticulosToolStripMenuItem.Size = New System.Drawing.Size(277, 22)
+        Me.GestionDeArticulosToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
         Me.GestionDeArticulosToolStripMenuItem.Text = "Gestion de articulos"
         '
         'GestionDeVentasToolStripMenuItem
@@ -221,7 +223,7 @@ Partial Class Pantalla_modificar_articulos
         Me.GestionDeVentasToolStripMenuItem.Name = "GestionDeVentasToolStripMenuItem"
         Me.GestionDeVentasToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.GestionDeVentasToolStripMenuItem.Size = New System.Drawing.Size(277, 22)
+        Me.GestionDeVentasToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
         Me.GestionDeVentasToolStripMenuItem.Text = "Gestion de ventas"
         '
         'AcercaDeToolStripMenuItem
@@ -262,8 +264,19 @@ Partial Class Pantalla_modificar_articulos
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Location = New System.Drawing.Point(12, 37)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(766, 432)
+        Me.Panel2.Size = New System.Drawing.Size(766, 442)
         Me.Panel2.TabIndex = 31
+        '
+        'Label9
+        '
+        Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(226, 22)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(296, 25)
+        Me.Label9.TabIndex = 37
+        Me.Label9.Text = "Modificacion de un artículo"
         '
         'Panel_datosArticulo
         '
@@ -280,14 +293,14 @@ Partial Class Pantalla_modificar_articulos
         Me.Panel_datosArticulo.Controls.Add(Me.Label4)
         Me.Panel_datosArticulo.Controls.Add(Me.Label2)
         Me.Panel_datosArticulo.Controls.Add(Me.TextBox_nombre)
-        Me.Panel_datosArticulo.Location = New System.Drawing.Point(36, 74)
+        Me.Panel_datosArticulo.Location = New System.Drawing.Point(36, 107)
         Me.Panel_datosArticulo.Name = "Panel_datosArticulo"
         Me.Panel_datosArticulo.Size = New System.Drawing.Size(627, 285)
         Me.Panel_datosArticulo.TabIndex = 36
         '
         'Button_eliminar
         '
-        Me.Button_eliminar.Location = New System.Drawing.Point(373, 93)
+        Me.Button_eliminar.Location = New System.Drawing.Point(373, 51)
         Me.Button_eliminar.Margin = New System.Windows.Forms.Padding(2)
         Me.Button_eliminar.Name = "Button_eliminar"
         Me.Button_eliminar.Size = New System.Drawing.Size(56, 19)
@@ -312,7 +325,7 @@ Partial Class Pantalla_modificar_articulos
         'ComboBox_tamanio
         '
         Me.ComboBox_tamanio.FormattingEnabled = True
-        Me.ComboBox_tamanio.Items.AddRange(New Object() {"80", "90"})
+        Me.ComboBox_tamanio.Items.AddRange(New Object() {"80", "90", "105", "120", "135", "150", "160", "180"})
         Me.ComboBox_tamanio.Location = New System.Drawing.Point(126, 84)
         Me.ComboBox_tamanio.Margin = New System.Windows.Forms.Padding(2)
         Me.ComboBox_tamanio.Name = "ComboBox_tamanio"
@@ -346,7 +359,7 @@ Partial Class Pantalla_modificar_articulos
         '
         'Button_aniadir
         '
-        Me.Button_aniadir.Location = New System.Drawing.Point(256, 95)
+        Me.Button_aniadir.Location = New System.Drawing.Point(255, 82)
         Me.Button_aniadir.Name = "Button_aniadir"
         Me.Button_aniadir.Size = New System.Drawing.Size(75, 23)
         Me.Button_aniadir.TabIndex = 21
@@ -365,7 +378,7 @@ Partial Class Pantalla_modificar_articulos
         'ComboBox_categorias
         '
         Me.ComboBox_categorias.FormattingEnabled = True
-        Me.ComboBox_categorias.Items.AddRange(New Object() {"Somier", "Colchón", "Canapé", "Tabla"})
+        Me.ComboBox_categorias.Items.AddRange(New Object() {"Base", "Somier", "Colchon", "Canape", "Ofertas", "Otros"})
         Me.ComboBox_categorias.Location = New System.Drawing.Point(150, 110)
         Me.ComboBox_categorias.Margin = New System.Windows.Forms.Padding(2)
         Me.ComboBox_categorias.Name = "ComboBox_categorias"
@@ -454,7 +467,7 @@ Partial Class Pantalla_modificar_articulos
         '
         'Button_cancelar
         '
-        Me.Button_cancelar.Location = New System.Drawing.Point(238, 398)
+        Me.Button_cancelar.Location = New System.Drawing.Point(154, 407)
         Me.Button_cancelar.Name = "Button_cancelar"
         Me.Button_cancelar.Size = New System.Drawing.Size(75, 23)
         Me.Button_cancelar.TabIndex = 35
@@ -463,7 +476,7 @@ Partial Class Pantalla_modificar_articulos
         '
         'Button_modificar
         '
-        Me.Button_modificar.Location = New System.Drawing.Point(108, 398)
+        Me.Button_modificar.Location = New System.Drawing.Point(44, 407)
         Me.Button_modificar.Name = "Button_modificar"
         Me.Button_modificar.Size = New System.Drawing.Size(75, 23)
         Me.Button_modificar.TabIndex = 34
@@ -473,8 +486,7 @@ Partial Class Pantalla_modificar_articulos
         'ComboBox_modificar
         '
         Me.ComboBox_modificar.FormattingEnabled = True
-        Me.ComboBox_modificar.Items.AddRange(New Object() {"1", "2"})
-        Me.ComboBox_modificar.Location = New System.Drawing.Point(36, 45)
+        Me.ComboBox_modificar.Location = New System.Drawing.Point(188, 72)
         Me.ComboBox_modificar.Name = "ComboBox_modificar"
         Me.ComboBox_modificar.Size = New System.Drawing.Size(121, 21)
         Me.ComboBox_modificar.TabIndex = 33
@@ -482,34 +494,23 @@ Partial Class Pantalla_modificar_articulos
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(33, 17)
+        Me.Label1.Location = New System.Drawing.Point(104, 75)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(52, 13)
         Me.Label1.TabIndex = 32
         Me.Label1.Text = "Artículos:"
         '
-        'Label9
-        '
-        Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(226, 8)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(284, 25)
-        Me.Label9.TabIndex = 37
-        Me.Label9.Text = "Eliminación de un artículo"
-        '
         'Pantalla_modificar_articulos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 517)
+        Me.ClientSize = New System.Drawing.Size(800, 527)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.MenuStrip)
         Me.Controls.Add(Me.Panel1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Pantalla_modificar_articulos"
-        Me.Text = "Modificar artículos - Colchonería CUESTA"
+        Me.Text = "Colchoneria CUESTA - Gesion de articulos - Modificar artículos"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

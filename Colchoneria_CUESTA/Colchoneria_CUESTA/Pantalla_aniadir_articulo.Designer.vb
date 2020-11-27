@@ -26,22 +26,25 @@ Partial Class Pantalla_aniadir_articulo
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Pantalla_aniadir_articulo))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label_camposObligatorios = New System.Windows.Forms.Label()
+        Me.Panel_precioYTamanio = New System.Windows.Forms.Panel()
+        Me.ComboBox_tamanio = New System.Windows.Forms.ComboBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.TextBox_precio = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Button_aniadir = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.ComboBox_categorias = New System.Windows.Forms.ComboBox()
         Me.ListBox_tamanioprecios = New System.Windows.Forms.ListBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Button_eliminar = New System.Windows.Forms.Button()
-        Me.Button_cancelar = New System.Windows.Forms.Button()
-        Me.Button_guardar = New System.Windows.Forms.Button()
-        Me.Button_aniadir = New System.Windows.Forms.Button()
-        Me.TextBox_precio = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.ListBox_tamanios = New System.Windows.Forms.ListBox()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TextBox_descripcion = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TextBox_nombre = New System.Windows.Forms.TextBox()
+        Me.Button_cancelar = New System.Windows.Forms.Button()
+        Me.Button_guardar = New System.Windows.Forms.Button()
         Me.TimerHoraReal = New System.Windows.Forms.Timer(Me.components)
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.label_ayuda = New System.Windows.Forms.Label()
@@ -64,6 +67,7 @@ Partial Class Pantalla_aniadir_articulo
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManualDeUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1.SuspendLayout()
+        Me.Panel_precioYTamanio.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.MenuStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -73,7 +77,7 @@ Partial Class Pantalla_aniadir_articulo
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(42, 43)
+        Me.Label1.Location = New System.Drawing.Point(301, 47)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(204, 25)
         Me.Label1.TabIndex = 0
@@ -83,32 +87,103 @@ Partial Class Pantalla_aniadir_articulo
         '
         Me.Panel1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel1.Controls.Add(Me.Label_camposObligatorios)
+        Me.Panel1.Controls.Add(Me.Panel_precioYTamanio)
         Me.Panel1.Controls.Add(Me.ComboBox_categorias)
         Me.Panel1.Controls.Add(Me.ListBox_tamanioprecios)
         Me.Panel1.Controls.Add(Me.Label8)
         Me.Panel1.Controls.Add(Me.Button_eliminar)
-        Me.Panel1.Controls.Add(Me.Button_cancelar)
-        Me.Panel1.Controls.Add(Me.Button_guardar)
-        Me.Panel1.Controls.Add(Me.Button_aniadir)
-        Me.Panel1.Controls.Add(Me.TextBox_precio)
-        Me.Panel1.Controls.Add(Me.Label7)
-        Me.Panel1.Controls.Add(Me.ListBox_tamanios)
-        Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.TextBox_descripcion)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.TextBox_nombre)
-        Me.Panel1.Location = New System.Drawing.Point(16, 71)
+        Me.Panel1.Location = New System.Drawing.Point(93, 89)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(749, 363)
+        Me.Panel1.Size = New System.Drawing.Size(633, 325)
         Me.Panel1.TabIndex = 1
+        '
+        'Label_camposObligatorios
+        '
+        Me.Label_camposObligatorios.AutoSize = True
+        Me.Label_camposObligatorios.Location = New System.Drawing.Point(39, 24)
+        Me.Label_camposObligatorios.Name = "Label_camposObligatorios"
+        Me.Label_camposObligatorios.Size = New System.Drawing.Size(111, 13)
+        Me.Label_camposObligatorios.TabIndex = 26
+        Me.Label_camposObligatorios.Text = "Campos obligatorios *:"
+        '
+        'Panel_precioYTamanio
+        '
+        Me.Panel_precioYTamanio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel_precioYTamanio.Controls.Add(Me.ComboBox_tamanio)
+        Me.Panel_precioYTamanio.Controls.Add(Me.Label3)
+        Me.Panel_precioYTamanio.Controls.Add(Me.TextBox_precio)
+        Me.Panel_precioYTamanio.Controls.Add(Me.Label7)
+        Me.Panel_precioYTamanio.Controls.Add(Me.Button_aniadir)
+        Me.Panel_precioYTamanio.Controls.Add(Me.Label6)
+        Me.Panel_precioYTamanio.Location = New System.Drawing.Point(16, 180)
+        Me.Panel_precioYTamanio.Name = "Panel_precioYTamanio"
+        Me.Panel_precioYTamanio.Size = New System.Drawing.Size(351, 126)
+        Me.Panel_precioYTamanio.TabIndex = 25
+        '
+        'ComboBox_tamanio
+        '
+        Me.ComboBox_tamanio.FormattingEnabled = True
+        Me.ComboBox_tamanio.Items.AddRange(New Object() {"80", "90", "105", "120", "135", "150", "160", "180"})
+        Me.ComboBox_tamanio.Location = New System.Drawing.Point(126, 84)
+        Me.ComboBox_tamanio.Margin = New System.Windows.Forms.Padding(2)
+        Me.ComboBox_tamanio.Name = "ComboBox_tamanio"
+        Me.ComboBox_tamanio.Size = New System.Drawing.Size(92, 21)
+        Me.ComboBox_tamanio.TabIndex = 27
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(19, 10)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(132, 13)
+        Me.Label3.TabIndex = 26
+        Me.Label3.Text = "Introducir tamaño y precio "
+        '
+        'TextBox_precio
+        '
+        Me.TextBox_precio.Location = New System.Drawing.Point(126, 48)
+        Me.TextBox_precio.Name = "TextBox_precio"
+        Me.TextBox_precio.Size = New System.Drawing.Size(92, 20)
+        Me.TextBox_precio.TabIndex = 24
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(19, 52)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(70, 13)
+        Me.Label7.TabIndex = 10
+        Me.Label7.Text = "Precio (en €):"
+        '
+        'Button_aniadir
+        '
+        Me.Button_aniadir.Location = New System.Drawing.Point(256, 82)
+        Me.Button_aniadir.Name = "Button_aniadir"
+        Me.Button_aniadir.Size = New System.Drawing.Size(75, 23)
+        Me.Button_aniadir.TabIndex = 21
+        Me.Button_aniadir.Text = "Añadir"
+        Me.Button_aniadir.UseVisualStyleBackColor = True
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(19, 87)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(89, 13)
+        Me.Label6.TabIndex = 23
+        Me.Label6.Text = "Tamaño (en CM):"
         '
         'ComboBox_categorias
         '
         Me.ComboBox_categorias.FormattingEnabled = True
-        Me.ComboBox_categorias.Items.AddRange(New Object() {"Somier", "Colchón", "Canapé", "Base", "Ofertas", "Otros"})
-        Me.ComboBox_categorias.Location = New System.Drawing.Point(150, 74)
+        Me.ComboBox_categorias.Items.AddRange(New Object() {"Somier", "Colchon", "Canape", "Base", "Ofertas", "Otros"})
+        Me.ComboBox_categorias.Location = New System.Drawing.Point(143, 138)
         Me.ComboBox_categorias.Margin = New System.Windows.Forms.Padding(2)
         Me.ComboBox_categorias.Name = "ComboBox_categorias"
         Me.ComboBox_categorias.Size = New System.Drawing.Size(100, 21)
@@ -117,16 +192,17 @@ Partial Class Pantalla_aniadir_articulo
         'ListBox_tamanioprecios
         '
         Me.ListBox_tamanioprecios.FormattingEnabled = True
-        Me.ListBox_tamanioprecios.Location = New System.Drawing.Point(386, 107)
+        Me.ListBox_tamanioprecios.Location = New System.Drawing.Point(415, 61)
         Me.ListBox_tamanioprecios.Margin = New System.Windows.Forms.Padding(2)
         Me.ListBox_tamanioprecios.Name = "ListBox_tamanioprecios"
-        Me.ListBox_tamanioprecios.Size = New System.Drawing.Size(192, 186)
+        Me.ListBox_tamanioprecios.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
+        Me.ListBox_tamanioprecios.Size = New System.Drawing.Size(192, 238)
         Me.ListBox_tamanioprecios.TabIndex = 18
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(383, 77)
+        Me.Label8.Location = New System.Drawing.Point(412, 24)
         Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(174, 13)
@@ -135,7 +211,7 @@ Partial Class Pantalla_aniadir_articulo
         '
         'Button_eliminar
         '
-        Me.Button_eliminar.Location = New System.Drawing.Point(295, 261)
+        Me.Button_eliminar.Location = New System.Drawing.Point(340, 61)
         Me.Button_eliminar.Margin = New System.Windows.Forms.Padding(2)
         Me.Button_eliminar.Name = "Button_eliminar"
         Me.Button_eliminar.Size = New System.Drawing.Size(56, 19)
@@ -143,74 +219,10 @@ Partial Class Pantalla_aniadir_articulo
         Me.Button_eliminar.Text = "Eliminar"
         Me.Button_eliminar.UseVisualStyleBackColor = True
         '
-        'Button_cancelar
-        '
-        Me.Button_cancelar.Location = New System.Drawing.Point(655, 324)
-        Me.Button_cancelar.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button_cancelar.Name = "Button_cancelar"
-        Me.Button_cancelar.Size = New System.Drawing.Size(56, 19)
-        Me.Button_cancelar.TabIndex = 15
-        Me.Button_cancelar.Text = "Cancelar"
-        Me.Button_cancelar.UseVisualStyleBackColor = True
-        '
-        'Button_guardar
-        '
-        Me.Button_guardar.Location = New System.Drawing.Point(575, 324)
-        Me.Button_guardar.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button_guardar.Name = "Button_guardar"
-        Me.Button_guardar.Size = New System.Drawing.Size(56, 19)
-        Me.Button_guardar.TabIndex = 14
-        Me.Button_guardar.Text = "Guardar"
-        Me.Button_guardar.UseVisualStyleBackColor = True
-        '
-        'Button_aniadir
-        '
-        Me.Button_aniadir.Location = New System.Drawing.Point(295, 237)
-        Me.Button_aniadir.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button_aniadir.Name = "Button_aniadir"
-        Me.Button_aniadir.Size = New System.Drawing.Size(56, 19)
-        Me.Button_aniadir.TabIndex = 12
-        Me.Button_aniadir.Text = "Añadir"
-        Me.Button_aniadir.UseVisualStyleBackColor = True
-        '
-        'TextBox_precio
-        '
-        Me.TextBox_precio.Location = New System.Drawing.Point(150, 279)
-        Me.TextBox_precio.Name = "TextBox_precio"
-        Me.TextBox_precio.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox_precio.TabIndex = 11
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(36, 279)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(70, 13)
-        Me.Label7.TabIndex = 10
-        Me.Label7.Text = "Precio (en €):"
-        '
-        'ListBox_tamanios
-        '
-        Me.ListBox_tamanios.FormattingEnabled = True
-        Me.ListBox_tamanios.Items.AddRange(New Object() {"80", "90", "105", "135", "150", "160", "180"})
-        Me.ListBox_tamanios.Location = New System.Drawing.Point(140, 133)
-        Me.ListBox_tamanios.Name = "ListBox_tamanios"
-        Me.ListBox_tamanios.Size = New System.Drawing.Size(120, 95)
-        Me.ListBox_tamanios.TabIndex = 8
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(36, 133)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(89, 13)
-        Me.Label6.TabIndex = 7
-        Me.Label6.Text = "Tamaño (en CM):"
-        '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(36, 77)
+        Me.Label5.Location = New System.Drawing.Point(36, 141)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(61, 13)
         Me.Label5.TabIndex = 6
@@ -218,7 +230,7 @@ Partial Class Pantalla_aniadir_articulo
         '
         'TextBox_descripcion
         '
-        Me.TextBox_descripcion.Location = New System.Drawing.Point(478, 18)
+        Me.TextBox_descripcion.Location = New System.Drawing.Point(143, 100)
         Me.TextBox_descripcion.MaxLength = 40
         Me.TextBox_descripcion.Name = "TextBox_descripcion"
         Me.TextBox_descripcion.Size = New System.Drawing.Size(100, 20)
@@ -227,7 +239,7 @@ Partial Class Pantalla_aniadir_articulo
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(383, 21)
+        Me.Label4.Location = New System.Drawing.Point(36, 103)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(66, 13)
         Me.Label4.TabIndex = 4
@@ -236,7 +248,7 @@ Partial Class Pantalla_aniadir_articulo
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(36, 21)
+        Me.Label2.Location = New System.Drawing.Point(39, 61)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(51, 13)
         Me.Label2.TabIndex = 1
@@ -244,11 +256,33 @@ Partial Class Pantalla_aniadir_articulo
         '
         'TextBox_nombre
         '
-        Me.TextBox_nombre.Location = New System.Drawing.Point(150, 18)
+        Me.TextBox_nombre.Location = New System.Drawing.Point(143, 61)
         Me.TextBox_nombre.MaxLength = 20
         Me.TextBox_nombre.Name = "TextBox_nombre"
         Me.TextBox_nombre.Size = New System.Drawing.Size(100, 20)
         Me.TextBox_nombre.TabIndex = 0
+        '
+        'Button_cancelar
+        '
+        Me.Button_cancelar.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Button_cancelar.Location = New System.Drawing.Point(223, 429)
+        Me.Button_cancelar.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button_cancelar.Name = "Button_cancelar"
+        Me.Button_cancelar.Size = New System.Drawing.Size(82, 27)
+        Me.Button_cancelar.TabIndex = 15
+        Me.Button_cancelar.Text = "Cancelar"
+        Me.Button_cancelar.UseVisualStyleBackColor = True
+        '
+        'Button_guardar
+        '
+        Me.Button_guardar.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Button_guardar.Location = New System.Drawing.Point(94, 429)
+        Me.Button_guardar.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button_guardar.Name = "Button_guardar"
+        Me.Button_guardar.Size = New System.Drawing.Size(82, 27)
+        Me.Button_guardar.TabIndex = 14
+        Me.Button_guardar.Text = "Guardar"
+        Me.Button_guardar.UseVisualStyleBackColor = True
         '
         'TimerHoraReal
         '
@@ -330,26 +364,28 @@ Partial Class Pantalla_aniadir_articulo
         '
         Me.CerrarCajaToolStripMenuItem.Name = "CerrarCajaToolStripMenuItem"
         Me.CerrarCajaToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
-        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.CerrarCajaToolStripMenuItem.Text = "Cerrar caja"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(165, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(177, 6)
         '
         'VolverToolStripMenuItem
         '
         Me.VolverToolStripMenuItem.Name = "VolverToolStripMenuItem"
-        Me.VolverToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.VolverToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
+            Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
+        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.VolverToolStripMenuItem.Text = "Volver"
         '
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.SalirToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
+            Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'VentaToolStripMenuItem
@@ -378,7 +414,7 @@ Partial Class Pantalla_aniadir_articulo
         Me.GestionDeEmpleadosToolStripMenuItem.Name = "GestionDeEmpleadosToolStripMenuItem"
         Me.GestionDeEmpleadosToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.E), System.Windows.Forms.Keys)
-        Me.GestionDeEmpleadosToolStripMenuItem.Size = New System.Drawing.Size(277, 22)
+        Me.GestionDeEmpleadosToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
         Me.GestionDeEmpleadosToolStripMenuItem.Text = "Gestion de empleados"
         '
         'GestionDeArticulosToolStripMenuItem
@@ -386,7 +422,7 @@ Partial Class Pantalla_aniadir_articulo
         Me.GestionDeArticulosToolStripMenuItem.Name = "GestionDeArticulosToolStripMenuItem"
         Me.GestionDeArticulosToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.A), System.Windows.Forms.Keys)
-        Me.GestionDeArticulosToolStripMenuItem.Size = New System.Drawing.Size(277, 22)
+        Me.GestionDeArticulosToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
         Me.GestionDeArticulosToolStripMenuItem.Text = "Gestion de articulos"
         '
         'GestionDeVentasToolStripMenuItem
@@ -394,7 +430,7 @@ Partial Class Pantalla_aniadir_articulo
         Me.GestionDeVentasToolStripMenuItem.Name = "GestionDeVentasToolStripMenuItem"
         Me.GestionDeVentasToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.GestionDeVentasToolStripMenuItem.Size = New System.Drawing.Size(277, 22)
+        Me.GestionDeVentasToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
         Me.GestionDeVentasToolStripMenuItem.Text = "Gestion de ventas"
         '
         'AcercaDeToolStripMenuItem
@@ -434,12 +470,16 @@ Partial Class Pantalla_aniadir_articulo
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.Button_cancelar)
+        Me.Controls.Add(Me.Button_guardar)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Pantalla_aniadir_articulo"
-        Me.Text = "Añadir artículo - Colchonería CUESTA"
+        Me.Text = "Colchoneria CUESTA - Gesion de articulos - Añadir artículo"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.Panel_precioYTamanio.ResumeLayout(False)
+        Me.Panel_precioYTamanio.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.MenuStrip.ResumeLayout(False)
@@ -455,14 +495,9 @@ Partial Class Pantalla_aniadir_articulo
     Friend WithEvents Label4 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents TextBox_nombre As TextBox
-    Friend WithEvents TextBox_precio As TextBox
-    Friend WithEvents Label7 As Label
-    Friend WithEvents ListBox_tamanios As ListBox
-    Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Button_cancelar As Button
     Friend WithEvents Button_guardar As Button
-    Friend WithEvents Button_aniadir As Button
     Friend WithEvents Label8 As Label
     Friend WithEvents Button_eliminar As Button
     Friend WithEvents ListBox_tamanioprecios As ListBox
@@ -488,4 +523,12 @@ Partial Class Pantalla_aniadir_articulo
     Friend WithEvents ColchoneriaCUESTAToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AyudaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ManualDeUsuarioToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Label_camposObligatorios As Label
+    Friend WithEvents Panel_precioYTamanio As Panel
+    Friend WithEvents ComboBox_tamanio As ComboBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents TextBox_precio As TextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Button_aniadir As Button
+    Friend WithEvents Label6 As Label
 End Class

@@ -67,21 +67,30 @@
                    "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\VentaActual.txt",
                    0 + MsgBoxStyle.Exclamation, "Guardar venta actual")
 
-                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
-                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+                Try
 
-                errorRegistro.fecha = DateString
-                errorRegistro.informacionError = Now & " - El fichero ""VentaActual.txt"" no se ha encontrado" &
-                vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
+                    'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                    FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
-                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+                    errorRegistro.fecha = DateString
+                    errorRegistro.informacionError = Now & " - El fichero ""VentaActual.txt"" no se ha encontrado" &
+                    vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
 
-                'Se le pregunta al usuario si desea salir igualmente
-                opcion = MsgBox("Desea salir de la aplicacion?", 4 + MsgBoxStyle.Question + MsgBoxStyle.DefaultButton2, "Salir")
+                    Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
-                If MsgBoxResult.Yes = opcion Then
-                    End
-                End If
+                    'Se le pregunta al usuario si desea salir igualmente
+                    opcion = MsgBox("Desea salir de la aplicacion?", 4 + MsgBoxStyle.Question + MsgBoxStyle.DefaultButton2, "Salir")
+
+                    If MsgBoxResult.Yes = opcion Then
+                        End
+                    End If
+
+                Catch ex1 As Exception
+
+                    MsgBox("El error ocurrido no se ha podido grabar en el fichero de errores",
+                            0 + MsgBoxStyle.Information, "Error no grabado")
+
+                End Try
 
             Catch
 
@@ -89,21 +98,31 @@
                        0 + MsgBoxStyle.Information, "Guadrar venta actual")
 
 
-                'Se guarda la informacion sobre el error ocurrido en el fichero de errores
-                FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+                Try
 
-                errorRegistro.fecha = DateString
-                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de escribir en el fichero ""VentaActual.txt""" &
+                    'Se guarda la informacion sobre el error ocurrido en el fichero de errores
+                    FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
+
+                    errorRegistro.fecha = DateString
+                    errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de escribir en el fichero ""VentaActual.txt""" &
                 vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
 
-                Write(3, errorRegistro.fecha, errorRegistro.informacionError)
+                    Write(3, errorRegistro.fecha, errorRegistro.informacionError)
 
-                'Se le pregunta al usuario si desea salir igualmente
-                opcion = MsgBox("Desea salir de la aplicacion?", 4 + MsgBoxStyle.Question + MsgBoxStyle.DefaultButton2, "Salir")
+                    'Se le pregunta al usuario si desea salir igualmente
+                    opcion = MsgBox("Desea salir de la aplicacion?", 4 + MsgBoxStyle.Question + MsgBoxStyle.DefaultButton2, "Salir")
 
-                If MsgBoxResult.Yes = opcion Then
-                    End
-                End If
+                    If MsgBoxResult.Yes = opcion Then
+                        End
+                    End If
+
+
+                Catch ex1 As Exception
+
+                    MsgBox("El error ocurrido no se ha podido grabar en el fichero de errores",
+                            0 + MsgBoxStyle.Information, "Error no grabado")
+
+                End Try
 
             End Try
 
