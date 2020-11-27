@@ -418,7 +418,8 @@
             ComboBox_categorias.SelectedIndex = -1
             TextBox_precio.Text = ""
             ComboBox_tamanio.Text = ""
-            ListBox_tamaniosprecios.Items.Clear()
+            ListBox_tamanios.Items.Clear()
+            ListBox_precios.Items.Clear()
 
             'Se habilita el boton guardar
             Button_modificar.Enabled = False
@@ -426,8 +427,6 @@
             'Se activa el panel con los datos del articulo
             Panel_datosArticulo.Enabled = True
 
-            'Se utiliza para almacenar los precios y tamaños (si el articulo tiene)
-            Dim precioTamanio As String
 
             'Se coge el objeto elegido y sus datos se introducen en los campos de texto
             For i = 0 To articulos.Count - 1
@@ -491,11 +490,10 @@
 
                 For i = 0 To articulo.getTamaniosArticulo.Count - 1
 
-                    'Se le asigna a la cadena precioTamanio los que se van a añadir a la lista
-                    precioTamanio = "   precio: " & articulo.getPreciosTamaniosArticulo.Item(articulo.getPreciosTamaniosArticulo.Count - 1) & "€" &
-                        "        tamaño: " & articulo.getTamaniosArticulo.Item(articulo.getTamaniosArticulo.Count - 1)
+                    'Se añaden el precio y el tamaño a la lista
+                    ListBox_tamanios.Items.Add("    tamaño: " & articulo.getTamaniosArticulo.Item(articulo.getTamaniosArticulo.Count - 1))
+                    ListBox_precios.Items.Add("    precio: " & articulo.getPreciosTamaniosArticulo.Item(articulo.getPreciosTamaniosArticulo.Count - 1) & "€")
 
-                    ListBox_tamaniosprecios.Items.Add(precioTamanio)
 
                 Next i
 
@@ -516,7 +514,8 @@
             ComboBox_categorias.SelectedIndex = -1
             TextBox_precio.Text = ""
             ComboBox_tamanio.Text = ""
-            ListBox_tamaniosprecios.Items.Clear()
+            ListBox_tamanios.Items.Clear()
+            ListBox_precios.Items.Clear()
 
             'Se habilita el boton guardar
             Button_modificar.Enabled = False
@@ -531,19 +530,52 @@
 
         'Esta variable indicara si el tamaño introducido por teclado es incorrecto 
         '(si no se ha elegido uno de los predefinidos)
-        Dim tamanioIncorrecto As Boolean = False
-
-        'La cadena con el precio y el tamaño que se va a añadir a la lista
-        Dim precioTamanio As String
+        Dim tamanioCorrecto As Boolean = False
 
         'Auyda para comprobar si el tamaño ha sido repetido
         Dim tamanioRepetido As Boolean = False
 
-        If ListBox_tamaniosprecios.Items.Count > 14 Then
+        Dim precioCorrecto As Boolean = False
+
+        'Si los datos introducidos en el campo son correctos se comprueba si se puede activar el boton añadir
+        If validacion.esNumero(TextBox_precio.Text) Then
+
+            'Para activar el boton las dos contraseñas tienen que coincidir
+            If validacion.numeroMayorACero(TextBox_precio.Text) = False Then
+
+                MsgBox("Por favor introduzca de precio, que sea superior a 0€.",
+                       0 + MsgBoxStyle.Information, "Precio incorrecto")
+
+                TextBox_precio.Text = ""
+                TextBox_precio.Focus()
+
+            Else
+
+                precioCorrecto = True
+
+            End If
+
+        Else
+
+            'Se le indica al usuario que el dato es incorreto y el foco vuelve al campo de contraseña
+            MsgBox("Por favor introduzca de precio, que solo sean números.",
+                   0 + MsgBoxStyle.Information, "Precio incorrecto")
+
+            TextBox_precio.Text = ""
+            TextBox_precio.Focus()
+
+        End If
+
+        If ListBox_tamanios.Items.Count > 14 Then
 
             'Si los elementos de la lista sobrepasan 14 no se pueden añadir mas tamaños
             MsgBox("No puede añadir mas tamaños. Si desea puede eliminar uno de los existentes para añadir otro",
                     0 + MsgBoxStyle.Information, "Añadir tamaño")
+
+            'Se vacia la caja de texto dentro del combobox y se deja sin elemento seleccionado
+            ComboBox_tamanio.Text = ""
+            ComboBox_tamanio.SelectedIndex = -1
+            TextBox_precio.Text = ""
 
         Else
 
@@ -577,14 +609,14 @@
 
                     Else
 
-                        tamanioIncorrecto = True
+                        tamanioCorrecto = True
 
                     End If
 
                 End If
 
-                'Si el tamaño es correcto se añade junto con el precio a la lista 
-                If tamanioIncorrecto = True Or ComboBox_tamanio.SelectedIndex >= 0 Then
+                'Si el tamaño y el precio son correctos se añaden a la lista
+                If precioCorrecto And (tamanioCorrecto = True Or ComboBox_tamanio.SelectedIndex >= 0) Then
 
                     If ComboBox_tamanio.SelectedIndex >= 0 Then
 
@@ -597,11 +629,9 @@
 
                     End If
 
-                    'Se le asigna a la cadena precioTamanio los que se van a añadir a la lista
-                    precioTamanio = "   precio: " & articulo.getPreciosTamaniosArticulo.Item(articulo.getPreciosTamaniosArticulo.Count - 1) & "€" &
-                        "        tamaño: " & articulo.getTamaniosArticulo.Item(articulo.getTamaniosArticulo.Count - 1)
-
-                    ListBox_tamaniosprecios.Items.Add(precioTamanio)
+                    'Se añaden el precio y el tamaño a la lista
+                    ListBox_tamanios.Items.Add("    tamaño: " & articulo.getTamaniosArticulo.Item(articulo.getTamaniosArticulo.Count - 1))
+                    ListBox_precios.Items.Add("    precio: " & articulo.getPreciosTamaniosArticulo.Item(articulo.getPreciosTamaniosArticulo.Count - 1) & "€")
 
                     'Se vacian los elementos y se pasa el foco al precio
                     TextBox_precio.Text = ""
@@ -626,10 +656,11 @@
     Private Sub Button_eliminar_Click(sender As Object, e As EventArgs) Handles Button_eliminar.Click
 
         'Eliminamos el precio y tamaño seleccionados del articulo
-        articulo.eliminarTamanioPrecio(ListBox_tamaniosprecios.SelectedIndex)
+        articulo.eliminarTamanioPrecio(ListBox_tamanios.SelectedIndex)
 
         'Eliminamos el item seleccionado
-        ListBox_tamaniosprecios.Items.RemoveAt(ListBox_tamaniosprecios.SelectedIndex)
+        ListBox_tamanios.Items.RemoveAt(ListBox_tamanios.SelectedIndex)
+        ListBox_precios.Items.RemoveAt(ListBox_precios.SelectedIndex)
 
 
     End Sub
@@ -799,7 +830,7 @@
 
             If ComboBox_categorias.SelectedIndex >= 0 Then
 
-                If ListBox_tamaniosprecios.Items.Count <> 0 Then
+                If ListBox_tamanios.Items.Count <> 0 Then
 
                     Button_modificar.Enabled = True
 
@@ -843,38 +874,16 @@
     End Sub
 
 
-    Private Sub TextBox_precio_Leave(sender As Object, e As EventArgs) Handles TextBox_precio.Leave
-        'Si los datos introducidos en el campo son correctos se comprueba si se puede activar el boton añadir
-        If validacion.esNumero(TextBox_precio.Text) Then
-
-            'Para activar el boton las dos contraseñas tienen que coincidir
-            If validacion.numeroMayorACero(TextBox_precio.Text) = False Then
-
-                MsgBox("Por favor introduzca de precio, que sea superior a 0€.",
-                       0 + MsgBoxStyle.Information, "Precio incorrecto")
-                TextBox_precio.Focus()
-
-            End If
-
-        Else
-
-            'Se le indica al usuario que el dato es incorreto y el foco vuelve al campo de contraseña
-            MsgBox("Por favor introduzca de precio, que solo sean números.",
-                   0 + MsgBoxStyle.Information, "Precio incorrecto")
-            TextBox_precio.Focus()
-
-        End If
-    End Sub
 
 
 
     'LISTBOX PRECIOTAMAÑO
-    Private Sub ListBox_tamaniosprecios_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox_tamaniosprecios.SelectedIndexChanged
+    Private Sub ListBox_tamaniosprecios_SelectedIndexChanged(sender As Object, e As EventArgs)
 
         activarBotonModificar()
 
         'Si se ha seleccionado un elemento se activa el boton eliminar
-        If ListBox_tamaniosprecios.SelectedIndex >= 0 Then
+        If ListBox_tamanios.SelectedIndex >= 0 Then
 
             Button_eliminar.Enabled = True
 
@@ -908,4 +917,7 @@
 
     End Sub
 
+    Private Sub ListBox_tamanios_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox_tamanios.SelectedIndexChanged
+
+    End Sub
 End Class

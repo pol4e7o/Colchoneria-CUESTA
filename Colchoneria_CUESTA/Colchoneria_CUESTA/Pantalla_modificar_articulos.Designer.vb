@@ -59,7 +59,6 @@ Partial Class Pantalla_modificar_articulos
         Me.ComboBox_categorias = New System.Windows.Forms.ComboBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button_guardar = New System.Windows.Forms.Button()
-        Me.ListBox_tamaniosprecios = New System.Windows.Forms.ListBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TextBox_descripcion = New System.Windows.Forms.TextBox()
@@ -70,6 +69,8 @@ Partial Class Pantalla_modificar_articulos
         Me.Button_modificar = New System.Windows.Forms.Button()
         Me.ComboBox_modificar = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ListBox_precios = New System.Windows.Forms.ListBox()
+        Me.ListBox_tamanios = New System.Windows.Forms.ListBox()
         Me.Panel1.SuspendLayout()
         Me.MenuStrip.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -281,12 +282,13 @@ Partial Class Pantalla_modificar_articulos
         'Panel_datosArticulo
         '
         Me.Panel_datosArticulo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel_datosArticulo.Controls.Add(Me.ListBox_precios)
+        Me.Panel_datosArticulo.Controls.Add(Me.ListBox_tamanios)
         Me.Panel_datosArticulo.Controls.Add(Me.Button_eliminar)
         Me.Panel_datosArticulo.Controls.Add(Me.Panel_precioYTamanio)
         Me.Panel_datosArticulo.Controls.Add(Me.ComboBox_categorias)
         Me.Panel_datosArticulo.Controls.Add(Me.Button1)
         Me.Panel_datosArticulo.Controls.Add(Me.Button_guardar)
-        Me.Panel_datosArticulo.Controls.Add(Me.ListBox_tamaniosprecios)
         Me.Panel_datosArticulo.Controls.Add(Me.Label6)
         Me.Panel_datosArticulo.Controls.Add(Me.Label5)
         Me.Panel_datosArticulo.Controls.Add(Me.TextBox_descripcion)
@@ -295,7 +297,7 @@ Partial Class Pantalla_modificar_articulos
         Me.Panel_datosArticulo.Controls.Add(Me.TextBox_nombre)
         Me.Panel_datosArticulo.Location = New System.Drawing.Point(36, 107)
         Me.Panel_datosArticulo.Name = "Panel_datosArticulo"
-        Me.Panel_datosArticulo.Size = New System.Drawing.Size(627, 285)
+        Me.Panel_datosArticulo.Size = New System.Drawing.Size(668, 285)
         Me.Panel_datosArticulo.TabIndex = 36
         '
         'Button_eliminar
@@ -405,14 +407,6 @@ Partial Class Pantalla_modificar_articulos
         Me.Button_guardar.Text = "Guardar"
         Me.Button_guardar.UseVisualStyleBackColor = True
         '
-        'ListBox_tamaniosprecios
-        '
-        Me.ListBox_tamaniosprecios.FormattingEnabled = True
-        Me.ListBox_tamaniosprecios.Location = New System.Drawing.Point(445, 18)
-        Me.ListBox_tamaniosprecios.Name = "ListBox_tamaniosprecios"
-        Me.ListBox_tamaniosprecios.Size = New System.Drawing.Size(169, 225)
-        Me.ListBox_tamaniosprecios.TabIndex = 8
-        '
         'Label6
         '
         Me.Label6.AutoSize = True
@@ -500,6 +494,26 @@ Partial Class Pantalla_modificar_articulos
         Me.Label1.TabIndex = 32
         Me.Label1.Text = "Artículos:"
         '
+        'ListBox_precios
+        '
+        Me.ListBox_precios.FormattingEnabled = True
+        Me.ListBox_precios.Location = New System.Drawing.Point(538, 18)
+        Me.ListBox_precios.Margin = New System.Windows.Forms.Padding(2)
+        Me.ListBox_precios.Name = "ListBox_precios"
+        Me.ListBox_precios.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
+        Me.ListBox_precios.Size = New System.Drawing.Size(86, 238)
+        Me.ListBox_precios.TabIndex = 29
+        '
+        'ListBox_tamanios
+        '
+        Me.ListBox_tamanios.FormattingEnabled = True
+        Me.ListBox_tamanios.Location = New System.Drawing.Point(448, 18)
+        Me.ListBox_tamanios.Margin = New System.Windows.Forms.Padding(2)
+        Me.ListBox_tamanios.Name = "ListBox_tamanios"
+        Me.ListBox_tamanios.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
+        Me.ListBox_tamanios.Size = New System.Drawing.Size(93, 238)
+        Me.ListBox_tamanios.TabIndex = 28
+        '
         'Pantalla_modificar_articulos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -553,7 +567,6 @@ Partial Class Pantalla_modificar_articulos
     Friend WithEvents Button1 As Button
     Friend WithEvents Button_guardar As Button
     Friend WithEvents Label7 As Label
-    Friend WithEvents ListBox_tamaniosprecios As ListBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents TextBox_descripcion As TextBox
@@ -572,4 +585,6 @@ Partial Class Pantalla_modificar_articulos
     Friend WithEvents ComboBox_tamanio As ComboBox
     Friend WithEvents Button_eliminar As Button
     Friend WithEvents Label9 As Label
+    Friend WithEvents ListBox_precios As ListBox
+    Friend WithEvents ListBox_tamanios As ListBox
 End Class
