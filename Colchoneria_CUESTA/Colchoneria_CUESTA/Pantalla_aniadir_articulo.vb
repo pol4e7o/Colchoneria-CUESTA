@@ -452,11 +452,11 @@
                     If ComboBox_tamanio.SelectedIndex >= 0 Then
 
                         'Si se ha elegido uno de los tamaños predefinidos se utiliza para añaddir a la lista
-                        articulo.setTamanioPrecio(CInt(ComboBox_tamanio.SelectedItem), CDbl(TextBox_precio.Text))
+                        articulo.setTamanioPrecio(ComboBox_tamanio.SelectedItem, TextBox_precio.Text)
 
                     Else
                         'Sino se utiliza el texto introducido dentro del combobox 
-                        articulo.setTamanioPrecio(CInt(ComboBox_tamanio.Text), CDbl(TextBox_precio.Text))
+                        articulo.setTamanioPrecio(ComboBox_tamanio.Text, TextBox_precio.Text)
 
                     End If
 
@@ -694,7 +694,7 @@
 
         'Se le pasa el mismo indice al otro listbox si no lo tiene ya
         If ListBox_precios.SelectedIndex <> ListBox_tamanios.SelectedIndex Then
-            ListBox_precios.SelectedIndex = ListBox_tamanios.SelectedIndex
+            ListBox_tamanios.SelectedIndex = ListBox_precios.SelectedIndex
 
         End If
 

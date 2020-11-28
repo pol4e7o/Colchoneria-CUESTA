@@ -26,6 +26,7 @@ Partial Class Pantalla_aniadir_articulo
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Pantalla_aniadir_articulo))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.ListBox_precios = New System.Windows.Forms.ListBox()
         Me.Label_camposObligatorios = New System.Windows.Forms.Label()
         Me.Panel_precioYTamanio = New System.Windows.Forms.Panel()
         Me.ComboBox_tamanio = New System.Windows.Forms.ComboBox()
@@ -66,7 +67,6 @@ Partial Class Pantalla_aniadir_articulo
         Me.ColchoneriaCUESTAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManualDeUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ListBox_precios = New System.Windows.Forms.ListBox()
         Me.Panel1.SuspendLayout()
         Me.Panel_precioYTamanio.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -104,6 +104,16 @@ Partial Class Pantalla_aniadir_articulo
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(633, 325)
         Me.Panel1.TabIndex = 1
+        '
+        'ListBox_precios
+        '
+        Me.ListBox_precios.FormattingEnabled = True
+        Me.ListBox_precios.Location = New System.Drawing.Point(505, 61)
+        Me.ListBox_precios.Margin = New System.Windows.Forms.Padding(2)
+        Me.ListBox_precios.Name = "ListBox_precios"
+        Me.ListBox_precios.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
+        Me.ListBox_precios.Size = New System.Drawing.Size(86, 238)
+        Me.ListBox_precios.TabIndex = 27
         '
         'Label_camposObligatorios
         '
@@ -462,16 +472,6 @@ Partial Class Pantalla_aniadir_articulo
         Me.ManualDeUsuarioToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1
         Me.ManualDeUsuarioToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
         Me.ManualDeUsuarioToolStripMenuItem.Text = "Manual de usuario"
-        '
-        'ListBox_precios
-        '
-        Me.ListBox_precios.FormattingEnabled = True
-        Me.ListBox_precios.Location = New System.Drawing.Point(505, 61)
-        Me.ListBox_precios.Margin = New System.Windows.Forms.Padding(2)
-        Me.ListBox_precios.Name = "ListBox_precios"
-        Me.ListBox_precios.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
-        Me.ListBox_precios.Size = New System.Drawing.Size(86, 238)
-        Me.ListBox_precios.TabIndex = 27
         '
         'Pantalla_aniadir_articulo
         '
