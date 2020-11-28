@@ -21,11 +21,7 @@
         Panel_datosArticulo.Enabled = False
 
         'Comprobar si se puede pulsar el botón modificar
-        If (ComboBox_modificar.SelectedIndex < 0) Then
-            Button_modificar.Enabled = False
-        Else
-            Button_modificar.Enabled = True
-        End If
+        Button_modificar.Enabled = False
 
         'Comprobar si se puede pulsar el botón aniadir
         Button_aniadir.Enabled = False
@@ -39,7 +35,7 @@
                     0 + MsgBoxStyle.Information, "Modificar articulos")
 
             Pantalla_admin_articulos.Show()
-            Me.Hide()
+            Me.Close()
 
         Else
 
@@ -49,6 +45,10 @@
                 ComboBox_modificar.Items.Add(articulos.Item(i).getNombreArticulo)
 
             Next
+
+            'Se habilita el boton guardar
+            Button_modificar.Enabled = False
+
 
         End If
 
@@ -432,7 +432,7 @@
             For i = 0 To articulos.Count - 1
 
                 'Cuando se encuentra el articulo que tiene el mismo nombre que este el objeto se asigna a la variable articulo
-                If articulos.Item(i).getNombreArticulo.Equals(ComboBox_modificar.SelectedItem) Then
+                If articulos.Item(i).getNombreArticulo.Replace(" ", "").Equals(ComboBox_modificar.SelectedItem.ToString.Replace(" ", "")) Then
 
                     articulo = articulos.Item(i)
 
@@ -491,8 +491,8 @@
                 For i = 0 To articulo.getTamaniosArticulo.Count - 1
 
                     'Se añaden el precio y el tamaño a la lista
-                    ListBox_tamanios.Items.Add("    tamaño: " & articulo.getTamaniosArticulo.Item(articulo.getTamaniosArticulo.Count - 1))
-                    ListBox_precios.Items.Add("    precio: " & articulo.getPreciosTamaniosArticulo.Item(articulo.getPreciosTamaniosArticulo.Count - 1) & "€")
+                    ListBox_tamanios.Items.Add("    tamaño: " & articulo.getTamaniosArticulo.Item(i))
+                    ListBox_precios.Items.Add("    precio: " & articulo.getPreciosTamaniosArticulo.Item(i) & "€")
 
 
                 Next i
@@ -635,6 +635,7 @@
 
                     'Se vacian los elementos y se pasa el foco al precio
                     TextBox_precio.Text = ""
+                    ComboBox_tamanio.Text = ""
                     ComboBox_tamanio.SelectedIndex = -1
                     TextBox_precio.Focus()
 
@@ -674,7 +675,7 @@
         'Indica si se ha repetido el nombre de articulo
         Dim nombreRepetido As Boolean = False
 
-        opcion = MsgBox("Esta seguro que desea modificar el artículo?", 4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Alta de empleado")
+        opcion = MsgBox("Esta seguro que desea modificar el artículo?", 4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Modificacion de articulo")
 
         If opcion = MsgBoxResult.Yes Then
 
@@ -720,18 +721,18 @@
                     articuloRegistro.precios = articulo.getPreciosTamaniosArticulo.ToArray
                     articuloRegistro.tamanios = articulo.getTamaniosArticulo.ToArray
 
-                    'Se añade el nuevo articulo al fichero
+                    'Se modifica el articulo en el fichero
                     FilePut(2, articuloRegistro, articuloRegistro.codigoArticulo)
 
-                    'Se modifica dentro del arraylist y despues se sobrescribe el fichero de articulos
+                    'Se modifica dentro de la lista y del el fichero de articulos
                     For i = 0 To articulos.Count - 1
 
-                        'Si los dos codigos son iguales se modifica en el arraylist y en el fichero
+                        'Si los dos codigos son iguales se modifica en la lista
                         If articulos.Item(i).getCodigoArticulo = articulo.getCodigoArticulo Then
 
 
                             'Se añade el articulo creado a la lista
-                            articulos.Add(articulo)
+                            articulos.Item(i) = articulo
 
                         End If
 
@@ -739,14 +740,14 @@
 
 
                     'Se le indica al usuario que se ha añadido el articulo correctamente
-                    MsgBox("El articulo ha sido añadido correctamente", 0 + MsgBoxStyle.Information, "Alta de articulo")
+                    MsgBox("El articulo ha sido modificado correctamente", 0 + MsgBoxStyle.Information, "Modificacion de articulo")
 
                 Catch ex As System.IO.FileNotFoundException
 
-                    MsgBox("El fichero ""Articulos.txt"" donde se tiene que almacenar el articulo no se encuentra. " & vbCrLf &
+                    MsgBox("El fichero ""Articulos.txt"" donde se tiene que modificar el articulo no se encuentra. " & vbCrLf &
                       "Por favor compruebe que el fichero esta en la carpeta de la aplicacion Colchoneria CUESTA. " & vbCrLf &
                       "Ejemplo: Carpeta que contiene la carpeta del programa\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\bin\Debug\Articulos.txt",
-                      0 + MsgBoxStyle.Exclamation, "Añadir articulo")
+                      0 + MsgBoxStyle.Exclamation, "Modificacion de articulo")
 
                     Try
 
@@ -768,8 +769,8 @@
 
                 Catch
 
-                    MsgBox("Se ha producido un error a la hora de almacenar el nuevo articulo",
-                       0 + MsgBoxStyle.Exclamation, "Añadir articulo")
+                    MsgBox("Se ha producido un error a la hora de modificar el articulo",
+                       0 + MsgBoxStyle.Exclamation, "Modificar articulo")
 
                     Try
 
@@ -875,27 +876,6 @@
 
 
 
-
-
-    'LISTBOX PRECIOTAMAÑO
-    Private Sub ListBox_tamaniosprecios_SelectedIndexChanged(sender As Object, e As EventArgs)
-
-        activarBotonModificar()
-
-        'Si se ha seleccionado un elemento se activa el boton eliminar
-        If ListBox_tamanios.SelectedIndex >= 0 Then
-
-            Button_eliminar.Enabled = True
-
-        Else
-
-            Button_eliminar.Enabled = False
-
-        End If
-
-    End Sub
-
-
     'COMBOBOX TAMAÑOS
     Private Sub ComboBox_tamanio_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox_tamanio.SelectedIndexChanged
 
@@ -917,7 +897,40 @@
 
     End Sub
 
+    'LISTBOX TAMANIOS
     Private Sub ListBox_tamanios_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox_tamanios.SelectedIndexChanged
 
+        'Se comprueba que todos los campos necesarios están rellenos
+        If ListBox_tamanios.SelectedIndex >= 0 Then
+            Button_eliminar.Enabled = True
+        End If
+
+        'Se le pasa el mismo indice al otro listbox si no lo tiene ya
+        If ListBox_precios.SelectedIndex <> ListBox_tamanios.SelectedIndex Then
+            ListBox_precios.SelectedIndex = ListBox_tamanios.SelectedIndex
+
+        End If
+
+        activarBotonModificar()
+
     End Sub
+
+    'LISTBOX PRECIOS
+    Private Sub ListBox_precios_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox_precios.SelectedIndexChanged
+
+        'Se comprueba que todos los campos necesarios están rellenos
+        If ListBox_tamanios.SelectedIndex >= 0 Then
+            Button_eliminar.Enabled = True
+        End If
+
+        'Se le pasa el mismo indice al otro listbox si no lo tiene ya
+        If ListBox_precios.SelectedIndex <> ListBox_tamanios.SelectedIndex Then
+            ListBox_tamanios.SelectedIndex = ListBox_precios.SelectedIndex
+
+        End If
+
+        activarBotonModificar()
+
+    End Sub
+
 End Class

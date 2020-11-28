@@ -48,6 +48,8 @@ Partial Class Pantalla_modificar_articulos
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel_datosArticulo = New System.Windows.Forms.Panel()
+        Me.ListBox_precios = New System.Windows.Forms.ListBox()
+        Me.ListBox_tamanios = New System.Windows.Forms.ListBox()
         Me.Button_eliminar = New System.Windows.Forms.Button()
         Me.Panel_precioYTamanio = New System.Windows.Forms.Panel()
         Me.ComboBox_tamanio = New System.Windows.Forms.ComboBox()
@@ -69,8 +71,6 @@ Partial Class Pantalla_modificar_articulos
         Me.Button_modificar = New System.Windows.Forms.Button()
         Me.ComboBox_modificar = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.ListBox_precios = New System.Windows.Forms.ListBox()
-        Me.ListBox_tamanios = New System.Windows.Forms.ListBox()
         Me.Panel1.SuspendLayout()
         Me.MenuStrip.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -257,6 +257,7 @@ Partial Class Pantalla_modificar_articulos
         '
         'Panel2
         '
+        Me.Panel2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel2.Controls.Add(Me.Label9)
         Me.Panel2.Controls.Add(Me.Panel_datosArticulo)
         Me.Panel2.Controls.Add(Me.Button_cancelar)
@@ -299,6 +300,26 @@ Partial Class Pantalla_modificar_articulos
         Me.Panel_datosArticulo.Name = "Panel_datosArticulo"
         Me.Panel_datosArticulo.Size = New System.Drawing.Size(668, 285)
         Me.Panel_datosArticulo.TabIndex = 36
+        '
+        'ListBox_precios
+        '
+        Me.ListBox_precios.FormattingEnabled = True
+        Me.ListBox_precios.Location = New System.Drawing.Point(538, 18)
+        Me.ListBox_precios.Margin = New System.Windows.Forms.Padding(2)
+        Me.ListBox_precios.Name = "ListBox_precios"
+        Me.ListBox_precios.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
+        Me.ListBox_precios.Size = New System.Drawing.Size(86, 238)
+        Me.ListBox_precios.TabIndex = 29
+        '
+        'ListBox_tamanios
+        '
+        Me.ListBox_tamanios.FormattingEnabled = True
+        Me.ListBox_tamanios.Location = New System.Drawing.Point(448, 18)
+        Me.ListBox_tamanios.Margin = New System.Windows.Forms.Padding(2)
+        Me.ListBox_tamanios.Name = "ListBox_tamanios"
+        Me.ListBox_tamanios.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
+        Me.ListBox_tamanios.Size = New System.Drawing.Size(93, 238)
+        Me.ListBox_tamanios.TabIndex = 28
         '
         'Button_eliminar
         '
@@ -493,26 +514,6 @@ Partial Class Pantalla_modificar_articulos
         Me.Label1.Size = New System.Drawing.Size(52, 13)
         Me.Label1.TabIndex = 32
         Me.Label1.Text = "Artículos:"
-        '
-        'ListBox_precios
-        '
-        Me.ListBox_precios.FormattingEnabled = True
-        Me.ListBox_precios.Location = New System.Drawing.Point(538, 18)
-        Me.ListBox_precios.Margin = New System.Windows.Forms.Padding(2)
-        Me.ListBox_precios.Name = "ListBox_precios"
-        Me.ListBox_precios.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
-        Me.ListBox_precios.Size = New System.Drawing.Size(86, 238)
-        Me.ListBox_precios.TabIndex = 29
-        '
-        'ListBox_tamanios
-        '
-        Me.ListBox_tamanios.FormattingEnabled = True
-        Me.ListBox_tamanios.Location = New System.Drawing.Point(448, 18)
-        Me.ListBox_tamanios.Margin = New System.Windows.Forms.Padding(2)
-        Me.ListBox_tamanios.Name = "ListBox_tamanios"
-        Me.ListBox_tamanios.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
-        Me.ListBox_tamanios.Size = New System.Drawing.Size(93, 238)
-        Me.ListBox_tamanios.TabIndex = 28
         '
         'Pantalla_modificar_articulos
         '
