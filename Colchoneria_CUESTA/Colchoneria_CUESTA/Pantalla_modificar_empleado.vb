@@ -811,7 +811,16 @@
                 'Si los nombres de usuario son iguales se pasan todos los datos de este empleado al las cajas de texto
                 If comboBox_elegirEmpleado.SelectedItem.Equals(empleados.Item(i).getNombreUsuario) Then
 
-                    empleado = empleados.Item(i)
+                    'Se hace una capia de todos los datos del articulo seleccionado
+                    empleado.setCodigoEmpleado(empleados.Item(i).getCodigoEmpleado)
+                    empleado.setNombreEmpleado(empleados.Item(i).getNombreEmpleado)
+                    empleado.setApellidos(empleados.Item(i).getApellidos)
+                    empleado.setDireccion(empleados.Item(i).getDireccion)
+                    empleado.setCodigoPostal(empleados.Item(i).getCodigoPostal)
+                    empleado.setTelefono(empleados.Item(i).getTelefono)
+                    empleado.setNombreUsuario(empleados.Item(i).getNombreUsuario)
+                    empleado.setContraseniaEmpleado(empleados.Item(i).getContraseniaEmpleado)
+                    empleado.setEsAdministrador(empleados.Item(i).getEsAdministrador)
 
                     textBox_nombre.Text = empleado.getNombreEmpleado
                     textBox_apellidos.Text = empleado.getApellidos

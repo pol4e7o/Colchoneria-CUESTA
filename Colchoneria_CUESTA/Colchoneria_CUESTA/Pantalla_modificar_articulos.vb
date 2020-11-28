@@ -409,6 +409,10 @@
     'COMBOBOX MODIFICAR CAMBIO DE INDICE
     Private Sub ComboBox_modificar_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox_modificar.SelectedIndexChanged
 
+        'Se utilizan para copiar los valores del articulo seleccionado
+        Dim tamanios(14) As Integer
+        Dim precios(14) As Double
+
         'Si se ha elegido un articulo de los de la lista se activa el boton guardar
         If ComboBox_modificar.SelectedIndex >= 0 Then
 
@@ -434,7 +438,17 @@
                 'Cuando se encuentra el articulo que tiene el mismo nombre que este el objeto se asigna a la variable articulo
                 If articulos.Item(i).getNombreArticulo.Replace(" ", "").Equals(ComboBox_modificar.SelectedItem.ToString.Replace(" ", "")) Then
 
-                    articulo = articulos.Item(i)
+                    'Se pasa una copia de todos los tamanios del articulo actual
+                    articulos.Item(i).getTamaniosArticulo.CopyTo(tamanios)
+
+                    'Se pasa una copia de todos los precios del articulo actual
+                    articulos.Item(i).getPreciosTamaniosArticulo.CopyTo(precios)
+
+                    articulo.setCodigoArticulo(articulos.Item(i).getCodigoArticulo)
+                    articulo.setCategoriaArticulo(articulos.Item(i).getCategoriaArticulo)
+                    articulo.setDescripcionArticulo(articulos.Item(i).getDescripcionArticulo)
+                    articulo.setNombreArticulo(articulos.Item(i).getNombreArticulo)
+                    articulo.setTamaniosPrecios(tamanios.ToList, precios.ToList)
 
                 End If
 
@@ -656,13 +670,20 @@
     'BOTON ELIMINAR
     Private Sub Button_eliminar_Click(sender As Object, e As EventArgs) Handles Button_eliminar.Click
 
-        'Eliminamos el precio y tamaño seleccionados del articulo
-        articulo.eliminarTamanioPrecio(ListBox_tamanios.SelectedIndex)
+        Dim index As Integer
 
-        'Eliminamos el item seleccionado
-        ListBox_tamanios.Items.RemoveAt(ListBox_tamanios.SelectedIndex)
-        ListBox_precios.Items.RemoveAt(ListBox_precios.SelectedIndex)
+        While ListBox_tamanios.SelectedIndex >= 0
 
+            index = ListBox_tamanios.SelectedIndex
+
+            'Eliminamos el precio y tamaño seleccionados del articulo
+            articulo.eliminarTamanioPrecio(index)
+
+            'Eliminamos el item seleccionado
+            ListBox_precios.Items.RemoveAt(index)
+            ListBox_tamanios.Items.RemoveAt(index)
+
+        End While
 
     End Sub
 
