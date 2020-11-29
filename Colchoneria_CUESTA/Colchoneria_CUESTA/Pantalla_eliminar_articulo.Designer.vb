@@ -93,7 +93,7 @@ Partial Class Pantalla_eliminar_articulo
         Me.Button_eliminar.Location = New System.Drawing.Point(101, 501)
         Me.Button_eliminar.Margin = New System.Windows.Forms.Padding(4)
         Me.Button_eliminar.Name = "Button_eliminar"
-        Me.Button_eliminar.Size = New System.Drawing.Size(119, 49)
+        Me.Button_eliminar.Size = New System.Drawing.Size(179, 38)
         Me.Button_eliminar.TabIndex = 2
         Me.Button_eliminar.Text = "Eliminar"
         Me.Button_eliminar.UseVisualStyleBackColor = False
@@ -102,10 +102,10 @@ Partial Class Pantalla_eliminar_articulo
         '
         Me.Button_cancelar.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Button_cancelar.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.Button_cancelar.Location = New System.Drawing.Point(256, 501)
+        Me.Button_cancelar.Location = New System.Drawing.Point(288, 501)
         Me.Button_cancelar.Margin = New System.Windows.Forms.Padding(4)
         Me.Button_cancelar.Name = "Button_cancelar"
-        Me.Button_cancelar.Size = New System.Drawing.Size(116, 49)
+        Me.Button_cancelar.Size = New System.Drawing.Size(179, 38)
         Me.Button_cancelar.TabIndex = 3
         Me.Button_cancelar.Text = "Cancelar"
         Me.Button_cancelar.UseVisualStyleBackColor = False
