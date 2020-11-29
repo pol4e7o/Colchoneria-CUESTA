@@ -30,6 +30,7 @@ Partial Class Gestion_de_errores
         Me.label_hora = New System.Windows.Forms.Label()
         Me.Label_gestionVenta = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.ListBox_errores = New System.Windows.Forms.ListBox()
         Me.Label_ventaElegida = New System.Windows.Forms.Label()
         Me.Label_venta = New System.Windows.Forms.Label()
@@ -53,7 +54,6 @@ Partial Class Gestion_de_errores
         Me.ColchoneriaCUESTAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManualDeUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.MenuStrip.SuspendLayout()
@@ -69,7 +69,7 @@ Partial Class Gestion_de_errores
         Me.Panel2.Controls.Add(Me.label_fecha)
         Me.Panel2.Controls.Add(Me.label_hora)
         Me.Panel2.Location = New System.Drawing.Point(0, 566)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1263, 51)
         Me.Panel2.TabIndex = 9
@@ -134,6 +134,7 @@ Partial Class Gestion_de_errores
         'Panel1
         '
         Me.Panel1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Panel1.BackColor = System.Drawing.Color.Gainsboro
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.ListBox_errores)
         Me.Panel1.Controls.Add(Me.Label_ventaElegida)
@@ -147,12 +148,23 @@ Partial Class Gestion_de_errores
         Me.Panel1.Size = New System.Drawing.Size(923, 278)
         Me.Panel1.TabIndex = 11
         '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.Button1.Location = New System.Drawing.Point(38, 121)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(130, 44)
+        Me.Button1.TabIndex = 9
+        Me.Button1.Text = "Visualizar"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'ListBox_errores
         '
         Me.ListBox_errores.FormattingEnabled = True
         Me.ListBox_errores.ItemHeight = 16
         Me.ListBox_errores.Location = New System.Drawing.Point(499, 38)
-        Me.ListBox_errores.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ListBox_errores.Margin = New System.Windows.Forms.Padding(4)
         Me.ListBox_errores.Name = "ListBox_errores"
         Me.ListBox_errores.Size = New System.Drawing.Size(384, 180)
         Me.ListBox_errores.TabIndex = 8
@@ -333,17 +345,6 @@ Partial Class Gestion_de_errores
         Me.ManualDeUsuarioToolStripMenuItem.Size = New System.Drawing.Size(230, 26)
         Me.ManualDeUsuarioToolStripMenuItem.Text = "Manual de usuario"
         '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.Button1.Location = New System.Drawing.Point(38, 121)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(130, 44)
-        Me.Button1.TabIndex = 9
-        Me.Button1.Text = "Visualizar"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
         'Gestion_de_errores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -355,7 +356,7 @@ Partial Class Gestion_de_errores
         Me.Controls.Add(Me.Label_gestionVenta)
         Me.Controls.Add(Me.Panel2)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Gestion_de_errores"
         Me.Text = "Gestión de errores - Colchonería CUESTA"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

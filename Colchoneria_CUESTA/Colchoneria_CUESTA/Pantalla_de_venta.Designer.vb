@@ -282,7 +282,7 @@ Partial Class Pantalla_de_venta
         Me.Panel1.Controls.Add(Me.label_fecha)
         Me.Panel1.Controls.Add(Me.label_hora)
         Me.Panel1.Location = New System.Drawing.Point(0, 816)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1388, 51)
         Me.Panel1.TabIndex = 28
@@ -356,7 +356,7 @@ Partial Class Pantalla_de_venta
         Me.pictureBox_base.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.pictureBox_base.Image = CType(resources.GetObject("pictureBox_base.Image"), System.Drawing.Image)
         Me.pictureBox_base.Location = New System.Drawing.Point(79, 37)
-        Me.pictureBox_base.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pictureBox_base.Margin = New System.Windows.Forms.Padding(4)
         Me.pictureBox_base.Name = "pictureBox_base"
         Me.pictureBox_base.Size = New System.Drawing.Size(160, 74)
         Me.pictureBox_base.TabIndex = 0
@@ -368,7 +368,7 @@ Partial Class Pantalla_de_venta
         Me.pictureBox_somier.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.pictureBox_somier.Image = CType(resources.GetObject("pictureBox_somier.Image"), System.Drawing.Image)
         Me.pictureBox_somier.Location = New System.Drawing.Point(420, 37)
-        Me.pictureBox_somier.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pictureBox_somier.Margin = New System.Windows.Forms.Padding(4)
         Me.pictureBox_somier.Name = "pictureBox_somier"
         Me.pictureBox_somier.Size = New System.Drawing.Size(161, 74)
         Me.pictureBox_somier.TabIndex = 1
@@ -381,7 +381,7 @@ Partial Class Pantalla_de_venta
         Me.pictureBox_colchon.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.pictureBox_colchon.Image = CType(resources.GetObject("pictureBox_colchon.Image"), System.Drawing.Image)
         Me.pictureBox_colchon.Location = New System.Drawing.Point(745, 37)
-        Me.pictureBox_colchon.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pictureBox_colchon.Margin = New System.Windows.Forms.Padding(4)
         Me.pictureBox_colchon.Name = "pictureBox_colchon"
         Me.pictureBox_colchon.Size = New System.Drawing.Size(160, 74)
         Me.pictureBox_colchon.TabIndex = 2
@@ -392,7 +392,7 @@ Partial Class Pantalla_de_venta
         Me.pictureBox_canape.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.pictureBox_canape.Image = CType(resources.GetObject("pictureBox_canape.Image"), System.Drawing.Image)
         Me.pictureBox_canape.Location = New System.Drawing.Point(79, 309)
-        Me.pictureBox_canape.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pictureBox_canape.Margin = New System.Windows.Forms.Padding(4)
         Me.pictureBox_canape.Name = "pictureBox_canape"
         Me.pictureBox_canape.Size = New System.Drawing.Size(163, 78)
         Me.pictureBox_canape.TabIndex = 3
@@ -402,7 +402,7 @@ Partial Class Pantalla_de_venta
         '
         Me.pictureBox_otros.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.pictureBox_otros.Location = New System.Drawing.Point(763, 326)
-        Me.pictureBox_otros.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pictureBox_otros.Margin = New System.Windows.Forms.Padding(4)
         Me.pictureBox_otros.Name = "pictureBox_otros"
         Me.pictureBox_otros.Size = New System.Drawing.Size(132, 61)
         Me.pictureBox_otros.TabIndex = 4
@@ -412,7 +412,7 @@ Partial Class Pantalla_de_venta
         '
         Me.comboBox_base.FormattingEnabled = True
         Me.comboBox_base.Location = New System.Drawing.Point(44, 121)
-        Me.comboBox_base.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.comboBox_base.Margin = New System.Windows.Forms.Padding(4)
         Me.comboBox_base.Name = "comboBox_base"
         Me.comboBox_base.Size = New System.Drawing.Size(239, 24)
         Me.comboBox_base.TabIndex = 5
@@ -421,7 +421,7 @@ Partial Class Pantalla_de_venta
         '
         Me.comboBox_somier.FormattingEnabled = True
         Me.comboBox_somier.Location = New System.Drawing.Point(376, 121)
-        Me.comboBox_somier.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.comboBox_somier.Margin = New System.Windows.Forms.Padding(4)
         Me.comboBox_somier.Name = "comboBox_somier"
         Me.comboBox_somier.Size = New System.Drawing.Size(239, 24)
         Me.comboBox_somier.TabIndex = 6
@@ -430,7 +430,7 @@ Partial Class Pantalla_de_venta
         '
         Me.comboBox_colchon.FormattingEnabled = True
         Me.comboBox_colchon.Location = New System.Drawing.Point(709, 121)
-        Me.comboBox_colchon.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.comboBox_colchon.Margin = New System.Windows.Forms.Padding(4)
         Me.comboBox_colchon.Name = "comboBox_colchon"
         Me.comboBox_colchon.Size = New System.Drawing.Size(239, 24)
         Me.comboBox_colchon.TabIndex = 7
@@ -439,7 +439,7 @@ Partial Class Pantalla_de_venta
         '
         Me.comboBox_otros.FormattingEnabled = True
         Me.comboBox_otros.Location = New System.Drawing.Point(709, 395)
-        Me.comboBox_otros.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.comboBox_otros.Margin = New System.Windows.Forms.Padding(4)
         Me.comboBox_otros.Name = "comboBox_otros"
         Me.comboBox_otros.Size = New System.Drawing.Size(239, 24)
         Me.comboBox_otros.TabIndex = 8
@@ -448,7 +448,7 @@ Partial Class Pantalla_de_venta
         '
         Me.comboBox_canape.FormattingEnabled = True
         Me.comboBox_canape.Location = New System.Drawing.Point(44, 395)
-        Me.comboBox_canape.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.comboBox_canape.Margin = New System.Windows.Forms.Padding(4)
         Me.comboBox_canape.Name = "comboBox_canape"
         Me.comboBox_canape.Size = New System.Drawing.Size(239, 24)
         Me.comboBox_canape.TabIndex = 9
@@ -508,7 +508,7 @@ Partial Class Pantalla_de_venta
         Me.pictureBox_ofertas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.pictureBox_ofertas.Image = CType(resources.GetObject("pictureBox_ofertas.Image"), System.Drawing.Image)
         Me.pictureBox_ofertas.Location = New System.Drawing.Point(421, 309)
-        Me.pictureBox_ofertas.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pictureBox_ofertas.Margin = New System.Windows.Forms.Padding(4)
         Me.pictureBox_ofertas.Name = "pictureBox_ofertas"
         Me.pictureBox_ofertas.Size = New System.Drawing.Size(160, 78)
         Me.pictureBox_ofertas.TabIndex = 15
@@ -518,7 +518,7 @@ Partial Class Pantalla_de_venta
         '
         Me.comboBox_ofertas.FormattingEnabled = True
         Me.comboBox_ofertas.Location = New System.Drawing.Point(376, 395)
-        Me.comboBox_ofertas.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.comboBox_ofertas.Margin = New System.Windows.Forms.Padding(4)
         Me.comboBox_ofertas.Name = "comboBox_ofertas"
         Me.comboBox_ofertas.Size = New System.Drawing.Size(239, 24)
         Me.comboBox_ofertas.TabIndex = 16
@@ -542,7 +542,7 @@ Partial Class Pantalla_de_venta
         Me.panel_base.Controls.Add(Me.label_precio_base)
         Me.panel_base.Controls.Add(Me.comboBox_tamanio_base)
         Me.panel_base.Location = New System.Drawing.Point(25, 154)
-        Me.panel_base.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.panel_base.Margin = New System.Windows.Forms.Padding(4)
         Me.panel_base.Name = "panel_base"
         Me.panel_base.Size = New System.Drawing.Size(281, 116)
         Me.panel_base.TabIndex = 25
@@ -560,7 +560,7 @@ Partial Class Pantalla_de_venta
         'button_informacion_base
         '
         Me.button_informacion_base.Location = New System.Drawing.Point(167, 69)
-        Me.button_informacion_base.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.button_informacion_base.Margin = New System.Windows.Forms.Padding(4)
         Me.button_informacion_base.Name = "button_informacion_base"
         Me.button_informacion_base.Size = New System.Drawing.Size(100, 28)
         Me.button_informacion_base.TabIndex = 23
@@ -570,7 +570,7 @@ Partial Class Pantalla_de_venta
         'button_aniadir_base
         '
         Me.button_aniadir_base.Location = New System.Drawing.Point(19, 69)
-        Me.button_aniadir_base.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.button_aniadir_base.Margin = New System.Windows.Forms.Padding(4)
         Me.button_aniadir_base.Name = "button_aniadir_base"
         Me.button_aniadir_base.Size = New System.Drawing.Size(100, 28)
         Me.button_aniadir_base.TabIndex = 22
@@ -582,7 +582,7 @@ Partial Class Pantalla_de_venta
         Me.comboBox_cantidad_base.FormattingEnabled = True
         Me.comboBox_cantidad_base.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
         Me.comboBox_cantidad_base.Location = New System.Drawing.Point(181, 23)
-        Me.comboBox_cantidad_base.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.comboBox_cantidad_base.Margin = New System.Windows.Forms.Padding(4)
         Me.comboBox_cantidad_base.Name = "comboBox_cantidad_base"
         Me.comboBox_cantidad_base.Size = New System.Drawing.Size(76, 24)
         Me.comboBox_cantidad_base.TabIndex = 21
@@ -601,7 +601,7 @@ Partial Class Pantalla_de_venta
         '
         Me.comboBox_tamanio_base.FormattingEnabled = True
         Me.comboBox_tamanio_base.Location = New System.Drawing.Point(19, 23)
-        Me.comboBox_tamanio_base.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.comboBox_tamanio_base.Margin = New System.Windows.Forms.Padding(4)
         Me.comboBox_tamanio_base.Name = "comboBox_tamanio_base"
         Me.comboBox_tamanio_base.Size = New System.Drawing.Size(75, 24)
         Me.comboBox_tamanio_base.TabIndex = 19
@@ -615,7 +615,7 @@ Partial Class Pantalla_de_venta
         Me.panel_somier.Controls.Add(Me.comboBox_tamanio_somier)
         Me.panel_somier.Controls.Add(Me.label_precio_somier)
         Me.panel_somier.Location = New System.Drawing.Point(357, 154)
-        Me.panel_somier.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.panel_somier.Margin = New System.Windows.Forms.Padding(4)
         Me.panel_somier.Name = "panel_somier"
         Me.panel_somier.Size = New System.Drawing.Size(281, 116)
         Me.panel_somier.TabIndex = 26
@@ -633,7 +633,7 @@ Partial Class Pantalla_de_venta
         'button_informacion_somier
         '
         Me.button_informacion_somier.Location = New System.Drawing.Point(167, 69)
-        Me.button_informacion_somier.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.button_informacion_somier.Margin = New System.Windows.Forms.Padding(4)
         Me.button_informacion_somier.Name = "button_informacion_somier"
         Me.button_informacion_somier.Size = New System.Drawing.Size(100, 28)
         Me.button_informacion_somier.TabIndex = 23
@@ -643,7 +643,7 @@ Partial Class Pantalla_de_venta
         'button_aniadir_somier
         '
         Me.button_aniadir_somier.Location = New System.Drawing.Point(19, 69)
-        Me.button_aniadir_somier.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.button_aniadir_somier.Margin = New System.Windows.Forms.Padding(4)
         Me.button_aniadir_somier.Name = "button_aniadir_somier"
         Me.button_aniadir_somier.Size = New System.Drawing.Size(100, 28)
         Me.button_aniadir_somier.TabIndex = 22
@@ -655,7 +655,7 @@ Partial Class Pantalla_de_venta
         Me.comboBox_cantidad_somier.FormattingEnabled = True
         Me.comboBox_cantidad_somier.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
         Me.comboBox_cantidad_somier.Location = New System.Drawing.Point(181, 23)
-        Me.comboBox_cantidad_somier.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.comboBox_cantidad_somier.Margin = New System.Windows.Forms.Padding(4)
         Me.comboBox_cantidad_somier.Name = "comboBox_cantidad_somier"
         Me.comboBox_cantidad_somier.Size = New System.Drawing.Size(76, 24)
         Me.comboBox_cantidad_somier.TabIndex = 21
@@ -664,7 +664,7 @@ Partial Class Pantalla_de_venta
         '
         Me.comboBox_tamanio_somier.FormattingEnabled = True
         Me.comboBox_tamanio_somier.Location = New System.Drawing.Point(19, 23)
-        Me.comboBox_tamanio_somier.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.comboBox_tamanio_somier.Margin = New System.Windows.Forms.Padding(4)
         Me.comboBox_tamanio_somier.Name = "comboBox_tamanio_somier"
         Me.comboBox_tamanio_somier.Size = New System.Drawing.Size(75, 24)
         Me.comboBox_tamanio_somier.TabIndex = 23
@@ -688,7 +688,7 @@ Partial Class Pantalla_de_venta
         Me.panel_colchon.Controls.Add(Me.label_precio_colchon)
         Me.panel_colchon.Controls.Add(Me.comboBox_tamanio_colchon)
         Me.panel_colchon.Location = New System.Drawing.Point(691, 154)
-        Me.panel_colchon.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.panel_colchon.Margin = New System.Windows.Forms.Padding(4)
         Me.panel_colchon.Name = "panel_colchon"
         Me.panel_colchon.Size = New System.Drawing.Size(281, 116)
         Me.panel_colchon.TabIndex = 27
@@ -706,7 +706,7 @@ Partial Class Pantalla_de_venta
         'button_informacion_colchon
         '
         Me.button_informacion_colchon.Location = New System.Drawing.Point(167, 69)
-        Me.button_informacion_colchon.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.button_informacion_colchon.Margin = New System.Windows.Forms.Padding(4)
         Me.button_informacion_colchon.Name = "button_informacion_colchon"
         Me.button_informacion_colchon.Size = New System.Drawing.Size(100, 28)
         Me.button_informacion_colchon.TabIndex = 23
@@ -716,7 +716,7 @@ Partial Class Pantalla_de_venta
         'button_aniadir_colchon
         '
         Me.button_aniadir_colchon.Location = New System.Drawing.Point(19, 69)
-        Me.button_aniadir_colchon.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.button_aniadir_colchon.Margin = New System.Windows.Forms.Padding(4)
         Me.button_aniadir_colchon.Name = "button_aniadir_colchon"
         Me.button_aniadir_colchon.Size = New System.Drawing.Size(100, 28)
         Me.button_aniadir_colchon.TabIndex = 22
@@ -728,7 +728,7 @@ Partial Class Pantalla_de_venta
         Me.comboBox_cantidad_colchon.FormattingEnabled = True
         Me.comboBox_cantidad_colchon.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
         Me.comboBox_cantidad_colchon.Location = New System.Drawing.Point(181, 23)
-        Me.comboBox_cantidad_colchon.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.comboBox_cantidad_colchon.Margin = New System.Windows.Forms.Padding(4)
         Me.comboBox_cantidad_colchon.Name = "comboBox_cantidad_colchon"
         Me.comboBox_cantidad_colchon.Size = New System.Drawing.Size(76, 24)
         Me.comboBox_cantidad_colchon.TabIndex = 21
@@ -747,7 +747,7 @@ Partial Class Pantalla_de_venta
         '
         Me.comboBox_tamanio_colchon.FormattingEnabled = True
         Me.comboBox_tamanio_colchon.Location = New System.Drawing.Point(19, 23)
-        Me.comboBox_tamanio_colchon.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.comboBox_tamanio_colchon.Margin = New System.Windows.Forms.Padding(4)
         Me.comboBox_tamanio_colchon.Name = "comboBox_tamanio_colchon"
         Me.comboBox_tamanio_colchon.Size = New System.Drawing.Size(72, 24)
         Me.comboBox_tamanio_colchon.TabIndex = 22
@@ -761,7 +761,7 @@ Partial Class Pantalla_de_venta
         Me.panel_canape.Controls.Add(Me.label_precio_canape)
         Me.panel_canape.Controls.Add(Me.comboBox_tamanio_canape)
         Me.panel_canape.Location = New System.Drawing.Point(25, 428)
-        Me.panel_canape.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.panel_canape.Margin = New System.Windows.Forms.Padding(4)
         Me.panel_canape.Name = "panel_canape"
         Me.panel_canape.Size = New System.Drawing.Size(281, 116)
         Me.panel_canape.TabIndex = 28
@@ -779,7 +779,7 @@ Partial Class Pantalla_de_venta
         'button_informacion_canape
         '
         Me.button_informacion_canape.Location = New System.Drawing.Point(167, 69)
-        Me.button_informacion_canape.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.button_informacion_canape.Margin = New System.Windows.Forms.Padding(4)
         Me.button_informacion_canape.Name = "button_informacion_canape"
         Me.button_informacion_canape.Size = New System.Drawing.Size(100, 28)
         Me.button_informacion_canape.TabIndex = 23
@@ -789,7 +789,7 @@ Partial Class Pantalla_de_venta
         'button_aniadir_canape
         '
         Me.button_aniadir_canape.Location = New System.Drawing.Point(19, 69)
-        Me.button_aniadir_canape.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.button_aniadir_canape.Margin = New System.Windows.Forms.Padding(4)
         Me.button_aniadir_canape.Name = "button_aniadir_canape"
         Me.button_aniadir_canape.Size = New System.Drawing.Size(100, 28)
         Me.button_aniadir_canape.TabIndex = 22
@@ -801,7 +801,7 @@ Partial Class Pantalla_de_venta
         Me.comboBox_cantidad_canape.FormattingEnabled = True
         Me.comboBox_cantidad_canape.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
         Me.comboBox_cantidad_canape.Location = New System.Drawing.Point(181, 23)
-        Me.comboBox_cantidad_canape.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.comboBox_cantidad_canape.Margin = New System.Windows.Forms.Padding(4)
         Me.comboBox_cantidad_canape.Name = "comboBox_cantidad_canape"
         Me.comboBox_cantidad_canape.Size = New System.Drawing.Size(76, 24)
         Me.comboBox_cantidad_canape.TabIndex = 21
@@ -820,7 +820,7 @@ Partial Class Pantalla_de_venta
         '
         Me.comboBox_tamanio_canape.FormattingEnabled = True
         Me.comboBox_tamanio_canape.Location = New System.Drawing.Point(19, 23)
-        Me.comboBox_tamanio_canape.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.comboBox_tamanio_canape.Margin = New System.Windows.Forms.Padding(4)
         Me.comboBox_tamanio_canape.Name = "comboBox_tamanio_canape"
         Me.comboBox_tamanio_canape.Size = New System.Drawing.Size(75, 24)
         Me.comboBox_tamanio_canape.TabIndex = 21
@@ -834,7 +834,7 @@ Partial Class Pantalla_de_venta
         Me.panel_ofertas.Controls.Add(Me.label_precio_ofertas)
         Me.panel_ofertas.Controls.Add(Me.comboBox_tamanios_ofertas)
         Me.panel_ofertas.Location = New System.Drawing.Point(357, 428)
-        Me.panel_ofertas.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.panel_ofertas.Margin = New System.Windows.Forms.Padding(4)
         Me.panel_ofertas.Name = "panel_ofertas"
         Me.panel_ofertas.Size = New System.Drawing.Size(281, 116)
         Me.panel_ofertas.TabIndex = 29
@@ -852,7 +852,7 @@ Partial Class Pantalla_de_venta
         'button_informacion_ofertas
         '
         Me.button_informacion_ofertas.Location = New System.Drawing.Point(167, 69)
-        Me.button_informacion_ofertas.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.button_informacion_ofertas.Margin = New System.Windows.Forms.Padding(4)
         Me.button_informacion_ofertas.Name = "button_informacion_ofertas"
         Me.button_informacion_ofertas.Size = New System.Drawing.Size(100, 28)
         Me.button_informacion_ofertas.TabIndex = 23
@@ -862,7 +862,7 @@ Partial Class Pantalla_de_venta
         'button_aniadir_ofertas
         '
         Me.button_aniadir_ofertas.Location = New System.Drawing.Point(19, 69)
-        Me.button_aniadir_ofertas.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.button_aniadir_ofertas.Margin = New System.Windows.Forms.Padding(4)
         Me.button_aniadir_ofertas.Name = "button_aniadir_ofertas"
         Me.button_aniadir_ofertas.Size = New System.Drawing.Size(100, 28)
         Me.button_aniadir_ofertas.TabIndex = 22
@@ -874,7 +874,7 @@ Partial Class Pantalla_de_venta
         Me.comboBox_cantidad_ofertas.FormattingEnabled = True
         Me.comboBox_cantidad_ofertas.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
         Me.comboBox_cantidad_ofertas.Location = New System.Drawing.Point(181, 23)
-        Me.comboBox_cantidad_ofertas.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.comboBox_cantidad_ofertas.Margin = New System.Windows.Forms.Padding(4)
         Me.comboBox_cantidad_ofertas.Name = "comboBox_cantidad_ofertas"
         Me.comboBox_cantidad_ofertas.Size = New System.Drawing.Size(76, 24)
         Me.comboBox_cantidad_ofertas.TabIndex = 21
@@ -893,7 +893,7 @@ Partial Class Pantalla_de_venta
         '
         Me.comboBox_tamanios_ofertas.FormattingEnabled = True
         Me.comboBox_tamanios_ofertas.Location = New System.Drawing.Point(19, 23)
-        Me.comboBox_tamanios_ofertas.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.comboBox_tamanios_ofertas.Margin = New System.Windows.Forms.Padding(4)
         Me.comboBox_tamanios_ofertas.Name = "comboBox_tamanios_ofertas"
         Me.comboBox_tamanios_ofertas.Size = New System.Drawing.Size(75, 24)
         Me.comboBox_tamanios_ofertas.TabIndex = 20
@@ -907,7 +907,7 @@ Partial Class Pantalla_de_venta
         Me.panel_otros.Controls.Add(Me.label_precio_otros)
         Me.panel_otros.Controls.Add(Me.comboBox_tamanio_otros)
         Me.panel_otros.Location = New System.Drawing.Point(691, 428)
-        Me.panel_otros.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.panel_otros.Margin = New System.Windows.Forms.Padding(4)
         Me.panel_otros.Name = "panel_otros"
         Me.panel_otros.Size = New System.Drawing.Size(281, 116)
         Me.panel_otros.TabIndex = 27
@@ -925,7 +925,7 @@ Partial Class Pantalla_de_venta
         'button_informacion_otros
         '
         Me.button_informacion_otros.Location = New System.Drawing.Point(167, 69)
-        Me.button_informacion_otros.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.button_informacion_otros.Margin = New System.Windows.Forms.Padding(4)
         Me.button_informacion_otros.Name = "button_informacion_otros"
         Me.button_informacion_otros.Size = New System.Drawing.Size(100, 28)
         Me.button_informacion_otros.TabIndex = 23
@@ -935,7 +935,7 @@ Partial Class Pantalla_de_venta
         'button_aniadir_otros
         '
         Me.button_aniadir_otros.Location = New System.Drawing.Point(19, 69)
-        Me.button_aniadir_otros.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.button_aniadir_otros.Margin = New System.Windows.Forms.Padding(4)
         Me.button_aniadir_otros.Name = "button_aniadir_otros"
         Me.button_aniadir_otros.Size = New System.Drawing.Size(100, 28)
         Me.button_aniadir_otros.TabIndex = 22
@@ -947,7 +947,7 @@ Partial Class Pantalla_de_venta
         Me.comboBox_cantidad_otros.FormattingEnabled = True
         Me.comboBox_cantidad_otros.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
         Me.comboBox_cantidad_otros.Location = New System.Drawing.Point(181, 23)
-        Me.comboBox_cantidad_otros.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.comboBox_cantidad_otros.Margin = New System.Windows.Forms.Padding(4)
         Me.comboBox_cantidad_otros.Name = "comboBox_cantidad_otros"
         Me.comboBox_cantidad_otros.Size = New System.Drawing.Size(76, 24)
         Me.comboBox_cantidad_otros.TabIndex = 21
@@ -966,7 +966,7 @@ Partial Class Pantalla_de_venta
         '
         Me.comboBox_tamanio_otros.FormattingEnabled = True
         Me.comboBox_tamanio_otros.Location = New System.Drawing.Point(19, 23)
-        Me.comboBox_tamanio_otros.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.comboBox_tamanio_otros.Margin = New System.Windows.Forms.Padding(4)
         Me.comboBox_tamanio_otros.Name = "comboBox_tamanio_otros"
         Me.comboBox_tamanio_otros.Size = New System.Drawing.Size(72, 24)
         Me.comboBox_tamanio_otros.TabIndex = 24
@@ -1001,7 +1001,7 @@ Partial Class Pantalla_de_venta
         Me.panel_acticulos.Controls.Add(Me.pictureBox_somier)
         Me.panel_acticulos.Controls.Add(Me.pictureBox_base)
         Me.panel_acticulos.Location = New System.Drawing.Point(17, 162)
-        Me.panel_acticulos.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.panel_acticulos.Margin = New System.Windows.Forms.Padding(4)
         Me.panel_acticulos.Name = "panel_acticulos"
         Me.panel_acticulos.Size = New System.Drawing.Size(1005, 580)
         Me.panel_acticulos.TabIndex = 30
@@ -1012,7 +1012,7 @@ Partial Class Pantalla_de_venta
         Me.listBox_articulosElegidos.FormattingEnabled = True
         Me.listBox_articulosElegidos.ItemHeight = 16
         Me.listBox_articulosElegidos.Location = New System.Drawing.Point(1047, 162)
-        Me.listBox_articulosElegidos.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.listBox_articulosElegidos.Margin = New System.Windows.Forms.Padding(4)
         Me.listBox_articulosElegidos.Name = "listBox_articulosElegidos"
         Me.listBox_articulosElegidos.Size = New System.Drawing.Size(308, 260)
         Me.listBox_articulosElegidos.TabIndex = 31
@@ -1022,7 +1022,7 @@ Partial Class Pantalla_de_venta
         Me.button_eliminar_1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.button_eliminar_1.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.button_eliminar_1.Location = New System.Drawing.Point(1167, 94)
-        Me.button_eliminar_1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.button_eliminar_1.Margin = New System.Windows.Forms.Padding(4)
         Me.button_eliminar_1.Name = "button_eliminar_1"
         Me.button_eliminar_1.Size = New System.Drawing.Size(62, 53)
         Me.button_eliminar_1.TabIndex = 24
@@ -1034,7 +1034,7 @@ Partial Class Pantalla_de_venta
         Me.button_aniadir_1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.button_aniadir_1.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.button_aniadir_1.Location = New System.Drawing.Point(1084, 94)
-        Me.button_aniadir_1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.button_aniadir_1.Margin = New System.Windows.Forms.Padding(4)
         Me.button_aniadir_1.Name = "button_aniadir_1"
         Me.button_aniadir_1.Size = New System.Drawing.Size(62, 53)
         Me.button_aniadir_1.TabIndex = 32
@@ -1046,7 +1046,7 @@ Partial Class Pantalla_de_venta
         Me.button_eliminar_articulo.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.button_eliminar_articulo.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.button_eliminar_articulo.Location = New System.Drawing.Point(1246, 94)
-        Me.button_eliminar_articulo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.button_eliminar_articulo.Margin = New System.Windows.Forms.Padding(4)
         Me.button_eliminar_articulo.Name = "button_eliminar_articulo"
         Me.button_eliminar_articulo.Size = New System.Drawing.Size(62, 53)
         Me.button_eliminar_articulo.TabIndex = 33
@@ -1058,7 +1058,7 @@ Partial Class Pantalla_de_venta
         Me.button_cobrar.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.button_cobrar.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.button_cobrar.Location = New System.Drawing.Point(1119, 702)
-        Me.button_cobrar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.button_cobrar.Margin = New System.Windows.Forms.Padding(4)
         Me.button_cobrar.Name = "button_cobrar"
         Me.button_cobrar.Size = New System.Drawing.Size(169, 28)
         Me.button_cobrar.TabIndex = 38
@@ -1070,7 +1070,7 @@ Partial Class Pantalla_de_venta
         Me.button_anular.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.button_anular.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.button_anular.Location = New System.Drawing.Point(1031, 737)
-        Me.button_anular.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.button_anular.Margin = New System.Windows.Forms.Padding(4)
         Me.button_anular.Name = "button_anular"
         Me.button_anular.Size = New System.Drawing.Size(169, 28)
         Me.button_anular.TabIndex = 39
@@ -1082,7 +1082,7 @@ Partial Class Pantalla_de_venta
         Me.button_desconectar.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.button_desconectar.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.button_desconectar.Location = New System.Drawing.Point(1204, 737)
-        Me.button_desconectar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.button_desconectar.Margin = New System.Windows.Forms.Padding(4)
         Me.button_desconectar.Name = "button_desconectar"
         Me.button_desconectar.Size = New System.Drawing.Size(169, 28)
         Me.button_desconectar.TabIndex = 47
@@ -1116,7 +1116,7 @@ Partial Class Pantalla_de_venta
         '
         Me.textBox_importe.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.textBox_importe.Location = New System.Drawing.Point(1167, 592)
-        Me.textBox_importe.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.textBox_importe.Margin = New System.Windows.Forms.Padding(4)
         Me.textBox_importe.Name = "textBox_importe"
         Me.textBox_importe.Size = New System.Drawing.Size(132, 22)
         Me.textBox_importe.TabIndex = 56
@@ -1295,7 +1295,7 @@ Partial Class Pantalla_de_venta
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.MenuStrip)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Pantalla_de_venta"
         Me.Text = "Colchoneria CUESTA - Venta de articulos"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

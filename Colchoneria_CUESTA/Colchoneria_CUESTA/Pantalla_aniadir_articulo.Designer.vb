@@ -78,7 +78,7 @@ Partial Class Pantalla_aniadir_articulo
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(457, 85)
+        Me.Label1.Location = New System.Drawing.Point(507, 74)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(249, 31)
@@ -88,7 +88,7 @@ Partial Class Pantalla_aniadir_articulo
         'Panel1
         '
         Me.Panel1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel1.BackColor = System.Drawing.Color.Gainsboro
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel1.Controls.Add(Me.ListBox_precios)
         Me.Panel1.Controls.Add(Me.Label_camposObligatorios)
@@ -102,8 +102,8 @@ Partial Class Pantalla_aniadir_articulo
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.TextBox_nombre)
-        Me.Panel1.Location = New System.Drawing.Point(180, 137)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Location = New System.Drawing.Point(230, 126)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(843, 399)
         Me.Panel1.TabIndex = 1
@@ -139,7 +139,7 @@ Partial Class Pantalla_aniadir_articulo
         Me.Panel_precioYTamanio.Controls.Add(Me.Button_aniadir)
         Me.Panel_precioYTamanio.Controls.Add(Me.Label6)
         Me.Panel_precioYTamanio.Location = New System.Drawing.Point(21, 222)
-        Me.Panel_precioYTamanio.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel_precioYTamanio.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel_precioYTamanio.Name = "Panel_precioYTamanio"
         Me.Panel_precioYTamanio.Size = New System.Drawing.Size(467, 155)
         Me.Panel_precioYTamanio.TabIndex = 25
@@ -167,7 +167,7 @@ Partial Class Pantalla_aniadir_articulo
         'TextBox_precio
         '
         Me.TextBox_precio.Location = New System.Drawing.Point(168, 59)
-        Me.TextBox_precio.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TextBox_precio.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox_precio.Name = "TextBox_precio"
         Me.TextBox_precio.Size = New System.Drawing.Size(121, 22)
         Me.TextBox_precio.TabIndex = 24
@@ -186,7 +186,7 @@ Partial Class Pantalla_aniadir_articulo
         '
         Me.Button_aniadir.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.Button_aniadir.Location = New System.Drawing.Point(330, 64)
-        Me.Button_aniadir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button_aniadir.Margin = New System.Windows.Forms.Padding(4)
         Me.Button_aniadir.Name = "Button_aniadir"
         Me.Button_aniadir.Size = New System.Drawing.Size(111, 65)
         Me.Button_aniadir.TabIndex = 21
@@ -257,7 +257,7 @@ Partial Class Pantalla_aniadir_articulo
         'TextBox_descripcion
         '
         Me.TextBox_descripcion.Location = New System.Drawing.Point(191, 123)
-        Me.TextBox_descripcion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TextBox_descripcion.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox_descripcion.MaxLength = 40
         Me.TextBox_descripcion.Name = "TextBox_descripcion"
         Me.TextBox_descripcion.Size = New System.Drawing.Size(132, 22)
@@ -286,7 +286,7 @@ Partial Class Pantalla_aniadir_articulo
         'TextBox_nombre
         '
         Me.TextBox_nombre.Location = New System.Drawing.Point(191, 75)
-        Me.TextBox_nombre.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TextBox_nombre.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox_nombre.MaxLength = 20
         Me.TextBox_nombre.Name = "TextBox_nombre"
         Me.TextBox_nombre.Size = New System.Drawing.Size(132, 22)
@@ -296,7 +296,7 @@ Partial Class Pantalla_aniadir_articulo
         '
         Me.Button_cancelar.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Button_cancelar.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.Button_cancelar.Location = New System.Drawing.Point(353, 555)
+        Me.Button_cancelar.Location = New System.Drawing.Point(403, 544)
         Me.Button_cancelar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button_cancelar.Name = "Button_cancelar"
         Me.Button_cancelar.Size = New System.Drawing.Size(140, 55)
@@ -308,7 +308,7 @@ Partial Class Pantalla_aniadir_articulo
         '
         Me.Button_guardar.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Button_guardar.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.Button_guardar.Location = New System.Drawing.Point(181, 555)
+        Me.Button_guardar.Location = New System.Drawing.Point(231, 544)
         Me.Button_guardar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button_guardar.Name = "Button_guardar"
         Me.Button_guardar.Size = New System.Drawing.Size(142, 55)
@@ -330,10 +330,10 @@ Partial Class Pantalla_aniadir_articulo
         Me.Panel2.Controls.Add(Me.label_ayuda)
         Me.Panel2.Controls.Add(Me.label_fecha)
         Me.Panel2.Controls.Add(Me.label_hora)
-        Me.Panel2.Location = New System.Drawing.Point(3, 684)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Location = New System.Drawing.Point(3, 662)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1174, 51)
+        Me.Panel2.Size = New System.Drawing.Size(1274, 51)
         Me.Panel2.TabIndex = 28
         '
         'label_ayuda
@@ -360,7 +360,7 @@ Partial Class Pantalla_aniadir_articulo
         Me.label_fecha.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.label_fecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.label_fecha.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.label_fecha.Location = New System.Drawing.Point(715, 11)
+        Me.label_fecha.Location = New System.Drawing.Point(815, 11)
         Me.label_fecha.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label_fecha.Name = "label_fecha"
         Me.label_fecha.Size = New System.Drawing.Size(80, 27)
@@ -375,7 +375,7 @@ Partial Class Pantalla_aniadir_articulo
         Me.label_hora.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.label_hora.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.label_hora.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.label_hora.Location = New System.Drawing.Point(970, 11)
+        Me.label_hora.Location = New System.Drawing.Point(1070, 11)
         Me.label_hora.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label_hora.Name = "label_hora"
         Me.label_hora.Size = New System.Drawing.Size(67, 27)
@@ -390,7 +390,7 @@ Partial Class Pantalla_aniadir_articulo
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
         Me.MenuStrip.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
-        Me.MenuStrip.Size = New System.Drawing.Size(1178, 74)
+        Me.MenuStrip.Size = New System.Drawing.Size(1278, 74)
         Me.MenuStrip.TabIndex = 29
         Me.MenuStrip.Text = "MenuStrip1"
         '
@@ -406,20 +406,20 @@ Partial Class Pantalla_aniadir_articulo
         '
         Me.CerrarCajaToolStripMenuItem.Name = "CerrarCajaToolStripMenuItem"
         Me.CerrarCajaToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
-        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(216, 26)
+        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(205, 26)
         Me.CerrarCajaToolStripMenuItem.Text = "Cerrar caja"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(213, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(202, 6)
         '
         'VolverToolStripMenuItem
         '
         Me.VolverToolStripMenuItem.Name = "VolverToolStripMenuItem"
         Me.VolverToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
             Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(216, 26)
+        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(205, 26)
         Me.VolverToolStripMenuItem.Text = "Volver"
         '
         'SalirToolStripMenuItem
@@ -427,7 +427,7 @@ Partial Class Pantalla_aniadir_articulo
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
         Me.SalirToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
             Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(216, 26)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(205, 26)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'VentaToolStripMenuItem
@@ -513,7 +513,7 @@ Partial Class Pantalla_aniadir_articulo
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1178, 735)
+        Me.ClientSize = New System.Drawing.Size(1278, 713)
         Me.Controls.Add(Me.MenuStrip)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
@@ -521,7 +521,7 @@ Partial Class Pantalla_aniadir_articulo
         Me.Controls.Add(Me.Button_cancelar)
         Me.Controls.Add(Me.Button_guardar)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Pantalla_aniadir_articulo"
         Me.Text = "Colchoneria CUESTA - Gesion de articulos - Añadir artículo"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
