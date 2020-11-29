@@ -44,6 +44,7 @@ Partial Class Pantalla_principal
         Me.label_saludo = New System.Windows.Forms.Label()
         Me.label_pulsarTecla = New System.Windows.Forms.Label()
         Me.PictureBox_logo = New System.Windows.Forms.PictureBox()
+        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.MenuStrip.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox_logo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -51,15 +52,17 @@ Partial Class Pantalla_principal
         '
         'MenuStrip
         '
-        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InicioToolStripMenuItem, Me.VentaToolStripMenuItem, Me.AcercaDeToolStripMenuItem, Me.AyudaToolStripMenuItem})
+        Me.MenuStrip.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
         resources.ApplyResources(Me.MenuStrip, "MenuStrip")
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InicioToolStripMenuItem, Me.VentaToolStripMenuItem, Me.AcercaDeToolStripMenuItem, Me.AyudaToolStripMenuItem})
         Me.MenuStrip.Name = "MenuStrip"
         '
         'InicioToolStripMenuItem
         '
+        resources.ApplyResources(Me.InicioToolStripMenuItem, "InicioToolStripMenuItem")
+        Me.InicioToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.InicioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CerrarCajaToolStripMenuItem, Me.ToolStripSeparator2, Me.VolverToolStripMenuItem, Me.SalirToolStripMenuItem})
         Me.InicioToolStripMenuItem.Name = "InicioToolStripMenuItem"
-        resources.ApplyResources(Me.InicioToolStripMenuItem, "InicioToolStripMenuItem")
         '
         'CerrarCajaToolStripMenuItem
         '
@@ -83,9 +86,10 @@ Partial Class Pantalla_principal
         '
         'VentaToolStripMenuItem
         '
+        resources.ApplyResources(Me.VentaToolStripMenuItem, "VentaToolStripMenuItem")
+        Me.VentaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.VentaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VisualizarVentaToolStripMenuItem})
         Me.VentaToolStripMenuItem.Name = "VentaToolStripMenuItem"
-        resources.ApplyResources(Me.VentaToolStripMenuItem, "VentaToolStripMenuItem")
         '
         'VisualizarVentaToolStripMenuItem
         '
@@ -94,9 +98,9 @@ Partial Class Pantalla_principal
         '
         'AcercaDeToolStripMenuItem
         '
+        resources.ApplyResources(Me.AcercaDeToolStripMenuItem, "AcercaDeToolStripMenuItem")
         Me.AcercaDeToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ColchoneriaCUESTAToolStripMenuItem})
         Me.AcercaDeToolStripMenuItem.Name = "AcercaDeToolStripMenuItem"
-        resources.ApplyResources(Me.AcercaDeToolStripMenuItem, "AcercaDeToolStripMenuItem")
         '
         'ColchoneriaCUESTAToolStripMenuItem
         '
@@ -105,9 +109,10 @@ Partial Class Pantalla_principal
         '
         'AyudaToolStripMenuItem
         '
+        Me.AyudaToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        resources.ApplyResources(Me.AyudaToolStripMenuItem, "AyudaToolStripMenuItem")
         Me.AyudaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ManualDeUsuarioToolStripMenuItem})
         Me.AyudaToolStripMenuItem.Name = "AyudaToolStripMenuItem"
-        resources.ApplyResources(Me.AyudaToolStripMenuItem, "AyudaToolStripMenuItem")
         '
         'ManualDeUsuarioToolStripMenuItem
         '
@@ -129,17 +134,20 @@ Partial Class Pantalla_principal
         'label_fecha
         '
         resources.ApplyResources(Me.label_fecha, "label_fecha")
+        Me.label_fecha.BackColor = System.Drawing.Color.White
         Me.label_fecha.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.label_fecha.Name = "label_fecha"
         '
         'label_hora
         '
         resources.ApplyResources(Me.label_hora, "label_hora")
+        Me.label_hora.BackColor = System.Drawing.Color.White
         Me.label_hora.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.label_hora.Name = "label_hora"
         '
         'Panel1
         '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel1.Controls.Add(Me.label_ayuda)
         Me.Panel1.Controls.Add(Me.label_fecha)
@@ -150,13 +158,13 @@ Partial Class Pantalla_principal
         'label_saludo
         '
         resources.ApplyResources(Me.label_saludo, "label_saludo")
-        Me.label_saludo.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.label_saludo.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.label_saludo.Name = "label_saludo"
         '
         'label_pulsarTecla
         '
         resources.ApplyResources(Me.label_pulsarTecla, "label_pulsarTecla")
-        Me.label_pulsarTecla.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.label_pulsarTecla.BackColor = System.Drawing.SystemColors.Window
         Me.label_pulsarTecla.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.label_pulsarTecla.Name = "label_pulsarTecla"
         '
@@ -166,10 +174,17 @@ Partial Class Pantalla_principal
         Me.PictureBox_logo.Name = "PictureBox_logo"
         Me.PictureBox_logo.TabStop = False
         '
+        'ToolStrip1
+        '
+        resources.ApplyResources(Me.ToolStrip1, "ToolStrip1")
+        Me.ToolStrip1.Name = "ToolStrip1"
+        '
         'Pantalla_principal
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
+        Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.PictureBox_logo)
         Me.Controls.Add(Me.label_pulsarTecla)
         Me.Controls.Add(Me.label_saludo)
@@ -208,4 +223,5 @@ Partial Class Pantalla_principal
     Friend WithEvents ColchoneriaCUESTAToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ManualDeUsuarioToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PictureBox_logo As PictureBox
+    Friend WithEvents ToolStrip1 As ToolStrip
 End Class

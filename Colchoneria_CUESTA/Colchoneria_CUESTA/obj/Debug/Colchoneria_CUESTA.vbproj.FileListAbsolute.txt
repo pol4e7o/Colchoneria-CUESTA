@@ -25,7 +25,6 @@ C:\Users\pol4e\OneDrive\Documents\GitHub\Colchoneria-CUESTA\Colchoneria_CUESTA\C
 C:\Users\pol4e\OneDrive\Documents\GitHub\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\obj\Debug\Colchoneria_CUESTA.Pantalla_de_venta.resources
 D:\Github\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\obj\Debug\Colchoneria_CUESTA.vbprojAssemblyReference.cache
 D:\Github\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\obj\Debug\Colchoneria_CUESTA.Pantalla_admin_empleados.resources
-D:\Github\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\obj\Debug\Colchoneria_CUESTA.Pantalla_admin.resources
 D:\Github\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\obj\Debug\Colchoneria_CUESTA.Form_basico.resources
 D:\Github\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\obj\Debug\Colchoneria_CUESTA.Pantalla_admin_articulos.resources
 D:\Github\Colchoneria-CUESTA\Colchoneria_CUESTA\Colchoneria_CUESTA\obj\Debug\Colchoneria_CUESTA.Pantalla_aniadir_articulo.resources

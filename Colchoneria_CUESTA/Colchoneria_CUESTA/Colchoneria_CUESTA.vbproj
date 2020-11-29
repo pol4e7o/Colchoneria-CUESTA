@@ -104,12 +104,6 @@
     <Compile Include="Pantalla_admin_empleados.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantalla_admin.Designer.vb">
-      <DependentUpon>Pantalla_admin.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Pantalla_admin.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Form_basico.Designer.vb">
       <DependentUpon>Form_basico.vb</DependentUpon>
     </Compile>
@@ -203,9 +197,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pantalla_admin_empleados.resx">
       <DependentUpon>Pantalla_admin_empleados.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pantalla_admin.resx">
-      <DependentUpon>Pantalla_admin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_basico.resx">
       <DependentUpon>Form_basico.vb</DependentUpon>

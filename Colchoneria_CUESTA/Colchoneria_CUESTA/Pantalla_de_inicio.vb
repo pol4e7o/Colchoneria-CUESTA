@@ -25,7 +25,7 @@
 
     End Sub
 
-    Private Sub CerrarCajaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarCajaToolStripMenuItem.Click
+    Private Sub CerrarCajaToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
         'Se le indica al usuario que tiene que identificarse primero
         MsgBox("Para poder realizar el cierre de caja primero tiene que identificarse.", 0 + MsgBoxStyle.Information, "Cierre de caja")
@@ -33,13 +33,13 @@
 
     End Sub
 
-    Private Sub ManualDeUsuarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ManualDeUsuarioToolStripMenuItem.Click
+    Private Sub ManualDeUsuarioToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
         'Se llama al fichero que contiene el manual de usuario
 
     End Sub
 
-    Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
+    Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
         'La variable que va a almacenar la opcion elegida del message box
         Dim opcion As Integer
@@ -134,7 +134,7 @@
 
     End Sub
 
-    Private Sub ColchoneriaCUESTAToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ColchoneriaCUESTAToolStripMenuItem.Click
+    Private Sub ColchoneriaCUESTAToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
         'Se visualiza toda la informacion sobre la empresa
         MsgBox(ElementosComunes.informacionEmpresa, 0 + MsgBoxStyle.Information, "Informacion sobre Colchoneria CUESTA")
@@ -142,7 +142,7 @@
 
     End Sub
 
-    Private Sub VisualizarVentaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VisualizarVentaToolStripMenuItem.Click
+    Private Sub VisualizarVentaToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
         'Se visualiza la venta actual del dia mediante un message box
         MsgBox("La venta actual del dia " & DateString & " a la hora " & TimeString & " es: " &
@@ -151,7 +151,7 @@
 
     End Sub
 
-    Private Sub VolverToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VolverToolStripMenuItem.Click
+    Private Sub VolverToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
         'Se abre la pantalla principal y se cierra la de inicio de secion
         Pantalla_principal.Show()
