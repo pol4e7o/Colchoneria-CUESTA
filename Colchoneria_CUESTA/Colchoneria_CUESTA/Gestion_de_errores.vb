@@ -117,7 +117,7 @@
     End Sub
 
     'VISUALIZAR
-    Private Sub Button_visualizar_Click(sender As Object, e As EventArgs) Handles Button_visualizar.Click
+    Private Sub Button_visualizar_Click(sender As Object, e As EventArgs) 
 
         'Imprime en el ListBox los errores acaecidos aquel día.
 
