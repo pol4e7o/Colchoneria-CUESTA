@@ -102,7 +102,7 @@ Partial Class Pantalla_aniadir_empleado
         'panel_elementosEmpleado
         '
         Me.panel_elementosEmpleado.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.panel_elementosEmpleado.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.panel_elementosEmpleado.BackColor = System.Drawing.Color.Gainsboro
         Me.panel_elementosEmpleado.Controls.Add(Me.comboBox_roles)
         Me.panel_elementosEmpleado.Controls.Add(Me.label_contraseniaInformacion)
         Me.panel_elementosEmpleado.Controls.Add(Me.label_camposObligatorios)
@@ -124,7 +124,7 @@ Partial Class Pantalla_aniadir_empleado
         Me.panel_elementosEmpleado.Controls.Add(Me.label_direccion)
         Me.panel_elementosEmpleado.Controls.Add(Me.label_apellidos)
         Me.panel_elementosEmpleado.Location = New System.Drawing.Point(172, 174)
-        Me.panel_elementosEmpleado.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.panel_elementosEmpleado.Margin = New System.Windows.Forms.Padding(4)
         Me.panel_elementosEmpleado.Name = "panel_elementosEmpleado"
         Me.panel_elementosEmpleado.Size = New System.Drawing.Size(847, 320)
         Me.panel_elementosEmpleado.TabIndex = 23
@@ -134,7 +134,7 @@ Partial Class Pantalla_aniadir_empleado
         Me.comboBox_roles.FormattingEnabled = True
         Me.comboBox_roles.Items.AddRange(New Object() {"Administrador", "Empleado"})
         Me.comboBox_roles.Location = New System.Drawing.Point(604, 199)
-        Me.comboBox_roles.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.comboBox_roles.Margin = New System.Windows.Forms.Padding(4)
         Me.comboBox_roles.Name = "comboBox_roles"
         Me.comboBox_roles.Size = New System.Drawing.Size(180, 24)
         Me.comboBox_roles.TabIndex = 35
@@ -162,7 +162,7 @@ Partial Class Pantalla_aniadir_empleado
         'textBox_contrasenia2
         '
         Me.textBox_contrasenia2.Location = New System.Drawing.Point(604, 250)
-        Me.textBox_contrasenia2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.textBox_contrasenia2.Margin = New System.Windows.Forms.Padding(4)
         Me.textBox_contrasenia2.MaxLength = 4
         Me.textBox_contrasenia2.Name = "textBox_contrasenia2"
         Me.textBox_contrasenia2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -172,7 +172,7 @@ Partial Class Pantalla_aniadir_empleado
         'textBox_telefono
         '
         Me.textBox_telefono.Location = New System.Drawing.Point(604, 146)
-        Me.textBox_telefono.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.textBox_telefono.Margin = New System.Windows.Forms.Padding(4)
         Me.textBox_telefono.MaxLength = 20
         Me.textBox_telefono.Name = "textBox_telefono"
         Me.textBox_telefono.Size = New System.Drawing.Size(132, 22)
@@ -181,7 +181,7 @@ Partial Class Pantalla_aniadir_empleado
         'textBox_apellidos
         '
         Me.textBox_apellidos.Location = New System.Drawing.Point(604, 53)
-        Me.textBox_apellidos.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.textBox_apellidos.Margin = New System.Windows.Forms.Padding(4)
         Me.textBox_apellidos.MaxLength = 30
         Me.textBox_apellidos.Name = "textBox_apellidos"
         Me.textBox_apellidos.Size = New System.Drawing.Size(211, 22)
@@ -190,7 +190,7 @@ Partial Class Pantalla_aniadir_empleado
         'textBox_contrasenia
         '
         Me.textBox_contrasenia.Location = New System.Drawing.Point(173, 250)
-        Me.textBox_contrasenia.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.textBox_contrasenia.Margin = New System.Windows.Forms.Padding(4)
         Me.textBox_contrasenia.MaxLength = 4
         Me.textBox_contrasenia.Name = "textBox_contrasenia"
         Me.textBox_contrasenia.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -200,7 +200,7 @@ Partial Class Pantalla_aniadir_empleado
         'textBox_nombreUsuario
         '
         Me.textBox_nombreUsuario.Location = New System.Drawing.Point(173, 199)
-        Me.textBox_nombreUsuario.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.textBox_nombreUsuario.Margin = New System.Windows.Forms.Padding(4)
         Me.textBox_nombreUsuario.MaxLength = 10
         Me.textBox_nombreUsuario.Name = "textBox_nombreUsuario"
         Me.textBox_nombreUsuario.Size = New System.Drawing.Size(132, 22)
@@ -209,7 +209,7 @@ Partial Class Pantalla_aniadir_empleado
         'textBox_codigoPostal
         '
         Me.textBox_codigoPostal.Location = New System.Drawing.Point(173, 146)
-        Me.textBox_codigoPostal.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.textBox_codigoPostal.Margin = New System.Windows.Forms.Padding(4)
         Me.textBox_codigoPostal.MaxLength = 5
         Me.textBox_codigoPostal.Name = "textBox_codigoPostal"
         Me.textBox_codigoPostal.Size = New System.Drawing.Size(132, 22)
@@ -218,7 +218,7 @@ Partial Class Pantalla_aniadir_empleado
         'textBox_direccion
         '
         Me.textBox_direccion.Location = New System.Drawing.Point(173, 97)
-        Me.textBox_direccion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.textBox_direccion.Margin = New System.Windows.Forms.Padding(4)
         Me.textBox_direccion.MaxLength = 40
         Me.textBox_direccion.Name = "textBox_direccion"
         Me.textBox_direccion.Size = New System.Drawing.Size(369, 22)
@@ -227,7 +227,7 @@ Partial Class Pantalla_aniadir_empleado
         'textBox_nombre
         '
         Me.textBox_nombre.Location = New System.Drawing.Point(173, 53)
-        Me.textBox_nombre.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.textBox_nombre.Margin = New System.Windows.Forms.Padding(4)
         Me.textBox_nombre.MaxLength = 25
         Me.textBox_nombre.Name = "textBox_nombre"
         Me.textBox_nombre.Size = New System.Drawing.Size(215, 22)
@@ -329,7 +329,7 @@ Partial Class Pantalla_aniadir_empleado
         Me.boton_cancelar.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.boton_cancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.boton_cancelar.Location = New System.Drawing.Point(433, 517)
-        Me.boton_cancelar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.boton_cancelar.Margin = New System.Windows.Forms.Padding(4)
         Me.boton_cancelar.Name = "boton_cancelar"
         Me.boton_cancelar.Size = New System.Drawing.Size(179, 38)
         Me.boton_cancelar.TabIndex = 20
@@ -342,7 +342,7 @@ Partial Class Pantalla_aniadir_empleado
         Me.boton_guardar.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.boton_guardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.boton_guardar.Location = New System.Drawing.Point(172, 517)
-        Me.boton_guardar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.boton_guardar.Margin = New System.Windows.Forms.Padding(4)
         Me.boton_guardar.Name = "boton_guardar"
         Me.boton_guardar.Size = New System.Drawing.Size(179, 38)
         Me.boton_guardar.TabIndex = 21
@@ -373,20 +373,20 @@ Partial Class Pantalla_aniadir_empleado
         '
         Me.CerrarCajaToolStripMenuItem.Name = "CerrarCajaToolStripMenuItem"
         Me.CerrarCajaToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
-        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(216, 26)
+        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(205, 26)
         Me.CerrarCajaToolStripMenuItem.Text = "Cerrar caja"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(213, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(202, 6)
         '
         'VolverToolStripMenuItem
         '
         Me.VolverToolStripMenuItem.Name = "VolverToolStripMenuItem"
         Me.VolverToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
             Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(216, 26)
+        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(205, 26)
         Me.VolverToolStripMenuItem.Text = "Volver"
         '
         'SalirToolStripMenuItem
@@ -394,7 +394,7 @@ Partial Class Pantalla_aniadir_empleado
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
         Me.SalirToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
             Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(216, 26)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(205, 26)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'VentaToolStripMenuItem
@@ -485,7 +485,7 @@ Partial Class Pantalla_aniadir_empleado
         Me.Panel1.Controls.Add(Me.label_fecha)
         Me.Panel1.Controls.Add(Me.label_hora)
         Me.Panel1.Location = New System.Drawing.Point(0, 575)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1175, 51)
         Me.Panel1.TabIndex = 27
@@ -555,7 +555,7 @@ Partial Class Pantalla_aniadir_empleado
         Me.Controls.Add(Me.boton_cancelar)
         Me.Controls.Add(Me.boton_guardar)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Pantalla_aniadir_empleado"
         Me.Text = "Colchoneria CUESTA - Gesion de empleados - Alta de empleado"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
