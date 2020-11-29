@@ -92,10 +92,10 @@ Partial Class Pantalla_modificar_articulos
         Me.Panel1.Controls.Add(Me.label_ayuda)
         Me.Panel1.Controls.Add(Me.label_fecha)
         Me.Panel1.Controls.Add(Me.label_hora)
-        Me.Panel1.Location = New System.Drawing.Point(0, 694)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Location = New System.Drawing.Point(0, 654)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1175, 51)
+        Me.Panel1.Size = New System.Drawing.Size(1157, 51)
         Me.Panel1.TabIndex = 29
         '
         'label_ayuda
@@ -122,7 +122,7 @@ Partial Class Pantalla_modificar_articulos
         Me.label_fecha.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.label_fecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.label_fecha.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.label_fecha.Location = New System.Drawing.Point(716, 11)
+        Me.label_fecha.Location = New System.Drawing.Point(698, 11)
         Me.label_fecha.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label_fecha.Name = "label_fecha"
         Me.label_fecha.Size = New System.Drawing.Size(80, 27)
@@ -137,7 +137,7 @@ Partial Class Pantalla_modificar_articulos
         Me.label_hora.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.label_hora.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.label_hora.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.label_hora.Location = New System.Drawing.Point(971, 11)
+        Me.label_hora.Location = New System.Drawing.Point(953, 11)
         Me.label_hora.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label_hora.Name = "label_hora"
         Me.label_hora.Size = New System.Drawing.Size(67, 27)
@@ -152,7 +152,7 @@ Partial Class Pantalla_modificar_articulos
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
         Me.MenuStrip.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
-        Me.MenuStrip.Size = New System.Drawing.Size(1175, 74)
+        Me.MenuStrip.Size = New System.Drawing.Size(1157, 74)
         Me.MenuStrip.TabIndex = 30
         Me.MenuStrip.Text = "MenuStrip1"
         '
@@ -168,20 +168,20 @@ Partial Class Pantalla_modificar_articulos
         '
         Me.CerrarCajaToolStripMenuItem.Name = "CerrarCajaToolStripMenuItem"
         Me.CerrarCajaToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
-        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(216, 26)
+        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(205, 26)
         Me.CerrarCajaToolStripMenuItem.Text = "Cerrar caja"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(213, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(202, 6)
         '
         'VolverToolStripMenuItem
         '
         Me.VolverToolStripMenuItem.Name = "VolverToolStripMenuItem"
         Me.VolverToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
             Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(216, 26)
+        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(205, 26)
         Me.VolverToolStripMenuItem.Text = "Volver"
         '
         'SalirToolStripMenuItem
@@ -189,7 +189,7 @@ Partial Class Pantalla_modificar_articulos
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
         Me.SalirToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
             Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(216, 26)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(205, 26)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'VentaToolStripMenuItem
@@ -273,17 +273,17 @@ Partial Class Pantalla_modificar_articulos
         'Panel2
         '
         Me.Panel2.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Panel2.BackColor = System.Drawing.Color.Gainsboro
+        Me.Panel2.BackColor = System.Drawing.Color.White
         Me.Panel2.Controls.Add(Me.Label9)
         Me.Panel2.Controls.Add(Me.Panel_datosArticulo)
         Me.Panel2.Controls.Add(Me.Button_cancelar)
         Me.Panel2.Controls.Add(Me.Button_modificar)
         Me.Panel2.Controls.Add(Me.ComboBox_modificar)
         Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Location = New System.Drawing.Point(70, 95)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Location = New System.Drawing.Point(61, 78)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1021, 573)
+        Me.Panel2.Size = New System.Drawing.Size(1021, 570)
         Me.Panel2.TabIndex = 31
         '
         'Label9
@@ -291,7 +291,7 @@ Partial Class Pantalla_modificar_articulos
         Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(301, 41)
+        Me.Label9.Location = New System.Drawing.Point(301, 40)
         Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(361, 31)
@@ -300,6 +300,7 @@ Partial Class Pantalla_modificar_articulos
         '
         'Panel_datosArticulo
         '
+        Me.Panel_datosArticulo.BackColor = System.Drawing.Color.Gainsboro
         Me.Panel_datosArticulo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel_datosArticulo.Controls.Add(Me.ListBox_precios)
         Me.Panel_datosArticulo.Controls.Add(Me.ListBox_tamanios)
@@ -315,7 +316,7 @@ Partial Class Pantalla_modificar_articulos
         Me.Panel_datosArticulo.Controls.Add(Me.Label2)
         Me.Panel_datosArticulo.Controls.Add(Me.TextBox_nombre)
         Me.Panel_datosArticulo.Location = New System.Drawing.Point(48, 132)
-        Me.Panel_datosArticulo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel_datosArticulo.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel_datosArticulo.Name = "Panel_datosArticulo"
         Me.Panel_datosArticulo.Size = New System.Drawing.Size(889, 350)
         Me.Panel_datosArticulo.TabIndex = 36
@@ -363,7 +364,7 @@ Partial Class Pantalla_modificar_articulos
         Me.Panel_precioYTamanio.Controls.Add(Me.Button_aniadir)
         Me.Panel_precioYTamanio.Controls.Add(Me.Label3)
         Me.Panel_precioYTamanio.Location = New System.Drawing.Point(32, 187)
-        Me.Panel_precioYTamanio.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel_precioYTamanio.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel_precioYTamanio.Name = "Panel_precioYTamanio"
         Me.Panel_precioYTamanio.Size = New System.Drawing.Size(467, 155)
         Me.Panel_precioYTamanio.TabIndex = 24
@@ -391,7 +392,7 @@ Partial Class Pantalla_modificar_articulos
         'TextBox_precio
         '
         Me.TextBox_precio.Location = New System.Drawing.Point(168, 59)
-        Me.TextBox_precio.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TextBox_precio.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox_precio.Name = "TextBox_precio"
         Me.TextBox_precio.Size = New System.Drawing.Size(132, 22)
         Me.TextBox_precio.TabIndex = 24
@@ -410,7 +411,7 @@ Partial Class Pantalla_modificar_articulos
         '
         Me.Button_aniadir.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.Button_aniadir.Location = New System.Drawing.Point(331, 79)
-        Me.Button_aniadir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button_aniadir.Margin = New System.Windows.Forms.Padding(4)
         Me.Button_aniadir.Name = "Button_aniadir"
         Me.Button_aniadir.Size = New System.Drawing.Size(112, 50)
         Me.Button_aniadir.TabIndex = 21
@@ -480,7 +481,7 @@ Partial Class Pantalla_modificar_articulos
         'TextBox_descripcion
         '
         Me.TextBox_descripcion.Location = New System.Drawing.Point(200, 76)
-        Me.TextBox_descripcion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TextBox_descripcion.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox_descripcion.MaxLength = 40
         Me.TextBox_descripcion.Name = "TextBox_descripcion"
         Me.TextBox_descripcion.Size = New System.Drawing.Size(132, 22)
@@ -509,7 +510,7 @@ Partial Class Pantalla_modificar_articulos
         'TextBox_nombre
         '
         Me.TextBox_nombre.Location = New System.Drawing.Point(200, 22)
-        Me.TextBox_nombre.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TextBox_nombre.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox_nombre.MaxLength = 20
         Me.TextBox_nombre.Name = "TextBox_nombre"
         Me.TextBox_nombre.Size = New System.Drawing.Size(132, 22)
@@ -519,7 +520,7 @@ Partial Class Pantalla_modificar_articulos
         '
         Me.Button_cancelar.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.Button_cancelar.Location = New System.Drawing.Point(221, 503)
-        Me.Button_cancelar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button_cancelar.Margin = New System.Windows.Forms.Padding(4)
         Me.Button_cancelar.Name = "Button_cancelar"
         Me.Button_cancelar.Size = New System.Drawing.Size(116, 45)
         Me.Button_cancelar.TabIndex = 35
@@ -530,7 +531,7 @@ Partial Class Pantalla_modificar_articulos
         '
         Me.Button_modificar.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.Button_modificar.Location = New System.Drawing.Point(81, 503)
-        Me.Button_modificar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button_modificar.Margin = New System.Windows.Forms.Padding(4)
         Me.Button_modificar.Name = "Button_modificar"
         Me.Button_modificar.Size = New System.Drawing.Size(122, 45)
         Me.Button_modificar.TabIndex = 34
@@ -541,7 +542,7 @@ Partial Class Pantalla_modificar_articulos
         '
         Me.ComboBox_modificar.FormattingEnabled = True
         Me.ComboBox_modificar.Location = New System.Drawing.Point(251, 89)
-        Me.ComboBox_modificar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ComboBox_modificar.Margin = New System.Windows.Forms.Padding(4)
         Me.ComboBox_modificar.Name = "ComboBox_modificar"
         Me.ComboBox_modificar.Size = New System.Drawing.Size(160, 24)
         Me.ComboBox_modificar.TabIndex = 33
@@ -561,12 +562,12 @@ Partial Class Pantalla_modificar_articulos
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1175, 746)
+        Me.ClientSize = New System.Drawing.Size(1157, 706)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.MenuStrip)
         Me.Controls.Add(Me.Panel1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Pantalla_modificar_articulos"
         Me.Text = "Colchoneria CUESTA - Gesion de articulos - Modificar artículos"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

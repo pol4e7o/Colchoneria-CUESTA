@@ -102,20 +102,20 @@ Partial Class Pantalla_eliminar_empleado
         '
         Me.CerrarCajaToolStripMenuItem.Name = "CerrarCajaToolStripMenuItem"
         Me.CerrarCajaToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
-        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(216, 26)
+        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(205, 26)
         Me.CerrarCajaToolStripMenuItem.Text = "Cerrar caja"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(213, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(202, 6)
         '
         'VolverToolStripMenuItem
         '
         Me.VolverToolStripMenuItem.Name = "VolverToolStripMenuItem"
         Me.VolverToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
             Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(216, 26)
+        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(205, 26)
         Me.VolverToolStripMenuItem.Text = "Volver"
         '
         'SalirToolStripMenuItem
@@ -123,7 +123,7 @@ Partial Class Pantalla_eliminar_empleado
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
         Me.SalirToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
             Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(216, 26)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(205, 26)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'VentaToolStripMenuItem
@@ -214,7 +214,7 @@ Partial Class Pantalla_eliminar_empleado
         Me.Panel1.Controls.Add(Me.label_fecha)
         Me.Panel1.Controls.Add(Me.label_hora)
         Me.Panel1.Location = New System.Drawing.Point(0, 661)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1175, 51)
         Me.Panel1.TabIndex = 28
@@ -308,7 +308,7 @@ Partial Class Pantalla_eliminar_empleado
         Me.panel_elementosEmpleado.Controls.Add(Me.label_direccion)
         Me.panel_elementosEmpleado.Controls.Add(Me.label_apellidos)
         Me.panel_elementosEmpleado.Location = New System.Drawing.Point(187, 242)
-        Me.panel_elementosEmpleado.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.panel_elementosEmpleado.Margin = New System.Windows.Forms.Padding(4)
         Me.panel_elementosEmpleado.Name = "panel_elementosEmpleado"
         Me.panel_elementosEmpleado.Size = New System.Drawing.Size(847, 244)
         Me.panel_elementosEmpleado.TabIndex = 31
@@ -320,7 +320,7 @@ Partial Class Pantalla_eliminar_empleado
         Me.comboBox_roles.FormattingEnabled = True
         Me.comboBox_roles.Items.AddRange(New Object() {"Administrador", "Empleado"})
         Me.comboBox_roles.Location = New System.Drawing.Point(611, 182)
-        Me.comboBox_roles.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.comboBox_roles.Margin = New System.Windows.Forms.Padding(4)
         Me.comboBox_roles.Name = "comboBox_roles"
         Me.comboBox_roles.Size = New System.Drawing.Size(180, 24)
         Me.comboBox_roles.TabIndex = 35
@@ -329,7 +329,7 @@ Partial Class Pantalla_eliminar_empleado
         '
         Me.textBox_telefono.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.textBox_telefono.Location = New System.Drawing.Point(611, 129)
-        Me.textBox_telefono.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.textBox_telefono.Margin = New System.Windows.Forms.Padding(4)
         Me.textBox_telefono.MaxLength = 15
         Me.textBox_telefono.Name = "textBox_telefono"
         Me.textBox_telefono.ReadOnly = True
@@ -340,7 +340,7 @@ Partial Class Pantalla_eliminar_empleado
         '
         Me.textBox_apellidos.BackColor = System.Drawing.Color.White
         Me.textBox_apellidos.Location = New System.Drawing.Point(611, 36)
-        Me.textBox_apellidos.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.textBox_apellidos.Margin = New System.Windows.Forms.Padding(4)
         Me.textBox_apellidos.MaxLength = 30
         Me.textBox_apellidos.Name = "textBox_apellidos"
         Me.textBox_apellidos.ReadOnly = True
@@ -351,7 +351,7 @@ Partial Class Pantalla_eliminar_empleado
         '
         Me.textBox_nombreUsuario.BackColor = System.Drawing.Color.White
         Me.textBox_nombreUsuario.Location = New System.Drawing.Point(180, 182)
-        Me.textBox_nombreUsuario.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.textBox_nombreUsuario.Margin = New System.Windows.Forms.Padding(4)
         Me.textBox_nombreUsuario.MaxLength = 10
         Me.textBox_nombreUsuario.Name = "textBox_nombreUsuario"
         Me.textBox_nombreUsuario.ReadOnly = True
@@ -362,7 +362,7 @@ Partial Class Pantalla_eliminar_empleado
         '
         Me.textBox_codigoPostal.BackColor = System.Drawing.Color.White
         Me.textBox_codigoPostal.Location = New System.Drawing.Point(180, 129)
-        Me.textBox_codigoPostal.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.textBox_codigoPostal.Margin = New System.Windows.Forms.Padding(4)
         Me.textBox_codigoPostal.MaxLength = 5
         Me.textBox_codigoPostal.Name = "textBox_codigoPostal"
         Me.textBox_codigoPostal.ReadOnly = True
@@ -373,7 +373,7 @@ Partial Class Pantalla_eliminar_empleado
         '
         Me.textBox_direccion.BackColor = System.Drawing.Color.White
         Me.textBox_direccion.Location = New System.Drawing.Point(180, 80)
-        Me.textBox_direccion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.textBox_direccion.Margin = New System.Windows.Forms.Padding(4)
         Me.textBox_direccion.MaxLength = 30
         Me.textBox_direccion.Name = "textBox_direccion"
         Me.textBox_direccion.ReadOnly = True
@@ -384,7 +384,7 @@ Partial Class Pantalla_eliminar_empleado
         '
         Me.textBox_nombre.BackColor = System.Drawing.Color.White
         Me.textBox_nombre.Location = New System.Drawing.Point(180, 36)
-        Me.textBox_nombre.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.textBox_nombre.Margin = New System.Windows.Forms.Padding(4)
         Me.textBox_nombre.MaxLength = 25
         Me.textBox_nombre.Name = "textBox_nombre"
         Me.textBox_nombre.ReadOnly = True
@@ -467,7 +467,7 @@ Partial Class Pantalla_eliminar_empleado
         Me.boton_cancelar.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.boton_cancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.boton_cancelar.Location = New System.Drawing.Point(374, 514)
-        Me.boton_cancelar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.boton_cancelar.Margin = New System.Windows.Forms.Padding(4)
         Me.boton_cancelar.Name = "boton_cancelar"
         Me.boton_cancelar.Size = New System.Drawing.Size(179, 38)
         Me.boton_cancelar.TabIndex = 20
@@ -480,7 +480,7 @@ Partial Class Pantalla_eliminar_empleado
         Me.boton_guardar.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.boton_guardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.boton_guardar.Location = New System.Drawing.Point(187, 514)
-        Me.boton_guardar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.boton_guardar.Margin = New System.Windows.Forms.Padding(4)
         Me.boton_guardar.Name = "boton_guardar"
         Me.boton_guardar.Size = New System.Drawing.Size(179, 38)
         Me.boton_guardar.TabIndex = 21
@@ -491,7 +491,7 @@ Partial Class Pantalla_eliminar_empleado
         '
         Me.comboBox_elegirEmpleado.FormattingEnabled = True
         Me.comboBox_elegirEmpleado.Location = New System.Drawing.Point(180, 15)
-        Me.comboBox_elegirEmpleado.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.comboBox_elegirEmpleado.Margin = New System.Windows.Forms.Padding(4)
         Me.comboBox_elegirEmpleado.Name = "comboBox_elegirEmpleado"
         Me.comboBox_elegirEmpleado.Size = New System.Drawing.Size(205, 24)
         Me.comboBox_elegirEmpleado.TabIndex = 37
@@ -513,7 +513,7 @@ Partial Class Pantalla_eliminar_empleado
         Me.Panel2.Controls.Add(Me.comboBox_elegirEmpleado)
         Me.Panel2.Controls.Add(Me.label_empleado)
         Me.Panel2.Location = New System.Drawing.Point(187, 193)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(847, 57)
         Me.Panel2.TabIndex = 41
@@ -533,7 +533,7 @@ Partial Class Pantalla_eliminar_empleado
         Me.Controls.Add(Me.boton_guardar)
         Me.Controls.Add(Me.boton_cancelar)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Pantalla_eliminar_empleado"
         Me.Text = "Colchoneria CUESTA - Gesion de empleados - Baja de empleado"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

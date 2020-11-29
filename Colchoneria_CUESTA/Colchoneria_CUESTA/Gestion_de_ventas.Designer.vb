@@ -61,6 +61,7 @@ Partial Class Gestion_de_ventas
         'Panel1
         '
         Me.Panel1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Panel1.BackColor = System.Drawing.Color.Gainsboro
         Me.Panel1.Controls.Add(Me.Label_ventaElegida)
         Me.Panel1.Controls.Add(Me.Label_venta)
         Me.Panel1.Controls.Add(Me.Button_cancelar)
@@ -240,20 +241,20 @@ Partial Class Gestion_de_ventas
         '
         Me.CerrarCajaToolStripMenuItem.Name = "CerrarCajaToolStripMenuItem"
         Me.CerrarCajaToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
-        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(216, 26)
+        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(205, 26)
         Me.CerrarCajaToolStripMenuItem.Text = "Cerrar caja"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(213, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(202, 6)
         '
         'VolverToolStripMenuItem
         '
         Me.VolverToolStripMenuItem.Name = "VolverToolStripMenuItem"
         Me.VolverToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
             Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(216, 26)
+        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(205, 26)
         Me.VolverToolStripMenuItem.Text = "Volver"
         '
         'SalirToolStripMenuItem
@@ -261,7 +262,7 @@ Partial Class Gestion_de_ventas
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
         Me.SalirToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
             Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(216, 26)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(205, 26)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'VentaToolStripMenuItem

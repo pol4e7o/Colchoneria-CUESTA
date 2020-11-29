@@ -249,6 +249,7 @@ Partial Class Pantalla_admin_empleados
         '
         'FlowLayoutPanel1
         '
+        Me.FlowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(179, 134)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
         Me.FlowLayoutPanel1.Size = New System.Drawing.Size(827, 355)
