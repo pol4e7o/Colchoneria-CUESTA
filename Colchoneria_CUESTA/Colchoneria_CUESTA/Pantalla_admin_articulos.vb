@@ -3,7 +3,7 @@
 
 
     'CERRAR CAJA
-    Private Sub CerrarCajaToolStripMenuItem_Click(sender As Object, e As EventArgs) 
+    Private Sub CerrarCajaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarCajaToolStripMenuItem.Click
 
         'La opcion elegida por el usuario a cerca de si desea cerrar caja
         Dim opcion As Integer
@@ -173,7 +173,7 @@
     End Sub
 
     'VOLVER
-    Private Sub VolverToolStripMenuItem_Click(sender As Object, e As EventArgs) 
+    Private Sub VolverToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VolverToolStripMenuItem.Click
 
         Pantalla_de_venta.Show()
         Me.Hide()
@@ -181,7 +181,7 @@
     End Sub
 
     'SALIR
-    Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) 
+    Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
 
         'La variable que va a almacenar la opcion elegida del message box
         Dim opcion As Integer
@@ -280,27 +280,27 @@
     End Sub
 
     'VENTA
-    Private Sub VisualizarVentaToolStripMenuItem_Click(sender As Object, e As EventArgs) 
+    Private Sub VisualizarVentaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VisualizarVentaToolStripMenuItem.Click
         'Se visualiza la venta actual del dia mediante un message box
         MsgBox("La venta actual del dia " & DateString & " a la hora " & TimeString & " es: " &
                ElementosComunes.venta & "€", 0 + MsgBoxStyle.Information, "Visualizar venta")
     End Sub
 
     'ACERCA DE...
-    Private Sub ColchoneriaCUESTAToolStripMenuItem_Click(sender As Object, e As EventArgs) 
+    Private Sub ColchoneriaCUESTAToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ColchoneriaCUESTAToolStripMenuItem.Click
         'Se visualiza toda la informacion sobre la empresa
         MsgBox(ElementosComunes.informacionEmpresa, 0 + MsgBoxStyle.Information, "Informacion sobre Colchoneria CUESTA")
     End Sub
 
     'AYUDA
-    Private Sub ManualDeUsuarioToolStripMenuItem_Click(sender As Object, e As EventArgs) 
+    Private Sub ManualDeUsuarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ManualDeUsuarioToolStripMenuItem.Click
 
         'Te reenviará a un fichero: Manual de usuario
 
     End Sub
 
     'GESTIÓN EMPLEADOS
-    Private Sub GestionDeEmpleadosToolStripMenuItem_Click(sender As Object, e As EventArgs) 
+    Private Sub GestionDeEmpleadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionDeEmpleadosToolStripMenuItem.Click
 
         Pantalla_admin_empleados.Show()
         Me.Hide()
@@ -308,9 +308,17 @@
     End Sub
 
     'GESTIÓN VENTAS
-    Private Sub GestiónDeVentasToolStripMenuItem_Click(sender As Object, e As EventArgs) 
+    Private Sub GestiónDeVentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionDeVentasToolStripMenuItem.Click
 
         Pantalla_de_venta.Show()
+        Me.Hide()
+
+    End Sub
+
+    Private Sub GestionDeErroresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionDeErroresToolStripMenuItem.Click
+
+        'Se dirige a la pantalla de hestion de errores
+        Gestion_de_errores.Show()
         Me.Hide()
 
     End Sub
@@ -327,24 +335,24 @@
         Button_aniadir.Focus()
 
         'Se deabilita la opcion gestion de artículos porque es este mismo formulario
-        GestiónDeArtículosToolStripMenuItem.Enabled = False
+        GestionDeArticulosToolStripMenuItem.Enabled = False
 
     End Sub
 
     'BOTONES------------------------------------------------------------------------------------------------------------
-    Private Sub Button_aniadir_Click(sender As Object, e As EventArgs)
+    Private Sub Button_aniadir_Click(sender As Object, e As EventArgs) Handles Button_aniadir.Click
         'Se llama al formulario de añadir articulo
         Pantalla_aniadir_articulo.Show()
         Me.Hide()
     End Sub
 
-    Private Sub Button_modificar_Click(sender As Object, e As EventArgs)
+    Private Sub Button_modificar_Click(sender As Object, e As EventArgs) Handles Button_modificar.Click
         'Se llama al formulario de modificar articulo
         Pantalla_modificar_articulos.Show()
         Me.Hide()
     End Sub
 
-    Private Sub Button_eliminar_Click(sender As Object, e As EventArgs)
+    Private Sub Button_eliminar_Click(sender As Object, e As EventArgs) Handles Buton_eliminar.Click
         'Se llama al formulario de eliminar articulo
         Pantalla_eliminar_articulo.Show()
         Me.Hide()

@@ -287,6 +287,77 @@
                     " & ElementosComunes.venta & "€", 0 + MsgBoxStyle.Information, "Visualizar venta")
     End Sub
 
+
+    Private Sub GestionDeVentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionDeVentasToolStripMenuItem.Click
+
+        'La opcion elegida por el usuario a la hora de decidir si desea ir a gestion de ventas
+        Dim opcion As Integer
+
+        opcion = MsgBox("Esta seguro que desea ir a la pantalla de gestion de ventas sin terminar la operacion?", 4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Gestion de ventas")
+
+        If opcion = MsgBoxResult.Yes Then
+
+            'Se abre la pantalla de gestion de ventas y se cierra la de eliminacion de articulo
+            Gestion_de_ventas.Show()
+            Me.Close()
+
+        End If
+
+    End Sub
+
+    Private Sub GestionDeArticulosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionDeArticulosToolStripMenuItem.Click
+
+        'La opcion elegida por el usuario a la hora de decidir si desea ir a gestion de articulos
+        Dim opcion As Integer
+
+        opcion = MsgBox("Esta seguro que desea ir a la pantalla de gestion de articulos sin terminar la operacion?", 4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Gestion de articulos")
+
+        If opcion = MsgBoxResult.Yes Then
+
+            'Se abre la pantalla de gestion de articulos y se cierra la de eliminacion de articulo
+            Pantalla_admin_articulos.Show()
+            Me.Close()
+
+        End If
+
+    End Sub
+
+    Private Sub GestionDeEmpleadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionDeEmpleadosToolStripMenuItem.Click
+
+        'La opcion elegida por el usuario a la hora de decidir si desea ir a gestion de empleados
+        Dim opcion As Integer
+
+        opcion = MsgBox("Esta seguro que desea ir a la pantalla de gestion de empleados sin terminar la operacion?", 4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Gestion de empleados")
+
+        If opcion = MsgBoxResult.Yes Then
+
+            'Se abre la pantalla de gestion de empleados y se cierra la de eliminacion de articulo
+            Pantalla_admin_empleados.Show()
+            Me.Close()
+
+        End If
+
+
+    End Sub
+
+    Private Sub GestionDeErroresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionDeErroresToolStripMenuItem.Click
+
+        'La opcion elegida por el usuario a la hora de decidir si desea ir a gestion de errores
+        Dim opcion As Integer
+
+        opcion = MsgBox("Esta seguro que desea ir a la pantalla de gestion de errores sin terminar la operacion?", 4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Gestion de errores")
+
+        If opcion = MsgBoxResult.Yes Then
+
+            'Se abre la pantalla de gestion de errores y se cierra la de eliminacion de articulo
+            Gestion_de_errores.Show()
+            Me.Close()
+
+        End If
+
+
+    End Sub
+
     'ACERCA DE...
     Private Sub ColchoneriaCUESTAToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ColchoneriaCUESTAToolStripMenuItem.Click
         'Se visualiza toda la informacion sobre la empresa
@@ -529,6 +600,5 @@
     Private Sub ListBox_precios_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox_precios.SelectedIndexChanged
         ListBox_precios.SelectedIndex = -1
     End Sub
-
 
 End Class

@@ -331,7 +331,7 @@
 
     End Sub
 
-    Private Sub boton_alta_Click(sender As Object, e As EventArgs)
+    Private Sub boton_alta_Click(sender As Object, e As EventArgs) Handles boton_alta.Click
 
         'Se llama al formulario de añadir empleado
         Pantalla_aniadir_empleado.Show()
@@ -346,7 +346,7 @@
 
     End Sub
 
-    Private Sub boton_modificacion_Click(sender As Object, e As EventArgs)
+    Private Sub boton_modificacion_Click(sender As Object, e As EventArgs) Handles boton_modificacion.Click
 
         'Se llama al formulario de modificar empleado
         Pantalla_modificar_empleado.Show()
@@ -354,7 +354,7 @@
 
     End Sub
 
-    Private Sub boton_baja_Click(sender As Object, e As EventArgs)
+    Private Sub boton_baja_Click(sender As Object, e As EventArgs) Handles boton_baja.Click
 
         'Se llama al formulario de eliminar empleado
         Pantalla_eliminar_empleado.Show()
@@ -362,7 +362,11 @@
 
     End Sub
 
+    Private Sub GestionDeErroresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionDeErroresToolStripMenuItem.Click
 
+        'Se dirige a la pantalla de hestion de errores
+        Gestion_de_errores.Show()
+        Me.Hide()
 
-
+    End Sub
 End Class

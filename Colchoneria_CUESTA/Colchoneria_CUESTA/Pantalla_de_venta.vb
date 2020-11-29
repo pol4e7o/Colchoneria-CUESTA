@@ -446,7 +446,26 @@ Public Class Pantalla_de_venta
         Else
 
             'Se abre la pantalla de gestion de ventas y se cierra la pantalla de venta
+            Gestion_de_ventas.Show()
+            Me.Close()
 
+        End If
+
+    End Sub
+
+    'OPCION MENU GESTION DE ERRORES
+    Private Sub GestionDeErroresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionDeErroresToolStripMenuItem.Click
+
+        'No se puede salir de la pantalla de venta sin terminar o anular la compra
+        If ventaArticulos <> 0 Then
+
+            MsgBox("No puede abandonar la pantalla de venta sin terminar o anular la compra primero.",
+                   0 + MsgBoxStyle.Information, "Abandonar pantalla de venta")
+
+        Else
+
+            'Se abre la pantalla de gestion de errores y se cierra la pantalla de venta
+            Gestion_de_errores.Show()
             Me.Close()
 
         End If
@@ -2377,7 +2396,7 @@ Public Class Pantalla_de_venta
     End Sub
 
     'TEXTBOX IMPORTE
-    Private Sub textBox_importe_Leave(sender As Object, e As EventArgs) 
+    Private Sub textBox_importe_Leave(sender As Object, e As EventArgs) Handles textBox_importe.Leave
 
         'Si el texto introducido en la caja de texto es un numero mayor a 0
         If validacion.numeroMayorACero(textBox_importe.Text) Then
@@ -2430,4 +2449,6 @@ Public Class Pantalla_de_venta
         FileClose()
 
     End Sub
+
+
 End Class

@@ -306,7 +306,7 @@
         'La opcion elegida por el usuario a la hora de decidir si desea ir a gestion de empleados
         Dim opcion As Integer
 
-        opcion = MsgBox("Esta seguro que desea ir a la pantalla de gestion de empleados sin terminar la operacion?", 4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Volver")
+        opcion = MsgBox("Esta seguro que desea ir a la pantalla de gestion de empleados sin terminar la operacion?", 4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Gesion de empleados")
 
         If opcion = MsgBoxResult.Yes Then
 
@@ -321,7 +321,7 @@
         'La opcion elegida por el usuario a la hora de decidir si desea ir a gestion de articulos
         Dim opcion As Integer
 
-        opcion = MsgBox("Esta seguro que desea ir a la pantalla de gestion de articulos sin terminar la operacion?", 4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Volver")
+        opcion = MsgBox("Esta seguro que desea ir a la pantalla de gestion de articulos sin terminar la operacion?", 4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Gestion de articulos")
 
         If opcion = MsgBoxResult.Yes Then
 
@@ -336,7 +336,7 @@
         'La opcion elegida por el usuario a la hora de decidir si desea ir a gestion de ventas
         Dim opcion As Integer
 
-        opcion = MsgBox("Esta seguro que desea ir a la pantalla de gestion de ventas sin terminar la operacion?", 4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Volver")
+        opcion = MsgBox("Esta seguro que desea ir a la pantalla de gestion de ventas sin terminar la operacion?", 4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Gestion de Ventas")
 
         If opcion = MsgBoxResult.Yes Then
 
@@ -345,6 +345,24 @@
             Me.Close()
 
         End If
+    End Sub
+
+    'OPCION GESTION DE ERRORES
+    Private Sub GestionDeErroresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionDeErroresToolStripMenuItem.Click
+
+        'La opcion elegida por el usuario a la hora de decidir si desea ir a gestion de errores
+        Dim opcion As Integer
+
+        opcion = MsgBox("Esta seguro que desea ir a la pantalla de gestion de errores sin terminar la operacion?", 4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Gestion de eerores")
+
+        If opcion = MsgBoxResult.Yes Then
+
+            'Se abre la pantalla de gestion de errores y se cierra la de alta de empleado
+            Gestion_de_errores.Show()
+            Me.Close()
+
+        End If
+
     End Sub
 
     'ACERCA DE...
@@ -749,6 +767,23 @@
 
     Private Sub TextBox_precio_TextChanged(sender As Object, e As EventArgs) Handles TextBox_precio.TextChanged
         activarBotonAniadir()
+    End Sub
+
+    Private Sub VolverToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VolverToolStripMenuItem.Click
+
+        'La opcion elegida por el usuario a la hora de decidir si desea volver a gestion de articulos
+        Dim opcion As Integer
+
+        opcion = MsgBox("Esta seguro que desea volver a la pantalla de gestion de articulos sin terminar la operacion?", 4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Volver")
+
+        If opcion = MsgBoxResult.Yes Then
+
+            'Se abre la pantalla de gestion de empleados y se cierra la de alta de empleado
+            Pantalla_admin_articulos.Show()
+            Me.Close()
+
+        End If
+
     End Sub
 
 End Class

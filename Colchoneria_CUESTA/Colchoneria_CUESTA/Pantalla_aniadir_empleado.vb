@@ -365,6 +365,23 @@
 
     End Sub
 
+    Private Sub GestionDeErroresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionDeErroresToolStripMenuItem.Click
+
+        'La opcion elegida por el usuario a la hora de decidir si desea ir a gestion de ventas
+        Dim opcion As Integer
+
+        opcion = MsgBox("Esta seguro que desea ir a la pantalla de gestion de errores sin terminar la operacion?", 4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Volver")
+
+        If opcion = MsgBoxResult.Yes Then
+
+            'Se abre la pantalla de gestion de errores y se cierra la de alta de empleado
+            Gestion_de_errores.Show()
+            Me.Close()
+
+        End If
+
+    End Sub
+
     Private Sub ColchoneriaCUESTAToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ColchoneriaCUESTAToolStripMenuItem.Click
 
         'Se visualiza toda la informacion sobre la empresa
@@ -788,4 +805,6 @@
         boton_guardar.Enabled = False
 
     End Sub
+
+
 End Class
