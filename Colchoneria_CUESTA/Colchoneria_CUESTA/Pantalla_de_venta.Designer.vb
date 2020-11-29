@@ -129,6 +129,7 @@ Partial Class Pantalla_de_venta
         Me.Label7 = New System.Windows.Forms.Label()
         Me.label_ivaPrecio = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.GestionDeErroresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.pictureBox_base, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -148,13 +149,13 @@ Partial Class Pantalla_de_venta
         '
         'MenuStrip
         '
+        Me.MenuStrip.AutoSize = False
         Me.MenuStrip.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.MenuStrip.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InicioToolStripMenuItem, Me.VentaToolStripMenuItem, Me.OpcionesToolStripMenuItem, Me.AcercaDeToolStripMenuItem, Me.AyudaToolStripMenuItem})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
-        Me.MenuStrip.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
-        Me.MenuStrip.Size = New System.Drawing.Size(1389, 74)
+        Me.MenuStrip.Size = New System.Drawing.Size(1028, 54)
         Me.MenuStrip.TabIndex = 27
         Me.MenuStrip.Text = "MenuStrip1"
         '
@@ -170,20 +171,20 @@ Partial Class Pantalla_de_venta
         '
         Me.CerrarCajaToolStripMenuItem.Name = "CerrarCajaToolStripMenuItem"
         Me.CerrarCajaToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
-        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(205, 26)
+        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
         Me.CerrarCajaToolStripMenuItem.Text = "Cerrar caja"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(202, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(167, 6)
         '
         'VolverToolStripMenuItem
         '
         Me.VolverToolStripMenuItem.Name = "VolverToolStripMenuItem"
         Me.VolverToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
             Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(205, 26)
+        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
         Me.VolverToolStripMenuItem.Text = "Volver"
         '
         'SalirToolStripMenuItem
@@ -191,7 +192,7 @@ Partial Class Pantalla_de_venta
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
         Me.SalirToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
             Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(205, 26)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'VentaToolStripMenuItem
@@ -206,13 +207,13 @@ Partial Class Pantalla_de_venta
         '
         Me.VisualizarVentaToolStripMenuItem.Name = "VisualizarVentaToolStripMenuItem"
         Me.VisualizarVentaToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D1), System.Windows.Forms.Keys)
-        Me.VisualizarVentaToolStripMenuItem.Size = New System.Drawing.Size(237, 26)
+        Me.VisualizarVentaToolStripMenuItem.Size = New System.Drawing.Size(195, 22)
         Me.VisualizarVentaToolStripMenuItem.Text = "Visualizar venta"
         '
         'OpcionesToolStripMenuItem
         '
         Me.OpcionesToolStripMenuItem.AutoSize = False
-        Me.OpcionesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GestionDeEmpleadosToolStripMenuItem, Me.GestionDeArticulosToolStripMenuItem, Me.GestionDeVentasToolStripMenuItem})
+        Me.OpcionesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GestionDeEmpleadosToolStripMenuItem, Me.GestionDeArticulosToolStripMenuItem, Me.GestionDeVentasToolStripMenuItem, Me.GestionDeErroresToolStripMenuItem})
         Me.OpcionesToolStripMenuItem.Name = "OpcionesToolStripMenuItem"
         Me.OpcionesToolStripMenuItem.Size = New System.Drawing.Size(150, 70)
         Me.OpcionesToolStripMenuItem.Text = "Opciones"
@@ -222,7 +223,7 @@ Partial Class Pantalla_de_venta
         Me.GestionDeEmpleadosToolStripMenuItem.Name = "GestionDeEmpleadosToolStripMenuItem"
         Me.GestionDeEmpleadosToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.E), System.Windows.Forms.Keys)
-        Me.GestionDeEmpleadosToolStripMenuItem.Size = New System.Drawing.Size(338, 26)
+        Me.GestionDeEmpleadosToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
         Me.GestionDeEmpleadosToolStripMenuItem.Text = "Gestion de empleados"
         '
         'GestionDeArticulosToolStripMenuItem
@@ -230,7 +231,7 @@ Partial Class Pantalla_de_venta
         Me.GestionDeArticulosToolStripMenuItem.Name = "GestionDeArticulosToolStripMenuItem"
         Me.GestionDeArticulosToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.A), System.Windows.Forms.Keys)
-        Me.GestionDeArticulosToolStripMenuItem.Size = New System.Drawing.Size(338, 26)
+        Me.GestionDeArticulosToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
         Me.GestionDeArticulosToolStripMenuItem.Text = "Gestion de articulos"
         '
         'GestionDeVentasToolStripMenuItem
@@ -238,7 +239,7 @@ Partial Class Pantalla_de_venta
         Me.GestionDeVentasToolStripMenuItem.Name = "GestionDeVentasToolStripMenuItem"
         Me.GestionDeVentasToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.GestionDeVentasToolStripMenuItem.Size = New System.Drawing.Size(338, 26)
+        Me.GestionDeVentasToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
         Me.GestionDeVentasToolStripMenuItem.Text = "Gestion de ventas"
         '
         'AcercaDeToolStripMenuItem
@@ -253,7 +254,7 @@ Partial Class Pantalla_de_venta
         '
         Me.ColchoneriaCUESTAToolStripMenuItem.Name = "ColchoneriaCUESTAToolStripMenuItem"
         Me.ColchoneriaCUESTAToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.A), System.Windows.Forms.Keys)
-        Me.ColchoneriaCUESTAToolStripMenuItem.Size = New System.Drawing.Size(267, 26)
+        Me.ColchoneriaCUESTAToolStripMenuItem.Size = New System.Drawing.Size(220, 22)
         Me.ColchoneriaCUESTAToolStripMenuItem.Text = "Colchoneria CUESTA"
         '
         'AyudaToolStripMenuItem
@@ -269,7 +270,7 @@ Partial Class Pantalla_de_venta
         '
         Me.ManualDeUsuarioToolStripMenuItem.Name = "ManualDeUsuarioToolStripMenuItem"
         Me.ManualDeUsuarioToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1
-        Me.ManualDeUsuarioToolStripMenuItem.Size = New System.Drawing.Size(230, 26)
+        Me.ManualDeUsuarioToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
         Me.ManualDeUsuarioToolStripMenuItem.Text = "Manual de usuario"
         '
         'Panel1
@@ -281,10 +282,9 @@ Partial Class Pantalla_de_venta
         Me.Panel1.Controls.Add(Me.label_ayuda)
         Me.Panel1.Controls.Add(Me.label_fecha)
         Me.Panel1.Controls.Add(Me.label_hora)
-        Me.Panel1.Location = New System.Drawing.Point(0, 816)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel1.Location = New System.Drawing.Point(0, 663)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1388, 51)
+        Me.Panel1.Size = New System.Drawing.Size(1042, 42)
         Me.Panel1.TabIndex = 28
         '
         'label_ayuda
@@ -295,10 +295,9 @@ Partial Class Pantalla_de_venta
         Me.label_ayuda.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.label_ayuda.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.label_ayuda.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.label_ayuda.Location = New System.Drawing.Point(13, 11)
-        Me.label_ayuda.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_ayuda.Location = New System.Drawing.Point(10, 9)
         Me.label_ayuda.Name = "label_ayuda"
-        Me.label_ayuda.Size = New System.Drawing.Size(111, 27)
+        Me.label_ayuda.Size = New System.Drawing.Size(88, 22)
         Me.label_ayuda.TabIndex = 1
         Me.label_ayuda.Text = "F1 - Ayuda"
         Me.label_ayuda.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -311,10 +310,9 @@ Partial Class Pantalla_de_venta
         Me.label_fecha.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.label_fecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.label_fecha.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.label_fecha.Location = New System.Drawing.Point(929, 11)
-        Me.label_fecha.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_fecha.Location = New System.Drawing.Point(697, 9)
         Me.label_fecha.Name = "label_fecha"
-        Me.label_fecha.Size = New System.Drawing.Size(80, 27)
+        Me.label_fecha.Size = New System.Drawing.Size(64, 22)
         Me.label_fecha.TabIndex = 2
         Me.label_fecha.Text = "Fecha: "
         '
@@ -326,10 +324,9 @@ Partial Class Pantalla_de_venta
         Me.label_hora.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.label_hora.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.label_hora.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.label_hora.Location = New System.Drawing.Point(1184, 11)
-        Me.label_hora.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_hora.Location = New System.Drawing.Point(888, 9)
         Me.label_hora.Name = "label_hora"
-        Me.label_hora.Size = New System.Drawing.Size(67, 27)
+        Me.label_hora.Size = New System.Drawing.Size(54, 22)
         Me.label_hora.TabIndex = 3
         Me.label_hora.Text = "Hora: "
         '
@@ -343,10 +340,9 @@ Partial Class Pantalla_de_venta
         Me.label_venta.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_venta.AutoSize = True
         Me.label_venta.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_venta.Location = New System.Drawing.Point(388, 94)
-        Me.label_venta.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_venta.Location = New System.Drawing.Point(291, 82)
         Me.label_venta.Name = "label_venta"
-        Me.label_venta.Size = New System.Drawing.Size(231, 31)
+        Me.label_venta.Size = New System.Drawing.Size(185, 25)
         Me.label_venta.TabIndex = 29
         Me.label_venta.Text = "Venta de articulos"
         '
@@ -355,10 +351,9 @@ Partial Class Pantalla_de_venta
         Me.pictureBox_base.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.pictureBox_base.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.pictureBox_base.Image = CType(resources.GetObject("pictureBox_base.Image"), System.Drawing.Image)
-        Me.pictureBox_base.Location = New System.Drawing.Point(79, 37)
-        Me.pictureBox_base.Margin = New System.Windows.Forms.Padding(4)
+        Me.pictureBox_base.Location = New System.Drawing.Point(59, 30)
         Me.pictureBox_base.Name = "pictureBox_base"
-        Me.pictureBox_base.Size = New System.Drawing.Size(160, 74)
+        Me.pictureBox_base.Size = New System.Drawing.Size(121, 61)
         Me.pictureBox_base.TabIndex = 0
         Me.pictureBox_base.TabStop = False
         '
@@ -367,10 +362,9 @@ Partial Class Pantalla_de_venta
         Me.pictureBox_somier.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.pictureBox_somier.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.pictureBox_somier.Image = CType(resources.GetObject("pictureBox_somier.Image"), System.Drawing.Image)
-        Me.pictureBox_somier.Location = New System.Drawing.Point(420, 37)
-        Me.pictureBox_somier.Margin = New System.Windows.Forms.Padding(4)
+        Me.pictureBox_somier.Location = New System.Drawing.Point(315, 30)
         Me.pictureBox_somier.Name = "pictureBox_somier"
-        Me.pictureBox_somier.Size = New System.Drawing.Size(161, 74)
+        Me.pictureBox_somier.Size = New System.Drawing.Size(122, 61)
         Me.pictureBox_somier.TabIndex = 1
         Me.pictureBox_somier.TabStop = False
         '
@@ -380,10 +374,9 @@ Partial Class Pantalla_de_venta
         Me.pictureBox_colchon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.pictureBox_colchon.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.pictureBox_colchon.Image = CType(resources.GetObject("pictureBox_colchon.Image"), System.Drawing.Image)
-        Me.pictureBox_colchon.Location = New System.Drawing.Point(745, 37)
-        Me.pictureBox_colchon.Margin = New System.Windows.Forms.Padding(4)
+        Me.pictureBox_colchon.Location = New System.Drawing.Point(559, 30)
         Me.pictureBox_colchon.Name = "pictureBox_colchon"
-        Me.pictureBox_colchon.Size = New System.Drawing.Size(160, 74)
+        Me.pictureBox_colchon.Size = New System.Drawing.Size(121, 61)
         Me.pictureBox_colchon.TabIndex = 2
         Me.pictureBox_colchon.TabStop = False
         '
@@ -391,115 +384,103 @@ Partial Class Pantalla_de_venta
         '
         Me.pictureBox_canape.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.pictureBox_canape.Image = CType(resources.GetObject("pictureBox_canape.Image"), System.Drawing.Image)
-        Me.pictureBox_canape.Location = New System.Drawing.Point(79, 309)
-        Me.pictureBox_canape.Margin = New System.Windows.Forms.Padding(4)
+        Me.pictureBox_canape.Location = New System.Drawing.Point(59, 251)
         Me.pictureBox_canape.Name = "pictureBox_canape"
-        Me.pictureBox_canape.Size = New System.Drawing.Size(163, 78)
+        Me.pictureBox_canape.Size = New System.Drawing.Size(123, 64)
         Me.pictureBox_canape.TabIndex = 3
         Me.pictureBox_canape.TabStop = False
         '
         'pictureBox_otros
         '
         Me.pictureBox_otros.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.pictureBox_otros.Location = New System.Drawing.Point(763, 326)
-        Me.pictureBox_otros.Margin = New System.Windows.Forms.Padding(4)
+        Me.pictureBox_otros.Location = New System.Drawing.Point(572, 265)
         Me.pictureBox_otros.Name = "pictureBox_otros"
-        Me.pictureBox_otros.Size = New System.Drawing.Size(132, 61)
+        Me.pictureBox_otros.Size = New System.Drawing.Size(100, 50)
         Me.pictureBox_otros.TabIndex = 4
         Me.pictureBox_otros.TabStop = False
         '
         'comboBox_base
         '
         Me.comboBox_base.FormattingEnabled = True
-        Me.comboBox_base.Location = New System.Drawing.Point(44, 121)
-        Me.comboBox_base.Margin = New System.Windows.Forms.Padding(4)
+        Me.comboBox_base.Location = New System.Drawing.Point(33, 98)
         Me.comboBox_base.Name = "comboBox_base"
-        Me.comboBox_base.Size = New System.Drawing.Size(239, 24)
+        Me.comboBox_base.Size = New System.Drawing.Size(180, 21)
         Me.comboBox_base.TabIndex = 5
         '
         'comboBox_somier
         '
         Me.comboBox_somier.FormattingEnabled = True
-        Me.comboBox_somier.Location = New System.Drawing.Point(376, 121)
-        Me.comboBox_somier.Margin = New System.Windows.Forms.Padding(4)
+        Me.comboBox_somier.Location = New System.Drawing.Point(282, 98)
         Me.comboBox_somier.Name = "comboBox_somier"
-        Me.comboBox_somier.Size = New System.Drawing.Size(239, 24)
+        Me.comboBox_somier.Size = New System.Drawing.Size(180, 21)
         Me.comboBox_somier.TabIndex = 6
         '
         'comboBox_colchon
         '
         Me.comboBox_colchon.FormattingEnabled = True
-        Me.comboBox_colchon.Location = New System.Drawing.Point(709, 121)
-        Me.comboBox_colchon.Margin = New System.Windows.Forms.Padding(4)
+        Me.comboBox_colchon.Location = New System.Drawing.Point(532, 98)
         Me.comboBox_colchon.Name = "comboBox_colchon"
-        Me.comboBox_colchon.Size = New System.Drawing.Size(239, 24)
+        Me.comboBox_colchon.Size = New System.Drawing.Size(180, 21)
         Me.comboBox_colchon.TabIndex = 7
         '
         'comboBox_otros
         '
         Me.comboBox_otros.FormattingEnabled = True
-        Me.comboBox_otros.Location = New System.Drawing.Point(709, 395)
-        Me.comboBox_otros.Margin = New System.Windows.Forms.Padding(4)
+        Me.comboBox_otros.Location = New System.Drawing.Point(532, 321)
         Me.comboBox_otros.Name = "comboBox_otros"
-        Me.comboBox_otros.Size = New System.Drawing.Size(239, 24)
+        Me.comboBox_otros.Size = New System.Drawing.Size(180, 21)
         Me.comboBox_otros.TabIndex = 8
         '
         'comboBox_canape
         '
         Me.comboBox_canape.FormattingEnabled = True
-        Me.comboBox_canape.Location = New System.Drawing.Point(44, 395)
-        Me.comboBox_canape.Margin = New System.Windows.Forms.Padding(4)
+        Me.comboBox_canape.Location = New System.Drawing.Point(33, 321)
         Me.comboBox_canape.Name = "comboBox_canape"
-        Me.comboBox_canape.Size = New System.Drawing.Size(239, 24)
+        Me.comboBox_canape.Size = New System.Drawing.Size(180, 21)
         Me.comboBox_canape.TabIndex = 9
         '
         'label_base
         '
         Me.label_base.AutoSize = True
-        Me.label_base.Location = New System.Drawing.Point(139, 11)
-        Me.label_base.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_base.Location = New System.Drawing.Point(104, 9)
         Me.label_base.Name = "label_base"
-        Me.label_base.Size = New System.Drawing.Size(47, 17)
+        Me.label_base.Size = New System.Drawing.Size(36, 13)
         Me.label_base.TabIndex = 10
         Me.label_base.Text = "Bases"
         '
         'label_otros
         '
         Me.label_otros.AutoSize = True
-        Me.label_otros.Location = New System.Drawing.Point(804, 287)
-        Me.label_otros.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_otros.Location = New System.Drawing.Point(603, 233)
         Me.label_otros.Name = "label_otros"
-        Me.label_otros.Size = New System.Drawing.Size(43, 17)
+        Me.label_otros.Size = New System.Drawing.Size(32, 13)
         Me.label_otros.TabIndex = 11
         Me.label_otros.Text = "Otros"
         '
         'label_canape
         '
         Me.label_canape.AutoSize = True
-        Me.label_canape.Location = New System.Drawing.Point(139, 287)
-        Me.label_canape.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_canape.Location = New System.Drawing.Point(104, 233)
         Me.label_canape.Name = "label_canape"
-        Me.label_canape.Size = New System.Drawing.Size(64, 17)
+        Me.label_canape.Size = New System.Drawing.Size(49, 13)
         Me.label_canape.TabIndex = 12
         Me.label_canape.Text = "Canapes"
         '
         'label_colchon
         '
         Me.label_colchon.AutoSize = True
-        Me.label_colchon.Location = New System.Drawing.Point(788, 11)
-        Me.label_colchon.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_colchon.Location = New System.Drawing.Point(591, 9)
         Me.label_colchon.Name = "label_colchon"
-        Me.label_colchon.Size = New System.Drawing.Size(74, 17)
+        Me.label_colchon.Size = New System.Drawing.Size(57, 13)
         Me.label_colchon.TabIndex = 13
         Me.label_colchon.Text = "Colchones"
         '
         'label_somier
         '
         Me.label_somier.AutoSize = True
-        Me.label_somier.Location = New System.Drawing.Point(469, 11)
-        Me.label_somier.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_somier.Location = New System.Drawing.Point(352, 9)
         Me.label_somier.Name = "label_somier"
-        Me.label_somier.Size = New System.Drawing.Size(59, 17)
+        Me.label_somier.Size = New System.Drawing.Size(44, 13)
         Me.label_somier.TabIndex = 14
         Me.label_somier.Text = "Somiers"
         '
@@ -507,29 +488,26 @@ Partial Class Pantalla_de_venta
         '
         Me.pictureBox_ofertas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.pictureBox_ofertas.Image = CType(resources.GetObject("pictureBox_ofertas.Image"), System.Drawing.Image)
-        Me.pictureBox_ofertas.Location = New System.Drawing.Point(421, 309)
-        Me.pictureBox_ofertas.Margin = New System.Windows.Forms.Padding(4)
+        Me.pictureBox_ofertas.Location = New System.Drawing.Point(316, 251)
         Me.pictureBox_ofertas.Name = "pictureBox_ofertas"
-        Me.pictureBox_ofertas.Size = New System.Drawing.Size(160, 78)
+        Me.pictureBox_ofertas.Size = New System.Drawing.Size(121, 64)
         Me.pictureBox_ofertas.TabIndex = 15
         Me.pictureBox_ofertas.TabStop = False
         '
         'comboBox_ofertas
         '
         Me.comboBox_ofertas.FormattingEnabled = True
-        Me.comboBox_ofertas.Location = New System.Drawing.Point(376, 395)
-        Me.comboBox_ofertas.Margin = New System.Windows.Forms.Padding(4)
+        Me.comboBox_ofertas.Location = New System.Drawing.Point(282, 321)
         Me.comboBox_ofertas.Name = "comboBox_ofertas"
-        Me.comboBox_ofertas.Size = New System.Drawing.Size(239, 24)
+        Me.comboBox_ofertas.Size = New System.Drawing.Size(180, 21)
         Me.comboBox_ofertas.TabIndex = 16
         '
         'label_ofertas
         '
         Me.label_ofertas.AutoSize = True
-        Me.label_ofertas.Location = New System.Drawing.Point(469, 287)
-        Me.label_ofertas.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_ofertas.Location = New System.Drawing.Point(352, 233)
         Me.label_ofertas.Name = "label_ofertas"
-        Me.label_ofertas.Size = New System.Drawing.Size(55, 17)
+        Me.label_ofertas.Size = New System.Drawing.Size(41, 13)
         Me.label_ofertas.TabIndex = 18
         Me.label_ofertas.Text = "Ofertas"
         '
@@ -541,38 +519,34 @@ Partial Class Pantalla_de_venta
         Me.panel_base.Controls.Add(Me.comboBox_cantidad_base)
         Me.panel_base.Controls.Add(Me.label_precio_base)
         Me.panel_base.Controls.Add(Me.comboBox_tamanio_base)
-        Me.panel_base.Location = New System.Drawing.Point(25, 154)
-        Me.panel_base.Margin = New System.Windows.Forms.Padding(4)
+        Me.panel_base.Location = New System.Drawing.Point(19, 125)
         Me.panel_base.Name = "panel_base"
-        Me.panel_base.Size = New System.Drawing.Size(281, 116)
+        Me.panel_base.Size = New System.Drawing.Size(211, 94)
         Me.panel_base.TabIndex = 25
         '
         'label_euro5
         '
         Me.label_euro5.AutoSize = True
-        Me.label_euro5.Location = New System.Drawing.Point(139, 27)
-        Me.label_euro5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_euro5.Location = New System.Drawing.Point(104, 22)
         Me.label_euro5.Name = "label_euro5"
-        Me.label_euro5.Size = New System.Drawing.Size(16, 17)
+        Me.label_euro5.Size = New System.Drawing.Size(13, 13)
         Me.label_euro5.TabIndex = 27
         Me.label_euro5.Text = "€"
         '
         'button_informacion_base
         '
-        Me.button_informacion_base.Location = New System.Drawing.Point(167, 69)
-        Me.button_informacion_base.Margin = New System.Windows.Forms.Padding(4)
+        Me.button_informacion_base.Location = New System.Drawing.Point(125, 56)
         Me.button_informacion_base.Name = "button_informacion_base"
-        Me.button_informacion_base.Size = New System.Drawing.Size(100, 28)
+        Me.button_informacion_base.Size = New System.Drawing.Size(75, 23)
         Me.button_informacion_base.TabIndex = 23
         Me.button_informacion_base.Text = "Informacion"
         Me.button_informacion_base.UseVisualStyleBackColor = True
         '
         'button_aniadir_base
         '
-        Me.button_aniadir_base.Location = New System.Drawing.Point(19, 69)
-        Me.button_aniadir_base.Margin = New System.Windows.Forms.Padding(4)
+        Me.button_aniadir_base.Location = New System.Drawing.Point(14, 56)
         Me.button_aniadir_base.Name = "button_aniadir_base"
-        Me.button_aniadir_base.Size = New System.Drawing.Size(100, 28)
+        Me.button_aniadir_base.Size = New System.Drawing.Size(75, 23)
         Me.button_aniadir_base.TabIndex = 22
         Me.button_aniadir_base.Text = "Añadir"
         Me.button_aniadir_base.UseVisualStyleBackColor = True
@@ -581,29 +555,26 @@ Partial Class Pantalla_de_venta
         '
         Me.comboBox_cantidad_base.FormattingEnabled = True
         Me.comboBox_cantidad_base.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
-        Me.comboBox_cantidad_base.Location = New System.Drawing.Point(181, 23)
-        Me.comboBox_cantidad_base.Margin = New System.Windows.Forms.Padding(4)
+        Me.comboBox_cantidad_base.Location = New System.Drawing.Point(136, 19)
         Me.comboBox_cantidad_base.Name = "comboBox_cantidad_base"
-        Me.comboBox_cantidad_base.Size = New System.Drawing.Size(76, 24)
+        Me.comboBox_cantidad_base.Size = New System.Drawing.Size(58, 21)
         Me.comboBox_cantidad_base.TabIndex = 21
         '
         'label_precio_base
         '
         Me.label_precio_base.AutoSize = True
-        Me.label_precio_base.Location = New System.Drawing.Point(113, 27)
-        Me.label_precio_base.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_precio_base.Location = New System.Drawing.Point(85, 22)
         Me.label_precio_base.Name = "label_precio_base"
-        Me.label_precio_base.Size = New System.Drawing.Size(16, 17)
+        Me.label_precio_base.Size = New System.Drawing.Size(13, 13)
         Me.label_precio_base.TabIndex = 20
         Me.label_precio_base.Text = ": "
         '
         'comboBox_tamanio_base
         '
         Me.comboBox_tamanio_base.FormattingEnabled = True
-        Me.comboBox_tamanio_base.Location = New System.Drawing.Point(19, 23)
-        Me.comboBox_tamanio_base.Margin = New System.Windows.Forms.Padding(4)
+        Me.comboBox_tamanio_base.Location = New System.Drawing.Point(14, 19)
         Me.comboBox_tamanio_base.Name = "comboBox_tamanio_base"
-        Me.comboBox_tamanio_base.Size = New System.Drawing.Size(75, 24)
+        Me.comboBox_tamanio_base.Size = New System.Drawing.Size(57, 21)
         Me.comboBox_tamanio_base.TabIndex = 19
         '
         'panel_somier
@@ -614,38 +585,34 @@ Partial Class Pantalla_de_venta
         Me.panel_somier.Controls.Add(Me.comboBox_cantidad_somier)
         Me.panel_somier.Controls.Add(Me.comboBox_tamanio_somier)
         Me.panel_somier.Controls.Add(Me.label_precio_somier)
-        Me.panel_somier.Location = New System.Drawing.Point(357, 154)
-        Me.panel_somier.Margin = New System.Windows.Forms.Padding(4)
+        Me.panel_somier.Location = New System.Drawing.Point(268, 125)
         Me.panel_somier.Name = "panel_somier"
-        Me.panel_somier.Size = New System.Drawing.Size(281, 116)
+        Me.panel_somier.Size = New System.Drawing.Size(211, 94)
         Me.panel_somier.TabIndex = 26
         '
         'label_euro4
         '
         Me.label_euro4.AutoSize = True
-        Me.label_euro4.Location = New System.Drawing.Point(139, 27)
-        Me.label_euro4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_euro4.Location = New System.Drawing.Point(104, 22)
         Me.label_euro4.Name = "label_euro4"
-        Me.label_euro4.Size = New System.Drawing.Size(16, 17)
+        Me.label_euro4.Size = New System.Drawing.Size(13, 13)
         Me.label_euro4.TabIndex = 28
         Me.label_euro4.Text = "€"
         '
         'button_informacion_somier
         '
-        Me.button_informacion_somier.Location = New System.Drawing.Point(167, 69)
-        Me.button_informacion_somier.Margin = New System.Windows.Forms.Padding(4)
+        Me.button_informacion_somier.Location = New System.Drawing.Point(125, 56)
         Me.button_informacion_somier.Name = "button_informacion_somier"
-        Me.button_informacion_somier.Size = New System.Drawing.Size(100, 28)
+        Me.button_informacion_somier.Size = New System.Drawing.Size(75, 23)
         Me.button_informacion_somier.TabIndex = 23
         Me.button_informacion_somier.Text = "Informacion"
         Me.button_informacion_somier.UseVisualStyleBackColor = True
         '
         'button_aniadir_somier
         '
-        Me.button_aniadir_somier.Location = New System.Drawing.Point(19, 69)
-        Me.button_aniadir_somier.Margin = New System.Windows.Forms.Padding(4)
+        Me.button_aniadir_somier.Location = New System.Drawing.Point(14, 56)
         Me.button_aniadir_somier.Name = "button_aniadir_somier"
-        Me.button_aniadir_somier.Size = New System.Drawing.Size(100, 28)
+        Me.button_aniadir_somier.Size = New System.Drawing.Size(75, 23)
         Me.button_aniadir_somier.TabIndex = 22
         Me.button_aniadir_somier.Text = "Añadir"
         Me.button_aniadir_somier.UseVisualStyleBackColor = True
@@ -654,28 +621,25 @@ Partial Class Pantalla_de_venta
         '
         Me.comboBox_cantidad_somier.FormattingEnabled = True
         Me.comboBox_cantidad_somier.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
-        Me.comboBox_cantidad_somier.Location = New System.Drawing.Point(181, 23)
-        Me.comboBox_cantidad_somier.Margin = New System.Windows.Forms.Padding(4)
+        Me.comboBox_cantidad_somier.Location = New System.Drawing.Point(136, 19)
         Me.comboBox_cantidad_somier.Name = "comboBox_cantidad_somier"
-        Me.comboBox_cantidad_somier.Size = New System.Drawing.Size(76, 24)
+        Me.comboBox_cantidad_somier.Size = New System.Drawing.Size(58, 21)
         Me.comboBox_cantidad_somier.TabIndex = 21
         '
         'comboBox_tamanio_somier
         '
         Me.comboBox_tamanio_somier.FormattingEnabled = True
-        Me.comboBox_tamanio_somier.Location = New System.Drawing.Point(19, 23)
-        Me.comboBox_tamanio_somier.Margin = New System.Windows.Forms.Padding(4)
+        Me.comboBox_tamanio_somier.Location = New System.Drawing.Point(14, 19)
         Me.comboBox_tamanio_somier.Name = "comboBox_tamanio_somier"
-        Me.comboBox_tamanio_somier.Size = New System.Drawing.Size(75, 24)
+        Me.comboBox_tamanio_somier.Size = New System.Drawing.Size(57, 21)
         Me.comboBox_tamanio_somier.TabIndex = 23
         '
         'label_precio_somier
         '
         Me.label_precio_somier.AutoSize = True
-        Me.label_precio_somier.Location = New System.Drawing.Point(113, 27)
-        Me.label_precio_somier.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_precio_somier.Location = New System.Drawing.Point(85, 22)
         Me.label_precio_somier.Name = "label_precio_somier"
-        Me.label_precio_somier.Size = New System.Drawing.Size(16, 17)
+        Me.label_precio_somier.Size = New System.Drawing.Size(13, 13)
         Me.label_precio_somier.TabIndex = 20
         Me.label_precio_somier.Text = ": "
         '
@@ -687,38 +651,34 @@ Partial Class Pantalla_de_venta
         Me.panel_colchon.Controls.Add(Me.comboBox_cantidad_colchon)
         Me.panel_colchon.Controls.Add(Me.label_precio_colchon)
         Me.panel_colchon.Controls.Add(Me.comboBox_tamanio_colchon)
-        Me.panel_colchon.Location = New System.Drawing.Point(691, 154)
-        Me.panel_colchon.Margin = New System.Windows.Forms.Padding(4)
+        Me.panel_colchon.Location = New System.Drawing.Point(518, 125)
         Me.panel_colchon.Name = "panel_colchon"
-        Me.panel_colchon.Size = New System.Drawing.Size(281, 116)
+        Me.panel_colchon.Size = New System.Drawing.Size(211, 94)
         Me.panel_colchon.TabIndex = 27
         '
         'label_euro1
         '
         Me.label_euro1.AutoSize = True
-        Me.label_euro1.Location = New System.Drawing.Point(139, 27)
-        Me.label_euro1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_euro1.Location = New System.Drawing.Point(104, 22)
         Me.label_euro1.Name = "label_euro1"
-        Me.label_euro1.Size = New System.Drawing.Size(16, 17)
+        Me.label_euro1.Size = New System.Drawing.Size(13, 13)
         Me.label_euro1.TabIndex = 24
         Me.label_euro1.Text = "€"
         '
         'button_informacion_colchon
         '
-        Me.button_informacion_colchon.Location = New System.Drawing.Point(167, 69)
-        Me.button_informacion_colchon.Margin = New System.Windows.Forms.Padding(4)
+        Me.button_informacion_colchon.Location = New System.Drawing.Point(125, 56)
         Me.button_informacion_colchon.Name = "button_informacion_colchon"
-        Me.button_informacion_colchon.Size = New System.Drawing.Size(100, 28)
+        Me.button_informacion_colchon.Size = New System.Drawing.Size(75, 23)
         Me.button_informacion_colchon.TabIndex = 23
         Me.button_informacion_colchon.Text = "Informacion"
         Me.button_informacion_colchon.UseVisualStyleBackColor = True
         '
         'button_aniadir_colchon
         '
-        Me.button_aniadir_colchon.Location = New System.Drawing.Point(19, 69)
-        Me.button_aniadir_colchon.Margin = New System.Windows.Forms.Padding(4)
+        Me.button_aniadir_colchon.Location = New System.Drawing.Point(14, 56)
         Me.button_aniadir_colchon.Name = "button_aniadir_colchon"
-        Me.button_aniadir_colchon.Size = New System.Drawing.Size(100, 28)
+        Me.button_aniadir_colchon.Size = New System.Drawing.Size(75, 23)
         Me.button_aniadir_colchon.TabIndex = 22
         Me.button_aniadir_colchon.Text = "Añadir"
         Me.button_aniadir_colchon.UseVisualStyleBackColor = True
@@ -727,29 +687,26 @@ Partial Class Pantalla_de_venta
         '
         Me.comboBox_cantidad_colchon.FormattingEnabled = True
         Me.comboBox_cantidad_colchon.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
-        Me.comboBox_cantidad_colchon.Location = New System.Drawing.Point(181, 23)
-        Me.comboBox_cantidad_colchon.Margin = New System.Windows.Forms.Padding(4)
+        Me.comboBox_cantidad_colchon.Location = New System.Drawing.Point(136, 19)
         Me.comboBox_cantidad_colchon.Name = "comboBox_cantidad_colchon"
-        Me.comboBox_cantidad_colchon.Size = New System.Drawing.Size(76, 24)
+        Me.comboBox_cantidad_colchon.Size = New System.Drawing.Size(58, 21)
         Me.comboBox_cantidad_colchon.TabIndex = 21
         '
         'label_precio_colchon
         '
         Me.label_precio_colchon.AutoSize = True
-        Me.label_precio_colchon.Location = New System.Drawing.Point(113, 27)
-        Me.label_precio_colchon.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_precio_colchon.Location = New System.Drawing.Point(85, 22)
         Me.label_precio_colchon.Name = "label_precio_colchon"
-        Me.label_precio_colchon.Size = New System.Drawing.Size(16, 17)
+        Me.label_precio_colchon.Size = New System.Drawing.Size(13, 13)
         Me.label_precio_colchon.TabIndex = 20
         Me.label_precio_colchon.Text = ": "
         '
         'comboBox_tamanio_colchon
         '
         Me.comboBox_tamanio_colchon.FormattingEnabled = True
-        Me.comboBox_tamanio_colchon.Location = New System.Drawing.Point(19, 23)
-        Me.comboBox_tamanio_colchon.Margin = New System.Windows.Forms.Padding(4)
+        Me.comboBox_tamanio_colchon.Location = New System.Drawing.Point(14, 19)
         Me.comboBox_tamanio_colchon.Name = "comboBox_tamanio_colchon"
-        Me.comboBox_tamanio_colchon.Size = New System.Drawing.Size(72, 24)
+        Me.comboBox_tamanio_colchon.Size = New System.Drawing.Size(55, 21)
         Me.comboBox_tamanio_colchon.TabIndex = 22
         '
         'panel_canape
@@ -760,38 +717,34 @@ Partial Class Pantalla_de_venta
         Me.panel_canape.Controls.Add(Me.comboBox_cantidad_canape)
         Me.panel_canape.Controls.Add(Me.label_precio_canape)
         Me.panel_canape.Controls.Add(Me.comboBox_tamanio_canape)
-        Me.panel_canape.Location = New System.Drawing.Point(25, 428)
-        Me.panel_canape.Margin = New System.Windows.Forms.Padding(4)
+        Me.panel_canape.Location = New System.Drawing.Point(19, 348)
         Me.panel_canape.Name = "panel_canape"
-        Me.panel_canape.Size = New System.Drawing.Size(281, 116)
+        Me.panel_canape.Size = New System.Drawing.Size(211, 94)
         Me.panel_canape.TabIndex = 28
         '
         'label_euro6
         '
         Me.label_euro6.AutoSize = True
-        Me.label_euro6.Location = New System.Drawing.Point(139, 27)
-        Me.label_euro6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_euro6.Location = New System.Drawing.Point(104, 22)
         Me.label_euro6.Name = "label_euro6"
-        Me.label_euro6.Size = New System.Drawing.Size(16, 17)
+        Me.label_euro6.Size = New System.Drawing.Size(13, 13)
         Me.label_euro6.TabIndex = 26
         Me.label_euro6.Text = "€"
         '
         'button_informacion_canape
         '
-        Me.button_informacion_canape.Location = New System.Drawing.Point(167, 69)
-        Me.button_informacion_canape.Margin = New System.Windows.Forms.Padding(4)
+        Me.button_informacion_canape.Location = New System.Drawing.Point(125, 56)
         Me.button_informacion_canape.Name = "button_informacion_canape"
-        Me.button_informacion_canape.Size = New System.Drawing.Size(100, 28)
+        Me.button_informacion_canape.Size = New System.Drawing.Size(75, 23)
         Me.button_informacion_canape.TabIndex = 23
         Me.button_informacion_canape.Text = "Informacion"
         Me.button_informacion_canape.UseVisualStyleBackColor = True
         '
         'button_aniadir_canape
         '
-        Me.button_aniadir_canape.Location = New System.Drawing.Point(19, 69)
-        Me.button_aniadir_canape.Margin = New System.Windows.Forms.Padding(4)
+        Me.button_aniadir_canape.Location = New System.Drawing.Point(14, 56)
         Me.button_aniadir_canape.Name = "button_aniadir_canape"
-        Me.button_aniadir_canape.Size = New System.Drawing.Size(100, 28)
+        Me.button_aniadir_canape.Size = New System.Drawing.Size(75, 23)
         Me.button_aniadir_canape.TabIndex = 22
         Me.button_aniadir_canape.Text = "Añadir"
         Me.button_aniadir_canape.UseVisualStyleBackColor = True
@@ -800,29 +753,26 @@ Partial Class Pantalla_de_venta
         '
         Me.comboBox_cantidad_canape.FormattingEnabled = True
         Me.comboBox_cantidad_canape.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
-        Me.comboBox_cantidad_canape.Location = New System.Drawing.Point(181, 23)
-        Me.comboBox_cantidad_canape.Margin = New System.Windows.Forms.Padding(4)
+        Me.comboBox_cantidad_canape.Location = New System.Drawing.Point(136, 19)
         Me.comboBox_cantidad_canape.Name = "comboBox_cantidad_canape"
-        Me.comboBox_cantidad_canape.Size = New System.Drawing.Size(76, 24)
+        Me.comboBox_cantidad_canape.Size = New System.Drawing.Size(58, 21)
         Me.comboBox_cantidad_canape.TabIndex = 21
         '
         'label_precio_canape
         '
         Me.label_precio_canape.AutoSize = True
-        Me.label_precio_canape.Location = New System.Drawing.Point(113, 27)
-        Me.label_precio_canape.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_precio_canape.Location = New System.Drawing.Point(85, 22)
         Me.label_precio_canape.Name = "label_precio_canape"
-        Me.label_precio_canape.Size = New System.Drawing.Size(16, 17)
+        Me.label_precio_canape.Size = New System.Drawing.Size(13, 13)
         Me.label_precio_canape.TabIndex = 20
         Me.label_precio_canape.Text = ": "
         '
         'comboBox_tamanio_canape
         '
         Me.comboBox_tamanio_canape.FormattingEnabled = True
-        Me.comboBox_tamanio_canape.Location = New System.Drawing.Point(19, 23)
-        Me.comboBox_tamanio_canape.Margin = New System.Windows.Forms.Padding(4)
+        Me.comboBox_tamanio_canape.Location = New System.Drawing.Point(14, 19)
         Me.comboBox_tamanio_canape.Name = "comboBox_tamanio_canape"
-        Me.comboBox_tamanio_canape.Size = New System.Drawing.Size(75, 24)
+        Me.comboBox_tamanio_canape.Size = New System.Drawing.Size(57, 21)
         Me.comboBox_tamanio_canape.TabIndex = 21
         '
         'panel_ofertas
@@ -833,38 +783,34 @@ Partial Class Pantalla_de_venta
         Me.panel_ofertas.Controls.Add(Me.comboBox_cantidad_ofertas)
         Me.panel_ofertas.Controls.Add(Me.label_precio_ofertas)
         Me.panel_ofertas.Controls.Add(Me.comboBox_tamanios_ofertas)
-        Me.panel_ofertas.Location = New System.Drawing.Point(357, 428)
-        Me.panel_ofertas.Margin = New System.Windows.Forms.Padding(4)
+        Me.panel_ofertas.Location = New System.Drawing.Point(268, 348)
         Me.panel_ofertas.Name = "panel_ofertas"
-        Me.panel_ofertas.Size = New System.Drawing.Size(281, 116)
+        Me.panel_ofertas.Size = New System.Drawing.Size(211, 94)
         Me.panel_ofertas.TabIndex = 29
         '
         'label_euro3
         '
         Me.label_euro3.AutoSize = True
-        Me.label_euro3.Location = New System.Drawing.Point(139, 27)
-        Me.label_euro3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_euro3.Location = New System.Drawing.Point(104, 22)
         Me.label_euro3.Name = "label_euro3"
-        Me.label_euro3.Size = New System.Drawing.Size(16, 17)
+        Me.label_euro3.Size = New System.Drawing.Size(13, 13)
         Me.label_euro3.TabIndex = 29
         Me.label_euro3.Text = "€"
         '
         'button_informacion_ofertas
         '
-        Me.button_informacion_ofertas.Location = New System.Drawing.Point(167, 69)
-        Me.button_informacion_ofertas.Margin = New System.Windows.Forms.Padding(4)
+        Me.button_informacion_ofertas.Location = New System.Drawing.Point(125, 56)
         Me.button_informacion_ofertas.Name = "button_informacion_ofertas"
-        Me.button_informacion_ofertas.Size = New System.Drawing.Size(100, 28)
+        Me.button_informacion_ofertas.Size = New System.Drawing.Size(75, 23)
         Me.button_informacion_ofertas.TabIndex = 23
         Me.button_informacion_ofertas.Text = "Informacion"
         Me.button_informacion_ofertas.UseVisualStyleBackColor = True
         '
         'button_aniadir_ofertas
         '
-        Me.button_aniadir_ofertas.Location = New System.Drawing.Point(19, 69)
-        Me.button_aniadir_ofertas.Margin = New System.Windows.Forms.Padding(4)
+        Me.button_aniadir_ofertas.Location = New System.Drawing.Point(14, 56)
         Me.button_aniadir_ofertas.Name = "button_aniadir_ofertas"
-        Me.button_aniadir_ofertas.Size = New System.Drawing.Size(100, 28)
+        Me.button_aniadir_ofertas.Size = New System.Drawing.Size(75, 23)
         Me.button_aniadir_ofertas.TabIndex = 22
         Me.button_aniadir_ofertas.Text = "Añadir"
         Me.button_aniadir_ofertas.UseVisualStyleBackColor = True
@@ -873,29 +819,26 @@ Partial Class Pantalla_de_venta
         '
         Me.comboBox_cantidad_ofertas.FormattingEnabled = True
         Me.comboBox_cantidad_ofertas.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
-        Me.comboBox_cantidad_ofertas.Location = New System.Drawing.Point(181, 23)
-        Me.comboBox_cantidad_ofertas.Margin = New System.Windows.Forms.Padding(4)
+        Me.comboBox_cantidad_ofertas.Location = New System.Drawing.Point(136, 19)
         Me.comboBox_cantidad_ofertas.Name = "comboBox_cantidad_ofertas"
-        Me.comboBox_cantidad_ofertas.Size = New System.Drawing.Size(76, 24)
+        Me.comboBox_cantidad_ofertas.Size = New System.Drawing.Size(58, 21)
         Me.comboBox_cantidad_ofertas.TabIndex = 21
         '
         'label_precio_ofertas
         '
         Me.label_precio_ofertas.AutoSize = True
-        Me.label_precio_ofertas.Location = New System.Drawing.Point(113, 27)
-        Me.label_precio_ofertas.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_precio_ofertas.Location = New System.Drawing.Point(85, 22)
         Me.label_precio_ofertas.Name = "label_precio_ofertas"
-        Me.label_precio_ofertas.Size = New System.Drawing.Size(16, 17)
+        Me.label_precio_ofertas.Size = New System.Drawing.Size(13, 13)
         Me.label_precio_ofertas.TabIndex = 20
         Me.label_precio_ofertas.Text = ": "
         '
         'comboBox_tamanios_ofertas
         '
         Me.comboBox_tamanios_ofertas.FormattingEnabled = True
-        Me.comboBox_tamanios_ofertas.Location = New System.Drawing.Point(19, 23)
-        Me.comboBox_tamanios_ofertas.Margin = New System.Windows.Forms.Padding(4)
+        Me.comboBox_tamanios_ofertas.Location = New System.Drawing.Point(14, 19)
         Me.comboBox_tamanios_ofertas.Name = "comboBox_tamanios_ofertas"
-        Me.comboBox_tamanios_ofertas.Size = New System.Drawing.Size(75, 24)
+        Me.comboBox_tamanios_ofertas.Size = New System.Drawing.Size(57, 21)
         Me.comboBox_tamanios_ofertas.TabIndex = 20
         '
         'panel_otros
@@ -906,38 +849,34 @@ Partial Class Pantalla_de_venta
         Me.panel_otros.Controls.Add(Me.comboBox_cantidad_otros)
         Me.panel_otros.Controls.Add(Me.label_precio_otros)
         Me.panel_otros.Controls.Add(Me.comboBox_tamanio_otros)
-        Me.panel_otros.Location = New System.Drawing.Point(691, 428)
-        Me.panel_otros.Margin = New System.Windows.Forms.Padding(4)
+        Me.panel_otros.Location = New System.Drawing.Point(518, 348)
         Me.panel_otros.Name = "panel_otros"
-        Me.panel_otros.Size = New System.Drawing.Size(281, 116)
+        Me.panel_otros.Size = New System.Drawing.Size(211, 94)
         Me.panel_otros.TabIndex = 27
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(139, 27)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Location = New System.Drawing.Point(104, 22)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(16, 17)
+        Me.Label3.Size = New System.Drawing.Size(13, 13)
         Me.Label3.TabIndex = 25
         Me.Label3.Text = "€"
         '
         'button_informacion_otros
         '
-        Me.button_informacion_otros.Location = New System.Drawing.Point(167, 69)
-        Me.button_informacion_otros.Margin = New System.Windows.Forms.Padding(4)
+        Me.button_informacion_otros.Location = New System.Drawing.Point(125, 56)
         Me.button_informacion_otros.Name = "button_informacion_otros"
-        Me.button_informacion_otros.Size = New System.Drawing.Size(100, 28)
+        Me.button_informacion_otros.Size = New System.Drawing.Size(75, 23)
         Me.button_informacion_otros.TabIndex = 23
         Me.button_informacion_otros.Text = "Informacion"
         Me.button_informacion_otros.UseVisualStyleBackColor = True
         '
         'button_aniadir_otros
         '
-        Me.button_aniadir_otros.Location = New System.Drawing.Point(19, 69)
-        Me.button_aniadir_otros.Margin = New System.Windows.Forms.Padding(4)
+        Me.button_aniadir_otros.Location = New System.Drawing.Point(14, 56)
         Me.button_aniadir_otros.Name = "button_aniadir_otros"
-        Me.button_aniadir_otros.Size = New System.Drawing.Size(100, 28)
+        Me.button_aniadir_otros.Size = New System.Drawing.Size(75, 23)
         Me.button_aniadir_otros.TabIndex = 22
         Me.button_aniadir_otros.Text = "Añadir"
         Me.button_aniadir_otros.UseVisualStyleBackColor = True
@@ -946,29 +885,26 @@ Partial Class Pantalla_de_venta
         '
         Me.comboBox_cantidad_otros.FormattingEnabled = True
         Me.comboBox_cantidad_otros.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
-        Me.comboBox_cantidad_otros.Location = New System.Drawing.Point(181, 23)
-        Me.comboBox_cantidad_otros.Margin = New System.Windows.Forms.Padding(4)
+        Me.comboBox_cantidad_otros.Location = New System.Drawing.Point(136, 19)
         Me.comboBox_cantidad_otros.Name = "comboBox_cantidad_otros"
-        Me.comboBox_cantidad_otros.Size = New System.Drawing.Size(76, 24)
+        Me.comboBox_cantidad_otros.Size = New System.Drawing.Size(58, 21)
         Me.comboBox_cantidad_otros.TabIndex = 21
         '
         'label_precio_otros
         '
         Me.label_precio_otros.AutoSize = True
-        Me.label_precio_otros.Location = New System.Drawing.Point(113, 27)
-        Me.label_precio_otros.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_precio_otros.Location = New System.Drawing.Point(85, 22)
         Me.label_precio_otros.Name = "label_precio_otros"
-        Me.label_precio_otros.Size = New System.Drawing.Size(16, 17)
+        Me.label_precio_otros.Size = New System.Drawing.Size(13, 13)
         Me.label_precio_otros.TabIndex = 20
         Me.label_precio_otros.Text = ": "
         '
         'comboBox_tamanio_otros
         '
         Me.comboBox_tamanio_otros.FormattingEnabled = True
-        Me.comboBox_tamanio_otros.Location = New System.Drawing.Point(19, 23)
-        Me.comboBox_tamanio_otros.Margin = New System.Windows.Forms.Padding(4)
+        Me.comboBox_tamanio_otros.Location = New System.Drawing.Point(14, 19)
         Me.comboBox_tamanio_otros.Name = "comboBox_tamanio_otros"
-        Me.comboBox_tamanio_otros.Size = New System.Drawing.Size(72, 24)
+        Me.comboBox_tamanio_otros.Size = New System.Drawing.Size(55, 21)
         Me.comboBox_tamanio_otros.TabIndex = 24
         '
         'panel_acticulos
@@ -1000,31 +936,27 @@ Partial Class Pantalla_de_venta
         Me.panel_acticulos.Controls.Add(Me.pictureBox_colchon)
         Me.panel_acticulos.Controls.Add(Me.pictureBox_somier)
         Me.panel_acticulos.Controls.Add(Me.pictureBox_base)
-        Me.panel_acticulos.Location = New System.Drawing.Point(17, 162)
-        Me.panel_acticulos.Margin = New System.Windows.Forms.Padding(4)
+        Me.panel_acticulos.Location = New System.Drawing.Point(13, 132)
         Me.panel_acticulos.Name = "panel_acticulos"
-        Me.panel_acticulos.Size = New System.Drawing.Size(1005, 580)
+        Me.panel_acticulos.Size = New System.Drawing.Size(754, 472)
         Me.panel_acticulos.TabIndex = 30
         '
         'listBox_articulosElegidos
         '
         Me.listBox_articulosElegidos.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.listBox_articulosElegidos.FormattingEnabled = True
-        Me.listBox_articulosElegidos.ItemHeight = 16
-        Me.listBox_articulosElegidos.Location = New System.Drawing.Point(1047, 162)
-        Me.listBox_articulosElegidos.Margin = New System.Windows.Forms.Padding(4)
+        Me.listBox_articulosElegidos.Location = New System.Drawing.Point(785, 132)
         Me.listBox_articulosElegidos.Name = "listBox_articulosElegidos"
-        Me.listBox_articulosElegidos.Size = New System.Drawing.Size(308, 260)
+        Me.listBox_articulosElegidos.Size = New System.Drawing.Size(232, 212)
         Me.listBox_articulosElegidos.TabIndex = 31
         '
         'button_eliminar_1
         '
         Me.button_eliminar_1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.button_eliminar_1.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.button_eliminar_1.Location = New System.Drawing.Point(1167, 94)
-        Me.button_eliminar_1.Margin = New System.Windows.Forms.Padding(4)
+        Me.button_eliminar_1.Location = New System.Drawing.Point(875, 76)
         Me.button_eliminar_1.Name = "button_eliminar_1"
-        Me.button_eliminar_1.Size = New System.Drawing.Size(62, 53)
+        Me.button_eliminar_1.Size = New System.Drawing.Size(46, 43)
         Me.button_eliminar_1.TabIndex = 24
         Me.button_eliminar_1.Text = "-"
         Me.button_eliminar_1.UseVisualStyleBackColor = False
@@ -1033,10 +965,9 @@ Partial Class Pantalla_de_venta
         '
         Me.button_aniadir_1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.button_aniadir_1.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.button_aniadir_1.Location = New System.Drawing.Point(1084, 94)
-        Me.button_aniadir_1.Margin = New System.Windows.Forms.Padding(4)
+        Me.button_aniadir_1.Location = New System.Drawing.Point(813, 76)
         Me.button_aniadir_1.Name = "button_aniadir_1"
-        Me.button_aniadir_1.Size = New System.Drawing.Size(62, 53)
+        Me.button_aniadir_1.Size = New System.Drawing.Size(46, 43)
         Me.button_aniadir_1.TabIndex = 32
         Me.button_aniadir_1.Text = "+"
         Me.button_aniadir_1.UseVisualStyleBackColor = False
@@ -1045,10 +976,9 @@ Partial Class Pantalla_de_venta
         '
         Me.button_eliminar_articulo.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.button_eliminar_articulo.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.button_eliminar_articulo.Location = New System.Drawing.Point(1246, 94)
-        Me.button_eliminar_articulo.Margin = New System.Windows.Forms.Padding(4)
+        Me.button_eliminar_articulo.Location = New System.Drawing.Point(934, 76)
         Me.button_eliminar_articulo.Name = "button_eliminar_articulo"
-        Me.button_eliminar_articulo.Size = New System.Drawing.Size(62, 53)
+        Me.button_eliminar_articulo.Size = New System.Drawing.Size(46, 43)
         Me.button_eliminar_articulo.TabIndex = 33
         Me.button_eliminar_articulo.Text = "x"
         Me.button_eliminar_articulo.UseVisualStyleBackColor = False
@@ -1057,10 +987,9 @@ Partial Class Pantalla_de_venta
         '
         Me.button_cobrar.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.button_cobrar.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.button_cobrar.Location = New System.Drawing.Point(1119, 702)
-        Me.button_cobrar.Margin = New System.Windows.Forms.Padding(4)
+        Me.button_cobrar.Location = New System.Drawing.Point(839, 570)
         Me.button_cobrar.Name = "button_cobrar"
-        Me.button_cobrar.Size = New System.Drawing.Size(169, 28)
+        Me.button_cobrar.Size = New System.Drawing.Size(127, 23)
         Me.button_cobrar.TabIndex = 38
         Me.button_cobrar.Text = "Cobrar"
         Me.button_cobrar.UseVisualStyleBackColor = False
@@ -1069,10 +998,9 @@ Partial Class Pantalla_de_venta
         '
         Me.button_anular.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.button_anular.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.button_anular.Location = New System.Drawing.Point(1031, 737)
-        Me.button_anular.Margin = New System.Windows.Forms.Padding(4)
+        Me.button_anular.Location = New System.Drawing.Point(773, 599)
         Me.button_anular.Name = "button_anular"
-        Me.button_anular.Size = New System.Drawing.Size(169, 28)
+        Me.button_anular.Size = New System.Drawing.Size(127, 23)
         Me.button_anular.TabIndex = 39
         Me.button_anular.Text = "Anular compra"
         Me.button_anular.UseVisualStyleBackColor = False
@@ -1081,10 +1009,9 @@ Partial Class Pantalla_de_venta
         '
         Me.button_desconectar.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.button_desconectar.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.button_desconectar.Location = New System.Drawing.Point(1204, 737)
-        Me.button_desconectar.Margin = New System.Windows.Forms.Padding(4)
+        Me.button_desconectar.Location = New System.Drawing.Point(903, 599)
         Me.button_desconectar.Name = "button_desconectar"
-        Me.button_desconectar.Size = New System.Drawing.Size(169, 28)
+        Me.button_desconectar.Size = New System.Drawing.Size(127, 23)
         Me.button_desconectar.TabIndex = 47
         Me.button_desconectar.Text = "Desconectar"
         Me.button_desconectar.UseVisualStyleBackColor = False
@@ -1094,10 +1021,9 @@ Partial Class Pantalla_de_venta
         Me.label_total.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_total.AutoSize = True
         Me.label_total.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_total.Location = New System.Drawing.Point(1084, 527)
-        Me.label_total.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_total.Location = New System.Drawing.Point(813, 428)
         Me.label_total.Name = "label_total"
-        Me.label_total.Size = New System.Drawing.Size(67, 25)
+        Me.label_total.Size = New System.Drawing.Size(52, 20)
         Me.label_total.TabIndex = 54
         Me.label_total.Text = "Total: "
         '
@@ -1106,19 +1032,17 @@ Partial Class Pantalla_de_venta
         Me.label_totalPrecio.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_totalPrecio.AutoSize = True
         Me.label_totalPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_totalPrecio.Location = New System.Drawing.Point(1231, 590)
-        Me.label_totalPrecio.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_totalPrecio.Location = New System.Drawing.Point(923, 479)
         Me.label_totalPrecio.Name = "label_totalPrecio"
-        Me.label_totalPrecio.Size = New System.Drawing.Size(0, 25)
+        Me.label_totalPrecio.Size = New System.Drawing.Size(0, 20)
         Me.label_totalPrecio.TabIndex = 55
         '
         'textBox_importe
         '
         Me.textBox_importe.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.textBox_importe.Location = New System.Drawing.Point(1167, 592)
-        Me.textBox_importe.Margin = New System.Windows.Forms.Padding(4)
+        Me.textBox_importe.Location = New System.Drawing.Point(875, 481)
         Me.textBox_importe.Name = "textBox_importe"
-        Me.textBox_importe.Size = New System.Drawing.Size(132, 22)
+        Me.textBox_importe.Size = New System.Drawing.Size(100, 20)
         Me.textBox_importe.TabIndex = 56
         '
         'label_importe
@@ -1126,10 +1050,9 @@ Partial Class Pantalla_de_venta
         Me.label_importe.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_importe.AutoSize = True
         Me.label_importe.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_importe.Location = New System.Drawing.Point(1063, 592)
-        Me.label_importe.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_importe.Location = New System.Drawing.Point(797, 481)
         Me.label_importe.Name = "label_importe"
-        Me.label_importe.Size = New System.Drawing.Size(88, 25)
+        Me.label_importe.Size = New System.Drawing.Size(72, 20)
         Me.label_importe.TabIndex = 57
         Me.label_importe.Text = "Importe: "
         '
@@ -1138,10 +1061,9 @@ Partial Class Pantalla_de_venta
         Me.label_resto.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_resto.AutoSize = True
         Me.label_resto.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_resto.Location = New System.Drawing.Point(1079, 634)
-        Me.label_resto.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_resto.Location = New System.Drawing.Point(809, 515)
         Me.label_resto.Name = "label_resto"
-        Me.label_resto.Size = New System.Drawing.Size(73, 25)
+        Me.label_resto.Size = New System.Drawing.Size(60, 20)
         Me.label_resto.TabIndex = 58
         Me.label_resto.Text = "Resto: "
         '
@@ -1150,10 +1072,9 @@ Partial Class Pantalla_de_venta
         Me.label_totalDevolver.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_totalDevolver.AutoSize = True
         Me.label_totalDevolver.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_totalDevolver.Location = New System.Drawing.Point(1231, 683)
-        Me.label_totalDevolver.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_totalDevolver.Location = New System.Drawing.Point(923, 555)
         Me.label_totalDevolver.Name = "label_totalDevolver"
-        Me.label_totalDevolver.Size = New System.Drawing.Size(0, 25)
+        Me.label_totalDevolver.Size = New System.Drawing.Size(0, 20)
         Me.label_totalDevolver.TabIndex = 59
         '
         'label_euro
@@ -1161,10 +1082,9 @@ Partial Class Pantalla_de_venta
         Me.label_euro.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_euro.AutoSize = True
         Me.label_euro.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_euro.Location = New System.Drawing.Point(1332, 527)
-        Me.label_euro.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_euro.Location = New System.Drawing.Point(999, 428)
         Me.label_euro.Name = "label_euro"
-        Me.label_euro.Size = New System.Drawing.Size(23, 25)
+        Me.label_euro.Size = New System.Drawing.Size(18, 20)
         Me.label_euro.TabIndex = 60
         Me.label_euro.Text = "€"
         '
@@ -1173,10 +1093,9 @@ Partial Class Pantalla_de_venta
         Me.label_euro8.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_euro8.AutoSize = True
         Me.label_euro8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_euro8.Location = New System.Drawing.Point(1332, 634)
-        Me.label_euro8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_euro8.Location = New System.Drawing.Point(999, 515)
         Me.label_euro8.Name = "label_euro8"
-        Me.label_euro8.Size = New System.Drawing.Size(23, 25)
+        Me.label_euro8.Size = New System.Drawing.Size(18, 20)
         Me.label_euro8.TabIndex = 61
         Me.label_euro8.Text = "€"
         '
@@ -1185,10 +1104,9 @@ Partial Class Pantalla_de_venta
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(1332, 592)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(999, 481)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(23, 25)
+        Me.Label2.Size = New System.Drawing.Size(18, 20)
         Me.Label2.TabIndex = 62
         Me.Label2.Text = "€"
         '
@@ -1197,10 +1115,9 @@ Partial Class Pantalla_de_venta
         Me.Label_subtotal.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label_subtotal.AutoSize = True
         Me.Label_subtotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_subtotal.Location = New System.Drawing.Point(1079, 450)
-        Me.Label_subtotal.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label_subtotal.Location = New System.Drawing.Point(809, 366)
         Me.Label_subtotal.Name = "Label_subtotal"
-        Me.Label_subtotal.Size = New System.Drawing.Size(95, 25)
+        Me.Label_subtotal.Size = New System.Drawing.Size(77, 20)
         Me.Label_subtotal.TabIndex = 63
         Me.Label_subtotal.Text = "Subtotal: "
         '
@@ -1209,10 +1126,9 @@ Partial Class Pantalla_de_venta
         Me.label_subtotalPrecio.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_subtotalPrecio.AutoSize = True
         Me.label_subtotalPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_subtotalPrecio.Location = New System.Drawing.Point(1231, 490)
-        Me.label_subtotalPrecio.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_subtotalPrecio.Location = New System.Drawing.Point(923, 398)
         Me.label_subtotalPrecio.Name = "label_subtotalPrecio"
-        Me.label_subtotalPrecio.Size = New System.Drawing.Size(0, 25)
+        Me.label_subtotalPrecio.Size = New System.Drawing.Size(0, 20)
         Me.label_subtotalPrecio.TabIndex = 64
         '
         'Label1
@@ -1220,10 +1136,9 @@ Partial Class Pantalla_de_venta
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(1332, 450)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(999, 366)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(23, 25)
+        Me.Label1.Size = New System.Drawing.Size(18, 20)
         Me.Label1.TabIndex = 65
         Me.Label1.Text = "€"
         '
@@ -1232,10 +1147,9 @@ Partial Class Pantalla_de_venta
         Me.Label7.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(1079, 490)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Location = New System.Drawing.Point(809, 398)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(101, 25)
+        Me.Label7.Size = New System.Drawing.Size(80, 20)
         Me.Label7.TabIndex = 66
         Me.Label7.Text = "IVA 15%: "
         '
@@ -1244,10 +1158,9 @@ Partial Class Pantalla_de_venta
         Me.label_ivaPrecio.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_ivaPrecio.AutoSize = True
         Me.label_ivaPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_ivaPrecio.Location = New System.Drawing.Point(1231, 540)
-        Me.label_ivaPrecio.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_ivaPrecio.Location = New System.Drawing.Point(923, 439)
         Me.label_ivaPrecio.Name = "label_ivaPrecio"
-        Me.label_ivaPrecio.Size = New System.Drawing.Size(0, 25)
+        Me.label_ivaPrecio.Size = New System.Drawing.Size(0, 20)
         Me.label_ivaPrecio.TabIndex = 67
         '
         'Label5
@@ -1255,19 +1168,26 @@ Partial Class Pantalla_de_venta
         Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(1332, 490)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Location = New System.Drawing.Point(999, 398)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(23, 25)
+        Me.Label5.Size = New System.Drawing.Size(18, 20)
         Me.Label5.TabIndex = 68
         Me.Label5.Text = "€"
         '
+        'GestionDeErroresToolStripMenuItem
+        '
+        Me.GestionDeErroresToolStripMenuItem.Name = "GestionDeErroresToolStripMenuItem"
+        Me.GestionDeErroresToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
+            Or System.Windows.Forms.Keys.R), System.Windows.Forms.Keys)
+        Me.GestionDeErroresToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
+        Me.GestionDeErroresToolStripMenuItem.Text = "Gestion de errores"
+        '
         'Pantalla_de_venta
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(1389, 866)
+        Me.ClientSize = New System.Drawing.Size(1028, 609)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.label_ivaPrecio)
         Me.Controls.Add(Me.Label7)
@@ -1295,7 +1215,6 @@ Partial Class Pantalla_de_venta
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.MenuStrip)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Pantalla_de_venta"
         Me.Text = "Colchoneria CUESTA - Venta de articulos"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
@@ -1434,4 +1353,5 @@ Partial Class Pantalla_de_venta
     Friend WithEvents Label7 As Label
     Friend WithEvents label_ivaPrecio As Label
     Friend WithEvents Label5 As Label
+    Friend WithEvents GestionDeErroresToolStripMenuItem As ToolStripMenuItem
 End Class

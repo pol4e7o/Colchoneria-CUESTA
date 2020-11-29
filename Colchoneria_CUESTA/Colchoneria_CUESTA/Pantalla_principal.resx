@@ -120,11 +120,14 @@
   <metadata name="MenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="MenuStrip.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="MenuStrip.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Center</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="InicioToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -133,19 +136,19 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="CerrarCajaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 26</value>
+    <value>168, 22</value>
   </data>
   <data name="CerrarCajaToolStripMenuItem.Text" xml:space="preserve">
     <value>Cerrar caja</value>
   </data>
   <data name="ToolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 6</value>
+    <value>165, 6</value>
   </data>
   <data name="VolverToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+V</value>
   </data>
   <data name="VolverToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 26</value>
+    <value>168, 22</value>
   </data>
   <data name="VolverToolStripMenuItem.Text" xml:space="preserve">
     <value>Volver</value>
@@ -154,7 +157,7 @@
     <value>Ctrl+X</value>
   </data>
   <data name="SalirToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 26</value>
+    <value>168, 22</value>
   </data>
   <data name="SalirToolStripMenuItem.Text" xml:space="preserve">
     <value>Salir</value>
@@ -172,7 +175,7 @@
     <value>Ctrl+1</value>
   </data>
   <data name="VisualizarVentaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>237, 26</value>
+    <value>195, 22</value>
   </data>
   <data name="VisualizarVentaToolStripMenuItem.Text" xml:space="preserve">
     <value>Visualizar venta</value>
@@ -190,7 +193,7 @@
     <value>Alt+A</value>
   </data>
   <data name="ColchoneriaCUESTAToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>267, 26</value>
+    <value>220, 22</value>
   </data>
   <data name="ColchoneriaCUESTAToolStripMenuItem.Text" xml:space="preserve">
     <value>Colchoneria CUESTA</value>
@@ -208,7 +211,7 @@
     <value>F1</value>
   </data>
   <data name="ManualDeUsuarioToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 26</value>
+    <value>191, 22</value>
   </data>
   <data name="ManualDeUsuarioToolStripMenuItem.Text" xml:space="preserve">
     <value>Manual de usuario</value>
@@ -222,11 +225,8 @@
   <data name="MenuStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="MenuStrip.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>8, 2, 0, 2</value>
-  </data>
   <data name="MenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1168, 74</value>
+    <value>876, 54</value>
   </data>
   <data name="MenuStrip.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -259,13 +259,10 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="label_ayuda.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 11</value>
-  </data>
-  <data name="label_ayuda.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>10, 9</value>
   </data>
   <data name="label_ayuda.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 27</value>
+    <value>88, 22</value>
   </data>
   <data name="label_ayuda.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -298,13 +295,10 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="label_fecha.Location" type="System.Drawing.Point, System.Drawing">
-    <value>709, 11</value>
-  </data>
-  <data name="label_fecha.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>531, 9</value>
   </data>
   <data name="label_fecha.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 27</value>
+    <value>64, 22</value>
   </data>
   <data name="label_fecha.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -337,13 +331,10 @@
     <value>NoControl</value>
   </data>
   <data name="label_hora.Location" type="System.Drawing.Point, System.Drawing">
-    <value>964, 11</value>
-  </data>
-  <data name="label_hora.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>722, 9</value>
   </data>
   <data name="label_hora.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 27</value>
+    <value>54, 22</value>
   </data>
   <data name="label_hora.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -367,13 +358,10 @@
     <value>Bottom</value>
   </data>
   <data name="Panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 569</value>
-  </data>
-  <data name="Panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>0, 462</value>
   </data>
   <data name="Panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1168, 51</value>
+    <value>876, 42</value>
   </data>
   <data name="Panel1.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -403,13 +391,10 @@
     <value>NoControl</value>
   </data>
   <data name="label_saludo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>503, 117</value>
-  </data>
-  <data name="label_saludo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>377, 95</value>
   </data>
   <data name="label_saludo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 36</value>
+    <value>159, 29</value>
   </data>
   <data name="label_saludo.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -445,13 +430,10 @@
     <value>NoControl</value>
   </data>
   <data name="label_pulsarTecla.Location" type="System.Drawing.Point, System.Drawing">
-    <value>376, 482</value>
-  </data>
-  <data name="label_pulsarTecla.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>282, 392</value>
   </data>
   <data name="label_pulsarTecla.Size" type="System.Drawing.Size, System.Drawing">
-    <value>419, 38</value>
+    <value>336, 31</value>
   </data>
   <data name="label_pulsarTecla.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -476,6 +458,9 @@
   </data>
   <data name="PictureBox_logo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
+  </data>
+  <data name="PictureBox_logo.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
   </data>
   <data name="PictureBox_logo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2709,14 +2694,17 @@
         TkSuQmCC
 </value>
   </data>
-  <data name="PictureBox_logo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>323, 193</value>
+  <data name="PictureBox_logo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="PictureBox_logo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+  <data name="PictureBox_logo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>189, 145</value>
   </data>
   <data name="PictureBox_logo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>525, 228</value>
+    <value>524, 227</value>
+  </data>
+  <data name="PictureBox_logo.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>AutoSize</value>
   </data>
   <data name="PictureBox_logo.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -2740,10 +2728,10 @@
     <value>31</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 16</value>
+    <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1168, 620</value>
+    <value>876, 504</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5017,9 +5005,6 @@
         R7j2/0e49v9HuPb/SLj2/0e39P9GtPL/Rrb0/0e49v8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 </value>
-  </data>
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Colchoneria CUESTA</value>

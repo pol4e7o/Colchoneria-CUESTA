@@ -14,10 +14,13 @@
         'El primer elemento que tendra el foco es el textBox del usuario
         ComboBox_dia.Focus()
 
+        'Se desabilita la opcion que corresponde a la pantalla actual
+        GestionDeErroresToolStripMenuItem.Enabled = False
+
     End Sub
     'MENU
     'CERRAR CAJA
-    Private Sub CerrarCajaToolStripMenuItem_Click(sender As Object, e As EventArgs)
+    Private Sub CerrarCajaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarCajaToolStripMenuItem.Click
         Dim opcion As Integer
 
         opcion = MsgBox("Esta seguro que desea cerrar caja?", 4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Cerrar caja")
@@ -37,7 +40,7 @@
     End Sub
 
     'VOLVER
-    Private Sub VolverToolStripMenuItem_Click(sender As Object, e As EventArgs)
+    Private Sub VolverToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VolverToolStripMenuItem.Click
 
         Pantalla_de_venta.Show()
         Me.Close()
@@ -45,7 +48,7 @@
     End Sub
 
     'SALIR
-    Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs)
+    Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
         'La variable que va a almacenar la opcion elegida del message box
         Dim opcion As Integer
 
@@ -68,7 +71,7 @@
     End Sub
 
     'VENTA
-    Private Sub VentaToolStripMenuItem_Click(sender As Object, e As EventArgs)
+    Private Sub VentaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VentaToolStripMenuItem.Click
         'Se visualiza la venta actual del dia mediante un message box
         MsgBox("La venta actual del dia " & DateString & " a la hora " & TimeString & " es: 
 
@@ -76,13 +79,13 @@
     End Sub
 
     'ACERCA DE...
-    Private Sub AcercaDeToolStripMenuItem_Click(sender As Object, e As EventArgs)
+    Private Sub AcercaDeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AcercaDeToolStripMenuItem.Click
         'Se visualiza toda la informacion sobre la empresa
         MsgBox(ElementosComunes.informacionEmpresa, 0 + MsgBoxStyle.Information, "Informacion sobre Colchoneria CUESTA")
     End Sub
 
     'AYUDA
-    Private Sub ManualDeUsuarioToolStripMenuItem_Click(sender As Object, e As EventArgs)
+    Private Sub ManualDeUsuarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ManualDeUsuarioToolStripMenuItem.Click
         'Te reenviará a un fichero: Manual de usuario
     End Sub
 
@@ -117,7 +120,7 @@
     End Sub
 
     'VISUALIZAR
-    Private Sub Button_visualizar_Click(sender As Object, e As EventArgs) 
+    Private Sub Button_visualizar_Click(sender As Object, e As EventArgs) Handles Button_visualizar.Click
 
         'Imprime en el ListBox los errores acaecidos aquel día.
 
@@ -125,4 +128,28 @@
 
     End Sub
 
+
+    Private Sub GestionDeEmpleadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionDeEmpleadosToolStripMenuItem.Click
+
+        'Se dirige a la pantalla seleccionada
+        Pantalla_admin_empleados.Show()
+        Me.Close()
+
+    End Sub
+
+    Private Sub GestionDeArticulosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionDeArticulosToolStripMenuItem.Click
+
+        'Se dirige a la pantalla seleccionada
+        Pantalla_admin_articulos.Show()
+        Me.Close()
+
+    End Sub
+
+    Private Sub GestionDeVentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionDeVentasToolStripMenuItem.Click
+
+        'Se dirige a la pantalla seleccionada
+        Gestion_de_ventas.Show()
+        Me.Close()
+
+    End Sub
 End Class

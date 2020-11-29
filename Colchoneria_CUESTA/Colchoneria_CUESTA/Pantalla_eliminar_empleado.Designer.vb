@@ -67,6 +67,7 @@ Partial Class Pantalla_eliminar_empleado
         Me.comboBox_elegirEmpleado = New System.Windows.Forms.ComboBox()
         Me.label_empleado = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.GestionDeErroresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.panel_elementosEmpleado.SuspendLayout()
@@ -80,13 +81,13 @@ Partial Class Pantalla_eliminar_empleado
         '
         'MenuStrip
         '
+        Me.MenuStrip.AutoSize = False
         Me.MenuStrip.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.MenuStrip.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InicioToolStripMenuItem, Me.VentaToolStripMenuItem, Me.OpcionesToolStripMenuItem, Me.AcercaDeToolStripMenuItem, Me.AyudaToolStripMenuItem})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
-        Me.MenuStrip.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
-        Me.MenuStrip.Size = New System.Drawing.Size(1175, 74)
+        Me.MenuStrip.Size = New System.Drawing.Size(881, 54)
         Me.MenuStrip.TabIndex = 8
         Me.MenuStrip.Text = "MenuStrip1"
         '
@@ -102,20 +103,20 @@ Partial Class Pantalla_eliminar_empleado
         '
         Me.CerrarCajaToolStripMenuItem.Name = "CerrarCajaToolStripMenuItem"
         Me.CerrarCajaToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
-        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(205, 26)
+        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
         Me.CerrarCajaToolStripMenuItem.Text = "Cerrar caja"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(202, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(167, 6)
         '
         'VolverToolStripMenuItem
         '
         Me.VolverToolStripMenuItem.Name = "VolverToolStripMenuItem"
         Me.VolverToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
             Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(205, 26)
+        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
         Me.VolverToolStripMenuItem.Text = "Volver"
         '
         'SalirToolStripMenuItem
@@ -123,7 +124,7 @@ Partial Class Pantalla_eliminar_empleado
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
         Me.SalirToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
             Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(205, 26)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'VentaToolStripMenuItem
@@ -138,13 +139,13 @@ Partial Class Pantalla_eliminar_empleado
         '
         Me.VisualizarVentaToolStripMenuItem.Name = "VisualizarVentaToolStripMenuItem"
         Me.VisualizarVentaToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D1), System.Windows.Forms.Keys)
-        Me.VisualizarVentaToolStripMenuItem.Size = New System.Drawing.Size(237, 26)
+        Me.VisualizarVentaToolStripMenuItem.Size = New System.Drawing.Size(195, 22)
         Me.VisualizarVentaToolStripMenuItem.Text = "Visualizar venta"
         '
         'OpcionesToolStripMenuItem
         '
         Me.OpcionesToolStripMenuItem.AutoSize = False
-        Me.OpcionesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GestionDeEmpleadosToolStripMenuItem, Me.GestionDeArticulosToolStripMenuItem, Me.GestionDeVentasToolStripMenuItem})
+        Me.OpcionesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GestionDeEmpleadosToolStripMenuItem, Me.GestionDeArticulosToolStripMenuItem, Me.GestionDeVentasToolStripMenuItem, Me.GestionDeErroresToolStripMenuItem})
         Me.OpcionesToolStripMenuItem.Name = "OpcionesToolStripMenuItem"
         Me.OpcionesToolStripMenuItem.Size = New System.Drawing.Size(170, 70)
         Me.OpcionesToolStripMenuItem.Text = "Opciones"
@@ -154,7 +155,7 @@ Partial Class Pantalla_eliminar_empleado
         Me.GestionDeEmpleadosToolStripMenuItem.Name = "GestionDeEmpleadosToolStripMenuItem"
         Me.GestionDeEmpleadosToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.E), System.Windows.Forms.Keys)
-        Me.GestionDeEmpleadosToolStripMenuItem.Size = New System.Drawing.Size(338, 26)
+        Me.GestionDeEmpleadosToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
         Me.GestionDeEmpleadosToolStripMenuItem.Text = "Gestion de empleados"
         '
         'GestionDeArticulosToolStripMenuItem
@@ -162,7 +163,7 @@ Partial Class Pantalla_eliminar_empleado
         Me.GestionDeArticulosToolStripMenuItem.Name = "GestionDeArticulosToolStripMenuItem"
         Me.GestionDeArticulosToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.A), System.Windows.Forms.Keys)
-        Me.GestionDeArticulosToolStripMenuItem.Size = New System.Drawing.Size(338, 26)
+        Me.GestionDeArticulosToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
         Me.GestionDeArticulosToolStripMenuItem.Text = "Gestion de articulos"
         '
         'GestionDeVentasToolStripMenuItem
@@ -170,7 +171,7 @@ Partial Class Pantalla_eliminar_empleado
         Me.GestionDeVentasToolStripMenuItem.Name = "GestionDeVentasToolStripMenuItem"
         Me.GestionDeVentasToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.GestionDeVentasToolStripMenuItem.Size = New System.Drawing.Size(338, 26)
+        Me.GestionDeVentasToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
         Me.GestionDeVentasToolStripMenuItem.Text = "Gestion de ventas"
         '
         'AcercaDeToolStripMenuItem
@@ -185,7 +186,7 @@ Partial Class Pantalla_eliminar_empleado
         '
         Me.ColchoneriaCUESTAToolStripMenuItem.Name = "ColchoneriaCUESTAToolStripMenuItem"
         Me.ColchoneriaCUESTAToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.A), System.Windows.Forms.Keys)
-        Me.ColchoneriaCUESTAToolStripMenuItem.Size = New System.Drawing.Size(267, 26)
+        Me.ColchoneriaCUESTAToolStripMenuItem.Size = New System.Drawing.Size(220, 22)
         Me.ColchoneriaCUESTAToolStripMenuItem.Text = "Colchoneria CUESTA"
         '
         'AyudaToolStripMenuItem
@@ -201,7 +202,7 @@ Partial Class Pantalla_eliminar_empleado
         '
         Me.ManualDeUsuarioToolStripMenuItem.Name = "ManualDeUsuarioToolStripMenuItem"
         Me.ManualDeUsuarioToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1
-        Me.ManualDeUsuarioToolStripMenuItem.Size = New System.Drawing.Size(230, 26)
+        Me.ManualDeUsuarioToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
         Me.ManualDeUsuarioToolStripMenuItem.Text = "Manual de usuario"
         '
         'Panel1
@@ -213,10 +214,9 @@ Partial Class Pantalla_eliminar_empleado
         Me.Panel1.Controls.Add(Me.label_ayuda)
         Me.Panel1.Controls.Add(Me.label_fecha)
         Me.Panel1.Controls.Add(Me.label_hora)
-        Me.Panel1.Location = New System.Drawing.Point(0, 661)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel1.Location = New System.Drawing.Point(0, 537)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1175, 51)
+        Me.Panel1.Size = New System.Drawing.Size(882, 42)
         Me.Panel1.TabIndex = 28
         '
         'label_ayuda
@@ -227,10 +227,9 @@ Partial Class Pantalla_eliminar_empleado
         Me.label_ayuda.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.label_ayuda.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.label_ayuda.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.label_ayuda.Location = New System.Drawing.Point(13, 11)
-        Me.label_ayuda.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_ayuda.Location = New System.Drawing.Point(10, 9)
         Me.label_ayuda.Name = "label_ayuda"
-        Me.label_ayuda.Size = New System.Drawing.Size(111, 27)
+        Me.label_ayuda.Size = New System.Drawing.Size(88, 22)
         Me.label_ayuda.TabIndex = 1
         Me.label_ayuda.Text = "F1 - Ayuda"
         Me.label_ayuda.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -243,10 +242,9 @@ Partial Class Pantalla_eliminar_empleado
         Me.label_fecha.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.label_fecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.label_fecha.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.label_fecha.Location = New System.Drawing.Point(716, 11)
-        Me.label_fecha.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_fecha.Location = New System.Drawing.Point(537, 9)
         Me.label_fecha.Name = "label_fecha"
-        Me.label_fecha.Size = New System.Drawing.Size(80, 27)
+        Me.label_fecha.Size = New System.Drawing.Size(64, 22)
         Me.label_fecha.TabIndex = 2
         Me.label_fecha.Text = "Fecha: "
         '
@@ -258,10 +256,9 @@ Partial Class Pantalla_eliminar_empleado
         Me.label_hora.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.label_hora.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.label_hora.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.label_hora.Location = New System.Drawing.Point(971, 11)
-        Me.label_hora.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_hora.Location = New System.Drawing.Point(728, 9)
         Me.label_hora.Name = "label_hora"
-        Me.label_hora.Size = New System.Drawing.Size(67, 27)
+        Me.label_hora.Size = New System.Drawing.Size(54, 22)
         Me.label_hora.TabIndex = 3
         Me.label_hora.Text = "Hora: "
         '
@@ -270,10 +267,9 @@ Partial Class Pantalla_eliminar_empleado
         Me.label_elijaOpcion.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_elijaOpcion.AutoSize = True
         Me.label_elijaOpcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_elijaOpcion.Location = New System.Drawing.Point(492, 128)
-        Me.label_elijaOpcion.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_elijaOpcion.Location = New System.Drawing.Point(368, 110)
         Me.label_elijaOpcion.Name = "label_elijaOpcion"
-        Me.label_elijaOpcion.Size = New System.Drawing.Size(196, 25)
+        Me.label_elijaOpcion.Size = New System.Drawing.Size(159, 20)
         Me.label_elijaOpcion.TabIndex = 30
         Me.label_elijaOpcion.Text = "Baja de un empleado"
         '
@@ -282,10 +278,9 @@ Partial Class Pantalla_eliminar_empleado
         Me.label_Gestion_empleados.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_Gestion_empleados.AutoSize = True
         Me.label_Gestion_empleados.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_Gestion_empleados.Location = New System.Drawing.Point(451, 81)
-        Me.label_Gestion_empleados.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_Gestion_empleados.Location = New System.Drawing.Point(337, 72)
         Me.label_Gestion_empleados.Name = "label_Gestion_empleados"
-        Me.label_Gestion_empleados.Size = New System.Drawing.Size(284, 31)
+        Me.label_Gestion_empleados.Size = New System.Drawing.Size(227, 25)
         Me.label_Gestion_empleados.TabIndex = 29
         Me.label_Gestion_empleados.Text = "Gestion de empleados"
         '
@@ -307,10 +302,9 @@ Partial Class Pantalla_eliminar_empleado
         Me.panel_elementosEmpleado.Controls.Add(Me.label_nombre)
         Me.panel_elementosEmpleado.Controls.Add(Me.label_direccion)
         Me.panel_elementosEmpleado.Controls.Add(Me.label_apellidos)
-        Me.panel_elementosEmpleado.Location = New System.Drawing.Point(187, 242)
-        Me.panel_elementosEmpleado.Margin = New System.Windows.Forms.Padding(4)
+        Me.panel_elementosEmpleado.Location = New System.Drawing.Point(140, 197)
         Me.panel_elementosEmpleado.Name = "panel_elementosEmpleado"
-        Me.panel_elementosEmpleado.Size = New System.Drawing.Size(847, 244)
+        Me.panel_elementosEmpleado.Size = New System.Drawing.Size(635, 198)
         Me.panel_elementosEmpleado.TabIndex = 31
         '
         'comboBox_roles
@@ -319,145 +313,131 @@ Partial Class Pantalla_eliminar_empleado
         Me.comboBox_roles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.comboBox_roles.FormattingEnabled = True
         Me.comboBox_roles.Items.AddRange(New Object() {"Administrador", "Empleado"})
-        Me.comboBox_roles.Location = New System.Drawing.Point(611, 182)
-        Me.comboBox_roles.Margin = New System.Windows.Forms.Padding(4)
+        Me.comboBox_roles.Location = New System.Drawing.Point(458, 148)
         Me.comboBox_roles.Name = "comboBox_roles"
-        Me.comboBox_roles.Size = New System.Drawing.Size(180, 24)
+        Me.comboBox_roles.Size = New System.Drawing.Size(136, 21)
         Me.comboBox_roles.TabIndex = 35
         '
         'textBox_telefono
         '
         Me.textBox_telefono.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.textBox_telefono.Location = New System.Drawing.Point(611, 129)
-        Me.textBox_telefono.Margin = New System.Windows.Forms.Padding(4)
+        Me.textBox_telefono.Location = New System.Drawing.Point(458, 105)
         Me.textBox_telefono.MaxLength = 15
         Me.textBox_telefono.Name = "textBox_telefono"
         Me.textBox_telefono.ReadOnly = True
-        Me.textBox_telefono.Size = New System.Drawing.Size(132, 22)
+        Me.textBox_telefono.Size = New System.Drawing.Size(100, 20)
         Me.textBox_telefono.TabIndex = 30
         '
         'textBox_apellidos
         '
         Me.textBox_apellidos.BackColor = System.Drawing.Color.White
-        Me.textBox_apellidos.Location = New System.Drawing.Point(611, 36)
-        Me.textBox_apellidos.Margin = New System.Windows.Forms.Padding(4)
+        Me.textBox_apellidos.Location = New System.Drawing.Point(458, 29)
         Me.textBox_apellidos.MaxLength = 30
         Me.textBox_apellidos.Name = "textBox_apellidos"
         Me.textBox_apellidos.ReadOnly = True
-        Me.textBox_apellidos.Size = New System.Drawing.Size(180, 22)
+        Me.textBox_apellidos.Size = New System.Drawing.Size(136, 20)
         Me.textBox_apellidos.TabIndex = 29
         '
         'textBox_nombreUsuario
         '
         Me.textBox_nombreUsuario.BackColor = System.Drawing.Color.White
-        Me.textBox_nombreUsuario.Location = New System.Drawing.Point(180, 182)
-        Me.textBox_nombreUsuario.Margin = New System.Windows.Forms.Padding(4)
+        Me.textBox_nombreUsuario.Location = New System.Drawing.Point(135, 148)
         Me.textBox_nombreUsuario.MaxLength = 10
         Me.textBox_nombreUsuario.Name = "textBox_nombreUsuario"
         Me.textBox_nombreUsuario.ReadOnly = True
-        Me.textBox_nombreUsuario.Size = New System.Drawing.Size(132, 22)
+        Me.textBox_nombreUsuario.Size = New System.Drawing.Size(100, 20)
         Me.textBox_nombreUsuario.TabIndex = 27
         '
         'textBox_codigoPostal
         '
         Me.textBox_codigoPostal.BackColor = System.Drawing.Color.White
-        Me.textBox_codigoPostal.Location = New System.Drawing.Point(180, 129)
-        Me.textBox_codigoPostal.Margin = New System.Windows.Forms.Padding(4)
+        Me.textBox_codigoPostal.Location = New System.Drawing.Point(135, 105)
         Me.textBox_codigoPostal.MaxLength = 5
         Me.textBox_codigoPostal.Name = "textBox_codigoPostal"
         Me.textBox_codigoPostal.ReadOnly = True
-        Me.textBox_codigoPostal.Size = New System.Drawing.Size(132, 22)
+        Me.textBox_codigoPostal.Size = New System.Drawing.Size(100, 20)
         Me.textBox_codigoPostal.TabIndex = 26
         '
         'textBox_direccion
         '
         Me.textBox_direccion.BackColor = System.Drawing.Color.White
-        Me.textBox_direccion.Location = New System.Drawing.Point(180, 80)
-        Me.textBox_direccion.Margin = New System.Windows.Forms.Padding(4)
+        Me.textBox_direccion.Location = New System.Drawing.Point(135, 65)
         Me.textBox_direccion.MaxLength = 30
         Me.textBox_direccion.Name = "textBox_direccion"
         Me.textBox_direccion.ReadOnly = True
-        Me.textBox_direccion.Size = New System.Drawing.Size(205, 22)
+        Me.textBox_direccion.Size = New System.Drawing.Size(155, 20)
         Me.textBox_direccion.TabIndex = 25
         '
         'textBox_nombre
         '
         Me.textBox_nombre.BackColor = System.Drawing.Color.White
-        Me.textBox_nombre.Location = New System.Drawing.Point(180, 36)
-        Me.textBox_nombre.Margin = New System.Windows.Forms.Padding(4)
+        Me.textBox_nombre.Location = New System.Drawing.Point(135, 29)
         Me.textBox_nombre.MaxLength = 25
         Me.textBox_nombre.Name = "textBox_nombre"
         Me.textBox_nombre.ReadOnly = True
-        Me.textBox_nombre.Size = New System.Drawing.Size(205, 22)
+        Me.textBox_nombre.Size = New System.Drawing.Size(155, 20)
         Me.textBox_nombre.TabIndex = 24
         '
         'label_rol
         '
         Me.label_rol.AutoSize = True
-        Me.label_rol.Location = New System.Drawing.Point(465, 186)
-        Me.label_rol.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_rol.Location = New System.Drawing.Point(349, 151)
         Me.label_rol.Name = "label_rol"
-        Me.label_rol.Size = New System.Drawing.Size(37, 17)
+        Me.label_rol.Size = New System.Drawing.Size(29, 13)
         Me.label_rol.TabIndex = 22
         Me.label_rol.Text = "Rol: "
         '
         'label_nombreUsuario
         '
         Me.label_nombreUsuario.AutoSize = True
-        Me.label_nombreUsuario.Location = New System.Drawing.Point(32, 186)
-        Me.label_nombreUsuario.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_nombreUsuario.Location = New System.Drawing.Point(24, 151)
         Me.label_nombreUsuario.Name = "label_nombreUsuario"
-        Me.label_nombreUsuario.Size = New System.Drawing.Size(133, 17)
+        Me.label_nombreUsuario.Size = New System.Drawing.Size(99, 13)
         Me.label_nombreUsuario.TabIndex = 20
         Me.label_nombreUsuario.Text = "Nombre de usuario:"
         '
         'label_telefono
         '
         Me.label_telefono.AutoSize = True
-        Me.label_telefono.Location = New System.Drawing.Point(465, 133)
-        Me.label_telefono.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_telefono.Location = New System.Drawing.Point(349, 108)
         Me.label_telefono.Name = "label_telefono"
-        Me.label_telefono.Size = New System.Drawing.Size(72, 17)
+        Me.label_telefono.Size = New System.Drawing.Size(55, 13)
         Me.label_telefono.TabIndex = 19
         Me.label_telefono.Text = "Telefono: "
         '
         'label_codigoPostal
         '
         Me.label_codigoPostal.AutoSize = True
-        Me.label_codigoPostal.Location = New System.Drawing.Point(32, 133)
-        Me.label_codigoPostal.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_codigoPostal.Location = New System.Drawing.Point(24, 108)
         Me.label_codigoPostal.Name = "label_codigoPostal"
-        Me.label_codigoPostal.Size = New System.Drawing.Size(98, 17)
+        Me.label_codigoPostal.Size = New System.Drawing.Size(74, 13)
         Me.label_codigoPostal.TabIndex = 18
         Me.label_codigoPostal.Text = "Codigo postal:"
         '
         'label_nombre
         '
         Me.label_nombre.AutoSize = True
-        Me.label_nombre.Location = New System.Drawing.Point(32, 39)
-        Me.label_nombre.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_nombre.Location = New System.Drawing.Point(24, 32)
         Me.label_nombre.Name = "label_nombre"
-        Me.label_nombre.Size = New System.Drawing.Size(66, 17)
+        Me.label_nombre.Size = New System.Drawing.Size(50, 13)
         Me.label_nombre.TabIndex = 15
         Me.label_nombre.Text = "Nombre: "
         '
         'label_direccion
         '
         Me.label_direccion.AutoSize = True
-        Me.label_direccion.Location = New System.Drawing.Point(32, 84)
-        Me.label_direccion.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_direccion.Location = New System.Drawing.Point(24, 68)
         Me.label_direccion.Name = "label_direccion"
-        Me.label_direccion.Size = New System.Drawing.Size(75, 17)
+        Me.label_direccion.Size = New System.Drawing.Size(58, 13)
         Me.label_direccion.TabIndex = 17
         Me.label_direccion.Text = "Direccion: "
         '
         'label_apellidos
         '
         Me.label_apellidos.AutoSize = True
-        Me.label_apellidos.Location = New System.Drawing.Point(465, 39)
-        Me.label_apellidos.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_apellidos.Location = New System.Drawing.Point(349, 32)
         Me.label_apellidos.Name = "label_apellidos"
-        Me.label_apellidos.Size = New System.Drawing.Size(77, 17)
+        Me.label_apellidos.Size = New System.Drawing.Size(60, 13)
         Me.label_apellidos.TabIndex = 16
         Me.label_apellidos.Text = "Apellido/s: "
         '
@@ -466,10 +446,9 @@ Partial Class Pantalla_eliminar_empleado
         Me.boton_cancelar.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.boton_cancelar.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.boton_cancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.boton_cancelar.Location = New System.Drawing.Point(374, 514)
-        Me.boton_cancelar.Margin = New System.Windows.Forms.Padding(4)
+        Me.boton_cancelar.Location = New System.Drawing.Point(280, 418)
         Me.boton_cancelar.Name = "boton_cancelar"
-        Me.boton_cancelar.Size = New System.Drawing.Size(179, 38)
+        Me.boton_cancelar.Size = New System.Drawing.Size(134, 31)
         Me.boton_cancelar.TabIndex = 20
         Me.boton_cancelar.Text = "Cancelar"
         Me.boton_cancelar.UseVisualStyleBackColor = False
@@ -479,10 +458,9 @@ Partial Class Pantalla_eliminar_empleado
         Me.boton_guardar.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.boton_guardar.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.boton_guardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.boton_guardar.Location = New System.Drawing.Point(187, 514)
-        Me.boton_guardar.Margin = New System.Windows.Forms.Padding(4)
+        Me.boton_guardar.Location = New System.Drawing.Point(140, 418)
         Me.boton_guardar.Name = "boton_guardar"
-        Me.boton_guardar.Size = New System.Drawing.Size(179, 38)
+        Me.boton_guardar.Size = New System.Drawing.Size(134, 31)
         Me.boton_guardar.TabIndex = 21
         Me.boton_guardar.Text = "Eliminar"
         Me.boton_guardar.UseVisualStyleBackColor = False
@@ -490,19 +468,17 @@ Partial Class Pantalla_eliminar_empleado
         'comboBox_elegirEmpleado
         '
         Me.comboBox_elegirEmpleado.FormattingEnabled = True
-        Me.comboBox_elegirEmpleado.Location = New System.Drawing.Point(180, 15)
-        Me.comboBox_elegirEmpleado.Margin = New System.Windows.Forms.Padding(4)
+        Me.comboBox_elegirEmpleado.Location = New System.Drawing.Point(135, 12)
         Me.comboBox_elegirEmpleado.Name = "comboBox_elegirEmpleado"
-        Me.comboBox_elegirEmpleado.Size = New System.Drawing.Size(205, 24)
+        Me.comboBox_elegirEmpleado.Size = New System.Drawing.Size(155, 21)
         Me.comboBox_elegirEmpleado.TabIndex = 37
         '
         'label_empleado
         '
         Me.label_empleado.AutoSize = True
-        Me.label_empleado.Location = New System.Drawing.Point(32, 18)
-        Me.label_empleado.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label_empleado.Location = New System.Drawing.Point(24, 15)
         Me.label_empleado.Name = "label_empleado"
-        Me.label_empleado.Size = New System.Drawing.Size(79, 17)
+        Me.label_empleado.Size = New System.Drawing.Size(60, 13)
         Me.label_empleado.TabIndex = 36
         Me.label_empleado.Text = "Empleado: "
         '
@@ -512,18 +488,25 @@ Partial Class Pantalla_eliminar_empleado
         Me.Panel2.BackColor = System.Drawing.Color.Gainsboro
         Me.Panel2.Controls.Add(Me.comboBox_elegirEmpleado)
         Me.Panel2.Controls.Add(Me.label_empleado)
-        Me.Panel2.Location = New System.Drawing.Point(187, 193)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel2.Location = New System.Drawing.Point(140, 157)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(847, 57)
+        Me.Panel2.Size = New System.Drawing.Size(635, 46)
         Me.Panel2.TabIndex = 41
+        '
+        'GestionDeErroresToolStripMenuItem
+        '
+        Me.GestionDeErroresToolStripMenuItem.Name = "GestionDeErroresToolStripMenuItem"
+        Me.GestionDeErroresToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
+            Or System.Windows.Forms.Keys.R), System.Windows.Forms.Keys)
+        Me.GestionDeErroresToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
+        Me.GestionDeErroresToolStripMenuItem.Text = "Gestion de errores"
         '
         'Pantalla_eliminar_empleado
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1175, 713)
+        Me.ClientSize = New System.Drawing.Size(881, 579)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.panel_elementosEmpleado)
         Me.Controls.Add(Me.label_elijaOpcion)
@@ -533,7 +516,6 @@ Partial Class Pantalla_eliminar_empleado
         Me.Controls.Add(Me.boton_guardar)
         Me.Controls.Add(Me.boton_cancelar)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Pantalla_eliminar_empleado"
         Me.Text = "Colchoneria CUESTA - Gesion de empleados - Baja de empleado"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
@@ -593,4 +575,5 @@ Partial Class Pantalla_eliminar_empleado
     Friend WithEvents label_direccion As Label
     Friend WithEvents label_apellidos As Label
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents GestionDeErroresToolStripMenuItem As ToolStripMenuItem
 End Class
