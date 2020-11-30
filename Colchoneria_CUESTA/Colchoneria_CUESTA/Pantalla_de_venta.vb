@@ -15,9 +15,6 @@ Public Class Pantalla_de_venta
 
     Private Sub Pantalla_de_venta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        'Se abre el fichero para guardar la informacion sobre los errores ocurridos en el fichero de errores
-        FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
-
         'El foco lo tiene el combobox de base
         comboBox_base.Focus()
 
@@ -411,7 +408,7 @@ Public Class Pantalla_de_venta
 
             'Se abre la pantalla de gestion de empleados y se cierra la pantalla de venta
             Pantalla_admin_empleados.Show()
-            Me.Close()
+            Me.Hide()
 
         End If
 
@@ -430,7 +427,7 @@ Public Class Pantalla_de_venta
 
             'Se abre la pantalla de gestion de articulos y se cierra la pantalla de venta
             Pantalla_admin_articulos.Show()
-            Me.Close()
+            Me.Hide()
 
         End If
 
@@ -449,7 +446,7 @@ Public Class Pantalla_de_venta
 
             'Se abre la pantalla de gestion de ventas y se cierra la pantalla de venta
             Gestion_de_ventas.Show()
-            Me.Close()
+            Me.Hide()
 
         End If
 
@@ -468,7 +465,7 @@ Public Class Pantalla_de_venta
 
             'Se abre la pantalla de gestion de errores y se cierra la pantalla de venta
             Gestion_de_errores.Show()
-            Me.Close()
+            Me.Hide()
 
         End If
 

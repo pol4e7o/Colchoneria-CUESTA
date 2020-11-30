@@ -370,7 +370,7 @@
 
         'Se vuelve a la pantalla de ventas
         Pantalla_de_venta.Show()
-        Me.Close()
+        Me.Hide()
 
     End Sub
 End Class
