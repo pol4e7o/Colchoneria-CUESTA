@@ -82,6 +82,8 @@
                     opcion = MsgBox("Desea salir de la aplicacion?", 4 + MsgBoxStyle.Question + MsgBoxStyle.DefaultButton2, "Salir")
 
                     If MsgBoxResult.Yes = opcion Then
+
+                        FileClose()
                         End
                     End If
 
@@ -113,6 +115,8 @@
                     opcion = MsgBox("Desea salir de la aplicacion?", 4 + MsgBoxStyle.Question + MsgBoxStyle.DefaultButton2, "Salir")
 
                     If MsgBoxResult.Yes = opcion Then
+
+                        FileClose()
                         End
                     End If
 
@@ -188,7 +192,7 @@
         For i = 0 To empleados.Count - 1
 
             'Se comprueba si el nombre de usuario pertenece a alguno de los empleados registrados
-            If textBox_usuario.Text.Equals(empleados.Item(i).getNombreUsuario) Then
+            If textBox_usuario.Text.Equals(empleados.Item(i).getNombreUsuario.Replace(" ", "")) Then
 
                 'Si tambien coincide la contraseña se asigna a la variable usuario el que ha iniciado la secion
                 If textBox_contrasenia.Text.Equals(CStr(empleados.Item(i).getContraseniaEmpleado)) Then

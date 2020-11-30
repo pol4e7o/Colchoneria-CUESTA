@@ -39,7 +39,7 @@ Public Class Gestion_de_ventas
             FileOpen(4, "VentasDiarias.txt", OpenMode.Input)
 
             'Se lee todo el contenido del fichero se guarda en las dos listas
-            While EOF(4)
+            While Not EOF(4)
 
                 Input(4, ventaRegistro.fecha)
                 Input(4, ventaRegistro.informacionVenta)
@@ -109,7 +109,7 @@ Public Class Gestion_de_ventas
                 FileOpen(3, "ErroresSucedidos.txt", OpenMode.Append)
 
                 errorRegistro.fecha = DateString
-                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de escribir en el fichero ""VentasDiarias.txt""" &
+                errorRegistro.informacionError = Now & " - Se ha producido un error a la hora de leer el fichero ""VentasDiarias.txt""" &
         vbCrLf & "Descripcion: " & Err.Description & vbCrLf & "Form: " & Me.Text
 
                 Write(3, errorRegistro.fecha, errorRegistro.informacionError)
@@ -127,12 +127,22 @@ Public Class Gestion_de_ventas
         'Se cierran los ficheros abiertos
         FileClose()
 
+        If informesFechas.Count = 0 Then
 
+            MsgBox("No se ha realizado ningun cierre de caja hasta este momento por lo tanto será dirigido de nuevo a la pantalla de ventas",
+                    0 + MsgBoxStyle.Information, "Visualizar ventas")
+
+            Pantalla_de_venta.Show()
+            Me.Hide()
+
+        End If
 
     End Sub
+
     'MENU
     'CERRAR CAJA
     Private Sub CerrarCajaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarCajaToolStripMenuItem.Click
+
         'La opcion elegida por el usuario a cerca de si desea cerrar caja
         Dim opcion As Integer
 
@@ -423,8 +433,11 @@ Public Class Gestion_de_ventas
     'COMBOBOX
     Private Sub ComboBox_dia_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox_dia.SelectedIndexChanged
 
+        'Se limpia la caja de texto cada vez que se elija un elemento
+        TextBox_ventas.Text = ""
+
         'Si no se ha seleccionado nada el boton visualzar estará desactivado
-        If (ComboBox_dia.SelectedItem < 0) Then
+        If (ComboBox_dia.SelectedIndex < 0) Then
             Button_visualizar.Enabled = False
 
 
@@ -447,8 +460,6 @@ Public Class Gestion_de_ventas
 
     'VISUALIZAR
     Private Sub Button_visualizar_Click(sender As Object, e As EventArgs) Handles Button_visualizar.Click
-
-        'Coloca en el label Label_ventaElegida toda la informacion sobre venta seleccionada
 
         'Se pasa por las dos lista buscando los informes que tienen esta fecha
         For i = 0 To informesFechas.Count - 1
@@ -507,7 +518,7 @@ Public Class Gestion_de_ventas
 
         'Se vuelve a la pantalla de ventas
         Pantalla_de_venta.Show()
-        Me.Close()
+        Me.Hide()
 
     End Sub
 End Class

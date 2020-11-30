@@ -30,6 +30,7 @@ Partial Class Gestion_de_errores
         Me.label_hora = New System.Windows.Forms.Label()
         Me.Label_gestionVenta = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button_volver = New System.Windows.Forms.Button()
         Me.TextBox_errores = New System.Windows.Forms.TextBox()
         Me.Button_visualizar = New System.Windows.Forms.Button()
         Me.Label_ventaElegida = New System.Windows.Forms.Label()
@@ -55,7 +56,6 @@ Partial Class Gestion_de_errores
         Me.ColchoneriaCUESTAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManualDeUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Button_volver = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.MenuStrip.SuspendLayout()
@@ -147,6 +147,17 @@ Partial Class Gestion_de_errores
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(692, 226)
         Me.Panel1.TabIndex = 11
+        '
+        'Button_volver
+        '
+        Me.Button_volver.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.Button_volver.Location = New System.Drawing.Point(164, 98)
+        Me.Button_volver.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button_volver.Name = "Button_volver"
+        Me.Button_volver.Size = New System.Drawing.Size(98, 36)
+        Me.Button_volver.TabIndex = 11
+        Me.Button_volver.Text = "Volver"
+        Me.Button_volver.UseVisualStyleBackColor = False
         '
         'TextBox_errores
         '
@@ -330,7 +341,7 @@ Partial Class Gestion_de_errores
         Me.AcercaDeToolStripMenuItem.AutoSize = False
         Me.AcercaDeToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ColchoneriaCUESTAToolStripMenuItem})
         Me.AcercaDeToolStripMenuItem.Name = "AcercaDeToolStripMenuItem"
-        Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(150, 70)
+        Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(122, 70)
         Me.AcercaDeToolStripMenuItem.Text = "Acerca de..."
         '
         'ColchoneriaCUESTAToolStripMenuItem
@@ -355,17 +366,6 @@ Partial Class Gestion_de_errores
         Me.ManualDeUsuarioToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1
         Me.ManualDeUsuarioToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
         Me.ManualDeUsuarioToolStripMenuItem.Text = "Manual de usuario"
-        '
-        'Button_volver
-        '
-        Me.Button_volver.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.Button_volver.Location = New System.Drawing.Point(164, 98)
-        Me.Button_volver.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button_volver.Name = "Button_volver"
-        Me.Button_volver.Size = New System.Drawing.Size(98, 36)
-        Me.Button_volver.TabIndex = 11
-        Me.Button_volver.Text = "Volver"
-        Me.Button_volver.UseVisualStyleBackColor = False
         '
         'Gestion_de_errores
         '
