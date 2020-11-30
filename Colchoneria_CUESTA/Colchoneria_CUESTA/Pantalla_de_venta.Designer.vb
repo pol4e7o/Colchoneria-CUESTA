@@ -108,13 +108,10 @@ Partial Class Pantalla_de_venta
         Me.label_precio_otros = New System.Windows.Forms.Label()
         Me.comboBox_tamanio_otros = New System.Windows.Forms.ComboBox()
         Me.panel_acticulos = New System.Windows.Forms.Panel()
-        Me.listBox_articulosElegidos = New System.Windows.Forms.ListBox()
+        Me.listBox_cantidad = New System.Windows.Forms.ListBox()
         Me.button_eliminar_1 = New System.Windows.Forms.Button()
         Me.button_aniadir_1 = New System.Windows.Forms.Button()
         Me.button_eliminar_articulo = New System.Windows.Forms.Button()
-        Me.button_cobrar = New System.Windows.Forms.Button()
-        Me.button_anular = New System.Windows.Forms.Button()
-        Me.button_desconectar = New System.Windows.Forms.Button()
         Me.label_total = New System.Windows.Forms.Label()
         Me.label_totalPrecio = New System.Windows.Forms.Label()
         Me.textBox_importe = New System.Windows.Forms.TextBox()
@@ -134,6 +131,19 @@ Partial Class Pantalla_de_venta
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.button_cobrar = New System.Windows.Forms.Button()
+        Me.button_desconectar = New System.Windows.Forms.Button()
+        Me.button_anular = New System.Windows.Forms.Button()
+        Me.ListBox_nombre = New System.Windows.Forms.ListBox()
+        Me.ListBox_precioUnidad = New System.Windows.Forms.ListBox()
+        Me.ListBox_precioTotal = New System.Windows.Forms.ListBox()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.PrintDocument_ticket = New System.Drawing.Printing.PrintDocument()
+        Me.PictureBox_ticket = New System.Windows.Forms.PictureBox()
         Me.MenuStrip.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.pictureBox_base, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -150,6 +160,8 @@ Partial Class Pantalla_de_venta
         Me.panel_otros.SuspendLayout()
         Me.panel_acticulos.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        Me.Panel3.SuspendLayout()
+        CType(Me.PictureBox_ticket, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip
@@ -160,7 +172,7 @@ Partial Class Pantalla_de_venta
         Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InicioToolStripMenuItem, Me.VentaToolStripMenuItem, Me.OpcionesToolStripMenuItem, Me.AcercaDeToolStripMenuItem, Me.AyudaToolStripMenuItem})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
-        Me.MenuStrip.Size = New System.Drawing.Size(1028, 50)
+        Me.MenuStrip.Size = New System.Drawing.Size(1228, 50)
         Me.MenuStrip.TabIndex = 27
         Me.MenuStrip.Text = "MenuStrip1"
         '
@@ -297,7 +309,7 @@ Partial Class Pantalla_de_venta
         Me.Panel1.Controls.Add(Me.label_hora)
         Me.Panel1.Location = New System.Drawing.Point(0, 803)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1042, 42)
+        Me.Panel1.Size = New System.Drawing.Size(1242, 42)
         Me.Panel1.TabIndex = 28
         '
         'label_ayuda
@@ -323,7 +335,7 @@ Partial Class Pantalla_de_venta
         Me.label_fecha.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.label_fecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.label_fecha.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.label_fecha.Location = New System.Drawing.Point(697, 9)
+        Me.label_fecha.Location = New System.Drawing.Point(897, 9)
         Me.label_fecha.Name = "label_fecha"
         Me.label_fecha.Size = New System.Drawing.Size(64, 22)
         Me.label_fecha.TabIndex = 2
@@ -337,7 +349,7 @@ Partial Class Pantalla_de_venta
         Me.label_hora.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.label_hora.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.label_hora.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.label_hora.Location = New System.Drawing.Point(888, 9)
+        Me.label_hora.Location = New System.Drawing.Point(1088, 9)
         Me.label_hora.Name = "label_hora"
         Me.label_hora.Size = New System.Drawing.Size(54, 22)
         Me.label_hora.TabIndex = 3
@@ -353,7 +365,7 @@ Partial Class Pantalla_de_venta
         Me.label_venta.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_venta.AutoSize = True
         Me.label_venta.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_venta.Location = New System.Drawing.Point(290, 125)
+        Me.label_venta.Location = New System.Drawing.Point(365, 124)
         Me.label_venta.Name = "label_venta"
         Me.label_venta.Size = New System.Drawing.Size(185, 25)
         Me.label_venta.TabIndex = 29
@@ -364,7 +376,7 @@ Partial Class Pantalla_de_venta
         Me.pictureBox_base.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.pictureBox_base.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.pictureBox_base.Image = CType(resources.GetObject("pictureBox_base.Image"), System.Drawing.Image)
-        Me.pictureBox_base.Location = New System.Drawing.Point(57, 30)
+        Me.pictureBox_base.Location = New System.Drawing.Point(57, 35)
         Me.pictureBox_base.Name = "pictureBox_base"
         Me.pictureBox_base.Size = New System.Drawing.Size(121, 61)
         Me.pictureBox_base.TabIndex = 0
@@ -375,7 +387,7 @@ Partial Class Pantalla_de_venta
         Me.pictureBox_somier.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.pictureBox_somier.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.pictureBox_somier.Image = CType(resources.GetObject("pictureBox_somier.Image"), System.Drawing.Image)
-        Me.pictureBox_somier.Location = New System.Drawing.Point(313, 30)
+        Me.pictureBox_somier.Location = New System.Drawing.Point(313, 35)
         Me.pictureBox_somier.Name = "pictureBox_somier"
         Me.pictureBox_somier.Size = New System.Drawing.Size(122, 61)
         Me.pictureBox_somier.TabIndex = 1
@@ -387,7 +399,7 @@ Partial Class Pantalla_de_venta
         Me.pictureBox_colchon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.pictureBox_colchon.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.pictureBox_colchon.Image = CType(resources.GetObject("pictureBox_colchon.Image"), System.Drawing.Image)
-        Me.pictureBox_colchon.Location = New System.Drawing.Point(557, 30)
+        Me.pictureBox_colchon.Location = New System.Drawing.Point(557, 35)
         Me.pictureBox_colchon.Name = "pictureBox_colchon"
         Me.pictureBox_colchon.Size = New System.Drawing.Size(121, 61)
         Me.pictureBox_colchon.TabIndex = 2
@@ -406,9 +418,10 @@ Partial Class Pantalla_de_venta
         'pictureBox_otros
         '
         Me.pictureBox_otros.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.pictureBox_otros.Location = New System.Drawing.Point(572, 265)
+        Me.pictureBox_otros.Image = CType(resources.GetObject("pictureBox_otros.Image"), System.Drawing.Image)
+        Me.pictureBox_otros.Location = New System.Drawing.Point(557, 251)
         Me.pictureBox_otros.Name = "pictureBox_otros"
-        Me.pictureBox_otros.Size = New System.Drawing.Size(100, 50)
+        Me.pictureBox_otros.Size = New System.Drawing.Size(121, 64)
         Me.pictureBox_otros.TabIndex = 4
         Me.pictureBox_otros.TabStop = False
         '
@@ -540,7 +553,7 @@ Partial Class Pantalla_de_venta
         'label_euro5
         '
         Me.label_euro5.AutoSize = True
-        Me.label_euro5.Location = New System.Drawing.Point(104, 22)
+        Me.label_euro5.Location = New System.Drawing.Point(117, 22)
         Me.label_euro5.Name = "label_euro5"
         Me.label_euro5.Size = New System.Drawing.Size(13, 13)
         Me.label_euro5.TabIndex = 27
@@ -606,7 +619,7 @@ Partial Class Pantalla_de_venta
         'label_euro4
         '
         Me.label_euro4.AutoSize = True
-        Me.label_euro4.Location = New System.Drawing.Point(104, 22)
+        Me.label_euro4.Location = New System.Drawing.Point(117, 22)
         Me.label_euro4.Name = "label_euro4"
         Me.label_euro4.Size = New System.Drawing.Size(13, 13)
         Me.label_euro4.TabIndex = 28
@@ -672,7 +685,7 @@ Partial Class Pantalla_de_venta
         'label_euro1
         '
         Me.label_euro1.AutoSize = True
-        Me.label_euro1.Location = New System.Drawing.Point(104, 22)
+        Me.label_euro1.Location = New System.Drawing.Point(117, 22)
         Me.label_euro1.Name = "label_euro1"
         Me.label_euro1.Size = New System.Drawing.Size(13, 13)
         Me.label_euro1.TabIndex = 24
@@ -738,7 +751,7 @@ Partial Class Pantalla_de_venta
         'label_euro6
         '
         Me.label_euro6.AutoSize = True
-        Me.label_euro6.Location = New System.Drawing.Point(104, 22)
+        Me.label_euro6.Location = New System.Drawing.Point(117, 22)
         Me.label_euro6.Name = "label_euro6"
         Me.label_euro6.Size = New System.Drawing.Size(13, 13)
         Me.label_euro6.TabIndex = 26
@@ -804,7 +817,7 @@ Partial Class Pantalla_de_venta
         'label_euro3
         '
         Me.label_euro3.AutoSize = True
-        Me.label_euro3.Location = New System.Drawing.Point(104, 22)
+        Me.label_euro3.Location = New System.Drawing.Point(117, 22)
         Me.label_euro3.Name = "label_euro3"
         Me.label_euro3.Size = New System.Drawing.Size(13, 13)
         Me.label_euro3.TabIndex = 29
@@ -870,7 +883,7 @@ Partial Class Pantalla_de_venta
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(104, 22)
+        Me.Label3.Location = New System.Drawing.Point(117, 22)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(13, 13)
         Me.Label3.TabIndex = 25
@@ -923,7 +936,7 @@ Partial Class Pantalla_de_venta
         'panel_acticulos
         '
         Me.panel_acticulos.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.panel_acticulos.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.panel_acticulos.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.panel_acticulos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.panel_acticulos.Controls.Add(Me.panel_otros)
         Me.panel_acticulos.Controls.Add(Me.panel_ofertas)
@@ -949,25 +962,27 @@ Partial Class Pantalla_de_venta
         Me.panel_acticulos.Controls.Add(Me.pictureBox_colchon)
         Me.panel_acticulos.Controls.Add(Me.pictureBox_somier)
         Me.panel_acticulos.Controls.Add(Me.pictureBox_base)
-        Me.panel_acticulos.Location = New System.Drawing.Point(12, 175)
+        Me.panel_acticulos.Location = New System.Drawing.Point(87, 174)
         Me.panel_acticulos.Name = "panel_acticulos"
-        Me.panel_acticulos.Size = New System.Drawing.Size(750, 472)
+        Me.panel_acticulos.Size = New System.Drawing.Size(750, 482)
         Me.panel_acticulos.TabIndex = 30
         '
-        'listBox_articulosElegidos
+        'listBox_cantidad
         '
-        Me.listBox_articulosElegidos.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.listBox_articulosElegidos.FormattingEnabled = True
-        Me.listBox_articulosElegidos.Location = New System.Drawing.Point(784, 175)
-        Me.listBox_articulosElegidos.Name = "listBox_articulosElegidos"
-        Me.listBox_articulosElegidos.Size = New System.Drawing.Size(232, 212)
-        Me.listBox_articulosElegidos.TabIndex = 31
+        Me.listBox_cantidad.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.listBox_cantidad.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.listBox_cantidad.FormattingEnabled = True
+        Me.listBox_cantidad.Location = New System.Drawing.Point(9, 1)
+        Me.listBox_cantidad.Name = "listBox_cantidad"
+        Me.listBox_cantidad.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.listBox_cantidad.Size = New System.Drawing.Size(18, 195)
+        Me.listBox_cantidad.TabIndex = 31
         '
         'button_eliminar_1
         '
         Me.button_eliminar_1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.button_eliminar_1.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.button_eliminar_1.Location = New System.Drawing.Point(874, 119)
+        Me.button_eliminar_1.Location = New System.Drawing.Point(1118, 232)
         Me.button_eliminar_1.Name = "button_eliminar_1"
         Me.button_eliminar_1.Size = New System.Drawing.Size(46, 43)
         Me.button_eliminar_1.TabIndex = 24
@@ -978,7 +993,7 @@ Partial Class Pantalla_de_venta
         '
         Me.button_aniadir_1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.button_aniadir_1.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.button_aniadir_1.Location = New System.Drawing.Point(812, 119)
+        Me.button_aniadir_1.Location = New System.Drawing.Point(1118, 174)
         Me.button_aniadir_1.Name = "button_aniadir_1"
         Me.button_aniadir_1.Size = New System.Drawing.Size(46, 43)
         Me.button_aniadir_1.TabIndex = 32
@@ -989,52 +1004,19 @@ Partial Class Pantalla_de_venta
         '
         Me.button_eliminar_articulo.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.button_eliminar_articulo.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.button_eliminar_articulo.Location = New System.Drawing.Point(933, 119)
+        Me.button_eliminar_articulo.Location = New System.Drawing.Point(1118, 292)
         Me.button_eliminar_articulo.Name = "button_eliminar_articulo"
         Me.button_eliminar_articulo.Size = New System.Drawing.Size(46, 43)
         Me.button_eliminar_articulo.TabIndex = 33
         Me.button_eliminar_articulo.Text = "x"
         Me.button_eliminar_articulo.UseVisualStyleBackColor = False
         '
-        'button_cobrar
-        '
-        Me.button_cobrar.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.button_cobrar.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.button_cobrar.Location = New System.Drawing.Point(840, 596)
-        Me.button_cobrar.Name = "button_cobrar"
-        Me.button_cobrar.Size = New System.Drawing.Size(127, 23)
-        Me.button_cobrar.TabIndex = 38
-        Me.button_cobrar.Text = "Cobrar"
-        Me.button_cobrar.UseVisualStyleBackColor = False
-        '
-        'button_anular
-        '
-        Me.button_anular.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.button_anular.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.button_anular.Location = New System.Drawing.Point(772, 625)
-        Me.button_anular.Name = "button_anular"
-        Me.button_anular.Size = New System.Drawing.Size(127, 23)
-        Me.button_anular.TabIndex = 39
-        Me.button_anular.Text = "Anular compra"
-        Me.button_anular.UseVisualStyleBackColor = False
-        '
-        'button_desconectar
-        '
-        Me.button_desconectar.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.button_desconectar.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.button_desconectar.Location = New System.Drawing.Point(900, 625)
-        Me.button_desconectar.Name = "button_desconectar"
-        Me.button_desconectar.Size = New System.Drawing.Size(127, 23)
-        Me.button_desconectar.TabIndex = 47
-        Me.button_desconectar.Text = "Desconectar"
-        Me.button_desconectar.UseVisualStyleBackColor = False
-        '
         'label_total
         '
         Me.label_total.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_total.AutoSize = True
         Me.label_total.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_total.Location = New System.Drawing.Point(796, 472)
+        Me.label_total.Location = New System.Drawing.Point(864, 458)
         Me.label_total.Name = "label_total"
         Me.label_total.Size = New System.Drawing.Size(52, 20)
         Me.label_total.TabIndex = 54
@@ -1044,16 +1026,16 @@ Partial Class Pantalla_de_venta
         '
         Me.label_totalPrecio.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_totalPrecio.AutoSize = True
-        Me.label_totalPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_totalPrecio.Location = New System.Drawing.Point(943, 472)
+        Me.label_totalPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label_totalPrecio.Location = New System.Drawing.Point(1001, 460)
         Me.label_totalPrecio.Name = "label_totalPrecio"
-        Me.label_totalPrecio.Size = New System.Drawing.Size(0, 20)
+        Me.label_totalPrecio.Size = New System.Drawing.Size(0, 18)
         Me.label_totalPrecio.TabIndex = 55
         '
         'textBox_importe
         '
         Me.textBox_importe.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.textBox_importe.Location = New System.Drawing.Point(879, 527)
+        Me.textBox_importe.Location = New System.Drawing.Point(947, 513)
         Me.textBox_importe.Name = "textBox_importe"
         Me.textBox_importe.Size = New System.Drawing.Size(100, 20)
         Me.textBox_importe.TabIndex = 56
@@ -1063,7 +1045,7 @@ Partial Class Pantalla_de_venta
         Me.label_importe.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_importe.AutoSize = True
         Me.label_importe.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_importe.Location = New System.Drawing.Point(796, 525)
+        Me.label_importe.Location = New System.Drawing.Point(864, 511)
         Me.label_importe.Name = "label_importe"
         Me.label_importe.Size = New System.Drawing.Size(72, 20)
         Me.label_importe.TabIndex = 57
@@ -1074,7 +1056,7 @@ Partial Class Pantalla_de_venta
         Me.label_resto.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_resto.AutoSize = True
         Me.label_resto.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_resto.Location = New System.Drawing.Point(798, 559)
+        Me.label_resto.Location = New System.Drawing.Point(866, 545)
         Me.label_resto.Name = "label_resto"
         Me.label_resto.Size = New System.Drawing.Size(60, 20)
         Me.label_resto.TabIndex = 58
@@ -1084,10 +1066,10 @@ Partial Class Pantalla_de_venta
         '
         Me.label_totalDevolver.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_totalDevolver.AutoSize = True
-        Me.label_totalDevolver.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_totalDevolver.Location = New System.Drawing.Point(943, 559)
+        Me.label_totalDevolver.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label_totalDevolver.Location = New System.Drawing.Point(1001, 545)
         Me.label_totalDevolver.Name = "label_totalDevolver"
-        Me.label_totalDevolver.Size = New System.Drawing.Size(0, 20)
+        Me.label_totalDevolver.Size = New System.Drawing.Size(0, 18)
         Me.label_totalDevolver.TabIndex = 59
         '
         'label_euro
@@ -1095,7 +1077,7 @@ Partial Class Pantalla_de_venta
         Me.label_euro.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_euro.AutoSize = True
         Me.label_euro.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_euro.Location = New System.Drawing.Point(998, 472)
+        Me.label_euro.Location = New System.Drawing.Point(1066, 458)
         Me.label_euro.Name = "label_euro"
         Me.label_euro.Size = New System.Drawing.Size(18, 20)
         Me.label_euro.TabIndex = 60
@@ -1106,7 +1088,7 @@ Partial Class Pantalla_de_venta
         Me.label_euro8.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_euro8.AutoSize = True
         Me.label_euro8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_euro8.Location = New System.Drawing.Point(998, 559)
+        Me.label_euro8.Location = New System.Drawing.Point(1066, 545)
         Me.label_euro8.Name = "label_euro8"
         Me.label_euro8.Size = New System.Drawing.Size(18, 20)
         Me.label_euro8.TabIndex = 61
@@ -1117,7 +1099,7 @@ Partial Class Pantalla_de_venta
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(998, 525)
+        Me.Label2.Location = New System.Drawing.Point(1066, 511)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(18, 20)
         Me.Label2.TabIndex = 62
@@ -1128,7 +1110,7 @@ Partial Class Pantalla_de_venta
         Me.Label_subtotal.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label_subtotal.AutoSize = True
         Me.Label_subtotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_subtotal.Location = New System.Drawing.Point(796, 410)
+        Me.Label_subtotal.Location = New System.Drawing.Point(867, 396)
         Me.Label_subtotal.Name = "Label_subtotal"
         Me.Label_subtotal.Size = New System.Drawing.Size(77, 20)
         Me.Label_subtotal.TabIndex = 63
@@ -1138,10 +1120,10 @@ Partial Class Pantalla_de_venta
         '
         Me.label_subtotalPrecio.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_subtotalPrecio.AutoSize = True
-        Me.label_subtotalPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_subtotalPrecio.Location = New System.Drawing.Point(943, 405)
+        Me.label_subtotalPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label_subtotalPrecio.Location = New System.Drawing.Point(1001, 393)
         Me.label_subtotalPrecio.Name = "label_subtotalPrecio"
-        Me.label_subtotalPrecio.Size = New System.Drawing.Size(0, 20)
+        Me.label_subtotalPrecio.Size = New System.Drawing.Size(0, 18)
         Me.label_subtotalPrecio.TabIndex = 64
         '
         'Label1
@@ -1149,7 +1131,7 @@ Partial Class Pantalla_de_venta
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(998, 410)
+        Me.Label1.Location = New System.Drawing.Point(1066, 396)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(18, 20)
         Me.Label1.TabIndex = 65
@@ -1160,7 +1142,7 @@ Partial Class Pantalla_de_venta
         Me.Label7.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(796, 442)
+        Me.Label7.Location = New System.Drawing.Point(864, 428)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(80, 20)
         Me.Label7.TabIndex = 66
@@ -1170,10 +1152,10 @@ Partial Class Pantalla_de_venta
         '
         Me.label_ivaPrecio.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_ivaPrecio.AutoSize = True
-        Me.label_ivaPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_ivaPrecio.Location = New System.Drawing.Point(943, 442)
+        Me.label_ivaPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label_ivaPrecio.Location = New System.Drawing.Point(1001, 430)
         Me.label_ivaPrecio.Name = "label_ivaPrecio"
-        Me.label_ivaPrecio.Size = New System.Drawing.Size(0, 20)
+        Me.label_ivaPrecio.Size = New System.Drawing.Size(0, 18)
         Me.label_ivaPrecio.TabIndex = 67
         '
         'Label5
@@ -1181,7 +1163,7 @@ Partial Class Pantalla_de_venta
         Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(998, 442)
+        Me.Label5.Location = New System.Drawing.Point(1066, 428)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(18, 20)
         Me.Label5.TabIndex = 68
@@ -1198,7 +1180,7 @@ Partial Class Pantalla_de_venta
         Me.Panel2.Controls.Add(Me.Label8)
         Me.Panel2.Location = New System.Drawing.Point(0, 714)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1037, 38)
+        Me.Panel2.Size = New System.Drawing.Size(1237, 38)
         Me.Panel2.TabIndex = 69
         '
         'Label4
@@ -1224,7 +1206,7 @@ Partial Class Pantalla_de_venta
         Me.Label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.Label6.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label6.Location = New System.Drawing.Point(693, 5)
+        Me.Label6.Location = New System.Drawing.Point(893, 5)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(64, 22)
         Me.Label6.TabIndex = 2
@@ -1238,18 +1220,168 @@ Partial Class Pantalla_de_venta
         Me.Label8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.Label8.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label8.Location = New System.Drawing.Point(883, 5)
+        Me.Label8.Location = New System.Drawing.Point(1083, 5)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(54, 22)
         Me.Label8.TabIndex = 3
         Me.Label8.Text = "Hora: "
+        '
+        'button_cobrar
+        '
+        Me.button_cobrar.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.button_cobrar.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.button_cobrar.Image = CType(resources.GetObject("button_cobrar.Image"), System.Drawing.Image)
+        Me.button_cobrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.button_cobrar.Location = New System.Drawing.Point(859, 580)
+        Me.button_cobrar.Name = "button_cobrar"
+        Me.button_cobrar.Size = New System.Drawing.Size(146, 35)
+        Me.button_cobrar.TabIndex = 39
+        Me.button_cobrar.Text = "Cobrar"
+        Me.button_cobrar.UseVisualStyleBackColor = False
+        '
+        'button_desconectar
+        '
+        Me.button_desconectar.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.button_desconectar.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.button_desconectar.Image = CType(resources.GetObject("button_desconectar.Image"), System.Drawing.Image)
+        Me.button_desconectar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.button_desconectar.Location = New System.Drawing.Point(859, 620)
+        Me.button_desconectar.Name = "button_desconectar"
+        Me.button_desconectar.Size = New System.Drawing.Size(146, 36)
+        Me.button_desconectar.TabIndex = 71
+        Me.button_desconectar.Text = "Desconectar"
+        Me.button_desconectar.UseVisualStyleBackColor = False
+        '
+        'button_anular
+        '
+        Me.button_anular.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.button_anular.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.button_anular.Image = CType(resources.GetObject("button_anular.Image"), System.Drawing.Image)
+        Me.button_anular.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.button_anular.Location = New System.Drawing.Point(1018, 580)
+        Me.button_anular.Name = "button_anular"
+        Me.button_anular.Size = New System.Drawing.Size(146, 35)
+        Me.button_anular.TabIndex = 70
+        Me.button_anular.Text = "Anular compra"
+        Me.button_anular.UseVisualStyleBackColor = False
+        '
+        'ListBox_nombre
+        '
+        Me.ListBox_nombre.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.ListBox_nombre.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.ListBox_nombre.FormattingEnabled = True
+        Me.ListBox_nombre.Location = New System.Drawing.Point(26, 1)
+        Me.ListBox_nombre.Name = "ListBox_nombre"
+        Me.ListBox_nombre.Size = New System.Drawing.Size(138, 195)
+        Me.ListBox_nombre.TabIndex = 72
+        '
+        'ListBox_precioUnidad
+        '
+        Me.ListBox_precioUnidad.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.ListBox_precioUnidad.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.ListBox_precioUnidad.FormattingEnabled = True
+        Me.ListBox_precioUnidad.Location = New System.Drawing.Point(166, 1)
+        Me.ListBox_precioUnidad.Name = "ListBox_precioUnidad"
+        Me.ListBox_precioUnidad.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.ListBox_precioUnidad.Size = New System.Drawing.Size(33, 195)
+        Me.ListBox_precioUnidad.TabIndex = 73
+        '
+        'ListBox_precioTotal
+        '
+        Me.ListBox_precioTotal.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.ListBox_precioTotal.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.ListBox_precioTotal.FormattingEnabled = True
+        Me.ListBox_precioTotal.Location = New System.Drawing.Point(201, 1)
+        Me.ListBox_precioTotal.Name = "ListBox_precioTotal"
+        Me.ListBox_precioTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.ListBox_precioTotal.Size = New System.Drawing.Size(51, 195)
+        Me.ListBox_precioTotal.TabIndex = 74
+        '
+        'Panel3
+        '
+        Me.Panel3.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Panel3.AutoScroll = True
+        Me.Panel3.BackColor = System.Drawing.Color.White
+        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel3.Controls.Add(Me.ListBox_nombre)
+        Me.Panel3.Controls.Add(Me.ListBox_precioTotal)
+        Me.Panel3.Controls.Add(Me.listBox_cantidad)
+        Me.Panel3.Controls.Add(Me.ListBox_precioUnidad)
+        Me.Panel3.Location = New System.Drawing.Point(843, 174)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(269, 205)
+        Me.Panel3.TabIndex = 75
+        '
+        'Label9
+        '
+        Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(845, 158)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(49, 13)
+        Me.Label9.TabIndex = 76
+        Me.Label9.Text = "Cantidad"
+        '
+        'Label10
+        '
+        Me.Label10.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(900, 158)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(44, 13)
+        Me.Label10.TabIndex = 77
+        Me.Label10.Text = "Nombre"
+        '
+        'Label11
+        '
+        Me.Label11.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(1015, 158)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(37, 13)
+        Me.Label11.TabIndex = 78
+        Me.Label11.Text = "Precio"
+        '
+        'Label12
+        '
+        Me.Label12.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(1067, 158)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(31, 13)
+        Me.Label12.TabIndex = 79
+        Me.Label12.Text = "Total"
+        '
+        'PictureBox_ticket
+        '
+        Me.PictureBox_ticket.Image = CType(resources.GetObject("PictureBox_ticket.Image"), System.Drawing.Image)
+        Me.PictureBox_ticket.Location = New System.Drawing.Point(87, 79)
+        Me.PictureBox_ticket.Name = "PictureBox_ticket"
+        Me.PictureBox_ticket.Size = New System.Drawing.Size(118, 70)
+        Me.PictureBox_ticket.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox_ticket.TabIndex = 80
+        Me.PictureBox_ticket.TabStop = False
+        Me.PictureBox_ticket.Visible = False
         '
         'Pantalla_de_venta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(1028, 749)
+        Me.ClientSize = New System.Drawing.Size(1228, 749)
+        Me.Controls.Add(Me.PictureBox_ticket)
+        Me.Controls.Add(Me.Label12)
+        Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.Panel3)
+        Me.Controls.Add(Me.button_desconectar)
+        Me.Controls.Add(Me.button_anular)
+        Me.Controls.Add(Me.button_cobrar)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.label_ivaPrecio)
@@ -1266,13 +1398,9 @@ Partial Class Pantalla_de_venta
         Me.Controls.Add(Me.textBox_importe)
         Me.Controls.Add(Me.label_totalPrecio)
         Me.Controls.Add(Me.label_total)
-        Me.Controls.Add(Me.button_desconectar)
-        Me.Controls.Add(Me.button_anular)
-        Me.Controls.Add(Me.button_cobrar)
         Me.Controls.Add(Me.button_eliminar_articulo)
         Me.Controls.Add(Me.button_aniadir_1)
         Me.Controls.Add(Me.button_eliminar_1)
-        Me.Controls.Add(Me.listBox_articulosElegidos)
         Me.Controls.Add(Me.panel_acticulos)
         Me.Controls.Add(Me.label_venta)
         Me.Controls.Add(Me.Panel1)
@@ -1307,6 +1435,8 @@ Partial Class Pantalla_de_venta
         Me.panel_acticulos.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        CType(Me.PictureBox_ticket, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1396,13 +1526,10 @@ Partial Class Pantalla_de_venta
     Friend WithEvents label_precio_otros As Label
     Friend WithEvents comboBox_tamanio_otros As ComboBox
     Friend WithEvents panel_acticulos As Panel
-    Friend WithEvents listBox_articulosElegidos As ListBox
+    Friend WithEvents listBox_cantidad As ListBox
     Friend WithEvents button_eliminar_1 As Button
     Friend WithEvents button_aniadir_1 As Button
     Friend WithEvents button_eliminar_articulo As Button
-    Friend WithEvents button_cobrar As Button
-    Friend WithEvents button_anular As Button
-    Friend WithEvents button_desconectar As Button
     Friend WithEvents label_total As Label
     Friend WithEvents label_totalPrecio As Label
     Friend WithEvents textBox_importe As TextBox
@@ -1423,4 +1550,17 @@ Partial Class Pantalla_de_venta
     Friend WithEvents Label4 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label8 As Label
+    Friend WithEvents button_cobrar As Button
+    Friend WithEvents button_desconectar As Button
+    Friend WithEvents button_anular As Button
+    Friend WithEvents ListBox_nombre As ListBox
+    Friend WithEvents ListBox_precioUnidad As ListBox
+    Friend WithEvents ListBox_precioTotal As ListBox
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Label12 As Label
+    Friend WithEvents PrintDocument_ticket As Printing.PrintDocument
+    Friend WithEvents PictureBox_ticket As PictureBox
 End Class

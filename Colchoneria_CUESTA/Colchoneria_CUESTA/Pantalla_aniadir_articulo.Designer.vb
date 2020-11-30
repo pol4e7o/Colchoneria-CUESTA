@@ -26,7 +26,6 @@ Partial Class Pantalla_aniadir_articulo
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Pantalla_aniadir_articulo))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.ListBox_precios = New System.Windows.Forms.ListBox()
         Me.Label_camposObligatorios = New System.Windows.Forms.Label()
         Me.Panel_precioYTamanio = New System.Windows.Forms.Panel()
         Me.ComboBox_tamanio = New System.Windows.Forms.ComboBox()
@@ -36,7 +35,7 @@ Partial Class Pantalla_aniadir_articulo
         Me.Button_aniadir = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.ComboBox_categorias = New System.Windows.Forms.ComboBox()
-        Me.ListBox_tamanios = New System.Windows.Forms.ListBox()
+        Me.ListBox_tamaniosPrecios = New System.Windows.Forms.ListBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Button_eliminar = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -90,11 +89,10 @@ Partial Class Pantalla_aniadir_articulo
         Me.Panel1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel1.BackColor = System.Drawing.Color.Gainsboro
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel1.Controls.Add(Me.ListBox_precios)
         Me.Panel1.Controls.Add(Me.Label_camposObligatorios)
         Me.Panel1.Controls.Add(Me.Panel_precioYTamanio)
         Me.Panel1.Controls.Add(Me.ComboBox_categorias)
-        Me.Panel1.Controls.Add(Me.ListBox_tamanios)
+        Me.Panel1.Controls.Add(Me.ListBox_tamaniosPrecios)
         Me.Panel1.Controls.Add(Me.Label8)
         Me.Panel1.Controls.Add(Me.Button_eliminar)
         Me.Panel1.Controls.Add(Me.Label5)
@@ -106,16 +104,6 @@ Partial Class Pantalla_aniadir_articulo
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(633, 325)
         Me.Panel1.TabIndex = 1
-        '
-        'ListBox_precios
-        '
-        Me.ListBox_precios.FormattingEnabled = True
-        Me.ListBox_precios.Location = New System.Drawing.Point(505, 61)
-        Me.ListBox_precios.Margin = New System.Windows.Forms.Padding(2)
-        Me.ListBox_precios.Name = "ListBox_precios"
-        Me.ListBox_precios.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple
-        Me.ListBox_precios.Size = New System.Drawing.Size(86, 199)
-        Me.ListBox_precios.TabIndex = 27
         '
         'Label_camposObligatorios
         '
@@ -201,18 +189,18 @@ Partial Class Pantalla_aniadir_articulo
         Me.ComboBox_categorias.Location = New System.Drawing.Point(143, 138)
         Me.ComboBox_categorias.Margin = New System.Windows.Forms.Padding(2)
         Me.ComboBox_categorias.Name = "ComboBox_categorias"
-        Me.ComboBox_categorias.Size = New System.Drawing.Size(100, 21)
+        Me.ComboBox_categorias.Size = New System.Drawing.Size(119, 21)
         Me.ComboBox_categorias.TabIndex = 19
         '
-        'ListBox_tamanios
+        'ListBox_tamaniosPrecios
         '
-        Me.ListBox_tamanios.FormattingEnabled = True
-        Me.ListBox_tamanios.Location = New System.Drawing.Point(415, 61)
-        Me.ListBox_tamanios.Margin = New System.Windows.Forms.Padding(2)
-        Me.ListBox_tamanios.Name = "ListBox_tamanios"
-        Me.ListBox_tamanios.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple
-        Me.ListBox_tamanios.Size = New System.Drawing.Size(93, 199)
-        Me.ListBox_tamanios.TabIndex = 18
+        Me.ListBox_tamaniosPrecios.FormattingEnabled = True
+        Me.ListBox_tamaniosPrecios.Location = New System.Drawing.Point(415, 61)
+        Me.ListBox_tamaniosPrecios.Margin = New System.Windows.Forms.Padding(2)
+        Me.ListBox_tamaniosPrecios.Name = "ListBox_tamaniosPrecios"
+        Me.ListBox_tamaniosPrecios.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
+        Me.ListBox_tamaniosPrecios.Size = New System.Drawing.Size(171, 199)
+        Me.ListBox_tamaniosPrecios.TabIndex = 18
         '
         'Label8
         '
@@ -227,10 +215,10 @@ Partial Class Pantalla_aniadir_articulo
         'Button_eliminar
         '
         Me.Button_eliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.Button_eliminar.Location = New System.Drawing.Point(473, 265)
+        Me.Button_eliminar.Location = New System.Drawing.Point(415, 268)
         Me.Button_eliminar.Margin = New System.Windows.Forms.Padding(2)
         Me.Button_eliminar.Name = "Button_eliminar"
-        Me.Button_eliminar.Size = New System.Drawing.Size(73, 48)
+        Me.Button_eliminar.Size = New System.Drawing.Size(96, 36)
         Me.Button_eliminar.TabIndex = 16
         Me.Button_eliminar.Text = "Eliminar"
         Me.Button_eliminar.UseVisualStyleBackColor = False
@@ -249,7 +237,7 @@ Partial Class Pantalla_aniadir_articulo
         Me.TextBox_descripcion.Location = New System.Drawing.Point(143, 100)
         Me.TextBox_descripcion.MaxLength = 40
         Me.TextBox_descripcion.Name = "TextBox_descripcion"
-        Me.TextBox_descripcion.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox_descripcion.Size = New System.Drawing.Size(224, 20)
         Me.TextBox_descripcion.TabIndex = 5
         '
         'Label4
@@ -275,7 +263,7 @@ Partial Class Pantalla_aniadir_articulo
         Me.TextBox_nombre.Location = New System.Drawing.Point(143, 61)
         Me.TextBox_nombre.MaxLength = 20
         Me.TextBox_nombre.Name = "TextBox_nombre"
-        Me.TextBox_nombre.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox_nombre.Size = New System.Drawing.Size(119, 20)
         Me.TextBox_nombre.TabIndex = 0
         '
         'Button_cancelar
@@ -538,7 +526,7 @@ Partial Class Pantalla_aniadir_articulo
     Friend WithEvents Button_guardar As Button
     Friend WithEvents Label8 As Label
     Friend WithEvents Button_eliminar As Button
-    Friend WithEvents ListBox_tamanios As ListBox
+    Friend WithEvents ListBox_tamaniosPrecios As ListBox
     Friend WithEvents ComboBox_categorias As ComboBox
     Friend WithEvents TimerHoraReal As Timer
     Friend WithEvents Panel2 As Panel
@@ -569,6 +557,5 @@ Partial Class Pantalla_aniadir_articulo
     Friend WithEvents Label7 As Label
     Friend WithEvents Button_aniadir As Button
     Friend WithEvents Label6 As Label
-    Friend WithEvents ListBox_precios As ListBox
     Friend WithEvents GestionDeErroresToolStripMenuItem As ToolStripMenuItem
 End Class

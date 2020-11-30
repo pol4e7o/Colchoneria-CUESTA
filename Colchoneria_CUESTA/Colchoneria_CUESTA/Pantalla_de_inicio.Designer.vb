@@ -34,7 +34,6 @@ Partial Class Pantalla_de_inicio
         Me.label_usuario = New System.Windows.Forms.Label()
         Me.label_contrasenia = New System.Windows.Forms.Label()
         Me.textBox_contrasenia = New System.Windows.Forms.TextBox()
-        Me.boton_entrar = New System.Windows.Forms.Button()
         Me.PictureBox_logo = New System.Windows.Forms.PictureBox()
         Me.MenuStrip = New System.Windows.Forms.MenuStrip()
         Me.InicioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -48,6 +47,7 @@ Partial Class Pantalla_de_inicio
         Me.ColchoneriaCUESTAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManualDeUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.boton_entrar = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip.SuspendLayout()
@@ -163,17 +163,6 @@ Partial Class Pantalla_de_inicio
         Me.textBox_contrasenia.Size = New System.Drawing.Size(80, 35)
         Me.textBox_contrasenia.TabIndex = 9
         '
-        'boton_entrar
-        '
-        Me.boton_entrar.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.boton_entrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.boton_entrar.Location = New System.Drawing.Point(366, 378)
-        Me.boton_entrar.Name = "boton_entrar"
-        Me.boton_entrar.Size = New System.Drawing.Size(186, 46)
-        Me.boton_entrar.TabIndex = 11
-        Me.boton_entrar.Text = "&Entrar"
-        Me.boton_entrar.UseVisualStyleBackColor = True
-        '
         'PictureBox_logo
         '
         Me.PictureBox_logo.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -280,14 +269,30 @@ Partial Class Pantalla_de_inicio
         Me.ManualDeUsuarioToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
         Me.ManualDeUsuarioToolStripMenuItem.Text = "Manual de usuario"
         '
+        'boton_entrar
+        '
+        Me.boton_entrar.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.boton_entrar.Cursor = System.Windows.Forms.Cursors.Default
+        Me.boton_entrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.boton_entrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.boton_entrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.boton_entrar.Image = CType(resources.GetObject("boton_entrar.Image"), System.Drawing.Image)
+        Me.boton_entrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.boton_entrar.Location = New System.Drawing.Point(367, 369)
+        Me.boton_entrar.Name = "boton_entrar"
+        Me.boton_entrar.Size = New System.Drawing.Size(186, 46)
+        Me.boton_entrar.TabIndex = 14
+        Me.boton_entrar.Text = "&Entrar"
+        Me.boton_entrar.UseVisualStyleBackColor = True
+        '
         'Pantalla_de_inicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(918, 583)
-        Me.Controls.Add(Me.MenuStrip)
         Me.Controls.Add(Me.boton_entrar)
+        Me.Controls.Add(Me.MenuStrip)
         Me.Controls.Add(Me.label_contrasenia)
         Me.Controls.Add(Me.textBox_contrasenia)
         Me.Controls.Add(Me.label_usuario)
@@ -317,7 +322,6 @@ Partial Class Pantalla_de_inicio
     Friend WithEvents label_usuario As Label
     Friend WithEvents label_contrasenia As Label
     Friend WithEvents textBox_contrasenia As TextBox
-    Friend WithEvents boton_entrar As Button
     Friend WithEvents PictureBox_logo As PictureBox
     Friend WithEvents MenuStrip As MenuStrip
     Friend WithEvents InicioToolStripMenuItem As ToolStripMenuItem
@@ -331,4 +335,5 @@ Partial Class Pantalla_de_inicio
     Friend WithEvents ColchoneriaCUESTAToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AyudaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ManualDeUsuarioToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents boton_entrar As Button
 End Class
