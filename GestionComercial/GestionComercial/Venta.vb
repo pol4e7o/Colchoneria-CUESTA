@@ -37,7 +37,7 @@
     End Function
 
     Public Function getPrecioCantidad() As Double
-        Return Math.Round(Me.cantidad, 2)
+        Return Math.Round(Me.precioUnidad, 2)
     End Function
 
     'Los setters de los articulos

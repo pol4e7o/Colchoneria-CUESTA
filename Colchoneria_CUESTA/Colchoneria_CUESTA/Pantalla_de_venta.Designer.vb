@@ -36,6 +36,7 @@ Partial Class Pantalla_de_venta
         Me.GestionDeEmpleadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GestionDeArticulosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GestionDeVentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GestionDeErroresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ColchoneriaCUESTAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -129,7 +130,6 @@ Partial Class Pantalla_de_venta
         Me.Label7 = New System.Windows.Forms.Label()
         Me.label_ivaPrecio = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.GestionDeErroresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.pictureBox_base, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -241,6 +241,14 @@ Partial Class Pantalla_de_venta
             Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
         Me.GestionDeVentasToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
         Me.GestionDeVentasToolStripMenuItem.Text = "Gestion de ventas"
+        '
+        'GestionDeErroresToolStripMenuItem
+        '
+        Me.GestionDeErroresToolStripMenuItem.Name = "GestionDeErroresToolStripMenuItem"
+        Me.GestionDeErroresToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
+            Or System.Windows.Forms.Keys.R), System.Windows.Forms.Keys)
+        Me.GestionDeErroresToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
+        Me.GestionDeErroresToolStripMenuItem.Text = "Gestion de errores"
         '
         'AcercaDeToolStripMenuItem
         '
@@ -1021,7 +1029,7 @@ Partial Class Pantalla_de_venta
         Me.label_total.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_total.AutoSize = True
         Me.label_total.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_total.Location = New System.Drawing.Point(813, 428)
+        Me.label_total.Location = New System.Drawing.Point(797, 428)
         Me.label_total.Name = "label_total"
         Me.label_total.Size = New System.Drawing.Size(52, 20)
         Me.label_total.TabIndex = 54
@@ -1032,7 +1040,7 @@ Partial Class Pantalla_de_venta
         Me.label_totalPrecio.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_totalPrecio.AutoSize = True
         Me.label_totalPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_totalPrecio.Location = New System.Drawing.Point(923, 479)
+        Me.label_totalPrecio.Location = New System.Drawing.Point(944, 428)
         Me.label_totalPrecio.Name = "label_totalPrecio"
         Me.label_totalPrecio.Size = New System.Drawing.Size(0, 20)
         Me.label_totalPrecio.TabIndex = 55
@@ -1040,7 +1048,7 @@ Partial Class Pantalla_de_venta
         'textBox_importe
         '
         Me.textBox_importe.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.textBox_importe.Location = New System.Drawing.Point(875, 481)
+        Me.textBox_importe.Location = New System.Drawing.Point(880, 483)
         Me.textBox_importe.Name = "textBox_importe"
         Me.textBox_importe.Size = New System.Drawing.Size(100, 20)
         Me.textBox_importe.TabIndex = 56
@@ -1061,7 +1069,7 @@ Partial Class Pantalla_de_venta
         Me.label_resto.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_resto.AutoSize = True
         Me.label_resto.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_resto.Location = New System.Drawing.Point(809, 515)
+        Me.label_resto.Location = New System.Drawing.Point(799, 515)
         Me.label_resto.Name = "label_resto"
         Me.label_resto.Size = New System.Drawing.Size(60, 20)
         Me.label_resto.TabIndex = 58
@@ -1072,7 +1080,7 @@ Partial Class Pantalla_de_venta
         Me.label_totalDevolver.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_totalDevolver.AutoSize = True
         Me.label_totalDevolver.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_totalDevolver.Location = New System.Drawing.Point(923, 555)
+        Me.label_totalDevolver.Location = New System.Drawing.Point(944, 515)
         Me.label_totalDevolver.Name = "label_totalDevolver"
         Me.label_totalDevolver.Size = New System.Drawing.Size(0, 20)
         Me.label_totalDevolver.TabIndex = 59
@@ -1115,7 +1123,7 @@ Partial Class Pantalla_de_venta
         Me.Label_subtotal.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label_subtotal.AutoSize = True
         Me.Label_subtotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_subtotal.Location = New System.Drawing.Point(809, 366)
+        Me.Label_subtotal.Location = New System.Drawing.Point(797, 366)
         Me.Label_subtotal.Name = "Label_subtotal"
         Me.Label_subtotal.Size = New System.Drawing.Size(77, 20)
         Me.Label_subtotal.TabIndex = 63
@@ -1126,7 +1134,7 @@ Partial Class Pantalla_de_venta
         Me.label_subtotalPrecio.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_subtotalPrecio.AutoSize = True
         Me.label_subtotalPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_subtotalPrecio.Location = New System.Drawing.Point(923, 398)
+        Me.label_subtotalPrecio.Location = New System.Drawing.Point(944, 361)
         Me.label_subtotalPrecio.Name = "label_subtotalPrecio"
         Me.label_subtotalPrecio.Size = New System.Drawing.Size(0, 20)
         Me.label_subtotalPrecio.TabIndex = 64
@@ -1147,7 +1155,7 @@ Partial Class Pantalla_de_venta
         Me.Label7.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(809, 398)
+        Me.Label7.Location = New System.Drawing.Point(797, 398)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(80, 20)
         Me.Label7.TabIndex = 66
@@ -1158,7 +1166,7 @@ Partial Class Pantalla_de_venta
         Me.label_ivaPrecio.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_ivaPrecio.AutoSize = True
         Me.label_ivaPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_ivaPrecio.Location = New System.Drawing.Point(923, 439)
+        Me.label_ivaPrecio.Location = New System.Drawing.Point(944, 398)
         Me.label_ivaPrecio.Name = "label_ivaPrecio"
         Me.label_ivaPrecio.Size = New System.Drawing.Size(0, 20)
         Me.label_ivaPrecio.TabIndex = 67
@@ -1173,14 +1181,6 @@ Partial Class Pantalla_de_venta
         Me.Label5.Size = New System.Drawing.Size(18, 20)
         Me.Label5.TabIndex = 68
         Me.Label5.Text = "€"
-        '
-        'GestionDeErroresToolStripMenuItem
-        '
-        Me.GestionDeErroresToolStripMenuItem.Name = "GestionDeErroresToolStripMenuItem"
-        Me.GestionDeErroresToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
-            Or System.Windows.Forms.Keys.R), System.Windows.Forms.Keys)
-        Me.GestionDeErroresToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
-        Me.GestionDeErroresToolStripMenuItem.Text = "Gestion de errores"
         '
         'Pantalla_de_venta
         '

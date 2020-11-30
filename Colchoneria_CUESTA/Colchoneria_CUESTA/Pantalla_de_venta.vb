@@ -512,14 +512,14 @@ Public Class Pantalla_de_venta
 
 
             'Se elimina el objeto almacenado en esta referencia
-            articulo = Nothing
+            articulo = New GestionComercial.Articulo()
 
             'Se hace una busqueda dentro del arraylist de articulos
             'para encontrar el seleccionado y se le asigna a la
             'variable articulo el seleccionado
             For i = 0 To articulos.Count - 1
 
-                If articulos.Item(i).getNombreArticulo.Equals(comboBox_base.SelectedText) Then
+                If articulos.Item(i).getNombreArticulo.Equals(comboBox_base.SelectedItem) Then
 
                     articulo = articulos.Item(i)
 
@@ -536,8 +536,10 @@ Public Class Pantalla_de_venta
 
                 Next i
 
-                'De lo contrario se activa
+                'De lo contrario se activa el panel y el combobox con los tamaños
                 panel_base.Enabled = True
+                comboBox_tamanio_base.Enabled = True
+
 
                 'Se desactiva el combobox de cantidad hasta que no se elija un tamaño
                 comboBox_cantidad_base.Enabled = False
@@ -616,14 +618,14 @@ Public Class Pantalla_de_venta
         Else
 
             'Se elimina el objeto almacenado en este referencia
-            articulo = Nothing
+            articulo = New GestionComercial.Articulo()
 
             'Se hace una busqueda dentro del arraylist de articulos
             'para encontrar el seleccionado y se le asigna a la
             'variable articulo el seleccionado
             For i = 0 To articulos.Count - 1
 
-                If articulos.Item(i).getNombreArticulo.Equals(comboBox_somier.SelectedText) Then
+                If articulos.Item(i).getNombreArticulo.Equals(comboBox_somier.SelectedItem) Then
 
                     articulo = articulos.Item(i)
 
@@ -640,8 +642,9 @@ Public Class Pantalla_de_venta
 
                 Next i
 
-                'De lo contrario se activa
+                'De lo contrario se activa el panel y el combobox con los tamaños
                 panel_somier.Enabled = True
+                comboBox_tamanio_somier.Enabled = True
 
                 'Se desactiva el combobox de cantidad hasta que no se elija un tamaño
                 comboBox_cantidad_somier.Enabled = False
@@ -719,14 +722,14 @@ Public Class Pantalla_de_venta
 
 
             'Se elimina el objeto almacenado en este referencia
-            articulo = Nothing
+            articulo = New GestionComercial.Articulo()
 
             'Se hace una busqueda dentro del arraylist de articulos
             'para encontrar el seleccionado y se le asigna a la
             'variable articulo el seleccionado
             For i = 0 To articulos.Count - 1
 
-                If articulos.Item(i).getNombreArticulo.Equals(comboBox_colchon.SelectedText) Then
+                If articulos.Item(i).getNombreArticulo.Equals(comboBox_colchon.SelectedItem) Then
 
                     articulo = articulos.Item(i)
 
@@ -743,8 +746,9 @@ Public Class Pantalla_de_venta
 
                 Next i
 
-                'De lo contrario se activa
+                'De lo contrario se activa el panel y el combobox con los tamaños
                 panel_colchon.Enabled = True
+                comboBox_tamanio_colchon.Enabled = True
 
                 'Se desactiva el combobox de cantidad hasta que no se elija un tamaño
                 comboBox_cantidad_colchon.Enabled = False
@@ -824,12 +828,15 @@ Public Class Pantalla_de_venta
 
         Else
 
+            'Se elimina el objeto a cual apunta esta referencia
+            articulo = New GestionComercial.Articulo()
+
             'Se hace una busqueda dentro del arraylist de articulos
             'para encontrar el seleccionado y se le asigna a la
             'variable articulo el seleccionado
             For i = 0 To articulos.Count - 1
 
-                If articulos.Item(i).getNombreArticulo.Equals(comboBox_canape.SelectedText) Then
+                If articulos.Item(i).getNombreArticulo.Equals(comboBox_canape.SelectedItem) Then
 
                     articulo = articulos.Item(i)
 
@@ -846,8 +853,9 @@ Public Class Pantalla_de_venta
 
                 Next i
 
-                'De lo contrario se activa
+                'De lo contrario se activa el panel y el combobox con los tamaños
                 panel_canape.Enabled = True
+                comboBox_tamanio_canape.Enabled = True
 
                 'Se desactiva el combobox de cantidad hasta que no se elija un tamaño
                 comboBox_cantidad_canape.Enabled = False
@@ -925,14 +933,14 @@ Public Class Pantalla_de_venta
         Else
 
             'Se elimina el objeto almacenado en este referencia
-            articulo = Nothing
+            articulo = New GestionComercial.Articulo()
 
             'Se hace una busqueda dentro del arraylist de articulos
             'para encontrar el seleccionado y se le asigna a la
             'variable articulo el seleccionado
             For i = 0 To articulos.Count - 1
 
-                If articulos.Item(i).getNombreArticulo.Equals(comboBox_ofertas.SelectedText) Then
+                If articulos.Item(i).getNombreArticulo.Equals(comboBox_ofertas.SelectedItem) Then
 
                     articulo = articulos.Item(i)
 
@@ -949,8 +957,9 @@ Public Class Pantalla_de_venta
 
                 Next i
 
-                'De lo contrario se activa
+                'De lo contrario se activa el panel y el combobox con los tamaños
                 panel_ofertas.Enabled = True
+                comboBox_tamanios_ofertas.Enabled = True
 
                 'Se desactiva el combobox de cantidad hasta que no se elija un tamaño
                 comboBox_cantidad_ofertas.Enabled = False
@@ -1027,14 +1036,14 @@ Public Class Pantalla_de_venta
 
 
             'Se elimina el objeto almacenado en este referencia
-            articulo = Nothing
+            articulo = New GestionComercial.Articulo()
 
             'Se hace una busqueda dentro del arraylist de articulos
             'para encontrar el seleccionado y se le asigna a la
             'variable articulo el seleccionado
             For i = 0 To articulos.Count - 1
 
-                If articulos.Item(i).getNombreArticulo.Equals(comboBox_otros.SelectedText) Then
+                If articulos.Item(i).getNombreArticulo.Equals(comboBox_otros.SelectedItem) Then
 
                     articulo = articulos.Item(i)
 
@@ -1051,8 +1060,9 @@ Public Class Pantalla_de_venta
 
                 Next i
 
-                'De lo contrario se activa
+                'De lo contrario se activa el panel y el combobox con los tamaños
                 panel_otros.Enabled = True
+                comboBox_tamanio_otros.Enabled = True
 
                 'Se desactiva el combobox de cantidad hasta que no se elija un tamaño
                 comboBox_cantidad_otros.Enabled = False
@@ -1683,14 +1693,14 @@ Public Class Pantalla_de_venta
     Private Sub button_aniadir_base_Click(sender As Object, e As EventArgs) Handles button_aniadir_base.Click
 
         'Se crea un objeto de tipo venta y se añade al arraylist de articulos vendidos
-        articulosVendidos.Add(New GestionComercial.Venta(articulo.getNombreArticulo & "-" & comboBox_tamanio_base.SelectedText, comboBox_cantidad_base.SelectedText, label_precio_base.Text))
+        articulosVendidos.Add(New GestionComercial.Venta(articulo.getNombreArticulo & "-" & comboBox_tamanio_base.SelectedItem, comboBox_cantidad_base.SelectedItem, label_precio_base.Text))
 
         Try
 
             'Se añade el producto seleccionado a la lista de articulos elegidos
-            listBox_articulosElegidos.Items.Add(articulosVendidos.Item(articulosVendidos.Count - 1).getCantidad &
-                                                articulosVendidos.Item(articulosVendidos.Count - 1).getNombreArticulo &
-                                                articulosVendidos.Item(articulosVendidos.Count - 1).getPrecioCantidad & "€" &
+            listBox_articulosElegidos.Items.Add(articulosVendidos.Item(articulosVendidos.Count - 1).getCantidad & "     " &
+                                                articulosVendidos.Item(articulosVendidos.Count - 1).getNombreArticulo & "     " &
+                                                articulosVendidos.Item(articulosVendidos.Count - 1).getPrecioCantidad & "€" & "     " &
                                                 articulosVendidos.Item(articulosVendidos.Count - 1).precioTotal & "€")
 
 
@@ -1729,6 +1739,9 @@ Public Class Pantalla_de_venta
         label_precio_base.Text = ""
         comboBox_tamanio_base.Enabled = False
         panel_base.Enabled = False
+        comboBox_cantidad_base.Text = ""
+        comboBox_tamanio_base.Text = ""
+        comboBox_base.SelectedIndex = -1
 
         'Se actualiza el subtotal, total y iva de la venta
         calcularTotalSubtotalIVA()
@@ -1739,14 +1752,14 @@ Public Class Pantalla_de_venta
     Private Sub button_aniadir_somier_Click(sender As Object, e As EventArgs) Handles button_aniadir_somier.Click
 
         'Se crea un objeto de tipo venta y se añade al arraylist de articulos vendidos
-        articulosVendidos.Add(New GestionComercial.Venta(articulo.getNombreArticulo & "-" & comboBox_tamanio_somier.SelectedText, comboBox_cantidad_somier.SelectedText, label_precio_somier.Text))
+        articulosVendidos.Add(New GestionComercial.Venta(articulo.getNombreArticulo & "-" & comboBox_tamanio_somier.SelectedItem, comboBox_cantidad_somier.SelectedItem, label_precio_somier.Text))
 
         Try
 
             'Se añade el producto seleccionado a la lista de articulos elegidos
-            listBox_articulosElegidos.Items.Add(articulosVendidos.Item(articulosVendidos.Count - 1).getCantidad &
-                                                articulosVendidos.Item(articulosVendidos.Count - 1).getNombreArticulo &
-                                                articulosVendidos.Item(articulosVendidos.Count - 1).getPrecioCantidad & "€" &
+            listBox_articulosElegidos.Items.Add(articulosVendidos.Item(articulosVendidos.Count - 1).getCantidad & "     " &
+                                                articulosVendidos.Item(articulosVendidos.Count - 1).getNombreArticulo & "     " &
+                                                articulosVendidos.Item(articulosVendidos.Count - 1).getPrecioCantidad & "€" & "     " &
                                                 articulosVendidos.Item(articulosVendidos.Count - 1).precioTotal & "€")
 
         Catch ex As Exception
@@ -1786,6 +1799,9 @@ Public Class Pantalla_de_venta
         label_precio_somier.Text = ""
         comboBox_tamanio_somier.Enabled = False
         panel_somier.Enabled = False
+        comboBox_cantidad_somier.Text = ""
+        comboBox_tamanio_somier.Text = ""
+        comboBox_somier.SelectedIndex = -1
 
         'Se actualiza el subtotal, total y iva de la venta
         calcularTotalSubtotalIVA()
@@ -1796,14 +1812,14 @@ Public Class Pantalla_de_venta
     Private Sub button_aniadir_colchon_Click(sender As Object, e As EventArgs) Handles button_aniadir_colchon.Click
 
         'Se crea un objeto de tipo venta y se añade al arraylist de articulos vendidos
-        articulosVendidos.Add(New GestionComercial.Venta(articulo.getNombreArticulo & "-" & comboBox_tamanio_colchon.SelectedText, comboBox_cantidad_colchon.SelectedText, label_precio_colchon.Text))
+        articulosVendidos.Add(New GestionComercial.Venta(articulo.getNombreArticulo & "-" & comboBox_tamanio_colchon.SelectedItem, comboBox_cantidad_colchon.SelectedItem, label_precio_colchon.Text))
 
         Try
 
             'Se añade el producto seleccionado a la lista de articulos elegidos
-            listBox_articulosElegidos.Items.Add(articulosVendidos.Item(articulosVendidos.Count - 1).getCantidad &
-                                                articulosVendidos.Item(articulosVendidos.Count - 1).getNombreArticulo &
-                                                articulosVendidos.Item(articulosVendidos.Count - 1).getPrecioCantidad & "€" &
+            listBox_articulosElegidos.Items.Add(articulosVendidos.Item(articulosVendidos.Count - 1).getCantidad & "     " &
+                                                articulosVendidos.Item(articulosVendidos.Count - 1).getNombreArticulo & "     " &
+                                                articulosVendidos.Item(articulosVendidos.Count - 1).getPrecioCantidad & "€" & "     " &
                                                 articulosVendidos.Item(articulosVendidos.Count - 1).precioTotal & "€")
 
         Catch ex As Exception
@@ -1843,6 +1859,9 @@ Public Class Pantalla_de_venta
         label_precio_colchon.Text = ""
         comboBox_tamanio_colchon.Enabled = False
         panel_colchon.Enabled = False
+        comboBox_cantidad_colchon.Text = ""
+        comboBox_tamanio_colchon.Text = ""
+        comboBox_colchon.SelectedIndex = -1
 
         'Se actualiza el subtotal, total y iva de la venta
         calcularTotalSubtotalIVA()
@@ -1853,14 +1872,14 @@ Public Class Pantalla_de_venta
     Private Sub button_aniadir_canape_Click(sender As Object, e As EventArgs) Handles button_aniadir_canape.Click
 
         'Se crea un objeto de tipo venta y se añade al arraylist de articulos vendidos
-        articulosVendidos.Add(New GestionComercial.Venta(articulo.getNombreArticulo & "-" & comboBox_tamanio_canape.SelectedText, comboBox_cantidad_canape.SelectedText, label_precio_canape.Text))
+        articulosVendidos.Add(New GestionComercial.Venta(articulo.getNombreArticulo & "-" & comboBox_tamanio_canape.SelectedItem, comboBox_cantidad_canape.SelectedItem, label_precio_canape.Text))
 
         Try
 
             'Se añade el producto seleccionado a la lista de articulos elegidos
-            listBox_articulosElegidos.Items.Add(articulosVendidos.Item(articulosVendidos.Count - 1).getCantidad &
-                                                articulosVendidos.Item(articulosVendidos.Count - 1).getNombreArticulo &
-                                                articulosVendidos.Item(articulosVendidos.Count - 1).getPrecioCantidad & "€" &
+            listBox_articulosElegidos.Items.Add(articulosVendidos.Item(articulosVendidos.Count - 1).getCantidad & "     " &
+                                                articulosVendidos.Item(articulosVendidos.Count - 1).getNombreArticulo & "     " &
+                                                articulosVendidos.Item(articulosVendidos.Count - 1).getPrecioCantidad & "€" & "     " &
                                                 articulosVendidos.Item(articulosVendidos.Count - 1).precioTotal & "€")
 
         Catch ex As Exception
@@ -1894,13 +1913,16 @@ Public Class Pantalla_de_venta
 
         'Se desactivan todos los elementos de la categoria menos el combobox para seleccionar articulo
         button_aniadir_canape.Enabled = False
-            comboBox_cantidad_canape.Enabled = False
-            label_precio_canape.Text = ""
-            comboBox_tamanio_canape.Enabled = False
-            panel_canape.Enabled = False
+        comboBox_cantidad_canape.Enabled = False
+        label_precio_canape.Text = ""
+        comboBox_tamanio_canape.Enabled = False
+        panel_canape.Enabled = False
+        comboBox_cantidad_canape.Text = ""
+        comboBox_tamanio_canape.Text = ""
+        comboBox_canape.SelectedIndex = -1
 
-            'Se actualiza el subtotal, total y iva de la venta
-            calcularTotalSubtotalIVA()
+        'Se actualiza el subtotal, total y iva de la venta
+        calcularTotalSubtotalIVA()
 
     End Sub
 
@@ -1908,14 +1930,14 @@ Public Class Pantalla_de_venta
     Private Sub button_aniadir_ofertas_Click(sender As Object, e As EventArgs) Handles button_aniadir_ofertas.Click
 
         'Se crea un objeto de tipo venta y se añade al arraylist de articulos vendidos
-        articulosVendidos.Add(New GestionComercial.Venta(articulo.getNombreArticulo & "-" & comboBox_tamanios_ofertas.SelectedText, comboBox_cantidad_ofertas.SelectedText, label_precio_ofertas.Text))
+        articulosVendidos.Add(New GestionComercial.Venta(articulo.getNombreArticulo & "-" & comboBox_tamanios_ofertas.SelectedItem, comboBox_cantidad_ofertas.SelectedItem, label_precio_ofertas.Text))
 
         Try
 
             'Se añade el producto seleccionado a la lista de articulos elegidos
-            listBox_articulosElegidos.Items.Add(articulosVendidos.Item(articulosVendidos.Count - 1).getCantidad &
-                                                articulosVendidos.Item(articulosVendidos.Count - 1).getNombreArticulo &
-                                                articulosVendidos.Item(articulosVendidos.Count - 1).getPrecioCantidad & "€" &
+            listBox_articulosElegidos.Items.Add(articulosVendidos.Item(articulosVendidos.Count - 1).getCantidad & "     " &
+                                                articulosVendidos.Item(articulosVendidos.Count - 1).getNombreArticulo & "     " &
+                                                articulosVendidos.Item(articulosVendidos.Count - 1).getPrecioCantidad & "€" & "     " &
                                                 articulosVendidos.Item(articulosVendidos.Count - 1).precioTotal & "€")
 
         Catch ex As Exception
@@ -1953,6 +1975,9 @@ Public Class Pantalla_de_venta
         label_precio_ofertas.Text = ""
         comboBox_tamanios_ofertas.Enabled = False
         panel_ofertas.Enabled = False
+        comboBox_cantidad_ofertas.Text = ""
+        comboBox_tamanios_ofertas.Text = ""
+        comboBox_ofertas.SelectedIndex = -1
 
         'Se actualiza el subtotal, total y iva de la venta
         calcularTotalSubtotalIVA()
@@ -1963,14 +1988,14 @@ Public Class Pantalla_de_venta
     Private Sub button_aniadir_otros_Click(sender As Object, e As EventArgs) Handles button_aniadir_otros.Click
 
         'Se crea un objeto de tipo venta y se añade al arraylist de articulos vendidos
-        articulosVendidos.Add(New GestionComercial.Venta(articulo.getNombreArticulo & "-" & comboBox_tamanio_otros.SelectedText, comboBox_cantidad_otros.SelectedText, label_precio_otros.Text))
+        articulosVendidos.Add(New GestionComercial.Venta(articulo.getNombreArticulo & "-" & comboBox_tamanio_otros.SelectedItem, comboBox_cantidad_otros.SelectedItem, label_precio_otros.Text))
 
         Try
 
             'Se añade el producto seleccionado a la lista de articulos elegidos
-            listBox_articulosElegidos.Items.Add(articulosVendidos.Item(articulosVendidos.Count - 1).getCantidad &
-                                                articulosVendidos.Item(articulosVendidos.Count - 1).getNombreArticulo &
-                                                articulosVendidos.Item(articulosVendidos.Count - 1).getPrecioCantidad & "€" &
+            listBox_articulosElegidos.Items.Add(articulosVendidos.Item(articulosVendidos.Count - 1).getCantidad & "     " &
+                                                articulosVendidos.Item(articulosVendidos.Count - 1).getNombreArticulo & "     " &
+                                                articulosVendidos.Item(articulosVendidos.Count - 1).getPrecioCantidad & "€" & "     " &
                                                 articulosVendidos.Item(articulosVendidos.Count - 1).precioTotal & "€")
 
         Catch ex As Exception
@@ -2009,6 +2034,9 @@ Public Class Pantalla_de_venta
         label_precio_otros.Text = ""
         comboBox_tamanio_otros.Enabled = False
         panel_otros.Enabled = False
+        comboBox_cantidad_otros.Text = ""
+        comboBox_tamanio_otros.Text = ""
+        comboBox_otros.SelectedIndex = -1
 
         'Se actualiza el subtotal, total y iva de la venta
         calcularTotalSubtotalIVA()
@@ -2084,12 +2112,14 @@ Public Class Pantalla_de_venta
             button_aniadir_1.Enabled = False
             button_eliminar_1.Enabled = False
             button_eliminar_articulo.Enabled = False
+            button_anular.Enabled = False
 
         Else
 
             button_aniadir_1.Enabled = True
             button_eliminar_1.Enabled = True
             button_eliminar_articulo.Enabled = True
+            button_anular.Enabled = True
 
         End If
 
@@ -2131,9 +2161,9 @@ Public Class Pantalla_de_venta
         articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex).setCantidad(articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex).getCantidad + 1)
 
         'Se le pasa el nuevo valor al elemento elegido del listbox
-        listBox_articulosElegidos.SelectedItem = articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex).getCantidad &
-                        articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex).getNombreArticulo &
-                        articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex).getPrecioCantidad & "€" &
+        listBox_articulosElegidos.Items.Item(listBox_articulosElegidos.SelectedIndex) = articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex).getCantidad & "     " &
+                        articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex).getNombreArticulo & "     " &
+                        articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex).getPrecioCantidad & "€" & "     " &
                         articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex).precioTotal & "€"
 
         'Se calcula de nuevo el subtotal, total y iva
@@ -2149,9 +2179,9 @@ Public Class Pantalla_de_venta
         articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex).setCantidad(articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex).getCantidad - 1)
 
         'Se le pasa el nuevo valor al elemento elegido del listbox
-        listBox_articulosElegidos.SelectedItem = articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex).getCantidad &
-                        articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex).getNombreArticulo &
-                        articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex).getPrecioCantidad & "€" &
+        listBox_articulosElegidos.Items.Item(listBox_articulosElegidos.SelectedIndex) = articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex).getCantidad & "     " &
+                        articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex).getNombreArticulo & "     " &
+                        articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex).getPrecioCantidad & "€" & "     " &
                         articulosVendidos.Item(listBox_articulosElegidos.SelectedIndex).precioTotal & "€"
 
         'Se calcula de nuevo el subtotal, total y iva
@@ -2224,13 +2254,14 @@ Public Class Pantalla_de_venta
 
             Try
 
-                'Se guadra el nuevo valor de venta en el vichero VentaActual
+                'Se guadra el nuevo valor de venta en el fichero VentaActual
                 FileOpen(5, "VentaActual.txt", OpenMode.Output)
 
                 Write(5, ElementosComunes.venta)
 
+                'Se imprime el ticket
 
-                End
+
 
             Catch ex As System.IO.FileNotFoundException
 
@@ -2286,6 +2317,9 @@ Public Class Pantalla_de_venta
 
             FileClose()
 
+            'se desactivan todos los elementos para poner realizar otra venta
+            desactivarElementos()
+
         End If
 
     End Sub
@@ -2295,7 +2329,7 @@ Public Class Pantalla_de_venta
         'Recoje la opcion elegida por el usuario
         Dim opcion As Integer
 
-        If venta > 0 Then
+        If ventaArticulos > 0 Then
 
             'No se puede salir de la pantalla de venta sin terminar o anular la compra
             MsgBox("No puede abandonar la pantalla de venta sin terminar o anular la compra primero.",
@@ -2386,9 +2420,9 @@ Public Class Pantalla_de_venta
         listBox_articulosElegidos.Items.Clear()
 
         'Se vacian las etiquetas
-        label_subtotalPrecio.Text = ""
-        label_ivaPrecio.Text = ""
-        label_totalPrecio.Text = ""
+        label_subtotalPrecio.Text = "0"
+        label_ivaPrecio.Text = "0"
+        label_totalPrecio.Text = "0"
         label_resto.Text = ""
         textBox_importe.Text = ""
 
@@ -2396,24 +2430,21 @@ Public Class Pantalla_de_venta
     End Sub
 
     'TEXTBOX IMPORTE
-    Private Sub textBox_importe_Leave(sender As Object, e As EventArgs) Handles textBox_importe.Leave
+    Private Sub textBox_importe_TextChanged(sender As Object, e As EventArgs) Handles textBox_importe.TextChanged
 
         'Si el texto introducido en la caja de texto es un numero mayor a 0
         If validacion.numeroMayorACero(textBox_importe.Text) Then
 
             'Se comprueba que el importe es mayor o igual que el total de la venta
-            If textBox_importe.Text >= venta Then
+            If textBox_importe.Text >= ventaArticulos Then
 
                 'Se introduce en el label_resto la cantidad a devolver al cliente
-                label_resto.Text = textBox_importe.Text - venta
+                label_totalDevolver.Text = textBox_importe.Text - ventaArticulos
 
                 'Se activa el boton cobrar
                 button_cobrar.Enabled = True
 
             Else
-                'Se le indica al usuario que el importe tiene que ser mayor o igual al total de venta
-                MsgBox("El importe introducido tiene que ser mayor o igual al total de la venta",
-                       0 + MsgBoxStyle.Information, "Importe incorrecto")
 
                 'Se desactiva el boton cobrar
                 button_cobrar.Enabled = False
@@ -2450,5 +2481,29 @@ Public Class Pantalla_de_venta
 
     End Sub
 
+    Private Sub listBox_articulosElegidos_Resize(sender As Object, e As EventArgs) Handles listBox_articulosElegidos.Resize
+
+
+        If listBox_articulosElegidos.Items.Count = 0 Then
+
+            'Si el listbox no contiene ningun elemento los botones anular y cobrar se desabilitan
+            button_anular.Enabled = False
+            button_cobrar.Enabled = False
+
+            'Se calcula de nuevo el subtotal, total y iva
+            calcularTotalSubtotalIVA()
+
+        Else
+
+            'Si el listbox contiene elementos se activan los botones cobrar y anular
+            button_anular.Enabled = True
+            button_cobrar.Enabled = True
+
+            'Se calcula de nuevo el subtotal, total y iva
+            calcularTotalSubtotalIVA()
+
+        End If
+
+    End Sub
 
 End Class

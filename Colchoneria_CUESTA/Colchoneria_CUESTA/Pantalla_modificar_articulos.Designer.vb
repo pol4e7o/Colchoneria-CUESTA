@@ -41,6 +41,7 @@ Partial Class Pantalla_modificar_articulos
         Me.GestionDeEmpleadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GestionDeArticulosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GestionDeVentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GestionDeErroresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ColchoneriaCUESTAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -71,7 +72,6 @@ Partial Class Pantalla_modificar_articulos
         Me.Button_modificar = New System.Windows.Forms.Button()
         Me.ComboBox_modificar = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.GestionDeErroresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1.SuspendLayout()
         Me.MenuStrip.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -165,20 +165,20 @@ Partial Class Pantalla_modificar_articulos
         '
         Me.CerrarCajaToolStripMenuItem.Name = "CerrarCajaToolStripMenuItem"
         Me.CerrarCajaToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
-        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CerrarCajaToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
         Me.CerrarCajaToolStripMenuItem.Text = "Cerrar caja"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(167, 6)
         '
         'VolverToolStripMenuItem
         '
         Me.VolverToolStripMenuItem.Name = "VolverToolStripMenuItem"
         Me.VolverToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
             Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
         Me.VolverToolStripMenuItem.Text = "Volver"
         '
         'SalirToolStripMenuItem
@@ -186,7 +186,7 @@ Partial Class Pantalla_modificar_articulos
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
         Me.SalirToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
             Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'VentaToolStripMenuItem
@@ -235,6 +235,14 @@ Partial Class Pantalla_modificar_articulos
             Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
         Me.GestionDeVentasToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
         Me.GestionDeVentasToolStripMenuItem.Text = "Gestion de ventas"
+        '
+        'GestionDeErroresToolStripMenuItem
+        '
+        Me.GestionDeErroresToolStripMenuItem.Name = "GestionDeErroresToolStripMenuItem"
+        Me.GestionDeErroresToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
+            Or System.Windows.Forms.Keys.R), System.Windows.Forms.Keys)
+        Me.GestionDeErroresToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
+        Me.GestionDeErroresToolStripMenuItem.Text = "Gestion de errores"
         '
         'AcercaDeToolStripMenuItem
         '
@@ -319,9 +327,9 @@ Partial Class Pantalla_modificar_articulos
         '
         Me.ListBox_precios.FormattingEnabled = True
         Me.ListBox_precios.Location = New System.Drawing.Point(538, 18)
-        Me.ListBox_precios.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ListBox_precios.Margin = New System.Windows.Forms.Padding(2)
         Me.ListBox_precios.Name = "ListBox_precios"
-        Me.ListBox_precios.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
+        Me.ListBox_precios.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple
         Me.ListBox_precios.Size = New System.Drawing.Size(86, 238)
         Me.ListBox_precios.TabIndex = 29
         '
@@ -329,9 +337,9 @@ Partial Class Pantalla_modificar_articulos
         '
         Me.ListBox_tamanios.FormattingEnabled = True
         Me.ListBox_tamanios.Location = New System.Drawing.Point(448, 18)
-        Me.ListBox_tamanios.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ListBox_tamanios.Margin = New System.Windows.Forms.Padding(2)
         Me.ListBox_tamanios.Name = "ListBox_tamanios"
-        Me.ListBox_tamanios.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
+        Me.ListBox_tamanios.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple
         Me.ListBox_tamanios.Size = New System.Drawing.Size(93, 238)
         Me.ListBox_tamanios.TabIndex = 28
         '
@@ -339,7 +347,7 @@ Partial Class Pantalla_modificar_articulos
         '
         Me.Button_eliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.Button_eliminar.Location = New System.Drawing.Point(351, 51)
-        Me.Button_eliminar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button_eliminar.Margin = New System.Windows.Forms.Padding(2)
         Me.Button_eliminar.Name = "Button_eliminar"
         Me.Button_eliminar.Size = New System.Drawing.Size(78, 39)
         Me.Button_eliminar.TabIndex = 26
@@ -365,7 +373,7 @@ Partial Class Pantalla_modificar_articulos
         Me.ComboBox_tamanio.FormattingEnabled = True
         Me.ComboBox_tamanio.Items.AddRange(New Object() {"80", "90", "105", "120", "135", "150", "160", "180"})
         Me.ComboBox_tamanio.Location = New System.Drawing.Point(126, 84)
-        Me.ComboBox_tamanio.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ComboBox_tamanio.Margin = New System.Windows.Forms.Padding(2)
         Me.ComboBox_tamanio.Name = "ComboBox_tamanio"
         Me.ComboBox_tamanio.Size = New System.Drawing.Size(92, 21)
         Me.ComboBox_tamanio.TabIndex = 27
@@ -419,7 +427,7 @@ Partial Class Pantalla_modificar_articulos
         Me.ComboBox_categorias.FormattingEnabled = True
         Me.ComboBox_categorias.Items.AddRange(New Object() {"Base", "Somier", "Colchon", "Canape", "Ofertas", "Otros"})
         Me.ComboBox_categorias.Location = New System.Drawing.Point(150, 110)
-        Me.ComboBox_categorias.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ComboBox_categorias.Margin = New System.Windows.Forms.Padding(2)
         Me.ComboBox_categorias.Name = "ComboBox_categorias"
         Me.ComboBox_categorias.Size = New System.Drawing.Size(100, 21)
         Me.ComboBox_categorias.TabIndex = 19
@@ -427,7 +435,7 @@ Partial Class Pantalla_modificar_articulos
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(688, 366)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(56, 19)
         Me.Button1.TabIndex = 15
@@ -437,7 +445,7 @@ Partial Class Pantalla_modificar_articulos
         'Button_guardar
         '
         Me.Button_guardar.Location = New System.Drawing.Point(620, 366)
-        Me.Button_guardar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button_guardar.Margin = New System.Windows.Forms.Padding(2)
         Me.Button_guardar.Name = "Button_guardar"
         Me.Button_guardar.Size = New System.Drawing.Size(56, 19)
         Me.Button_guardar.TabIndex = 14
@@ -532,14 +540,6 @@ Partial Class Pantalla_modificar_articulos
         Me.Label1.Size = New System.Drawing.Size(52, 13)
         Me.Label1.TabIndex = 32
         Me.Label1.Text = "Artículos:"
-        '
-        'GestionDeErroresToolStripMenuItem
-        '
-        Me.GestionDeErroresToolStripMenuItem.Name = "GestionDeErroresToolStripMenuItem"
-        Me.GestionDeErroresToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
-            Or System.Windows.Forms.Keys.R), System.Windows.Forms.Keys)
-        Me.GestionDeErroresToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
-        Me.GestionDeErroresToolStripMenuItem.Text = "Gestion de errores"
         '
         'Pantalla_modificar_articulos
         '

@@ -685,16 +685,27 @@
     End Sub
 
     'LISTBOX TAMAÑOS
-    Private Sub ListBox_tamanios_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox_tamanios.SelectedIndexChanged
+    Private Sub ListBox_tamanios_manejo(sender As Object, e As EventArgs) Handles ListBox_tamanios.MouseClick, ListBox_tamanios.KeyPress
 
         'Se comprueba que todos los campos necesarios están rellenos
         If ListBox_tamanios.SelectedIndex >= 0 Then
             Button_eliminar.Enabled = True
         End If
 
-        'Se le pasa el mismo indice al otro listbox si no lo tiene ya
-        If ListBox_precios.SelectedIndex <> ListBox_tamanios.SelectedIndex Then
-            ListBox_precios.SelectedIndex = ListBox_tamanios.SelectedIndex
+
+
+        'Se los indices de los dos listbox son diferentes se pasan los de listbox de tamanios al de precios
+        If ListBox_precios.SelectedIndices.Equals(ListBox_tamanios.SelectedIndices) = False Then
+
+            'Primero se eliminan todos los selecionados dentro de listbox de precios
+            ListBox_precios.ClearSelected()
+
+            'Se pasan por todos los indices de listbox de tamaños y se añaden al de listbox de precios
+            For i = 0 To ListBox_tamanios.SelectedIndices.Count - 1
+
+                ListBox_precios.SelectedIndex = ListBox_tamanios.SelectedIndices.Item(i)
+
+            Next i
 
         End If
 
@@ -703,16 +714,27 @@
     End Sub
 
     'LISTBOX PRECIOS
-    Private Sub ListBox_precios_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox_precios.SelectedIndexChanged
+    Private Sub ListBox_precios_manejo(sender As Object, e As EventArgs) Handles ListBox_precios.MouseClick, ListBox_precios.KeyPress
 
         'Se comprueba que todos los campos necesarios están rellenos
         If ListBox_precios.SelectedIndex >= 0 Then
             Button_eliminar.Enabled = True
         End If
 
-        'Se le pasa el mismo indice al otro listbox si no lo tiene ya
-        If ListBox_precios.SelectedIndex <> ListBox_tamanios.SelectedIndex Then
-            ListBox_tamanios.SelectedIndex = ListBox_precios.SelectedIndex
+
+
+        'Se los indices de los dos listbox son diferentes se pasan los de listbox de precios al de tamaños
+        If ListBox_precios.SelectedIndices.Equals(ListBox_tamanios.SelectedIndices) = False Then
+
+            'Primero se eliminan todos los selecionados dentro de listbox de tamaños
+            ListBox_tamanios.ClearSelected()
+
+            'Se pasan por todos los indices de listbox de precios y se añaden al de listbox de tamaños
+            For i = 0 To ListBox_precios.SelectedIndices.Count - 1
+
+                ListBox_tamanios.SelectedIndex = ListBox_precios.SelectedIndices.Item(i)
+
+            Next i
 
         End If
 
