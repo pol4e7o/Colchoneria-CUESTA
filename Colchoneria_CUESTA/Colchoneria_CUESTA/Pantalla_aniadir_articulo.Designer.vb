@@ -63,11 +63,11 @@ Partial Class Pantalla_aniadir_articulo
         Me.GestionDeEmpleadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GestionDeArticulosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GestionDeVentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GestionDeErroresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ColchoneriaCUESTAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManualDeUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GestionDeErroresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1.SuspendLayout()
         Me.Panel_precioYTamanio.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -113,7 +113,7 @@ Partial Class Pantalla_aniadir_articulo
         Me.ListBox_precios.Location = New System.Drawing.Point(505, 61)
         Me.ListBox_precios.Margin = New System.Windows.Forms.Padding(2)
         Me.ListBox_precios.Name = "ListBox_precios"
-        Me.ListBox_precios.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
+        Me.ListBox_precios.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple
         Me.ListBox_precios.Size = New System.Drawing.Size(86, 199)
         Me.ListBox_precios.TabIndex = 27
         '
@@ -210,7 +210,7 @@ Partial Class Pantalla_aniadir_articulo
         Me.ListBox_tamanios.Location = New System.Drawing.Point(415, 61)
         Me.ListBox_tamanios.Margin = New System.Windows.Forms.Padding(2)
         Me.ListBox_tamanios.Name = "ListBox_tamanios"
-        Me.ListBox_tamanios.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
+        Me.ListBox_tamanios.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple
         Me.ListBox_tamanios.Size = New System.Drawing.Size(93, 199)
         Me.ListBox_tamanios.TabIndex = 18
         '
@@ -459,6 +459,14 @@ Partial Class Pantalla_aniadir_articulo
         Me.GestionDeVentasToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
         Me.GestionDeVentasToolStripMenuItem.Text = "Gestion de ventas"
         '
+        'GestionDeErroresToolStripMenuItem
+        '
+        Me.GestionDeErroresToolStripMenuItem.Name = "GestionDeErroresToolStripMenuItem"
+        Me.GestionDeErroresToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
+            Or System.Windows.Forms.Keys.R), System.Windows.Forms.Keys)
+        Me.GestionDeErroresToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
+        Me.GestionDeErroresToolStripMenuItem.Text = "Gestion de errores"
+        '
         'AcercaDeToolStripMenuItem
         '
         Me.AcercaDeToolStripMenuItem.AutoSize = False
@@ -489,14 +497,6 @@ Partial Class Pantalla_aniadir_articulo
         Me.ManualDeUsuarioToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1
         Me.ManualDeUsuarioToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
         Me.ManualDeUsuarioToolStripMenuItem.Text = "Manual de usuario"
-        '
-        'GestionDeErroresToolStripMenuItem
-        '
-        Me.GestionDeErroresToolStripMenuItem.Name = "GestionDeErroresToolStripMenuItem"
-        Me.GestionDeErroresToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
-            Or System.Windows.Forms.Keys.R), System.Windows.Forms.Keys)
-        Me.GestionDeErroresToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
-        Me.GestionDeErroresToolStripMenuItem.Text = "Gestion de errores"
         '
         'Pantalla_aniadir_articulo
         '

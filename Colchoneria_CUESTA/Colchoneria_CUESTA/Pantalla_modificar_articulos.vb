@@ -427,8 +427,8 @@
     Private Sub ComboBox_modificar_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox_modificar.SelectedIndexChanged
 
         'Se utilizan para copiar los valores del articulo seleccionado
-        Dim tamanios(14) As Integer
-        Dim precios(14) As Double
+        Dim tamanios As New List(Of Integer)
+        Dim precios As New List(Of Double)
 
         'Si se ha elegido un articulo de los de la lista se activa el boton guardar
         If ComboBox_modificar.SelectedIndex >= 0 Then
@@ -455,17 +455,20 @@
                 'Cuando se encuentra el articulo que tiene el mismo nombre que este el objeto se asigna a la variable articulo
                 If articulos.Item(i).getNombreArticulo.Replace(" ", "").Equals(ComboBox_modificar.SelectedItem.ToString.Replace(" ", "")) Then
 
-                    'Se pasa una copia de todos los tamanios del articulo actual
-                    articulos.Item(i).getTamaniosArticulo.CopyTo(tamanios)
+                    'Se copian todos los tamanios y precios en otras listas que se van a pasar al objeto creado para ser modificado
+                    For j = 0 To articulos.Item(i).getTamaniosArticulo.Count - 1
 
-                    'Se pasa una copia de todos los precios del articulo actual
-                    articulos.Item(i).getPreciosTamaniosArticulo.CopyTo(precios)
+                        tamanios.Add(articulos.Item(i).getTamaniosArticulo(j))
+                        precios.Add(articulos.Item(i).getPreciosTamaniosArticulo(j))
 
+                    Next j
+
+                    'Se hace la copia de los datos del articulo elegido
                     articulo.setCodigoArticulo(articulos.Item(i).getCodigoArticulo)
                     articulo.setCategoriaArticulo(articulos.Item(i).getCategoriaArticulo)
                     articulo.setDescripcionArticulo(articulos.Item(i).getDescripcionArticulo)
                     articulo.setNombreArticulo(articulos.Item(i).getNombreArticulo)
-                    articulo.setTamaniosPrecios(tamanios.ToList, precios.ToList)
+                    articulo.setTamaniosPrecios(tamanios, precios)
 
                 End If
 
@@ -563,9 +566,6 @@
         '(si no se ha elegido uno de los predefinidos)
         Dim tamanioCorrecto As Boolean = False
 
-        'Auyda para comprobar si el tamaño ha sido repetido
-        Dim tamanioRepetido As Boolean = False
-
         Dim precioCorrecto As Boolean = False
 
         'Si los datos introducidos en el campo son correctos se comprueba si se puede activar el boton añadir
@@ -610,77 +610,76 @@
 
         Else
 
-            'si el articulo ya tiene tamaños añadidos y el que se va a añadir coincide con el del articulo se le indica al usuario que no lopuede agregar
-            If articulo.getTamaniosArticulo.Count > 0 And (articulo.getTamaniosArticulo.Contains(ComboBox_tamanio.Text) Or
-                    articulo.getTamaniosArticulo.Contains(ComboBox_tamanio.SelectedItem)) Then
+            'Si para el tamaño se ha escrito uno nuevo (no uno de los predefinidos)
+            'y este no es un numero mayor a 0 se le indica al usuario que el tamaño no es correto
+            If ComboBox_tamanio.SelectedIndex < 0 And ComboBox_tamanio.Text.Equals("") = False Then
 
-                MsgBox("El tamaño que desea añadir ya existe. Por favor introduzca otro tamaño",
-                    0 + MsgBoxStyle.Information, "Añadir tamaño")
+                If validacion.numeroMayorACero(ComboBox_tamanio.Text) = False Then
 
-                'Se vacia la caja de texto dentro del combobox y se deja sin elemento seleccionado
-                ComboBox_tamanio.Text = ""
-                ComboBox_tamanio.SelectedIndex = -1
-                ComboBox_tamanio.Focus()
-
-            Else
-
-                'Si para el tamaño se ha escrito uno nuevo (no uno de los predefinidos)
-                'y este no es un numero mayor a 0 se le indica al usuario que el tamaño no es correto
-                If ComboBox_tamanio.SelectedIndex < 0 And ComboBox_tamanio.Text.Equals("") = False Then
-
-                    If validacion.numeroMayorACero(ComboBox_tamanio.Text) = False Then
-
-                        MsgBox("El tamaño introducido no es correcto. El tamaño tiene que ser un numero mayor a 0",
+                    MsgBox("El tamaño introducido no es correcto. El tamaño tiene que ser un numero mayor a 0",
                                 0 + MsgBoxStyle.Information, "Tamaño incorrecto")
+
+                    'Se vacia la caja de texto dentro del combobox y se deja sin elemento seleccionado
+                    ComboBox_tamanio.Text = ""
+                    ComboBox_tamanio.SelectedIndex = -1
+                    ComboBox_tamanio.Focus()
+
+                Else
+
+                    tamanioCorrecto = True
+
+                    'si el articulo ya tiene tamaños añadidos y el que se va a añadir coincide con el del articulo se le indica al usuario que no lopuede agregar
+                    If articulo.getTamaniosArticulo.Count > 0 And (articulo.getTamaniosArticulo.Contains(ComboBox_tamanio.Text) Or
+                            articulo.getTamaniosArticulo.Contains(ComboBox_tamanio.SelectedItem)) Then
+
+                        MsgBox("El tamaño que desea añadir ya existe. Por favor introduzca otro tamaño",
+                            0 + MsgBoxStyle.Information, "Añadir tamaño")
 
                         'Se vacia la caja de texto dentro del combobox y se deja sin elemento seleccionado
                         ComboBox_tamanio.Text = ""
                         ComboBox_tamanio.SelectedIndex = -1
                         ComboBox_tamanio.Focus()
 
-                    Else
-
-                        tamanioCorrecto = True
+                        tamanioCorrecto = False
 
                     End If
 
                 End If
+            End If
 
-                'Si el tamaño y el precio son correctos se añaden a la lista
-                If precioCorrecto And (tamanioCorrecto = True Or ComboBox_tamanio.SelectedIndex >= 0) Then
 
-                    If ComboBox_tamanio.SelectedIndex >= 0 Then
+            'Si el tamaño y el precio son correctos se añaden a la lista
+            If precioCorrecto And (tamanioCorrecto = True Or ComboBox_tamanio.SelectedIndex >= 0) Then
 
-                        'Si se ha elegido uno de los tamaños predefinidos se utiliza para añaddir a la lista
-                        articulo.setTamanioPrecio(CInt(ComboBox_tamanio.SelectedItem), CDbl(TextBox_precio.Text))
+                If ComboBox_tamanio.SelectedIndex >= 0 Then
 
-                    Else
-                        'Sino se utiliza el texto introducido dentro del combobox 
-                        articulo.setTamanioPrecio(CInt(ComboBox_tamanio.Text), CDbl(TextBox_precio.Text))
+                    'Si se ha elegido uno de los tamaños predefinidos se utiliza para añaddir a la lista
+                    articulo.setTamanioPrecio(CInt(ComboBox_tamanio.SelectedItem), CDbl(TextBox_precio.Text))
 
-                    End If
-
-                    'Se añaden el precio y el tamaño a la lista
-                    ListBox_tamanios.Items.Add("    tamaño: " & articulo.getTamaniosArticulo.Item(articulo.getTamaniosArticulo.Count - 1))
-                    ListBox_precios.Items.Add("    precio: " & articulo.getPreciosTamaniosArticulo.Item(articulo.getPreciosTamaniosArticulo.Count - 1) & "€")
-
-                    'Se vacian los elementos y se pasa el foco al precio
-                    TextBox_precio.Text = ""
-                    ComboBox_tamanio.Text = ""
-                    ComboBox_tamanio.SelectedIndex = -1
-                    TextBox_precio.Focus()
-
-                    'Se desactiva el boton añadir
-                    Button_aniadir.Enabled = False
-
-                    activarBotonModificar()
+                Else
+                    'Sino se utiliza el texto introducido dentro del combobox 
+                    articulo.setTamanioPrecio(CInt(ComboBox_tamanio.Text), CDbl(TextBox_precio.Text))
 
                 End If
+
+                'Se añaden el precio y el tamaño a la lista
+                ListBox_tamanios.Items.Add("    tamaño: " & articulo.getTamaniosArticulo.Item(articulo.getTamaniosArticulo.Count - 1))
+                ListBox_precios.Items.Add("    precio: " & articulo.getPreciosTamaniosArticulo.Item(articulo.getPreciosTamaniosArticulo.Count - 1) & "€")
+
+                'Se vacian los elementos y se pasa el foco al precio
+                TextBox_precio.Text = ""
+                ComboBox_tamanio.Text = ""
+                ComboBox_tamanio.SelectedIndex = -1
+                TextBox_precio.Focus()
+
+                'Se desactiva el boton añadir
+                Button_aniadir.Enabled = False
+
+                activarBotonModificar()
 
             End If
 
         End If
-
 
     End Sub
 
@@ -936,16 +935,28 @@
     End Sub
 
     'LISTBOX TAMANIOS
-    Private Sub ListBox_tamanios_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox_tamanios.SelectedIndexChanged
+    Private Sub ListBox_tamanios_manejo(sender As Object, e As EventArgs) Handles ListBox_tamanios.MouseClick
 
         'Se comprueba que todos los campos necesarios están rellenos
+
         If ListBox_tamanios.SelectedIndex >= 0 Then
             Button_eliminar.Enabled = True
         End If
 
-        'Se le pasa el mismo indice al otro listbox si no lo tiene ya
-        If ListBox_precios.SelectedIndex <> ListBox_tamanios.SelectedIndex Then
-            ListBox_precios.SelectedIndex = ListBox_tamanios.SelectedIndex
+
+
+        'Se los indices de los dos listbox son diferentes se pasan los de listbox de tamanios al de precios
+        If ListBox_precios.SelectedIndices.Equals(ListBox_tamanios.SelectedIndices) = False Then
+
+            'Primero se eliminan todos los selecionados dentro de listbox de precios
+            ListBox_precios.ClearSelected()
+
+            'Se pasan por todos los indices de listbox de tamaños y se añaden al de listbox de precios
+            For i = 0 To ListBox_tamanios.SelectedIndices.Count - 1
+
+                ListBox_precios.SelectedIndex = ListBox_tamanios.SelectedIndices.Item(i)
+
+            Next i
 
         End If
 
@@ -954,7 +965,7 @@
     End Sub
 
     'LISTBOX PRECIOS
-    Private Sub ListBox_precios_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox_precios.SelectedIndexChanged
+    Private Sub ListBox_precios_manejo(sender As Object, e As EventArgs) Handles ListBox_precios.MouseClick
 
         'Se comprueba que todos los campos necesarios están rellenos
         If ListBox_tamanios.SelectedIndex >= 0 Then
@@ -968,6 +979,94 @@
         End If
 
         activarBotonModificar()
+
+    End Sub
+
+    Private Sub ListBox_tamanios_KeyDown(sender As Object, e As KeyEventArgs) Handles ListBox_tamanios.KeyDown
+
+        'esta es la posicion del listbox
+        Dim posicionElegida As Integer = ListBox_tamanios.SelectedIndex
+
+        'Se dejan los dos listbox sin elementos elegidos 
+        ListBox_precios.ClearSelected()
+        ListBox_tamanios.ClearSelected()
+
+        If e.KeyCode = Keys.Up Then
+
+            'Aqui se indica que tiene que elegir el elemento que va antes del elegido actualmente 
+            'exepto que este es el primer elemento
+            If ListBox_tamanios.SelectedIndex > 0 Then
+
+                'A la posicion actual se le resta 1 y se asigna el resultado a la variable posicionElegida
+                posicionElegida = posicionElegida - 1
+
+                'Se les asigna la misma posicion que es la nueva
+                ListBox_precios.SelectedIndex = posicionElegida
+                ListBox_tamanios.SelectedIndex = posicionElegida
+
+            End If
+
+        ElseIf (e.KeyCode = Keys.Down) Then
+
+            'Aqui se indica que tiene que elegir el siguiente elemento despues del elegido actualmente 
+            'exepto que haya llegado al final de la lista
+            If ListBox_tamanios.SelectedIndex < ListBox_tamanios.Items.Count - 1 Then
+
+                'A la posicion actual se le suma 1 y se asigna el resultado a la variable posicionElegida
+                posicionElegida = posicionElegida + 1
+
+                'Se les asigna la misma posicion que es la nueva
+                ListBox_precios.SelectedIndex = posicionElegida
+                ListBox_tamanios.SelectedIndex = posicionElegida
+
+
+            End If
+
+        End If
+
+    End Sub
+
+    Private Sub ListBox_precios_KeyDown(sender As Object, e As KeyEventArgs) Handles ListBox_precios.KeyDown
+
+        'esta es la posicion del listbox
+        Dim posicionElegida As Integer = ListBox_precios.SelectedIndex
+
+        'Se dejan los dos listbox sin elementos elegidos 
+        ListBox_precios.ClearSelected()
+        ListBox_tamanios.ClearSelected()
+
+        If e.KeyCode = Keys.Up Then
+
+            'Aqui se indica que tiene que elegir el elemento que va antes del elegido actualmente 
+            'exepto que este es el primer elemento
+            If ListBox_precios.SelectedIndex > 0 Then
+
+                'A la posicion actual se le resta 1 y se asigna el resultado a la variable posicionElegida
+                posicionElegida = posicionElegida - 1
+
+                'Se les asigna la misma posicion que es la nueva
+                ListBox_precios.SelectedIndex = posicionElegida
+                ListBox_tamanios.SelectedIndex = posicionElegida
+
+            End If
+
+        ElseIf (e.KeyCode = Keys.Down) Then
+
+            'Aqui se indica que tiene que elegir el siguiente elemento despues del elegido actualmente 
+            'exepto que haya llegado al final de la lista
+            If ListBox_precios.SelectedIndex < ListBox_precios.Items.Count - 1 Then
+
+                'A la posicion actual se le suma 1 y se asigna el resultado a la variable posicionElegida
+                posicionElegida = posicionElegida + 1
+
+                'Se les asigna la misma posicion que es la nueva
+                ListBox_precios.SelectedIndex = posicionElegida
+                ListBox_tamanios.SelectedIndex = posicionElegida
+
+
+            End If
+
+        End If
 
     End Sub
 
