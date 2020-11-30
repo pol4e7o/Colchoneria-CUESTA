@@ -55,6 +55,7 @@ Partial Class Gestion_de_errores
         Me.ColchoneriaCUESTAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManualDeUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Button_volver = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.MenuStrip.SuspendLayout()
@@ -133,6 +134,7 @@ Partial Class Gestion_de_errores
         '
         Me.Panel1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel1.BackColor = System.Drawing.Color.Gainsboro
+        Me.Panel1.Controls.Add(Me.Button_volver)
         Me.Panel1.Controls.Add(Me.TextBox_errores)
         Me.Panel1.Controls.Add(Me.Button_visualizar)
         Me.Panel1.Controls.Add(Me.Label_ventaElegida)
@@ -354,6 +356,17 @@ Partial Class Gestion_de_errores
         Me.ManualDeUsuarioToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
         Me.ManualDeUsuarioToolStripMenuItem.Text = "Manual de usuario"
         '
+        'Button_volver
+        '
+        Me.Button_volver.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.Button_volver.Location = New System.Drawing.Point(164, 98)
+        Me.Button_volver.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button_volver.Name = "Button_volver"
+        Me.Button_volver.Size = New System.Drawing.Size(98, 36)
+        Me.Button_volver.TabIndex = 11
+        Me.Button_volver.Text = "Volver"
+        Me.Button_volver.UseVisualStyleBackColor = False
+        '
         'Gestion_de_errores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -409,4 +422,5 @@ Partial Class Gestion_de_errores
     Friend WithEvents Button_visualizar As Button
     Friend WithEvents TextBox_errores As TextBox
     Friend WithEvents GestionDeErroresToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Button_volver As Button
 End Class
