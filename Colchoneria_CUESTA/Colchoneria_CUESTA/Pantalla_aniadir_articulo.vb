@@ -420,7 +420,7 @@
 
         End If
 
-        If ListBox_tamanios.Items.Count > 14 Then
+        If ListBox_tamaniosPrecios.Items.Count > 14 Then
 
             'Si los elementos de la lista sobrepasan 14 no se pueden añadir mas tamaños
             MsgBox("No puede añadir mas tamaños. Si desea puede eliminar uno de los existentes para añadir otro",
@@ -478,9 +478,9 @@
 
                     End If
 
-                    'Se le asigna a la cadena precioTamanio los que se van a añadir a la lista
-                    ListBox_tamanios.Items.Add("    precio: " & articulo.getPreciosTamaniosArticulo.Item(articulo.getPreciosTamaniosArticulo.Count - 1) & "€")
-                    ListBox_precios.Items.Add("    tamaño: " & articulo.getTamaniosArticulo.Item(articulo.getTamaniosArticulo.Count - 1))
+                    'Se pasan los valores de precio y tamanio a la lista
+                    ListBox_tamaniosPrecios.Items.Add("    precio: " & articulo.getPreciosTamaniosArticulo.Item(articulo.getPreciosTamaniosArticulo.Count - 1) & "€" &
+                                                      "       tamaño: " & articulo.getTamaniosArticulo.Item(articulo.getTamaniosArticulo.Count - 1))
 
                     'Se vacian los elementos y se pasa el foco al precio
                     TextBox_precio.Text = ""
@@ -504,12 +504,16 @@
     'BOTON ELIMINAR
     Private Sub Button_eliminar_Click(sender As Object, e As EventArgs) Handles Button_eliminar.Click
 
-        'Eliminamos el precio y tamaño seleccionados del articulo
-        articulo.eliminarTamanioPrecio(ListBox_tamanios.SelectedIndex)
+        'Mientras que haya elemento seleccionado se ejecuta el siguente bucle
+        While ListBox_tamaniosPrecios.SelectedIndex >= 0
 
-        'Despues se elimina de la lista
-        ListBox_tamanios.Items.RemoveAt(ListBox_tamanios.SelectedIndex)
-        ListBox_precios.Items.RemoveAt(ListBox_precios.SelectedIndex)
+            'Eliminamos el precio y tamaño seleccionados del articulo
+            articulo.eliminarTamanioPrecio(ListBox_tamaniosPrecios.SelectedIndex)
+
+            'Despues se elimina de la lista
+            ListBox_tamaniosPrecios.Items.RemoveAt(ListBox_tamaniosPrecios.SelectedIndex)
+
+        End While
 
         activarBotonGuardarAlta()
 
@@ -684,58 +688,12 @@
         activarBotonAniadir()
     End Sub
 
-    'LISTBOX TAMAÑOS
-    Private Sub ListBox_tamanios_manejo(sender As Object, e As EventArgs) Handles ListBox_tamanios.MouseClick, ListBox_tamanios.KeyPress
+    'LISTBOX TAMAÑOS PRECIOS
+    Private Sub ListBox_tamaniosPrecios_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox_tamaniosPrecios.SelectedIndexChanged
 
         'Se comprueba que todos los campos necesarios están rellenos
-        If ListBox_tamanios.SelectedIndex >= 0 Then
+        If ListBox_tamaniosPrecios.SelectedIndex >= 0 Then
             Button_eliminar.Enabled = True
-        End If
-
-
-
-        'Se los indices de los dos listbox son diferentes se pasan los de listbox de tamanios al de precios
-        If ListBox_precios.SelectedIndices.Equals(ListBox_tamanios.SelectedIndices) = False Then
-
-            'Primero se eliminan todos los selecionados dentro de listbox de precios
-            ListBox_precios.ClearSelected()
-
-            'Se pasan por todos los indices de listbox de tamaños y se añaden al de listbox de precios
-            For i = 0 To ListBox_tamanios.SelectedIndices.Count - 1
-
-                ListBox_precios.SelectedIndex = ListBox_tamanios.SelectedIndices.Item(i)
-
-            Next i
-
-        End If
-
-        activarBotonGuardarAlta()
-
-    End Sub
-
-    'LISTBOX PRECIOS
-    Private Sub ListBox_precios_manejo(sender As Object, e As EventArgs) Handles ListBox_precios.MouseClick, ListBox_precios.KeyPress
-
-        'Se comprueba que todos los campos necesarios están rellenos
-        If ListBox_precios.SelectedIndex >= 0 Then
-            Button_eliminar.Enabled = True
-        End If
-
-
-
-        'Se los indices de los dos listbox son diferentes se pasan los de listbox de precios al de tamaños
-        If ListBox_precios.SelectedIndices.Equals(ListBox_tamanios.SelectedIndices) = False Then
-
-            'Primero se eliminan todos los selecionados dentro de listbox de tamaños
-            ListBox_tamanios.ClearSelected()
-
-            'Se pasan por todos los indices de listbox de precios y se añaden al de listbox de tamaños
-            For i = 0 To ListBox_precios.SelectedIndices.Count - 1
-
-                ListBox_tamanios.SelectedIndex = ListBox_precios.SelectedIndices.Item(i)
-
-            Next i
-
         End If
 
         activarBotonGuardarAlta()
@@ -765,7 +723,7 @@
 
             If ComboBox_categorias.SelectedIndex >= 0 Then
 
-                If ListBox_tamanios.Items.Count <> 0 Then
+                If ListBox_tamaniosPrecios.Items.Count <> 0 Then
 
                     Button_guardar.Enabled = True
 

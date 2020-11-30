@@ -195,7 +195,8 @@
         'La opcion elegida por el usuario a la hora de decidir si desea volver a gestion de empleados
         Dim opcion As Integer
 
-        opcion = MsgBox("Esta seguro que desea volver a la pantalla de gestion de empleados sin terminar la operacion?", 4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Volver")
+        opcion = MsgBox("Esta seguro que desea volver a la pantalla de gestion de empleados sin terminar la operacion?",
+                        4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Volver")
 
         If opcion = MsgBoxResult.Yes Then
 
@@ -319,7 +320,8 @@
         'La opcion elegida por el usuario a la hora de decidir si desea ir a gestion de empleados
         Dim opcion As Integer
 
-        opcion = MsgBox("Esta seguro que desea ir a la pantalla de gestion de empleados sin terminar la operacion?", 4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Volver")
+        opcion = MsgBox("Esta seguro que desea ir a la pantalla de gestion de empleados sin terminar la operacion?",
+                        4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Volver")
 
         If opcion = MsgBoxResult.Yes Then
 
@@ -336,7 +338,8 @@
         'La opcion elegida por el usuario a la hora de decidir si desea ir a gestion de articulos
         Dim opcion As Integer
 
-        opcion = MsgBox("Esta seguro que desea ir a la pantalla de gestion de articulos sin terminar la operacion?", 4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Volver")
+        opcion = MsgBox("Esta seguro que desea ir a la pantalla de gestion de articulos sin terminar la operacion?",
+                        4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Volver")
 
         If opcion = MsgBoxResult.Yes Then
 
@@ -353,7 +356,8 @@
         'La opcion elegida por el usuario a la hora de decidir si desea ir a gestion de ventas
         Dim opcion As Integer
 
-        opcion = MsgBox("Esta seguro que desea ir a la pantalla de gestion de ventas sin terminar la operacion?", 4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Volver")
+        opcion = MsgBox("Esta seguro que desea ir a la pantalla de gestion de ventas sin terminar la operacion?",
+                        4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Volver")
 
         If opcion = MsgBoxResult.Yes Then
 
@@ -370,7 +374,8 @@
         'La opcion elegida por el usuario a la hora de decidir si desea ir a gestion de ventas
         Dim opcion As Integer
 
-        opcion = MsgBox("Esta seguro que desea ir a la pantalla de gestion de errores sin terminar la operacion?", 4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Volver")
+        opcion = MsgBox("Esta seguro que desea ir a la pantalla de gestion de errores sin terminar la operacion?",
+                        4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Volver")
 
         If opcion = MsgBoxResult.Yes Then
 
@@ -404,7 +409,8 @@
         'Indica si el nombre de usuario se ha repetido
         Dim nombreUsuarioRepetido As Boolean = False
 
-        opcion = MsgBox("Esta seguro que desea crear el nuevo empleado?", 4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Alta de empleado")
+        opcion = MsgBox("Esta seguro que desea crear el nuevo empleado?",
+                        4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Alta de empleado")
 
         If opcion = MsgBoxResult.Yes Then
 
@@ -449,7 +455,8 @@
                 'Si se ha repetido se le avisa al usuario y se borra el campo del nombre del usuario
                 If nombreUsuarioRepetido Then
 
-                    MsgBox("Ya existe otro empleado con el mismo nombre de usuario. Por favor indique de nuevo el nombre de usuario", 0 + MsgBoxStyle.Information, "Nombre de usuario repetido")
+                    MsgBox("Ya existe otro empleado con el mismo nombre de usuario. Por favor indique de nuevo el nombre de usuario",
+                           0 + MsgBoxStyle.Information, "Nombre de usuario repetido")
 
                     textBox_nombreUsuario.Text = ""
                     textBox_nombreUsuario.Focus()
@@ -591,7 +598,8 @@
         Else
 
             'Se le indica al usuario que el dato es incorreto y el foco vuelve al campo de codigo postal
-            MsgBox("El codigo postal puede contener solo 5 numeros. Por favor intente introducir el valor del codigo postal de nuevo.", 0 + MsgBoxStyle.Information, "Codigo postal incorrecto")
+            MsgBox("El codigo postal puede contener solo 5 numeros. Por favor intente introducir el valor del codigo postal de nuevo.",
+                   0 + MsgBoxStyle.Information, "Codigo postal incorrecto")
             textBox_codigoPostal.Focus()
 
         End If
@@ -611,7 +619,8 @@
         Else
 
             'Se le indica al usuario que el dato es incorreto y el foco vuelve al campo de apellido/s
-            MsgBox("Los nombres y apellidos pueden contener solo letras, espacios en blanco y guiones. Por favor intente introducir el valor del campo apellido/s de nuevo.", 0 + MsgBoxStyle.Information, "Valor de apellidos incorrecto")
+            MsgBox("Los nombres y apellidos pueden contener solo letras, espacios en blanco y guiones. Por favor intente introducir el valor del campo apellido/s de nuevo.",
+                   0 + MsgBoxStyle.Information, "Valor de apellidos incorrecto")
             textBox_apellidos.Focus()
 
         End If
@@ -634,8 +643,9 @@
         Else
 
             'Se le indica al usuario que el dato es incorreto y el foco vuelve al campo de contraseña
-            MsgBox("La contraseña debe contener exactamente 4 numeros. Por favor intente introducir la contraseña de nuevo.", 0 + MsgBoxStyle.Information, "Contraseña incorrecta")
-            textBox_contrasenia.Focus()
+            MsgBox("La contraseña debe contener exactamente 4 numeros. Por favor intente introducir la contraseña de nuevo.",
+                   0 + MsgBoxStyle.Information, "Contraseña incorrecta")
+            textBox_contrasenia.Text = ""
 
         End If
 
@@ -672,7 +682,7 @@
             'Se le indica al usuario que el dato es incorreto y el foco vuelve al campo de repetir contraseña
             MsgBox("La contraseña debe contener exactamente 4 numeros. Por favor intente introducir la contraseña de nuevo.",
                    0 + MsgBoxStyle.Information, "Contraseña incorrecta")
-            textBox_contrasenia2.Focus()
+            textBox_contrasenia2.Text = ""
 
         End If
 
@@ -697,7 +707,7 @@
 
             'Se le indica al usuario que el dato es incorreto y el foco vuelve al campo de nombre
             MsgBox("Los nombres y apellidos pueden contener solo letras, espacios en blanco y guiones. Por favor intente introducir el valor del campo nombre de nuevo.",
-                   0 + MsgBoxStyle.Information, "Valor de apellidos incorrecto")
+                   0 + MsgBoxStyle.Information, "Valor de nombre incorrecto")
             textBox_nombre.Focus()
 
         End If
@@ -716,7 +726,7 @@
 
             'Se le indica al usuario que el dato es incorreto y el foco vuelve al campo de nombre de usuario
             MsgBox("El nombres de usuario puede contener solo letras con un minimo de 3 caracteres. Por favor intente introducir el valor del campo nombre de usuario de nuevo.",
-                   0 + MsgBoxStyle.Information, "Valor de apellidos incorrecto")
+                   0 + MsgBoxStyle.Information, "Valor de nombre de usuario incorrecto")
             textBox_nombreUsuario.Focus()
 
         End If
@@ -735,7 +745,7 @@
 
             'Se le indica al usuario que el dato es incorreto y el foco vuelve al campo de telefono
             MsgBox("El telefono puede contener solo numeros, espacion en blanco y como primeros caractres ""(+  )"" o ""+"". Por favor intente introducir el valor del campo telefono de nuevo.",
-                   0 + MsgBoxStyle.Information, "Valor de apellidos incorrecto")
+                   0 + MsgBoxStyle.Information, "Valor de telefono incorrecto")
             textBox_telefono.Focus()
 
         End If

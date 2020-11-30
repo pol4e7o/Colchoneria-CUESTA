@@ -49,8 +49,7 @@ Partial Class Pantalla_modificar_articulos
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel_datosArticulo = New System.Windows.Forms.Panel()
-        Me.ListBox_precios = New System.Windows.Forms.ListBox()
-        Me.ListBox_tamanios = New System.Windows.Forms.ListBox()
+        Me.ListBox_tamaniosPrecios = New System.Windows.Forms.ListBox()
         Me.Button_eliminar = New System.Windows.Forms.Button()
         Me.Panel_precioYTamanio = New System.Windows.Forms.Panel()
         Me.ComboBox_tamanio = New System.Windows.Forms.ComboBox()
@@ -72,6 +71,7 @@ Partial Class Pantalla_modificar_articulos
         Me.Button_modificar = New System.Windows.Forms.Button()
         Me.ComboBox_modificar = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.Panel1.SuspendLayout()
         Me.MenuStrip.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -305,8 +305,7 @@ Partial Class Pantalla_modificar_articulos
         '
         Me.Panel_datosArticulo.BackColor = System.Drawing.Color.Gainsboro
         Me.Panel_datosArticulo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel_datosArticulo.Controls.Add(Me.ListBox_precios)
-        Me.Panel_datosArticulo.Controls.Add(Me.ListBox_tamanios)
+        Me.Panel_datosArticulo.Controls.Add(Me.ListBox_tamaniosPrecios)
         Me.Panel_datosArticulo.Controls.Add(Me.Button_eliminar)
         Me.Panel_datosArticulo.Controls.Add(Me.Panel_precioYTamanio)
         Me.Panel_datosArticulo.Controls.Add(Me.ComboBox_categorias)
@@ -320,33 +319,23 @@ Partial Class Pantalla_modificar_articulos
         Me.Panel_datosArticulo.Controls.Add(Me.TextBox_nombre)
         Me.Panel_datosArticulo.Location = New System.Drawing.Point(36, 107)
         Me.Panel_datosArticulo.Name = "Panel_datosArticulo"
-        Me.Panel_datosArticulo.Size = New System.Drawing.Size(668, 285)
+        Me.Panel_datosArticulo.Size = New System.Drawing.Size(668, 296)
         Me.Panel_datosArticulo.TabIndex = 36
         '
-        'ListBox_precios
+        'ListBox_tamaniosPrecios
         '
-        Me.ListBox_precios.FormattingEnabled = True
-        Me.ListBox_precios.Location = New System.Drawing.Point(538, 18)
-        Me.ListBox_precios.Margin = New System.Windows.Forms.Padding(2)
-        Me.ListBox_precios.Name = "ListBox_precios"
-        Me.ListBox_precios.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple
-        Me.ListBox_precios.Size = New System.Drawing.Size(86, 238)
-        Me.ListBox_precios.TabIndex = 29
-        '
-        'ListBox_tamanios
-        '
-        Me.ListBox_tamanios.FormattingEnabled = True
-        Me.ListBox_tamanios.Location = New System.Drawing.Point(448, 18)
-        Me.ListBox_tamanios.Margin = New System.Windows.Forms.Padding(2)
-        Me.ListBox_tamanios.Name = "ListBox_tamanios"
-        Me.ListBox_tamanios.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple
-        Me.ListBox_tamanios.Size = New System.Drawing.Size(93, 238)
-        Me.ListBox_tamanios.TabIndex = 28
+        Me.ListBox_tamaniosPrecios.FormattingEnabled = True
+        Me.ListBox_tamaniosPrecios.Location = New System.Drawing.Point(448, 18)
+        Me.ListBox_tamaniosPrecios.Margin = New System.Windows.Forms.Padding(2)
+        Me.ListBox_tamaniosPrecios.Name = "ListBox_tamaniosPrecios"
+        Me.ListBox_tamaniosPrecios.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple
+        Me.ListBox_tamaniosPrecios.Size = New System.Drawing.Size(180, 212)
+        Me.ListBox_tamaniosPrecios.TabIndex = 28
         '
         'Button_eliminar
         '
         Me.Button_eliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.Button_eliminar.Location = New System.Drawing.Point(351, 51)
+        Me.Button_eliminar.Location = New System.Drawing.Point(448, 239)
         Me.Button_eliminar.Margin = New System.Windows.Forms.Padding(2)
         Me.Button_eliminar.Name = "Button_eliminar"
         Me.Button_eliminar.Size = New System.Drawing.Size(78, 39)
@@ -475,7 +464,7 @@ Partial Class Pantalla_modificar_articulos
         Me.TextBox_descripcion.Location = New System.Drawing.Point(150, 62)
         Me.TextBox_descripcion.MaxLength = 40
         Me.TextBox_descripcion.Name = "TextBox_descripcion"
-        Me.TextBox_descripcion.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox_descripcion.Size = New System.Drawing.Size(225, 20)
         Me.TextBox_descripcion.TabIndex = 5
         '
         'Label4
@@ -501,13 +490,13 @@ Partial Class Pantalla_modificar_articulos
         Me.TextBox_nombre.Location = New System.Drawing.Point(150, 18)
         Me.TextBox_nombre.MaxLength = 20
         Me.TextBox_nombre.Name = "TextBox_nombre"
-        Me.TextBox_nombre.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox_nombre.Size = New System.Drawing.Size(121, 20)
         Me.TextBox_nombre.TabIndex = 0
         '
         'Button_cancelar
         '
         Me.Button_cancelar.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.Button_cancelar.Location = New System.Drawing.Point(166, 409)
+        Me.Button_cancelar.Location = New System.Drawing.Point(150, 409)
         Me.Button_cancelar.Name = "Button_cancelar"
         Me.Button_cancelar.Size = New System.Drawing.Size(87, 37)
         Me.Button_cancelar.TabIndex = 35
@@ -517,7 +506,7 @@ Partial Class Pantalla_modificar_articulos
         'Button_modificar
         '
         Me.Button_modificar.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.Button_modificar.Location = New System.Drawing.Point(61, 409)
+        Me.Button_modificar.Location = New System.Drawing.Point(36, 409)
         Me.Button_modificar.Name = "Button_modificar"
         Me.Button_modificar.Size = New System.Drawing.Size(92, 37)
         Me.Button_modificar.TabIndex = 34
@@ -540,6 +529,12 @@ Partial Class Pantalla_modificar_articulos
         Me.Label1.Size = New System.Drawing.Size(52, 13)
         Me.Label1.TabIndex = 32
         Me.Label1.Text = "Artículos:"
+        '
+        'ImageList1
+        '
+        Me.ImageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit
+        Me.ImageList1.ImageSize = New System.Drawing.Size(16, 16)
+        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
         '
         'Pantalla_modificar_articulos
         '
@@ -612,7 +607,7 @@ Partial Class Pantalla_modificar_articulos
     Friend WithEvents ComboBox_tamanio As ComboBox
     Friend WithEvents Button_eliminar As Button
     Friend WithEvents Label9 As Label
-    Friend WithEvents ListBox_precios As ListBox
-    Friend WithEvents ListBox_tamanios As ListBox
+    Friend WithEvents ListBox_tamaniosPrecios As ListBox
     Friend WithEvents GestionDeErroresToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ImageList1 As ImageList
 End Class

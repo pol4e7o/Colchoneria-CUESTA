@@ -586,7 +586,8 @@
         'La opcion elegida por el usuario a la hora de decidir si desea cancelar la operacion
         Dim opcion As Integer
 
-        opcion = MsgBox("Esta seguro que desea cancelar la operacion?", 4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Cancelar")
+        opcion = MsgBox("Esta seguro que desea cancelar la operacion?",
+                        4 + MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Question, "Cancelar")
 
         If opcion = MsgBoxResult.Yes Then
 
@@ -616,7 +617,8 @@
         Else
 
             'Se le indica al usuario que el dato es incorreto y el foco vuelve al campo de codigo postal
-            MsgBox("El codigo postal puede contener solo 5 numeros. Por favor intente introducir el valor del codigo postal de nuevo.", 0 + MsgBoxStyle.Information, "Codigo postal incorrecto")
+            MsgBox("El codigo postal puede contener solo 5 numeros. Por favor intente introducir el valor del codigo postal de nuevo.",
+                   0 + MsgBoxStyle.Information, "Codigo postal incorrecto")
             textBox_codigoPostal.Focus()
 
         End If
@@ -634,14 +636,15 @@
         Else
 
             'Se le indica al usuario que el dato es incorreto y el foco vuelve al campo de apellido/s
-            MsgBox("Los nombres y apellidos pueden contener solo letras, espacios en blanco y guiones. Por favor intente introducir el valor del campo apellido/s de nuevo.", 0 + MsgBoxStyle.Information, "Valor de apellidos incorrecto")
+            MsgBox("Los nombres y apellidos pueden contener solo letras, espacios en blanco y guiones. Por favor intente introducir el valor del campo apellido/s de nuevo.",
+                   0 + MsgBoxStyle.Information, "Valor de apellidos incorrecto")
             textBox_apellidos.Focus()
 
         End If
 
     End Sub
 
-    Private Sub textBox_contrasenia_TextChanged(sender As Object, e As EventArgs) Handles textBox_contrasenia.TextChanged
+    Private Sub textBox_contrasenia_Leave(sender As Object, e As EventArgs) Handles textBox_contrasenia.Leave
 
         'Si los datos introducidos en el campo son correctos se comprueba si se puede activar el boton guardar
         If validacion.esNumero(textBox_contrasenia.Text) And textBox_contrasenia.Text.Length = 4 Then
@@ -658,8 +661,9 @@
         Else
 
             'Se le indica al usuario que el dato es incorreto y el foco vuelve al campo de contraseña
-            MsgBox("La contraseña debe contener exactamente 4 numeros. Por favor intente introducir la contraseña de nuevo.", 0 + MsgBoxStyle.Information, "Contraseña incorrecta")
-            textBox_contrasenia.Focus()
+            MsgBox("La contraseña debe contener exactamente 4 numeros. Por favor intente introducir la contraseña de nuevo.",
+                   0 + MsgBoxStyle.Information, "Contraseña incorrecta")
+            textBox_contrasenia.Text = ""
 
         End If
 
@@ -679,7 +683,8 @@
             Else
 
                 'Se le indica al usuario que las dos contraseñas no son iguales
-                MsgBox("Las dos contraseñas no coinciden. Por favor introducelas de nuevo.", 0 + MsgBoxStyle.Information, "Contraseñas incorrectas")
+                MsgBox("Las dos contraseñas no coinciden. Por favor introducelas de nuevo.",
+                       0 + MsgBoxStyle.Information, "Contraseñas incorrectas")
 
                 'Se borran los datos de los dos campos y se pasa el foco a la primera contraseña (original)
                 textBox_contrasenia2.Text = ""
@@ -693,8 +698,9 @@
         Else
 
             'Se le indica al usuario que el dato es incorreto y el foco vuelve al campo de repetir contraseña
-            MsgBox("La contraseña debe contener exactamente 4 numeros. Por favor intente introducir la contraseña de nuevo.", 0 + MsgBoxStyle.Information, "Contraseña incorrecta")
-            textBox_contrasenia2.Focus()
+            MsgBox("La contraseña debe contener exactamente 4 numeros. Por favor intente introducir la contraseña de nuevo.",
+                   0 + MsgBoxStyle.Information, "Contraseña incorrecta")
+            textBox_contrasenia2.Text = ""
 
         End If
 
@@ -718,7 +724,8 @@
         Else
 
             'Se le indica al usuario que el dato es incorreto y el foco vuelve al campo de nombre
-            MsgBox("Los nombres y apellidos pueden contener solo letras, espacios en blanco y guiones. Por favor intente introducir el valor del campo apellido/s de nuevo.", 0 + MsgBoxStyle.Information, "Valor de apellidos incorrecto")
+            MsgBox("Los nombres y apellidos pueden contener solo letras, espacios en blanco y guiones. Por favor intente introducir el valor del campo apellido/s de nuevo.",
+                   0 + MsgBoxStyle.Information, "Valor de nombre incorrecto")
             textBox_nombre.Focus()
 
         End If
@@ -736,7 +743,8 @@
         Else
 
             'Se le indica al usuario que el dato es incorreto y el foco vuelve al campo de nombre de usuario
-            MsgBox("El nombre de usuario puede contener solo letras con un minimo de 3 caracteres. Por favor intente introducir el valor del campo nombre de usuario de nuevo.", 0 + MsgBoxStyle.Information, "Valor de nombre de usuario incorrecto")
+            MsgBox("El nombre de usuario puede contener solo letras con un minimo de 3 caracteres. Por favor intente introducir el valor del campo nombre de usuario de nuevo.",
+                   0 + MsgBoxStyle.Information, "Valor de nombre de usuario incorrecto")
             textBox_nombreUsuario.Focus()
 
         End If
@@ -756,7 +764,8 @@
         Else
 
             'Se le indica al usuario que el dato es incorreto y el foco vuelve al campo de telefono
-            MsgBox("El telefono puede contener solo numeros, espacion en blanco y como primeros caractres ""(+  )"" o ""+"". Por favor intente introducir el valor del campo telefono de nuevo.", 0 + MsgBoxStyle.Information, "Valor de apellidos incorrecto")
+            MsgBox("El telefono puede contener solo numeros, espacion en blanco y como primeros caractres ""(+  )"" o ""+"". Por favor intente introducir el valor del campo telefono de nuevo.",
+                   0 + MsgBoxStyle.Information, "Valor de telefono incorrecto")
             textBox_telefono.Focus()
 
         End If
