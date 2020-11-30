@@ -369,4 +369,12 @@
         Me.Hide()
 
     End Sub
+
+    Private Sub Button_volver_Click(sender As Object, e As EventArgs) Handles Button_volver.Click
+
+        'Se vuelve a la pantalla de ventas
+        Pantalla_de_venta.Show()
+        Me.Close()
+
+    End Sub
 End Class

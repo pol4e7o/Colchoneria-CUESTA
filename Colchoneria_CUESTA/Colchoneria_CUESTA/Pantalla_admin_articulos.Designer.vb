@@ -47,11 +47,12 @@ Partial Class Pantalla_admin_articulos
         Me.GestionDeEmpleadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GestionDeArticulosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GestionDeVentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GestionDeErroresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ColchoneriaCUESTAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManualDeUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GestionDeErroresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Button_volver = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel_admin_articulos.SuspendLayout()
         Me.MenuStrip.SuspendLayout()
@@ -123,6 +124,7 @@ Partial Class Pantalla_admin_articulos
         '
         Me.Panel_admin_articulos.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel_admin_articulos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel_admin_articulos.Controls.Add(Me.Button_volver)
         Me.Panel_admin_articulos.Controls.Add(Me.Label1)
         Me.Panel_admin_articulos.Controls.Add(Me.label_Gestion_empleados)
         Me.Panel_admin_articulos.Controls.Add(Me.Buton_eliminar)
@@ -131,7 +133,7 @@ Partial Class Pantalla_admin_articulos
         Me.Panel_admin_articulos.Location = New System.Drawing.Point(211, 80)
         Me.Panel_admin_articulos.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel_admin_articulos.Name = "Panel_admin_articulos"
-        Me.Panel_admin_articulos.Size = New System.Drawing.Size(540, 305)
+        Me.Panel_admin_articulos.Size = New System.Drawing.Size(540, 331)
         Me.Panel_admin_articulos.TabIndex = 14
         '
         'Label1
@@ -139,7 +141,7 @@ Partial Class Pantalla_admin_articulos
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(19, 67)
+        Me.Label1.Location = New System.Drawing.Point(20, 68)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(488, 20)
         Me.Label1.TabIndex = 21
@@ -150,7 +152,7 @@ Partial Class Pantalla_admin_articulos
         Me.label_Gestion_empleados.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.label_Gestion_empleados.AutoSize = True
         Me.label_Gestion_empleados.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label_Gestion_empleados.Location = New System.Drawing.Point(172, 26)
+        Me.label_Gestion_empleados.Location = New System.Drawing.Point(173, 27)
         Me.label_Gestion_empleados.Name = "label_Gestion_empleados"
         Me.label_Gestion_empleados.Size = New System.Drawing.Size(203, 25)
         Me.label_Gestion_empleados.TabIndex = 17
@@ -161,7 +163,7 @@ Partial Class Pantalla_admin_articulos
         Me.Buton_eliminar.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Buton_eliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.Buton_eliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Buton_eliminar.Location = New System.Drawing.Point(203, 222)
+        Me.Buton_eliminar.Location = New System.Drawing.Point(204, 223)
         Me.Buton_eliminar.Name = "Buton_eliminar"
         Me.Buton_eliminar.Size = New System.Drawing.Size(134, 31)
         Me.Buton_eliminar.TabIndex = 16
@@ -173,7 +175,7 @@ Partial Class Pantalla_admin_articulos
         Me.Button_aniadir.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Button_aniadir.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.Button_aniadir.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_aniadir.Location = New System.Drawing.Point(203, 124)
+        Me.Button_aniadir.Location = New System.Drawing.Point(204, 125)
         Me.Button_aniadir.Name = "Button_aniadir"
         Me.Button_aniadir.Size = New System.Drawing.Size(134, 31)
         Me.Button_aniadir.TabIndex = 15
@@ -185,7 +187,7 @@ Partial Class Pantalla_admin_articulos
         Me.Button_modificar.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Button_modificar.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.Button_modificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_modificar.Location = New System.Drawing.Point(203, 171)
+        Me.Button_modificar.Location = New System.Drawing.Point(204, 172)
         Me.Button_modificar.Name = "Button_modificar"
         Me.Button_modificar.Size = New System.Drawing.Size(134, 31)
         Me.Button_modificar.TabIndex = 14
@@ -287,6 +289,14 @@ Partial Class Pantalla_admin_articulos
         Me.GestionDeVentasToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
         Me.GestionDeVentasToolStripMenuItem.Text = "Gestion de ventas"
         '
+        'GestionDeErroresToolStripMenuItem
+        '
+        Me.GestionDeErroresToolStripMenuItem.Name = "GestionDeErroresToolStripMenuItem"
+        Me.GestionDeErroresToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
+            Or System.Windows.Forms.Keys.R), System.Windows.Forms.Keys)
+        Me.GestionDeErroresToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
+        Me.GestionDeErroresToolStripMenuItem.Text = "Gestion de errores"
+        '
         'AcercaDeToolStripMenuItem
         '
         Me.AcercaDeToolStripMenuItem.AutoSize = False
@@ -318,13 +328,17 @@ Partial Class Pantalla_admin_articulos
         Me.ManualDeUsuarioToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
         Me.ManualDeUsuarioToolStripMenuItem.Text = "Manual de usuario"
         '
-        'GestionDeErroresToolStripMenuItem
+        'Button_volver
         '
-        Me.GestionDeErroresToolStripMenuItem.Name = "GestionDeErroresToolStripMenuItem"
-        Me.GestionDeErroresToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
-            Or System.Windows.Forms.Keys.R), System.Windows.Forms.Keys)
-        Me.GestionDeErroresToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
-        Me.GestionDeErroresToolStripMenuItem.Text = "Gestion de errores"
+        Me.Button_volver.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Button_volver.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.Button_volver.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_volver.Location = New System.Drawing.Point(204, 271)
+        Me.Button_volver.Name = "Button_volver"
+        Me.Button_volver.Size = New System.Drawing.Size(134, 31)
+        Me.Button_volver.TabIndex = 22
+        Me.Button_volver.Text = "Volver"
+        Me.Button_volver.UseVisualStyleBackColor = False
         '
         'Pantalla_admin_articulos
         '
@@ -376,4 +390,5 @@ Partial Class Pantalla_admin_articulos
     Friend WithEvents label_Gestion_empleados As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents GestionDeErroresToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Button_volver As Button
 End Class

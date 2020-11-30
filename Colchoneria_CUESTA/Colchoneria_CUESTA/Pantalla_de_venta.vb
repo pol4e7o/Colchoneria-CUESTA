@@ -194,6 +194,8 @@ Public Class Pantalla_de_venta
                     ventaRegistro.fecha = DateString
                     ventaRegistro.informacionVenta = informe
 
+                    Write(4, ventaRegistro.fecha, ventaRegistro.informacionVenta)
+
                 Catch ex As System.IO.FileNotFoundException
 
                     MsgBox("El fichero ""VentasDiarias.txt"" no se encuentra por lo tanto no se ha podido guadrar el informe de cierre de caja" &

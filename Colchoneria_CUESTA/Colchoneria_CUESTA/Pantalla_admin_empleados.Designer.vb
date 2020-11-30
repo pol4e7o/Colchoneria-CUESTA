@@ -36,6 +36,7 @@ Partial Class Pantalla_admin_empleados
         Me.GestionDeEmpleadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GestionDeArticulosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GestionDeVentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GestionDeErroresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ColchoneriaCUESTAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -45,15 +46,16 @@ Partial Class Pantalla_admin_empleados
         Me.label_fecha = New System.Windows.Forms.Label()
         Me.label_hora = New System.Windows.Forms.Label()
         Me.TimerHoraReal = New System.Windows.Forms.Timer(Me.components)
-        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.boton_baja = New System.Windows.Forms.Button()
         Me.boton_modificacion = New System.Windows.Forms.Button()
         Me.boton_alta = New System.Windows.Forms.Button()
-        Me.GestionDeErroresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Panel_admin_articulos = New System.Windows.Forms.Panel()
+        Me.Button_volver = New System.Windows.Forms.Button()
         Me.MenuStrip.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        Me.Panel_admin_articulos.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip
@@ -151,6 +153,14 @@ Partial Class Pantalla_admin_empleados
         Me.GestionDeVentasToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
         Me.GestionDeVentasToolStripMenuItem.Text = "Gestion de ventas"
         '
+        'GestionDeErroresToolStripMenuItem
+        '
+        Me.GestionDeErroresToolStripMenuItem.Name = "GestionDeErroresToolStripMenuItem"
+        Me.GestionDeErroresToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
+            Or System.Windows.Forms.Keys.R), System.Windows.Forms.Keys)
+        Me.GestionDeErroresToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
+        Me.GestionDeErroresToolStripMenuItem.Text = "Gestion de errores"
+        '
         'AcercaDeToolStripMenuItem
         '
         Me.AcercaDeToolStripMenuItem.AutoSize = False
@@ -244,22 +254,12 @@ Partial Class Pantalla_admin_empleados
         Me.TimerHoraReal.Enabled = True
         Me.TimerHoraReal.Interval = 1000
         '
-        'FlowLayoutPanel1
-        '
-        Me.FlowLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.FlowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(134, 109)
-        Me.FlowLayoutPanel1.Margin = New System.Windows.Forms.Padding(2)
-        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(621, 289)
-        Me.FlowLayoutPanel1.TabIndex = 15
-        '
         'Label1
         '
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(220, 162)
+        Me.Label1.Location = New System.Drawing.Point(15, 68)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(488, 20)
         Me.Label1.TabIndex = 20
@@ -270,7 +270,7 @@ Partial Class Pantalla_admin_empleados
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(353, 126)
+        Me.Label2.Location = New System.Drawing.Point(148, 32)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(227, 25)
         Me.Label2.TabIndex = 19
@@ -281,7 +281,7 @@ Partial Class Pantalla_admin_empleados
         Me.boton_baja.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.boton_baja.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.boton_baja.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.boton_baja.Location = New System.Drawing.Point(388, 355)
+        Me.boton_baja.Location = New System.Drawing.Point(191, 216)
         Me.boton_baja.Name = "boton_baja"
         Me.boton_baja.Size = New System.Drawing.Size(134, 31)
         Me.boton_baja.TabIndex = 18
@@ -293,7 +293,7 @@ Partial Class Pantalla_admin_empleados
         Me.boton_modificacion.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.boton_modificacion.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.boton_modificacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.boton_modificacion.Location = New System.Drawing.Point(388, 304)
+        Me.boton_modificacion.Location = New System.Drawing.Point(191, 165)
         Me.boton_modificacion.Name = "boton_modificacion"
         Me.boton_modificacion.Size = New System.Drawing.Size(134, 31)
         Me.boton_modificacion.TabIndex = 17
@@ -305,20 +305,40 @@ Partial Class Pantalla_admin_empleados
         Me.boton_alta.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.boton_alta.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.boton_alta.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.boton_alta.Location = New System.Drawing.Point(388, 249)
+        Me.boton_alta.Location = New System.Drawing.Point(191, 116)
         Me.boton_alta.Name = "boton_alta"
         Me.boton_alta.Size = New System.Drawing.Size(134, 31)
         Me.boton_alta.TabIndex = 16
         Me.boton_alta.Text = "Añadir"
         Me.boton_alta.UseVisualStyleBackColor = False
         '
-        'GestionDeErroresToolStripMenuItem
+        'Panel_admin_articulos
         '
-        Me.GestionDeErroresToolStripMenuItem.Name = "GestionDeErroresToolStripMenuItem"
-        Me.GestionDeErroresToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
-            Or System.Windows.Forms.Keys.R), System.Windows.Forms.Keys)
-        Me.GestionDeErroresToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
-        Me.GestionDeErroresToolStripMenuItem.Text = "Gestion de errores"
+        Me.Panel_admin_articulos.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Panel_admin_articulos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel_admin_articulos.Controls.Add(Me.Button_volver)
+        Me.Panel_admin_articulos.Controls.Add(Me.boton_alta)
+        Me.Panel_admin_articulos.Controls.Add(Me.boton_baja)
+        Me.Panel_admin_articulos.Controls.Add(Me.boton_modificacion)
+        Me.Panel_admin_articulos.Controls.Add(Me.Label1)
+        Me.Panel_admin_articulos.Controls.Add(Me.Label2)
+        Me.Panel_admin_articulos.Location = New System.Drawing.Point(184, 96)
+        Me.Panel_admin_articulos.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel_admin_articulos.Name = "Panel_admin_articulos"
+        Me.Panel_admin_articulos.Size = New System.Drawing.Size(540, 331)
+        Me.Panel_admin_articulos.TabIndex = 21
+        '
+        'Button_volver
+        '
+        Me.Button_volver.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Button_volver.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.Button_volver.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_volver.Location = New System.Drawing.Point(191, 267)
+        Me.Button_volver.Name = "Button_volver"
+        Me.Button_volver.Size = New System.Drawing.Size(134, 31)
+        Me.Button_volver.TabIndex = 21
+        Me.Button_volver.Text = "Volver"
+        Me.Button_volver.UseVisualStyleBackColor = False
         '
         'Pantalla_admin_empleados
         '
@@ -326,12 +346,7 @@ Partial Class Pantalla_admin_empleados
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(890, 512)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.boton_baja)
-        Me.Controls.Add(Me.boton_modificacion)
-        Me.Controls.Add(Me.boton_alta)
-        Me.Controls.Add(Me.FlowLayoutPanel1)
+        Me.Controls.Add(Me.Panel_admin_articulos)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.MenuStrip)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -342,8 +357,9 @@ Partial Class Pantalla_admin_empleados
         Me.MenuStrip.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.Panel_admin_articulos.ResumeLayout(False)
+        Me.Panel_admin_articulos.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -368,11 +384,12 @@ Partial Class Pantalla_admin_empleados
     Friend WithEvents GestionDeArticulosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GestionDeVentasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TimerHoraReal As Timer
-    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents boton_baja As Button
     Friend WithEvents boton_modificacion As Button
     Friend WithEvents boton_alta As Button
     Friend WithEvents GestionDeErroresToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Panel_admin_articulos As Panel
+    Friend WithEvents Button_volver As Button
 End Class
