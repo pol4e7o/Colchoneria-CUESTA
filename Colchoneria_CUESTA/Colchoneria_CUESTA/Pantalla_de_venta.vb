@@ -2458,7 +2458,7 @@ Public Class Pantalla_de_venta
         posicionVertical = posicionVertical + incremento
         e.Graphics().DrawString("Madrid, Madrid", New Font("Arial", 12, FontStyle.Regular), Brushes.Black, 200, posicionVertical)
 
-
+        e.HasMorePages = False
 
     End Sub
 
